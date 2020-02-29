@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.65.2" />
+
+
+
+<link rel="canonical" href="https://Cc360428.github.io/system/redis/redis-centos-7/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Reids 安装 - Li Chao Cheng Blog</title>
+    
+<meta name="description" content="redis 安装以及基本使用 、配置 ">
+
+<meta property="og:title" content="Reids 安装 - Li Chao Cheng Blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Cc360428.github.io/system/redis/redis-centos-7/">
+<meta property="og:image" content="https://Cc360428.github.io/images/default.png">
+<meta property="og:site_name" content="Li Chao Cheng Blog">
+<meta property="og:description" content="redis 安装以及基本使用 、配置 ">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Li Chao Cheng Blog">
+<meta name="twitter:url" content="https://Cc360428.github.io/system/redis/redis-centos-7/">
+<meta name="twitter:title" content="Reids 安装 - Li Chao Cheng Blog">
+<meta name="twitter:description" content="redis 安装以及基本使用 、配置 ">
+<meta name="twitter:image" content="https://Cc360428.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/Cc360428.github.io\/"
+    },
+    "headline": "Reids 安装 - Li Chao Cheng Blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/Cc360428.github.io\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2019-01-26T12:48:54JST",
+    "dateModified": "2019-01-26T12:48:54JST",
+    "author": {
+      "@type": "Person",
+      "name": "Li Chao Cheng Blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Li Chao Cheng Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/Cc360428.github.io\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "redis 安装以及基本使用 、配置 "
+  }
+</script>
+
+
+    <link href="https://Cc360428.github.io/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://Cc360428.github.io/">Li Chao Cheng Blog</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="../../../golang/">Golangs</a></li>
+              
+              
+              
+              <li><a href="../../../java/">Javas</a></li>
+              
+              
+              
+              <li><a href="../../../love/">Loves</a></li>
+              
+              
+              
+              <li><a href="../../../python/">Pythons</a></li>
+              
+              
+              
+              <li><a href="../../../system/">Systems</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://Cc360428.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://Cc360428.github.io/system/" itemprop="url"><span itemprop="title">System</span></a></li>
+        
+        <li class="active">Reids 安装</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-01-26T12:48:54JST">2019-01-26</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://Cc360428.github.io/system/">System</a></li>
+      
+    </ul>
+
+    <h1 class="title">Reids 安装</h1>
+  </header>
+
+  
+
+  <div class="article-body"><pre><code>方法一：源文件安装（推荐安装）
+
+在CentOS和Red Hat系统中，首先添加EPEL仓库，然后更新yum源：
+
+sudo yum install epel-release
+sudo yum update
+然后安装Redis数据库：
+
+sudo yum -y install redis
+安装好后启动Redis服务即可：
+
+sudo systemctl start redis
+这里同样可以使用redis-cli进入Redis命令行模式操作。
+
+另外，为了可以使Redis能被远程连接，需要修改配置文件，路径为/etc/redis.conf
+
+vi /etc/redis.conf
+需要修改的地方：
+
+首先，注释这一行：
+
+#bind 127.0.0.1
+另外，推荐给Redis设置密码，取消注释这一行：
+
+#requirepass foobared
+
+foobared即当前密码，可以自行修改为
+
+requirepass 密码
+然后重启Redis服务，使用的命令如下：
+
+sudo systemctl restart redis
+
+
+systemctl start redis.service #启动redis服务器
+
+systemctl stop redis.service #停止redis服务器
+
+systemctl restart redis.service #重新启动redis服务器
+
+systemctl status redis.service #获取redis服务器的运行状态
+
+systemctl enable redis.service #开机启动redis服务器
+
+systemctl disable redis.service #开机禁用redis服务器
+
+
+
+详情可参考链接：
+
+Linux CentOS 7安装Redis服务器教程
+​
+www.centos.bz
+
+
+方法二；压缩包安装
+
+一、安装
+
+1、在官网下载tar.gz的安装包，或者通过wget的方式下载　　
+
+wget http://download.redis.io/releases/redis-4.0.1.tar.gz
+2、解压
+
+tar -zxvf redis-4.0.1.tar.gz
+3、编译
+
+通过make来编译，make是自动编译，会根据Makefile中描述的内容来进行编译。
+
+cd redis-4.0
+make
+可以看到在src目录下生成了几个新的文件。
+
+4、安装
+
+make install
+实际上，就是将这个几个文件加到/usr/local/bin目录下去。这个目录在Path下面的话，就可以直接执行这几个命令了。
+
+可以看到，这几个文件就已经被加载到bin目录下了
+
+5、启动服务器，来看看安装是否成功。
+
+使用redis-server命令。
+
+再启动一个linux客户端，redis-cli打开客户端　　
+
+6、关闭服务器
+
+再启动一个linux客户端，通过server-cli shutdown来关闭服务器。
+
+二、配置
+
+1、设置redis服务器后台启动
+
+前面在启动redis服务器后，都是在前台启动的，需要重新启动一个客户端来进行登陆操作。这样非常不方便，
+
+所以，我们需要设置后台启动。
+
+daemonize no
+
+修改为：
+
+daemonize yes
+
+
+卸载redis
+
+卸载redis服务，只需把/usr/local/bin/目录下的redis删除即可
+
+rm -rf /usr/local/bin/redis*
+甚至可以把解压包也删除掉
+
+rm -rf /root/redis-stable
+</code></pre><h2 id="windows-redis-加入开机自启">windows redis 加入开机自启</h2>
+<pre><code>redis-server --service-install redis.windows-service.conf  --loglevel verbose
+
+redis-server –service-install redis.windows.conf
+redis-cli.exe
+auth root
+
+config set requirepass root
+
+ CONFIG SET requirepass &quot;123456&quot;
+ 
+ AUTH 123456
+
+
+
+</code></pre></div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/categories/utils/">utils</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">SERIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/series/redis/">Redis</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/tags/syetem/">Syetem</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">New</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/about/" class="list-group-item">Blog About</a>
+      
+      <a href="https://Cc360428.github.io/golang/grpc/" class="list-group-item">gRPC 和 ui 操作</a>
+      
+      <a href="https://Cc360428.github.io/golang/golang-1.12/" class="list-group-item">Golang 版本更新 摘要</a>
+      
+      <a href="https://Cc360428.github.io/golang/gin/gin-bast/" class="list-group-item">Golang Gin</a>
+      
+      <a href="https://Cc360428.github.io/golang/beego/base-beego/" class="list-group-item">Beego Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/base/" class="list-group-item">Golang Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/system/" class="list-group-item">环境搭建</a>
+      
+      <a href="https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/" class="list-group-item">Doker 安装</a>
+      
+      <a href="https://Cc360428.github.io/system/idea/idea%E4%BD%BF%E7%94%A8/" class="list-group-item">idea 使用</a>
+      
+      <a href="https://Cc360428.github.io/system/redis/redis-%E6%8C%81%E4%B9%85%E5%8C%96/" class="list-group-item">redis 理论知识</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/categories/utils" class="list-group-item">utils</a>
+      
+      <a href="https://Cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80" class="list-group-item">java基础</a>
+      
+      <a href="https://Cc360428.github.io/categories/me" class="list-group-item">me</a>
+      
+      <a href="https://Cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80" class="list-group-item">python基础</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">SERIES</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/series/docker" class="list-group-item">docker</a>
+      
+      <a href="https://Cc360428.github.io/series/base" class="list-group-item">base</a>
+      
+      <a href="https://Cc360428.github.io/series/redis" class="list-group-item">redis</a>
+      
+      <a href="https://Cc360428.github.io/series/canon" class="list-group-item">canon</a>
+      
+      <a href="https://Cc360428.github.io/series/idea" class="list-group-item">idea</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/tags/syetem" class="list-group-item">syetem</a>
+      
+      <a href="https://Cc360428.github.io/tags/golang" class="list-group-item">golang</a>
+      
+      <a href="https://Cc360428.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://Cc360428.github.io/tags/love" class="list-group-item">love</a>
+      
+      <a href="https://Cc360428.github.io/tags/python" class="list-group-item">python</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Li Chao Cheng Blog</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

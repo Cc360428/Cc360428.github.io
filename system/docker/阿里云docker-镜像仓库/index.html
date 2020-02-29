@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.65.2" />
+
+
+
+<link rel="canonical" href="https://Cc360428.github.io/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>阿里云docker 镜像仓库 - Li Chao Cheng Blog</title>
+    
+<meta name="description" content="aliyun 仓库操作 ">
+
+<meta property="og:title" content="阿里云docker 镜像仓库 - Li Chao Cheng Blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Cc360428.github.io/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">
+<meta property="og:image" content="https://Cc360428.github.io/images/default.png">
+<meta property="og:site_name" content="Li Chao Cheng Blog">
+<meta property="og:description" content="aliyun 仓库操作 ">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Li Chao Cheng Blog">
+<meta name="twitter:url" content="https://Cc360428.github.io/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">
+<meta name="twitter:title" content="阿里云docker 镜像仓库 - Li Chao Cheng Blog">
+<meta name="twitter:description" content="aliyun 仓库操作 ">
+<meta name="twitter:image" content="https://Cc360428.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/Cc360428.github.io\/"
+    },
+    "headline": "阿里云docker 镜像仓库 - Li Chao Cheng Blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/Cc360428.github.io\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2019-01-01T12:48:54JST",
+    "dateModified": "2019-01-01T12:48:54JST",
+    "author": {
+      "@type": "Person",
+      "name": "Li Chao Cheng Blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Li Chao Cheng Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/Cc360428.github.io\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "aliyun 仓库操作 "
+  }
+</script>
+
+
+    <link href="https://Cc360428.github.io/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://Cc360428.github.io/">Li Chao Cheng Blog</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="../../../golang/">Golangs</a></li>
+              
+              
+              
+              <li><a href="../../../java/">Javas</a></li>
+              
+              
+              
+              <li><a href="../../../love/">Loves</a></li>
+              
+              
+              
+              <li><a href="../../../python/">Pythons</a></li>
+              
+              
+              
+              <li><a href="../../../system/">Systems</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://Cc360428.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://Cc360428.github.io/system/" itemprop="url"><span itemprop="title">System</span></a></li>
+        
+        <li class="active">阿里云docker 镜像仓库</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-01-01T12:48:54JST">2019-01-01</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://Cc360428.github.io/system/">System</a></li>
+      
+    </ul>
+
+    <h1 class="title">阿里云docker 镜像仓库</h1>
+  </header>
+
+  
+
+  <div class="article-body"><h1 id="阿里云docker-镜像仓库">阿里云docker 镜像仓库</h1>
+<pre><code>1. 登录阿里云Docker Registry
+$ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com
+用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
+
+您可以在访问凭证页面修改凭证密码。
+
+2. 从Registry中拉取镜像
+$ sudo docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]
+3. 将镜像推送到Registry
+$ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com
+$ sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]
+$ sudo docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]
+请根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。
+
+4. 选择合适的镜像仓库地址
+从ECS推送镜像时，可以选择使用镜像仓库内网地址。推送速度将得到提升并且将不会损耗您的公网流量。
+
+如果您使用的机器位于VPC网络，请使用 registry-vpc.cn-hangzhou.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。
+5. 示例
+使用&quot;docker tag&quot;命令重命名镜像，并将它通过专有网络地址推送至Registry。
+
+$ sudo docker images
+REPOSITORY                                                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+registry.aliyuncs.com/acs/agent                                    0.7-dfb6816         37bb9c63c8b2        7 days ago          37.89 MB
+$ sudo docker tag 37bb9c63c8b2 registry-vpc.cn-hangzhou.aliyuncs.com/acs/agent:0.7-dfb6816
+使用&quot;docker images&quot;命令找到镜像，将该镜像名称中的域名部分变更为Registry专有网络地址。
+
+$ sudo docker push registry-vpc.cn-hangzhou.aliyuncs.com/acs/agent:0.7-dfb6816
+</code></pre><p><a href="https://www.cnblogs.com/leoxjy/p/9658598.html">参考地址</a></p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/categories/utils/">utils</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">SERIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/series/docker/">docker</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/tags/syetem/">Syetem</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">New</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/about/" class="list-group-item">Blog About</a>
+      
+      <a href="https://Cc360428.github.io/golang/grpc/" class="list-group-item">gRPC 和 ui 操作</a>
+      
+      <a href="https://Cc360428.github.io/golang/golang-1.12/" class="list-group-item">Golang 版本更新 摘要</a>
+      
+      <a href="https://Cc360428.github.io/golang/gin/gin-bast/" class="list-group-item">Golang Gin</a>
+      
+      <a href="https://Cc360428.github.io/golang/beego/base-beego/" class="list-group-item">Beego Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/base/" class="list-group-item">Golang Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/system/" class="list-group-item">环境搭建</a>
+      
+      <a href="https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/" class="list-group-item">Doker 安装</a>
+      
+      <a href="https://Cc360428.github.io/system/idea/idea%E4%BD%BF%E7%94%A8/" class="list-group-item">idea 使用</a>
+      
+      <a href="https://Cc360428.github.io/system/redis/redis-%E6%8C%81%E4%B9%85%E5%8C%96/" class="list-group-item">redis 理论知识</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/categories/utils" class="list-group-item">utils</a>
+      
+      <a href="https://Cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80" class="list-group-item">java基础</a>
+      
+      <a href="https://Cc360428.github.io/categories/me" class="list-group-item">me</a>
+      
+      <a href="https://Cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80" class="list-group-item">python基础</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">SERIES</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/series/docker" class="list-group-item">docker</a>
+      
+      <a href="https://Cc360428.github.io/series/base" class="list-group-item">base</a>
+      
+      <a href="https://Cc360428.github.io/series/redis" class="list-group-item">redis</a>
+      
+      <a href="https://Cc360428.github.io/series/canon" class="list-group-item">canon</a>
+      
+      <a href="https://Cc360428.github.io/series/idea" class="list-group-item">idea</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/tags/syetem" class="list-group-item">syetem</a>
+      
+      <a href="https://Cc360428.github.io/tags/golang" class="list-group-item">golang</a>
+      
+      <a href="https://Cc360428.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://Cc360428.github.io/tags/love" class="list-group-item">love</a>
+      
+      <a href="https://Cc360428.github.io/tags/python" class="list-group-item">python</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Li Chao Cheng Blog</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

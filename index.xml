@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Li Chao Cheng Blog</title>
+    <link>https://Cc360428.github.io/</link>
+    <description>Recent content on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 Feb 2020 23:37:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://Cc360428.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog About</title>
+      <link>https://Cc360428.github.io/about/</link>
+      <pubDate>Fri, 28 Feb 2020 23:37:37 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/about/</guid>
+      <description>作者 Name: ChaoChengLi
+Email: li_chao_cheng@163.com
+个人主页
+博客内容  Golang  base web   Java  base web   Python  base   Client  html、css、js、jq vue BootStrap   System  linux Windows Mac utils  Mysql redis docker mongoDB git 开发工具 消息队列 网络知识      </description>
+    </item>
+    
+    <item>
+      <title>gRPC 和 ui 操作</title>
+      <link>https://Cc360428.github.io/golang/grpc/</link>
+      <pubDate>Thu, 26 Dec 2019 14:22:12 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/golang/grpc/</guid>
+      <description>gRPC 安装protoc工具  https://github.com/protocolbuffers/protobuf/releases
+  -I 参数：指定import路径，可以指定多个-I参数，编译时按顺序查找，不指定时默认查找当前目录 &amp;ndash;go_out ：golang编译支持，支持以下参数  plugins=plugin1+plugin2 - 指定插件，目前只支持grpc，即：plugins=grpc M 参数 - 指定导入的.proto文件路径编译后对应的golang包名(不指定本参数默认就是.proto文件中import语句的路径) import_prefix=xxx - 为所有import路径添加前缀，主要用于编译子目录内的多个proto文件，这个参数按理说很有用，尤其适用替代一些情况时的M参数，但是实际使用时有个蛋疼的问题导致并不能达到我们预想的效果，自己尝试看看吧 import_path=foo/bar - 用于指定未声明package或go_package的文件的包名，最右面的斜线前的字符会被忽略 末尾 :编译文件路径 .proto文件路径(支持通配符)     完整实例
+  使用前安装：go get -u github.com/golang/protobuf/protoc-gen-go
+ protoc -I . --go_out=plugins=grpc,Mfoo/bar.proto=bar,import_prefix=foo/,import_path=foo/bar:. ./*.protoprotoc -I . --go_out=plugins=grpc:. dict.protocprotoc -I . --php_out=plugins=grpc:. zhly_pay.protocprotoc --java_out=:. zhly_pay.protocprotoc --js_out=:. zhly_pay.protocprotoc -I=$DIR yun_mao.protoc \ --grpc-web_out=import_style=commonjs,mode=grpcwebtext:$OUT_DIRprotoc --js_out=import_style=commonjs,binary:. yun_mao.protoc下载工具依赖 go get google.</description>
+    </item>
+    
+    <item>
+      <title>Golang 版本更新 摘要</title>
+      <link>https://Cc360428.github.io/golang/golang-1.12/</link>
+      <pubDate>Fri, 06 Dec 2019 17:11:22 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/golang/golang-1.12/</guid>
+      <description>go mod 1.12 学习 go modules(check version) 检查 golang 版本
+如果没有生成 go.sum 或者报错请输入export GOPROXY=https://goproxy.ioC:\Users\admin&amp;gt;go versiongo version go1.12.9 windows/amd64把 golang 升级到 1.11（现在1.12 已经发布了，建议使用1.12）设置 GO111MODULEGO111MODULEGO111MODULE 有三个值：off, on和auto（默认值）。GO111MODULE=off，go命令行将不会支持module功能，寻找依赖包的方式将会沿用旧版本那种通过vendor目录或者GOPATH模式来查找。GO111MODULE=on，go命令行会使用modules，而一点也不会去GOPATH目录下查找。GO111MODULE=auto，默认值，go命令行将会根据当前目录来决定是否启用module功能。这种情况下可以分为两种情形：当前目录在GOPATH/src之外且该目录包含go.mod文件当前文件在包含go.mod文件的目录下面。当modules 功能启用时，依赖包的存放位置变更为$GOPATH/pkg，允许同一个package多个版本并存，且多个项目可以共享缓存的 module。命令说明downloaddownload modules to local cache(下载依赖包)editedit go.mod from tools or scripts（编辑go.modgraphprint module requirement graph (打印模块依赖图)initinitialize new module in current directory（在当前目录初始化mod）tidyadd missing and remove unused modules(拉取缺少的模块，移除不用的模块)vendormake vendored copy of dependencies(将依赖复制到vendor下)verifyverify dependencies have expected content (验证依赖是否正确）whyexplain why packages or modules are needed(解释为什么需要依赖)实例  在GOPATH 目录之外新建一个目录</description>
+    </item>
+    
+    <item>
+      <title>Golang Gin</title>
+      <link>https://Cc360428.github.io/golang/gin/gin-bast/</link>
+      <pubDate>Sun, 07 Jul 2019 13:21:03 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/golang/gin/gin-bast/</guid>
+      <description>构建  安装Gin环境  go get -u github.com/gin-gonic/gin 安装Gin 工具  go get github.com/kardianos/govendorgin_demo  创建文件  mkdir gin_demo 初始化构建gin  govendor initgovendor fetch github.com/gin-gonic/gin@v1.3 Hello World Gin  package mainimport (&amp;quot;net/http&amp;quot;&amp;quot;github.com/gin-gonic/gin&amp;quot;)func setupRouter() *gin.Engine {r := gin.Default()r.GET(&amp;quot;/&amp;quot;, func(c *gin.Context) {c.String(http.StatusOK, &amp;quot;Hello World Gin&amp;quot;)})return r}func main() {r := setupRouter()_ = r.Run(&amp;quot;:9999&amp;quot;)}</description>
+    </item>
+    
+    <item>
+      <title>Beego Base</title>
+      <link>https://Cc360428.github.io/golang/beego/base-beego/</link>
+      <pubDate>Mon, 06 May 2019 15:21:24 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/golang/beego/base-beego/</guid>
+      <description>下载安装 安装环境 go get github.com/astaxie/beego
+安装bee 工具 go get github.com/beego/bee</description>
+    </item>
+    
+    <item>
+      <title>Golang Base</title>
+      <link>https://Cc360428.github.io/golang/base/</link>
+      <pubDate>Thu, 07 Mar 2019 09:21:03 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/golang/base/</guid>
+      <description>GoLang GoLang https://go-zh.org/
+基础 包、变量和函数、基本类型  包 package 每个程序都是由包组成 导入 import
+圆括号可以组合导入 导出 在Go语言中首字母大写的名称是被导出的  导入了一个包后，可以导出名称来调用他 Foo 和 FOO 都是被导出的名称。名称 foo 是不会被导出的   函数  函数可以返回任意数量的返回值   变量  var :=   基本类型  bool string int int8 int64 int32 int64 byte rune float32 float64 complex64 complex128   定义是未明确初始化值为：数值类型为0、布尔类型为 false 字符类型为&amp;rdquo;&amp;rdquo;
+  类型转换 常量  关键字定义：const   注： 不能使用 :=
+   流程控制语句  for if else switch  复杂类型   defer</description>
+    </item>
+    
+    <item>
+      <title>环境搭建</title>
+      <link>https://Cc360428.github.io/golang/system/</link>
+      <pubDate>Tue, 26 Feb 2019 08:20:53 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/golang/system/</guid>
+      <description>linux 下载  https://golang.org/dl/ go1.13.5.linux-amd64.tar.gz  压缩 tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz  git 安装 [root@test golang]# git version git version 1.8.3.1  go get beego go get github.com/astaxie/beego go get github.com/beego/bee Gin go get -u github.com/gin-gonic/gin  Windows 下载源码 配置gopath即可 在环境变量里面配置 GOPATH 即可</description>
+    </item>
+    
+    <item>
+      <title>Doker 安装</title>
+      <link>https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 26 Jan 2019 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/</guid>
+      <description>Doker 安装 卸载就版本 sudo apt-get remove docker docker-engine docker.io containerd runc</description>
+    </item>
+    
+    <item>
+      <title>idea 使用</title>
+      <link>https://Cc360428.github.io/system/idea/idea%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sat, 26 Jan 2019 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/system/idea/idea%E4%BD%BF%E7%94%A8/</guid>
+      <description>Alt+回车 导入包,自动修正 Ctrl+N 查找类 Ctrl+Shift+N 查找文件 Ctrl+Alt+L 格式化代码 Ctrl+Alt+O 优化导入的类和包 Alt+Insert 生成代码(如get,set方法,构造函数等) Ctrl+E或者Alt+Shift+C 最近更改的代码 Ctrl+R 替换文本 Ctrl+F 查找文本 Ctrl+Shift+Space 自动补全代码 Ctrl+空格 代码提示 Ctrl+Alt+Space 类名或接口名提示 Ctrl+P 方法参数提示 Ctrl+Shift+Alt+N 查找类中的方法或变量 Alt+Shift+C 对比最近修改的代码 Shift+F6 重构-重命名 Ctrl+X 删除行 Ctrl+D 复制行 Ctrl+/ 或 Ctrl+Shift+/ 注释（// 或者/…/ ） Ctrl+J 自动代码 Ctrl+E 最近打开的文件 Ctrl+H 显示类结构图 Ctrl+Q 显示注释文档 Alt+F1 查找代码所在位置 Alt+1 快速打开或隐藏工程面板 Ctrl+Alt+ left/right 返回至上次浏览的位置 Alt+ left/right 切换代码视图 Alt+ Up/Down 在方法间快速移动定位 Ctrl+Shift+Up/Down 代码向上/下移动。 F2 或Shift+F2 高亮错误或警告快速定位 代码标签输入完成后，按Tab，生成代码。 选中文本，按Ctrl+Shift+F7 ，高亮显示所有该文本，按Esc高亮消失。 Ctrl+W 选中代码，连续按会有其他效果 选中文本，按Alt+F3 ，逐个往下查找相同文本，并高亮显示。 Ctrl+Up/Down 光标跳转到第一行或最后一行下 Ctrl+B 快速打开光标处的类或方法 </description>
+    </item>
+    
+    <item>
+      <title>redis 理论知识</title>
+      <link>https://Cc360428.github.io/system/redis/redis-%E6%8C%81%E4%B9%85%E5%8C%96/</link>
+      <pubDate>Sat, 26 Jan 2019 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/system/redis/redis-%E6%8C%81%E4%B9%85%E5%8C%96/</guid>
+      <description>redis 持久化  快照 save 设置 aof  受到写入就立马写到磁盘中，    </description>
+    </item>
+    
+    <item>
+      <title>Reids 安装</title>
+      <link>https://Cc360428.github.io/system/redis/redis-centos-7/</link>
+      <pubDate>Sat, 26 Jan 2019 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/system/redis/redis-centos-7/</guid>
+      <description>方法一：源文件安装（推荐安装） 在CentOS和Red Hat系统中，首先添加EPEL仓库，然后更新yum源： sudo yum install epel-release sudo yum update 然后安装Redis数据库： sudo yum -y install redis 安装好后启动Redis服务即可： sudo systemctl start redis 这里同样可以使用redis-cli进入Redis命令行模式操作。 另外，为了可以使Redis能被远程连接，需要修改配置文件，路径为/etc/redis.conf vi /etc/redis.conf 需要修改的地方： 首先，注释这一行： #bind 127.0.0.1 另外，推荐给Redis设置密码，取消注释这一行： #requirepass foobared foobared即当前密码，可以自行修改为 requirepass 密码 然后重启Redis服务，使用的命令如下： sudo systemctl restart redis systemctl start redis.service #启动redis服务器 systemctl stop redis.service #停止redis服务器 systemctl restart redis.service #重新启动redis服务器 systemctl status redis.service #获取redis服务器的运行状态 systemctl enable redis.service #开机启动redis服务器 systemctl disable redis.service #开机禁用redis服务器 详情可参考链接： Linux CentOS 7安装Redis服务器教程 ​ www.centos.bz 方法二；压缩包安装 一、安装 1、在官网下载tar.</description>
+    </item>
+    
+    <item>
+      <title>docker 安装实例</title>
+      <link>https://Cc360428.github.io/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Sat, 05 Jan 2019 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</guid>
+      <description>安装redis 拉去镜像  docker pull redis:latest
+ 启动  docker run -d &amp;ndash;name redis -p 6379:6379 redis &amp;ndash;requirepass &amp;ldquo;redispassword&amp;rdquo;
+  docker容器设置开机自启动： --restart具体参数值详细信息 no - 容器退出时，不重启容器 on-failure - 只有在非0状态退出时才从新启动容器 always - 无论退出状态是如何，都重启容器 还可以在使用 on-failure 策略时，指定 Docker 将尝试重新启动容器的最大次数；默认情况下，Docker 将尝试永远重新启动容器； 如果创建时未指定 --restart=always ,可通过 update 命令更改； docker update --restart=always 容器ID  配置文件的修改  方法为成功
+ /root/redis/redis/conf/redis.conf 中daemonize=NO。非后台模式，如果为YES 会的导致 redis 无法启动，因为后台会导致docker无任务可做而退出。 三 执行docker docker run -p 6378:6379 --name redis -v /root/redis/redis/conf/redis.conf:/etc/redis/redis.conf -v /root/redis/redis/data:/data -d redis redis-server /etc/redis/redis.</description>
+    </item>
+    
+    <item>
+      <title>docker 使用方法</title>
+      <link>https://Cc360428.github.io/system/docker/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Thu, 03 Jan 2019 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/system/docker/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>创建beego demo项目 bee new docker_demo &amp;gt; cd docker_demo bee run  在http://lichaocheng.top:8380 可以看到beego 欢迎页面
+ 创建 Dockerfile # 使用Go的官方映像作为基础映像。这个映像是Go 1.6预安装的。该映像的$GOPATH值已被设置为/go。所有安装在/go/src的程序包都能通过go命令访问。 FROM golang:1.6 # 安装beego程序包和bee工具。beego程序包将在应用程序内部使用，bee工具将用于在开发过程中实时重载代码。 RUN go get github.com/astaxie/beego &amp;amp;&amp;amp; go get github.com/beego/bee # 通过开发计算机上容器的8080端口暴露该应用程序。最后一行， EXPOSE 8380 # 使用bee命令开始对我们的应用程序进行实时重载。 CMD [&amp;quot;bee&amp;quot;, &amp;quot;run&amp;quot;]  docker run -it --name tcpserver -p 8502:8502 -v /opt/gomod/tcpserver:/go/src/c360428/tcpserver -w /go/src/ningshb/tcpserver tcpserver docker run -it --name docker_cc -p 8502:8502 -v /opt/gopath/src/Cc360428/docker_cc:/go/src/Cc360428/docker_cc -w /go/src/Cc360428/docker_cc docker_cc docker build -t tcpserver tcpserver -t 是指tag的意思 构建了一个叫做test-image的镜像</description>
+    </item>
+    
+    <item>
+      <title>Docker 理论知识</title>
+      <link>https://Cc360428.github.io/system/docker/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/</link>
+      <pubDate>Tue, 01 Jan 2019 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/system/docker/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/</guid>
+      <description>为什么要使用docker 简易部署 兼容平台 简化配置 </description>
+    </item>
+    
+    <item>
+      <title>阿里云docker 镜像仓库</title>
+      <link>https://Cc360428.github.io/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Tue, 01 Jan 2019 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
+      <description>阿里云docker 镜像仓库 1. 登录阿里云Docker Registry $ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com 用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。 您可以在访问凭证页面修改凭证密码。 2. 从Registry中拉取镜像 $ sudo docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] 3. 将镜像推送到Registry $ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com $ sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] $ sudo docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] 请根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。 4. 选择合适的镜像仓库地址 从ECS推送镜像时，可以选择使用镜像仓库内网地址。推送速度将得到提升并且将不会损耗您的公网流量。 如果您使用的机器位于VPC网络，请使用 registry-vpc.cn-hangzhou.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。 5. 示例 使用&amp;quot;docker tag&amp;quot;命令重命名镜像，并将它通过专有网络地址推送至Registry。 $ sudo docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE registry.aliyuncs.com/acs/agent 0.7-dfb6816 37bb9c63c8b2 7 days ago 37.89 MB $ sudo docker tag 37bb9c63c8b2 registry-vpc.</description>
+    </item>
+    
+    <item>
+      <title>佳能入门</title>
+      <link>https://Cc360428.github.io/love/%E4%BD%B3%E8%83%BD/</link>
+      <pubDate>Wed, 06 Jun 2018 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/love/%E4%BD%B3%E8%83%BD/</guid>
+      <description>安装镜头与卸载 安装  镜头上有个白色的正方快点 与机身上的白色点对应起来 向下旋转镜头 可以听到一声卡住的响声  卸载  按住镜头上的白色对应的半椭圆形的按键按钮 按住同时向上旋转镜头  镜头上stabilizer开关 防抖开关，区别就是在快门速度较慢的情况下，辅助稳定画质
+AF和MF区别  AF：自动对焦 MF：手动对焦  主要是在拍照的时候，摄影者是习惯手动对焦还是自动对焦。 AF代表自动对焦，由相机自动控制镜头进行对焦。    </description>
+    </item>
+    
+    <item>
+      <title>java base</title>
+      <link>https://Cc360428.github.io/java/hugo/</link>
+      <pubDate>Fri, 26 Jan 2018 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/java/hugo/</guid>
+      <description>基础 </description>
+    </item>
+    
+    <item>
+      <title>Python base</title>
+      <link>https://Cc360428.github.io/python/hugo/</link>
+      <pubDate>Fri, 26 Jan 2018 12:48:54 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/python/hugo/</guid>
+      <description>Java 基础 </description>
+    </item>
+    
+  </channel>
+</rss>

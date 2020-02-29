@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.65.2" />
+
+
+
+<link rel="canonical" href="https://Cc360428.github.io/golang/golang-1.12/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Golang 版本更新 摘要 - Li Chao Cheng Blog</title>
+    
+<meta name="description" content="golang 版本升级 、重要的摘要、学习、笔记 ">
+
+<meta property="og:title" content="Golang 版本更新 摘要 - Li Chao Cheng Blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Cc360428.github.io/golang/golang-1.12/">
+<meta property="og:image" content="https://Cc360428.github.io/images/default.png">
+<meta property="og:site_name" content="Li Chao Cheng Blog">
+<meta property="og:description" content="golang 版本升级 、重要的摘要、学习、笔记 ">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Li Chao Cheng Blog">
+<meta name="twitter:url" content="https://Cc360428.github.io/golang/golang-1.12/">
+<meta name="twitter:title" content="Golang 版本更新 摘要 - Li Chao Cheng Blog">
+<meta name="twitter:description" content="golang 版本升级 、重要的摘要、学习、笔记 ">
+<meta name="twitter:image" content="https://Cc360428.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/Cc360428.github.io\/"
+    },
+    "headline": "Golang 版本更新 摘要 - Li Chao Cheng Blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/Cc360428.github.io\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2019-12-06T17:11:22JST",
+    "dateModified": "2019-12-06T17:11:22JST",
+    "author": {
+      "@type": "Person",
+      "name": "Li Chao Cheng Blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Li Chao Cheng Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/Cc360428.github.io\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "golang 版本升级 、重要的摘要、学习、笔记 "
+  }
+</script>
+
+
+    <link href="https://Cc360428.github.io/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://Cc360428.github.io/">Li Chao Cheng Blog</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="../../golang/">Golangs</a></li>
+              
+              
+              
+              <li><a href="../../java/">Javas</a></li>
+              
+              
+              
+              <li><a href="../../love/">Loves</a></li>
+              
+              
+              
+              <li><a href="../../python/">Pythons</a></li>
+              
+              
+              
+              <li><a href="../../system/">Systems</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://Cc360428.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://Cc360428.github.io/golang/" itemprop="url"><span itemprop="title">golang</span></a></li>
+        
+        <li class="active">Golang 版本更新 摘要</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-12-06T17:11:22JST">2019-12-06</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://Cc360428.github.io/golang/">golang</a></li>
+      
+    </ul>
+
+    <h1 class="title">Golang 版本更新 摘要</h1>
+  </header>
+
+  
+
+  <div class="article-body"><h1 id="go-mod-112-学习">go mod 1.12 学习</h1>
+<h2 id="go-modulescheck-version">go modules(check version)</h2>
+<p>检查 golang 版本</p>
+<pre><code>如果没有生成 go.sum 或者报错请输入
+export GOPROXY=https://goproxy.io
+
+C:\Users\admin&gt;go version
+go version go1.12.9 windows/amd64
+</code></pre><pre><code>把 golang 升级到 1.11（现在1.12 已经发布了，建议使用1.12）
+设置 GO111MODULE
+
+GO111MODULE
+GO111MODULE 有三个值：off, on和auto（默认值）。
+
+GO111MODULE=off，go命令行将不会支持module功能，寻找依赖包的方式将会沿用旧版本那种通过vendor目录或者GOPATH模式来查找。
+GO111MODULE=on，go命令行会使用modules，而一点也不会去GOPATH目录下查找。
+GO111MODULE=auto，默认值，go命令行将会根据当前目录来决定是否启用module功能。这种情况下可以分为两种情形：
+
+当前目录在GOPATH/src之外且该目录包含go.mod文件
+当前文件在包含go.mod文件的目录下面。
+
+当modules 功能启用时，依赖包的存放位置变更为$GOPATH/pkg，允许同一个package多个版本并存，且多个项目可以共享缓存的 module。
+
+</code></pre><pre><code>命令
+说明
+
+download
+download modules to local cache(下载依赖包)
+
+
+edit
+edit go.mod from tools or scripts（编辑go.mod
+
+
+graph
+print module requirement graph (打印模块依赖图)
+
+init
+initialize new module in current directory（在当前目录初始化mod）
+
+
+tidy
+add missing and remove unused modules(拉取缺少的模块，移除不用的模块)
+
+
+vendor
+make vendored copy of dependencies(将依赖复制到vendor下)
+
+
+verify
+verify dependencies have expected content (验证依赖是否正确）
+
+
+why
+explain why packages or modules are needed(解释为什么需要依赖)
+
+
+</code></pre><h3 id="实例">实例</h3>
+<blockquote>
+<p>在GOPATH 目录之外新建一个目录</p>
+</blockquote>
+<pre><code>cd /opt/gomod/hello
+go mod init hello
+
+[root@iz2zeb00z6vr5gix5utl11z hello]# go run server.go
+go: finding github.com/labstack/echo v3.3.10+incompatible
+go: downloading github.com/labstack/echo v3.3.10+incompatible
+go: downloading golang.org/x/sys v0.0.0-20190813064441-fde4db37ae7a
+go: extracting github.com/valyala/fasttemplate v1.0.1
+go: downloading github.com/valyala/bytebufferpool v1.0.0
+go: extracting github.com/valyala/bytebufferpool v1.0.0
+go: extracting golang.org/x/sys v0.0.0-20190813064441-fde4db37ae7a
+go: finding golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3
+go: finding golang.org/x/text v0.3.0
+
+   ____    __
+  / __/___/ /  ___
+ / _// __/ _ \/ _ \
+/___/\__/_//_/\___/ v3.3.10-dev
+High performance, minimalist Go web framework
+https://echo.labstack.com
+____________________________________O/_______
+                                    O\
+⇨ http server started on [::]:8080
+
+[root@iz2zeb00z6vr5gix5utl11z hello]# cat go.mod
+module hello
+
+go 1.13
+
+require (
+        github.com/labstack/echo v3.3.10+incompatible // indirect
+        github.com/labstack/gommon v0.3.0 // indirect
+        golang.org/x/crypto v0.0.0-20191119213627-4f8c1d86b1ba // indirect
+)
+[root@iz2zeb00z6vr5gix5utl11z hello]# cat go.sum
+github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/labstack/echo v3.3.10+incompatible h1:pGRcYk231ExFAyoAjAfD85kQzRJCRI8bbnE7CX5OEgg=
+github.com/labstack/echo v3.3.10+incompatible/go.mod h1:0INS7j/VjnFxD4E2wkz67b8cVwCLbBmJyDaka6Cmk1s=
+golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
+golang.org/x/sys v0.0.0-20190222072716-a9d3bda3a223/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
+golang.org/x/sys v0.0.0-20190412213103-97732733099d/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20190813064441-fde4db37ae7a h1:aYOabOQFp6Vj6W1F80affTUvO9UxmJRx8K0gsfABByQ=
+golang.org/x/sys v0.0.0-20190813064441-fde4db37ae7a/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/text v0.3.0 h1:g61tztE5qeGQ89tm6NTjjM9VPIm088od1l6aSorWRWg=
+golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v2 v2.2.2/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
+</code></pre><pre><code>go.mod 提供了module, require、replace和exclude 四个命令
+module 语句指定包的名字（路径）
+require 语句指定的依赖项模块
+replace 语句可以替换依赖项模块
+exclude 语句可以忽略依赖项模块
+</code></pre>
+<pre><code>重新构建
+go mod init: go.mod already exists
+Go.mod已经存在
+</code></pre></div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/tags/golang/">Golang</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">New</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/about/" class="list-group-item">Blog About</a>
+      
+      <a href="https://Cc360428.github.io/golang/grpc/" class="list-group-item">gRPC 和 ui 操作</a>
+      
+      <a href="https://Cc360428.github.io/golang/golang-1.12/" class="list-group-item">Golang 版本更新 摘要</a>
+      
+      <a href="https://Cc360428.github.io/golang/gin/gin-bast/" class="list-group-item">Golang Gin</a>
+      
+      <a href="https://Cc360428.github.io/golang/beego/base-beego/" class="list-group-item">Beego Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/base/" class="list-group-item">Golang Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/system/" class="list-group-item">环境搭建</a>
+      
+      <a href="https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/" class="list-group-item">Doker 安装</a>
+      
+      <a href="https://Cc360428.github.io/system/idea/idea%E4%BD%BF%E7%94%A8/" class="list-group-item">idea 使用</a>
+      
+      <a href="https://Cc360428.github.io/system/redis/redis-%E6%8C%81%E4%B9%85%E5%8C%96/" class="list-group-item">redis 理论知识</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/categories/utils" class="list-group-item">utils</a>
+      
+      <a href="https://Cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80" class="list-group-item">java基础</a>
+      
+      <a href="https://Cc360428.github.io/categories/me" class="list-group-item">me</a>
+      
+      <a href="https://Cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80" class="list-group-item">python基础</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">SERIES</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/series/docker" class="list-group-item">docker</a>
+      
+      <a href="https://Cc360428.github.io/series/base" class="list-group-item">base</a>
+      
+      <a href="https://Cc360428.github.io/series/redis" class="list-group-item">redis</a>
+      
+      <a href="https://Cc360428.github.io/series/canon" class="list-group-item">canon</a>
+      
+      <a href="https://Cc360428.github.io/series/idea" class="list-group-item">idea</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/tags/syetem" class="list-group-item">syetem</a>
+      
+      <a href="https://Cc360428.github.io/tags/golang" class="list-group-item">golang</a>
+      
+      <a href="https://Cc360428.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://Cc360428.github.io/tags/love" class="list-group-item">love</a>
+      
+      <a href="https://Cc360428.github.io/tags/python" class="list-group-item">python</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Li Chao Cheng Blog</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

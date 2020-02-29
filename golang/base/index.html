@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.65.2" />
+
+
+
+<link rel="canonical" href="https://Cc360428.github.io/golang/base/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Golang Base - Li Chao Cheng Blog</title>
+    
+<meta name="description" content="golang 基础知识">
+
+<meta property="og:title" content="Golang Base - Li Chao Cheng Blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Cc360428.github.io/golang/base/">
+<meta property="og:image" content="https://Cc360428.github.io/images/default.png">
+<meta property="og:site_name" content="Li Chao Cheng Blog">
+<meta property="og:description" content="golang 基础知识">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Li Chao Cheng Blog">
+<meta name="twitter:url" content="https://Cc360428.github.io/golang/base/">
+<meta name="twitter:title" content="Golang Base - Li Chao Cheng Blog">
+<meta name="twitter:description" content="golang 基础知识">
+<meta name="twitter:image" content="https://Cc360428.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/Cc360428.github.io\/"
+    },
+    "headline": "Golang Base - Li Chao Cheng Blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/Cc360428.github.io\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2019-03-07T09:21:03JST",
+    "dateModified": "2019-03-07T09:21:03JST",
+    "author": {
+      "@type": "Person",
+      "name": "Li Chao Cheng Blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Li Chao Cheng Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/Cc360428.github.io\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "golang 基础知识"
+  }
+</script>
+
+
+    <link href="https://Cc360428.github.io/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://Cc360428.github.io/">Li Chao Cheng Blog</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="../../golang/">Golangs</a></li>
+              
+              
+              
+              <li><a href="../../java/">Javas</a></li>
+              
+              
+              
+              <li><a href="../../love/">Loves</a></li>
+              
+              
+              
+              <li><a href="../../python/">Pythons</a></li>
+              
+              
+              
+              <li><a href="../../system/">Systems</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://Cc360428.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://Cc360428.github.io/golang/" itemprop="url"><span itemprop="title">golang</span></a></li>
+        
+        <li class="active">Golang Base</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-03-07T09:21:03JST">2019-03-07</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://Cc360428.github.io/golang/">golang</a></li>
+      
+    </ul>
+
+    <h1 class="title">Golang Base</h1>
+  </header>
+
+  
+
+  <div class="article-body"><h2 id="golang">GoLang</h2>
+<h3 id="golang-1">GoLang</h3>
+<p><a href="https://go-zh.org/" title="golang 官网">https://go-zh.org/</a></p>
+<h4 id="基础">基础</h4>
+<h5 id="包变量和函数基本类型">包、变量和函数、基本类型</h5>
+<ul>
+<li>包  package
+每个程序都是由包组成</li>
+<li>导入  import<br>
+圆括号可以组合导入</li>
+<li>导出  在Go语言中首字母大写的名称是被导出的
+<ol>
+<li>导入了一个包后，可以导出名称来调用他</li>
+<li>Foo 和 FOO 都是被导出的名称。名称 foo 是不会被导出的</li>
+</ol>
+</li>
+<li>函数
+<ol>
+<li>函数可以返回任意数量的返回值</li>
+</ol>
+</li>
+<li>变量
+<ol>
+<li>var</li>
+<li>:=</li>
+</ol>
+</li>
+<li>基本类型
+<ol>
+<li>bool</li>
+<li>string</li>
+<li>int int8 int64 int32 int64</li>
+<li>byte</li>
+<li>rune</li>
+<li>float32 float64</li>
+<li>complex64 complex128</li>
+</ol>
+<blockquote>
+<p>定义是未明确初始化值为：数值类型为0、布尔类型为 false 字符类型为&rdquo;&rdquo;</p>
+</blockquote>
+</li>
+<li>类型转换</li>
+<li>常量
+<ol>
+<li>关键字定义：const</li>
+</ol>
+<blockquote>
+<p>注： 不能使用 :=</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="流程控制语句">流程控制语句</h5>
+<ul>
+<li>for</li>
+<li>if</li>
+<li>else</li>
+<li>switch</li>
+</ul>
+<h5 id="复杂类型">复杂类型</h5>
+<ul>
+<li>
+<p>defer</p>
+<ol>
+<li>defer 语句会延迟函数的执行上层函数返回</li>
+<li>延迟的函数调用被压入一个栈中。当函数返回时， 会按照后进先出的顺序调用被延迟的函数调用</li>
+</ol>
+<blockquote>
+<p>个人理解就是，最后执行内容</p>
+</blockquote>
+</li>
+<li>
+<p>指针</p>
+<ol>
+<li>Go具有指针，指针保存了变量的内存地址</li>
+<li>通俗的说就是间接引用和非直接引用</li>
+</ol>
+</li>
+<li>
+<p>struct（结构体）</p>
+<ol>
+<li>就是字段集合</li>
+<li>结构体字段使用点号来访问</li>
+</ol>
+</li>
+<li>
+<p>数组</p>
+<ol>
+<li>var a [10]int64</li>
+</ol>
+</li>
+<li>
+<p>slice(切片)</p>
+<ol>
+<li>
+<p>切片会指向一个序列的值</p>
+</li>
+<li>
+<p>切片可以用:符号来切开 接下来可以看一段代码</p>
+<pre><code> p := []int{2, 3, 5, 7, 11, 13}  
+ fmt.Println(&quot;p ==&quot;, p)  
+ fmt.Println(&quot;p[1:4] ==&quot;, p[1:4])  
+ // 省略下标代表从 0 开始   
+ fmt.Println(&quot;p[:3] ==&quot;, p[:3])  
+     // 省略上标代表到 len(s) 结束  
+     fmt.Println(&quot;p[4:] ==&quot;, p[4:])	
+</code></pre>
+</li>
+<li>
+<p>切片有长度和容量(可以看以下代码)</p>
+<ol>
+<li>长度可以看现在有多少</li>
+<li>容量可以看出这个切片最多能容纳多少切片</li>
+</ol>
+<p>slice 有函数make 创建然后分配长度和容量<br>
+在工作中<br>
+a := make([]int64 ,5)<br>
+长度为5 // len(a)=5<br>
+标准的用法和官网实例如下：<br>
+b := make([]int, 0, 5) // len(b)=0, cap(b)=5<br>
+b = b[:cap(b)] // len(b)=5, cap(b)=5<br>
+b = b[1:]  // len(b)=4, cap(b)=4</p>
+</li>
+<li>
+<p>slice 的零值为 nil
+一个nil的slice的长度和容量都是0</p>
+</li>
+<li>
+<p>slice 可以添加元素有相应的AIP文档自行去查找</p>
+</li>
+</ol>
+</li>
+<li>
+<p>range
+for 循环 可以对slice 和 map 进行迭代循环</p>
+</li>
+<li>
+<p>map</p>
+<ol>
+<li>
+<p>map 键值对的形式存储</p>
+</li>
+<li>
+<p>map 使用前必须用make而不是new来创建 值为nil的map 并不能赋值</p>
+</li>
+<li>
+<p>map 增删改查</p>
+<pre><code> m[key] = elem (增、改)  
+ delete(m, key) （删）  
+ elem = m[key] （查）  
+ elem, ok = m[key] （校验是否存在）  
+</code></pre>
+</li>
+</ol>
+</li>
+<li>
+<p>函数值</p>
+<ol>
+<li>
+<p>函数也可以当做变量使用</p>
+<pre><code> hypot := func(x, y float64) float64 {  
+    return math.Sqrt(x*x + y*y)  
+  }   
+</code></pre>
+<p>fmt.Println(hypot(3, 4))</p>
+</li>
+</ol>
+</li>
+<li>
+<p>函数闭包<br>
+其实闭包方通俗的讲就是，这个函数被绑定这个变量上</p>
+</li>
+</ul>
+<h4 id="方法和接口">方法和接口</h4>
+<p>Go 没有Java类似的类，但是可以在结构体上定义方法</p>
+<h5 id="方法和接口-1">方法和接口</h5>
+<ol>
+<li>
+<p>你可以对包中的 任意 类型定义任意方法，而不仅仅是针对结构体（可以看一段代码 你就明白了怎么回事）</p>
+<pre><code> package main
+
+ import (
+     &quot;fmt&quot;
+     &quot;math&quot;
+ )
+	
+ type MyFloat float64
+	
+ func (f MyFloat) Abs() float64 {
+     if f &lt; 0 {
+         return float64(-f)
+     }
+     return float64(f)
+ }
+	
+ func main() {
+     f := MyFloat(-math.Sqrt2)
+     fmt.Println(f.Abs())
+ }
+</code></pre>
+</li>
+<li>
+<p>接收者为指针的方法<br>
+方法可以与命名类型或命名类型的指针关联。
+刚刚看到的两个 Abs 方法。一个是在 *Vertex 指针类型上，而另一个在 MyFloat 值类型上。 有两个原因需要使用指针接收者。首先避免在每个方法调用中拷贝值（如果值类型是大的结构体的话会更有效率）。其次，方法可以修改接收者指向的值。<br>
+尝试修改 Abs 的定义，同时 Scale 方法使用 Vertex 代替 *Vertex 作为接收者。<br>
+当 v 是 Vertex 的时候 Scale 方法没有任何作用。<code>Scale</code> 修改 <code>v</code>。当 v 是一个值（非指针），方法看到的是 Vertex 的副本，并且无法修改原始值。<br>
+Abs 的工作方式是一样的。只不过，仅仅读取 <code>v</code>。所以读取的是原始值（通过指针）还是那个值的副本并没有关系。</p>
+<pre><code> package main
+	
+ import (
+     &quot;fmt&quot;
+     &quot;math&quot;
+ )
+	
+ type Vertex struct {
+     X, Y float64
+ }
+	
+ func (v *Vertex) Scale(f float64) {
+     v.X = v.X * f
+     v.Y = v.Y * f
+ }
+	
+ func (v *Vertex) Abs() float64 {
+     return math.Sqrt(v.X*v.X + v.Y*v.Y)
+ }
+	
+ func main() {
+     v := &amp;Vertex{3, 4}
+     v.Scale(5)
+     fmt.Println(v, v.Abs())
+ }
+</code></pre>
+</li>
+</ol>
+<h5 id="接口">接口</h5>
+<pre><code>1. 接口是一组方法定义的集合，接口类型的值可以存放实现这些方法的任何值。
+2. 隐式接口
+
+        package main
+
+        import (
+            &quot;fmt&quot;
+            &quot;math&quot;
+        )
+	
+        type Abser interface {
+            Abs() float64
+        }
+	
+        func main() {
+            var a Abser
+            f := MyFloat(-math.Sqrt2)
+            v := Vertex{3, 4}
+		
+            a = f  // a MyFloat 实现了 Abser
+            a = &amp;v // a *Vertex 实现了 Abser
+		
+            // 下面一行，v 是一个 Vertex（而不是 *Vertex）
+            // 所以没有实现 Abser。 指针类型
+            a = v	
+		
+            fmt.Println(a.Abs())
+        }
+	
+        type MyFloat float64
+		
+        func (f MyFloat) Abs() float64 {
+            if f &lt; 0 {
+                return float64(-f)
+            }
+            return float64(f)
+        }
+		
+        type Vertex struct {
+            X, Y float64
+        }
+		
+        func (v *Vertex) Abs() float64 {
+            return math.Sqrt(v.X*v.X + v.Y*v.Y)
+        }
+</code></pre>
+<ul>
+<li>错误
+<blockquote>
+<p>error<br>
+error 为 nil 时表示成功；非 nil 的 error 表示错误。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="并发">并发</h4>
+<h5 id="goroutine">goroutine</h5>
+<p>goroutine 是由 Go 运行时环境管理的轻量级线程。<br>
+示例</p>
+<pre><code>    package main
+	
+    import (
+        &quot;fmt&quot;
+        &quot;time&quot;
+    )
+	
+    func say(s string) {
+        for i := 0; i &lt; 5; i++ {
+            time.Sleep(100 * time.Millisecond)
+            fmt.Println(s)
+        }
+    }
+	
+    func main() {
+        go say(&quot;world&quot;)
+        say(&quot;hello&quot;)
+    }
+</code></pre>
+<h5 id="channel">channel</h5>
+<ol>
+<li>
+<p>channel 是有类型的管道，可以用 channel 操作符 &lt;- 对其发送或者接收值。<br>
+示例：</p>
+<pre><code> package main
+</code></pre>
+<p>import &ldquo;fmt&rdquo;</p>
+<p>func sum(a []int, c chan int) {
+sum := 0
+for _, v := range a {
+sum += v
+}
+c &lt;- sum // 将和送入 c
+}</p>
+<p>func main() {
+a := []int{7, 2, 8, -9, 4, 0}</p>
+<p>c := make(chan int)
+go sum(a[:len(a)/2], c)
+go sum(a[len(a)/2:], c)
+x, y := &lt;-c, &lt;-c // 从 c 中获取</p>
+<p>fmt.Println(x, y, x+y)
+}</p>
+</li>
+<li>
+<p>channel 可以是 带缓冲的<br>
+ch := make(chan int, 100)<br>
+向缓冲 channel 发送数据的时候，只有在缓冲区满的时候才会阻塞。当缓冲区清空的时候接受阻塞。<br>
+修改例子使得缓冲区被填满，然后看看会发生什么。</p>
+</li>
+</ol>
+<h5 id="range-和-close">range 和 close</h5>
+<p>发送者可以 close 一个 channel 来表示再没有值会被发送了。接收者可以通过赋值语句的第二参数来测试 channel 是否被关闭：当没有值可以接收并且 channel 已经被关闭，那么经过<br>
+v, ok := &lt;-ch<br>
+之后 ok 会被设置为 <code>false</code>。</p>
+<p>循环 <code>for i := range c</code> 会不断从 channel 接收值，直到它被关闭。</p>
+<p>注意： 只有发送者才能关闭 channel，而不是接收者。向一个已经关闭的 channel 发送数据会引起 panic。 还要注意：   channel 与文件不同；通常情况下无需关闭它们。只有在需要告诉接收者没有更多的数据的时候才有必要进行关闭，例如中断一个 <code>range</code>。</p>
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func fibonacci(n int, c chan int) {
+    x, y := 0, 1
+    for i := 0; i &lt; n; i++ {
+        c &lt;- x
+        x, y = y, x+y
+    }
+    close(c)
+}
+
+func main() {
+    c := make(chan int, 10)
+    go fibonacci(cap(c), c)
+    for i := range c {
+        fmt.Println(i)
+    }
+}
+</code></pre>
+<h5 id="select">select</h5>
+<ol>
+<li>
+<p>select 语句使得一个 goroutine 在多个通讯操作上等待。<br>
+select 会阻塞，直到条件分支中的某个可以继续执行，这时就会执行那个条件分支。当多个都准备好的时候，会随机选择一个。</p>
+<pre><code> package main
+    
+ import &quot;fmt&quot;
+    
+ func fibonacci(c, quit chan int) {
+     x, y := 0, 1
+     for {
+         select {
+         case c &lt;- x:
+             x, y = y, x+y
+         case &lt;-quit:
+             fmt.Println(&quot;quit&quot;)
+             return
+         }
+     }
+ }
+    
+ func main() {
+     c := make(chan int)
+     quit := make(chan int)
+     go func() {
+         for i := 0; i &lt; 10; i++ {
+             fmt.Println(&lt;-c)
+         }
+         quit &lt;- 0
+     }()
+     fibonacci(c, quit)
+ }
+</code></pre>
+</li>
+<li>
+<p>select 默认分支<br>
+当 select 中的其他条件分支都没有准备好的时候，<code>default</code> 分支会被执行。<br>
+为了非阻塞的发送或者接收，可使用 default 分支：</p>
+<pre><code> select {
+ case i := &lt;-c:
+ // 使用 i
+ default:
+ // 从 c 读取会阻塞
+ }
+</code></pre>
+</li>
+</ol>
+<h5 id="等价二叉树">等价二叉树</h5>
+<ol>
+<li>
+<p>实现 Walk 函数。</p>
+</li>
+<li>
+<p>测试 Walk 函数。</p>
+<p>函数 tree.New(k) 构造了一个随机结构的二叉树，保存了值 <code>k</code>，<code>2k</code>，<code>3k</code>，&hellip;，<code>10k</code>。 创建一个新的 channel ch 并且对其进行步进：</p>
+<p>go Walk(tree.New(1), ch)
+然后从 channel 中读取并且打印 10 个值。应当是值 1，2，3，&hellip;，10。</p>
+</li>
+<li>
+<p>用 Walk 实现 Same 函数来检测是否 t1 和 t2 存储了相同的值。</p>
+</li>
+<li>
+<p>测试 Same 函数。
+<code>Same(tree.New(1), tree.New(1))</code> 应当返回 true，而 <code>Same(tree.New(1), tree.New(2))</code> 应当返回 false。</p>
+<pre><code> package main
+
+ import &quot;code.google.com/p/go-tour/tree&quot;
+	
+ // Walk 步进 tree t 将所有的值从 tree 发送到 channel ch。
+ func Walk(t *tree.Tree, ch chan int)
+	
+ // Same 检测树 t1 和 t2 是否含有相同的值。
+ func Same(t1, t2 *tree.Tree) bool
+	
+ func main() {
+ }</code></pre>
+</li>
+</ol>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/tags/golang/">Golang</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">New</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/about/" class="list-group-item">Blog About</a>
+      
+      <a href="https://Cc360428.github.io/golang/grpc/" class="list-group-item">gRPC 和 ui 操作</a>
+      
+      <a href="https://Cc360428.github.io/golang/golang-1.12/" class="list-group-item">Golang 版本更新 摘要</a>
+      
+      <a href="https://Cc360428.github.io/golang/gin/gin-bast/" class="list-group-item">Golang Gin</a>
+      
+      <a href="https://Cc360428.github.io/golang/beego/base-beego/" class="list-group-item">Beego Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/base/" class="list-group-item">Golang Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/system/" class="list-group-item">环境搭建</a>
+      
+      <a href="https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/" class="list-group-item">Doker 安装</a>
+      
+      <a href="https://Cc360428.github.io/system/idea/idea%E4%BD%BF%E7%94%A8/" class="list-group-item">idea 使用</a>
+      
+      <a href="https://Cc360428.github.io/system/redis/redis-%E6%8C%81%E4%B9%85%E5%8C%96/" class="list-group-item">redis 理论知识</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/categories/utils" class="list-group-item">utils</a>
+      
+      <a href="https://Cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80" class="list-group-item">java基础</a>
+      
+      <a href="https://Cc360428.github.io/categories/me" class="list-group-item">me</a>
+      
+      <a href="https://Cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80" class="list-group-item">python基础</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">SERIES</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/series/docker" class="list-group-item">docker</a>
+      
+      <a href="https://Cc360428.github.io/series/base" class="list-group-item">base</a>
+      
+      <a href="https://Cc360428.github.io/series/redis" class="list-group-item">redis</a>
+      
+      <a href="https://Cc360428.github.io/series/canon" class="list-group-item">canon</a>
+      
+      <a href="https://Cc360428.github.io/series/idea" class="list-group-item">idea</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/tags/syetem" class="list-group-item">syetem</a>
+      
+      <a href="https://Cc360428.github.io/tags/golang" class="list-group-item">golang</a>
+      
+      <a href="https://Cc360428.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://Cc360428.github.io/tags/love" class="list-group-item">love</a>
+      
+      <a href="https://Cc360428.github.io/tags/python" class="list-group-item">python</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Li Chao Cheng Blog</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

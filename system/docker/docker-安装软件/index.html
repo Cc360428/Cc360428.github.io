@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.65.2" />
+
+
+
+<link rel="canonical" href="https://Cc360428.github.io/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>docker 安装实例 - Li Chao Cheng Blog</title>
+    
+<meta name="description" content="docker 安装 第三方软件 redis mysql...">
+
+<meta property="og:title" content="docker 安装实例 - Li Chao Cheng Blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Cc360428.github.io/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">
+<meta property="og:image" content="https://Cc360428.github.io/images/default.png">
+<meta property="og:site_name" content="Li Chao Cheng Blog">
+<meta property="og:description" content="docker 安装 第三方软件 redis mysql...">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Li Chao Cheng Blog">
+<meta name="twitter:url" content="https://Cc360428.github.io/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/">
+<meta name="twitter:title" content="docker 安装实例 - Li Chao Cheng Blog">
+<meta name="twitter:description" content="docker 安装 第三方软件 redis mysql...">
+<meta name="twitter:image" content="https://Cc360428.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/Cc360428.github.io\/"
+    },
+    "headline": "docker 安装实例 - Li Chao Cheng Blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/Cc360428.github.io\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2019-01-05T12:48:54JST",
+    "dateModified": "2019-01-05T12:48:54JST",
+    "author": {
+      "@type": "Person",
+      "name": "Li Chao Cheng Blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Li Chao Cheng Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/Cc360428.github.io\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "docker 安装 第三方软件 redis mysql..."
+  }
+</script>
+
+
+    <link href="https://Cc360428.github.io/css/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://Cc360428.github.io/">Li Chao Cheng Blog</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="../../../golang/">Golangs</a></li>
+              
+              
+              
+              <li><a href="../../../java/">Javas</a></li>
+              
+              
+              
+              <li><a href="../../../love/">Loves</a></li>
+              
+              
+              
+              <li><a href="../../../python/">Pythons</a></li>
+              
+              
+              
+              <li><a href="../../../system/">Systems</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://Cc360428.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://Cc360428.github.io/system/" itemprop="url"><span itemprop="title">System</span></a></li>
+        
+        <li class="active">docker 安装实例</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2019-01-05T12:48:54JST">2019-01-05</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://Cc360428.github.io/system/">System</a></li>
+      
+    </ul>
+
+    <h1 class="title">docker 安装实例</h1>
+  </header>
+
+  
+
+  <div class="article-body"><h2 id="安装redis">安装redis</h2>
+<h3 id="拉去镜像">拉去镜像</h3>
+<blockquote>
+<p>docker pull redis:latest</p>
+</blockquote>
+<h3 id="启动">启动</h3>
+<blockquote>
+<p>docker run -d &ndash;name redis -p 6379:6379 redis &ndash;requirepass &ldquo;redispassword&rdquo;</p>
+</blockquote>
+<pre><code>    docker容器设置开机自启动：
+    --restart具体参数值详细信息
+    no - 容器退出时，不重启容器
+    on-failure - 只有在非0状态退出时才从新启动容器
+    always - 无论退出状态是如何，都重启容器
+    还可以在使用 on-failure 策略时，指定 Docker 将尝试重新启动容器的最大次数；默认情况下，Docker 将尝试永远重新启动容器；
+　　如果创建时未指定 --restart=always ,可通过 update 命令更改；
+    docker update --restart=always 容器ID
+</code></pre>
+<h3 id="配置文件的修改">配置文件的修改</h3>
+<blockquote>
+<p>方法为成功</p>
+</blockquote>
+<pre><code>/root/redis/redis/conf/redis.conf 中daemonize=NO。非后台模式，如果为YES 会的导致 redis 无法启动，因为后台会导致docker无任务可做而退出。
+三 执行docker
+
+docker run -p 6378:6379 --name redis -v /root/redis/redis/conf/redis.conf:/etc/redis/redis.conf -v /root/redis/redis/data:/data -d redis redis-server /etc/redis/redis.conf --appendonly yes
+1. -p 6378:6379  容器redis 端口6379 映射 宿主机未6378
+
+2. --name redis01 容器 名字 为 redis01
+
+3. -v /root/redis/redis/conf/redis.conf:/etc/redis/redis.conf   容器 /etc/redis/redis.conf 配置文件 映射宿主机 /root/redis/redis/conf/redis.conf。  会将宿主机的配置文件复制到docker中。
+
+ 重要： 配置文件映射，docker镜像redis 默认无配置文件。
+
+4 -v /root/redis/redis/data:/data  容器 /data 映射到宿主机 /root/redis/redis/data
+
+5.-d redis  后台模式启动 redis 
+
+6. redis-server /etc/redis/redis.conf    redis 将以 /etc/redis/redis.conf 为配置文件启动
+7. --appendonly yes  开启redis 持久化
+
+重要:  docker 镜像reids 默认 无配置文件启动
+</code></pre>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/categories/utils/">utils</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">SERIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/series/docker/">docker</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.io/tags/syetem/">Syetem</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">New</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/about/" class="list-group-item">Blog About</a>
+      
+      <a href="https://Cc360428.github.io/golang/grpc/" class="list-group-item">gRPC 和 ui 操作</a>
+      
+      <a href="https://Cc360428.github.io/golang/golang-1.12/" class="list-group-item">Golang 版本更新 摘要</a>
+      
+      <a href="https://Cc360428.github.io/golang/gin/gin-bast/" class="list-group-item">Golang Gin</a>
+      
+      <a href="https://Cc360428.github.io/golang/beego/base-beego/" class="list-group-item">Beego Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/base/" class="list-group-item">Golang Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/system/" class="list-group-item">环境搭建</a>
+      
+      <a href="https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/" class="list-group-item">Doker 安装</a>
+      
+      <a href="https://Cc360428.github.io/system/idea/idea%E4%BD%BF%E7%94%A8/" class="list-group-item">idea 使用</a>
+      
+      <a href="https://Cc360428.github.io/system/redis/redis-%E6%8C%81%E4%B9%85%E5%8C%96/" class="list-group-item">redis 理论知识</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/categories/utils" class="list-group-item">utils</a>
+      
+      <a href="https://Cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80" class="list-group-item">java基础</a>
+      
+      <a href="https://Cc360428.github.io/categories/me" class="list-group-item">me</a>
+      
+      <a href="https://Cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80" class="list-group-item">python基础</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">SERIES</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/series/docker" class="list-group-item">docker</a>
+      
+      <a href="https://Cc360428.github.io/series/base" class="list-group-item">base</a>
+      
+      <a href="https://Cc360428.github.io/series/redis" class="list-group-item">redis</a>
+      
+      <a href="https://Cc360428.github.io/series/canon" class="list-group-item">canon</a>
+      
+      <a href="https://Cc360428.github.io/series/idea" class="list-group-item">idea</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/tags/syetem" class="list-group-item">syetem</a>
+      
+      <a href="https://Cc360428.github.io/tags/golang" class="list-group-item">golang</a>
+      
+      <a href="https://Cc360428.github.io/tags/java" class="list-group-item">java</a>
+      
+      <a href="https://Cc360428.github.io/tags/love" class="list-group-item">love</a>
+      
+      <a href="https://Cc360428.github.io/tags/python" class="list-group-item">python</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Li Chao Cheng Blog</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+
