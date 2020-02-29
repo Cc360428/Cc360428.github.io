@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Li Chao Cheng Blog</title>
-    <link>https://Cc360428.github.io/categories/</link>
+    <link>http://Cc360428.github.io/categories/</link>
     <description>Recent content in Categories on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Jan 2019 12:48:54 +0800</lastBuildDate>
     
-	<atom:link href="https://Cc360428.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://Cc360428.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>utils</title>
-      <link>https://Cc360428.github.io/categories/utils/</link>
+      <link>http://Cc360428.github.io/categories/utils/</link>
       <pubDate>Sat, 26 Jan 2019 12:48:54 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/categories/utils/</guid>
+      <guid>http://Cc360428.github.io/categories/utils/</guid>
       <description></description>
     </item>
     
     <item>
       <title>me</title>
-      <link>https://Cc360428.github.io/categories/me/</link>
+      <link>http://Cc360428.github.io/categories/me/</link>
       <pubDate>Wed, 06 Jun 2018 12:48:54 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/categories/me/</guid>
+      <guid>http://Cc360428.github.io/categories/me/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java基础</title>
-      <link>https://Cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80/</link>
+      <link>http://Cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Fri, 26 Jan 2018 12:48:54 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://Cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python基础</title>
-      <link>https://Cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80/</link>
+      <link>http://Cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Fri, 26 Jan 2018 12:48:54 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://Cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     

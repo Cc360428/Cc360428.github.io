@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>java on Li Chao Cheng Blog</title>
-    <link>https://Cc360428.github.io/tags/java/</link>
+    <link>http://Cc360428.github.io/tags/java/</link>
     <description>Recent content in java on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Jan 2018 12:48:54 +0800</lastBuildDate>
     
-	<atom:link href="https://Cc360428.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://Cc360428.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>java base</title>
-      <link>https://Cc360428.github.io/java/hugo/</link>
+      <link>http://Cc360428.github.io/java/hugo/</link>
       <pubDate>Fri, 26 Jan 2018 12:48:54 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/java/hugo/</guid>
+      <guid>http://Cc360428.github.io/java/hugo/</guid>
       <description>基础 </description>
     </item>
     
