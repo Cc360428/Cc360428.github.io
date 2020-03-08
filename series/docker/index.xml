@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on Li Chao Cheng Blog</title>
-    <link>http://Cc360428.github.io/series/docker/</link>
+    <link>https://Cc360428.github.io/series/docker/</link>
     <description>Recent content in docker on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Jan 2019 12:48:54 +0800</lastBuildDate>
     
-	<atom:link href="http://Cc360428.github.io/series/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Cc360428.github.io/series/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Doker 安装</title>
-      <link>http://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/</link>
+      <link>https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/</link>
       <pubDate>Sat, 26 Jan 2019 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/</guid>
       <description>Doker 安装 卸载就版本 sudo apt-get remove docker docker-engine docker.io containerd runc</description>
     </item>
     
     <item>
       <title>docker 安装实例</title>
-      <link>http://Cc360428.github.io/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</link>
+      <link>https://Cc360428.github.io/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</link>
       <pubDate>Sat, 05 Jan 2019 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>https://Cc360428.github.io/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</guid>
       <description>安装redis 拉去镜像  docker pull redis:latest
  启动  docker run -d &amp;ndash;name redis -p 6379:6379 redis &amp;ndash;requirepass &amp;ldquo;redispassword&amp;rdquo;
-  docker容器设置开机自启动： --restart具体参数值详细信息 no - 容器退出时，不重启容器 on-failure - 只有在非0状态退出时才从新启动容器 always - 无论退出状态是如何，都重启容器 还可以在使用 on-failure 策略时，指定 Docker 将尝试重新启动容器的最大次数；默认情况下，Docker 将尝试永远重新启动容器； 如果创建时未指定 --restart=always ,可通过 update 命令更改； docker update --restart=always 容器ID  配置文件的修改  方法为成功
- /root/redis/redis/conf/redis.conf 中daemonize=NO。非后台模式，如果为YES 会的导致 redis 无法启动，因为后台会导致docker无任务可做而退出。 三 执行docker docker run -p 6378:6379 --name redis -v /root/redis/redis/conf/redis.conf:/etc/redis/redis.conf -v /root/redis/redis/data:/data -d redis redis-server /etc/redis/redis.</description>
+  docker容器设置开机自启动：--restart具体参数值详细信息no - 容器退出时，不重启容器on-failure - 只有在非0状态退出时才从新启动容器always - 无论退出状态是如何，都重启容器还可以在使用 on-failure 策略时，指定 Docker 将尝试重新启动容器的最大次数；默认情况下，Docker 将尝试永远重新启动容器；如果创建时未指定 --restart=always ,可通过 update 命令更改；docker update --restart=always 容器ID 配置文件的修改  方法为成功
+ /root/redis/redis/conf/redis.conf 中daemonize=NO。非后台模式，如果为YES 会的导致 redis 无法启动，因为后台会导致docker无任务可做而退出。三 执行dockerdocker run -p 6378:6379 --name redis -v /root/redis/redis/conf/redis.conf:/etc/redis/redis.conf -v /root/redis/redis/data:/data -d redis redis-server /etc/redis/redis.</description>
     </item>
     
     <item>
       <title>docker 使用方法</title>
-      <link>http://Cc360428.github.io/system/docker/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <link>https://Cc360428.github.io/system/docker/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
       <pubDate>Thu, 03 Jan 2019 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/system/docker/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
-      <description>创建beego demo项目 bee new docker_demo &amp;gt; cd docker_demo bee run  在http://lichaocheng.top:8380 可以看到beego 欢迎页面
- 创建 Dockerfile # 使用Go的官方映像作为基础映像。这个映像是Go 1.6预安装的。该映像的$GOPATH值已被设置为/go。所有安装在/go/src的程序包都能通过go命令访问。 FROM golang:1.6 # 安装beego程序包和bee工具。beego程序包将在应用程序内部使用，bee工具将用于在开发过程中实时重载代码。 RUN go get github.com/astaxie/beego &amp;amp;&amp;amp; go get github.com/beego/bee # 通过开发计算机上容器的8080端口暴露该应用程序。最后一行， EXPOSE 8380 # 使用bee命令开始对我们的应用程序进行实时重载。 CMD [&amp;quot;bee&amp;quot;, &amp;quot;run&amp;quot;]  docker run -it --name tcpserver -p 8502:8502 -v /opt/gomod/tcpserver:/go/src/c360428/tcpserver -w /go/src/ningshb/tcpserver tcpserver docker run -it --name docker_cc -p 8502:8502 -v /opt/gopath/src/Cc360428/docker_cc:/go/src/Cc360428/docker_cc -w /go/src/Cc360428/docker_cc docker_cc docker build -t tcpserver tcpserver -t 是指tag的意思 构建了一个叫做test-image的镜像</description>
+      <guid>https://Cc360428.github.io/system/docker/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>创建beego demo项目 bee new docker_demo&amp;gt; cd docker_demobee run  在http://lichaocheng.top:8380 可以看到beego 欢迎页面
+ 创建 Dockerfile # 使用Go的官方映像作为基础映像。这个映像是Go 1.6预安装的。该映像的$GOPATH值已被设置为/go。所有安装在/go/src的程序包都能通过go命令访问。FROM golang:1.6# 安装beego程序包和bee工具。beego程序包将在应用程序内部使用，bee工具将用于在开发过程中实时重载代码。RUN go get github.com/astaxie/beego &amp;amp;&amp;amp; go get github.com/beego/bee# 通过开发计算机上容器的8080端口暴露该应用程序。最后一行，EXPOSE 8380# 使用bee命令开始对我们的应用程序进行实时重载。CMD [&amp;quot;bee&amp;quot;, &amp;quot;run&amp;quot;] docker run -it --name tcpserver -p 8502:8502 -v /opt/gomod/tcpserver:/go/src/c360428/tcpserver -w /go/src/ningshb/tcpserver tcpserverdocker run -it --name docker_cc -p 8502:8502 -v /opt/gopath/src/Cc360428/docker_cc:/go/src/Cc360428/docker_cc -w /go/src/Cc360428/docker_cc docker_ccdocker build -t tcpserver tcpserver -t 是指tag的意思 构建了一个叫做test-image的镜像</description>
     </item>
     
     <item>
       <title>Docker 理论知识</title>
-      <link>http://Cc360428.github.io/system/docker/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/</link>
+      <link>https://Cc360428.github.io/system/docker/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/</link>
       <pubDate>Tue, 01 Jan 2019 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/system/docker/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/</guid>
+      <guid>https://Cc360428.github.io/system/docker/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/</guid>
       <description>为什么要使用docker 简易部署 兼容平台 简化配置 </description>
     </item>
     
     <item>
       <title>阿里云docker 镜像仓库</title>
-      <link>http://Cc360428.github.io/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
+      <link>https://Cc360428.github.io/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</link>
       <pubDate>Tue, 01 Jan 2019 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
-      <description>阿里云docker 镜像仓库 1. 登录阿里云Docker Registry $ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com 用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。 您可以在访问凭证页面修改凭证密码。 2. 从Registry中拉取镜像 $ sudo docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] 3. 将镜像推送到Registry $ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com $ sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] $ sudo docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] 请根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。 4. 选择合适的镜像仓库地址 从ECS推送镜像时，可以选择使用镜像仓库内网地址。推送速度将得到提升并且将不会损耗您的公网流量。 如果您使用的机器位于VPC网络，请使用 registry-vpc.cn-hangzhou.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。 5. 示例 使用&amp;quot;docker tag&amp;quot;命令重命名镜像，并将它通过专有网络地址推送至Registry。 $ sudo docker images REPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZE registry.aliyuncs.com/acs/agent 0.7-dfb6816 37bb9c63c8b2 7 days ago 37.89 MB $ sudo docker tag 37bb9c63c8b2 registry-vpc.</description>
+      <guid>https://Cc360428.github.io/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</guid>
+      <description>阿里云docker 镜像仓库 1. 登录阿里云Docker Registry$ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。您可以在访问凭证页面修改凭证密码。2. 从Registry中拉取镜像$ sudo docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]3. 将镜像推送到Registry$ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com$ sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]$ sudo docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]请根据实际镜像信息替换示例中的[ImageId]和[镜像版本号]参数。4. 选择合适的镜像仓库地址从ECS推送镜像时，可以选择使用镜像仓库内网地址。推送速度将得到提升并且将不会损耗您的公网流量。如果您使用的机器位于VPC网络，请使用 registry-vpc.cn-hangzhou.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。5. 示例使用&amp;quot;docker tag&amp;quot;命令重命名镜像，并将它通过专有网络地址推送至Registry。$ sudo docker imagesREPOSITORY TAG IMAGE ID CREATED VIRTUAL SIZEregistry.aliyuncs.com/acs/agent 0.7-dfb6816 37bb9c63c8b2 7 days ago 37.89 MB$ sudo docker tag 37bb9c63c8b2 registry-vpc.</description>
     </item>
     
   </channel>

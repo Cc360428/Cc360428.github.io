@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on Li Chao Cheng Blog</title>
-    <link>http://Cc360428.github.io/series/</link>
+    <link>https://Cc360428.github.io/series/</link>
     <description>Recent content in Series on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Jan 2019 12:48:54 +0800</lastBuildDate>
     
-	<atom:link href="http://Cc360428.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Cc360428.github.io/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>docker</title>
-      <link>http://Cc360428.github.io/series/docker/</link>
+      <link>https://Cc360428.github.io/series/docker/</link>
       <pubDate>Sat, 26 Jan 2019 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/series/docker/</guid>
+      <guid>https://Cc360428.github.io/series/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>idea</title>
-      <link>http://Cc360428.github.io/series/idea/</link>
+      <link>https://Cc360428.github.io/series/idea/</link>
       <pubDate>Sat, 26 Jan 2019 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/series/idea/</guid>
+      <guid>https://Cc360428.github.io/series/idea/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Redis</title>
-      <link>http://Cc360428.github.io/series/redis/</link>
+      <link>https://Cc360428.github.io/series/redis/</link>
       <pubDate>Sat, 26 Jan 2019 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/series/redis/</guid>
+      <guid>https://Cc360428.github.io/series/redis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Canon</title>
-      <link>http://Cc360428.github.io/series/canon/</link>
+      <link>https://Cc360428.github.io/series/canon/</link>
       <pubDate>Wed, 06 Jun 2018 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/series/canon/</guid>
+      <guid>https://Cc360428.github.io/series/canon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>base</title>
-      <link>http://Cc360428.github.io/series/base/</link>
+      <link>https://Cc360428.github.io/series/base/</link>
       <pubDate>Fri, 26 Jan 2018 12:48:54 +0800</pubDate>
       
-      <guid>http://Cc360428.github.io/series/base/</guid>
+      <guid>https://Cc360428.github.io/series/base/</guid>
       <description></description>
     </item>
     

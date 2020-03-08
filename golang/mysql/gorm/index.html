@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.65.2" />
+
+
+
+<link rel="canonical" href="https://Cc360428.github.io/golang/mysql/gorm/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Golang Mysql Gorm - Li Chao Cheng Blog</title>
+    
+<meta name="description" content="Golang orm 对mysql的操作（初始化连接、增加、删除、查找、删除） ">
+
+<meta property="og:title" content="Golang Mysql Gorm - Li Chao Cheng Blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Cc360428.github.io/golang/mysql/gorm/">
+<meta property="og:image" content="https://Cc360428.github.ioimages/default.png">
+<meta property="og:site_name" content="Li Chao Cheng Blog">
+<meta property="og:description" content="Golang orm 对mysql的操作（初始化连接、增加、删除、查找、删除） ">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Li Chao Cheng Blog">
+<meta name="twitter:url" content="https://Cc360428.github.io/golang/mysql/gorm/">
+<meta name="twitter:title" content="Golang Mysql Gorm - Li Chao Cheng Blog">
+<meta name="twitter:description" content="Golang orm 对mysql的操作（初始化连接、增加、删除、查找、删除） ">
+<meta name="twitter:image" content="https://Cc360428.github.ioimages/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/Cc360428.github.io"
+    },
+    "headline": "Golang Mysql Gorm - Li Chao Cheng Blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/Cc360428.github.ioimages\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2020-03-05T16:02:24JST",
+    "dateModified": "2020-03-05T16:02:24JST",
+    "author": {
+      "@type": "Person",
+      "name": "Li Chao Cheng Blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Li Chao Cheng Blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/Cc360428.github.ioimages/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "Golang orm 对mysql的操作（初始化连接、增加、删除、查找、删除） "
+  }
+</script>
+
+
+    <link href="https://Cc360428.github.iocss/styles.css" rel="stylesheet">
+    
+
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://Cc360428.github.io">Li Chao Cheng Blog</a>
+          </div>
+
+          
+          <div id="navbar" class="collapse navbar-collapse">
+            
+            <ul class="nav navbar-nav navbar-right">
+              
+              
+              <li><a href="../../../golang/">Golangs</a></li>
+              
+              
+              
+              <li><a href="../../../java/">Javas</a></li>
+              
+              
+              
+              <li><a href="../../../love/">Loves</a></li>
+              
+              
+              
+              <li><a href="../../../python/">Pythons</a></li>
+              
+              
+              
+              <li><a href="../../../system/">Systems</a></li>
+              
+              
+            </ul>
+            
+          </div>
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="https://Cc360428.github.io"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://Cc360428.github.iogolang/" itemprop="url"><span itemprop="title">golang</span></a></li>
+        
+        <li class="active">Golang Mysql Gorm</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2020-03-05T16:02:24JST">2020-03-05</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="https://Cc360428.github.iogolang/">golang</a></li>
+      
+    </ul>
+
+    <h1 class="title">Golang Mysql Gorm</h1>
+  </header>
+
+  
+
+  <div class="article-body"><h2 id="gorm-概述">Gorm 概述</h2>
+<p><a href="http://gorm.io/">官网</a><br>
+gorm 对数据库的操作</p>
+<h3 id="环境搭建">环境搭建</h3>
+<h4 id="下载依赖">下载依赖</h4>
+<p><code>go get -u github.com/jinzhu/gorm</code></p>
+<h3 id="实例连接">实例（连接）</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span> <span style="color:#75715e">// logs
+</span><span style="color:#75715e"></span>	<span style="color:#e6db74">&#34;github.com/jinzhu/gorm&#34;</span>                         <span style="color:#75715e">// gorm
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;github.com/jinzhu/gorm/dialects/mysql&#34;</span>        <span style="color:#75715e">// 导入初始化包
+</span><span style="color:#75715e"></span>)
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Product</span> <span style="color:#66d9ef">struct</span> {
+  <span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Model</span>
+  <span style="color:#a6e22e">Code</span> <span style="color:#66d9ef">string</span>
+  <span style="color:#a6e22e">Price</span> <span style="color:#66d9ef">uint</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">db</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">Databases</span>.<span style="color:#a6e22e">Type</span>, <span style="color:#75715e">// 连接属性 （mysql）
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%s:%s@tcp(%s)/%s?charset=utf8&amp;parseTime=True&amp;loc=Local&#34;</span>,
+			<span style="color:#a6e22e">Databases</span>.<span style="color:#a6e22e">User</span>,     <span style="color:#75715e">// 用户名
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">Databases</span>.<span style="color:#a6e22e">Password</span>, <span style="color:#75715e">// 密码
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">Databases</span>.<span style="color:#a6e22e">Host</span>,     <span style="color:#75715e">// 端口号
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">Databases</span>.<span style="color:#a6e22e">Name</span>)) <span style="color:#75715e">// 数据库名字
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#e6db74">&#34;mysql 连接错误！&#34;</span>, <span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>())
+	}
+	 <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Close</span>()
+
+  <span style="color:#75715e">// Migrate the schema
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">AutoMigrate</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Product</span>{})
+
+  <span style="color:#75715e">// 创建
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Create</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Product</span>{<span style="color:#a6e22e">Code</span>: <span style="color:#e6db74">&#34;L1212&#34;</span>, <span style="color:#a6e22e">Price</span>: <span style="color:#ae81ff">1000</span>})
+
+  <span style="color:#75715e">// 读取
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">product</span> <span style="color:#a6e22e">Product</span>
+  <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">First</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">product</span>, <span style="color:#ae81ff">1</span>) <span style="color:#75715e">// 查询id为1的product
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">First</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">product</span>, <span style="color:#e6db74">&#34;code = ?&#34;</span>, <span style="color:#e6db74">&#34;L1212&#34;</span>) <span style="color:#75715e">// 查询code为l1212的product
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// 更新 - 更新product的price为2000
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Model</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">product</span>).<span style="color:#a6e22e">Update</span>(<span style="color:#e6db74">&#34;Price&#34;</span>, <span style="color:#ae81ff">2000</span>)
+
+  <span style="color:#75715e">// 删除 - 删除product
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">Delete</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">product</span>)
+}
+</code></pre></div><h3 id="模型定义-struct">模型定义 struct</h3>
+<h4 id="struct-标记">Struct 标记</h4>
+<table>
+<thead>
+<tr>
+<th align="right">标记</th>
+<th align="left">实义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">column</td>
+<td align="left">指定列名</td>
+</tr>
+<tr>
+<td align="right">type</td>
+<td align="left">~~数据类型</td>
+</tr>
+<tr>
+<td align="right">size</td>
+<td align="left">~~大小，默认255</td>
+</tr>
+<tr>
+<td align="right">primary_key</td>
+<td align="left">~~主键</td>
+</tr>
+<tr>
+<td align="right">unique</td>
+<td align="left">~~唯一</td>
+</tr>
+<tr>
+<td align="right">default</td>
+<td align="left">~~默认值</td>
+</tr>
+<tr>
+<td align="right">precision</td>
+<td align="left">~~精度</td>
+</tr>
+<tr>
+<td align="right">not null</td>
+<td align="left">~~非空</td>
+</tr>
+<tr>
+<td align="right">auto_increment</td>
+<td align="left">~~自增类型</td>
+</tr>
+<tr>
+<td align="right">index</td>
+<td align="left">创建索引</td>
+</tr>
+<tr>
+<td align="right">unique_index</td>
+<td align="left">~~唯一索引</td>
+</tr>
+<tr>
+<td align="right">embedde</td>
+<td align="left">将结构体设置为嵌入</td>
+</tr>
+<tr>
+<td align="right">embedde_prefix</td>
+<td align="left">设置嵌入结构的前缀</td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="left">忽略此字段</td>
+</tr>
+</tbody>
+</table>
+<h4 id="user-struct-test">User struct Test</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">struct</span>{
+    <span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Model</span> <span style="color:#75715e">//  自增id 添加时间 修改时间 软删除时间
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`gorm:&#34;type:varchar(100);unique_index&#34;`</span> <span style="color:#75715e">// 类型 varchar 唯一索引
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Address</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`gorm:&#34;size(22)&#34;`</span><span style="color:#75715e">// 设置大小
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Image</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`gorm:&#34;unique;not null&#34;`</span> <span style="color:#75715e">// 唯一 且不为空
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">int</span> <span style="color:#e6db74">`gorm:&#34;index:age&#34;`</span> <span style="color:#75715e">// 给age字段创建age索引
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Demo</span> <span style="color:#66d9ef">string</span> <span style="color:#e6db74">`gorm:&#34;-&#34;`</span> <span style="color:#75715e">// 忽略该字段
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Test</span> <span style="color:#66d9ef">int</span> <span style="color:#e6db74">`gorm:&#34;auto_increment&#34;`</span>  <span style="color:#75715e">// 设置自增
+</span><span style="color:#75715e"></span>    
+}
+</code></pre></div></div>
+
+  <footer class="article-footer">
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">CATEGORIES</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.iocategories/mysql/">mysql</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="https://Cc360428.github.iotags/golang/">Golang</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">New</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.io/about/" class="list-group-item">Blog About</a>
+      
+      <a href="https://Cc360428.github.io/golang/mysql/gorm/" class="list-group-item">Golang Mysql Gorm</a>
+      
+      <a href="https://Cc360428.github.io/golang/grpc/" class="list-group-item">gRPC 和 ui 操作</a>
+      
+      <a href="https://Cc360428.github.io/golang/golang-1.12/" class="list-group-item">Golang 版本更新 摘要</a>
+      
+      <a href="https://Cc360428.github.io/golang/gin/gin-bast/" class="list-group-item">Golang Gin</a>
+      
+      <a href="https://Cc360428.github.io/golang/beego/base-beego/" class="list-group-item">Beego Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/base/" class="list-group-item">Golang Base</a>
+      
+      <a href="https://Cc360428.github.io/golang/system/" class="list-group-item">环境搭建</a>
+      
+      <a href="https://Cc360428.github.io/system/docker/docker%E5%AE%89%E8%A3%85/" class="list-group-item">Doker 安装</a>
+      
+      <a href="https://Cc360428.github.io/system/idea/idea%E4%BD%BF%E7%94%A8/" class="list-group-item">idea 使用</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.iocategories/utils" class="list-group-item">utils</a>
+      
+      <a href="https://Cc360428.github.iocategories/java%E5%9F%BA%E7%A1%80" class="list-group-item">java基础</a>
+      
+      <a href="https://Cc360428.github.iocategories/me" class="list-group-item">me</a>
+      
+      <a href="https://Cc360428.github.iocategories/mysql" class="list-group-item">mysql</a>
+      
+      <a href="https://Cc360428.github.iocategories/python%E5%9F%BA%E7%A1%80" class="list-group-item">python基础</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">SERIES</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.ioseries/docker" class="list-group-item">docker</a>
+      
+      <a href="https://Cc360428.github.ioseries/base" class="list-group-item">base</a>
+      
+      <a href="https://Cc360428.github.ioseries/redis" class="list-group-item">redis</a>
+      
+      <a href="https://Cc360428.github.ioseries/canon" class="list-group-item">canon</a>
+      
+      <a href="https://Cc360428.github.ioseries/idea" class="list-group-item">idea</a>
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="https://Cc360428.github.iotags/syetem" class="list-group-item">syetem</a>
+      
+      <a href="https://Cc360428.github.iotags/golang" class="list-group-item">golang</a>
+      
+      <a href="https://Cc360428.github.iotags/java" class="list-group-item">java</a>
+      
+      <a href="https://Cc360428.github.iotags/love" class="list-group-item">love</a>
+      
+      <a href="https://Cc360428.github.iotags/python" class="list-group-item">python</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Li Chao Cheng Blog</span></p>
+        <aside>
+          <p>个人主页：<a href="https://lichaocheng.top/">me</a></p>
+          <p>技术支持：<a href="https://gohugo.io/">hugo</a></p>
+          
+        </aside>         
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

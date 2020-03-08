@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on Li Chao Cheng Blog</title>
+    <link>https://Cc360428.github.io/categories/mysql/</link>
+    <description>Recent content in mysql on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Mar 2020 16:02:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://Cc360428.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Golang Mysql Gorm</title>
+      <link>https://Cc360428.github.io/golang/mysql/gorm/</link>
+      <pubDate>Thu, 05 Mar 2020 16:02:24 +0800</pubDate>
+      
+      <guid>https://Cc360428.github.io/golang/mysql/gorm/</guid>
+      <description>Gorm 概述 官网
+gorm 对数据库的操作
+环境搭建 下载依赖 go get -u github.com/jinzhu/gorm
+实例（连接） package mainimport (&amp;#34;fmt&amp;#34;&amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; // logs	&amp;#34;github.com/jinzhu/gorm&amp;#34; // gorm	_ &amp;#34;github.com/jinzhu/gorm/dialects/mysql&amp;#34; // 导入初始化包)type Product struct {gorm.ModelCode stringPrice uint}func main() {db, err := gorm.Open(Databases.Type, // 连接属性 （mysql）	fmt.Sprintf(&amp;#34;%s:%s@tcp(%s)/%s?charset=utf8&amp;amp;parseTime=True&amp;amp;loc=Local&amp;#34;,Databases.User, // 用户名	Databases.Password, // 密码	Databases.Host, // 端口号	Databases.Name)) // 数据库名字	if err !</description>
+    </item>
+    
+  </channel>
+</rss>
