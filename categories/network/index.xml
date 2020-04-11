@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on Li Chao Cheng Blog</title>
+    <link>https://cc360428.github.io/categories/network/</link>
+    <description>Recent content in Network on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Lcc</copyright>
+    <lastBuildDate>Thu, 19 Mar 2020 12:48:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://cc360428.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>网络工程师基础</title>
+      <link>https://cc360428.github.io/post/network/hugo/</link>
+      <pubDate>Thu, 19 Mar 2020 12:48:54 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/network/hugo/</guid>
+      <description>从0认识网络 定义：计算机网络就是许多独立工作的计算机系统通过通信线路相互连接构成的计算机系统集合，或计算机系统团体</description>
+    </item>
+    
+  </channel>
+</rss>

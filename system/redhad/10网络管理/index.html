@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>linux(CentOS7) 网络管理 - Li Chao Cheng Blog</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Cc" /><meta name="description" content="10（网络管理）" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.65.2" />
+
+
+<link rel="canonical" href="https://blog.lichaocheng.top/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="linux(CentOS7) 网络管理" />
+<meta property="og:description" content="10（网络管理）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.lichaocheng.top/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/" />
+<meta property="article:published_time" content="2020-03-29T00:49:12+08:00" />
+<meta property="article:modified_time" content="2020-03-29T00:49:12+08:00" />
+<meta itemprop="name" content="linux(CentOS7) 网络管理">
+<meta itemprop="description" content="10（网络管理）">
+<meta itemprop="datePublished" content="2020-03-29T00:49:12&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-29T00:49:12&#43;08:00" />
+<meta itemprop="wordCount" content="6048">
+
+
+
+<meta itemprop="keywords" content="Syetem," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linux(CentOS7) 网络管理"/>
+<meta name="twitter:description" content="10（网络管理）"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Li Chao Cheng Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/post/">全部文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/tags/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/categories/">类别</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/about/">Blog About</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+              个人主页
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://blog.lichaocheng.top/">
+              docs
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://blog.lichaocheng.top/system/mysql/day01/">Day01</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Li Chao Cheng Blog
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/post/">全部文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/tags/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/categories/">类别</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/about/">Blog About</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+              个人主页
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://blog.lichaocheng.top/">docs</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://blog.lichaocheng.top/system/mysql/day01/">Day01</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+  
+  <header class="post-header">
+    <h1 class="post-title">linux(CentOS7) 网络管理</h1>
+    
+    <div class="post-meta">
+      <time datetime="2020-03-29" class="post-time">
+        2020-03-29
+      </time>
+    </div>
+  </header>
+
+  
+  
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#网络基础知识以及网络管理内容">网络基础知识以及网络管理内容</a>
+      <ul>
+        <li><a href="#网络管理协议">网络管理协议</a></li>
+        <li><a href="#网络管理命令">网络管理命令</a></li>
+        <li><a href="#网络配置">网络配置</a></li>
+        <li><a href="#动态主机配置协议dhcp">动态主机配置协议DHCP</a></li>
+        <li><a href="#linux-域名服务dns">Linux 域名服务DNS</a></li>
+        <li><a href="#配置精确时间协议">配置精确时间协议</a></li>
+        <li><a href="#监控网卡流量">监控网卡流量</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+  
+  <div class="post-content">
+      <h2 id="网络基础知识以及网络管理内容">网络基础知识以及网络管理内容</h2>
+<h3 id="网络管理协议">网络管理协议</h3>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h4 id="tcpip协议概述">TCP/IP协议概述</h4>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h5 id="osi参考模型">OSI参考模型</h5>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h5 id="包packet">包（packet）</h5>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h5 id="网络字节顺序">网络字节顺序</h5>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h5 id="地址解析协议arp">地址解析协议（ARP）</h5>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h5 id="utp与icmp协议简介">UTP与ICMP协议简介</h5>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h3 id="网络管理命令">网络管理命令</h3>
+<h4 id="ping">ping</h4>
+<ul>
+<li>测试是否通</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ping lichaocheng.top</span>
+PING lichaocheng.top <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of data.
+<span style="color:#ae81ff">64</span> bytes from 60.205.176.110 <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.621 ms
+<span style="color:#ae81ff">64</span> bytes from 60.205.176.110 <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.671 ms
+<span style="color:#ae81ff">64</span> bytes from 60.205.176.110 <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.659 ms
+--- lichaocheng.top ping statistics ---
+<span style="color:#ae81ff">3</span> packets transmitted, <span style="color:#ae81ff">3</span> received, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev <span style="color:#f92672">=</span> 0.621/0.650/0.671/0.029 ms
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>ping 指定次数</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ping -c 2 lichaocheng.top</span>
+PING lichaocheng.top <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of data.
+<span style="color:#ae81ff">64</span> bytes from 60.205.176.110 <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.636 ms
+<span style="color:#ae81ff">64</span> bytes from 60.205.176.110 <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.659 ms
+
+--- lichaocheng.top ping statistics ---
+<span style="color:#ae81ff">2</span> packets transmitted, <span style="color:#ae81ff">2</span> received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev <span style="color:#f92672">=</span> 0.636/0.647/0.659/0.027 ms
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>指定时间间隔次数限制</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ping -c 2 -i 0.01 lichaocheng.top</span>
+PING lichaocheng.top <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of data.
+<span style="color:#ae81ff">64</span> bytes from 60.205.176.110 <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.771 ms
+<span style="color:#ae81ff">64</span> bytes from 60.205.176.110 <span style="color:#f92672">(</span>60.205.176.110<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.647 ms
+
+--- lichaocheng.top ping statistics ---
+<span style="color:#ae81ff">2</span> packets transmitted, <span style="color:#ae81ff">2</span> received, 0% packet loss, time 10ms
+rtt min/avg/max/mdev <span style="color:#f92672">=</span> 0.647/0.709/0.771/0.062 ms
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><h4 id="配置网络显示网络状态ifconfig">配置网络显示网络状态【<code>ifconfig</code>】</h4>
+<ul>
+<li>查看
+<ul>
+<li>第二行依次
+<ul>
+<li>网卡IP（云服务应该是内网IP）</li>
+<li>子网掩码</li>
+<li>广播地址</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig</span>
+eth0: flags<span style="color:#f92672">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.24.40.83  netmask 255.255.192.0  broadcast 172.24.63.255
+        ether 00:16:3e:0c:d1:d9  txqueuelen <span style="color:#ae81ff">1000</span>  <span style="color:#f92672">(</span>Ethernet<span style="color:#f92672">)</span>
+        RX packets <span style="color:#ae81ff">4270799</span>  bytes <span style="color:#ae81ff">923464936</span> <span style="color:#f92672">(</span>880.6 MiB<span style="color:#f92672">)</span>
+        RX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span>  overruns <span style="color:#ae81ff">0</span>  frame 0
+        TX packets <span style="color:#ae81ff">4640135</span>  bytes <span style="color:#ae81ff">1228322385</span> <span style="color:#f92672">(</span>1.1 GiB<span style="color:#f92672">)</span>
+        TX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span> overruns <span style="color:#ae81ff">0</span>  carrier <span style="color:#ae81ff">0</span>  collisions 0
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>模拟添加一个网卡</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc network-scripts<span style="color:#f92672">]</span><span style="color:#75715e"># cd /etc/sysconfig/network-scripts/</span>
+<span style="color:#f92672">[</span>root@Cc network-scripts<span style="color:#f92672">]</span><span style="color:#75715e"># cp ifcfg-eth0 ifcfg-eth1</span>
+<span style="color:#f92672">[</span>root@Cc network-scripts<span style="color:#f92672">]</span><span style="color:#75715e"># vim ifcfg-eth1</span>
+<span style="color:#f92672">[</span>root@Cc network-scripts<span style="color:#f92672">]</span><span style="color:#75715e"># vim ifcfg-eth1</span>
+<span style="color:#f92672">[</span>root@Cc network-scripts<span style="color:#f92672">]</span><span style="color:#75715e"># cat ifcfg-eth1</span>
+<span style="color:#75715e"># 网卡名字</span>
+DEVICE<span style="color:#f92672">=</span>eth1LccTest
+<span style="color:#75715e"># ip地址</span>
+IPADDR<span style="color:#f92672">=</span>192.168.1.199
+<span style="color:#75715e"># 子网掩码</span>
+NETMASK<span style="color:#f92672">=</span>255.255.255.0
+<span style="color:#75715e"># 开机自启</span>
+ONBOOT<span style="color:#f92672">=</span>yes
+<span style="color:#75715e"># 网关地址</span>
+GATEWAY<span style="color:#f92672">=</span>172.24.63.253
+<span style="color:#f92672">[</span>root@Cc network-scripts<span style="color:#f92672">]</span># 
+</code></pre></div><blockquote>
+<p>最后<code>systemctl restart network</code>  和<code>service network restart</code> 失败 ，报了文件错误，那直接修改主网卡 eth0</p>
+</blockquote>
+<ul>
+<li>修改（需谨慎，高能操作修改前请先系统快照）</li>
+</ul>
+<blockquote>
+<p>执行完成后直接退出 <code>sshd</code> 远程  ，最后 <code>up</code> 是开启的意思</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc network-scripts<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig eth0 172.24.40.88 netmask 255.255.192.0 up</span>
+连接断开
+</code></pre></div><blockquote>
+<p>翻车 阿里云连接也失败找不到 ,只能快照或者联系阿里云技术服务,ping 服务器 超时，重启服务器</p>
+</blockquote>
+<p><img src="http://images.lichaocheng.top/static/upload/2020/03/29/212a1ed22e787de7684474e7aca06515.png" alt=""></p>
+<p><img src="http://images.lichaocheng.top/static/upload/2020/03/29/b610162c6b3400b33220de609f596063.png" alt=""></p>
+<p><img src="http://images.lichaocheng.top/static/upload/2020/03/29/d9efe315827a63a8003aceb2796abaa3.png" alt=""></p>
+<p><img src="http://images.lichaocheng.top/static/upload/2020/03/29/69c7bc3f14fbe655970fa429bcbeb7a7.png" alt=""></p>
+<ul>
+<li>最后还是没有修改成功，反而立马远程不了
+<ul>
+<li>失败原因可能是我模拟添加网卡造成失败</li>
+<li>可能改了网卡地址，在阿里云我公网<code>ip</code>对应不到修改阿里云内网<code>ip</code></li>
+<li>重启服务器之后，需要密钥才能登录，可能触发阿里云安全防控机制，阿里做了系统配置，我实例<code>id</code> 与hostname，充值了网卡 其余的没有找到</li>
+<li>然之 需要密钥，我的做法是修改了密码，重启，之后远程登陆</li>
+<li>谨慎操作修改网卡地址</li>
+<li>可能修改成功了，也有可能是模拟网卡配置导致错误</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@iz2zeb00z6vr5gix5utl11z lichaocheng.top.server<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig  eth0</span>
+eth0: flags<span style="color:#f92672">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.24.40.83  netmask 255.255.192.0  broadcast 172.24.63.255
+        ether 00:16:3e:0c:d1:d9  txqueuelen <span style="color:#ae81ff">1000</span>  <span style="color:#f92672">(</span>Ethernet<span style="color:#f92672">)</span>
+        RX packets <span style="color:#ae81ff">5310</span>  bytes <span style="color:#ae81ff">575889</span> <span style="color:#f92672">(</span>562.3 KiB<span style="color:#f92672">)</span>
+        RX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span>  overruns <span style="color:#ae81ff">0</span>  frame 0
+        TX packets <span style="color:#ae81ff">6178</span>  bytes <span style="color:#ae81ff">1043414</span> <span style="color:#f92672">(</span>1018.9 KiB<span style="color:#f92672">)</span>
+        TX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span> overruns <span style="color:#ae81ff">0</span>  carrier <span style="color:#ae81ff">0</span>  collisions 0
+
+<span style="color:#f92672">[</span>root@iz2zeb00z6vr5gix5utl11z lichaocheng.top.server<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>我修改另一个网卡</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig docker</span>
+docker0: flags<span style="color:#f92672">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 0.0.0.0
+        ether 02:42:5f:3a:85:e0  txqueuelen <span style="color:#ae81ff">0</span>  <span style="color:#f92672">(</span>Ethernet<span style="color:#f92672">)</span>
+        RX packets <span style="color:#ae81ff">34</span>  bytes <span style="color:#ae81ff">2663</span> <span style="color:#f92672">(</span>2.6 KiB<span style="color:#f92672">)</span>
+        RX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span>  overruns <span style="color:#ae81ff">0</span>  frame 0
+        TX packets <span style="color:#ae81ff">15</span>  bytes <span style="color:#ae81ff">7621</span> <span style="color:#f92672">(</span>7.4 KiB<span style="color:#f92672">)</span>
+        TX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span> overruns <span style="color:#ae81ff">0</span>  carrier <span style="color:#ae81ff">0</span>  collisions 0
+
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig docker0 172.24.40.88 netmask 255.255.192.0 up</span>
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig docker</span>
+docker0: flags<span style="color:#f92672">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.24.40.88  netmask 255.255.192.0  broadcast 172.24.63.255
+        ether 02:42:5f:3a:85:e0  txqueuelen <span style="color:#ae81ff">0</span>  <span style="color:#f92672">(</span>Ethernet<span style="color:#f92672">)</span>
+        RX packets <span style="color:#ae81ff">34</span>  bytes <span style="color:#ae81ff">2663</span> <span style="color:#f92672">(</span>2.6 KiB<span style="color:#f92672">)</span>
+        RX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span>  overruns <span style="color:#ae81ff">0</span>  frame 0
+        TX packets <span style="color:#ae81ff">15</span>  bytes <span style="color:#ae81ff">7621</span> <span style="color:#f92672">(</span>7.4 KiB<span style="color:#f92672">)</span>
+        TX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span> overruns <span style="color:#ae81ff">0</span>  carrier <span style="color:#ae81ff">0</span>  collisions 0
+
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig docker0 hw ether 02:30:30:3f:5f:3a</span> 
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig docker</span>
+docker0: flags<span style="color:#f92672">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.24.40.88  netmask 255.255.192.0  broadcast 172.24.63.255
+        ether 02:30:30:3f:5f:3a  txqueuelen <span style="color:#ae81ff">0</span>  <span style="color:#f92672">(</span>Ethernet<span style="color:#f92672">)</span>
+        RX packets <span style="color:#ae81ff">34</span>  bytes <span style="color:#ae81ff">2663</span> <span style="color:#f92672">(</span>2.6 KiB<span style="color:#f92672">)</span>
+        RX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span>  overruns <span style="color:#ae81ff">0</span>  frame 0
+        TX packets <span style="color:#ae81ff">15</span>  bytes <span style="color:#ae81ff">7621</span> <span style="color:#f92672">(</span>7.4 KiB<span style="color:#f92672">)</span>
+        TX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span> overruns <span style="color:#ae81ff">0</span>  carrier <span style="color:#ae81ff">0</span>  collisions 0
+
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>禁用与启用</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig docker0 down</span>
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig docker0 up</span>
+</code></pre></div><h4 id="路由表显示与修改route">路由表显示与修改【<code>route</code>】</h4>
+<blockquote>
+<p><code>route [-f] [-p] [Command [Destination] [mask Netmask] [Gateway][metric Metric]] [if Interface]]</code></p>
+</blockquote>
+<h5 id="参数说明">参数说明</h5>
+<ul>
+<li>Command 指定您想运行的命令 (Add/Change/Delete/Print)</li>
+<li>Destination 指定该路由的网络目标</li>
+<li>mask Netmask 指定与网络目标相关的网络掩码（也被称作子网掩码）</li>
+<li>Gateway 指定网络目标定义的地址集和子网掩码可以到达的前进或下一跃点 IP 地址</li>
+<li>metric Metric 为路由指定一个整数成本值标（从 1 至 9999），当在路由表(与转发的数据包目标地址最匹配)的多个路由中进行选择时可以使用</li>
+<li>if Interface为可以访问目标的接口指定接口索引。若要获得一个接口列表和它们相应的接口索引，使用 route print 命令的显示功能。可以使用十进制或十六进</li>
+</ul>
+<pre><code class="language-help" data-lang="help">-c 显示更多信息
+-n 不解析名字
+-v 显示详细的处理信息
+-F 显示发送信息
+-C 显示路由缓存
+-f 清除所有网关入口的路由表。
+-p 与add 命令一起使用时使路由具有永久性。
+
+add：添加一条新路由。
+del：删除一条路由。
+-net：目标地址是一个网络。
+-host：目标地址是一个主机。
+netmask：当添加一个网络路由时，需要使用网络掩码。
+gw：路由数据包通过网关。注意，你指定的网关必须能够达到。
+metric：设置路由跳数。
+</code></pre><h6 id="显示示例">显示示例</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># route -n</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.63.253   0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">1002</span>   <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><h6 id="添加路由">添加路由</h6>
+<blockquote>
+<p>注：如果服务器添加时 添加路由可以看到但是<code>ping</code>不通</p>
+</blockquote>
+<ul>
+<li>主机号  <code>155.28.138.45</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span><span style="color:#75715e"># curl ip.sb</span>
+115.28.138.45
+<span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig eth0</span>
+eth0: flags<span style="color:#f92672">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.31.220.39  netmask 255.255.240.0  broadcast 172.31.223.255
+        ether 00:16:3e:08:80:34  txqueuelen <span style="color:#ae81ff">1000</span>  <span style="color:#f92672">(</span>Ethernet<span style="color:#f92672">)</span>
+        RX packets <span style="color:#ae81ff">4840062</span>  bytes <span style="color:#ae81ff">2017732415</span> <span style="color:#f92672">(</span>1.8 GiB<span style="color:#f92672">)</span>
+        RX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span>  overruns <span style="color:#ae81ff">0</span>  frame 0
+        TX packets <span style="color:#ae81ff">4449497</span>  bytes <span style="color:#ae81ff">952525473</span> <span style="color:#f92672">(</span>908.3 MiB<span style="color:#f92672">)</span>
+        TX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span> overruns <span style="color:#ae81ff">0</span>  carrier <span style="color:#ae81ff">0</span>  collisions 0
+
+<span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span><span style="color:#75715e"># route -n</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.31.223.253  0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+10.200.192.0    0.0.0.0         255.255.240.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> mpgre0
+169.254.0.0     0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">1002</span>   <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.17.0.0      0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+172.31.208.0    0.0.0.0         255.255.240.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+<span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span><span style="color:#75715e"># route add -net 172.24.0.0 netmask 255.255.192.0 gw 172.31.223.225</span>
+<span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span><span style="color:#75715e"># route -n</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.31.223.253  0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+10.200.192.0    0.0.0.0         255.255.240.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> mpgre0
+169.254.0.0     0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">1002</span>   <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.17.0.0      0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+172.24.0.0      172.31.223.225  255.255.192.0   UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.31.208.0    0.0.0.0         255.255.240.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+<span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span><span style="color:#75715e"># route add -net 172.24.0.0 netmask 255.255.192.0 dev eth0</span>
+<span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span><span style="color:#75715e"># route -n</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.31.223.253  0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+10.200.192.0    0.0.0.0         255.255.240.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> mpgre0
+169.254.0.0     0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">1002</span>   <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.17.0.0      0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.31.208.0    0.0.0.0         255.255.240.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+<span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span><span style="color:#75715e"># ping 172.24.40.83</span>
+PING 172.24.40.83 <span style="color:#f92672">(</span>172.24.40.83<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of data.
+From 172.31.220.39 icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> Destination Host Unreachable
+From 172.31.220.39 icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> Destination Host Unreachable
+From 172.31.220.39 icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> Destination Host Unreachable
+From 172.31.220.39 icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> Destination Host Unreachable
+^C
+--- 172.24.40.83 ping statistics ---
+<span style="color:#ae81ff">5</span> packets transmitted, <span style="color:#ae81ff">0</span> received, +4 errors, 100% packet loss, time 4000ms
+pipe 4
+<span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span># 
+<span style="color:#75715e"># 可能是哪里配错了</span>
+</code></pre></div><ul>
+<li>主机号 <code>60.205.176.110</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># curl ip.sb</span>
+60.205.176.110
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ifconfig eth0</span>
+eth0: flags<span style="color:#f92672">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 172.24.40.83  netmask 255.255.192.0  broadcast 172.24.63.255
+        ether 00:16:3e:0c:d1:d9  txqueuelen <span style="color:#ae81ff">1000</span>  <span style="color:#f92672">(</span>Ethernet<span style="color:#f92672">)</span>
+        RX packets <span style="color:#ae81ff">158625</span>  bytes <span style="color:#ae81ff">26310297</span> <span style="color:#f92672">(</span>25.0 MiB<span style="color:#f92672">)</span>
+        RX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span>  overruns <span style="color:#ae81ff">0</span>  frame 0
+        TX packets <span style="color:#ae81ff">161713</span>  bytes <span style="color:#ae81ff">44000608</span> <span style="color:#f92672">(</span>41.9 MiB<span style="color:#f92672">)</span>
+        TX errors <span style="color:#ae81ff">0</span>  dropped <span style="color:#ae81ff">0</span> overruns <span style="color:#ae81ff">0</span>  carrier <span style="color:#ae81ff">0</span>  collisions 0
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># route -n</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.63.253   0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">1002</span>   <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># route add -net 172.31.208.0  netmask 255.255.240.0 gw 172.24.63.225</span>
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># route -n</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.63.253   0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">1002</span>   <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.31.208.0    172.24.63.225   255.255.240.0   UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># route add -net 172.31.208.0  netmask 255.255.240.0 dev eth0</span>
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># route -n</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.63.253   0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">1002</span>   <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.31.208.0    0.0.0.0         255.255.240.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ping 172.31.220.39</span>
+PING 172.31.220.39 <span style="color:#f92672">(</span>172.31.220.39<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of data.
+From 172.24.40.83 icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> Destination Host Unreachable
+From 172.24.40.83 icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> Destination Host Unreachable
+From 172.24.40.83 icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> Destination Host Unreachable
+From 172.24.40.83 icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span> Destination Host Unreachable
+^C
+--- 172.31.220.39 ping statistics ---
+<span style="color:#ae81ff">5</span> packets transmitted, <span style="color:#ae81ff">0</span> received, +4 errors, 100% packet loss, time 4000ms
+pipe 4
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+<span style="color:#75715e"># 可能是哪里配错了</span>
+</code></pre></div><ul>
+<li>两台服务器内网互通</li>
+</ul>
+<blockquote>
+<p>两台服务器还是没有互通，可能要去响应云厂商，控制台添加，重启网卡服务<code>service network restart</code>y 还是没有</p>
+</blockquote>
+<h6 id="删除路由">删除路由</h6>
+<blockquote>
+<p>注： 删除时不需要网关</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># route -n</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.63.253   0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">1002</span>   <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+172.31.208.0    172.24.40.83    255.255.240.0   UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># route del -net 172.31.208.0 netmask 255.255.240.0</span>
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># route -n</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         172.24.63.253   0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U     <span style="color:#ae81ff">1002</span>   <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> docker0
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+
+<span style="color:#f92672">[</span>root@Lgr ~<span style="color:#f92672">]</span><span style="color:#75715e"># route del -net 172.24.0.0 netmask 255.255.192.0</span>
+</code></pre></div><h6 id="屏蔽路由">屏蔽路由</h6>
+<p><code>[root@Lgr ~]# route add -net 10.10.10.128 netmask 255.255.255.128 reject</code></p>
+<h6 id="添加默认网关">添加默认网关</h6>
+<p><code>[root@Cc ~]#  route del default gw 192.168.40.2</code></p>
+<h6 id="添加某个ip路由">添加某个ip路由</h6>
+<p><code>[root@Cc ~]# route add -host 192.168.40.1dev eth0</code></p>
+<h4 id="复制文件至其他系统scp">复制文件至其他系统【<code>scp</code>】</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># scp</span>
+usage: scp <span style="color:#f92672">[</span>-12346BCpqrv<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-c cipher<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-F ssh_config<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i identity_file<span style="color:#f92672">]</span>
+           <span style="color:#f92672">[</span>-l limit<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-o ssh_option<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-P port<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-S program<span style="color:#f92672">]</span>
+           <span style="color:#f92672">[[</span>user@<span style="color:#f92672">]</span>host1:<span style="color:#f92672">]</span>file1 ... <span style="color:#f92672">[[</span>user@<span style="color:#f92672">]</span>host2:<span style="color:#f92672">]</span>file2
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><h5 id="示例">示例</h5>
+<ul>
+<li>Cc主机</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc 10<span style="color:#f92672">]</span><span style="color:#75715e"># curl ip.sb;pwd</span>
+60.205.176.110
+/root/RedHad/10
+<span style="color:#f92672">[</span>root@Cc 10<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>Lgr主机</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Lgr 10<span style="color:#f92672">]</span><span style="color:#75715e"># curl ip.sb;pwd</span>
+115.28.138.45
+/root/RedHad/10
+<span style="color:#f92672">[</span>root@Lgr 10<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>在Cc主机创建和文件夹和查看Lgr主机状态</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc 10<span style="color:#f92672">]</span><span style="color:#75715e"># curl ip.sb;pwd;tree</span>
+60.205.176.110
+/root/RedHad/10
+.
+├── scp
+│   └── scpInTst.txt
+└── scp.txt
+
+<span style="color:#ae81ff">1</span> directory, <span style="color:#ae81ff">2</span> files
+<span style="color:#f92672">[</span>root@Cc 10<span style="color:#f92672">]</span># 
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Lgr 10<span style="color:#f92672">]</span><span style="color:#75715e"># curl ip.sb;pwd;tree</span>
+115.28.138.45
+/root/RedHad/10
+-bash: tree: command not found
+<span style="color:#f92672">[</span>root@Lgr 10<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>Cc复制到Lgr【文件】</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc 10<span style="color:#f92672">]</span><span style="color:#75715e"># rm -r /root/.ssh/known_hosts</span> 
+rm: remove regular file ‘/root/.ssh/known_hosts’? y
+<span style="color:#f92672">[</span>root@Cc 10<span style="color:#f92672">]</span><span style="color:#75715e"># scp scp.txt root@115.28.138.45:/root/RedHad/10</span>
+The authenticity of host <span style="color:#e6db74">&#39;115.28.138.45 (115.28.138.45)&#39;</span> can<span style="color:#e6db74">&#39;t be established.
+</span><span style="color:#e6db74">ECDSA key fingerprint is SHA256:3yMka431yjt0thBqIeSCWPCfsy46wknMMJrO8QQe4cw.
+</span><span style="color:#e6db74">ECDSA key fingerprint is MD5:30:23:91:24:0a:ca:b3:3c:d8:ec:a0:fe💿b5:43:0d.
+</span><span style="color:#e6db74">Are you sure you want to continue connecting (yes/no)? yes
+</span><span style="color:#e6db74">Warning: Permanently added &#39;</span>115.28.138.45<span style="color:#e6db74">&#39; (ECDSA) to the list of known hosts.
+</span><span style="color:#e6db74">root@115.28.138.45&#39;</span>s password: 
+scp.txt                                                    100%    <span style="color:#ae81ff">0</span>     0.0KB/s   00:00    
+<span style="color:#f92672">[</span>root@Cc 10<span style="color:#f92672">]</span># 
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>root@Lgr 10<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
+total 0
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">0</span> Mar <span style="color:#ae81ff">29</span> 13:46 scp.txt
+<span style="color:#f92672">[</span>root@Lgr 10<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>其他的就不操作了，看下面叫要说明</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">scp root@107.172.27.254:/home/test.txt .   //下载文件
+
+scp test.txt root@107.172.27.254:/home  //上传文件
+
+scp -r root@107.172.27.254:/home/test .  //下载目录
+
+scp -r test root@107.172.27.254:/home   //上传目录
+
+scp -P <span style="color:#ae81ff">9922</span> -r root@47.244.225.92:/home // 指定端口
+</code></pre></div><h4 id="复制文件至其他系统rsync">复制文件至其他系统【<code>rsync</code>】</h4>
+<blockquote>
+<p><code>rsync</code>  是<code>Linux</code>  系统下常用的数据镜像备份工具，不同主机之间同步文件，除了文件意外，还可以镜像保存整个目录树和文件系统，可以增量同步，并保持文件原来属性（权限、时间戳……）,而且传输过程中是加密，保证了数据安全性</p>
+</blockquote>
+<ul>
+<li>help</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Usage: rsync <span style="color:#f92672">[</span>OPTION<span style="color:#f92672">]</span>... SRC <span style="color:#f92672">[</span>SRC<span style="color:#f92672">]</span>... DEST
+  or   rsync <span style="color:#f92672">[</span>OPTION<span style="color:#f92672">]</span>... SRC <span style="color:#f92672">[</span>SRC<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>USER@<span style="color:#f92672">]</span>HOST:DEST
+  or   rsync <span style="color:#f92672">[</span>OPTION<span style="color:#f92672">]</span>... SRC <span style="color:#f92672">[</span>SRC<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>USER@<span style="color:#f92672">]</span>HOST::DEST
+  or   rsync <span style="color:#f92672">[</span>OPTION<span style="color:#f92672">]</span>... SRC <span style="color:#f92672">[</span>SRC<span style="color:#f92672">]</span>... rsync://<span style="color:#f92672">[</span>USER@<span style="color:#f92672">]</span>HOST<span style="color:#f92672">[</span>:PORT<span style="color:#f92672">]</span>/DEST
+  or   rsync <span style="color:#f92672">[</span>OPTION<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>USER@<span style="color:#f92672">]</span>HOST:SRC <span style="color:#f92672">[</span>DEST<span style="color:#f92672">]</span>
+  or   rsync <span style="color:#f92672">[</span>OPTION<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>USER@<span style="color:#f92672">]</span>HOST::SRC <span style="color:#f92672">[</span>DEST<span style="color:#f92672">]</span>
+  or   rsync <span style="color:#f92672">[</span>OPTION<span style="color:#f92672">]</span>... rsync://<span style="color:#f92672">[</span>USER@<span style="color:#f92672">]</span>HOST<span style="color:#f92672">[</span>:PORT<span style="color:#f92672">]</span>/SRC <span style="color:#f92672">[</span>DEST<span style="color:#f92672">]</span>
+</code></pre></div><ul>
+<li>rsync 后续添加</li>
+</ul>
+<h4 id="显示网络连接路由表或接口-netstart">显示网络连接、路由表或接口 【<code>netstart</code>】</h4>
+<ul>
+<li>显示tpc</li>
+<li>显示udp</li>
+<li>显示核心路由</li>
+<li>显示网络接口列表</li>
+<li>常用显示</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># netstat -at</span>
+Active Internet connections <span style="color:#f92672">(</span>servers and established<span style="color:#f92672">)</span>
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:https           0.0.0.0:*               LISTEN     
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:aequus          0.0.0.0:*               LISTEN     
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> localhost:32000         0.0.0.0:*               LISTEN     
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:8836            0.0.0.0:*               LISTEN     
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:6379            0.0.0.0:*               LISTEN     
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:http            0.0.0.0:*               LISTEN     
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:ssh             0.0.0.0:*               LISTEN     
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> Cc:53354                100.100.30.26:http      ESTABLISHED
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> Cc:ssh                  113.118.200.16:7069     ESTABLISHED
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> localhost:31000         localhost:32000         ESTABLISHED
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> localhost:32000         localhost:31000         ESTABLISHED
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:filenet-tms        <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:*                  LISTEN     
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:cslistener         <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:*                  LISTEN     
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:mysql              <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:*                  LISTEN     
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:8180               <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:*                  LISTEN     
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># netstat -au</span>
+Active Internet connections <span style="color:#f92672">(</span>servers and established<span style="color:#f92672">)</span>
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:bootpc          0.0.0.0:*                          
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> Cc:ntp                  0.0.0.0:*                          
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> Cc:ntp                  0.0.0.0:*                          
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> localhost:ntp           0.0.0.0:*                          
+udp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:ntp             0.0.0.0:*                          
+udp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:ntp                <span style="color:#f92672">[</span>::<span style="color:#f92672">]</span>:*                             
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># netstat -r</span>
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+default         gateway         0.0.0.0         UG        <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>          <span style="color:#ae81ff">0</span> eth0
+10.0.0.0        0.0.0.0         255.255.255.0   U         <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>          <span style="color:#ae81ff">0</span> eth0
+link-local      0.0.0.0         255.255.0.0     U         <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>          <span style="color:#ae81ff">0</span> eth0
+172.24.0.0      0.0.0.0         255.255.192.0   U         <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>          <span style="color:#ae81ff">0</span> docker0
+172.24.0.0      0.0.0.0         255.255.192.0   U         <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>          <span style="color:#ae81ff">0</span> eth0
+172.31.208.0    0.0.0.0         255.255.240.0   U         <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>          <span style="color:#ae81ff">0</span> eth0
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># netstat -i</span>
+Kernel Interface table
+Iface             MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+docker0          <span style="color:#ae81ff">1500</span>       <span style="color:#ae81ff">34</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>            <span style="color:#ae81ff">30</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> BMRU
+eth0             <span style="color:#ae81ff">1500</span>   <span style="color:#ae81ff">660702</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">790356</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> BMRU
+lo              <span style="color:#ae81ff">65536</span>    <span style="color:#ae81ff">50832</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>         <span style="color:#ae81ff">50832</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> LRU
+vethbb7d0dd      <span style="color:#ae81ff">1500</span>        <span style="color:#ae81ff">8</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>            <span style="color:#ae81ff">23</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> BMRU
+vethf4f0960      <span style="color:#ae81ff">1500</span>       <span style="color:#ae81ff">26</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>            <span style="color:#ae81ff">38</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> BMRU
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># netstat -ntlp</span>
+Active Internet connections <span style="color:#f92672">(</span>only servers<span style="color:#f92672">)</span>
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:443             0.0.0.0:*               LISTEN      923/nginx: master p 
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:23456           0.0.0.0:*               LISTEN      1425/sshd           
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 127.0.0.1:32000         0.0.0.0:*               LISTEN      1199/java           
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:8836            0.0.0.0:*               LISTEN      923/nginx: master p 
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:6379            0.0.0.0:*               LISTEN      824/redis-server 0. 
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:80              0.0.0.0:*               LISTEN      923/nginx: master p 
+tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:22              0.0.0.0:*               LISTEN      1425/sshd           
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> :::32768                :::*                    LISTEN      1731/docker-proxy-c 
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> :::9000                 :::*                    LISTEN      1746/docker-proxy-c 
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> :::3306                 :::*                    LISTEN      1508/mysqld         
+tcp6       <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> :::8180                 :::*                    LISTEN      3090/./server       
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><h4 id="探测至目的地址的路由信息traceroute">探测至目的地址的路由信息【<code>traceroute</code>】</h4>
+<blockquote>
+<p>显示本机到 <code>baidu.com</code> 所经过的路由</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># traceroute -n baidu.com</span>
+traceroute to baidu.com <span style="color:#f92672">(</span>220.181.38.148<span style="color:#f92672">)</span>, <span style="color:#ae81ff">30</span> hops max, <span style="color:#ae81ff">60</span> byte packets
+ <span style="color:#ae81ff">1</span>  * * *
+ <span style="color:#ae81ff">2</span>  * * *
+ <span style="color:#ae81ff">3</span>  11.220.31.154  1.371 ms 11.220.30.130  0.920 ms 11.220.30.138  3.912 ms
+ <span style="color:#ae81ff">4</span>  11.218.196.254  1.254 ms 11.204.180.122  1.597 ms 11.218.196.254  1.435 ms
+ <span style="color:#ae81ff">5</span>  116.251.117.10  1.938 ms 42.120.243.82  1.842 ms 116.251.117.2  2.458 ms
+ <span style="color:#ae81ff">6</span>  116.251.112.153  1.454 ms 116.251.94.17  2.001 ms 116.251.112.205  13.491 ms
+ <span style="color:#ae81ff">7</span>  36.110.169.221  2.931 ms 36.110.169.101  3.467 ms 106.38.196.253  3.093 ms
+ <span style="color:#ae81ff">8</span>  * 36.110.244.57  3.801 ms 36.110.244.49  3.765 ms
+ <span style="color:#ae81ff">9</span>  220.181.182.178  3.718 ms * *
+<span style="color:#ae81ff">10</span>  220.181.17.90  3.963 ms  4.313 ms 220.181.182.170  3.559 ms
+<span style="color:#ae81ff">11</span>  * * *
+<span style="color:#ae81ff">14</span>  * * *
+………………………………
+<span style="color:#ae81ff">29</span>  * * *
+<span style="color:#ae81ff">30</span>  * * *
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><blockquote>
+<p>域名不可达，最大30跳</p>
+</blockquote>
+<h4 id="测试登录控制远程telnet">测试登录、控制远程【<code>telnet</code>】</h4>
+<blockquote>
+<p>找不到命令 ,可以连接互联网情况下使用<code>yum install telnet</code>安装</p>
+</blockquote>
+<ul>
+<li>成功</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># telnet 115.28.138.41 22</span>
+Trying 115.28.138.41...
+Connected to 115.28.138.41.
+Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
+SSH-2.0-OpenSSH_7.4
+test sshd
+Protocol mismatch.
+Connection closed by foreign host.
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># telnet baidu.com 80</span>
+Trying 39.156.69.79...
+<span style="color:#ae81ff">\C</span>onnected to baidu.com.
+Escape character is <span style="color:#e6db74">&#39;^]&#39;</span>.
+Connection closed by foreign host.
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>失败</li>
+</ul>
+<pre><code class="language-she" data-lang="she">[root@Cc ~]# telnet 192.168.1.12 22
+Trying 192.168.1.12...
+</code></pre><h4 id="下载网络文件wget">下载网络文件【<code>wget</code>】</h4>
+<ul>
+<li>下载文件</li>
+</ul>
+<p><code>wget [地址]</code></p>
+<ul>
+<li>断点续传</li>
+</ul>
+<p><code>wget -c </code></p>
+<ul>
+<li>批量下载</li>
+</ul>
+<p>下载文件中 一些列网址 <code>wget -i download.txt</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># wget --help;</span>
+GNU Wget 1.14，非交互式的网络文件下载工具。
+用法： wget <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>URL<span style="color:#f92672">]</span>...
+
+长选项所必须的参数在使用短选项时也是必须的。
+
+启动：
+  -V,  --version           显示 Wget 的版本信息并退出。
+  -h,  --help              打印此帮助。
+  -b,  --background        启动后转入后台。
+  -e,  --execute<span style="color:#f92672">=</span>COMMAND   运行一个“.wgetrc”风格的命令。
+
+日志和输入文件：
+  -o,  --output-file<span style="color:#f92672">=</span>FILE    将日志信息写入 FILE。
+  -a,  --append-output<span style="color:#f92672">=</span>FILE  将信息添加至 FILE。
+  -d,  --debug               打印大量调试信息。
+  -q,  --quiet               安静模式 <span style="color:#f92672">(</span>无信息输出<span style="color:#f92672">)</span>。
+  -v,  --verbose             详尽的输出 <span style="color:#f92672">(</span>此为默认值<span style="color:#f92672">)</span>。
+  -nv, --no-verbose          关闭详尽输出，但不进入安静模式。
+       --report-speed<span style="color:#f92672">=</span>TYPE   Output bandwidth as TYPE.  TYPE can be bits.
+  -i,  --input-file<span style="color:#f92672">=</span>FILE     下载本地或外部 FILE 中的 URLs。
+  -F,  --force-html          把输入文件当成 HTML 文件。
+  -B,  --base<span style="color:#f92672">=</span>URL            解析与 URL 相关的
+                             HTML 输入文件 <span style="color:#f92672">(</span>由 -i -F 选项指定<span style="color:#f92672">)</span>。
+       --config<span style="color:#f92672">=</span>FILE         Specify config file to use.
+
+下载：
+  -t,  --tries<span style="color:#f92672">=</span>NUMBER            设置重试次数为 NUMBER <span style="color:#f92672">(</span><span style="color:#ae81ff">0</span> 代表无限制<span style="color:#f92672">)</span>。
+       --retry-connrefused       即使拒绝连接也是重试。
+  -O,  --output-document<span style="color:#f92672">=</span>FILE    将文档写入 FILE。
+  -nc, --no-clobber              skip downloads that would download to
+                                 existing files <span style="color:#f92672">(</span>overwriting them<span style="color:#f92672">)</span>.
+  -c,  --continue                断点续传下载文件。
+       --progress<span style="color:#f92672">=</span>TYPE           选择进度条类型。
+  -N,  --timestamping            只获取比本地文件新的文件。
+  --no-use-server-timestamps     不用服务器上的时间戳来设置本地文件。
+  -S,  --server-response         打印服务器响应。
+       --spider                  不下载任何文件。
+  -T,  --timeout<span style="color:#f92672">=</span>SECONDS         将所有超时设为 SECONDS 秒。
+       --dns-timeout<span style="color:#f92672">=</span>SECS        设置 DNS 查寻超时为 SECS 秒。
+       --connect-timeout<span style="color:#f92672">=</span>SECS    设置连接超时为 SECS 秒。
+       --read-timeout<span style="color:#f92672">=</span>SECS       设置读取超时为 SECS 秒。
+  -w,  --wait<span style="color:#f92672">=</span>SECONDS            等待间隔为 SECONDS 秒。
+       --waitretry<span style="color:#f92672">=</span>SECONDS       在获取文件的重试期间等待 1..SECONDS 秒。
+       --random-wait             获取多个文件时，每次随机等待间隔
+                                 0.5*WAIT...1.5*WAIT 秒。
+       --no-proxy                禁止使用代理。
+  -Q,  --quota<span style="color:#f92672">=</span>NUMBER            设置获取配额为 NUMBER 字节。
+       --bind-address<span style="color:#f92672">=</span>ADDRESS    绑定至本地主机上的 ADDRESS <span style="color:#f92672">(</span>主机名或是 IP<span style="color:#f92672">)</span>。
+       --limit-rate<span style="color:#f92672">=</span>RATE         限制下载速率为 RATE。
+       --no-dns-cache            关闭 DNS 查寻缓存。
+       --restrict-file-names<span style="color:#f92672">=</span>OS  限定文件名中的字符为 OS 允许的字符。
+       --ignore-case             匹配文件/目录时忽略大小写。
+  -4,  --inet4-only              仅连接至 IPv4 地址。
+  -6,  --inet6-only              仅连接至 IPv6 地址。
+       --prefer-family<span style="color:#f92672">=</span>FAMILY    首先连接至指定协议的地址
+                                 FAMILY 为 IPv6，IPv4 或是 none。
+       --user<span style="color:#f92672">=</span>USER               将 ftp 和 http 的用户名均设置为 USER。
+       --password<span style="color:#f92672">=</span>PASS           将 ftp 和 http 的密码均设置为 PASS。
+       --ask-password            提示输入密码。
+       --no-iri                  关闭 IRI 支持。
+       --local-encoding<span style="color:#f92672">=</span>ENC      IRI <span style="color:#f92672">(</span>国际化资源标识符<span style="color:#f92672">)</span> 使用 ENC 作为本地编码。
+       --remote-encoding<span style="color:#f92672">=</span>ENC     使用 ENC 作为默认远程编码。
+       --unlink                  remove file before clobber.
+
+目录：
+  -nd, --no-directories           不创建目录。
+  -x,  --force-directories        强制创建目录。
+  -nH, --no-host-directories      不要创建主目录。
+       --protocol-directories     在目录中使用协议名称。
+  -P,  --directory-prefix<span style="color:#f92672">=</span>PREFIX  以 PREFIX/... 保存文件
+       --cut-dirs<span style="color:#f92672">=</span>NUMBER          忽略远程目录中 NUMBER 个目录层。
+
+HTTP 选项：
+       --http-user<span style="color:#f92672">=</span>USER        设置 http 用户名为 USER。
+       --http-password<span style="color:#f92672">=</span>PASS    设置 http 密码为 PASS。
+       --no-cache              不在服务器上缓存数据。
+       --default-page<span style="color:#f92672">=</span>NAME     改变默认页
+                               <span style="color:#f92672">(</span>默认页通常是“index.html”<span style="color:#f92672">)</span>。
+  -E,  --adjust-extension      以合适的扩展名保存 HTML/CSS 文档。
+       --ignore-length         忽略头部的‘Content-Length’区域。
+       --header<span style="color:#f92672">=</span>STRING         在头部插入 STRING。
+       --max-redirect          每页所允许的最大重定向。
+       --proxy-user<span style="color:#f92672">=</span>USER       使用 USER 作为代理用户名。
+       --proxy-password<span style="color:#f92672">=</span>PASS   使用 PASS 作为代理密码。
+       --referer<span style="color:#f92672">=</span>URL           在 HTTP 请求头包含‘Referer: URL’。
+       --save-headers          将 HTTP 头保存至文件。
+  -U,  --user-agent<span style="color:#f92672">=</span>AGENT      标识为 AGENT 而不是 Wget/VERSION。
+       --no-http-keep-alive    禁用 HTTP keep-alive <span style="color:#f92672">(</span>永久连接<span style="color:#f92672">)</span>。
+       --no-cookies            不使用 cookies。
+       --load-cookies<span style="color:#f92672">=</span>FILE     会话开始前从 FILE 中载入 cookies。
+       --save-cookies<span style="color:#f92672">=</span>FILE     会话结束后保存 cookies 至 FILE。
+       --keep-session-cookies  载入并保存会话 <span style="color:#f92672">(</span>非永久<span style="color:#f92672">)</span> cookies。
+       --post-data<span style="color:#f92672">=</span>STRING      使用 POST 方式；把 STRING 作为数据发送。
+       --post-file<span style="color:#f92672">=</span>FILE        使用 POST 方式；发送 FILE 内容。
+       --content-disposition   当选中本地文件名时
+                               允许 Content-Disposition 头部 <span style="color:#f92672">(</span>尚在实验<span style="color:#f92672">)</span>。
+       --content-on-error      output the received content on server errors.
+       --auth-no-challenge     发送不含服务器询问的首次等待
+                               的基本 HTTP 验证信息。
+
+HTTPS <span style="color:#f92672">(</span>SSL/TLS<span style="color:#f92672">)</span> 选项：
+       --secure-protocol<span style="color:#f92672">=</span>PR     choose secure protocol, one of auto, SSLv2,
+                                SSLv3, TLSv1, TLSv1_1 and TLSv1_2.
+       --no-check-certificate   不要验证服务器的证书。
+       --certificate<span style="color:#f92672">=</span>FILE       客户端证书文件。
+       --certificate-type<span style="color:#f92672">=</span>TYPE  客户端证书类型，PEM 或 DER。
+       --private-key<span style="color:#f92672">=</span>FILE       私钥文件。
+       --private-key-type<span style="color:#f92672">=</span>TYPE  私钥文件类型，PEM 或 DER。
+       --ca-certificate<span style="color:#f92672">=</span>FILE    带有一组 CA 认证的文件。
+       --ca-directory<span style="color:#f92672">=</span>DIR       保存 CA 认证的哈希列表的目录。
+       --random-file<span style="color:#f92672">=</span>FILE       带有生成 SSL PRNG 的随机数据的文件。
+       --egd-file<span style="color:#f92672">=</span>FILE          用于命名带有随机数据的 EGD 套接字的文件。
+
+FTP 选项：
+       --ftp-user<span style="color:#f92672">=</span>USER         设置 ftp 用户名为 USER。
+       --ftp-password<span style="color:#f92672">=</span>PASS     设置 ftp 密码为 PASS。
+       --no-remove-listing     不要删除‘.listing’文件。
+       --no-glob               不在 FTP 文件名中使用通配符展开。
+       --no-passive-ftp        禁用“passive”传输模式。
+       --preserve-permissions  保留远程文件的权限。
+       --retr-symlinks         递归目录时，获取链接的文件 <span style="color:#f92672">(</span>而非目录<span style="color:#f92672">)</span>。
+
+WARC options:
+       --warc-file<span style="color:#f92672">=</span>FILENAME      save request/response data to a .warc.gz file.
+       --warc-header<span style="color:#f92672">=</span>STRING      insert STRING into the warcinfo record.
+       --warc-max-size<span style="color:#f92672">=</span>NUMBER    set maximum size of WARC files to NUMBER.
+       --warc-cdx                write CDX index files.
+       --warc-dedup<span style="color:#f92672">=</span>FILENAME     <span style="color:#66d9ef">do</span> not store records listed in this CDX file.
+       --no-warc-compression     <span style="color:#66d9ef">do</span> not compress WARC files with GZIP.
+       --no-warc-digests         <span style="color:#66d9ef">do</span> not calculate SHA1 digests.
+       --no-warc-keep-log        <span style="color:#66d9ef">do</span> not store the log file in a WARC record.
+       --warc-tempdir<span style="color:#f92672">=</span>DIRECTORY  location <span style="color:#66d9ef">for</span> temporary files created by the
+                                 WARC writer.
+
+递归下载：
+  -r,  --recursive          指定递归下载。
+  -l,  --level<span style="color:#f92672">=</span>NUMBER       最大递归深度 <span style="color:#f92672">(</span>inf 或 <span style="color:#ae81ff">0</span> 代表无限制，即全部下载<span style="color:#f92672">)</span>。
+       --delete-after       下载完成后删除本地文件。
+  -k,  --convert-links      让下载得到的 HTML 或 CSS 中的链接指向本地文件。
+  --backups<span style="color:#f92672">=</span>N   before writing file X, rotate up to N backup files.
+  -K,  --backup-converted   在转换文件 X 前先将它备份为 X.orig。
+  -m,  --mirror             -N -r -l inf --no-remove-listing 的缩写形式。
+  -p,  --page-requisites    下载所有用于显示 HTML 页面的图片之类的元素。
+       --strict-comments    用严格方式 <span style="color:#f92672">(</span>SGML<span style="color:#f92672">)</span> 处理 HTML 注释。
+
+递归接受/拒绝：
+  -A,  --accept<span style="color:#f92672">=</span>LIST               逗号分隔的可接受的扩展名列表。
+  -R,  --reject<span style="color:#f92672">=</span>LIST               逗号分隔的要拒绝的扩展名列表。
+       --accept-regex<span style="color:#f92672">=</span>REGEX        regex matching accepted URLs.
+       --reject-regex<span style="color:#f92672">=</span>REGEX        regex matching rejected URLs.
+       --regex-type<span style="color:#f92672">=</span>TYPE           regex type <span style="color:#f92672">(</span>posix|pcre<span style="color:#f92672">)</span>.
+  -D,  --domains<span style="color:#f92672">=</span>LIST              逗号分隔的可接受的域列表。
+       --exclude-domains<span style="color:#f92672">=</span>LIST      逗号分隔的要拒绝的域列表。
+       --follow-ftp                跟踪 HTML 文档中的 FTP 链接。
+       --follow-tags<span style="color:#f92672">=</span>LIST          逗号分隔的跟踪的 HTML 标识列表。
+       --ignore-tags<span style="color:#f92672">=</span>LIST          逗号分隔的忽略的 HTML 标识列表。
+  -H,  --span-hosts                递归时转向外部主机。
+  -L,  --relative                  只跟踪有关系的链接。
+  -I,  --include-directories<span style="color:#f92672">=</span>LIST  允许目录的列表。
+  --trust-server-names             use the name specified by the redirection
+                                   url last component.
+  -X,  --exclude-directories<span style="color:#f92672">=</span>LIST  排除目录的列表。
+  -np, --no-parent                 不追溯至父目录。
+
+请将错误报告或建议寄给 &lt;bug-wget@gnu.org&gt;。
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><h3 id="网络配置">网络配置</h3>
+<h4 id="查看某网卡配置">查看某网卡配置</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/sysconfig/network-scripts/ifcfg-eth0</span> 
+DEVICE<span style="color:#f92672">=</span>eth0
+BOOTPROTO<span style="color:#f92672">=</span>dhcp
+ONBOOT<span style="color:#f92672">=</span>yes
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+</code></pre></div><h4 id="设置主机名">设置主机名</h4>
+<blockquote>
+<p>设置主机名之后需要重新的启动，我这里是切换用户登录，查看效果</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># hostname Hyper</span>
+<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># su testUser</span>
+<span style="color:#f92672">[</span>testUser@Hyper root<span style="color:#f92672">]</span>$ su root
+密码：
+<span style="color:#f92672">[</span>root@Hyper ~<span style="color:#f92672">]</span># 
+</code></pre></div><h4 id="设置默认网关">设置默认网关</h4>
+<ul>
+<li>方法一</li>
+</ul>
+<blockquote>
+<p><code>[root@Hyper ~]# route add default wg 172.24.63.255</code></p>
+<p>如果是虚拟机就可以试试设置网关，在这网络配置还是要小心为妙，我这里就没有执行这一行</p>
+</blockquote>
+<ul>
+<li>方法二</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Hyper ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/sysconfig/network</span>
+<span style="color:#75715e"># Created by anaconda</span>
+NETWORKING_IPV6<span style="color:#f92672">=</span>no
+PEERNTP<span style="color:#f92672">=</span>no
+GATEWAY<span style="color:#f92672">=</span>172.24.63.255
+<span style="color:#f92672">[</span>root@Hyper ~<span style="color:#f92672">]</span># 
+</code></pre></div><ul>
+<li>重新启动网卡</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Hyper ~<span style="color:#f92672">]</span><span style="color:#75715e"># /etc/rc.d/init.d/network restart</span>
+Restarting network <span style="color:#f92672">(</span>via systemctl<span style="color:#f92672">)</span>:                        <span style="color:#f92672">[</span>  确定  <span style="color:#f92672">]</span>
+<span style="color:#f92672">[</span>root@Hyper ~<span style="color:#f92672">]</span># 
+</code></pre></div><h4 id="设置dns服务">设置DNS服务</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Hyper ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/resolv.conf</span> 
+options timeout:2 attempts:3 rotate single-request-reopen
+; generated by /usr/sbin/dhclient-script
+nameserver 100.100.2.136
+nameserver 100.100.2.138
+<span style="color:#f92672">[</span>root@Hyper ~<span style="color:#f92672">]</span># 
+</code></pre></div><h3 id="动态主机配置协议dhcp">动态主机配置协议DHCP</h3>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h3 id="linux-域名服务dns">Linux 域名服务DNS</h3>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h3 id="配置精确时间协议">配置精确时间协议</h3>
+<blockquote>
+<p><strong>好多概念知识，会拿出时间来讲解这张预留的空白</strong></p>
+</blockquote>
+<h3 id="监控网卡流量">监控网卡流量</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#预留</span>
+</code></pre></div>
+  </div>
+
+  
+  
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Cc</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-03-29
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://blog.lichaocheng.top" target="_blank">LiChaoChengBlog</a></span>
+  </p>
+</div>
+
+
+  
+  
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="image/example.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+</article>
+
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  <div id="comments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 700);
+              clearInterval(checkExist);
+            }
+        }, 10);
+    }
+  </script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#comments' ,
+        appId: 'JcD72zxOvMLBD95kc0VW62eR-gzGzoHsz',
+        appKey: 'CnlQhdPzdvfO8QlI3CJLSGYV',
+        notify:  true , 
+        verify:  true , 
+        avatar:'test', 
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:li_chao_cheng@163.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/Cc360428" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/Cc360428" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/Cc360428" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://blog.lichaocheng.top/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    技术支持 <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    个人主页 - <a class="theme-link" href="https://lichaocheng.top">lichaocheng</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2019 -
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Lcc
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

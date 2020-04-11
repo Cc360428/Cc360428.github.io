@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on Li Chao Cheng Blog</title>
+    <link>https://cc360428.github.io/categories/golang/</link>
+    <description>Recent content in golang on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Lcc</copyright>
+    <lastBuildDate>Wed, 11 Mar 2020 16:19:11 +0800</lastBuildDate>
+    
+	<atom:link href="https://cc360428.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>golang 包管理</title>
+      <link>https://cc360428.github.io/post/golang/golang%E5%8C%85%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 11 Mar 2020 16:19:11 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/golang%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
+      <description>godep 安装 go get -u -v github.com/tools/godep 使用 参考1 参考2 goverdor（go1.12下 推荐使用） 安装 go get -u github.com/kardianos/govendor 基本使用 进入项目目录 govendor init govendor fetch github.com/Cc360428/HelpPackage/UtilsHelp cat vendor/vendor.json { &amp;#34;comment&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;ignore&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;package&amp;#34;: [ { &amp;#34;checksumSHA1&amp;#34;: &amp;#34;vT6zp7A2xIrOTza5mYU7ZR4it1c=&amp;#34;,</description>
+    </item>
+    
+  </channel>
+</rss>

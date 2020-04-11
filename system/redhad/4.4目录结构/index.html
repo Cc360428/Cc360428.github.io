@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>linux(CentOS7) 目录结构 - Li Chao Cheng Blog</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Cc" /><meta name="description" content="linux 目录 cp mv diff cat tail ……" />
+
+  <meta name="keywords" content="Hugo, theme, jane" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.65.2" />
+
+
+<link rel="canonical" href="https://blog.lichaocheng.top/system/redhad/4.4%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="linux(CentOS7) 目录结构" />
+<meta property="og:description" content="linux 目录 cp mv diff cat tail ……" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.lichaocheng.top/system/redhad/4.4%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" />
+<meta property="article:published_time" content="2020-03-24T23:17:54+08:00" />
+<meta property="article:modified_time" content="2020-03-24T23:17:54+08:00" />
+<meta itemprop="name" content="linux(CentOS7) 目录结构">
+<meta itemprop="description" content="linux 目录 cp mv diff cat tail ……">
+<meta itemprop="datePublished" content="2020-03-24T23:17:54&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-24T23:17:54&#43;08:00" />
+<meta itemprop="wordCount" content="4469">
+
+
+
+<meta itemprop="keywords" content="Syetem," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linux(CentOS7) 目录结构"/>
+<meta name="twitter:description" content="linux 目录 cp mv diff cat tail ……"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Li Chao Cheng Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/">首页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/post/">全部文章</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/tags/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/categories/">类别</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/about/">Blog About</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+              个人主页
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://blog.lichaocheng.top/">
+              docs
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://blog.lichaocheng.top/system/mysql/day01/">Day01</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Li Chao Cheng Blog
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/">首页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/post/">全部文章</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/tags/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/categories/">类别</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://blog.lichaocheng.top/about/">Blog About</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+              个人主页
+              
+              <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M623.36 272.96 473.216 423.04C467.2 429.056 467.072 438.656 472.896 444.416c0 0-6.72-6.656 1.6 1.6C496.064 467.648 528.64 500.224 528.64 500.224 534.464 506.048 544 505.856 550.016 499.904l150.08-150.144 67.328 66.432c9.024 8.96 27.456 4.544 30.4-8.96 19.968-92.608 46.656-227.52 46.656-227.52 6.848-34.496-16.192-56.704-49.92-49.92 0 0-134.656 26.816-227.328 46.784C560.32 178.048 556.352 182.272 554.752 187.136c-3.2 6.208-3.008 14.208 3.776 20.992L623.36 272.96z"></path>
+  <path d="M841.152 457.152c-30.528 0-54.784 24.512-54.784 54.656l0 274.752L237.696 786.56 237.696 237.696l206.016 0c6.656 0 10.752 0 13.248 0C487.68 237.696 512 213.184 512 182.848 512 152.32 487.36 128 456.96 128L183.04 128C153.216 128 128 152.576 128 182.848c0 3.136 0.256 6.272 0.768 9.28C128.256 195.136 128 198.272 128 201.408l0 639.488c0 0.064 0 0.192 0 0.256 0 0.128 0 0.192 0 0.32 0 30.528 24.512 54.784 54.784 54.784l646.976 0c6.592 0 9.728 0 11.712 0 28.736 0 52.928-22.976 54.464-51.968C896 843.264 896 842.304 896 841.344l0-20.352L896 561.408 896 512.128C896 481.792 871.424 457.152 841.152 457.152z"></path>
+</svg>
+
+              </i>
+            </a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://blog.lichaocheng.top/">docs</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://blog.lichaocheng.top/system/mysql/day01/">Day01</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+  
+  <header class="post-header">
+    <h1 class="post-title">linux(CentOS7) 目录结构</h1>
+    
+    <div class="post-meta">
+      <time datetime="2020-03-24" class="post-time">
+        2020-03-24
+      </time>
+    </div>
+  </header>
+
+  
+  
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux目录结构">linux目录结构</a></li>
+    <li><a href="#常用命令">常用命令</a>
+      <ul>
+        <li><a href="#cp">cp</a></li>
+        <li><a href="#mv">mv</a></li>
+        <li><a href="#touch">touch</a></li>
+        <li><a href="#rm">rm</a></li>
+        <li><a href="#查看文件">查看文件</a></li>
+        <li><a href="#find">find</a></li>
+        <li><a href="#文本文本操作">文本文本操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#目录管理">目录管理</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+
+  
+  <div class="post-content">
+      <h2 id="linux目录结构">linux目录结构</h2>
+<h2 id="常用命令">常用命令</h2>
+<h3 id="cp">cp</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e">#  cp /etc/nginx/conf.d/default.conf .</span>
+<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
+总用量 <span style="color:#ae81ff">4</span>
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">750</span> 3月  <span style="color:#ae81ff">24</span> 22:17 default.conf
+<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span># 
+</code></pre></div><h4 id="cp---help">cp &ndash;help</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># cp --help;</span>
+用法：cp <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>-T<span style="color:#f92672">]</span> 源文件 目标文件
+　或：cp <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... 源文件... 目录
+　或：cp <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... -t 目录 源文件...
+Copy SOURCE to DEST, or multiple SOURCE<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> to DIRECTORY.
+
+Mandatory arguments to long options are mandatory <span style="color:#66d9ef">for</span> short options too.
+  -a, --archive                 等于-dR --preserve<span style="color:#f92672">=</span>all
+      --attributes-only 仅复制属性而不复制数据      --backup<span style="color:#f92672">[=</span>CONTROL           为每个已存在的目标文件创建备份
+  -b                            类似--backup 但不接受参数
+      --copy-contents           在递归处理是复制特殊文件内容
+  -d                            等于--no-dereference --preserve<span style="color:#f92672">=</span>links
+  -f, --force                  <span style="color:#66d9ef">if</span> an existing destination file cannot be
+                                 opened, remove it and try again <span style="color:#f92672">(</span>this option
+                                 is ignored when the -n option is also used<span style="color:#f92672">)</span>
+  -i, --interactive            prompt before overwrite <span style="color:#f92672">(</span>overrides a previous -n
+                                  option<span style="color:#f92672">)</span>
+  -H                           follow command-line symbolic links in SOURCE
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber              不要覆盖已存在的文件<span style="color:#f92672">(</span>使前面的 -i 选项失效<span style="color:#f92672">)</span>
+  -P, --no-dereference          不跟随源文件中的符号链接
+  -p                            等于--preserve<span style="color:#f92672">=</span>模式,所有权,时间戳
+      --preserve<span style="color:#f92672">[=</span>属性列表      保持指定的属性<span style="color:#f92672">(</span>默认：模式,所有权,时间戳<span style="color:#f92672">)</span>，如果
+                                        可能保持附加属性：环境、链接、xattr 等
+  -c                           deprecated, same as --preserve<span style="color:#f92672">=</span>context
+      --sno-preserve<span style="color:#f92672">=</span>属性列表   不保留指定的文件属性
+      --parents                 复制前在目标目录创建来源文件路径中的所有目录
+  -R, -r, --recursive           递归复制目录及其子目录内的所有内容
+      --reflink<span style="color:#f92672">[=</span>WHEN<span style="color:#f92672">]</span>          控制克隆/CoW 副本。请查看下面的内如。
+      --remove-destination      尝试打开目标文件前先删除已存在的目的地
+                                        文件 <span style="color:#f92672">(</span>相对于 --force 选项<span style="color:#f92672">)</span>
+      --sparse<span style="color:#f92672">=</span>WHEN             控制创建稀疏文件的方式
+      --strip-trailing-slashes  删除参数中所有源文件/目录末端的斜杠
+  -s, --symbolic-link           只创建符号链接而不复制文件
+  -S, --suffix<span style="color:#f92672">=</span>后缀             自行指定备份文件的后缀
+  -t,  --target-directory<span style="color:#f92672">=</span>目录  将所有参数指定的源文件/目录
+                                           复制至目标目录
+  -T, --no-target-directory     将目标目录视作普通文件
+  -u, --update                  只在源文件比目标文件新，或目标文件
+                                        不存在时才进行复制
+  -v, --verbose         显示详细的进行步骤
+  -x, --one-file-system 不跨越文件系统进行操作
+  -Z                           set SELinux security context of destination
+                                 file to default type
+      --context<span style="color:#f92672">[=</span>CTX<span style="color:#f92672">]</span>          like -Z, or <span style="color:#66d9ef">if</span> CTX is specified <span style="color:#66d9ef">then</span> set the
+                                 SELinux or SMACK security context to CTX
+      --help            显示此帮助信息并退出
+      --version         显示版本信息并退出
+
+默认情况下，源文件的稀疏性仅仅通过简单的方法判断，对应的目标文件目标文件也
+被为稀疏。这是因为默认情况下使用了--sparse<span style="color:#f92672">=</span>auto 参数。如果明确使用
+--sparse<span style="color:#f92672">=</span>always 参数则不论源文件是否包含足够长的0 序列也将目标文件创文
+建为稀疏件。
+使用--sparse<span style="color:#f92672">=</span>never 参数禁止创建稀疏文件。
+
+当指定了--reflink<span style="color:#f92672">[=</span>always<span style="color:#f92672">]</span> 参数时执行轻量化的复制，即只在数据块被修改的
+情况下才复制。如果复制失败或者同时指定了--reflink<span style="color:#f92672">=</span>auto，则返回标准复制模式。
+
+The backup suffix is <span style="color:#e6db74">&#39;~&#39;</span>, unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       不进行备份<span style="color:#f92672">(</span>即使使用了--backup 选项<span style="color:#f92672">)</span>
+  numbered, t     备份文件加上数字进行排序
+  existing, nil   若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
+  simple, never   永远使用普通方式备份
+</code></pre></div><h4 id="操作示例">操作示例</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># tree</span>
+.
+├── file1
+│   └── file1.txt
+├── file2
+│   ├── file2.exe
+│   └── file2.txt
+└── file3
+
+<span style="color:#ae81ff">3</span> directories, <span style="color:#ae81ff">3</span> files
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span># 
+</code></pre></div><h5 id="复制多个文件">复制多个文件</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># cp -v file1/file1.txt  file2/file2.txt file3</span>
+<span style="color:#e6db74">&#34;file1/file1.txt&#34;</span> -&gt; <span style="color:#e6db74">&#34;file3/file1.txt&#34;</span>
+<span style="color:#e6db74">&#34;file2/file2.txt&#34;</span> -&gt; <span style="color:#e6db74">&#34;file3/file2.txt&#34;</span>
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># tree</span>
+.
+├── file1
+│   └── file1.txt
+├── file2
+│   ├── file2.exe
+│   └── file2.txt
+└── file3
+    ├── file1.txt
+    └── file2.txt
+
+<span style="color:#ae81ff">3</span> directories, <span style="color:#ae81ff">5</span> files
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span># 
+
+</code></pre></div><h5 id="复制文件夹">复制文件夹</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># cp -rv file3 file5</span>
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># tree</span>
+.
+├── file1
+│   └── file1.txt
+├── file2
+│   ├── file2.exe
+│   └── file2.txt
+├── file3
+│   ├── file1.txt
+│   └── file2.txt
+└── file5
+    └── file3
+        ├── file1.txt
+        └── file2.txt
+
+<span style="color:#ae81ff">5</span> directories, <span style="color:#ae81ff">7</span> files
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span># 
+
+</code></pre></div><h5 id="保留属性复制">保留属性复制</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># cp -a /etc/nginx/conf.d/default.conf .</span>
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
+总用量 <span style="color:#ae81ff">20</span>
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">750</span> 3月  <span style="color:#ae81ff">23</span> 11:51 default.conf
+drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">24</span> 22:21 file1
+drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">24</span> 22:22 file2
+drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">24</span> 22:23 file3
+drwxr-xr-x <span style="color:#ae81ff">3</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">24</span> 22:25 file5
+
+</code></pre></div><h5 id="并不复制本身而是创建软链接">并不复制本身，而是创建软链接</h5>
+<blockquote>
+<p>注释：修改软链接文件 本身文件也跟着改变</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
+总用量 <span style="color:#ae81ff">20</span>
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">750</span> 3月  <span style="color:#ae81ff">23</span> 11:51 default.conf
+drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">24</span> 22:21 file1
+drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">24</span> 22:22 file2
+drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">24</span> 22:23 file3
+drwxr-xr-x <span style="color:#ae81ff">3</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">24</span> 22:25 file5
+lrwxrwxrwx <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">12</span> 3月  <span style="color:#ae81ff">24</span> 22:31 testCP_S -&gt; default.conf
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># cat testCP_S</span> 
+server <span style="color:#f92672">{</span>
+      listen <span style="color:#ae81ff">443</span> ssl default;  <span style="color:#75715e"># 1.1版本后这样写</span>
+      server_name lichaocheng.top; <span style="color:#75715e">#填写绑定证书的域名</span>
+      ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem;  <span style="color:#75715e"># 指定证书的位置，绝对路径</span>
+      ssl_certificate_key /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.key;  <span style="color:#75715e"># 绝对路径，同上</span>
+      ssl_session_timeout 5m;
+      ssl_protocols TLSv1 TLSv1.1 TLSv1.2; <span style="color:#75715e">#按照这个协议配置</span>
+      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;<span style="color:#75715e">#按照这个套件配置</span>
+      ssl_prefer_server_ciphers on;
+      location / <span style="color:#f92672">{</span>
+          root   /opt/lichaocheng.top/lichaocheng.top; <span style="color:#75715e">#站点目录，绝对路径</span>
+          index  index.html index.htm;
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># cat default.conf</span> 
+server <span style="color:#f92672">{</span>
+      listen <span style="color:#ae81ff">443</span> ssl default;  <span style="color:#75715e"># 1.1版本后这样写</span>
+      server_name lichaocheng.top; <span style="color:#75715e">#填写绑定证书的域名</span>
+      ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem;  <span style="color:#75715e"># 指定证书的位置，绝对路径</span>
+      ssl_certificate_key /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.key;  <span style="color:#75715e"># 绝对路径，同上</span>
+      ssl_session_timeout 5m;
+      ssl_protocols TLSv1 TLSv1.1 TLSv1.2; <span style="color:#75715e">#按照这个协议配置</span>
+      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;<span style="color:#75715e">#按照这个套件配置</span>
+      ssl_prefer_server_ciphers on;
+      location / <span style="color:#f92672">{</span>
+          root   /opt/lichaocheng.top/lichaocheng.top; <span style="color:#75715e">#站点目录，绝对路径</span>
+          index  index.html index.htm;
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span># 
+</code></pre></div><h3 id="mv">mv</h3>
+<h4 id="mv---help">mv &ndash;help</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># mv --help</span>
+用法：mv <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>-T<span style="color:#f92672">]</span> 源文件 目标文件
+　或：mv <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... 源文件... 目录
+　或：mv <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... -t 目录 源文件...
+Rename SOURCE to DEST, or move SOURCE<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> to DIRECTORY.
+
+Mandatory arguments to long options are mandatory <span style="color:#66d9ef">for</span> short options too.
+      --backup<span style="color:#f92672">[=</span>CONTROL<span style="color:#f92672">]</span>       为每个已存在的目标文件创建备份
+  -b                           类似--backup 但不接受参数
+  -f, --force                  覆盖前不询问
+  -i, --interactive            覆盖前询问
+  -n, --no-clobber             不覆盖已存在文件
+如果您指定了-i、-f、-n 中的多个，仅最后一个生效。
+      --strip-trailing-slashes  去掉每个源文件参数尾部的斜线
+  -S, --suffix<span style="color:#f92672">=</span>SUFFIX           替换常用的备份文件后缀
+  -t, --target-directory<span style="color:#f92672">=</span>DIRECTORY  move all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 move only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being <span style="color:#66d9ef">done</span>
+  -Z, --context                set SELinux security context of destination
+                                 file to default type
+      --help            显示此帮助信息并退出
+      --version         显示版本信息并退出
+  none, off       不进行备份<span style="color:#f92672">(</span>即使使用了--backup 选项<span style="color:#f92672">)</span>
+  numbered, t     备份文件加上数字进行排序
+  existing, nil   若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
+  simple, never   永远使用普通方式备份
+<span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span># 
+</code></pre></div><h3 id="touch">touch</h3>
+<h4 id="touch---help">touch &ndash;help</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc cp<span style="color:#f92672">]</span><span style="color:#75715e"># touch --help;</span>
+用法：touch <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... 文件...
+  -a                    只更改访问时间
+  -c, --no-create       不创建任何文件
+  -d, --date<span style="color:#f92672">=</span>字符串     使用指定字符串表示时间而非当前时间
+  -f                    <span style="color:#f92672">(</span>忽略<span style="color:#f92672">)</span>
+  -h, --no-dereference          会影响符号链接本身，而非符号链接所指示的目的地
+                                <span style="color:#f92672">(</span>当系统支持更改符号链接的所有者时，此选项才有用<span style="color:#f92672">)</span>
+  -m                    只更改修改时间
+  -r, --reference<span style="color:#f92672">=</span>FILE   use this file<span style="color:#960050;background-color:#1e0010">&#39;</span>s times instead of current time
+  -t STAMP               use <span style="color:#f92672">[[</span>CC<span style="color:#f92672">]</span>YY<span style="color:#f92672">]</span>MMDDhhmm<span style="color:#f92672">[</span>.ss<span style="color:#f92672">]</span> instead of current time
+      --time<span style="color:#f92672">=</span>WORD        change the specified time:
+                           WORD is access, atime, or use: equivalent to -a
+                           WORD is modify or mtime: equivalent to -m
+      --help            显示此帮助信息并退出
+      --version         显示版本信息并退出
+
+请注意，-d 和-t 选项可接受不同的时间/日期格式。
+
+</code></pre></div><h5 id="示例">示例</h5>
+<blockquote>
+<p>时间格式[CCYYMMDDhhmm]<code>touch -t &quot;01231215&quot; t3</code></p>
+</blockquote>
+<ul>
+<li>CC 年份前两位</li>
+<li>YY 年份后两位</li>
+<li>MM 月</li>
+<li>DD 天</li>
+<li>hh 时</li>
+<li>mm 分</li>
+</ul>
+<blockquote>
+<p>一位数0补全</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># touch t1</span>
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># stat t1</span>
+  文件：<span style="color:#e6db74">&#34;t1&#34;</span>
+  大小：0               块：0          IO 块：4096   普通空文件
+设备：fd01h/64769d      Inode：668181      硬链接：1
+权限：<span style="color:#f92672">(</span>0644/-rw-r--r--<span style="color:#f92672">)</span>  Uid：<span style="color:#f92672">(</span>    0/    root<span style="color:#f92672">)</span>   Gid：<span style="color:#f92672">(</span>    0/    root<span style="color:#f92672">)</span>
+最近访问：2020-03-24 22:44:43.908405308 +0800
+最近更改：2020-03-24 22:44:43.908405308 +0800
+最近改动：2020-03-24 22:44:43.908405308 +0800
+创建时间：-
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># date</span>
+2020年 03月 24日 星期二 22:49:18 CST
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span># 
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span># 
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># touch -d &#34;2 day ago&#34; t1</span>
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># stat t1</span>
+  文件：<span style="color:#e6db74">&#34;t1&#34;</span>
+  大小：0               块：0          IO 块：4096   普通空文件
+设备：fd01h/64769d      Inode：668185      硬链接：1
+权限：<span style="color:#f92672">(</span>0644/-rw-r--r--<span style="color:#f92672">)</span>  Uid：<span style="color:#f92672">(</span>    0/    root<span style="color:#f92672">)</span>   Gid：<span style="color:#f92672">(</span>    0/    root<span style="color:#f92672">)</span>
+最近访问：2020-03-22 22:49:50.941398201 +0800
+最近更改：2020-03-22 22:49:50.941398201 +0800
+最近改动：2020-03-24 22:49:50.941121499 +0800
+创建时间：-
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># date</span>
+2020年 03月 24日 星期二 22:50:01 CST
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># touch -t &#34;01231215&#34; t3</span>
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># stat t3</span>
+  文件：<span style="color:#e6db74">&#34;t3&#34;</span>
+  大小：0               块：0          IO 块：4096   普通空文件
+设备：fd01h/64769d      Inode：668187      硬链接：1
+权限：<span style="color:#f92672">(</span>0644/-rw-r--r--<span style="color:#f92672">)</span>  Uid：<span style="color:#f92672">(</span>    0/    root<span style="color:#f92672">)</span>   Gid：<span style="color:#f92672">(</span>    0/    root<span style="color:#f92672">)</span>
+最近访问：2020-01-23 12:15:00.000000000 +0800
+最近更改：2020-01-23 12:15:00.000000000 +0800
+最近改动：2020-03-24 22:50:53.180699023 +0800
+创建时间：-
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span># 
+</code></pre></div><h3 id="rm">rm</h3>
+<h4 id="rm---help">rm &ndash;help</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># rm --help;</span>
+用法：rm <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... 文件...
+Remove <span style="color:#f92672">(</span>unlink<span style="color:#f92672">)</span> the FILE<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>.
+
+  -f, --force           ignore nonexistent files and arguments, never prompt
+  -i                    prompt before every removal
+  -I                    prompt once before removing more than three files, or
+                          when removing recursively; less intrusive than -i,
+                          <span style="color:#66d9ef">while</span> still giving protection against most mistakes
+      --interactive<span style="color:#f92672">[=</span>WHEN<span style="color:#f92672">]</span>  prompt according to WHEN: never, once <span style="color:#f92672">(</span>-I<span style="color:#f92672">)</span>, or
+                          always <span style="color:#f92672">(</span>-i<span style="color:#f92672">)</span>; without WHEN, prompt always
+      --one-file-system         递归删除一个层级时，跳过所有不符合命令行参
+                                数的文件系统上的文件
+      --no-preserve-root  <span style="color:#66d9ef">do</span> not treat <span style="color:#e6db74">&#39;/&#39;</span> specially
+      --preserve-root   <span style="color:#66d9ef">do</span> not remove <span style="color:#e6db74">&#39;/&#39;</span> <span style="color:#f92672">(</span>default<span style="color:#f92672">)</span>
+  -r, -R, --recursive   remove directories and their contents recursively
+  -d, --dir             remove empty directories
+  -v, --verbose         explain what is being <span style="color:#66d9ef">done</span>
+      --help            显示此帮助信息并退出
+      --version         显示版本信息并退出
+
+默认时，rm 不会删除目录。使用--recursive<span style="color:#f92672">(</span>-r 或-R<span style="color:#f92672">)</span>选项可删除每个给定
+的目录，以及其下所有的内容。
+
+To remove a file whose name starts with a <span style="color:#e6db74">&#39;-&#39;</span>, <span style="color:#66d9ef">for</span> example <span style="color:#e6db74">&#39;-foo&#39;</span>,
+use one of these commands:
+  rm -- -foo
+
+  rm ./-foo
+
+请注意，如果使用rm 来删除文件，通常仍可以将该文件恢复原状。如果想保证
+该文件的内容无法还原，请考虑使用shred。
+
+</code></pre></div><h3 id="查看文件">查看文件</h3>
+<ul>
+<li>cat</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># cat --help</span>
+用法：cat <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>文件<span style="color:#f92672">]</span>...
+将<span style="color:#f92672">[</span>文件<span style="color:#f92672">]</span>或标准输入组合输出到标准输出。
+
+  -A, --show-all           等于-vET
+  -b, --number-nonblank    对非空输出行编号
+  -e                       等于-vE
+  -E, --show-ends          在每行结束处显示<span style="color:#e6db74">&#34;</span>$<span style="color:#e6db74">&#34;</span>
+  -n, --number             对输出的所有行编号
+  -s, --squeeze-blank      不输出多行空行
+  -t                       与-vT 等价
+  -T, --show-tabs          将跳格字符显示为^I
+  -u                       <span style="color:#f92672">(</span>被忽略<span style="color:#f92672">)</span>
+  -v, --show-nonprinting   使用^ 和M- 引用，除了LFD和 TAB 之外
+      --help            显示此帮助信息并退出
+      --version         显示版本信息并退出
+
+如果没有指定文件，或者文件为<span style="color:#e6db74">&#34;-&#34;</span>，则从标准输入读取。
+
+示例：
+  cat f - g  先输出f 的内容，然后输出标准输入的内容，最后输出g 的内容。
+  cat        将标准输入的内容复制到标准输出。
+</code></pre></div><ul>
+<li>tac</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># tac --help</span>
+用法：tac <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>文件<span style="color:#f92672">]</span>...
+Write each FILE to standard output, last line first.
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory <span style="color:#66d9ef">for</span> short options too.
+  -b, --before                  在行前而非行尾添加分隔标志
+  -r, --regex                   将分隔标志视作正则表达式来解析
+  -s, --separator<span style="color:#f92672">=</span>字符串        使用指定字符串代替换行作为分隔标志
+      --help            显示此帮助信息并退出
+      --version         显示版本信息并退出
+</code></pre></div><ul>
+<li>more</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># more --help</span>
+more: 未知选项 -help
+用法：more <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> 文件...
+
+选项：
+  -d        显示帮助，而不是响铃
+  -f        统计逻辑行数而不是屏幕行数
+  -l        抑制换页<span style="color:#f92672">(</span>form feed<span style="color:#f92672">)</span>后的暂停
+  -p        不滚屏，清屏并显示文本
+  -c        不滚屏，显示文本并清理行尾
+  -u        抑制下划线
+  -s        将多个空行压缩为一行
+  -NUM      指定每屏显示的行数为 NUM
+  +NUM      从文件第 NUM 行开始显示
+  +/STRING  从匹配搜索字符串 STRING 的文件位置开始显示
+  -V        输出版本信息并退出
+<span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span># 
+
+</code></pre></div><ul>
+<li>less</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">这个好长
+</code></pre></div><ul>
+<li>tac</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># tac --help</span>
+用法：tac <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>... <span style="color:#f92672">[</span>文件<span style="color:#f92672">]</span>...
+  -b, --before                  在行前而非行尾添加分隔标志
+  -r, --regex                   将分隔标志视作正则表达式来解析
+  -s, --separator<span style="color:#f92672">=</span>字符串        使用指定字符串代替换行作为分隔标志
+      --help            显示此帮助信息并退出
+      --version         显示版本信息并退出
+</code></pre></div><ul>
+<li>tail</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc touch<span style="color:#f92672">]</span><span style="color:#75715e"># tail -n 3 ../cp/default.conf</span> 
+          index  index.html index.htm;
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+// 最后三行
+</code></pre></div><h3 id="find">find</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># find --help</span>
+用法: find <span style="color:#f92672">[</span>-H<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-L<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-P<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-Olevel<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-D help|tree|search|stat|rates|opt|exec<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>path...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>expression<span style="color:#f92672">]</span>
+
+默认路径为当前目录；默认表达式为 -print
+表达式可能由下列成份组成：操作符、选项、测试表达式以及动作：
+
+操作符 <span style="color:#f92672">(</span>优先级递减；未做任何指定时默认使用 -and<span style="color:#f92672">)</span>:
+      <span style="color:#f92672">(</span> EXPR <span style="color:#f92672">)</span>   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2
+      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2
+
+比较测试 <span style="color:#f92672">(</span>N 可以是 +N 或 -N 或 N<span style="color:#f92672">)</span>: -amin N -anewer FILE -atime N -cmin N
+      -cnewer 文件 -ctime N -empty -false -fstype 类型 -gid N -group 名称
+      -ilname 匹配模式 -iname 匹配模式 -inum N -ipath 匹配模式 -iregex 匹配模式
+      -links N -lname 匹配模式 -mmin N -mtime N -name 匹配模式 -newer 文件
+      -nouser -nogroup -path PATTERN -perm <span style="color:#f92672">[</span>-/<span style="color:#f92672">]</span>MODE -regex PATTERN
+      -readable -writable -executable
+      -wholename PATTERN -size N<span style="color:#f92672">[</span>bcwkMG<span style="color:#f92672">]</span> -true -type <span style="color:#f92672">[</span>bcdpflsD<span style="color:#f92672">]</span> -uid N
+      -used N -user NAME -xtype <span style="color:#f92672">[</span>bcdpfls<span style="color:#f92672">]</span>
+      -context 文本
+
+
+操作: -delete -print0 -printf 格式 -fprintf 文件 格式 -print 
+      -fprint0 文件 -fprint 文件 -ls -fls 文件 -prune -quit
+      -exec 命令 ; -exec 命令 <span style="color:#f92672">{}</span> + -ok 命令 ;
+      -execdir 命令 ; -execdir 命令 <span style="color:#f92672">{}</span> + -okdir 命令 ;
+</code></pre></div><h3 id="文本文本操作">文本文本操作</h3>
+<ul>
+<li>grep 过滤</li>
+<li>diff 比较文件差异</li>
+<li>ln 文件目录之间创建链接</li>
+<li>file [文件或者文件夹] 显示类型</li>
+<li>split 分割</li>
+<li>join 合并</li>
+<li>umask 文件<strong>权限</strong></li>
+</ul>
+<h5 id="把权限拿出来细讲下">把权限拿出来细讲下</h5>
+<blockquote>
+<p>unmask 范围[000~777]</p>
+</blockquote>
+<ul>
+<li>r - 4 - 读</li>
+<li>w - 2 - 写</li>
+<li>x - 1 - 执行</li>
+</ul>
+<h6 id="计算如下">计算如下</h6>
+<ul>
+<li>最大权限777 读、写、执行权限</li>
+<li>当前环境umask值 ，系统为002</li>
+<li>对于当前目录，根据互补原则目录权限755。而文件默认没有执行权限，最大666，对应的权限644</li>
+</ul>
+<blockquote>
+<p>文件默认权限666-022=644，目录默认权限777-022=755</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc nmask<span style="color:#f92672">]</span><span style="color:#75715e"># umask</span>
+<span style="color:#ae81ff">0022</span>
+<span style="color:#f92672">[</span>root@Cc nmask<span style="color:#f92672">]</span><span style="color:#75715e"># touch file;mkdir dir</span>
+<span style="color:#f92672">[</span>root@Cc nmask<span style="color:#f92672">]</span><span style="color:#75715e"># ls -l</span>
+总用量 <span style="color:#ae81ff">4</span>
+drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">24</span> 23:28 dir
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root    <span style="color:#ae81ff">0</span> 3月  <span style="color:#ae81ff">24</span> 23:28 file
+<span style="color:#f92672">[</span>root@Cc nmask<span style="color:#f92672">]</span># 
+</code></pre></div><h2 id="目录管理">目录管理</h2>
+
+  </div>
+
+  
+  
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Cc</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-03-24
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://blog.lichaocheng.top" target="_blank">LiChaoChengBlog</a></span>
+  </p>
+</div>
+
+
+  
+  
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="image/example.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+</article>
+
+
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+  <div id="comments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 700);
+              clearInterval(checkExist);
+            }
+        }, 10);
+    }
+  </script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#comments' ,
+        appId: 'JcD72zxOvMLBD95kc0VW62eR-gzGzoHsz',
+        appKey: 'CnlQhdPzdvfO8QlI3CJLSGYV',
+        notify:  true , 
+        verify:  true , 
+        avatar:'test', 
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:li_chao_cheng@163.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/Cc360428" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/Cc360428" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.zhihu.com/people/Cc360428" rel="me noopener" class="iconfont"
+      title="zhihu"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M351.791182 562.469462l192.945407 0c0-45.367257-21.3871-71.939449-21.3871-71.939449L355.897709 490.530013c3.977591-82.182744 7.541767-187.659007 8.816806-226.835262l159.282726 0c0 0-0.86367-67.402109-18.578124-67.402109s-279.979646 0-279.979646 0 16.850783-88.141456 39.318494-127.053698c0 0-83.60514-4.510734-112.121614 106.962104S81.344656 355.077018 76.80834 367.390461c-4.536316 12.313443 24.62791 5.832845 36.941354 0 12.313443-5.832845 68.050885-25.924439 84.252893-103.69571l86.570681 0c1.165546 49.28652 4.596691 200.335724 3.515057 226.835262L109.86113 490.530013c-25.275663 18.147312-33.701566 71.939449-33.701566 71.939449L279.868105 562.469462c-8.497535 56.255235-23.417339 128.763642-44.275389 167.210279-33.05279 60.921511-50.55235 116.65793-169.802314 212.576513 0 0-19.442818 14.257725 40.829917 9.073656 60.273758-5.185093 117.305683-20.739347 156.840094-99.807147 20.553105-41.107233 41.805128-93.250824 58.386782-146.138358l-0.055259 0.185218 167.855986 193.263655c0 0 22.035876-51.847855 5.832845-108.880803L371.045711 650.610918l-42.1244 31.157627-0.045025 0.151449c11.69946-41.020252 20.11206-81.5749 22.726607-116.858498C351.665315 564.212152 351.72876 563.345412 351.791182 562.469462z"></path>
+  <path d="M584.918753 182.033893l0 668.840094 70.318532 0 28.807093 80.512708 121.875768-80.512708 153.600307 0L959.520453 182.033893 584.918753 182.033893zM887.150192 778.934538l-79.837326 0-99.578949 65.782216-23.537066-65.782216-24.855084 0L659.341766 256.673847l227.807403 0L887.149169 778.934538z"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://blog.lichaocheng.top/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    技术支持 <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    个人主页 - <a class="theme-link" href="https://lichaocheng.top">lichaocheng</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2019 -
+    2020
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Lcc
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

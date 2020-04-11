@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Li Chao Cheng Blog</title>
+    <link>https://cc360428.github.io/post/</link>
+    <description>Recent content in Posts on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Lcc</copyright>
+    <lastBuildDate>Wed, 08 Apr 2020 22:21:48 +0800</lastBuildDate>
+    
+	<atom:link href="https://cc360428.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Day01</title>
+      <link>https://cc360428.github.io/post/system/mysql/day01/</link>
+      <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/mysql/day01/</guid>
+      <description>mysql 考虑到工作临时需要 第4章（检索数据） 4.5 检索不同的行 SELECT vend_id FROM products; 4.6 限制结果 SELECT prod_name FROM products LIMIT 5, 5; 第6章（过滤数据） 6.1 where 字句 SELECT prod_name, prod_price FROM products WHERE prod_price = 2.50; 6.2 where 字句操作</description>
+    </item>
+    
+    <item>
+      <title>Day06（作用域与数组）</title>
+      <link>https://cc360428.github.io/post/golang/base/variableandarray/</link>
+      <pubDate>Tue, 07 Apr 2020 22:58:36 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/variableandarray/</guid>
+      <description>作用域与数组 源码 变量作用域 局部变量 函数内定义的变量 package main import ( &amp;#34;fmt&amp;#34; ) func main() { var a, b, c = 1, 2, 3 fmt.Println(a, b, c) } 全局变量 函数外定义的变量 package main import &amp;#34;fmt&amp;#34; // 定义全局变量 var</description>
+    </item>
+    
+    <item>
+      <title>Day05（函数）</title>
+      <link>https://cc360428.github.io/post/golang/base/func/</link>
+      <pubDate>Mon, 06 Apr 2020 22:05:18 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/func/</guid>
+      <description>函数 源码 go 至少一个函数 主函数 package main import ( &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; ) func main() { _, _, _, err := FuncName(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;, false) if err != nil { logs.Error(err.Error()) } } // FuncName func FuncName(args1, args2 string, args3 bool) (return1, return2 string, return3 bool, return4 error) { /** 函数体 */ return } 说明 可以retu</description>
+    </item>
+    
+    <item>
+      <title>Day04（循环语句）</title>
+      <link>https://cc360428.github.io/post/golang/base/loopstatementfunc/</link>
+      <pubDate>Fri, 03 Apr 2020 00:10:00 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/loopstatementfunc/</guid>
+      <description>循环语句 源代码 for 1 package main 2 3 import &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; 4 5 func main() { 6 array := make([]int, 5) 7 logs.Info(array) 8 for i := 0; i &amp;lt; len(array); i++ { 9 array[i] = i 10 } 11 logs.Info(array) 12 b := 3 13 for ; b &amp;gt;= 1; { 14 b-- 15 logs.Debug(b) 16 } 17 a := 5 18 for a &amp;gt;=</description>
+    </item>
+    
+    <item>
+      <title>Day03（运算符与条件语句）</title>
+      <link>https://cc360428.github.io/post/golang/base/operatorcondition/</link>
+      <pubDate>Thu, 02 Apr 2020 13:13:45 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/operatorcondition/</guid>
+      <description>运算符与条件语句 本章源码 运算符 算数运算符 假定 A 值为 10，B 值为 20 运算符 描述 实例 + 相加 A + B 输出结果 30 - 相减 A - B 输出结果 -10 * 相乘 A * B 输出结</description>
+    </item>
+    
+    <item>
+      <title>Day02（入门基础）</title>
+      <link>https://cc360428.github.io/post/golang/base/datatype/</link>
+      <pubDate>Tue, 31 Mar 2020 21:18:30 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/datatype/</guid>
+      <description>数据类型、变量、常量 本章源码 数据类型 package builtin 可以看数据包builtin 布尔类型 默认值为：false 数字类型 整形 默认值为：0 浮点型 默认值为：0 字符</description>
+    </item>
+    
+    <item>
+      <title>Day01（Golang 入门介绍）</title>
+      <link>https://cc360428.github.io/post/golang/base/base/</link>
+      <pubDate>Mon, 30 Mar 2020 23:31:59 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/base/</guid>
+      <description>Golang基础 本章源码 初步认识Golang Go 跨平台（linux、windows、mac），只要编写完代码之后交叉编译即可 Go 语言单一、简洁、</description>
+    </item>
+    
+    <item>
+      <title>linux(CentOS7) 网络管理</title>
+      <link>https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Sun, 29 Mar 2020 00:49:12 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
+      <description>网络基础知识以及网络管理内容 网络管理协议 好多概念知识，会拿出时间来讲解这张预留的空白 TCP/IP协议概述 好多概念知识，会拿出时间来讲解这张预</description>
+    </item>
+    
+    <item>
+      <title>linux(CentOS7) 系统启动控制、进程管理</title>
+      <link>https://cc360428.github.io/post/system/redhad/9%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%8E%A7%E5%88%B6%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Sun, 29 Mar 2020 00:48:12 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/redhad/9%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%8E%A7%E5%88%B6%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid>
+      <description>系统启动控制、进程管理 系统启动控制 0&amp;mdash;-停机 1&amp;mdash;单用户模式 2&amp;mdash;多用户模式（没有网络文件系统） 3&amp;mdas</description>
+    </item>
+    
+    <item>
+      <title>linux(CentOS7) 应用程序管理</title>
+      <link>https://cc360428.github.io/post/system/redhad/8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Sat, 28 Mar 2020 16:11:12 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/redhad/8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%AE%A1%E7%90%86/</guid>
+      <description>应用程序管理 软件包基础 常见安装工具包 RPM DPKG RPM使用 安装软件 （rz示例） 都和以下载 ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm wget http://images.lichaocheng.top/static/upload/2020/03/28/6fc647af1780ffc0b127510a418445a1.rpm [root@Cc rpm]# wget ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm [root@Cc rpm]# pwd /root/RedHad/8/rpm [root@Cc rpm]# ll 总用量 80 -rw-r--r-- 1 root root 79376 3月 28 15:10 6fc647af1780ffc0b127510a418445a1.rpm [root@Cc rpm]#</description>
+    </item>
+    
+  </channel>
+</rss>

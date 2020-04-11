@@ -2,88 +2,86 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on Li Chao Cheng Blog</title>
-    <link>https://Cc360428.github.io/tags/golang/</link>
+    <link>https://cc360428.github.io/tags/golang/</link>
     <description>Recent content in Golang on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 16:02:24 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <copyright>Lcc</copyright>
+    <lastBuildDate>Wed, 11 Mar 2020 16:19:11 +0800</lastBuildDate>
     
-	<atom:link href="https://Cc360428.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cc360428.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>golang 包管理</title>
+      <link>https://cc360428.github.io/post/golang/golang%E5%8C%85%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 11 Mar 2020 16:19:11 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/golang%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
+      <description>godep 安装 go get -u -v github.com/tools/godep 使用 参考1 参考2 goverdor（go1.12下 推荐使用） 安装 go get -u github.com/kardianos/govendor 基本使用 进入项目目录 govendor init govendor fetch github.com/Cc360428/HelpPackage/UtilsHelp cat vendor/vendor.json { &amp;#34;comment&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;ignore&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;package&amp;#34;: [ { &amp;#34;checksumSHA1&amp;#34;: &amp;#34;vT6zp7A2xIrOTza5mYU7ZR4it1c=&amp;#34;,</description>
+    </item>
+    
+    <item>
       <title>Golang Mysql Gorm</title>
-      <link>https://Cc360428.github.io/golang/mysql/gorm/</link>
+      <link>https://cc360428.github.io/post/golang/mysql/gorm/</link>
       <pubDate>Thu, 05 Mar 2020 16:02:24 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/golang/mysql/gorm/</guid>
-      <description>Gorm 概述 官网
-gorm 对数据库的操作
-环境搭建 下载依赖 go get -u github.com/jinzhu/gorm
-实例（连接） package mainimport (&amp;#34;fmt&amp;#34;&amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; // logs	&amp;#34;github.com/jinzhu/gorm&amp;#34; // gorm	_ &amp;#34;github.com/jinzhu/gorm/dialects/mysql&amp;#34; // 导入初始化包)type Product struct {gorm.ModelCode stringPrice uint}func main() {db, err := gorm.Open(Databases.Type, // 连接属性 （mysql）	fmt.Sprintf(&amp;#34;%s:%s@tcp(%s)/%s?charset=utf8&amp;amp;parseTime=True&amp;amp;loc=Local&amp;#34;,Databases.User, // 用户名	Databases.Password, // 密码	Databases.Host, // 端口号	Databases.Name)) // 数据库名字	if err !</description>
+      <guid>https://cc360428.github.io/post/golang/mysql/gorm/</guid>
+      <description>Gorm 概述 官网 gorm 对数据库的操作 环境搭建 下载依赖 go get -u github.com/jinzhu/gorm 实例（连接） package main import ( &amp;#34;fmt&amp;#34; &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; // logs &amp;#34;github.com/jinzhu/gorm&amp;#34; // gorm _ &amp;#34;github.com/jinzhu/gorm/dialects/mysql&amp;#34; // 导入初始化包 ) type Product struct { gorm.Model Code string Price uint } func main() { db, err := gorm.Open(Databases.Type, //</description>
     </item>
     
     <item>
       <title>gRPC 和 ui 操作</title>
-      <link>https://Cc360428.github.io/golang/grpc/</link>
+      <link>https://cc360428.github.io/post/golang/grpc/</link>
       <pubDate>Thu, 26 Dec 2019 14:22:12 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/golang/grpc/</guid>
-      <description>gRPC 安装protoc工具  https://github.com/protocolbuffers/protobuf/releases
-  -I 参数：指定import路径，可以指定多个-I参数，编译时按顺序查找，不指定时默认查找当前目录 &amp;ndash;go_out ：golang编译支持，支持以下参数  plugins=plugin1+plugin2 - 指定插件，目前只支持grpc，即：plugins=grpc M 参数 - 指定导入的.proto文件路径编译后对应的golang包名(不指定本参数默认就是.proto文件中import语句的路径) import_prefix=xxx - 为所有import路径添加前缀，主要用于编译子目录内的多个proto文件，这个参数按理说很有用，尤其适用替代一些情况时的M参数，但是实际使用时有个蛋疼的问题导致并不能达到我们预想的效果，自己尝试看看吧 import_path=foo/bar - 用于指定未声明package或go_package的文件的包名，最右面的斜线前的字符会被忽略 末尾 :编译文件路径 .proto文件路径(支持通配符)     完整实例
-  使用前安装：go get -u github.com/golang/protobuf/protoc-gen-go
- protoc -I . --go_out=plugins=grpc,Mfoo/bar.proto=bar,import_prefix=foo/,import_path=foo/bar:. ./*.protoprotoc -I . --go_out=plugins=grpc:. dict.protocprotoc -I . --php_out=plugins=grpc:. zhly_pay.protocprotoc --java_out=:. zhly_pay.protocprotoc --js_out=:. zhly_pay.protocprotoc -I=$DIR yun_mao.protoc \ --grpc-web_out=import_style=commonjs,mode=grpcwebtext:$OUT_DIRprotoc --js_out=import_style=commonjs,binary:. yun_mao.protoc下载工具依赖 go get google.</description>
+      <guid>https://cc360428.github.io/post/golang/grpc/</guid>
+      <description>gRPC 安装protoc工具 https://github.com/protocolbuffers/protobuf/releases -I 参数：指定import路径，可以指定多个-I参数，编译时按顺序查找，不指定时默认查找当前目录 &amp;ndash;go_out ：golang编译支</description>
     </item>
     
     <item>
       <title>Golang 版本更新 摘要</title>
-      <link>https://Cc360428.github.io/golang/golang-1.12/</link>
+      <link>https://cc360428.github.io/post/golang/golang-1.12/</link>
       <pubDate>Fri, 06 Dec 2019 17:11:22 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/golang/golang-1.12/</guid>
-      <description>go mod 1.12 学习 go modules(check version) 检查 golang 版本
-如果没有生成 go.sum 或者报错请输入export GOPROXY=https://goproxy.ioC:\Users\admin&amp;gt;go versiongo version go1.12.9 windows/amd64把 golang 升级到 1.11（现在1.12 已经发布了，建议使用1.12）设置 GO111MODULEGO111MODULEGO111MODULE 有三个值：off, on和auto（默认值）。GO111MODULE=off，go命令行将不会支持module功能，寻找依赖包的方式将会沿用旧版本那种通过vendor目录或者GOPATH模式来查找。GO111MODULE=on，go命令行会使用modules，而一点也不会去GOPATH目录下查找。GO111MODULE=auto，默认值，go命令行将会根据当前目录来决定是否启用module功能。这种情况下可以分为两种情形：当前目录在GOPATH/src之外且该目录包含go.mod文件当前文件在包含go.mod文件的目录下面。当modules 功能启用时，依赖包的存放位置变更为$GOPATH/pkg，允许同一个package多个版本并存，且多个项目可以共享缓存的 module。命令说明downloaddownload modules to local cache(下载依赖包)editedit go.mod from tools or scripts（编辑go.modgraphprint module requirement graph (打印模块依赖图)initinitialize new module in current directory（在当前目录初始化mod）tidyadd missing and remove unused modules(拉取缺少的模块，移除不用的模块)vendormake vendored copy of dependencies(将依赖复制到vendor下)verifyverify dependencies have expected content (验证依赖是否正确）whyexplain why packages or modules are needed(解释为什么需要依赖)实例  在GOPATH 目录之外新建一个目录</description>
+      <guid>https://cc360428.github.io/post/golang/golang-1.12/</guid>
+      <description>go mod 1.12 学习 go modules(check version) 检查 golang 版本 如果没有生成 go.sum 或者报错请输入 export GOPROXY=https://goproxy.io C:\Users\admin&amp;gt;go version go version go1.12.9 windows/amd64 把 golang 升级到 1.11（现在1.12 已经发布了，建议使用1.12） 设置 GO111MODULE GO111MODULE</description>
     </item>
     
     <item>
       <title>Golang Gin</title>
-      <link>https://Cc360428.github.io/golang/gin/gin-bast/</link>
+      <link>https://cc360428.github.io/post/golang/gin/gin-bast/</link>
       <pubDate>Sun, 07 Jul 2019 13:21:03 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/golang/gin/gin-bast/</guid>
-      <description>构建  安装Gin环境  go get -u github.com/gin-gonic/gin 安装Gin 工具  go get github.com/kardianos/govendorgin_demo  创建文件  mkdir gin_demo 初始化构建gin  govendor initgovendor fetch github.com/gin-gonic/gin@v1.3 Hello World Gin  package mainimport (&amp;quot;net/http&amp;quot;&amp;quot;github.com/gin-gonic/gin&amp;quot;)func setupRouter() *gin.Engine {r := gin.Default()r.GET(&amp;quot;/&amp;quot;, func(c *gin.Context) {c.String(http.StatusOK, &amp;quot;Hello World Gin&amp;quot;)})return r}func main() {r := setupRouter()_ = r.Run(&amp;quot;:9999&amp;quot;)}</description>
+      <guid>https://cc360428.github.io/post/golang/gin/gin-bast/</guid>
+      <description>构建 安装Gin环境 go get -u github.com/gin-gonic/gin 安装Gin 工具 go get github.com/kardianos/govendor gin_demo 创建文件 mkdir gin_demo 初始化构建gin govendor init govendor fetch github.com/gin-gonic/gin@v1.3 Hello World Gin package main import ( &amp;quot;net/http&amp;quot; &amp;quot;github.com/gin-gonic/gin&amp;quot; ) func setupRouter() *gin.Engine { r := gin.Default() r.GET(&amp;quot;/&amp;quot;, func(c *gin.Context) { c.String(http.StatusOK, &amp;quot;Hello World Gin&amp;quot;) }) return</description>
     </item>
     
     <item>
       <title>Beego Base</title>
-      <link>https://Cc360428.github.io/golang/beego/base-beego/</link>
+      <link>https://cc360428.github.io/post/golang/beego/base-beego/</link>
       <pubDate>Mon, 06 May 2019 15:21:24 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/golang/beego/base-beego/</guid>
-      <description>下载安装 安装环境 go get github.com/astaxie/beego
-安装bee 工具 go get github.com/beego/bee</description>
+      <guid>https://cc360428.github.io/post/golang/beego/base-beego/</guid>
+      <description>下载安装 安装环境 go get github.com/astaxie/beego 安装bee 工具 go get github.com/beego/bee</description>
     </item>
     
     <item>
       <title>Golang Base</title>
-      <link>https://Cc360428.github.io/golang/base/</link>
+      <link>https://cc360428.github.io/post/golang/base/</link>
       <pubDate>Thu, 07 Mar 2019 09:21:03 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/golang/base/</guid>
-      <description>GoLang GoLang https://go-zh.org/
-基础 包、变量和函数、基本类型  包 package 每个程序都是由包组成 导入 import
-圆括号可以组合导入 导出 在Go语言中首字母大写的名称是被导出的  导入了一个包后，可以导出名称来调用他 Foo 和 FOO 都是被导出的名称。名称 foo 是不会被导出的   函数  函数可以返回任意数量的返回值   变量  var :=   基本类型  bool string int int8 int64 int32 int64 byte rune float32 float64 complex64 complex128   定义是未明确初始化值为：数值类型为0、布尔类型为 false 字符类型为&amp;rdquo;&amp;rdquo;
-  类型转换 常量  关键字定义：const   注： 不能使用 :=
-   流程控制语句  for if else switch  复杂类型   defer</description>
+      <guid>https://cc360428.github.io/post/golang/base/</guid>
+      <description>GoLang GoLang https://go-zh.org/ 基础 包、变量和函数、基本类型 包 package 每个程序都是由包组成 导入 import 圆括号可以组合导入 导出 在Go语言中首字母大写的名称是被导出的 导入了一个包后，</description>
     </item>
     
     <item>
       <title>环境搭建</title>
-      <link>https://Cc360428.github.io/golang/system/</link>
+      <link>https://cc360428.github.io/post/golang/system/</link>
       <pubDate>Tue, 26 Feb 2019 08:20:53 +0800</pubDate>
       
-      <guid>https://Cc360428.github.io/golang/system/</guid>
-      <description>linux 下载  https://golang.org/dl/ go1.13.5.linux-amd64.tar.gz  压缩 tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz git 安装 [root@test golang]# git versiongit version 1.8.3.1 go get beego go get github.com/astaxie/beegogo get github.com/beego/beeGingo get -u github.com/gin-gonic/gin Windows 下载源码 配置gopath即可 在环境变量里面配置 GOPATH 即可</description>
+      <guid>https://cc360428.github.io/post/golang/system/</guid>
+      <description>linux 下载 https://studygolang.com/dl go1.13.5.linux-amd64.tar.gz 压缩 tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz git 安装 [root@test golang]# git version git version 1.8.3.1 go get beego go get github.com/astaxie/beego go get github.com/beego/bee Gin go get -u github.com/gin-gonic/gin Windows 下载源码 配置gopath即可 在环境变量里面配置 GOPATH 即可</description>
     </item>
     
   </channel>

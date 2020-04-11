@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://cc360428.github.io/sitemap.xml
