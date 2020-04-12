@@ -67,6 +67,15 @@
     </item>
     
     <item>
+      <title>linux(CentOS7) 文件管理与磁盘管理</title>
+      <link>https://cc360428.github.io/post/system/redhad/5%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Thu, 26 Mar 2020 23:23:12 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/redhad/5%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/</guid>
+      <description>文件管理 认识分区 1 2 3 4 5 6 [root@Cc ~]# df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 909M 0 909M 0% /dev [root@Cc ~]# df -h 文件系统 容量 已用 可用 已用% 挂载点 devtmpfs 909M 0 909M 0% /dev 文件管理 文件类型 普通文件 -</description>
+    </item>
+    
+    <item>
       <title>linux(CentOS7) 目录管理、系统管理</title>
       <link>https://cc360428.github.io/post/system/redhad/4.5%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/</link>
       <pubDate>Wed, 25 Mar 2020 23:48:12 +0800</pubDate>
