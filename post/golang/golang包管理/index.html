@@ -68,7 +68,7 @@
 <meta itemprop="description" content="go 代码管理工具">
 <meta itemprop="datePublished" content="2020-03-11T16:19:11&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-11T16:19:11&#43;08:00" />
-<meta itemprop="wordCount" content="404">
+<meta itemprop="wordCount" content="453">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/golang/"> golang </a>
             
           </div>
-        <span class="more-meta"> 约 404 字 </span>
+        <span class="more-meta"> 约 453 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -441,28 +441,55 @@
 <blockquote>
 <p>进入项目目录</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">govendor</span> <span style="color:#a6e22e">init</span>
-<span style="color:#a6e22e">govendor</span> <span style="color:#a6e22e">fetch</span> <span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Cc360428</span><span style="color:#f92672">/</span><span style="color:#a6e22e">HelpPackage</span><span style="color:#f92672">/</span><span style="color:#a6e22e">UtilsHelp</span>
-<span style="color:#a6e22e">cat</span> <span style="color:#a6e22e">vendor</span><span style="color:#f92672">/</span><span style="color:#a6e22e">vendor</span>.<span style="color:#a6e22e">json</span>
-{
-        <span style="color:#e6db74">&#34;comment&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
-        <span style="color:#e6db74">&#34;ignore&#34;</span>: <span style="color:#e6db74">&#34;test&#34;</span>,
-        <span style="color:#e6db74">&#34;package&#34;</span>: [
-                {
-                        <span style="color:#e6db74">&#34;checksumSHA1&#34;</span>: <span style="color:#e6db74">&#34;vT6zp7A2xIrOTza5mYU7ZR4it1c=&#34;</span>,
-                        <span style="color:#e6db74">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage&#34;</span>,
-                        <span style="color:#e6db74">&#34;revision&#34;</span>: <span style="color:#e6db74">&#34;8c482c1a5d4c81ee28409d5efcc557b3fa1b89c2&#34;</span>,
-                        <span style="color:#e6db74">&#34;revisionTime&#34;</span>: <span style="color:#e6db74">&#34;2020-03-05T05:01:58Z&#34;</span>
-                },
-                {
-                        <span style="color:#e6db74">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp&#34;</span>,
-                        <span style="color:#e6db74">&#34;revision&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
-                }
-        ],
-        <span style="color:#e6db74">&#34;rootPath&#34;</span>: <span style="color:#e6db74">&#34;Cc360428/cloud&#34;</span>
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">govendor</span> <span class="nx">init</span>
+<span class="nx">govendor</span> <span class="nx">fetch</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">Cc360428</span><span class="o">/</span><span class="nx">HelpPackage</span><span class="o">/</span><span class="nx">UtilsHelp</span>
+<span class="nx">cat</span> <span class="nx">vendor</span><span class="o">/</span><span class="nx">vendor</span><span class="p">.</span><span class="nx">json</span>
+<span class="p">{</span>
+        <span class="s">&#34;comment&#34;</span><span class="p">:</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+        <span class="s">&#34;ignore&#34;</span><span class="p">:</span> <span class="s">&#34;test&#34;</span><span class="p">,</span>
+        <span class="s">&#34;package&#34;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                        <span class="s">&#34;checksumSHA1&#34;</span><span class="p">:</span> <span class="s">&#34;vT6zp7A2xIrOTza5mYU7ZR4it1c=&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;path&#34;</span><span class="p">:</span> <span class="s">&#34;github.com/Cc360428/HelpPackage&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;revision&#34;</span><span class="p">:</span> <span class="s">&#34;8c482c1a5d4c81ee28409d5efcc557b3fa1b89c2&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;revisionTime&#34;</span><span class="p">:</span> <span class="s">&#34;2020-03-05T05:01:58Z&#34;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                        <span class="s">&#34;path&#34;</span><span class="p">:</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;revision&#34;</span><span class="p">:</span> <span class="s">&#34;&#34;</span>
+                <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s">&#34;rootPath&#34;</span><span class="p">:</span> <span class="s">&#34;Cc360428/cloud&#34;</span>
+<span class="p">}</span>
 
-</code></pre></div><h3 id="更多使用">更多使用</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="更多使用">更多使用</h3>
 <blockquote>
 <p>govendor &ndash;help</p>
 </blockquote>
@@ -485,12 +512,28 @@
 <p>注： GO111MODULE 有三个值（off、on、auto）</p>
 </blockquote>
 <h4 id="windows">windows</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#a6e22e">setx</span> <span style="color:#a6e22e">GO111MODULE</span> <span style="color:#a6e22e">on</span>
- <span style="color:#a6e22e">setx</span> <span style="color:#a6e22e">GOPROXY</span> <span style="color:#a6e22e">https</span>:<span style="color:#75715e">//goproxy.io
-</span></code></pre></div><h4 id="linux">linux</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">export</span> <span style="color:#a6e22e">GO111MODULE</span>=<span style="color:#a6e22e">on</span>
-<span style="color:#a6e22e">export</span> <span style="color:#a6e22e">GOPROXY</span>=<span style="color:#a6e22e">https</span>:<span style="color:#75715e">//goproxy.io
-</span></code></pre></div><h3 id="使用-1">使用</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"> <span class="nx">setx</span> <span class="nx">GO111MODULE</span> <span class="nx">on</span>
+ <span class="nx">setx</span> <span class="nx">GOPROXY</span> <span class="nx">https</span><span class="p">:</span><span class="c1">//goproxy.io
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="linux">linux</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">export</span> <span class="nx">GO111MODULE</span><span class="p">=</span><span class="nx">on</span>
+<span class="nx">export</span> <span class="nx">GOPROXY</span><span class="p">=</span><span class="nx">https</span><span class="p">:</span><span class="c1">//goproxy.io
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="使用-1">使用</h3>
 <blockquote>
 <p>进入项目根目录下</p>
 </blockquote>
@@ -527,31 +570,61 @@
 </ul>
 <p><code>why</code></p>
 <h4 id="go-mod-help">go mod help</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">help</span> <span style="color:#a6e22e">mod</span>
-<span style="color:#a6e22e">Go</span> <span style="color:#a6e22e">mod</span> <span style="color:#a6e22e">provides</span> <span style="color:#a6e22e">access</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">operations</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">modules</span>.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="err">$</span> <span class="k">go</span> <span class="nx">help</span> <span class="nx">mod</span>
+<span class="nx">Go</span> <span class="nx">mod</span> <span class="nx">provides</span> <span class="nx">access</span> <span class="nx">to</span> <span class="nx">operations</span> <span class="nx">on</span> <span class="nx">modules</span><span class="p">.</span>
 
-<span style="color:#a6e22e">Note</span> <span style="color:#a6e22e">that</span> <span style="color:#a6e22e">support</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">modules</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">built</span> <span style="color:#a6e22e">into</span> <span style="color:#a6e22e">all</span> <span style="color:#a6e22e">the</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">commands</span>,
-<span style="color:#a6e22e">not</span> <span style="color:#a6e22e">just</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">mod</span><span style="color:#960050;background-color:#1e0010">&#39;</span>. <span style="color:#a6e22e">For</span> <span style="color:#a6e22e">example</span>, <span style="color:#a6e22e">day</span><span style="color:#f92672">-</span><span style="color:#a6e22e">to</span><span style="color:#f92672">-</span><span style="color:#a6e22e">day</span> <span style="color:#a6e22e">adding</span>, <span style="color:#a6e22e">removing</span>, <span style="color:#a6e22e">upgrading</span>,
-<span style="color:#a6e22e">and</span> <span style="color:#a6e22e">downgrading</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">dependencies</span> <span style="color:#a6e22e">should</span> <span style="color:#a6e22e">be</span> <span style="color:#a6e22e">done</span> <span style="color:#a6e22e">using</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">get</span><span style="color:#960050;background-color:#1e0010">&#39;</span>.
-<span style="color:#a6e22e">See</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">help</span> <span style="color:#a6e22e">modules</span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">an</span> <span style="color:#a6e22e">overview</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">module</span> <span style="color:#a6e22e">functionality</span>.
+<span class="nx">Note</span> <span class="nx">that</span> <span class="nx">support</span> <span class="k">for</span> <span class="nx">modules</span> <span class="nx">is</span> <span class="nx">built</span> <span class="nx">into</span> <span class="nx">all</span> <span class="nx">the</span> <span class="k">go</span> <span class="nx">commands</span><span class="p">,</span>
+<span class="nx">not</span> <span class="nx">just</span> <span class="err">&#39;</span><span class="k">go</span> <span class="nx">mod</span><span class="err">&#39;</span><span class="p">.</span> <span class="nx">For</span> <span class="nx">example</span><span class="p">,</span> <span class="nx">day</span><span class="o">-</span><span class="nx">to</span><span class="o">-</span><span class="nx">day</span> <span class="nx">adding</span><span class="p">,</span> <span class="nx">removing</span><span class="p">,</span> <span class="nx">upgrading</span><span class="p">,</span>
+<span class="nx">and</span> <span class="nx">downgrading</span> <span class="nx">of</span> <span class="nx">dependencies</span> <span class="nx">should</span> <span class="nx">be</span> <span class="nx">done</span> <span class="nx">using</span> <span class="err">&#39;</span><span class="k">go</span> <span class="nx">get</span><span class="err">&#39;</span><span class="p">.</span>
+<span class="nx">See</span> <span class="err">&#39;</span><span class="k">go</span> <span class="nx">help</span> <span class="nx">modules</span><span class="err">&#39;</span> <span class="k">for</span> <span class="nx">an</span> <span class="nx">overview</span> <span class="nx">of</span> <span class="nx">module</span> <span class="nx">functionality</span><span class="p">.</span>
 
-<span style="color:#a6e22e">Usage</span>:
+<span class="nx">Usage</span><span class="p">:</span>
 
-        <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">mod</span> &lt;<span style="color:#a6e22e">command</span>&gt; [<span style="color:#a6e22e">arguments</span>]
+        <span class="k">go</span> <span class="nx">mod</span> <span class="p">&lt;</span><span class="nx">command</span><span class="p">&gt;</span> <span class="p">[</span><span class="nx">arguments</span><span class="p">]</span>
 
-<span style="color:#a6e22e">The</span> <span style="color:#a6e22e">commands</span> <span style="color:#a6e22e">are</span>:
+<span class="nx">The</span> <span class="nx">commands</span> <span class="nx">are</span><span class="p">:</span>
 
-        <span style="color:#a6e22e">download</span>    <span style="color:#a6e22e">download</span> <span style="color:#a6e22e">modules</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">local</span> <span style="color:#a6e22e">cache</span>
-        <span style="color:#a6e22e">edit</span>        <span style="color:#a6e22e">edit</span> <span style="color:#66d9ef">go</span>.<span style="color:#a6e22e">mod</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">tools</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">scripts</span>
-        <span style="color:#a6e22e">graph</span>       <span style="color:#a6e22e">print</span> <span style="color:#a6e22e">module</span> <span style="color:#a6e22e">requirement</span> <span style="color:#a6e22e">graph</span>
-        <span style="color:#a6e22e">init</span>        <span style="color:#a6e22e">initialize</span> <span style="color:#a6e22e">new</span> <span style="color:#a6e22e">module</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">current</span> <span style="color:#a6e22e">directory</span>
-        <span style="color:#a6e22e">tidy</span>        <span style="color:#a6e22e">add</span> <span style="color:#a6e22e">missing</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">remove</span> <span style="color:#a6e22e">unused</span> <span style="color:#a6e22e">modules</span>
-        <span style="color:#a6e22e">vendor</span>      <span style="color:#a6e22e">make</span> <span style="color:#a6e22e">vendored</span> <span style="color:#a6e22e">copy</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">dependencies</span>
-        <span style="color:#a6e22e">verify</span>      <span style="color:#a6e22e">verify</span> <span style="color:#a6e22e">dependencies</span> <span style="color:#a6e22e">have</span> <span style="color:#a6e22e">expected</span> <span style="color:#a6e22e">content</span>
-        <span style="color:#a6e22e">why</span>         <span style="color:#a6e22e">explain</span> <span style="color:#a6e22e">why</span> <span style="color:#a6e22e">packages</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">modules</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">needed</span>
+        <span class="nx">download</span>    <span class="nx">download</span> <span class="nx">modules</span> <span class="nx">to</span> <span class="nx">local</span> <span class="nx">cache</span>
+        <span class="nx">edit</span>        <span class="nx">edit</span> <span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">from</span> <span class="nx">tools</span> <span class="nx">or</span> <span class="nx">scripts</span>
+        <span class="nx">graph</span>       <span class="nx">print</span> <span class="nx">module</span> <span class="nx">requirement</span> <span class="nx">graph</span>
+        <span class="nx">init</span>        <span class="nx">initialize</span> <span class="nx">new</span> <span class="nx">module</span> <span class="nx">in</span> <span class="nx">current</span> <span class="nx">directory</span>
+        <span class="nx">tidy</span>        <span class="nx">add</span> <span class="nx">missing</span> <span class="nx">and</span> <span class="nx">remove</span> <span class="nx">unused</span> <span class="nx">modules</span>
+        <span class="nx">vendor</span>      <span class="nx">make</span> <span class="nx">vendored</span> <span class="nx">copy</span> <span class="nx">of</span> <span class="nx">dependencies</span>
+        <span class="nx">verify</span>      <span class="nx">verify</span> <span class="nx">dependencies</span> <span class="nx">have</span> <span class="nx">expected</span> <span class="nx">content</span>
+        <span class="nx">why</span>         <span class="nx">explain</span> <span class="nx">why</span> <span class="nx">packages</span> <span class="nx">or</span> <span class="nx">modules</span> <span class="nx">are</span> <span class="nx">needed</span>
 
-<span style="color:#a6e22e">Use</span> <span style="color:#e6db74">&#34;go help mod &lt;command&gt;&#34;</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">more</span> <span style="color:#a6e22e">information</span> <span style="color:#a6e22e">about</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">command</span>.
-</code></pre></div>
+<span class="nx">Use</span> <span class="s">&#34;go help mod &lt;command&gt;&#34;</span> <span class="k">for</span> <span class="nx">more</span> <span class="nx">information</span> <span class="nx">about</span> <span class="nx">a</span> <span class="nx">command</span><span class="p">.</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

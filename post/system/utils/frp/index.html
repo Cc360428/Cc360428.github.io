@@ -68,7 +68,7 @@
 <meta itemprop="description" content="网络服务映射">
 <meta itemprop="datePublished" content="2020-03-23T13:32:25&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-23T13:32:25&#43;08:00" />
-<meta itemprop="wordCount" content="1063">
+<meta itemprop="wordCount" content="1079">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 1063 字 </span>
+        <span class="more-meta"> 约 1079 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -431,16 +431,31 @@
 </ul>
 <h4 id="frpsinilinux">frps.ini（linux）</h4>
 <h5 id="目录结构">目录结构</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@k8s-master linux<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@k8s-master linux<span class="o">]</span><span class="c1"># ll</span>
 总用量 11096
--rwxrwxr-x <span style="color:#ae81ff">1</span> admin admin <span style="color:#ae81ff">11333632</span> 1月   <span style="color:#ae81ff">6</span> 16:02 frps
--rw-rw-r-- <span style="color:#ae81ff">1</span> admin admin     <span style="color:#ae81ff">2518</span> 1月  <span style="color:#ae81ff">17</span> 18:41 frps.ini
--rw-rw---- <span style="color:#ae81ff">1</span> root  root      <span style="color:#ae81ff">2377</span> 1月  <span style="color:#ae81ff">17</span> 18:36 frps.log
--rw-rw-r-- <span style="color:#ae81ff">1</span> admin admin    <span style="color:#ae81ff">11358</span> 1月   <span style="color:#ae81ff">6</span> 16:04 LICENSE
-drwxrwxr-x <span style="color:#ae81ff">2</span> admin admin     <span style="color:#ae81ff">4096</span> 1月   <span style="color:#ae81ff">6</span> 16:04 systemd
-<span style="color:#f92672">[</span>root@k8s-master linux<span style="color:#f92672">]</span># 
+-rwxrwxr-x <span class="m">1</span> admin admin <span class="m">11333632</span> 1月   <span class="m">6</span> 16:02 frps
+-rw-rw-r-- <span class="m">1</span> admin admin     <span class="m">2518</span> 1月  <span class="m">17</span> 18:41 frps.ini
+-rw-rw---- <span class="m">1</span> root  root      <span class="m">2377</span> 1月  <span class="m">17</span> 18:36 frps.log
+-rw-rw-r-- <span class="m">1</span> admin admin    <span class="m">11358</span> 1月   <span class="m">6</span> 16:04 LICENSE
+drwxrwxr-x <span class="m">2</span> admin admin     <span class="m">4096</span> 1月   <span class="m">6</span> 16:04 systemd
+<span class="o">[</span>root@k8s-master linux<span class="o">]</span># 
 
-</code></pre></div><h5 id="修改内容">修改内容</h5>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="修改内容">修改内容</h5>
 <pre><code class="language-frp" data-lang="frp">[common]
 # binde_addr是指定frp内网穿透服务器端监听的IP地址,默认为127.0.0.1，
 #如果使用IPv6地址的话，必须用方括号包括起来，比如 “[::1]:80”, “[ipv6-host]:http” or “[ipv6-host%zone]:80”
@@ -509,14 +524,27 @@ custom_domains = web.zhishi.com
 </code></pre><h4 id="运行方式-1">运行方式</h4>
 <p><code>./frpc.exe -c frpc.ini</code></p>
 <h3 id="nginx-代理域名映射">nginx 代理域名映射</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server{</span>
-    <span style="color:#e6db74">listen</span> <span style="color:#ae81ff">80</span>;
-    <span style="color:#66d9ef">server_name</span> <span style="color:#e6db74">frp.lichaocheng.top</span>;
-    <span style="color:#66d9ef">location</span> <span style="color:#e6db74">/</span> {
-        <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://0.0.0.0:9000</span>;
-    }
-<span style="color:#66d9ef">}</span>
-</code></pre></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server{</span>
+    <span class="s">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="k">server_name</span> <span class="s">frp.lichaocheng.top</span><span class="p">;</span>
+    <span class="k">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">proxy_pass</span> <span class="s">http://0.0.0.0:9000</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="k">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

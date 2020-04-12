@@ -68,7 +68,7 @@
 <meta itemprop="description" content="循环语句">
 <meta itemprop="datePublished" content="2020-04-03T00:10:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-03T00:10:00&#43;08:00" />
-<meta itemprop="wordCount" content="1157">
+<meta itemprop="wordCount" content="1384">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/base/"> base </a>
             
           </div>
-        <span class="more-meta"> 约 1157 字 </span>
+        <span class="more-meta"> 约 1384 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -412,257 +412,586 @@
       <h2 id="循环语句">循环语句</h2>
 <p><a href="https://gitee.com/GolangCodeFile/blogcode/tree/master/day04">源代码</a></p>
 <h4 id="for">for</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">4</span>
-     <span style="color:#ae81ff">5</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">6</span>          <span style="color:#a6e22e">array</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">5</span>)
-     <span style="color:#ae81ff">7</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">array</span>)
-     <span style="color:#ae81ff">8</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">array</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-     <span style="color:#ae81ff">9</span>                  <span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">i</span>
-    <span style="color:#ae81ff">10</span>          }
-    <span style="color:#ae81ff">11</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">array</span>)
-    <span style="color:#ae81ff">12</span>          <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3</span>
-    <span style="color:#ae81ff">13</span>          <span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">b</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span>; {
-    <span style="color:#ae81ff">14</span>                  <span style="color:#a6e22e">b</span><span style="color:#f92672">--</span>
-    <span style="color:#ae81ff">15</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Debug</span>(<span style="color:#a6e22e">b</span>)
-    <span style="color:#ae81ff">16</span>          }
-    <span style="color:#ae81ff">17</span>          <span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">5</span>
-    <span style="color:#ae81ff">18</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span> {
-    <span style="color:#ae81ff">19</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">a</span>)
-    <span style="color:#ae81ff">20</span>                  <span style="color:#a6e22e">a</span><span style="color:#f92672">--</span>
-    <span style="color:#ae81ff">21</span>          }
-    <span style="color:#ae81ff">22</span>  }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">49.220</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">7</span>]  [<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">49.242</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">11</span>]  [<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">49.242</span> [<span style="color:#a6e22e">D</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">49.242</span> [<span style="color:#a6e22e">D</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#ae81ff">1</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">49.242</span> [<span style="color:#a6e22e">D</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">49.242</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">19</span>]  <span style="color:#ae81ff">5</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">49.242</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">19</span>]  <span style="color:#ae81ff">4</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">49.242</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">19</span>]  <span style="color:#ae81ff">3</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">49.242</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">19</span>]  <span style="color:#ae81ff">2</span>
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">4</span>
+     <span class="mi">5</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">6</span>          <span class="nx">array</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+     <span class="mi">7</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span>
+     <span class="mi">8</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+     <span class="mi">9</span>                  <span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span>
+    <span class="mi">10</span>          <span class="p">}</span>
+    <span class="mi">11</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span>
+    <span class="mi">12</span>          <span class="nx">b</span> <span class="o">:=</span> <span class="mi">3</span>
+    <span class="mi">13</span>          <span class="k">for</span> <span class="p">;</span> <span class="nx">b</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="p">{</span>
+    <span class="mi">14</span>                  <span class="nx">b</span><span class="o">--</span>
+    <span class="mi">15</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Debug</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+    <span class="mi">16</span>          <span class="p">}</span>
+    <span class="mi">17</span>          <span class="nx">a</span> <span class="o">:=</span> <span class="mi">5</span>
+    <span class="mi">18</span>          <span class="k">for</span> <span class="nx">a</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="p">{</span>
+    <span class="mi">19</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+    <span class="mi">20</span>                  <span class="nx">a</span><span class="o">--</span>
+    <span class="mi">21</span>          <span class="p">}</span>
+    <span class="mi">22</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">49.220</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">49.242</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">49.242</span> <span class="p">[</span><span class="nx">D</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="mi">2</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">49.242</span> <span class="p">[</span><span class="nx">D</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="mi">1</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">49.242</span> <span class="p">[</span><span class="nx">D</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="mi">0</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">49.242</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="mi">5</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">49.242</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="mi">4</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">49.242</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="mi">3</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">49.242</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="mi">2</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>遍历： 切片、数组、map</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">4</span>
-     <span style="color:#ae81ff">5</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">6</span>          <span style="color:#a6e22e">mapType</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">3</span>)
-     <span style="color:#ae81ff">7</span>          <span style="color:#a6e22e">mapType</span>[<span style="color:#e6db74">&#34;Cc&#34;</span>] = <span style="color:#ae81ff">18</span>
-     <span style="color:#ae81ff">8</span>          <span style="color:#a6e22e">mapType</span>[<span style="color:#e6db74">&#34;Lcc&#34;</span>] = <span style="color:#ae81ff">20</span>
-     <span style="color:#ae81ff">9</span>          <span style="color:#a6e22e">mapType</span>[<span style="color:#e6db74">&#34;Hyper&#34;</span>] = <span style="color:#ae81ff">23</span>
-    <span style="color:#ae81ff">10</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">mapType</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">11</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">mapType</span>)
-    <span style="color:#ae81ff">12</span>          }
-    <span style="color:#ae81ff">13</span>          <span style="color:#a6e22e">sli</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">3</span>)
-    <span style="color:#ae81ff">14</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">sli</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">15</span>                  <span style="color:#a6e22e">sli</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">i</span>
-    <span style="color:#ae81ff">16</span>          }
-    <span style="color:#ae81ff">17</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">sli</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">18</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">sli</span>[<span style="color:#a6e22e">i</span>])
-    <span style="color:#ae81ff">19</span>          }
-    <span style="color:#ae81ff">20</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">sli</span>)
-    <span style="color:#ae81ff">21</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>
-    <span style="color:#ae81ff">22</span>          <span style="color:#a6e22e">array</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">100</span>
-    <span style="color:#ae81ff">23</span>          <span style="color:#a6e22e">array</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">300</span>
-    <span style="color:#ae81ff">24</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">array</span>)
-    <span style="color:#ae81ff">25</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">array</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">26</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">i</span>])
-    <span style="color:#ae81ff">27</span>          }
-    <span style="color:#ae81ff">28</span>  }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.631</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">11</span>]  <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Cc</span>:<span style="color:#ae81ff">18</span> <span style="color:#a6e22e">Hyper</span>:<span style="color:#ae81ff">23</span> <span style="color:#a6e22e">Lcc</span>:<span style="color:#ae81ff">20</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.656</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">11</span>]  <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Cc</span>:<span style="color:#ae81ff">18</span> <span style="color:#a6e22e">Hyper</span>:<span style="color:#ae81ff">23</span> <span style="color:#a6e22e">Lcc</span>:<span style="color:#ae81ff">20</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.656</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">11</span>]  <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Cc</span>:<span style="color:#ae81ff">18</span> <span style="color:#a6e22e">Hyper</span>:<span style="color:#ae81ff">23</span> <span style="color:#a6e22e">Lcc</span>:<span style="color:#ae81ff">20</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.656</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">18</span>]  <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.656</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">18</span>]  <span style="color:#ae81ff">1</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.656</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">18</span>]  <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.656</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">20</span>]  [<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.656</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">24</span>]  [<span style="color:#ae81ff">100</span> <span style="color:#ae81ff">300</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.656</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">26</span>]  <span style="color:#ae81ff">100</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">05</span> <span style="color:#ae81ff">15</span>:<span style="color:#ae81ff">05</span>:<span style="color:#ae81ff">47.656</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">for_2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">26</span>]  <span style="color:#ae81ff">300</span>
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">4</span>
+     <span class="mi">5</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">6</span>          <span class="nx">mapType</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+     <span class="mi">7</span>          <span class="nx">mapType</span><span class="p">[</span><span class="s">&#34;Cc&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="mi">18</span>
+     <span class="mi">8</span>          <span class="nx">mapType</span><span class="p">[</span><span class="s">&#34;Lcc&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="mi">20</span>
+     <span class="mi">9</span>          <span class="nx">mapType</span><span class="p">[</span><span class="s">&#34;Hyper&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="mi">23</span>
+    <span class="mi">10</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">mapType</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">11</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">mapType</span><span class="p">)</span>
+    <span class="mi">12</span>          <span class="p">}</span>
+    <span class="mi">13</span>          <span class="nx">sli</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="mi">14</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">sli</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">15</span>                  <span class="nx">sli</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span>
+    <span class="mi">16</span>          <span class="p">}</span>
+    <span class="mi">17</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">sli</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">18</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">sli</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+    <span class="mi">19</span>          <span class="p">}</span>
+    <span class="mi">20</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">sli</span><span class="p">)</span>
+    <span class="mi">21</span>          <span class="kd">var</span> <span class="nx">array</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="kt">int</span>
+    <span class="mi">22</span>          <span class="nx">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">100</span>
+    <span class="mi">23</span>          <span class="nx">array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="mi">300</span>
+    <span class="mi">24</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span>
+    <span class="mi">25</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">26</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+    <span class="mi">27</span>          <span class="p">}</span>
+    <span class="mi">28</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.631</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="kd">map</span><span class="p">[</span><span class="nx">Cc</span><span class="p">:</span><span class="mi">18</span> <span class="nx">Hyper</span><span class="p">:</span><span class="mi">23</span> <span class="nx">Lcc</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.656</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="kd">map</span><span class="p">[</span><span class="nx">Cc</span><span class="p">:</span><span class="mi">18</span> <span class="nx">Hyper</span><span class="p">:</span><span class="mi">23</span> <span class="nx">Lcc</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.656</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="kd">map</span><span class="p">[</span><span class="nx">Cc</span><span class="p">:</span><span class="mi">18</span> <span class="nx">Hyper</span><span class="p">:</span><span class="mi">23</span> <span class="nx">Lcc</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.656</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span>  <span class="mi">0</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.656</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span>  <span class="mi">1</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.656</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span>  <span class="mi">2</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.656</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>  <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.656</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">24</span><span class="p">]</span>  <span class="p">[</span><span class="mi">100</span> <span class="mi">300</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.656</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span>  <span class="mi">100</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">05</span> <span class="mi">15</span><span class="p">:</span><span class="mo">05</span><span class="p">:</span><span class="mf">47.656</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">for_2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span>  <span class="mi">300</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>无限<code>for</code>循环</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">4</span>
-     <span style="color:#ae81ff">5</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">6</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
-     <span style="color:#ae81ff">7</span>          <span style="color:#66d9ef">for</span> {
-     <span style="color:#ae81ff">8</span>                  <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>
-     <span style="color:#ae81ff">9</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">i</span>)
-    <span style="color:#ae81ff">10</span>          }
-    <span style="color:#ae81ff">11</span>  }
-</code></pre></div><blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">4</span>
+     <span class="mi">5</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">6</span>          <span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span>
+     <span class="mi">7</span>          <span class="k">for</span> <span class="p">{</span>
+     <span class="mi">8</span>                  <span class="nx">i</span><span class="o">++</span>
+     <span class="mi">9</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="mi">10</span>          <span class="p">}</span>
+    <span class="mi">11</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>1秒钟会执行 <code>80000</code> 多行</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">29</span>:<span style="color:#ae81ff">35.521</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">85501</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">29</span>:<span style="color:#ae81ff">35.521</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">85502</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">29</span>:<span style="color:#ae81ff">35.521</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">85503</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">29</span>:<span style="color:#ae81ff">35.522</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">85504</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">29</span>:<span style="color:#ae81ff">35.522</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">85505</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">29</span>:<span style="color:#ae81ff">35.522</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">85506</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">29</span>:<span style="color:#ae81ff">35.522</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">for</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">85507</span>
-</code></pre></div><h5 id="嵌套for循环99乘法表">嵌套for循环（99乘法表）</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mf">35.521</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">85501</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mf">35.521</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">85502</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mf">35.521</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">85503</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mf">35.522</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">85504</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mf">35.522</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">85505</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mf">35.522</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">85506</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mf">35.522</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">for</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">85507</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="嵌套for循环99乘法表">嵌套for循环（99乘法表）</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-)
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+<span class="p">)</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%d*%d=%d  &#34;</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span>)
-		}
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>()
-	}
-}
-</code></pre></div><blockquote>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
+			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%d*%d=%d  &#34;</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="o">*</span><span class="nx">i</span><span class="p">)</span>
+		<span class="p">}</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">()</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>讲解：第二层来控制第二层循环次数，当第二层循环<code>j=1</code>时 判断 刚好<code>i</code> 也等于<code>1</code> 就循环一次，一次类推</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1</span>=<span style="color:#ae81ff">1</span>  
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>=<span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>=<span style="color:#ae81ff">4</span>  
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>=<span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>=<span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>=<span style="color:#ae81ff">9</span>  
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">4</span>  <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">8</span>  <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">12</span>  <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">16</span>  
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">5</span>  <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">10</span>  <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">15</span>  <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">20</span>  <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">25</span>  
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">12</span>  <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">18</span>  <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">24</span>  <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">30</span>  <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">36</span>  
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">14</span>  <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">21</span>  <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">28</span>  <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">35</span>  <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">42</span>  <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">49</span>  
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">8</span>  <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">16</span>  <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">24</span>  <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">32</span>  <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">40</span>  <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">48</span>  <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">56</span>  <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">64</span>  
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">9</span>  <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">18</span>  <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">27</span>  <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">36</span>  <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">45</span>  <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">54</span>  <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">63</span>  <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">72</span>  <span style="color:#ae81ff">9</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">81</span>  
-</code></pre></div><blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">1</span><span class="o">*</span><span class="mi">1</span><span class="p">=</span><span class="mi">1</span>  
+<span class="mi">1</span><span class="o">*</span><span class="mi">2</span><span class="p">=</span><span class="mi">2</span>  <span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">=</span><span class="mi">4</span>  
+<span class="mi">1</span><span class="o">*</span><span class="mi">3</span><span class="p">=</span><span class="mi">3</span>  <span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="p">=</span><span class="mi">6</span>  <span class="mi">3</span><span class="o">*</span><span class="mi">3</span><span class="p">=</span><span class="mi">9</span>  
+<span class="mi">1</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">4</span>  <span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">8</span>  <span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">12</span>  <span class="mi">4</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">16</span>  
+<span class="mi">1</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">5</span>  <span class="mi">2</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">10</span>  <span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">15</span>  <span class="mi">4</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">20</span>  <span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">25</span>  
+<span class="mi">1</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">6</span>  <span class="mi">2</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">12</span>  <span class="mi">3</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">18</span>  <span class="mi">4</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">24</span>  <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">30</span>  <span class="mi">6</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">36</span>  
+<span class="mi">1</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">7</span>  <span class="mi">2</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">14</span>  <span class="mi">3</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">21</span>  <span class="mi">4</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">28</span>  <span class="mi">5</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">35</span>  <span class="mi">6</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">42</span>  <span class="mi">7</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">49</span>  
+<span class="mi">1</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">8</span>  <span class="mi">2</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">16</span>  <span class="mi">3</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">24</span>  <span class="mi">4</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">32</span>  <span class="mi">5</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">40</span>  <span class="mi">6</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">48</span>  <span class="mi">7</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">56</span>  <span class="mi">8</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">64</span>  
+<span class="mi">1</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">9</span>  <span class="mi">2</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">18</span>  <span class="mi">3</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">27</span>  <span class="mi">4</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">36</span>  <span class="mi">5</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">45</span>  <span class="mi">6</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">54</span>  <span class="mi">7</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">63</span>  <span class="mi">8</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">72</span>  <span class="mi">9</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">81</span>  
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>留下一个小思考（反着输出99乘法表）答案在今天day4[991.go]中</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1</span>=<span style="color:#ae81ff">1</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>=<span style="color:#ae81ff">2</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>=<span style="color:#ae81ff">4</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>=<span style="color:#ae81ff">3</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>=<span style="color:#ae81ff">6</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>=<span style="color:#ae81ff">9</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">4</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">8</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">12</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">16</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">5</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">10</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">15</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">20</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">25</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">6</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">12</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">18</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">24</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">30</span>   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">36</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">7</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">14</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">21</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">28</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">35</span>   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">42</span>   <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">49</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">8</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">16</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">24</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">32</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">40</span>   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">48</span>   <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">56</span>   <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">64</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">9</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">18</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">27</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">36</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">45</span>   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">54</span>   <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">63</span>   <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">72</span>   <span style="color:#ae81ff">9</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">81</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">9</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">18</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">27</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">36</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">45</span>   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">54</span>   <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">63</span>   <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">72</span>   <span style="color:#ae81ff">9</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>=<span style="color:#ae81ff">81</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">8</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">16</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">24</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">32</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">40</span>   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">48</span>   <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">56</span>   <span style="color:#ae81ff">8</span><span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>=<span style="color:#ae81ff">64</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">7</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">14</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">21</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">28</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">35</span>   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">42</span>   <span style="color:#ae81ff">7</span><span style="color:#f92672">*</span><span style="color:#ae81ff">7</span>=<span style="color:#ae81ff">49</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">6</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">12</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">18</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">24</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">30</span>   <span style="color:#ae81ff">6</span><span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>=<span style="color:#ae81ff">36</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">5</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">10</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">15</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">20</span>   <span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>=<span style="color:#ae81ff">25</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">4</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">8</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">12</span>   <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span>=<span style="color:#ae81ff">16</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>=<span style="color:#ae81ff">3</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>=<span style="color:#ae81ff">6</span>   <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>=<span style="color:#ae81ff">9</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>=<span style="color:#ae81ff">2</span>   <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>=<span style="color:#ae81ff">4</span>   
-<span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1</span>=<span style="color:#ae81ff">1</span> 
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">1</span><span class="o">*</span><span class="mi">1</span><span class="p">=</span><span class="mi">1</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">2</span><span class="p">=</span><span class="mi">2</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">=</span><span class="mi">4</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">3</span><span class="p">=</span><span class="mi">3</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="p">=</span><span class="mi">6</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">3</span><span class="p">=</span><span class="mi">9</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">4</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">8</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">12</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">16</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">5</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">10</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">15</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">20</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">25</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">6</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">12</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">18</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">24</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">30</span>   <span class="mi">6</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">36</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">7</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">14</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">21</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">28</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">35</span>   <span class="mi">6</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">42</span>   <span class="mi">7</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">49</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">8</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">16</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">24</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">32</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">40</span>   <span class="mi">6</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">48</span>   <span class="mi">7</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">56</span>   <span class="mi">8</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">64</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">9</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">18</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">27</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">36</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">45</span>   <span class="mi">6</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">54</span>   <span class="mi">7</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">63</span>   <span class="mi">8</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">72</span>   <span class="mi">9</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">81</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">9</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">18</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">27</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">36</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">45</span>   <span class="mi">6</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">54</span>   <span class="mi">7</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">63</span>   <span class="mi">8</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">72</span>   <span class="mi">9</span><span class="o">*</span><span class="mi">9</span><span class="p">=</span><span class="mi">81</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">8</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">16</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">24</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">32</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">40</span>   <span class="mi">6</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">48</span>   <span class="mi">7</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">56</span>   <span class="mi">8</span><span class="o">*</span><span class="mi">8</span><span class="p">=</span><span class="mi">64</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">7</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">14</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">21</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">28</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">35</span>   <span class="mi">6</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">42</span>   <span class="mi">7</span><span class="o">*</span><span class="mi">7</span><span class="p">=</span><span class="mi">49</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">6</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">12</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">18</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">24</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">30</span>   <span class="mi">6</span><span class="o">*</span><span class="mi">6</span><span class="p">=</span><span class="mi">36</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">5</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">10</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">15</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">20</span>   <span class="mi">5</span><span class="o">*</span><span class="mi">5</span><span class="p">=</span><span class="mi">25</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">4</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">8</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">12</span>   <span class="mi">4</span><span class="o">*</span><span class="mi">4</span><span class="p">=</span><span class="mi">16</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">3</span><span class="p">=</span><span class="mi">3</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">3</span><span class="p">=</span><span class="mi">6</span>   <span class="mi">3</span><span class="o">*</span><span class="mi">3</span><span class="p">=</span><span class="mi">9</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">2</span><span class="p">=</span><span class="mi">2</span>   <span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">=</span><span class="mi">4</span>   
+<span class="mi">1</span><span class="o">*</span><span class="mi">1</span><span class="p">=</span><span class="mi">1</span> 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>冒泡排序</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> (
-     <span style="color:#ae81ff">4</span>          <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">5</span>  )
-     <span style="color:#ae81ff">6</span>
-     <span style="color:#ae81ff">7</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">8</span>          <span style="color:#a6e22e">array</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">2</span>}
-     <span style="color:#ae81ff">9</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">array</span>)
-    <span style="color:#ae81ff">10</span>          <span style="color:#a6e22e">BubbleASort</span>(<span style="color:#a6e22e">array</span>)
-    <span style="color:#ae81ff">11</span>          <span style="color:#a6e22e">BubbleZSort</span>(<span style="color:#a6e22e">array</span>)
-    <span style="color:#ae81ff">12</span>
-    <span style="color:#ae81ff">13</span>  }
-    <span style="color:#ae81ff">14</span>
-    <span style="color:#ae81ff">15</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">BubbleASort</span>(<span style="color:#a6e22e">values</span> []<span style="color:#66d9ef">int</span>) {
-    <span style="color:#ae81ff">16</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">values</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">17</span>                  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">values</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">18</span>                          <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">i</span>] &gt; <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">j</span>] {
-    <span style="color:#ae81ff">19</span>                                  <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">i</span>]
-    <span style="color:#ae81ff">20</span>                          }
-    <span style="color:#ae81ff">21</span>                  }
-    <span style="color:#ae81ff">22</span>          }
-    <span style="color:#ae81ff">23</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">values</span>)
-    <span style="color:#ae81ff">24</span>  }
-    <span style="color:#ae81ff">25</span>
-    <span style="color:#ae81ff">26</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">BubbleZSort</span>(<span style="color:#a6e22e">values</span> []<span style="color:#66d9ef">int</span>) {
-    <span style="color:#ae81ff">27</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">values</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">28</span>                  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">j</span> &lt; len(<span style="color:#a6e22e">values</span>); <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">29</span>                          <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">i</span>] &lt; <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">j</span>] {
-    <span style="color:#ae81ff">30</span>                                  <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">i</span>], <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">j</span>] = <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">j</span>], <span style="color:#a6e22e">values</span>[<span style="color:#a6e22e">i</span>]
-    <span style="color:#ae81ff">31</span>                          }
-    <span style="color:#ae81ff">32</span>                  }
-    <span style="color:#ae81ff">33</span>          }
-    <span style="color:#ae81ff">34</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">values</span>)
-    <span style="color:#ae81ff">35</span>  }
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="p">(</span>
+     <span class="mi">4</span>          <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">5</span>  <span class="p">)</span>
+     <span class="mi">6</span>
+     <span class="mi">7</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">8</span>          <span class="nx">array</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+     <span class="mi">9</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span>
+    <span class="mi">10</span>          <span class="nf">BubbleASort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span>
+    <span class="mi">11</span>          <span class="nf">BubbleZSort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span>
+    <span class="mi">12</span>
+    <span class="mi">13</span>  <span class="p">}</span>
+    <span class="mi">14</span>
+    <span class="mi">15</span>  <span class="kd">func</span> <span class="nf">BubbleASort</span><span class="p">(</span><span class="nx">values</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="mi">16</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">17</span>                  <span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">18</span>                          <span class="k">if</span> <span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">values</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">{</span>
+    <span class="mi">19</span>                                  <span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">values</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">values</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="mi">20</span>                          <span class="p">}</span>
+    <span class="mi">21</span>                  <span class="p">}</span>
+    <span class="mi">22</span>          <span class="p">}</span>
+    <span class="mi">23</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span>
+    <span class="mi">24</span>  <span class="p">}</span>
+    <span class="mi">25</span>
+    <span class="mi">26</span>  <span class="kd">func</span> <span class="nf">BubbleZSort</span><span class="p">(</span><span class="nx">values</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="mi">27</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">28</span>                  <span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">29</span>                          <span class="k">if</span> <span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">values</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">{</span>
+    <span class="mi">30</span>                                  <span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">values</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">values</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="mi">31</span>                          <span class="p">}</span>
+    <span class="mi">32</span>                  <span class="p">}</span>
+    <span class="mi">33</span>          <span class="p">}</span>
+    <span class="mi">34</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span>
+    <span class="mi">35</span>  <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">46</span>:<span style="color:#ae81ff">03.032</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">BubbleSort</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  [<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">2</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">46</span>:<span style="color:#ae81ff">03.058</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">BubbleSort</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  [<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">7</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">46</span>:<span style="color:#ae81ff">03.058</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">BubbleSort</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">34</span>]  [<span style="color:#ae81ff">7</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">1</span>]
-</code></pre></div><h4 id="流程控制">流程控制</h4>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mf">03.032</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">BubbleSort</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="p">[</span><span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">7</span> <span class="mi">2</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mf">03.058</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">BubbleSort</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">7</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">46</span><span class="p">:</span><span class="mf">03.058</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">BubbleSort</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">34</span><span class="p">]</span>  <span class="p">[</span><span class="mi">7</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="流程控制">流程控制</h4>
 <h5 id="brack"><code>brack</code></h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">4</span>
-     <span style="color:#ae81ff">5</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">6</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-     <span style="color:#ae81ff">7</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">i</span>)
-     <span style="color:#ae81ff">8</span>                  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span> {
-     <span style="color:#ae81ff">9</span>                          <span style="color:#75715e">// 跳出本次循环
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">10</span>                          <span style="color:#66d9ef">break</span>
-    <span style="color:#ae81ff">11</span>                  }
-    <span style="color:#ae81ff">12</span>          }
-    <span style="color:#ae81ff">13</span>  }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">00.181</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">brack</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">7</span>]  <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">00.200</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">brack</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">7</span>]  <span style="color:#ae81ff">1</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">00.200</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">brack</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">7</span>]  <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">00.201</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">brack</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">7</span>]  <span style="color:#ae81ff">3</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">00.201</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">brack</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">7</span>]  <span style="color:#ae81ff">4</span>
-</code></pre></div><h5 id="continue"><code>continue</code></h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">4</span>
-     <span style="color:#ae81ff">5</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">6</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-     <span style="color:#ae81ff">7</span>                  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span> {
-     <span style="color:#ae81ff">8</span>                          <span style="color:#75715e">// 跳过本次循环
-</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">9</span>                          <span style="color:#66d9ef">continue</span>
-    <span style="color:#ae81ff">10</span>                  }
-    <span style="color:#ae81ff">11</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">i</span>)
-    <span style="color:#ae81ff">12</span>          }
-    <span style="color:#ae81ff">13</span>  }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">53</span>:<span style="color:#ae81ff">07.823</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">contiune</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">11</span>]  <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">53</span>:<span style="color:#ae81ff">07.837</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">contiune</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">11</span>]  <span style="color:#ae81ff">1</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">53</span>:<span style="color:#ae81ff">07.837</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">contiune</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">11</span>]  <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">53</span>:<span style="color:#ae81ff">07.837</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">contiune</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">11</span>]  <span style="color:#ae81ff">4</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">06</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">53</span>:<span style="color:#ae81ff">07.837</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">contiune</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">11</span>]  <span style="color:#ae81ff">5</span>
-</code></pre></div><h5 id="goto"><code>goto</code></h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">4</span>
-     <span style="color:#ae81ff">5</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">6</span>          <span style="color:#75715e">// 你放这里就成无限循环，j == 5 就执行下面代码LCC:
-</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">7</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-     <span style="color:#ae81ff">8</span>                  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-     <span style="color:#ae81ff">9</span>                          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>)
-    <span style="color:#ae81ff">10</span>                          <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span> {
-    <span style="color:#ae81ff">11</span>                                  <span style="color:#66d9ef">goto</span> <span style="color:#a6e22e">LCC</span>
-    <span style="color:#ae81ff">12</span>                          }
-    <span style="color:#ae81ff">13</span>                  }
-    <span style="color:#ae81ff">14</span>          }
-    <span style="color:#ae81ff">15</span>  <span style="color:#a6e22e">LCC</span>:
-    <span style="color:#ae81ff">16</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;LCC知识标签而已除了内置关键字，跳出循环&#34;</span>)
-    <span style="color:#ae81ff">17</span>  }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">00.314</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">goto</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">00.334</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">goto</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">00.334</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">goto</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">00.334</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">goto</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">3</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">00.334</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">goto</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">4</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">00.334</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">goto</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">9</span>]  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">5</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">01</span>:<span style="color:#ae81ff">00.334</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#66d9ef">goto</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">16</span>]  <span style="color:#a6e22e">LCC知识标签而已除了内置关键字</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">跳出循环</span>
-</code></pre></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">4</span>
+     <span class="mi">5</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">6</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+     <span class="mi">7</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+     <span class="mi">8</span>                  <span class="k">if</span> <span class="nx">i</span> <span class="o">==</span> <span class="mi">4</span> <span class="p">{</span>
+     <span class="mi">9</span>                          <span class="c1">// 跳出本次循环
+</span><span class="c1"></span>    <span class="mi">10</span>                          <span class="k">break</span>
+    <span class="mi">11</span>                  <span class="p">}</span>
+    <span class="mi">12</span>          <span class="p">}</span>
+    <span class="mi">13</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">00.181</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">brack</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="mi">0</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">00.200</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">brack</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="mi">1</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">00.200</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">brack</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="mi">2</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">00.201</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">brack</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="mi">3</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mf">00.201</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">brack</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span>  <span class="mi">4</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="continue"><code>continue</code></h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">4</span>
+     <span class="mi">5</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">6</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+     <span class="mi">7</span>                  <span class="k">if</span> <span class="nx">i</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+     <span class="mi">8</span>                          <span class="c1">// 跳过本次循环
+</span><span class="c1"></span>     <span class="mi">9</span>                          <span class="k">continue</span>
+    <span class="mi">10</span>                  <span class="p">}</span>
+    <span class="mi">11</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="mi">12</span>          <span class="p">}</span>
+    <span class="mi">13</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">07.823</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">contiune</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="mi">0</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">07.837</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">contiune</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="mi">1</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">07.837</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">contiune</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="mi">2</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">07.837</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">contiune</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="mi">4</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">07.837</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">contiune</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="mi">5</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="goto"><code>goto</code></h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">4</span>
+     <span class="mi">5</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">6</span>          <span class="c1">// 你放这里就成无限循环，j == 5 就执行下面代码LCC:
+</span><span class="c1"></span>     <span class="mi">7</span>          <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+     <span class="mi">8</span>                  <span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
+     <span class="mi">9</span>                          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span>
+    <span class="mi">10</span>                          <span class="k">if</span> <span class="nx">j</span> <span class="o">==</span> <span class="mi">5</span> <span class="p">{</span>
+    <span class="mi">11</span>                                  <span class="k">goto</span> <span class="nx">LCC</span>
+    <span class="mi">12</span>                          <span class="p">}</span>
+    <span class="mi">13</span>                  <span class="p">}</span>
+    <span class="mi">14</span>          <span class="p">}</span>
+    <span class="mi">15</span>  <span class="nx">LCC</span><span class="p">:</span>
+    <span class="mi">16</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;LCC知识标签而已除了内置关键字，跳出循环&#34;</span><span class="p">)</span>
+    <span class="mi">17</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mo">00</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mf">00.314</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">goto</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mo">00</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mf">00.334</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">goto</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">0</span> <span class="mi">1</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mo">00</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mf">00.334</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">goto</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">0</span> <span class="mi">2</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mo">00</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mf">00.334</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">goto</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">0</span> <span class="mi">3</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mo">00</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mf">00.334</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">goto</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">0</span> <span class="mi">4</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mo">00</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mf">00.334</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">goto</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mi">0</span> <span class="mi">5</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mo">00</span><span class="p">:</span><span class="mo">01</span><span class="p">:</span><span class="mf">00.334</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="k">goto</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">16</span><span class="p">]</span>  <span class="nx">LCC知识标签而已除了内置关键字</span><span class="err">，</span><span class="nx">跳出循环</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

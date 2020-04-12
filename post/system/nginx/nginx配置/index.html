@@ -68,7 +68,7 @@
 <meta itemprop="description" content="Nginx 配置http、https、静态绑定、转发">
 <meta itemprop="datePublished" content="2020-03-11T22:23:04&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-11T22:23:04&#43;08:00" />
-<meta itemprop="wordCount" content="741">
+<meta itemprop="wordCount" content="854">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 741 字 </span>
+        <span class="more-meta"> 约 854 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -416,127 +416,282 @@
     
     <div class="post-content">
       <h3 id="配置https">配置https</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
-    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span>;  <span style="color:#75715e"># 1.1版本后这样写
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">lichaocheng.top</span>; <span style="color:#75715e">#填写绑定证书的域名
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_certificate</span>  <span style="color:#e6db74">/opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem</span>;  <span style="color:#75715e"># 指定证书的位置，绝对路径
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.key</span>;  <span style="color:#75715e"># 绝对路径，同上
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_session_timeout</span> <span style="color:#ae81ff">5m</span>;
-    <span style="color:#f92672">ssl_protocols</span> <span style="color:#e6db74">TLSv1</span> <span style="color:#e6db74">TLSv1.1</span> <span style="color:#e6db74">TLSv1.2</span>; <span style="color:#75715e">#按照这个协议配置
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_ciphers</span> <span style="color:#e6db74">ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE</span>;<span style="color:#75715e">#按照这个套件配置
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_prefer_server_ciphers</span> <span style="color:#66d9ef">on</span>;
-    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-        <span style="color:#f92672">root</span>   <span style="color:#e6db74">/opt/lichaocheng.top/lichaocheng.top</span>; <span style="color:#75715e">#站点目录，绝对路径
-</span><span style="color:#75715e"></span>        <span style="color:#f92672">index</span>  <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span>;
-    }
-}
-<span style="color:#66d9ef">server</span> {
-    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span>;  <span style="color:#75715e"># 1.1版本后这样写
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">hr.lichaocheng.top</span>; <span style="color:#75715e">#填写绑定证书的域名
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_certificate</span>  <span style="color:#e6db74">/opt/client/hrclient/office/sll/hr.lichaocheng.top.pem</span>;
-    <span style="color:#f92672">ssl_certificate_key</span>  <span style="color:#e6db74">/opt/client/hrclient/office/sll/hr.lichaocheng.top.key</span>;
-    <span style="color:#f92672">ssl_session_timeout</span> <span style="color:#ae81ff">5m</span>;
-    <span style="color:#f92672">ssl_protocols</span> <span style="color:#e6db74">TLSv1</span> <span style="color:#e6db74">TLSv1.1</span> <span style="color:#e6db74">TLSv1.2</span>; <span style="color:#75715e">#按照这个协议配置
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_ciphers</span> <span style="color:#e6db74">ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE</span>;<span style="color:#75715e">#按照这个套件配置
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_prefer_server_ciphers</span> <span style="color:#66d9ef">on</span>;
-    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-        <span style="color:#f92672">root</span>   <span style="color:#e6db74">/opt/client/hrclient/office/office</span>; <span style="color:#75715e">#站点目录，绝对路径
-</span><span style="color:#75715e"></span>        <span style="color:#f92672">index</span>  <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span>;
-    }
-}
-</code></pre></div><h3 id="配置http">配置http</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server{</span>
-        <span style="color:#e6db74">listen</span> <span style="color:#ae81ff">80</span>;
-        <span style="color:#66d9ef">server_name</span> <span style="color:#e6db74">www.lichaocheng.top</span>;
-        <span style="color:#66d9ef">location</span> <span style="color:#e6db74">/</span> {
-                <span style="color:#f92672">root</span> <span style="color:#e6db74">/opt/gopath/src/Cc360428/lichaocheng.top</span>;
-                <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span>;
-                <span style="color:#75715e">#proxy_pass http://127.0.0.1:80;
-</span><span style="color:#75715e"></span>        }
-<span style="color:#66d9ef">}</span>
-</code></pre></div><h3 id="http-强制https">http 强制https</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server{</span>
-    <span style="color:#e6db74">listen</span> <span style="color:#ae81ff">80</span>;
-    <span style="color:#66d9ef">server_name</span>  <span style="color:#e6db74">lichaocheng.top</span>;
-    <span style="color:#66d9ef">rewrite</span> <span style="color:#e6db74">^(.*)</span>$   <span style="color:#e6db74">https://</span>$host$1 <span style="color:#e6db74">permanent</span>;
-<span style="color:#66d9ef">}</span>
-</code></pre></div><h3 id="https-转发内部接口">https 转发内部接口</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>  <span class="c1"># 1.1版本后这样写
+</span><span class="c1"></span>    <span class="kn">server_name</span> <span class="s">lichaocheng.top</span><span class="p">;</span> <span class="c1">#填写绑定证书的域名
+</span><span class="c1"></span>    <span class="kn">ssl_certificate</span>  <span class="s">/opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem</span><span class="p">;</span>  <span class="c1"># 指定证书的位置，绝对路径
+</span><span class="c1"></span>    <span class="kn">ssl_certificate_key</span> <span class="s">/opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.key</span><span class="p">;</span>  <span class="c1"># 绝对路径，同上
+</span><span class="c1"></span>    <span class="kn">ssl_session_timeout</span> <span class="mi">5m</span><span class="p">;</span>
+    <span class="kn">ssl_protocols</span> <span class="s">TLSv1</span> <span class="s">TLSv1.1</span> <span class="s">TLSv1.2</span><span class="p">;</span> <span class="c1">#按照这个协议配置
+</span><span class="c1"></span>    <span class="kn">ssl_ciphers</span> <span class="s">ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE</span><span class="p">;</span><span class="c1">#按照这个套件配置
+</span><span class="c1"></span>    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">root</span>   <span class="s">/opt/lichaocheng.top/lichaocheng.top</span><span class="p">;</span> <span class="c1">#站点目录，绝对路径
+</span><span class="c1"></span>        <span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>  <span class="c1"># 1.1版本后这样写
+</span><span class="c1"></span>    <span class="kn">server_name</span> <span class="s">hr.lichaocheng.top</span><span class="p">;</span> <span class="c1">#填写绑定证书的域名
+</span><span class="c1"></span>    <span class="kn">ssl_certificate</span>  <span class="s">/opt/client/hrclient/office/sll/hr.lichaocheng.top.pem</span><span class="p">;</span>
+    <span class="kn">ssl_certificate_key</span>  <span class="s">/opt/client/hrclient/office/sll/hr.lichaocheng.top.key</span><span class="p">;</span>
+    <span class="kn">ssl_session_timeout</span> <span class="mi">5m</span><span class="p">;</span>
+    <span class="kn">ssl_protocols</span> <span class="s">TLSv1</span> <span class="s">TLSv1.1</span> <span class="s">TLSv1.2</span><span class="p">;</span> <span class="c1">#按照这个协议配置
+</span><span class="c1"></span>    <span class="kn">ssl_ciphers</span> <span class="s">ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE</span><span class="p">;</span><span class="c1">#按照这个套件配置
+</span><span class="c1"></span>    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">root</span>   <span class="s">/opt/client/hrclient/office/office</span><span class="p">;</span> <span class="c1">#站点目录，绝对路径
+</span><span class="c1"></span>        <span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="配置http">配置http</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server{</span>
+        <span class="s">listen</span> <span class="mi">80</span><span class="p">;</span>
+        <span class="k">server_name</span> <span class="s">www.lichaocheng.top</span><span class="p">;</span>
+        <span class="k">location</span> <span class="s">/</span> <span class="p">{</span>
+                <span class="kn">root</span> <span class="s">/opt/gopath/src/Cc360428/lichaocheng.top</span><span class="p">;</span>
+                <span class="kn">index</span> <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+                <span class="c1">#proxy_pass http://127.0.0.1:80;
+</span><span class="c1"></span>        <span class="p">}</span>
+<span class="k">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="http-强制https">http 强制https</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server{</span>
+    <span class="s">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="k">server_name</span>  <span class="s">lichaocheng.top</span><span class="p">;</span>
+    <span class="k">rewrite</span> <span class="s">^(.*)</span>$   <span class="s">https://</span><span class="nv">$host$1</span> <span class="s">permanent</span><span class="p">;</span>
+<span class="k">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="https-转发内部接口">https 转发内部接口</h3>
 <p><code>/opt/gopath/src/GolangCodeFile/hrBeegoServer/conf</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server{</span>
-    <span style="color:#e6db74">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> ;
-    <span style="color:#66d9ef">server_name</span> <span style="color:#e6db74">hrapi.lichaocheng.top</span>;
-    <span style="color:#66d9ef">ssl_certificate</span>  <span style="color:#e6db74">/opt/gopath/src/GolangCodeFile/hrBeegoServer/conf/hrapi.lichaocheng.top.pem</span>;
-    <span style="color:#66d9ef">ssl_certificate_key</span>  <span style="color:#e6db74">/opt/gopath/src/GolangCodeFile/hrBeegoServer/conf/hrapi.lichaocheng.top.key</span>;
-    <span style="color:#66d9ef">ssl_session_timeout</span>  <span style="color:#ae81ff">5m</span>;
-    <span style="color:#66d9ef">ssl_ciphers</span>  <span style="color:#e6db74">HIGH:!aNULL:!MD5</span>;
-    <span style="color:#66d9ef">ssl_prefer_server_ciphers</span>  <span style="color:#66d9ef">on</span>;
-        <span style="color:#66d9ef">location</span> <span style="color:#e6db74">/</span> {
-                <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://0.0.0.0:18080</span>;
-        }
-<span style="color:#66d9ef">}</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server{</span>
+    <span class="s">listen</span> <span class="mi">443</span> <span class="s">ssl</span> <span class="p">;</span>
+    <span class="k">server_name</span> <span class="s">hrapi.lichaocheng.top</span><span class="p">;</span>
+    <span class="k">ssl_certificate</span>  <span class="s">/opt/gopath/src/GolangCodeFile/hrBeegoServer/conf/hrapi.lichaocheng.top.pem</span><span class="p">;</span>
+    <span class="k">ssl_certificate_key</span>  <span class="s">/opt/gopath/src/GolangCodeFile/hrBeegoServer/conf/hrapi.lichaocheng.top.key</span><span class="p">;</span>
+    <span class="k">ssl_session_timeout</span>  <span class="mi">5m</span><span class="p">;</span>
+    <span class="k">ssl_ciphers</span>  <span class="s">HIGH:!aNULL:!MD5</span><span class="p">;</span>
+    <span class="k">ssl_prefer_server_ciphers</span>  <span class="no">on</span><span class="p">;</span>
+        <span class="k">location</span> <span class="s">/</span> <span class="p">{</span>
+                <span class="kn">proxy_pass</span> <span class="s">http://0.0.0.0:18080</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="k">}</span>
 
-<span style="color:#e6db74">server</span>{
-    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> ;
-    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">meserver.lichaocheng.top</span>;
-    <span style="color:#f92672">ssl_certificate</span>  <span style="color:#e6db74">/opt/lichaocheng.top/lichaocheng.top.server/conf/meserver.lichaocheng.top.pem</span>;
-    <span style="color:#f92672">ssl_certificate_key</span>  <span style="color:#e6db74">/opt/lichaocheng.top/lichaocheng.top.server/conf/meserver.lichaocheng.top.key</span>;
-    <span style="color:#f92672">ssl_session_timeout</span>  <span style="color:#ae81ff">5m</span>;
-    <span style="color:#f92672">ssl_ciphers</span>  <span style="color:#e6db74">HIGH:!aNULL:!MD5</span>;
-    <span style="color:#f92672">ssl_prefer_server_ciphers</span>  <span style="color:#66d9ef">on</span>;
-        <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-                <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://0.0.0.0:8180</span>;
-        }
-}
-</code></pre></div><h3 id="https">https</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
-    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span>;  <span style="color:#75715e"># 1.1版本后这样写
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">blog.lichaocheng.top</span>; <span style="color:#75715e">#填写绑定证书的域名
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">&#34;/opt/client/bogl.lichaocheng.top/sll/blog.lichaocheng.top.csr&#34;</span>;
-    <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">&#34;/opt/client/bogl.lichaocheng.top/sll/blog.lichaocheng.top.key&#34;</span>;
-    <span style="color:#75715e">#ssl_session_timeout 5m;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">#ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">#ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">#ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">#ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">#ssl_prefer_server_ciphers on;
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-        <span style="color:#f92672">root</span>  <span style="color:#e6db74">/opt/client/bogl.lichaocheng.top/public</span>; 
-        <span style="color:#f92672">index</span>  <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span>;
-    }
-}
+<span class="s">server</span><span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span> <span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">meserver.lichaocheng.top</span><span class="p">;</span>
+    <span class="kn">ssl_certificate</span>  <span class="s">/opt/lichaocheng.top/lichaocheng.top.server/conf/meserver.lichaocheng.top.pem</span><span class="p">;</span>
+    <span class="kn">ssl_certificate_key</span>  <span class="s">/opt/lichaocheng.top/lichaocheng.top.server/conf/meserver.lichaocheng.top.key</span><span class="p">;</span>
+    <span class="kn">ssl_session_timeout</span>  <span class="mi">5m</span><span class="p">;</span>
+    <span class="kn">ssl_ciphers</span>  <span class="s">HIGH:!aNULL:!MD5</span><span class="p">;</span>
+    <span class="kn">ssl_prefer_server_ciphers</span>  <span class="no">on</span><span class="p">;</span>
+        <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+                <span class="kn">proxy_pass</span> <span class="s">http://0.0.0.0:8180</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="https">https</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>  <span class="c1"># 1.1版本后这样写
+</span><span class="c1"></span>    <span class="kn">server_name</span> <span class="s">blog.lichaocheng.top</span><span class="p">;</span> <span class="c1">#填写绑定证书的域名
+</span><span class="c1"></span>    <span class="kn">ssl_certificate</span> <span class="s">&#34;/opt/client/bogl.lichaocheng.top/sll/blog.lichaocheng.top.csr&#34;</span><span class="p">;</span>
+    <span class="kn">ssl_certificate_key</span> <span class="s">&#34;/opt/client/bogl.lichaocheng.top/sll/blog.lichaocheng.top.key&#34;</span><span class="p">;</span>
+    <span class="c1">#ssl_session_timeout 5m;
+</span><span class="c1"></span>    <span class="c1">#ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;
+</span><span class="c1"></span>    <span class="c1">#ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+</span><span class="c1"></span>    <span class="c1">#ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+</span><span class="c1"></span>    <span class="c1">#ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+</span><span class="c1"></span>    <span class="c1">#ssl_prefer_server_ciphers on;
+</span><span class="c1"></span>    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">root</span>  <span class="s">/opt/client/bogl.lichaocheng.top/public</span><span class="p">;</span> 
+        <span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#66d9ef">server</span> {    
-    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span>;
-    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">blog.lichaocheng.top</span>; <span style="color:#75715e">#填写绑定证书的域名
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl</span> <span style="color:#66d9ef">on</span>;
-    <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/opt/client/bogl.lichaocheng.top/sll/blog.lichaocheng.top.crt</span>;<span style="color:#75715e">#填写你的证书所在的位置
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/opt/client/bogl.lichaocheng.top/sll/blog.lichaocheng.top.key</span>;<span style="color:#75715e">#填写你的key所在的位置
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_session_timeout</span> <span style="color:#ae81ff">5m</span>;
-    <span style="color:#f92672">ssl_protocols</span> <span style="color:#e6db74">TLSv1</span> <span style="color:#e6db74">TLSv1.1</span> <span style="color:#e6db74">TLSv1.2</span>; <span style="color:#75715e">#按照这个协议配置
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_ciphers</span> <span style="color:#e6db74">ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE</span>;<span style="color:#75715e">#按照这个套件配置
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">ssl_prefer_server_ciphers</span> <span style="color:#66d9ef">on</span>;
-   <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
-    <span style="color:#f92672">root</span>  <span style="color:#e6db74">/opt/client/bogl.lichaocheng.top/public</span>; 
-    <span style="color:#f92672">index</span>  <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span>;
-   }
-}
+<span class="k">server</span> <span class="p">{</span>    
+    <span class="kn">listen</span> <span class="mi">443</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="s">blog.lichaocheng.top</span><span class="p">;</span> <span class="c1">#填写绑定证书的域名
+</span><span class="c1"></span>    <span class="kn">ssl</span> <span class="no">on</span><span class="p">;</span>
+    <span class="kn">ssl_certificate</span> <span class="s">/opt/client/bogl.lichaocheng.top/sll/blog.lichaocheng.top.crt</span><span class="p">;</span><span class="c1">#填写你的证书所在的位置
+</span><span class="c1"></span>    <span class="kn">ssl_certificate_key</span> <span class="s">/opt/client/bogl.lichaocheng.top/sll/blog.lichaocheng.top.key</span><span class="p">;</span><span class="c1">#填写你的key所在的位置
+</span><span class="c1"></span>    <span class="kn">ssl_session_timeout</span> <span class="mi">5m</span><span class="p">;</span>
+    <span class="kn">ssl_protocols</span> <span class="s">TLSv1</span> <span class="s">TLSv1.1</span> <span class="s">TLSv1.2</span><span class="p">;</span> <span class="c1">#按照这个协议配置
+</span><span class="c1"></span>    <span class="kn">ssl_ciphers</span> <span class="s">ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE</span><span class="p">;</span><span class="c1">#按照这个套件配置
+</span><span class="c1"></span>    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+   <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+    <span class="kn">root</span>  <span class="s">/opt/client/bogl.lichaocheng.top/public</span><span class="p">;</span> 
+    <span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span>
 
-</code></pre></div><h3 id="http-转发内部接口">http 转发内部接口</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server{</span>
-    <span style="color:#e6db74">listen</span> <span style="color:#ae81ff">80</span>;
-    <span style="color:#66d9ef">server_name</span> <span style="color:#e6db74">frp.lichaocheng.top</span>;
-    <span style="color:#66d9ef">location</span> <span style="color:#e6db74">/</span> {
-        <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://0.0.0.0:9000</span>;
-    }
-<span style="color:#66d9ef">}</span>
-</code></pre></div><h3 id="端口映射">端口映射</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">stream</span> {
-    <span style="color:#f92672">server</span> {
-        <span style="color:#f92672">listen</span> <span style="color:#ae81ff">8836</span>;
-        <span style="color:#f92672">proxy_pass</span> localhost:<span style="color:#ae81ff">3306</span>;
-    }
-}
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="http-转发内部接口">http 转发内部接口</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server{</span>
+    <span class="s">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="k">server_name</span> <span class="s">frp.lichaocheng.top</span><span class="p">;</span>
+    <span class="k">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">proxy_pass</span> <span class="s">http://0.0.0.0:9000</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="k">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="端口映射">端口映射</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">stream</span> <span class="p">{</span>
+    <span class="kn">server</span> <span class="p">{</span>
+        <span class="kn">listen</span> <span class="mi">8836</span><span class="p">;</span>
+        <span class="kn">proxy_pass</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">3306</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

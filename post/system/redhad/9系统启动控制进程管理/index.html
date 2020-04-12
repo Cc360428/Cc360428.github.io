@@ -68,7 +68,7 @@
 <meta itemprop="description" content="9（系统启动控制、进程管理）">
 <meta itemprop="datePublished" content="2020-03-29T00:48:12&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-29T00:48:12&#43;08:00" />
-<meta itemprop="wordCount" content="1200">
+<meta itemprop="wordCount" content="1284">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 1200 字 </span>
+        <span class="more-meta"> 约 1284 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -431,47 +431,98 @@
 <li><code>runleve</code> 查看当前系统启动状态，N代表代表上次运行级别</li>
 <li><code>init</code> 设置启动状态</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># runlevel</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># runlevel</span>
 N 3
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># init 5</span>
-</code></pre></div><h4 id="linux-初始化脚本-etcinittab--的解析">Linux 初始化脚本 <code>/etc/inittab</code>  的解析</h4>
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># init 5</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="linux-初始化脚本-etcinittab--的解析">Linux 初始化脚本 <code>/etc/inittab</code>  的解析</h4>
 <h4 id="linux-启动服务控制">Linux 启动服务控制</h4>
 <ul>
 <li><code>start</code> 开启</li>
 <li><code> stop</code> 停止</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># /etc/init.d/network start</span>
-Starting network <span style="color:#f92672">(</span>via systemctl<span style="color:#f92672">)</span>:                          <span style="color:#f92672">[</span>  确定  <span style="color:#f92672">]</span>
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># /etc/init.d/network stop</span>
-</code></pre></div><h5 id="使用chkconfig--查看各个服务运行级别情况">使用<code>chkconfig</code>  查看各个服务运行级别情况</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># /etc/init.d/network start</span>
+Starting network <span class="o">(</span>via systemctl<span class="o">)</span>:                          <span class="o">[</span>  确定  <span class="o">]</span>
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># /etc/init.d/network stop</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="使用chkconfig--查看各个服务运行级别情况">使用<code>chkconfig</code>  查看各个服务运行级别情况</h5>
 <ul>
 <li>查看</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># chkconfig --list</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># chkconfig --list</span>
 
 注：该输出结果只显示 SysV 服务，并不包含
 原生 systemd 服务。SysV 配置数据
 可能被原生 systemd 配置覆盖。 
 
-      要列出 systemd 服务，请执行 <span style="color:#e6db74">&#39;systemctl list-unit-files&#39;</span>。
+      要列出 systemd 服务，请执行 <span class="s1">&#39;systemctl list-unit-files&#39;</span>。
       查看在具体 target 启用的服务请执行
-      <span style="color:#e6db74">&#39;systemctl list-dependencies [target]&#39;</span>。
+      <span class="s1">&#39;systemctl list-dependencies [target]&#39;</span>。
 
 aegis           0:关    1:关    2:开    3:开    4:开    5:开    6:关
 cloudmonitor    0:关    1:关    2:开    3:开    4:开    5:开    6:关
 netconsole      0:关    1:关    2:关    3:关    4:关    5:关    6:关
 network         0:关    1:关    2:开    3:开    4:开    5:开    6:关
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>设置</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># chkconfig --list network</span> 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># chkconfig --list network</span> 
 network        	0:off	1:off	2:on	3:on	4:on	5:on	6:off
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># chkconfig --level 6 network on</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># chkconfig --list network</span> 
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># chkconfig --level 6 network on</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># chkconfig --list network</span> 
 network        	0:off	1:off	2:on	3:on	4:on	5:on	6:on
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>添加</li>
 <li><code>chkconfig ---add [服务名]</code></li>
 <li><code>service [服务名] start</code>   开始</li>
@@ -498,18 +549,40 @@ network        	0:off	1:off	2:on	3:on	4:on	5:on	6:on
 </ul>
 <h4 id="进程管理工具常用命令">进程管理工具、常用命令</h4>
 <h5 id="进程监视ps">进程监视<code>ps</code></h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    ps -u		按用户名启动时间顺序监视
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">    ps -u		按用户名启动时间顺序监视
     ps -a		显示所用用户进程
     ps -x		显示无控制终端进程
     ps -l		长格式输出
     ps -j		任务格式显示
     ps -r		显示运行中进程
     ps -f		列出全部进程相关信息
-</code></pre></div><h5 id="系统状态监视top">系统状态监视<code>top</code></h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">    top -n 1			显示一次退出
-    top -n <span style="color:#ae81ff">1</span> -p  1		显示某一进程状态且显示一次退出
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="系统状态监视top">系统状态监视<code>top</code></h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">    top -n 1			显示一次退出
+    top -n <span class="m">1</span> -p  1		显示某一进程状态且显示一次退出
     top -u testUser		显示指定用户进程信息
-</code></pre></div><h5 id="终止进程">终止进程</h5>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="终止进程">终止进程</h5>
 <h6 id="下载web程序">下载<code>web</code>程序</h6>
 <ul>
 <li>windows体验</li>
@@ -522,72 +595,167 @@ network        	0:off	1:off	2:on	3:on	4:on	5:on	6:on
 <blockquote>
 <p>进程号终止进程</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ps -ef  |grep HelloWorld</span>
-root     <span style="color:#ae81ff">18233</span> <span style="color:#ae81ff">10980</span>  <span style="color:#ae81ff">0</span> 21:38 pts/1    00:00:00 ./HelloWorld
-root     <span style="color:#ae81ff">21817</span> <span style="color:#ae81ff">17944</span>  <span style="color:#ae81ff">0</span> 21:40 pts/4    00:00:00 grep --color<span style="color:#f92672">=</span>auto HelloWorld
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># kill -9 18233</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ps -ef  |grep HelloWorld</span>
-root     <span style="color:#ae81ff">23420</span> <span style="color:#ae81ff">17944</span>  <span style="color:#ae81ff">0</span> 21:41 pts/4    00:00:00 grep --color<span style="color:#f92672">=</span>auto HelloWorld
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ps -ef  |grep HelloWorld</span>
+root     <span class="m">18233</span> <span class="m">10980</span>  <span class="m">0</span> 21:38 pts/1    00:00:00 ./HelloWorld
+root     <span class="m">21817</span> <span class="m">17944</span>  <span class="m">0</span> 21:40 pts/4    00:00:00 grep --color<span class="o">=</span>auto HelloWorld
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># kill -9 18233</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ps -ef  |grep HelloWorld</span>
+root     <span class="m">23420</span> <span class="m">17944</span>  <span class="m">0</span> 21:41 pts/4    00:00:00 grep --color<span class="o">=</span>auto HelloWorld
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><code>killall </code>[进程ID]</li>
 </ul>
 <blockquote>
 <p>终止一批进程</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># killall -9 HelloWorld</span>
-</code></pre></div><h3 id="系统管理员常见操作">系统管理员常见操作</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># killall -9 HelloWorld</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="系统管理员常见操作">系统管理员常见操作</h3>
 <h4 id="更改sshd-默认端口">更改<code>sshd</code> 默认端口</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc src<span style="color:#f92672">]</span><span style="color:#75715e"># vim /etc/ssh/sshd_config</span>
-<span style="color:#75715e"># semanage port -a -t ssh_port_t -p tcp #PORTNUMBER</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc src<span class="o">]</span><span class="c1"># vim /etc/ssh/sshd_config</span>
+<span class="c1"># semanage port -a -t ssh_port_t -p tcp #PORTNUMBER</span>
 #
 Port 22
 Port 23456
-<span style="color:#75715e">#ListenAddress 0.0.0.0</span>
-<span style="color:#75715e">#ListenAddress ::</span>
+<span class="c1">#ListenAddress 0.0.0.0</span>
+<span class="c1">#ListenAddress ::</span>
 
-<span style="color:#75715e"># 建议保留 22</span> 
-<span style="color:#75715e"># 防火墙需要放行 设置端口</span>
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># semanage port -l|grep ssh</span>
+<span class="c1"># 建议保留 22</span> 
+<span class="c1"># 防火墙需要放行 设置端口</span>
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># semanage port -l|grep ssh</span>
 ssh_port_t                     tcp      22
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># semanage port -a -t ssh_port_t -p tcp 23456</span>
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># semanage port -l|grep ssh</span>
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># semanage port -a -t ssh_port_t -p tcp 23456</span>
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># semanage port -l|grep ssh</span>
 ssh_port_t                     tcp      23456, 22
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># netstat -ntlp |grep sshd</span>
-tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:23456           0.0.0.0:*    LISTEN      18631/sshd          
-tcp        <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span> 0.0.0.0:22              0.0.0.0:*    LISTEN      18631/sshd          
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span># 
-</code></pre></div><blockquote>
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># netstat -ntlp |grep sshd</span>
+tcp        <span class="m">0</span>      <span class="m">0</span> 0.0.0.0:23456           0.0.0.0:*    LISTEN      18631/sshd          
+tcp        <span class="m">0</span>      <span class="m">0</span> 0.0.0.0:22              0.0.0.0:*    LISTEN      18631/sshd          
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>通过另个服务器远程修改过端口的服务器</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Lgr init.d<span style="color:#f92672">]</span><span style="color:#75715e"># ssh -p 23456 root@lichaocheng.top</span>
-root@lichaocheng.top<span style="color:#960050;background-color:#1e0010">&#39;</span>s password: 
-Last login: Sat Mar <span style="color:#ae81ff">28</span> 21:38:24 <span style="color:#ae81ff">2020</span> from 113.118.200.16
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Lgr init.d<span class="o">]</span><span class="c1"># ssh -p 23456 root@lichaocheng.top</span>
+root@lichaocheng.top<span class="err">&#39;</span>s password: 
+Last login: Sat Mar <span class="m">28</span> 21:38:24 <span class="m">2020</span> from 113.118.200.16
 Welcome to Alibaba Cloud Elastic Compute Service !
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="查看某个用户所有进程">查看某个用户所有进程</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># ps -ef |grep userTest</span>
-root     <span style="color:#ae81ff">32651</span> <span style="color:#ae81ff">10980</span>  <span style="color:#ae81ff">0</span> 23:07 pts/1    00:00:00 grep --color<span style="color:#f92672">=</span>auto userTest
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="终止某个用户所有进程">终止某个用户所有进程</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">testUser❌1004:10002::/home/testUser:/bin/bash
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># killall -u testUser</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="根据端口查对应的进程">根据端口查对应的进程</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># yum install -y lsof</span>
-<span style="color:#75715e"># 在联网的情况下可以直接使用以上命令</span>
-<span style="color:#75715e"># 如果没有联网使用 rpm 或者源码安装</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># lsof -i:8180</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="查看某个用户所有进程">查看某个用户所有进程</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># ps -ef |grep userTest</span>
+root     <span class="m">32651</span> <span class="m">10980</span>  <span class="m">0</span> 23:07 pts/1    00:00:00 grep --color<span class="o">=</span>auto userTest
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="终止某个用户所有进程">终止某个用户所有进程</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">testUser❌1004:10002::/home/testUser:/bin/bash
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># killall -u testUser</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="根据端口查对应的进程">根据端口查对应的进程</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># yum install -y lsof</span>
+<span class="c1"># 在联网的情况下可以直接使用以上命令</span>
+<span class="c1"># 如果没有联网使用 rpm 或者源码安装</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># lsof -i:8180</span>
 COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-server  <span style="color:#ae81ff">2155</span> root    6u  IPv6  <span style="color:#ae81ff">40398</span>      0t0  TCP *:8180 <span style="color:#f92672">(</span>LISTEN<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h3 id="通过以上知识可以做进程监控shell">通过以上知识可以做进程监控（shell）</h3>
+server  <span class="m">2155</span> root    6u  IPv6  <span class="m">40398</span>      0t0  TCP *:8180 <span class="o">(</span>LISTEN<span class="o">)</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="通过以上知识可以做进程监控shell">通过以上知识可以做进程监控（shell）</h3>
 <blockquote>
 <p>可能会用到 <code>rsync</code>  命令 安装即可</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#75715e">## 进程监控</span>
-</code></pre></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="c1">## 进程监控</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

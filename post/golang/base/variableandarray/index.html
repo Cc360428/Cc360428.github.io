@@ -68,7 +68,7 @@
 <meta itemprop="description" content="变量作用域,数组">
 <meta itemprop="datePublished" content="2020-04-07T22:58:36&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-07T22:58:36&#43;08:00" />
-<meta itemprop="wordCount" content="915">
+<meta itemprop="wordCount" content="1056">
 
 
 
@@ -379,8 +379,8 @@
             <a href="https://cc360428.github.io/categories/base/"> base </a>
             
           </div>
-        <span class="more-meta"> 约 915 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 1056 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
         
@@ -417,165 +417,366 @@
 <blockquote>
 <p>函数内定义的变量</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-)
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+<span class="p">)</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">c</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">c</span>)
-}
-</code></pre></div><h4 id="全局变量">全局变量</h4>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span> <span class="p">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="全局变量">全局变量</h4>
 <blockquote>
 <p>函数外定义的变量</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
 
-<span style="color:#75715e">// 定义全局变量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">h</span> <span style="color:#66d9ef">int</span>
+<span class="c1">// 定义全局变量
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">h</span> <span class="kt">int</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">a</span> = <span style="color:#ae81ff">1</span>
-	<span style="color:#a6e22e">b</span> = <span style="color:#ae81ff">2</span>
-	<span style="color:#a6e22e">h</span> = <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">h</span>)
-}
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span>
+	<span class="nx">a</span> <span class="p">=</span> <span class="mi">1</span>
+	<span class="nx">b</span> <span class="p">=</span> <span class="mi">2</span>
+	<span class="nx">h</span> <span class="p">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">h</span><span class="p">)</span>
+<span class="p">}</span>
 
-</code></pre></div><h4 id="形式参数">形式参数</h4>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="形式参数">形式参数</h4>
 <blockquote>
 <p>函数定义中的变量</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
 
-<span style="color:#75715e">// 声明全局变量
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> = <span style="color:#ae81ff">20</span>
+<span class="c1">// 声明全局变量
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">a</span> <span class="p">=</span> <span class="mi">20</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#75715e">// main 函数中声明局部变量
-</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> = <span style="color:#ae81ff">10</span>
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> = <span style="color:#ae81ff">20</span>
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span> = <span style="color:#ae81ff">0</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// main 函数中声明局部变量
+</span><span class="c1"></span>	<span class="kd">var</span> <span class="nx">a</span> <span class="p">=</span> <span class="mi">10</span>
+	<span class="kd">var</span> <span class="nx">b</span> <span class="p">=</span> <span class="mi">20</span>
+	<span class="kd">var</span> <span class="nx">c</span> <span class="p">=</span> <span class="mi">0</span>
 
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;main()函数中 a = %d\n&#34;</span>, <span style="color:#a6e22e">a</span>)
-	<span style="color:#a6e22e">c</span> = <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>)
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;main()函数中 c = %d\n&#34;</span>, <span style="color:#a6e22e">c</span>)
-}
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;main()函数中 a = %d\n&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+	<span class="nx">c</span> <span class="p">=</span> <span class="nf">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;main()函数中 c = %d\n&#34;</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// 函数定义-两数相加
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;sum() 函数中 a = %d\n&#34;</span>, <span style="color:#a6e22e">a</span>)
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;sum() 函数中 b = %d\n&#34;</span>, <span style="color:#a6e22e">b</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>
-}
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">main</span>()<span style="color:#a6e22e">函数中</span> <span style="color:#a6e22e">a</span> = <span style="color:#ae81ff">10</span>
-<span style="color:#a6e22e">sum</span>() <span style="color:#a6e22e">函数中</span> <span style="color:#a6e22e">a</span> = <span style="color:#ae81ff">10</span>
-<span style="color:#a6e22e">sum</span>() <span style="color:#a6e22e">函数中</span> <span style="color:#a6e22e">b</span> = <span style="color:#ae81ff">20</span>
-<span style="color:#a6e22e">main</span>()<span style="color:#a6e22e">函数中</span> <span style="color:#a6e22e">c</span> = <span style="color:#ae81ff">30</span>
-</code></pre></div><h3 id="数组">数组</h3>
+<span class="c1">// 函数定义-两数相加
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;sum() 函数中 a = %d\n&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;sum() 函数中 b = %d\n&#34;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nf">main</span><span class="p">()</span><span class="nx">函数中</span> <span class="nx">a</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="nf">sum</span><span class="p">()</span> <span class="nx">函数中</span> <span class="nx">a</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="nf">sum</span><span class="p">()</span> <span class="nx">函数中</span> <span class="nx">b</span> <span class="p">=</span> <span class="mi">20</span>
+<span class="nf">main</span><span class="p">()</span><span class="nx">函数中</span> <span class="nx">c</span> <span class="p">=</span> <span class="mi">30</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="数组">数组</h3>
 <blockquote>
 <p>数组是<code>Go</code> 语言中一个数据结构</p>
 <p>数组元素可以通过索引（位置）来读取（或者修改），索引从 0 开始，第一个元素索引为 0，第二个索引为 1，以此类推</p>
 </blockquote>
 <h4 id="数组声明初始化访问元素">数组声明、初始化、访问元素</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> (
-     <span style="color:#ae81ff">4</span>          <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">5</span>  )
-     <span style="color:#ae81ff">6</span>
-     <span style="color:#ae81ff">7</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">8</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> = [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}
-     <span style="color:#ae81ff">9</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">array</span>)
-    <span style="color:#ae81ff">10</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array1</span> = [<span style="color:#f92672">...</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">2</span>}
-    <span style="color:#ae81ff">11</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">array1</span>)
-    <span style="color:#ae81ff">12</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">n</span> [<span style="color:#ae81ff">10</span>]<span style="color:#66d9ef">int</span> <span style="color:#75715e">// n 是一个长度为 10 的数组
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">13</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>
-    <span style="color:#ae81ff">14</span>          <span style="color:#75715e">// 为数组 n 初始化元素
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">15</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> = <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">16</span>                  <span style="color:#a6e22e">n</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">100</span> <span style="color:#75715e">/* 设置元素为 i + 100 */</span>
-    <span style="color:#ae81ff">17</span>          }
-    <span style="color:#ae81ff">18</span>          <span style="color:#75715e">// 输出每个数组元素的值
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">19</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> = <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">20</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;Element[%d] = %d &#34;</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">n</span>[<span style="color:#a6e22e">j</span>])
-    <span style="color:#ae81ff">21</span>          }
-    <span style="color:#ae81ff">22</span>  }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.885</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">10</span>]  [<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">12</span>]  [<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">23</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">100</span> 
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">101</span> 
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">2</span>] = <span style="color:#ae81ff">102</span> 
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">3</span>] = <span style="color:#ae81ff">103</span> 
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">4</span>] = <span style="color:#ae81ff">104</span> 
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">5</span>] = <span style="color:#ae81ff">105</span> 
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">6</span>] = <span style="color:#ae81ff">106</span> 
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">7</span>] = <span style="color:#ae81ff">107</span> 
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">8</span>] = <span style="color:#ae81ff">108</span> 
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">26</span>:<span style="color:#ae81ff">07.886</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">23</span>]  <span style="color:#a6e22e">Element</span>[<span style="color:#ae81ff">9</span>] = <span style="color:#ae81ff">109</span> 
-</code></pre></div><h4 id="多维数组向数组传递数组">多维数组、向数组传递数组</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="p">(</span>
+     <span class="mi">4</span>          <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">5</span>  <span class="p">)</span>
+     <span class="mi">6</span>
+     <span class="mi">7</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">8</span>          <span class="kd">var</span> <span class="nx">array</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+     <span class="mi">9</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span>
+    <span class="mi">10</span>          <span class="kd">var</span> <span class="nx">array1</span> <span class="p">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+    <span class="mi">11</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">array1</span><span class="p">)</span>
+    <span class="mi">12</span>          <span class="kd">var</span> <span class="nx">n</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="kt">int</span> <span class="c1">// n 是一个长度为 10 的数组
+</span><span class="c1"></span>    <span class="mi">13</span>          <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span>
+    <span class="mi">14</span>          <span class="c1">// 为数组 n 初始化元素
+</span><span class="c1"></span>    <span class="mi">15</span>          <span class="k">for</span> <span class="nx">i</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">16</span>                  <span class="nx">n</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">100</span> <span class="cm">/* 设置元素为 i + 100 */</span>
+    <span class="mi">17</span>          <span class="p">}</span>
+    <span class="mi">18</span>          <span class="c1">// 输出每个数组元素的值
+</span><span class="c1"></span>    <span class="mi">19</span>          <span class="k">for</span> <span class="nx">j</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">20</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;Element[%d] = %d &#34;</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">n</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span>
+    <span class="mi">21</span>          <span class="p">}</span>
+    <span class="mi">22</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.885</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>  <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span>  <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">23</span> <span class="mi">6</span> <span class="mi">6</span> <span class="mi">2</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">100</span> 
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="mi">101</span> 
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">=</span> <span class="mi">102</span> 
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">=</span> <span class="mi">103</span> 
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">=</span> <span class="mi">104</span> 
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="p">=</span> <span class="mi">105</span> 
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="p">=</span> <span class="mi">106</span> 
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="p">=</span> <span class="mi">107</span> 
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="p">=</span> <span class="mi">108</span> 
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">07.886</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>  <span class="nx">Element</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="p">=</span> <span class="mi">109</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="多维数组向数组传递数组">多维数组、向数组传递数组</h4>
 <h5 id="多维数组">多维数组</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> (
-     <span style="color:#ae81ff">4</span>          <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">5</span>  )
-     <span style="color:#ae81ff">6</span>
-     <span style="color:#ae81ff">7</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">8</span>          <span style="color:#75715e">// 数组 - 5 行 2 列
-</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">9</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> = [<span style="color:#ae81ff">5</span>][<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>{{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}, {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>}, {<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>}, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>}}
-    <span style="color:#ae81ff">10</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>
-    <span style="color:#ae81ff">11</span>
-    <span style="color:#ae81ff">12</span>          <span style="color:#75715e">// 输出数组元素
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">13</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> = <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">14</span>                  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> = <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> &lt; <span style="color:#ae81ff">2</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">15</span>                          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;a[%d][%d] = %d&#34;</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>])
-    <span style="color:#ae81ff">16</span>                  }
-    <span style="color:#ae81ff">17</span>          }
-    <span style="color:#ae81ff">18</span>  }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.448</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.449</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.449</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.449</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.449</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.449</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">4</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.449</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">3</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.449</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">3</span>][<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">6</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.449</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">4</span>][<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">4</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">28</span>:<span style="color:#ae81ff">47.449</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array2</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">15</span>]  <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">4</span>][<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">8</span>
-</code></pre></div><h5 id="向数组传递数组">向数组传递数组</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#f92672">import</span> (
-     <span style="color:#ae81ff">4</span>          <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">5</span>  )
-     <span style="color:#ae81ff">6</span>
-     <span style="color:#ae81ff">7</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-     <span style="color:#ae81ff">8</span>          <span style="color:#75715e">//  数组长度为 5
-</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">9</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">balance</span> = [<span style="color:#ae81ff">5</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1000</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">50</span>}
-    <span style="color:#ae81ff">10</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">avg</span> <span style="color:#66d9ef">float32</span>
-    <span style="color:#ae81ff">11</span>          <span style="color:#75715e">// 数组作为参数传递给函数
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">12</span>          <span style="color:#a6e22e">avg</span> = <span style="color:#a6e22e">getAverage</span>(<span style="color:#a6e22e">balance</span>, <span style="color:#ae81ff">5</span>)
-    <span style="color:#ae81ff">13</span>          <span style="color:#75715e">// 输出返回的平均值
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">14</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;平均值为: %f &#34;</span>, <span style="color:#a6e22e">avg</span>)
-    <span style="color:#ae81ff">15</span>  }
-    <span style="color:#ae81ff">16</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getAverage</span>(<span style="color:#a6e22e">arr</span> [<span style="color:#ae81ff">5</span>]<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">size</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">float32</span> {
-    <span style="color:#ae81ff">17</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>
-    <span style="color:#ae81ff">18</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">avg</span> <span style="color:#66d9ef">float32</span>
-    <span style="color:#ae81ff">19</span>
-    <span style="color:#ae81ff">20</span>          <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> = <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">size</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#ae81ff">21</span>                  <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span>]
-    <span style="color:#ae81ff">22</span>          }
-    <span style="color:#ae81ff">23</span>          <span style="color:#a6e22e">avg</span> = float32(<span style="color:#a6e22e">sum</span>) <span style="color:#f92672">/</span> float32(<span style="color:#a6e22e">size</span>)
-    <span style="color:#ae81ff">24</span>          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">avg</span>
-    <span style="color:#ae81ff">25</span>  }
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">04</span><span style="color:#f92672">/</span><span style="color:#ae81ff">07</span> <span style="color:#ae81ff">23</span>:<span style="color:#ae81ff">31</span>:<span style="color:#ae81ff">06.475</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">array3</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">16</span>]  <span style="color:#a6e22e">平均值为</span>: <span style="color:#ae81ff">214.399994</span>
-</code></pre></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="p">(</span>
+     <span class="mi">4</span>          <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">5</span>  <span class="p">)</span>
+     <span class="mi">6</span>
+     <span class="mi">7</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">8</span>          <span class="c1">// 数组 - 5 行 2 列
+</span><span class="c1"></span>     <span class="mi">9</span>          <span class="kd">var</span> <span class="nx">a</span> <span class="p">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="kt">int</span><span class="p">{{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">},</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">}}</span>
+    <span class="mi">10</span>          <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span>
+    <span class="mi">11</span>
+    <span class="mi">12</span>          <span class="c1">// 输出数组元素
+</span><span class="c1"></span>    <span class="mi">13</span>          <span class="k">for</span> <span class="nx">i</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">14</span>                  <span class="k">for</span> <span class="nx">j</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">15</span>                          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;a[%d][%d] = %d&#34;</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">])</span>
+    <span class="mi">16</span>                  <span class="p">}</span>
+    <span class="mi">17</span>          <span class="p">}</span>
+    <span class="mi">18</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.448</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">1</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="mi">4</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">3</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="mi">6</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">4</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mf">47.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array2</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="nx">a</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="mi">8</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="向数组传递数组">向数组传递数组</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="kn">import</span> <span class="p">(</span>
+     <span class="mi">4</span>          <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">5</span>  <span class="p">)</span>
+     <span class="mi">6</span>
+     <span class="mi">7</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="mi">8</span>          <span class="c1">//  数组长度为 5
+</span><span class="c1"></span>     <span class="mi">9</span>          <span class="kd">var</span> <span class="nx">balance</span> <span class="p">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">50</span><span class="p">}</span>
+    <span class="mi">10</span>          <span class="kd">var</span> <span class="nx">avg</span> <span class="kt">float32</span>
+    <span class="mi">11</span>          <span class="c1">// 数组作为参数传递给函数
+</span><span class="c1"></span>    <span class="mi">12</span>          <span class="nx">avg</span> <span class="p">=</span> <span class="nf">getAverage</span><span class="p">(</span><span class="nx">balance</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="mi">13</span>          <span class="c1">// 输出返回的平均值
+</span><span class="c1"></span>    <span class="mi">14</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;平均值为: %f &#34;</span><span class="p">,</span> <span class="nx">avg</span><span class="p">)</span>
+    <span class="mi">15</span>  <span class="p">}</span>
+    <span class="mi">16</span>  <span class="kd">func</span> <span class="nf">getAverage</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">size</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">float32</span> <span class="p">{</span>
+    <span class="mi">17</span>          <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">sum</span> <span class="kt">int</span>
+    <span class="mi">18</span>          <span class="kd">var</span> <span class="nx">avg</span> <span class="kt">float32</span>
+    <span class="mi">19</span>
+    <span class="mi">20</span>          <span class="k">for</span> <span class="nx">i</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">size</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+    <span class="mi">21</span>                  <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+    <span class="mi">22</span>          <span class="p">}</span>
+    <span class="mi">23</span>          <span class="nx">avg</span> <span class="p">=</span> <span class="nb">float32</span><span class="p">(</span><span class="nx">sum</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float32</span><span class="p">(</span><span class="nx">size</span><span class="p">)</span>
+    <span class="mi">24</span>          <span class="k">return</span> <span class="nx">avg</span>
+    <span class="mi">25</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">07</span> <span class="mi">23</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mf">06.475</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">array3</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">16</span><span class="p">]</span>  <span class="nx">平均值为</span><span class="p">:</span> <span class="mf">214.399994</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

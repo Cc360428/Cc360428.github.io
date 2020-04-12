@@ -68,7 +68,7 @@
 <meta itemprop="description" content="8（应用程序管理）">
 <meta itemprop="datePublished" content="2020-03-28T16:11:12&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-28T16:11:12&#43;08:00" />
-<meta itemprop="wordCount" content="631">
+<meta itemprop="wordCount" content="679">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 631 字 </span>
+        <span class="more-meta"> 约 679 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -428,61 +428,139 @@
 <p><a href="ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm">ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm</a></p>
 <p>wget <a href="http://images.lichaocheng.top/static/upload/2020/03/28/6fc647af1780ffc0b127510a418445a1.rpm">http://images.lichaocheng.top/static/upload/2020/03/28/6fc647af1780ffc0b127510a418445a1.rpm</a></p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e">#  wget ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm</span>
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># pwd</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1">#  wget ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm</span>
+<span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># pwd</span>
 /root/RedHad/8/rpm
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
-总用量 <span style="color:#ae81ff">80</span>
--rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">79376</span> 3月  <span style="color:#ae81ff">28</span> 15:10 6fc647af1780ffc0b127510a418445a1.rpm
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># rpm -ivh lrzsz-0.12.20-36.el7.x86_64.rpm</span> 
-准备中...                          <span style="color:#75715e">################################# [100%]</span>
+<span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># ll</span>
+总用量 <span class="m">80</span>
+-rw-r--r-- <span class="m">1</span> root root <span class="m">79376</span> 3月  <span class="m">28</span> 15:10 6fc647af1780ffc0b127510a418445a1.rpm
+<span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># rpm -ivh lrzsz-0.12.20-36.el7.x86_64.rpm</span> 
+准备中...                          <span class="c1">################################# [100%]</span>
 正在升级/安装...
-   1:lrzsz-0.12.20-36.el7             <span style="color:#75715e">################################# [100%]</span>
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># rz --version</span>
-rz <span style="color:#f92672">(</span>lrzsz<span style="color:#f92672">)</span> 0.12.20
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="升级">升级</h4>
+   1:lrzsz-0.12.20-36.el7             <span class="c1">################################# [100%]</span>
+<span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># rz --version</span>
+rz <span class="o">(</span>lrzsz<span class="o">)</span> 0.12.20
+<span class="o">[</span>root@Cc rpm<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="升级">升级</h4>
 <p><code>[root@Cc rpm]# rpm -Uvh lrzsz-0.12.20-36.el7.x86_64.rpm </code></p>
 <h4 id="查看已安装的软件包和查看安装位置">查看已安装的软件包、和查看安装位置</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># rpm -qa |grep rz</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># rpm -qa |grep rz</span>
 lrzsz-0.12.20-36.el7.x86_64
-</code></pre></div><h4 id="卸载">卸载</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># rpm -qa |grep rz</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="卸载">卸载</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># rpm -qa |grep rz</span>
 lrzsz-0.12.20-36.el7.x86_64
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># rpm -e lrzsz-0.12.20-36.el7.x86_64</span>
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># rz --version</span>
+<span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># rpm -e lrzsz-0.12.20-36.el7.x86_64</span>
+<span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># rz --version</span>
 -bash: /usr/bin/rz: 没有那个文件或目录
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="查看文件属于哪个文件">查看文件属于哪个文件</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># which go</span>
+<span class="o">[</span>root@Cc rpm<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="查看文件属于哪个文件">查看文件属于哪个文件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># which go</span>
 /usr/local/go/go/bin/go
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="查看rpm说明信息">查看<code>rpm</code>说明信息</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span><span style="color:#75715e"># rpm -qip lrzsz-0.12.20-36.el7.x86_64.rpm</span> 
+<span class="o">[</span>root@Cc rpm<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="查看rpm说明信息">查看<code>rpm</code>说明信息</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc rpm<span class="o">]</span><span class="c1"># rpm -qip lrzsz-0.12.20-36.el7.x86_64.rpm</span> 
 Name        : lrzsz
 Version     : 0.12.20
 Release     : 36.el7
 Architecture: x86_64
-Install Date: <span style="color:#f92672">(</span>not installed<span style="color:#f92672">)</span>
+Install Date: <span class="o">(</span>not installed<span class="o">)</span>
 Group       : Applications/Communications
-Size        : <span style="color:#ae81ff">184846</span>
+Size        : <span class="m">184846</span>
 License     : GPLv2+
 Signature   : RSA/SHA256, 2014年07月04日 星期五 11时35分32秒, Key ID 24c6a8a7f4a80eb5
 Source RPM  : lrzsz-0.12.20-36.el7.src.rpm
 Build Date  : 2014年06月10日 星期二 07时29分11秒
 Build Host  : worker1.bsys.centos.org
-Relocations : <span style="color:#f92672">(</span>not relocatable<span style="color:#f92672">)</span>
+Relocations : <span class="o">(</span>not relocatable<span class="o">)</span>
 Packager    : CentOS BuildSystem &lt;http://bugs.centos.org&gt;
 Vendor      : CentOS
 URL         : http://www.ohse.de/uwe/software/lrzsz.html
 Summary     : The lrz and lsz modem communications programs
 Description :
-Lrzsz <span style="color:#f92672">(</span>consisting of lrz and lsz<span style="color:#f92672">)</span> is a cosmetically modified
+Lrzsz <span class="o">(</span>consisting of lrz and lsz<span class="o">)</span> is a cosmetically modified
 zmodem/ymodem/xmodem package built from the public-domain version of
 the rzsz package. Lrzsz was created to provide a working GNU
-copylefted Zmodem solution <span style="color:#66d9ef">for</span> Linux systems.
-<span style="color:#f92672">[</span>root@Cc rpm<span style="color:#f92672">]</span># 
-</code></pre></div><h3 id="源码安装">源码安装</h3>
+copylefted Zmodem solution <span class="k">for</span> Linux systems.
+<span class="o">[</span>root@Cc rpm<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="源码安装">源码安装</h3>
 <ul>
 <li>主要是依赖 <code>make</code> 和<code>Makefile</code> 编译</li>
 <li>make install ，执行完之后，安装一般会被安装在<code>/uer/local</code>下对应的文件夹，部分二进制文件放在<code>usr/bin</code>或在<code>/usr/local/bin</code>  对应的头文件被安装至<code>/usr/include</code>，帮助文档安装至<code>/usr/local/share</code> ,如果指定目录请加到环境变量里面去</li>

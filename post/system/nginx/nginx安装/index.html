@@ -68,7 +68,7 @@
 <meta itemprop="description" content="Nginx 配置http、https、静态绑定、转发">
 <meta itemprop="datePublished" content="2020-03-11T22:23:04&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-11T22:23:04&#43;08:00" />
-<meta itemprop="wordCount" content="470">
+<meta itemprop="wordCount" content="472">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 470 字 </span>
+        <span class="more-meta"> 约 472 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -452,9 +452,17 @@ Linux查看公网IP
 `ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'`
 </code></pre><h2 id="基本命令">基本命令</h2>
 <p>重载配置</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Nginx" data-lang="Nginx"><span style="color:#66d9ef">nginx</span> <span style="color:#e6db74">-s</span> <span style="color:#e6db74">reload</span>
-<span style="color:#e6db74">sudo</span> <span style="color:#e6db74">/etc/init.d/nginx</span> {<span style="color:#f92672">start|restart|stop}</span>
-</code></pre></div><h2 id="基本命令-1">基本命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Nginx" data-lang="Nginx"><span class="k">nginx</span> <span class="s">-s</span> <span class="s">reload</span>
+<span class="s">sudo</span> <span class="s">/etc/init.d/nginx</span> <span class="p">{</span><span class="kn">start|restart|stop}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="基本命令-1">基本命令</h2>
 <pre><code>nginx -s    [***]
             stop：快速关闭
             quit：安全关闭

@@ -68,7 +68,7 @@
 <meta itemprop="description" content="4.5(目录管理、系统管理)">
 <meta itemprop="datePublished" content="2020-03-25T23:48:12&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-25T23:48:12&#43;08:00" />
-<meta itemprop="wordCount" content="1055">
+<meta itemprop="wordCount" content="1150">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 1055 字 </span>
+        <span class="more-meta"> 约 1150 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -457,13 +457,25 @@
 <li>指定权限创建</li>
 <li><code>-p</code>递归创建</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc 20200326<span style="color:#f92672">]</span><span style="color:#75715e"># mkdir -m777 mkdira</span>
-<span style="color:#f92672">[</span>root@Cc 20200326<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
-总用量 <span style="color:#ae81ff">8</span>
-drwxrwxrwx <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">25</span> 22:52 mkdira
-drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">25</span> 22:39 pwd
-<span style="color:#f92672">[</span>root@Cc 20200326<span style="color:#f92672">]</span>#
-</code></pre></div><h3 id="rmdir">rmdir</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc 20200326<span class="o">]</span><span class="c1"># mkdir -m777 mkdira</span>
+<span class="o">[</span>root@Cc 20200326<span class="o">]</span><span class="c1"># ll</span>
+总用量 <span class="m">8</span>
+drwxrwxrwx <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">25</span> 22:52 mkdira
+drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">25</span> 22:39 <span class="nb">pwd</span>
+<span class="o">[</span>root@Cc 20200326<span class="o">]</span>#
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="rmdir">rmdir</h3>
 <ul>
 <li>删除</li>
 </ul>
@@ -472,20 +484,39 @@ drwxr-xr-x <span style="color:#ae81ff">2</span> root root <span style="color:#ae
 <li><code>ls -lk</code> k、h为 k、M、G</li>
 <li>大小显示排序</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc lichaocheng<span style="color:#f92672">]</span><span style="color:#75715e">#  ls -lhS</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1">#  ls -lhS</span>
 总用量 31M
--rw-r--r-- <span style="color:#ae81ff">1</span> root  root   25M 11月  <span style="color:#ae81ff">7</span> 23:31 gogs_0.11.91_linux_amd64.tar.gz
--rw-r--r-- <span style="color:#ae81ff">1</span> root  root  5.8M 2月  <span style="color:#ae81ff">26</span> 09:29 hugo.filepart
-drwxr-xr-x <span style="color:#ae81ff">2</span> root  root  4.0K 2月   <span style="color:#ae81ff">7</span> 12:51 C
-drwxr-xr-x <span style="color:#ae81ff">3</span> root  root  4.0K 12月 <span style="color:#ae81ff">17</span> 11:31 file
-drwxr-xr-x <span style="color:#ae81ff">3</span> root  root  4.0K 1月  <span style="color:#ae81ff">17</span> 17:34 frp
-drwxr-xr-x <span style="color:#ae81ff">2</span> root  root  4.0K 11月 <span style="color:#ae81ff">13</span> 10:37 frp1
-drwxr-xr-x <span style="color:#ae81ff">8</span> admin admin 4.0K 1月  <span style="color:#ae81ff">16</span> 16:54 gogs
-drwxr-xr-x <span style="color:#ae81ff">3</span> root  root  4.0K 11月 <span style="color:#ae81ff">28</span> 20:26 harbor
-drwxr-xr-x <span style="color:#ae81ff">2</span> root  root  4.0K 12月 <span style="color:#ae81ff">19</span> 15:54 hf
-drwxr-xr-x <span style="color:#ae81ff">3</span> root  root  4.0K 2月  <span style="color:#ae81ff">28</span> 23:03 hugo
+-rw-r--r-- <span class="m">1</span> root  root   25M 11月  <span class="m">7</span> 23:31 gogs_0.11.91_linux_amd64.tar.gz
+-rw-r--r-- <span class="m">1</span> root  root  5.8M 2月  <span class="m">26</span> 09:29 hugo.filepart
+drwxr-xr-x <span class="m">2</span> root  root  4.0K 2月   <span class="m">7</span> 12:51 C
+drwxr-xr-x <span class="m">3</span> root  root  4.0K 12月 <span class="m">17</span> 11:31 file
+drwxr-xr-x <span class="m">3</span> root  root  4.0K 1月  <span class="m">17</span> 17:34 frp
+drwxr-xr-x <span class="m">2</span> root  root  4.0K 11月 <span class="m">13</span> 10:37 frp1
+drwxr-xr-x <span class="m">8</span> admin admin 4.0K 1月  <span class="m">16</span> 16:54 gogs
+drwxr-xr-x <span class="m">3</span> root  root  4.0K 11月 <span class="m">28</span> 20:26 harbor
+drwxr-xr-x <span class="m">2</span> root  root  4.0K 12月 <span class="m">19</span> 15:54 hf
+drwxr-xr-x <span class="m">3</span> root  root  4.0K 2月  <span class="m">28</span> 23:03 hugo
 
-</code></pre></div><h3 id="pwd">pwd</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="pwd">pwd</h3>
 <ul>
 <li>当前目录</li>
 </ul>
@@ -502,69 +533,158 @@ drwxr-xr-x <span style="color:#ae81ff">3</span> root  root  4.0K 2月  <span sty
 <ul>
 <li>打包不压缩</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># tar -cvf tarTest.txt.tar tarTest.txt</span> 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -cvf tarTest.txt.tar tarTest.txt</span> 
 tarTest.txt
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
-总用量 <span style="color:#ae81ff">16</span>
-drwxr-xr-x <span style="color:#ae81ff">2</span> root root  <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">25</span> 22:59 lcc
--rw-r--r-- <span style="color:#ae81ff">1</span> root root     <span style="color:#ae81ff">0</span> 3月  <span style="color:#ae81ff">25</span> 23:01 tarTest.txt
--rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">10240</span> 3月  <span style="color:#ae81ff">25</span> 23:01 tarTest.txt.tar
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
+总用量 <span class="m">16</span>
+drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月  <span class="m">25</span> 22:59 lcc
+-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
+-rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
+<span class="o">[</span>root@Cc tar<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>打包并使用gzip压缩</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># tar -zcvf tarTest.txt.tar.gz ./lcc/</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -zcvf tarTest.txt.tar.gz ./lcc/</span>
 ./lcc/
 ./lcc/b
 ./lcc/a
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
-总用量 <span style="color:#ae81ff">20</span>
-drwxr-xr-x <span style="color:#ae81ff">2</span> root root  <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">25</span> 22:59 lcc
--rw-r--r-- <span style="color:#ae81ff">1</span> root root     <span style="color:#ae81ff">0</span> 3月  <span style="color:#ae81ff">25</span> 23:01 tarTest.txt
--rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">10240</span> 3月  <span style="color:#ae81ff">25</span> 23:01 tarTest.txt.tar
--rw-r--r-- <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">144</span> 3月  <span style="color:#ae81ff">25</span> 23:02 tarTest.txt.tar.gz
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span># 
+<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
+总用量 <span class="m">20</span>
+drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月  <span class="m">25</span> 22:59 lcc
+-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
+-rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
+-rw-r--r-- <span class="m">1</span> root root   <span class="m">144</span> 3月  <span class="m">25</span> 23:02 tarTest.txt.tar.gz
+<span class="o">[</span>root@Cc tar<span class="o">]</span># 
 
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>使用bzip2</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># tar -jcvf tarTest.txt.tar.bz2 ./lcc/</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -jcvf tarTest.txt.tar.bz2 ./lcc/</span>
 ./lcc/
 ./lcc/b
 ./lcc/a
-tar <span style="color:#f92672">(</span>child<span style="color:#f92672">)</span>: bzip2：无法 exec: 没有那个文件或目录
-tar <span style="color:#f92672">(</span>child<span style="color:#f92672">)</span>: Error is not recoverable: exiting now
-tar: Child returned status <span style="color:#ae81ff">2</span>
+tar <span class="o">(</span>child<span class="o">)</span>: bzip2：无法 exec: 没有那个文件或目录
+tar <span class="o">(</span>child<span class="o">)</span>: Error is not recoverable: exiting now
+tar: Child returned status <span class="m">2</span>
 tar: Error is not recoverable: exiting now
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
-总用量 <span style="color:#ae81ff">20</span>
-drwxr-xr-x <span style="color:#ae81ff">2</span> root root  <span style="color:#ae81ff">4096</span> 3月  <span style="color:#ae81ff">25</span> 22:59 lcc
--rw-r--r-- <span style="color:#ae81ff">1</span> root root     <span style="color:#ae81ff">0</span> 3月  <span style="color:#ae81ff">25</span> 23:01 tarTest.txt
--rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">10240</span> 3月  <span style="color:#ae81ff">25</span> 23:01 tarTest.txt.tar
--rw-r--r-- <span style="color:#ae81ff">1</span> root root     <span style="color:#ae81ff">0</span> 3月  <span style="color:#ae81ff">25</span> 23:04 tarTest.txt.tar.bz2
--rw-r--r-- <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">144</span> 3月  <span style="color:#ae81ff">25</span> 23:02 tarTest.txt.tar.gz
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
+总用量 <span class="m">20</span>
+drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月  <span class="m">25</span> 22:59 lcc
+-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
+-rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
+-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:04 tarTest.txt.tar.bz2
+-rw-r--r-- <span class="m">1</span> root root   <span class="m">144</span> 3月  <span class="m">25</span> 23:02 tarTest.txt.tar.gz
+<span class="o">[</span>root@Cc tar<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>查看当前压缩包</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># tar -ztvf tarTest.txt.tar.gz</span> 
-drwxr-xr-x root/root         <span style="color:#ae81ff">0</span> 2020-03-25 22:59 ./lcc/
--rw-r--r-- root/root         <span style="color:#ae81ff">0</span> 2020-03-25 22:59 ./lcc/b
--rw-r--r-- root/root         <span style="color:#ae81ff">0</span> 2020-03-25 22:59 ./lcc/a
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -ztvf tarTest.txt.tar.gz</span> 
+drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
+-rw-r--r-- root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/b
+-rw-r--r-- root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/a
+<span class="o">[</span>root@Cc tar<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>解压之中指定文件</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># rm -rf lcc/</span>
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
-总用量 <span style="color:#ae81ff">16</span>
--rw-r--r-- <span style="color:#ae81ff">1</span> root root     <span style="color:#ae81ff">0</span> 3月  <span style="color:#ae81ff">25</span> 23:01 tarTest.txt
--rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">10240</span> 3月  <span style="color:#ae81ff">25</span> 23:01 tarTest.txt.tar
--rw-r--r-- <span style="color:#ae81ff">1</span> root root     <span style="color:#ae81ff">0</span> 3月  <span style="color:#ae81ff">25</span> 23:05 tarTest.txt.tar.bz2
--rw-r--r-- <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">144</span> 3月  <span style="color:#ae81ff">25</span> 23:02 tarTest.txt.tar.gz
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># tar -zxvf tarTest.txt.tar.gz ./lcc/b</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># rm -rf lcc/</span>
+<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
+总用量 <span class="m">16</span>
+-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
+-rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
+-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:05 tarTest.txt.tar.bz2
+-rw-r--r-- <span class="m">1</span> root root   <span class="m">144</span> 3月  <span class="m">25</span> 23:02 tarTest.txt.tar.gz
+<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -zxvf tarTest.txt.tar.gz ./lcc/b</span>
 ./lcc/b
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span><span style="color:#75715e"># tree</span>
+<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tree</span>
 .
 ├── lcc
 │   └── b
@@ -573,9 +693,11 @@ drwxr-xr-x root/root         <span style="color:#ae81ff">0</span> 2020-03-25 22:
 ├── tarTest.txt.tar.bz2
 └── tarTest.txt.tar.gz
 
-<span style="color:#ae81ff">1</span> directory, <span style="color:#ae81ff">5</span> files
-<span style="color:#f92672">[</span>root@Cc tar<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+<span class="m">1</span> directory, <span class="m">5</span> files
+<span class="o">[</span>root@Cc tar<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>保留文件属性
 <code>[root@Cc tar]# tar -zxvpf tarTest.txt.tar.gz ./lcc/</code></li>
 <li>排除某些文件
@@ -590,20 +712,41 @@ drwxr-xr-x root/root         <span style="color:#ae81ff">0</span> 2020-03-25 22:
 <blockquote>
 <p>可以查看yum 命令手册，按q退出</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc system<span style="color:#f92672">]</span><span style="color:#75715e"># man -c</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># man -c</span>
 您需要什么手册页？
-<span style="color:#f92672">[</span>root@Cc system<span style="color:#f92672">]</span><span style="color:#75715e"># man yum</span>
-</code></pre></div><h3 id="export导出环境变量">export（导出环境变量）</h3>
+<span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># man yum</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="export导出环境变量">export（导出环境变量）</h3>
 <ul>
 <li>修改go 环境变量为例</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc system<span style="color:#f92672">]</span><span style="color:#75715e"># go env |grep GOPATH</span>
-GOPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/opt/gopath&#34;</span>
-<span style="color:#f92672">[</span>root@Cc system<span style="color:#f92672">]</span><span style="color:#75715e"># export GOPATH=&#34;/root&#34;</span>
-<span style="color:#f92672">[</span>root@Cc system<span style="color:#f92672">]</span><span style="color:#75715e"># go env |grep GOPATH</span>
-GOPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/root&#34;</span>
-<span style="color:#f92672">[</span>root@Cc system<span style="color:#f92672">]</span><span style="color:#75715e"># export GOPATH=&#34;/opt/gopath&#34;</span>
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># go env |grep GOPATH</span>
+<span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&#34;/opt/gopath&#34;</span>
+<span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># export GOPATH=&#34;/root&#34;</span>
+<span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># go env |grep GOPATH</span>
+<span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&#34;/root&#34;</span>
+<span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># export GOPATH=&#34;/opt/gopath&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>export -n</li>
 </ul>
 <blockquote>
@@ -613,15 +756,30 @@ GOPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/root
 <ul>
 <li>将当前写入到文件</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc history<span style="color:#f92672">]</span><span style="color:#75715e"># history -w history.txt</span> 
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># history -w history.txt</span> 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>清楚当前history
 <code>history -c</code></li>
 <li>删除所有历史命令</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc history<span style="color:#f92672">]</span><span style="color:#75715e"># rm -rf ~/.bash_history</span> 
-<span style="color:#f92672">[</span>root@Cc history<span style="color:#f92672">]</span><span style="color:#75715e"># history -c</span>
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># rm -rf ~/.bash_history</span> 
+<span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># history -c</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>可以配合<code>history |grep [docker]</code>查找</li>
 </ul>
 <h3 id="date时间操作">date(时间操作)</h3>
@@ -633,10 +791,19 @@ GOPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/root
 <p>ctrl + l</p>
 </blockquote>
 <h3 id="uptime查看系统负载">uptime(查看系统负载)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc history<span style="color:#f92672">]</span><span style="color:#75715e"># uptime</span>
- 23:33:15 up <span style="color:#ae81ff">5</span> days, 14:18,  <span style="color:#ae81ff">2</span> users,  load average: 0.21, 0.32, 0.31
-<span style="color:#f92672">[</span>root@Cc history<span style="color:#f92672">]</span># 
-</code></pre></div><h3 id="free显示系统内存状况">free(显示系统内存状况)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># uptime</span>
+ 23:33:15 up <span class="m">5</span> days, 14:18,  <span class="m">2</span> users,  load average: 0.21, 0.32, 0.31
+<span class="o">[</span>root@Cc history<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="free显示系统内存状况">free(显示系统内存状况)</h3>
 <p><code>[root@Cc history]# free -m</code></p>
 <h3 id="dd转换或者复制">dd(转换或者复制)</h3>
 <blockquote>

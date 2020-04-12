@@ -68,7 +68,7 @@
 <meta itemprop="description" content="golang 基础入门、golang hellworld">
 <meta itemprop="datePublished" content="2020-03-30T23:31:59&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-30T23:31:59&#43;08:00" />
-<meta itemprop="wordCount" content="831">
+<meta itemprop="wordCount" content="886">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/base/"> base </a>
             
           </div>
-        <span class="more-meta"> 约 831 字 </span>
+        <span class="more-meta"> 约 886 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -427,45 +427,89 @@
 <p>不管学那一语言都有自己运行环境（<code>html5</code>除外），对于Go环境<code>golang</code> 官网有windows、linux、mac ，源码安装以及对应安装包，自己安装即可</p>
 </blockquote>
 <h4 id="安装打开计算机终端检查是否安装成功">安装打开计算机终端检查是否安装成功</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">C</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Users</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Cc</span>&gt;<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">version</span>
-<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">version</span> <span style="color:#a6e22e">go1</span><span style="color:#ae81ff">.13.4</span> <span style="color:#a6e22e">windows</span><span style="color:#f92672">/</span><span style="color:#a6e22e">amd64</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Cc</span><span class="p">&gt;</span><span class="k">go</span> <span class="nx">version</span>
+<span class="k">go</span> <span class="nx">version</span> <span class="nx">go1</span><span class="mf">.13.4</span> <span class="nx">windows</span><span class="o">/</span><span class="nx">amd64</span>
 
-<span style="color:#a6e22e">C</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Users</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Cc</span>&gt;<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">env</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GO111MODULE</span>=
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOARCH</span>=<span style="color:#a6e22e">amd64</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOBIN</span>=
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOCACHE</span>=<span style="color:#a6e22e">C</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Users</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Cc</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">AppData</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Local</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#66d9ef">go</span><span style="color:#f92672">-</span><span style="color:#a6e22e">build</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOENV</span>=<span style="color:#a6e22e">C</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Users</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Cc</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">AppData</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Roaming</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#66d9ef">go</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">env</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOEXE</span>=.<span style="color:#a6e22e">exe</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOFLAGS</span>=
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOHOSTARCH</span>=<span style="color:#a6e22e">amd64</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOHOSTOS</span>=<span style="color:#a6e22e">windows</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GONOPROXY</span>=
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GONOSUMDB</span>=
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOOS</span>=<span style="color:#a6e22e">windows</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOPATH</span>=<span style="color:#a6e22e">D</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">file</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">gopath</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOPRIVATE</span>=
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOPROXY</span>=<span style="color:#a6e22e">https</span>:<span style="color:#75715e">//goproxy.io
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOROOT</span>=<span style="color:#a6e22e">C</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Program</span> <span style="color:#a6e22e">Files</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Golang</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOSUMDB</span>=<span style="color:#a6e22e">sum</span>.<span style="color:#a6e22e">golang</span>.<span style="color:#a6e22e">org</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOTMPDIR</span>=
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOTOOLDIR</span>=<span style="color:#a6e22e">C</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Program</span> <span style="color:#a6e22e">Files</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Golang</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">pkg</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">tool</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">windows_amd64</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GCCGO</span>=<span style="color:#a6e22e">gccgo</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">AR</span>=<span style="color:#a6e22e">ar</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">CC</span>=<span style="color:#a6e22e">gcc</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">CXX</span>=<span style="color:#a6e22e">g</span><span style="color:#f92672">++</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">CGO_ENABLED</span>=<span style="color:#ae81ff">1</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOMOD</span>=
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">CGO_CFLAGS</span>=<span style="color:#f92672">-</span><span style="color:#a6e22e">g</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">O2</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">CGO_CPPFLAGS</span>=
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">CGO_CXXFLAGS</span>=<span style="color:#f92672">-</span><span style="color:#a6e22e">g</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">O2</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">CGO_FFLAGS</span>=<span style="color:#f92672">-</span><span style="color:#a6e22e">g</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">O2</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">CGO_LDFLAGS</span>=<span style="color:#f92672">-</span><span style="color:#a6e22e">g</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">O2</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">PKG_CONFIG</span>=<span style="color:#a6e22e">pkg</span><span style="color:#f92672">-</span><span style="color:#a6e22e">config</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOGCCFLAGS</span>=<span style="color:#f92672">-</span><span style="color:#a6e22e">m64</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">mthreads</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">fmessage</span><span style="color:#f92672">-</span><span style="color:#a6e22e">length</span>=<span style="color:#ae81ff">0</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">fdebug</span><span style="color:#f92672">-</span><span style="color:#a6e22e">prefix</span><span style="color:#f92672">-</span><span style="color:#66d9ef">map</span>=<span style="color:#a6e22e">C</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Users</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Cc</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">AppData</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Local</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Temp</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">g</span>
-<span style="color:#a6e22e">o</span><span style="color:#f92672">-</span><span style="color:#a6e22e">build742472330</span>=<span style="color:#f92672">/</span><span style="color:#a6e22e">tmp</span><span style="color:#f92672">/</span><span style="color:#66d9ef">go</span><span style="color:#f92672">-</span><span style="color:#a6e22e">build</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">gno</span><span style="color:#f92672">-</span><span style="color:#a6e22e">record</span><span style="color:#f92672">-</span><span style="color:#a6e22e">gcc</span><span style="color:#f92672">-</span><span style="color:#a6e22e">switches</span>
-<span style="color:#a6e22e">C</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Users</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Cc</span>&gt;
-</code></pre></div><h4 id="环境变量">环境变量</h4>
+<span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Cc</span><span class="p">&gt;</span><span class="k">go</span> <span class="nx">env</span>
+<span class="nx">set</span> <span class="nx">GO111MODULE</span><span class="p">=</span>
+<span class="nx">set</span> <span class="nx">GOARCH</span><span class="p">=</span><span class="nx">amd64</span>
+<span class="nx">set</span> <span class="nx">GOBIN</span><span class="p">=</span>
+<span class="nx">set</span> <span class="nx">GOCACHE</span><span class="p">=</span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Cc</span><span class="err">\</span><span class="nx">AppData</span><span class="err">\</span><span class="nx">Local</span><span class="err">\</span><span class="k">go</span><span class="o">-</span><span class="nx">build</span>
+<span class="nx">set</span> <span class="nx">GOENV</span><span class="p">=</span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Cc</span><span class="err">\</span><span class="nx">AppData</span><span class="err">\</span><span class="nx">Roaming</span><span class="err">\</span><span class="k">go</span><span class="err">\</span><span class="nx">env</span>
+<span class="nx">set</span> <span class="nx">GOEXE</span><span class="p">=.</span><span class="nx">exe</span>
+<span class="nx">set</span> <span class="nx">GOFLAGS</span><span class="p">=</span>
+<span class="nx">set</span> <span class="nx">GOHOSTARCH</span><span class="p">=</span><span class="nx">amd64</span>
+<span class="nx">set</span> <span class="nx">GOHOSTOS</span><span class="p">=</span><span class="nx">windows</span>
+<span class="nx">set</span> <span class="nx">GONOPROXY</span><span class="p">=</span>
+<span class="nx">set</span> <span class="nx">GONOSUMDB</span><span class="p">=</span>
+<span class="nx">set</span> <span class="nx">GOOS</span><span class="p">=</span><span class="nx">windows</span>
+<span class="nx">set</span> <span class="nx">GOPATH</span><span class="p">=</span><span class="nx">D</span><span class="p">:</span><span class="err">\</span><span class="nx">file</span><span class="err">\</span><span class="nx">gopath</span>
+<span class="nx">set</span> <span class="nx">GOPRIVATE</span><span class="p">=</span>
+<span class="nx">set</span> <span class="nx">GOPROXY</span><span class="p">=</span><span class="nx">https</span><span class="p">:</span><span class="c1">//goproxy.io
+</span><span class="c1"></span><span class="nx">set</span> <span class="nx">GOROOT</span><span class="p">=</span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Program</span> <span class="nx">Files</span><span class="err">\</span><span class="nx">Golang</span>
+<span class="nx">set</span> <span class="nx">GOSUMDB</span><span class="p">=</span><span class="nx">sum</span><span class="p">.</span><span class="nx">golang</span><span class="p">.</span><span class="nx">org</span>
+<span class="nx">set</span> <span class="nx">GOTMPDIR</span><span class="p">=</span>
+<span class="nx">set</span> <span class="nx">GOTOOLDIR</span><span class="p">=</span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Program</span> <span class="nx">Files</span><span class="err">\</span><span class="nx">Golang</span><span class="err">\</span><span class="nx">pkg</span><span class="err">\</span><span class="nx">tool</span><span class="err">\</span><span class="nx">windows_amd64</span>
+<span class="nx">set</span> <span class="nx">GCCGO</span><span class="p">=</span><span class="nx">gccgo</span>
+<span class="nx">set</span> <span class="nx">AR</span><span class="p">=</span><span class="nx">ar</span>
+<span class="nx">set</span> <span class="nx">CC</span><span class="p">=</span><span class="nx">gcc</span>
+<span class="nx">set</span> <span class="nx">CXX</span><span class="p">=</span><span class="nx">g</span><span class="o">++</span>
+<span class="nx">set</span> <span class="nx">CGO_ENABLED</span><span class="p">=</span><span class="mi">1</span>
+<span class="nx">set</span> <span class="nx">GOMOD</span><span class="p">=</span>
+<span class="nx">set</span> <span class="nx">CGO_CFLAGS</span><span class="p">=</span><span class="o">-</span><span class="nx">g</span> <span class="o">-</span><span class="nx">O2</span>
+<span class="nx">set</span> <span class="nx">CGO_CPPFLAGS</span><span class="p">=</span>
+<span class="nx">set</span> <span class="nx">CGO_CXXFLAGS</span><span class="p">=</span><span class="o">-</span><span class="nx">g</span> <span class="o">-</span><span class="nx">O2</span>
+<span class="nx">set</span> <span class="nx">CGO_FFLAGS</span><span class="p">=</span><span class="o">-</span><span class="nx">g</span> <span class="o">-</span><span class="nx">O2</span>
+<span class="nx">set</span> <span class="nx">CGO_LDFLAGS</span><span class="p">=</span><span class="o">-</span><span class="nx">g</span> <span class="o">-</span><span class="nx">O2</span>
+<span class="nx">set</span> <span class="nx">PKG_CONFIG</span><span class="p">=</span><span class="nx">pkg</span><span class="o">-</span><span class="nx">config</span>
+<span class="nx">set</span> <span class="nx">GOGCCFLAGS</span><span class="p">=</span><span class="o">-</span><span class="nx">m64</span> <span class="o">-</span><span class="nx">mthreads</span> <span class="o">-</span><span class="nx">fmessage</span><span class="o">-</span><span class="nx">length</span><span class="p">=</span><span class="mi">0</span> <span class="o">-</span><span class="nx">fdebug</span><span class="o">-</span><span class="nx">prefix</span><span class="o">-</span><span class="kd">map</span><span class="p">=</span><span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Cc</span><span class="err">\</span><span class="nx">AppData</span><span class="err">\</span><span class="nx">Local</span><span class="err">\</span><span class="nx">Temp</span><span class="err">\</span><span class="nx">g</span>
+<span class="nx">o</span><span class="o">-</span><span class="nx">build742472330</span><span class="p">=</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="k">go</span><span class="o">-</span><span class="nx">build</span> <span class="o">-</span><span class="nx">gno</span><span class="o">-</span><span class="nx">record</span><span class="o">-</span><span class="nx">gcc</span><span class="o">-</span><span class="nx">switches</span>
+<span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">Cc</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="环境变量">环境变量</h4>
 <blockquote>
 <p>注：GOROOT、GOPATH、GOOS、GOHOSTARCH  、GO111MODULE、GOPROXY 重要</p>
 </blockquote>
@@ -484,29 +528,64 @@
 </ul>
 <h3 id="golang-helloworld-">Golang <code>HelloWorld </code></h3>
 <h4 id="在某个目录下面创建-maingo">在某个目录下面创建 <code>main.go</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
 
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello World!&#34;</span>)
-}
-</code></pre></div><h4 id="编译运行">编译运行</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">D</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">file</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">gopath</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">src</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Cc360428</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">helloWorld</span>&gt;<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">build</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">o</span> <span style="color:#a6e22e">helloWorld</span>.<span style="color:#a6e22e">exe</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello World!&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="编译运行">编译运行</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">D</span><span class="p">:</span><span class="err">\</span><span class="nx">file</span><span class="err">\</span><span class="nx">gopath</span><span class="err">\</span><span class="nx">src</span><span class="err">\</span><span class="nx">Cc360428</span><span class="err">\</span><span class="nx">helloWorld</span><span class="p">&gt;</span><span class="k">go</span> <span class="nx">build</span> <span class="o">-</span><span class="nx">o</span> <span class="nx">helloWorld</span><span class="p">.</span><span class="nx">exe</span>
 
-<span style="color:#a6e22e">D</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">file</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">gopath</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">src</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Cc360428</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">helloWorld</span>&gt;<span style="color:#a6e22e">helloWorld</span>.<span style="color:#a6e22e">exe</span>
-<span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">World</span>!
+<span class="nx">D</span><span class="p">:</span><span class="err">\</span><span class="nx">file</span><span class="err">\</span><span class="nx">gopath</span><span class="err">\</span><span class="nx">src</span><span class="err">\</span><span class="nx">Cc360428</span><span class="err">\</span><span class="nx">helloWorld</span><span class="p">&gt;</span><span class="nx">helloWorld</span><span class="p">.</span><span class="nx">exe</span>
+<span class="nx">Hello</span> <span class="nx">World</span><span class="p">!</span>
 
-<span style="color:#a6e22e">D</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">file</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">gopath</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">src</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">Cc360428</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">helloWorld</span>&gt;
-</code></pre></div><h3 id="基础语法">基础语法</h3>
+<span class="nx">D</span><span class="p">:</span><span class="err">\</span><span class="nx">file</span><span class="err">\</span><span class="nx">gopath</span><span class="err">\</span><span class="nx">src</span><span class="err">\</span><span class="nx">Cc360428</span><span class="err">\</span><span class="nx">helloWorld</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="基础语法">基础语法</h3>
 <h4 id="分隔符">分隔符</h4>
 <p>一行代表一个结束，每一句不需要与其他语言一行<code>;</code>来表示结束，Go语言在编译时i自动会完成</p>
 <h4 id="注释">注释</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 单行注释
-</span><span style="color:#75715e"></span><span style="color:#75715e">/**
-</span><span style="color:#75715e">多行注释
-</span><span style="color:#75715e">*/</span>
-</code></pre></div><h4 id="标识符">标识符</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// 单行注释
+</span><span class="c1"></span><span class="cm">/**
+</span><span class="cm">多行注释
+</span><span class="cm">*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="标识符">标识符</h4>
 <blockquote>
 <p>标识符用来命名变量、常量、实体</p>
 </blockquote>

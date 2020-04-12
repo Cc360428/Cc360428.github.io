@@ -18,7 +18,7 @@
       <pubDate>Wed, 11 Mar 2020 16:19:11 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/golang/golang%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
-      <description>godep 安装 go get -u -v github.com/tools/godep 使用 参考1 参考2 goverdor（go1.12下 推荐使用） 安装 go get -u github.com/kardianos/govendor 基本使用 进入项目目录 govendor init govendor fetch github.com/Cc360428/HelpPackage/UtilsHelp cat vendor/vendor.json { &amp;#34;comment&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;ignore&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;package&amp;#34;: [ { &amp;#34;checksumSHA1&amp;#34;: &amp;#34;vT6zp7A2xIrOTza5mYU7ZR4it1c=&amp;#34;,</description>
+      <description>godep 安装 go get -u -v github.com/tools/godep 使用 参考1 参考2 goverdor（go1.12下 推荐使用） 安装 go get -u github.com/kardianos/govendor 基本使用 进入项目目录 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Thu, 05 Mar 2020 16:02:24 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/golang/mysql/gorm/</guid>
-      <description>Gorm 概述 官网 gorm 对数据库的操作 环境搭建 下载依赖 go get -u github.com/jinzhu/gorm 实例（连接） package main import ( &amp;#34;fmt&amp;#34; &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; // logs &amp;#34;github.com/jinzhu/gorm&amp;#34; // gorm _ &amp;#34;github.com/jinzhu/gorm/dialects/mysql&amp;#34; // 导入初始化包 ) type Product struct { gorm.Model Code string Price uint } func main() { db, err := gorm.Open(Databases.Type, //</description>
+      <description>Gorm 概述 官网 gorm 对数据库的操作 环境搭建 下载依赖 go get -u github.com/jinzhu/gorm 实例（连接） 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39</description>
     </item>
     
     <item>

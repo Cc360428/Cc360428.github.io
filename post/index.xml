@@ -18,7 +18,7 @@
       <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/system/mysql/day01/</guid>
-      <description>mysql 考虑到工作临时需要 第4章（检索数据） 4.5 检索不同的行 SELECT vend_id FROM products; 4.6 限制结果 SELECT prod_name FROM products LIMIT 5, 5; 第6章（过滤数据） 6.1 where 字句 SELECT prod_name, prod_price FROM products WHERE prod_price = 2.50; 6.2 where 字句操作</description>
+      <description>mysql 考虑到工作临时需要 第4章（检索数据） 4.5 检索不同的行 1 2 3 4 SELECT vend_id FROM products; 4.6 限制结果 1 2 3 4 5 6 SELECT prod_name FROM products LIMIT 5, 5; 第6章（过滤数据） 6.1 where 字句 1 2 3 4 5</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Tue, 07 Apr 2020 22:58:36 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/golang/base/variableandarray/</guid>
-      <description>作用域与数组 源码 变量作用域 局部变量 函数内定义的变量 package main import ( &amp;#34;fmt&amp;#34; ) func main() { var a, b, c = 1, 2, 3 fmt.Println(a, b, c) } 全局变量 函数外定义的变量 package main import &amp;#34;fmt&amp;#34; // 定义全局变量 var</description>
+      <description>作用域与数组 源码 变量作用域 局部变量 函数内定义的变量 1 2 3 4 5 6 7 8 9 10 package main import ( &amp;#34;fmt&amp;#34; ) func main() { var a, b, c = 1, 2, 3 fmt.Println(a, b, c) } 全局变量 函数外定义的变量 1 2</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Mon, 06 Apr 2020 22:05:18 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/golang/base/func/</guid>
-      <description>函数 源码 go 至少一个函数 主函数 package main import ( &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; ) func main() { _, _, _, err := FuncName(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;, false) if err != nil { logs.Error(err.Error()) } } // FuncName func FuncName(args1, args2 string, args3 bool) (return1, return2 string, return3 bool, return4 error) { /** 函数体 */ return } 说明 可以retu</description>
+      <description>函数 源码 go 至少一个函数 主函数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 package main import ( &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; ) func main() { _, _, _, err := FuncName(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;, false) if err != nil { logs.Error(err.Error()) } } // FuncName func FuncName(args1, args2 string, args3 bool) (return1, return2</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Fri, 03 Apr 2020 00:10:00 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/golang/base/loopstatementfunc/</guid>
-      <description>循环语句 源代码 for 1 package main 2 3 import &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; 4 5 func main() { 6 array := make([]int, 5) 7 logs.Info(array) 8 for i := 0; i &amp;lt; len(array); i++ { 9 array[i] = i 10 } 11 logs.Info(array) 12 b := 3 13 for ; b &amp;gt;= 1; { 14 b-- 15 logs.Debug(b) 16 } 17 a := 5 18 for a &amp;gt;=</description>
+      <description>循环语句 源代码 for 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 1 package main 2 3 import &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; 4 5 func main() { 6 array := make([]int, 5) 7 logs.Info(array) 8 for i := 0; i &amp;lt; len(array); i++ { 9 array[i] = i 10 } 11 logs.Info(array) 12 b :=</description>
     </item>
     
     <item>
@@ -99,7 +99,7 @@
       <pubDate>Sat, 28 Mar 2020 16:11:12 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/system/redhad/8%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%AE%A1%E7%90%86/</guid>
-      <description>应用程序管理 软件包基础 常见安装工具包 RPM DPKG RPM使用 安装软件 （rz示例） 都和以下载 ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm wget http://images.lichaocheng.top/static/upload/2020/03/28/6fc647af1780ffc0b127510a418445a1.rpm [root@Cc rpm]# wget ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm [root@Cc rpm]# pwd /root/RedHad/8/rpm [root@Cc rpm]# ll 总用量 80 -rw-r--r-- 1 root root 79376 3月 28 15:10 6fc647af1780ffc0b127510a418445a1.rpm [root@Cc rpm]#</description>
+      <description>应用程序管理 软件包基础 常见安装工具包 RPM DPKG RPM使用 安装软件 （rz示例） 都和以下载 ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm wget http://images.lichaocheng.top/static/upload/2020/03/28/6fc647af1780ffc0b127510a418445a1.rpm 1 2 3 4 5 6 7 8 9 10 11 12 13 [root@Cc rpm]# wget ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm [root@Cc rpm]# pwd /root/RedHad/8/rpm [root@Cc rpm]# ll 总用量</description>
     </item>
     
   </channel>

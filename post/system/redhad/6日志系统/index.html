@@ -68,7 +68,7 @@
 <meta itemprop="description" content="6（日志系统）">
 <meta itemprop="datePublished" content="2020-03-26T23:24:12&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-26T23:24:12&#43;08:00" />
-<meta itemprop="wordCount" content="584">
+<meta itemprop="wordCount" content="632">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 584 字 </span>
+        <span class="more-meta"> 约 632 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -434,9 +434,25 @@
 <ul>
 <li>登录日志</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc log<span style="color:#f92672">]</span><span style="color:#75715e"># lastlog</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc log<span class="o">]</span><span class="c1"># lastlog</span>
 用户名           端口     来自             最后登陆时间
-root             pts/1    113.118.200.16   四 3月 <span style="color:#ae81ff">26</span> 21:38:34 +0800 2020
+root             pts/1    113.118.200.16   四 3月 <span class="m">26</span> 21:38:34 +0800 2020
 ftp                                        **从未登录过**
 sshd                                       **从未登录过**
 ntp                                        **从未登录过**
@@ -444,24 +460,47 @@ nginx                                      **从未登录过**
 mysql                                      **从未登录过**
 redis                                      **从未登录过**
 dockerroot                                 **从未登录过**
-yf               pts/5                     一 3月 <span style="color:#ae81ff">23</span> 21:14:45 +0800 2020
-<span style="color:#f92672">[</span>root@Cc log<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+yf               pts/5                     一 3月 <span class="m">23</span> 21:14:45 +0800 2020
+<span class="o">[</span>root@Cc log<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>who</li>
 <li>users（查看当前用户）</li>
 <li>最近重启日志</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc log<span style="color:#f92672">]</span><span style="color:#75715e"># last reboot</span>
-reboot   system boot  3.10.0-1062.4.1. Fri Mar <span style="color:#ae81ff">20</span> 17:14 - 22:55 <span style="color:#f92672">(</span>6+05:41<span style="color:#f92672">)</span>   
-reboot   system boot  3.10.0-1062.4.1. Fri Mar <span style="color:#ae81ff">20</span> 17:14 - 09:14  <span style="color:#f92672">(</span>-7:-59<span style="color:#f92672">)</span>  
-</code></pre></div><h4 id="日志文件说明">日志文件说明</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc log<span class="o">]</span><span class="c1"># last reboot</span>
+reboot   system boot  3.10.0-1062.4.1. Fri Mar <span class="m">20</span> 17:14 - 22:55 <span class="o">(</span>6+05:41<span class="o">)</span>   
+reboot   system boot  3.10.0-1062.4.1. Fri Mar <span class="m">20</span> 17:14 - 09:14  <span class="o">(</span>-7:-59<span class="o">)</span>  
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="日志文件说明">日志文件说明</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">/var/log/message 系统启动后的信息和错误日志，是Red Hat Linux中最常用的日志之一
 /var/log/secure 与安全相关的日志信息
 /var/log/maillog 与邮件相关的日志信息
 /var/log/cron 与定时任务相关的日志信息
 /var/log/spooler 与UUCP和news设备相关的日志信息
 /var/log/boot.log 守护进程启动和停止相关的日志消息
-</code></pre></div><h3 id="日志系统">日志系统</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="日志系统">日志系统</h3>
 <h4 id="rsyslog-日志系统">rsyslog 日志系统</h4>
 <blockquote>
 <p><code>/etc/rsyslog.conf </code> 默认配置，该配置文件对应日志文件请看上面【日志文件说明】</p>
@@ -471,36 +510,81 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar <span style="color:#ae81ff">20</s
 <p>主要配置文件  <code>/etc/logrotate.conf</code></p>
 <p>主要配置目录	<code>/etc/logrotate.d</code></p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc etc<span style="color:#f92672">]</span><span style="color:#75715e"># logrotate --help;</span>
-用法: logrotate <span style="color:#f92672">[</span>OPTION...<span style="color:#f92672">]</span> &lt;configfile&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc etc<span class="o">]</span><span class="c1"># logrotate --help;</span>
+用法: logrotate <span class="o">[</span>OPTION...<span class="o">]</span> &lt;configfile&gt;
   -d, --debug               详细显示指令执行过程
   -f, --force               强行启动记录文件维护
-  -m, --mail<span style="color:#f92672">=</span>command        发送邮件的命令 <span style="color:#f92672">(</span>而不是 <span style="color:#e6db74">`</span>/bin/mail<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">)</span>
-  -s, --state<span style="color:#f92672">=</span>statefile     指定状态文件
+  -m, --mail<span class="o">=</span><span class="nb">command</span>        发送邮件的命令 <span class="o">(</span>而不是 <span class="sb">`</span>/bin/mail<span class="err">&#39;</span><span class="o">)</span>
+  -s, --state<span class="o">=</span>statefile     指定状态文件
   -v, --verbose             执行日志滚动式显示详细信息
-  -l, --log<span style="color:#f92672">=</span>STRING          Log file
+  -l, --log<span class="o">=</span>STRING          Log file
   -?						帮助文档
-</code></pre></div><h5 id="查看nginx">查看nginx</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc logrotate.d<span style="color:#f92672">]</span><span style="color:#75715e"># cat -n /etc/logrotate.d/nginx</span> 
-     <span style="color:#ae81ff">1</span>  /var/log/nginx/*.log <span style="color:#f92672">{</span>
-     <span style="color:#ae81ff">2</span>          daily
-     <span style="color:#ae81ff">3</span>          missingok
-     <span style="color:#ae81ff">4</span>          rotate 52
-     <span style="color:#ae81ff">5</span>          compress
-     <span style="color:#ae81ff">6</span>          delaycompress
-     <span style="color:#ae81ff">7</span>          notifempty
-     <span style="color:#ae81ff">8</span>          create <span style="color:#ae81ff">640</span> nginx adm
-     <span style="color:#ae81ff">9</span>          sharedscripts
-    <span style="color:#ae81ff">10</span>          postrotate
-    <span style="color:#ae81ff">11</span>                  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f /var/run/nginx.pid <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-    <span style="color:#ae81ff">12</span>                          kill -USR1 <span style="color:#e6db74">`</span>cat /var/run/nginx.pid<span style="color:#e6db74">`</span>
-    <span style="color:#ae81ff">13</span>                  <span style="color:#66d9ef">fi</span>
-    <span style="color:#ae81ff">14</span>          endscript
-    <span style="color:#ae81ff">15</span>  <span style="color:#f92672">}</span>
-<span style="color:#f92672">[</span>root@Cc logrotate.d<span style="color:#f92672">]</span># 
-</code></pre></div><h3 id="范例---------------利用系统日志定位问题">范例&mdash;&mdash;&mdash;&mdash;&mdash;利用系统日志定位问题</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">这个预留，动手利用第五章知识完成
-</code></pre></div><h2 id="7-用户和组">7 用户和组</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="查看nginx">查看nginx</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc logrotate.d<span class="o">]</span><span class="c1"># cat -n /etc/logrotate.d/nginx</span> 
+     <span class="m">1</span>  /var/log/nginx/*.log <span class="o">{</span>
+     <span class="m">2</span>          daily
+     <span class="m">3</span>          missingok
+     <span class="m">4</span>          rotate 52
+     <span class="m">5</span>          compress
+     <span class="m">6</span>          delaycompress
+     <span class="m">7</span>          notifempty
+     <span class="m">8</span>          create <span class="m">640</span> nginx adm
+     <span class="m">9</span>          sharedscripts
+    <span class="m">10</span>          postrotate
+    <span class="m">11</span>                  <span class="k">if</span> <span class="o">[</span> -f /var/run/nginx.pid <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="m">12</span>                          <span class="nb">kill</span> -USR1 <span class="sb">`</span>cat /var/run/nginx.pid<span class="sb">`</span>
+    <span class="m">13</span>                  <span class="k">fi</span>
+    <span class="m">14</span>          endscript
+    <span class="m">15</span>  <span class="o">}</span>
+<span class="o">[</span>root@Cc logrotate.d<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="范例---------------利用系统日志定位问题">范例&mdash;&mdash;&mdash;&mdash;&mdash;利用系统日志定位问题</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">这个预留，动手利用第五章知识完成
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="7-用户和组">7 用户和组</h2>
 
     </div>
 

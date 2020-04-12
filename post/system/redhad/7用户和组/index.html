@@ -68,7 +68,7 @@
 <meta itemprop="description" content="7（用户和组）">
 <meta itemprop="datePublished" content="2020-03-28T00:03:12&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-28T00:03:12&#43;08:00" />
-<meta itemprop="wordCount" content="4027">
+<meta itemprop="wordCount" content="4316">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 4027 字 </span>
+        <span class="more-meta"> 约 4316 字 </span>
           <span class="more-meta"> 预计阅读 9 分钟 </span>
 
         
@@ -450,33 +450,92 @@
 <blockquote>
 <p>文件中  <code>*</code>  表示该用户已被禁止，无法登录</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#e6db74">`</span>用户名:密码:USER ID:GROUP ID :相关注释:主目录:使用shell<span style="color:#e6db74">`</span>
-<span style="color:#e6db74">`</span>root❌0:0:root:/root:/bin/bash<span style="color:#e6db74">`</span>
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="sb">`</span>用户名:密码:USER ID:GROUP ID :相关注释:主目录:使用shell<span class="sb">`</span>
+<span class="sb">`</span>root❌0:0:root:/root:/bin/bash<span class="sb">`</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>USER ID :最多为65535，UID 相同可人为同一用户，也具有相同权限<strong>如果该更改某些用户权限可以使用这方法</strong></li>
 <li>GROUP ID: 用户可以是用多个组，组可以有多个权限，和  <code>windows</code> 差不多</li>
 </ul>
 <h4 id="etcshadow"><code>/etc/shadow</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#e6db74">`</span>用户名:密码:上次修改时间:两次修改密码间隔最少天数:两次修改密码间隔最多天数:提前多少天警告用户密码过期:在密码多少天过期后禁用用户:用户过期时间:保留字段<span style="color:#e6db74">`</span>
-<span style="color:#e6db74">`</span>root:$6DQIY.H35tynh7gf2xB5jzrs8zYu.:18205:0:99999:7:::<span style="color:#e6db74">`</span>
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="sb">`</span>用户名:密码:上次修改时间:两次修改密码间隔最少天数:两次修改密码间隔最多天数:提前多少天警告用户密码过期:在密码多少天过期后禁用用户:用户过期时间:保留字段<span class="sb">`</span>
+<span class="sb">`</span>root:<span class="nv">$6</span>DQIY.H35tynh7gf2xB5jzrs8zYu.:18205:0:99999:7:::<span class="sb">`</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>密码：<code>x</code> 表示用户禁止使用，不能登录</li>
 <li>上次修改密码时间：单位<strong>天</strong></li>
 <li>两次修改间隔最少天数：<code>0</code>表示此功能被禁用，反则</li>
 <li>两次修改间隔最多天数：<code>99999</code>  表示基本不需要修改</li>
 </ul>
 <h4 id="etcgroup"><code>/etc/group</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">用户组名:用户组密码:用户组标识号:组内用户列表
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">用户组名:用户组密码:用户组标识号:组内用户列表
 root❌0:
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>组内用户列表：不同用户之间用逗号分隔，不能有空格</li>
 </ul>
 <h3 id="用户管理命令">用户管理命令</h3>
 <h4 id="添加用户useradd">添加用户【<code>useradd</code>】</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># useradd --help</span>
-用法：useradd <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> 登录
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># useradd --help</span>
+用法：useradd <span class="o">[</span>选项<span class="o">]</span> 登录
       useradd -D
-      useradd -D <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span>
+      useradd -D <span class="o">[</span>选项<span class="o">]</span>
 选项：
   -b, --base-dir BASE_DIR       新账户的主目录的基目录
   -c, --comment COMMENT         新账户的 GECOS 字段
@@ -488,7 +547,7 @@ root❌0:
   -G, --groups GROUPS   		新账户的附加组列表
   -h, --help                    显示此帮助信息并推出
   -k, --skel SKEL_DIR   		使用此目录作为骨架目录
-  -K, --key KEY<span style="color:#f92672">=</span>VALUE           不使用 /etc/login.defs 中的默认值
+  -K, --key <span class="nv">KEY</span><span class="o">=</span>VALUE           不使用 /etc/login.defs 中的默认值
   -l, --no-log-init     		不要将此用户添加到最近登录和登录失败数据库
   -m, --create-home     		创建用户的主目录
   -M, --no-create-home          不创建用户的主目录
@@ -503,10 +562,44 @@ root❌0:
   -U, --user-group              创建与用户同名的组
   -Z, --selinux-user SEUSER     为 SELinux 用户映射使用指定 SEUSER
 
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="更改用户usermod">更改用户[<code>usermod</code>]</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># usermod --help</span>
-用法：usermod <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> 登录
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="更改用户usermod">更改用户[<code>usermod</code>]</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># usermod --help</span>
+用法：usermod <span class="o">[</span>选项<span class="o">]</span> 登录
 选项：
   -c, --comment 注释             GECOS 字段的新值
   -d, --home HOME_DIR           用户的新主目录
@@ -519,9 +612,9 @@ root❌0:
   -h, --help                    显示此帮助信息并推出
   -l, --login LOGIN             新的登录名称
   -L, --lock                    锁定用户帐号
-  -m, --move-home               将家目录内容移至新位置 <span style="color:#f92672">(</span>仅于 -d 一起使用<span style="color:#f92672">)</span>
-  -o, --non-unique              允许使用重复的<span style="color:#f92672">(</span>非唯一的<span style="color:#f92672">)</span> UID
-  -p, --password PASSWORD       将加密过的密码 <span style="color:#f92672">(</span>PASSWORD<span style="color:#f92672">)</span> 设为新密码
+  -m, --move-home               将家目录内容移至新位置 <span class="o">(</span>仅于 -d 一起使用<span class="o">)</span>
+  -o, --non-unique              允许使用重复的<span class="o">(</span>非唯一的<span class="o">)</span> UID
+  -p, --password PASSWORD       将加密过的密码 <span class="o">(</span>PASSWORD<span class="o">)</span> 设为新密码
   -R, --root CHROOT_DIR         chroot 到的目录
   -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
   -s, --shell SHELL             该用户帐号的新登录 shell
@@ -532,43 +625,109 @@ root❌0:
   -w, --add-subgids FIRST-LAST  add range of subordinate gids
   -W, --del-subgids FIRST-LAST  remove range of subordinate gids
   -Z, --selinux-user  SEUSER    用户账户的新 SELinux 用户映射
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="删除用户userdel">删除用户[<code>userdel</code>]</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># userdel --help</span>
-用法：userdel <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> 登录
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="删除用户userdel">删除用户[<code>userdel</code>]</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># userdel --help</span>
+用法：userdel <span class="o">[</span>选项<span class="o">]</span> 登录
 选项：
   -f, --force                   force some actions that would fail otherwise
                                 e.g. removal of user still logged in
-                                or files, even <span style="color:#66d9ef">if</span> not owned by the user
+                                or files, even <span class="k">if</span> not owned by the user
   -h, --help                    显示此帮助信息并推出
   -r, --remove                  删除主目录和邮件池
   -R, --root CHROOT_DIR         chroot 到的目录
   -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
   -Z, --selinux-user            为用户删除所有的 SELinux 用户映射
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="更改或者设置用户密码-passwd">更改或者设置用户密码 [<code>passwd</code>]</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># passwd --help</span>
-用法: passwd <span style="color:#f92672">[</span>选项...<span style="color:#f92672">]</span> &lt;帐号名称&gt;
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="更改或者设置用户密码-passwd">更改或者设置用户密码 [<code>passwd</code>]</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># passwd --help</span>
+用法: passwd <span class="o">[</span>选项...<span class="o">]</span> &lt;帐号名称&gt;
   -k, --keep-tokens       保持身份验证令牌不过期
-  -d, --delete            删除已命名帐号的密码<span style="color:#f92672">(</span>只有根用户才能进行此操作<span style="color:#f92672">)</span>
-  -l, --lock              锁定指名帐户的密码<span style="color:#f92672">(</span>仅限 root 用户<span style="color:#f92672">)</span>
-  -u, --unlock            解锁指名账户的密码<span style="color:#f92672">(</span>仅限 root 用户<span style="color:#f92672">)</span>
-  -e, --expire            终止指名帐户的密码<span style="color:#f92672">(</span>仅限 root 用户<span style="color:#f92672">)</span>
+  -d, --delete            删除已命名帐号的密码<span class="o">(</span>只有根用户才能进行此操作<span class="o">)</span>
+  -l, --lock              锁定指名帐户的密码<span class="o">(</span>仅限 root 用户<span class="o">)</span>
+  -u, --unlock            解锁指名账户的密码<span class="o">(</span>仅限 root 用户<span class="o">)</span>
+  -e, --expire            终止指名帐户的密码<span class="o">(</span>仅限 root 用户<span class="o">)</span>
   -f, --force             强制执行操作
-  -x, --maximum<span style="color:#f92672">=</span>DAYS      密码的最长有效时限<span style="color:#f92672">(</span>只有根用户才能进行此操作<span style="color:#f92672">)</span>
-  -n, --minimum<span style="color:#f92672">=</span>DAYS      密码的最短有效时限<span style="color:#f92672">(</span>只有根用户才能进行此操作<span style="color:#f92672">)</span>
-  -w, --warning<span style="color:#f92672">=</span>DAYS      在密码过期前多少天开始提醒用户<span style="color:#f92672">(</span>只有根用户才能进行此操作<span style="color:#f92672">)</span>
-  -i, --inactive<span style="color:#f92672">=</span>DAYS     当密码过期后经过多少天该帐号会被禁用<span style="color:#f92672">(</span>只有根用户才能进行此操作<span style="color:#f92672">)</span>
-  -S, --status            报告已命名帐号的密码状态<span style="color:#f92672">(</span>只有根用户才能进行此操作<span style="color:#f92672">)</span>
-  --stdin                 从标准输入读取令牌<span style="color:#f92672">(</span>只有根用户才能进行此操作<span style="color:#f92672">)</span>
+  -x, --maximum<span class="o">=</span>DAYS      密码的最长有效时限<span class="o">(</span>只有根用户才能进行此操作<span class="o">)</span>
+  -n, --minimum<span class="o">=</span>DAYS      密码的最短有效时限<span class="o">(</span>只有根用户才能进行此操作<span class="o">)</span>
+  -w, --warning<span class="o">=</span>DAYS      在密码过期前多少天开始提醒用户<span class="o">(</span>只有根用户才能进行此操作<span class="o">)</span>
+  -i, --inactive<span class="o">=</span>DAYS     当密码过期后经过多少天该帐号会被禁用<span class="o">(</span>只有根用户才能进行此操作<span class="o">)</span>
+  -S, --status            报告已命名帐号的密码状态<span class="o">(</span>只有根用户才能进行此操作<span class="o">)</span>
+  --stdin                 从标准输入读取令牌<span class="o">(</span>只有根用户才能进行此操作<span class="o">)</span>
 
 Help options:
-  -?, --help              Show this help message
+  -?, --help              Show this <span class="nb">help</span> message
   --usage                 Display brief usage message
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="切换用户su">切换用户[<code>su</code>]</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># su --help</span>
-用法：su <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>USER <span style="color:#f92672">[</span>参数<span style="color:#f92672">]</span>...<span style="color:#f92672">]</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="切换用户su">切换用户[<code>su</code>]</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># su --help</span>
+用法：su <span class="o">[</span>选项<span class="o">]</span> <span class="o">[</span>-<span class="o">]</span> <span class="o">[</span>USER <span class="o">[</span>参数<span class="o">]</span>...<span class="o">]</span>
 将有效用户 id 和组 id 更改为 USER 的 id。
 单个 - 视为 -l。如果未指定 USER，将假定为 root。
 选项：
@@ -579,65 +738,161 @@ Help options:
  -c, --command &lt;命令&gt;            使用 -c 向 shell 传递一条命令
  --session-command &lt;命令&gt;        使用 -c 向 shell 传递一条命令
                                  而不创建新会话
- -f, --fast                      向shell 传递 -f 选项<span style="color:#f92672">(</span>csh 或 tcsh<span style="color:#f92672">)</span>
+ -f, --fast                      向shell 传递 -f 选项<span class="o">(</span>csh 或 tcsh<span class="o">)</span>
  -s, --shell &lt;shell&gt;             若 /etc/shells 允许，则运行 shell
  -h, --help     显示此帮助并退出
  -V, --version  输出版本信息并退出
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="普通用户获取超级权限sudo">普通用户获取超级权限[<code>sudo</code>]</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># sudo --help;</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="普通用户获取超级权限sudo">普通用户获取超级权限[<code>sudo</code>]</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># sudo --help;</span>
 sudo - 以其他用户身份执行一条命令
 
-usage: sudo -h | -K | -k | -V
-usage: sudo -v <span style="color:#f92672">[</span>-AknS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-g group<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-h host<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p prompt<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-u user<span style="color:#f92672">]</span>
-usage: sudo -l <span style="color:#f92672">[</span>-AknS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-g group<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-h host<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p prompt<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-U user<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-u user<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>command<span style="color:#f92672">]</span>
-usage: sudo <span style="color:#f92672">[</span>-AbEHknPS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-r role<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-t type<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-C num<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-g group<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-h host<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p prompt<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-T timeout<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-u user<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>VAR<span style="color:#f92672">=</span>value<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-i|-s<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>&lt;command&gt;<span style="color:#f92672">]</span>
-usage: sudo -e <span style="color:#f92672">[</span>-AknS<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-r role<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-t type<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-C num<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-g group<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-h host<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p prompt<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-T timeout<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-u user<span style="color:#f92672">]</span> file ...
+usage: sudo -h <span class="p">|</span> -K <span class="p">|</span> -k <span class="p">|</span> -V
+usage: sudo -v <span class="o">[</span>-AknS<span class="o">]</span> <span class="o">[</span>-g group<span class="o">]</span> <span class="o">[</span>-h host<span class="o">]</span> <span class="o">[</span>-p prompt<span class="o">]</span> <span class="o">[</span>-u user<span class="o">]</span>
+usage: sudo -l <span class="o">[</span>-AknS<span class="o">]</span> <span class="o">[</span>-g group<span class="o">]</span> <span class="o">[</span>-h host<span class="o">]</span> <span class="o">[</span>-p prompt<span class="o">]</span> <span class="o">[</span>-U user<span class="o">]</span> <span class="o">[</span>-u user<span class="o">]</span> <span class="o">[</span>command<span class="o">]</span>
+usage: sudo <span class="o">[</span>-AbEHknPS<span class="o">]</span> <span class="o">[</span>-r role<span class="o">]</span> <span class="o">[</span>-t type<span class="o">]</span> <span class="o">[</span>-C num<span class="o">]</span> <span class="o">[</span>-g group<span class="o">]</span> <span class="o">[</span>-h host<span class="o">]</span> <span class="o">[</span>-p prompt<span class="o">]</span> <span class="o">[</span>-T timeout<span class="o">]</span> <span class="o">[</span>-u user<span class="o">]</span> <span class="o">[</span><span class="nv">VAR</span><span class="o">=</span>value<span class="o">]</span> <span class="o">[</span>-i<span class="p">|</span>-s<span class="o">]</span> <span class="o">[</span>&lt;command&gt;<span class="o">]</span>
+usage: sudo -e <span class="o">[</span>-AknS<span class="o">]</span> <span class="o">[</span>-r role<span class="o">]</span> <span class="o">[</span>-t type<span class="o">]</span> <span class="o">[</span>-C num<span class="o">]</span> <span class="o">[</span>-g group<span class="o">]</span> <span class="o">[</span>-h host<span class="o">]</span> <span class="o">[</span>-p prompt<span class="o">]</span> <span class="o">[</span>-T timeout<span class="o">]</span> <span class="o">[</span>-u user<span class="o">]</span> file ...
 
 选项：
   -A, --askpass                 使用助手程序进行密码提示
   -b, --background              在后台运行命令
-  -C, --close-from<span style="color:#f92672">=</span>num          关闭所有 &gt;<span style="color:#f92672">=</span> num 的文件描述符
+  -C, --close-from<span class="o">=</span>num          关闭所有 &gt;<span class="o">=</span> num 的文件描述符
   -E, --preserve-env            在执行命令时保留用户环境
-      --preserve-env<span style="color:#f92672">=</span>list       保留特定的环境变量
+      --preserve-env<span class="o">=</span>list       保留特定的环境变量
   -e, --edit                    编辑文件而非执行命令
-  -g, --group<span style="color:#f92672">=</span>group             以指定的用户组或 ID 执行命令
+  -g, --group<span class="o">=</span>group             以指定的用户组或 ID 执行命令
   -H, --set-home                将 HOME 变量设为目标用户的主目录。
   -h, --help                    显示帮助消息并退出
-  -h, --host<span style="color:#f92672">=</span>host               在主机上运行命令<span style="color:#f92672">(</span>如果插件支持<span style="color:#f92672">)</span>
+  -h, --host<span class="o">=</span>host               在主机上运行命令<span class="o">(</span>如果插件支持<span class="o">)</span>
   -i, --login                   以目标用户身份运行一个登录 shell；可同时指定一条命令
   -K, --remove-timestamp        完全移除时间戳文件
   -k, --reset-timestamp         无效的时间戳文件
   -l, --list                    列出用户权限或检查某个特定命令；对于长格式，使用两次
   -n, --non-interactive         非交互模式，不提示
   -P, --preserve-groups         保留组向量，而非设置为目标的组向量
-  -p, --prompt<span style="color:#f92672">=</span>prompt           使用指定的密码提示
-  -r, --role<span style="color:#f92672">=</span>role               以指定的角色创建 SELinux 安全环境
+  -p, --prompt<span class="o">=</span>prompt           使用指定的密码提示
+  -r, --role<span class="o">=</span>role               以指定的角色创建 SELinux 安全环境
   -S, --stdin                   从标准输入读取密码
   -s, --shell                   以目标用户运行 shell；可同时指定一条命令
-  -t, --type<span style="color:#f92672">=</span>type               以指定的类型创建 SELinux 安全环境
-  -T, --command-timeout<span style="color:#f92672">=</span>timeout 在达到指定时间限制后终止命令
-  -U, --other-user<span style="color:#f92672">=</span>user         在列表模式中显示用户的权限
-  -u, --user<span style="color:#f92672">=</span>user               以指定用户或 ID 运行命令<span style="color:#f92672">(</span>或编辑文件<span style="color:#f92672">)</span>
+  -t, --type<span class="o">=</span><span class="nb">type</span>               以指定的类型创建 SELinux 安全环境
+  -T, --command-timeout<span class="o">=</span>timeout 在达到指定时间限制后终止命令
+  -U, --other-user<span class="o">=</span>user         在列表模式中显示用户的权限
+  -u, --user<span class="o">=</span>user               以指定用户或 ID 运行命令<span class="o">(</span>或编辑文件<span class="o">)</span>
   -V, --version                 显示版本信息并退出
   -v, --validate                更新用户的时间戳而不执行命令
   --                            停止处理命令行参数
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h5 id="用户管理示例">用户管理示例</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># useradd testUser</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># useradd testUserName</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/passwd</span>
-<span style="color:#75715e"># 只复制了最后几行</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="用户管理示例">用户管理示例</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># useradd testUser</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># useradd testUserName</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cat /etc/passwd</span>
+<span class="c1"># 只复制了最后几行</span>
 yf❌1001:1001::/home/yf:/bin/bash
 lcc❌1002:1002::/home/lcc:/bin/bash
 lccs❌1003:1003::/home/ch:/bin/bash
 testUser❌1004:1004::/home/testUser:/bin/bash
 testUserName❌1005:1005::/home/testUserName:/bin/bash
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># userdel yf</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># userdel lcc</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># userdel lccs</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/passwd</span>
-<span style="color:#75715e"># 只复制了最后几行</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># userdel yf</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># userdel lcc</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># userdel lccs</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cat /etc/passwd</span>
+<span class="c1"># 只复制了最后几行</span>
 admin❌1000:1000::/home/admin:/bin/bash
 nginx❌996:994:nginx user:/var/cache/nginx:/sbin/nologin
 mysql❌27:27:MySQL Server:/var/lib/mysql:/bin/false
@@ -645,131 +900,261 @@ redis❌995:993:Redis Database Server:/var/lib/redis:/sbin/nologin
 dockerroot❌994:991:Docker User:/var/lib/docker:/sbin/nologin
 testUser❌1004:1004::/home/testUser:/bin/bash
 testUserName❌1005:1005::/home/testUserName:/bin/bash
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># passwd testUser</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># passwd testUser</span>
 更改用户 testUser 的密码 。
 新的 密码：
 重新输入新的 密码：
 passwd：所有的身份验证令牌已经成功更新。
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># su testUser</span>
-<span style="color:#f92672">[</span>testUser@Cc root<span style="color:#f92672">]</span>$ su root
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># su testUser</span>
+<span class="o">[</span>testUser@Cc root<span class="o">]</span>$ su root
 密码：
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># su testUser</span>
-<span style="color:#f92672">[</span>testUser@Cc root<span style="color:#f92672">]</span>$ ll
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># su testUser</span>
+<span class="o">[</span>testUser@Cc root<span class="o">]</span>$ ll
 ls: 无法打开目录.: 权限不够
-<span style="color:#f92672">[</span>testUser@Cc root<span style="color:#f92672">]</span>$ sudo ll
+<span class="o">[</span>testUser@Cc root<span class="o">]</span>$ sudo ll
 
 我们信任您已经从系统管理员那里了解了日常注意事项。
 总结起来无外乎这三点：
 
-    <span style="color:#75715e">#1) 尊重别人的隐私。</span>
-    <span style="color:#75715e">#2) 输入前要先考虑(后果和风险)。</span>
-    <span style="color:#75715e">#3) 权力越大，责任越大。</span>
+    <span class="c1">#1) 尊重别人的隐私。</span>
+    <span class="c1">#2) 输入前要先考虑(后果和风险)。</span>
+    <span class="c1">#3) 权力越大，责任越大。</span>
 
-<span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> testUser 的密码：
+<span class="o">[</span>sudo<span class="o">]</span> testUser 的密码：
 testUser 不在 sudoers 文件中。此事将被报告。
-<span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ pwd
+<span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ <span class="nb">pwd</span>
 /home/testUser
-<span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ 
-</code></pre></div><h3 id="用户组管理命令">用户组管理命令</h3>
+<span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="用户组管理命令">用户组管理命令</h3>
 <h4 id="添加用户组groupadd">添加用户组【<code>groupadd</code>】</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ groupadd --help
-用法：groupadd <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> 组
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ groupadd --help
+用法：groupadd <span class="o">[</span>选项<span class="o">]</span> 组
 
 选项:
   -f, --force           如果组已经存在则成功退出
                         并且如果 GID 已经存在则取消 -g
   -g, --gid GID                 为新组使用 GID
   -h, --help                    显示此帮助信息并推出
-  -K, --key KEY<span style="color:#f92672">=</span>VALUE           不使用 /etc/login.defs 中的默认值
+  -K, --key <span class="nv">KEY</span><span class="o">=</span>VALUE           不使用 /etc/login.defs 中的默认值
   -o, --non-unique              允许创建有重复 GID 的组
   -p, --password PASSWORD       为新组使用此加密过的密码
   -r, --system                  创建一个系统账户
   -R, --root CHROOT_DIR         chroot 到的目录
   -P, --prefix PREFIX_DIR       directory prefix
 
-<span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ 
-</code></pre></div><h4 id="删除用户组groupdel">删除用户组【<code>groupdel</code>】</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ groupadd --help
-用法：groupadd <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> 组
+<span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="删除用户组groupdel">删除用户组【<code>groupdel</code>】</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ groupadd --help
+用法：groupadd <span class="o">[</span>选项<span class="o">]</span> 组
 
 选项:
   -f, --force           如果组已经存在则成功退出
                         并且如果 GID 已经存在则取消 -g
   -g, --gid GID                 为新组使用 GID
   -h, --help                    显示此帮助信息并推出
-  -K, --key KEY<span style="color:#f92672">=</span>VALUE           不使用 /etc/login.defs 中的默认值
+  -K, --key <span class="nv">KEY</span><span class="o">=</span>VALUE           不使用 /etc/login.defs 中的默认值
   -o, --non-unique              允许创建有重复 GID 的组
   -p, --password PASSWORD       为新组使用此加密过的密码
   -r, --system                  创建一个系统账户
   -R, --root CHROOT_DIR         chroot 到的目录
   -P, --prefix PREFIX_DIR       directory prefix
 
-<span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ groupdel --help
-用法：groupdel <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> 组
+<span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ groupdel --help
+用法：groupdel <span class="o">[</span>选项<span class="o">]</span> 组
 
 选项:
   -h, --help                    显示此帮助信息并推出
   -R, --root CHROOT_DIR         chroot 到的目录
   -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
-  -f, --force                   delete group even <span style="color:#66d9ef">if</span> it is the primary group of a user
+  -f, --force                   delete group even <span class="k">if</span> it is the primary group of a user
 
-<span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ 
-</code></pre></div><h4 id="修改用户组groupmod">修改用户组【<code>groupmod</code>】</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ groupdel --help
-用法：groupdel <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> 组
+<span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="修改用户组groupmod">修改用户组【<code>groupmod</code>】</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ groupdel --help
+用法：groupdel <span class="o">[</span>选项<span class="o">]</span> 组
 
 选项:
   -h, --help                    显示此帮助信息并推出
   -R, --root CHROOT_DIR         chroot 到的目录
   -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
-  -f, --force                   delete group even <span style="color:#66d9ef">if</span> it is the primary group of a user
+  -f, --force                   delete group even <span class="k">if</span> it is the primary group of a user
 
-<span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ groupmod --help
-用法：groupmod <span style="color:#f92672">[</span>选项<span style="color:#f92672">]</span> 组
+<span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ groupmod --help
+用法：groupmod <span class="o">[</span>选项<span class="o">]</span> 组
 
 选项:
   -g, --gid GID                 将组 ID 改为 GID
   -h, --help                    显示此帮助信息并推出
   -n, --new-name NEW_GROUP      改名为 NEW_GROUP
   -o, --non-unique              允许使用重复的 GID
-  -p, --password PASSWORD       将密码更改为<span style="color:#f92672">(</span>加密过的<span style="color:#f92672">)</span> PASSWORD
+  -p, --password PASSWORD       将密码更改为<span class="o">(</span>加密过的<span class="o">)</span> PASSWORD
   -R, --root CHROOT_DIR         chroot 到的目录
   -P, --prefix PREFIX_DIR       prefix directory where are located the /etc/* files
 
-<span style="color:#f92672">[</span>testUser@Cc ~<span style="color:#f92672">]</span>$ 
-</code></pre></div><h4 id="查看用户所在用户组id-与-grep-组合-">查看用户所在用户组【<code>id 与 grep 组合 </code>】</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># id testUser</span>
-uid<span style="color:#f92672">=</span>1004<span style="color:#f92672">(</span>testUser<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>1004<span style="color:#f92672">(</span>testUser<span style="color:#f92672">)</span> 组<span style="color:#f92672">=</span>1004<span style="color:#f92672">(</span>testUser<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># id root</span>
-uid<span style="color:#f92672">=</span>0<span style="color:#f92672">(</span>root<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span>0<span style="color:#f92672">(</span>root<span style="color:#f92672">)</span> 组<span style="color:#f92672">=</span>0<span style="color:#f92672">(</span>root<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># grep testUser /etc/passwd</span>
+<span class="o">[</span>testUser@Cc ~<span class="o">]</span>$ 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="查看用户所在用户组id-与-grep-组合-">查看用户所在用户组【<code>id 与 grep 组合 </code>】</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># id testUser</span>
+<span class="nv">uid</span><span class="o">=</span>1004<span class="o">(</span>testUser<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>1004<span class="o">(</span>testUser<span class="o">)</span> <span class="nv">组</span><span class="o">=</span>1004<span class="o">(</span>testUser<span class="o">)</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># id root</span>
+<span class="nv">uid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nv">组</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># grep testUser /etc/passwd</span>
 testUser❌1004:1004::/home/testUser:/bin/bash
 testUserName❌1005:1005::/home/testUserName:/bin/bash
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># grep 1004 /etc/group</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># grep 1004 /etc/group</span>
 testUser❌1004:
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span># 
-</code></pre></div><h5 id="示例">示例</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># groupadd testUserGroup</span> 
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/group |grep test</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="示例">示例</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># groupadd testUserGroup</span> 
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># cat /etc/group |grep test</span>
 testUser❌1004:
 testUserGroup❌1005:
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># useradd -g testUserGroup testUserInGroup</span>
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># groupdel testUserGroup</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># useradd -g testUserGroup testUserInGroup</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># groupdel testUserGroup</span>
 groupdel：不能移除用户“testUserInGroup”的主组
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># userdel -r testUserInGroup</span>
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># groupdel testUserGroup</span>
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># groupdel testUserGroup</span>
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/group |grep test</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># userdel -r testUserInGroup</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># groupdel testUserGroup</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># groupdel testUserGroup</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># cat /etc/group |grep test</span>
 testUser❌1004:
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># groupmod -g 10002 testUser</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># groupmod -g 10002 testUser</span>
 testUser❌10002:
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># groupmod -n lccGroup testUser</span>
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/group |grep lcc</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># groupmod -n lccGroup testUser</span>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span><span class="c1"># cat /etc/group |grep lcc</span>
 lccGroup❌10002:
-<span style="color:#f92672">[</span>root@Cc testUser<span style="color:#f92672">]</span># 
-</code></pre></div><h3 id="批量添加用户并设置密码">批量添加用户并设置密码</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">预留
-</code></pre></div><h2 id="应用程序管理">应用程序管理</h2>
+<span class="o">[</span>root@Cc testUser<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="批量添加用户并设置密码">批量添加用户并设置密码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">预留
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="应用程序管理">应用程序管理</h2>
 
     </div>
 

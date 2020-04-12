@@ -68,7 +68,7 @@
 <meta itemprop="description" content="linux shell 终端命令操作（历史命令、管道）">
 <meta itemprop="datePublished" content="2020-03-23T22:17:54&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-23T22:17:54&#43;08:00" />
-<meta itemprop="wordCount" content="559">
+<meta itemprop="wordCount" content="663">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 559 字 </span>
+        <span class="more-meta"> 约 663 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -434,32 +434,62 @@
 <blockquote>
 <p><code>#</code>为root用户，$普通用户</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># su yf</span>
-<span style="color:#f92672">[</span>yf@Cc root<span style="color:#f92672">]</span>$ su root
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># su yf</span>
+<span class="o">[</span>yf@Cc root<span class="o">]</span>$ su root
 Password: 
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><p><img src="http://images.lichaocheng.top/static/upload/2020/03/23/1cf7a37e158261bd8920f4e159cfd653.jpg" alt="命令行编辑常用参数">
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="http://images.lichaocheng.top/static/upload/2020/03/23/1cf7a37e158261bd8920f4e159cfd653.jpg" alt="命令行编辑常用参数">
 <img src="http://images.lichaocheng.top/static/upload/2020/03/23/c7f5e00e40714762982983527da1c36c.jpg" alt="续表"></p>
 <h2 id="bash-shell">bash Shell</h2>
 <h3 id="别名">别名</h3>
 <blockquote>
 <p><code>alias</code>创建别名,<code>unalias</code>撤销别名</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># alias cc=&#39;ls -l&#39;</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cc</span>
-total <span style="color:#ae81ff">24</span>
-drwxr-xr-x  <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Dec <span style="color:#ae81ff">11</span> 22:44 Cc
-drwxr-xr-x  <span style="color:#ae81ff">7</span> root root <span style="color:#ae81ff">4096</span> Nov <span style="color:#ae81ff">22</span> 19:56 FileRecv
-drwxr-xr-x  <span style="color:#ae81ff">5</span> root root <span style="color:#ae81ff">4096</span> Nov <span style="color:#ae81ff">28</span> 11:45 fileWehChat
-drwxr-xr-x <span style="color:#ae81ff">19</span> root root <span style="color:#ae81ff">4096</span> Mar  <span style="color:#ae81ff">3</span> 15:45 gogs-repositories
-drwxr-xr-x <span style="color:#ae81ff">17</span> root root <span style="color:#ae81ff">4096</span> Mar <span style="color:#ae81ff">18</span> 13:51 lichaocheng
-drwxr-xr-x  <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Mar <span style="color:#ae81ff">18</span> 08:57 supervisord.d
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># unalias cc</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cc</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># alias cc=&#39;ls -l&#39;</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cc</span>
+total <span class="m">24</span>
+drwxr-xr-x  <span class="m">2</span> root root <span class="m">4096</span> Dec <span class="m">11</span> 22:44 Cc
+drwxr-xr-x  <span class="m">7</span> root root <span class="m">4096</span> Nov <span class="m">22</span> 19:56 FileRecv
+drwxr-xr-x  <span class="m">5</span> root root <span class="m">4096</span> Nov <span class="m">28</span> 11:45 fileWehChat
+drwxr-xr-x <span class="m">19</span> root root <span class="m">4096</span> Mar  <span class="m">3</span> 15:45 gogs-repositories
+drwxr-xr-x <span class="m">17</span> root root <span class="m">4096</span> Mar <span class="m">18</span> 13:51 lichaocheng
+drwxr-xr-x  <span class="m">2</span> root root <span class="m">4096</span> Mar <span class="m">18</span> 08:57 supervisord.d
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># unalias cc</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cc</span>
 cc: fatal error: no input files
 compilation terminated.
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h3 id="历史命令使用">历史命令使用</h3>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="历史命令使用">历史命令使用</h3>
 <ul>
 <li>!!</li>
 </ul>
@@ -469,111 +499,239 @@ compilation terminated.
 <ul>
 <li>找出特定字符命令</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># history | grep sou</span>
- <span style="color:#ae81ff">1050</span>  history | grep sou
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># history | grep sou</span>
+ <span class="m">1050</span>  <span class="nb">history</span> <span class="p">|</span> grep sou
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>![num]</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"> <span style="color:#ae81ff">1050</span>  history | grep sou
- <span style="color:#ae81ff">1051</span>  history | grep ps
- <span style="color:#ae81ff">1052</span>  ll
- <span style="color:#ae81ff">1053</span>  history 
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># !1052</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"> <span class="m">1050</span>  <span class="nb">history</span> <span class="p">|</span> grep sou
+ <span class="m">1051</span>  <span class="nb">history</span> <span class="p">|</span> grep ps
+ <span class="m">1052</span>  ll
+ <span class="m">1053</span>  <span class="nb">history</span> 
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># !1052</span>
 ll
-total <span style="color:#ae81ff">24</span>
-drwxr-xr-x  <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Dec <span style="color:#ae81ff">11</span> 22:44 Cc
-drwxr-xr-x  <span style="color:#ae81ff">7</span> root root <span style="color:#ae81ff">4096</span> Nov <span style="color:#ae81ff">22</span> 19:56 FileRecv
-drwxr-xr-x  <span style="color:#ae81ff">5</span> root root <span style="color:#ae81ff">4096</span> Nov <span style="color:#ae81ff">28</span> 11:45 fileWehChat
-drwxr-xr-x <span style="color:#ae81ff">19</span> root root <span style="color:#ae81ff">4096</span> Mar  <span style="color:#ae81ff">3</span> 15:45 gogs-repositories
-drwxr-xr-x <span style="color:#ae81ff">17</span> root root <span style="color:#ae81ff">4096</span> Mar <span style="color:#ae81ff">18</span> 13:51 lichaocheng
-drwxr-xr-x  <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Mar <span style="color:#ae81ff">18</span> 08:57 supervisord.d
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><ul>
+total <span class="m">24</span>
+drwxr-xr-x  <span class="m">2</span> root root <span class="m">4096</span> Dec <span class="m">11</span> 22:44 Cc
+drwxr-xr-x  <span class="m">7</span> root root <span class="m">4096</span> Nov <span class="m">22</span> 19:56 FileRecv
+drwxr-xr-x  <span class="m">5</span> root root <span class="m">4096</span> Nov <span class="m">28</span> 11:45 fileWehChat
+drwxr-xr-x <span class="m">19</span> root root <span class="m">4096</span> Mar  <span class="m">3</span> 15:45 gogs-repositories
+drwxr-xr-x <span class="m">17</span> root root <span class="m">4096</span> Mar <span class="m">18</span> 13:51 lichaocheng
+drwxr-xr-x  <span class="m">2</span> root root <span class="m">4096</span> Mar <span class="m">18</span> 08:57 supervisord.d
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>通配符使用</li>
 </ul>
 <blockquote>
 <p>多个字符、任意字符、范围查找、</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ls /opt/go*</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ls /opt/go*</span>
 /opt/gomod:
 Gin
 
 /opt/gopath:
 bin  pkg  src
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
 
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ls /bin/l?</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ls /bin/l?</span>
 /bin/ld  /bin/ln  /bin/lp  /bin/ls
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># ls [a-f]*</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ls [a-f]*</span>
 Cc:
 
 fileWehChat:
 2019-09  2019-10  2019-11
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># find /opt/ -name &#34;cc&#34;</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># find /opt/ -name &#34;cc&#34;</span>
 /opt/lichaocheng.top/lichaocheng.top.server/.git/objects/cc
 /opt/gopath/src/smtface/client_user_server/.git/objects/cc
 /opt/gopath/src/google.golang.org/grpc/.git/objects/cc
 /opt/client/bogl.lichaocheng.top/.git/objects/cc
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h3 id="管道">管道</h3>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="管道">管道</h3>
 <h4 id="标准输入输出">标准输入输出</h4>
 <blockquote>
 <p>注意<code>ctrl+d</code>结束</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat /etc/sysconfig/network-scripts/ifcfg-eth0</span>
-DEVICE<span style="color:#f92672">=</span>eth0
-IPADDR<span style="color:#f92672">=</span>172.24.40.83
-NETMASK<span style="color:#f92672">=</span>255.255.192.0
-ONBOOT<span style="color:#f92672">=</span>yes
-GATEWAY<span style="color:#f92672">=</span>172.24.63.253
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cat /etc/sysconfig/network-scripts/ifcfg-eth0</span>
+<span class="nv">DEVICE</span><span class="o">=</span>eth0
+<span class="nv">IPADDR</span><span class="o">=</span>172.24.40.83
+<span class="nv">NETMASK</span><span class="o">=</span>255.255.192.0
+<span class="nv">ONBOOT</span><span class="o">=</span>yes
+<span class="nv">GATEWAY</span><span class="o">=</span>172.24.63.253
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cat</span>
 lcc
 lcc
 yf
 yf
 cc
 cc
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-</code></pre></div><h4 id="输入重定向">输入重定向</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># wc&lt;  /etc/sysconfig/network-scripts/ifcfg-eth0</span>
- <span style="color:#ae81ff">5</span>  <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">87</span>
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat&lt;  /etc/sysconfig/network-scripts/ifcfg-eth0</span>
-DEVICE<span style="color:#f92672">=</span>eth0
-IPADDR<span style="color:#f92672">=</span>172.24.40.83
-NETMASK<span style="color:#f92672">=</span>255.255.192.0
-ONBOOT<span style="color:#f92672">=</span>yes
-GATEWAY<span style="color:#f92672">=</span>172.24.63.253
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat &lt;&lt;&lt;EEE</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="输入重定向">输入重定向</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># wc&lt;  /etc/sysconfig/network-scripts/ifcfg-eth0</span>
+ <span class="m">5</span>  <span class="m">5</span> <span class="m">87</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cat&lt;  /etc/sysconfig/network-scripts/ifcfg-eth0</span>
+<span class="nv">DEVICE</span><span class="o">=</span>eth0
+<span class="nv">IPADDR</span><span class="o">=</span>172.24.40.83
+<span class="nv">NETMASK</span><span class="o">=</span>255.255.192.0
+<span class="nv">ONBOOT</span><span class="o">=</span>yes
+<span class="nv">GATEWAY</span><span class="o">=</span>172.24.63.253
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cat &lt;&lt;&lt;EEE</span>
 EEE
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat &lt;&lt;CC</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cat &lt;&lt;CC</span>
 &gt; 第一个输入
 &gt; 第二个输入
 &gt; exit^C
-<span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span><span style="color:#75715e"># cat &lt;&lt;CC</span>
+<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># cat &lt;&lt;CC</span>
 第一个输入
 第二个输入
 &gt; 第三个输入
-&gt; -bash: warning: here-document at line <span style="color:#ae81ff">50</span> delimited by end-of-file <span style="color:#f92672">(</span>wanted <span style="color:#e6db74">`</span>CC<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">)</span>
+&gt; -bash: warning: here-document at line <span class="m">50</span> delimited by end-of-file <span class="o">(</span>wanted <span class="sb">`</span>CC<span class="err">&#39;</span><span class="o">)</span>
 第一个输入
 第二个输入
 
 第三个输入
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>正确的值追加到文件</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@Cc ~<span style="color:#f92672">]</span># 
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># ll</span>
-total <span style="color:#ae81ff">0</span>
--rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">0</span> Mar <span style="color:#ae81ff">23</span> 21:59 readme.md
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># cat readme.md</span> 
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># ls -l ./ &gt;&gt;  readme.md</span> 
-<span style="color:#f92672">[</span>root@Cc RedHad<span style="color:#f92672">]</span><span style="color:#75715e"># cat readme.md</span> 
-total <span style="color:#ae81ff">0</span>
--rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">0</span> Mar <span style="color:#ae81ff">23</span> 21:59 readme.md
-</code></pre></div><blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span># 
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># ll</span>
+total <span class="m">0</span>
+-rw-r--r-- <span class="m">1</span> root root <span class="m">0</span> Mar <span class="m">23</span> 21:59 readme.md
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># cat readme.md</span> 
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># ls -l ./ &gt;&gt;  readme.md</span> 
+<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># cat readme.md</span> 
+total <span class="m">0</span>
+-rw-r--r-- <span class="m">1</span> root root <span class="m">0</span> Mar <span class="m">23</span> 21:59 readme.md
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p>linux 更多重定向<code>百度</code>、<code>谷歌</code></p>
 </blockquote>
 <h3 id="linux-目录结构">linux 目录结构</h3>

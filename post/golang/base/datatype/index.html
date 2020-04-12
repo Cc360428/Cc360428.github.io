@@ -68,7 +68,7 @@
 <meta itemprop="description" content="数据类型、变量、常量">
 <meta itemprop="datePublished" content="2020-03-31T21:18:30&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-31T21:18:30&#43;08:00" />
-<meta itemprop="wordCount" content="1235">
+<meta itemprop="wordCount" content="1357">
 
 
 
@@ -379,7 +379,7 @@
             <a href="https://cc360428.github.io/categories/base/"> base </a>
             
           </div>
-        <span class="more-meta"> 约 1235 字 </span>
+        <span class="more-meta"> 约 1357 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -486,14 +486,27 @@
 <blockquote>
 <p>下载依赖包 <code>go get -u github.com/Cc360428/HelpPackage</code>  这个人自己写的工具包，在终端执行即可，代码回在环境变量 <code>GOPATH </code>  下<code>src</code>面 。设置过环境变量（go 1.11以上）,会在<code>GOPATH </code> 下<code>pkg/mod</code>面，这里连带讲下<code>GOPATH</code> 下三个文件夹剩下 <code>bin</code> 这个文件夹，使用<code>go build</code> 带一定参数执行会把<code>windows -&gt; .exe</code> 执行文件自动放到这个文件，在任何终端就可以执行你<code>go build</code>  文件命令</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">$</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">env</span> |<span style="color:#a6e22e">grep</span> <span style="color:#a6e22e">GOPATH</span>;<span style="color:#a6e22e">pwd</span>;<span style="color:#a6e22e">ll</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">l</span>
-<span style="color:#a6e22e">set</span> <span style="color:#a6e22e">GOPATH</span>=<span style="color:#a6e22e">D</span>:<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">file</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#a6e22e">gopath</span>
-<span style="color:#f92672">/</span><span style="color:#a6e22e">d</span><span style="color:#f92672">/</span><span style="color:#a6e22e">file</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gopath</span>
-<span style="color:#a6e22e">total</span> <span style="color:#ae81ff">20</span>
-<span style="color:#a6e22e">drwxr</span><span style="color:#f92672">-</span><span style="color:#a6e22e">xr</span><span style="color:#f92672">-</span><span style="color:#a6e22e">x</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">Cc</span> <span style="color:#ae81ff">197121</span> <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">3</span><span style="color:#a6e22e">月</span> <span style="color:#ae81ff">28</span> <span style="color:#ae81ff">21</span>:<span style="color:#ae81ff">58</span> <span style="color:#a6e22e">bin</span><span style="color:#f92672">/</span>
-<span style="color:#a6e22e">drwxr</span><span style="color:#f92672">-</span><span style="color:#a6e22e">xr</span><span style="color:#f92672">-</span><span style="color:#a6e22e">x</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">Cc</span> <span style="color:#ae81ff">197121</span> <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">1</span><span style="color:#a6e22e">月</span> <span style="color:#ae81ff">14</span> <span style="color:#ae81ff">16</span>:<span style="color:#ae81ff">30</span> <span style="color:#a6e22e">pkg</span><span style="color:#f92672">/</span>
-<span style="color:#a6e22e">drwxr</span><span style="color:#f92672">-</span><span style="color:#a6e22e">xr</span><span style="color:#f92672">-</span><span style="color:#a6e22e">x</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">Cc</span> <span style="color:#ae81ff">197121</span> <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">3</span><span style="color:#a6e22e">月</span> <span style="color:#ae81ff">29</span> <span style="color:#ae81ff">21</span>:<span style="color:#ae81ff">33</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">/</span>
-</code></pre></div><h3 id="变量">变量</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="err">$</span> <span class="k">go</span> <span class="nx">env</span> <span class="p">|</span><span class="nx">grep</span> <span class="nx">GOPATH</span><span class="p">;</span><span class="nx">pwd</span><span class="p">;</span><span class="nx">ll</span> <span class="o">-</span><span class="nx">l</span>
+<span class="nx">set</span> <span class="nx">GOPATH</span><span class="p">=</span><span class="nx">D</span><span class="p">:</span><span class="err">\</span><span class="nx">file</span><span class="err">\</span><span class="nx">gopath</span>
+<span class="o">/</span><span class="nx">d</span><span class="o">/</span><span class="nx">file</span><span class="o">/</span><span class="nx">gopath</span>
+<span class="nx">total</span> <span class="mi">20</span>
+<span class="nx">drwxr</span><span class="o">-</span><span class="nx">xr</span><span class="o">-</span><span class="nx">x</span> <span class="mi">1</span> <span class="nx">Cc</span> <span class="mi">197121</span> <span class="mi">0</span>  <span class="mi">3</span><span class="nx">月</span> <span class="mi">28</span> <span class="mi">21</span><span class="p">:</span><span class="mi">58</span> <span class="nx">bin</span><span class="o">/</span>
+<span class="nx">drwxr</span><span class="o">-</span><span class="nx">xr</span><span class="o">-</span><span class="nx">x</span> <span class="mi">1</span> <span class="nx">Cc</span> <span class="mi">197121</span> <span class="mi">0</span>  <span class="mi">1</span><span class="nx">月</span> <span class="mi">14</span> <span class="mi">16</span><span class="p">:</span><span class="mi">30</span> <span class="nx">pkg</span><span class="o">/</span>
+<span class="nx">drwxr</span><span class="o">-</span><span class="nx">xr</span><span class="o">-</span><span class="nx">x</span> <span class="mi">1</span> <span class="nx">Cc</span> <span class="mi">197121</span> <span class="mi">0</span>  <span class="mi">3</span><span class="nx">月</span> <span class="mi">29</span> <span class="mi">21</span><span class="p">:</span><span class="mi">33</span> <span class="nx">src</span><span class="o">/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="变量">变量</h3>
 <blockquote>
 <p>变量声明之后没有赋值，所有的都为默认值</p>
 </blockquote>
@@ -515,123 +528,250 @@
 </blockquote>
 <h3 id="示例">示例</h3>
 <p><a href="https://gitee.com/GolangCodeFile/blogcode/blob/master/day02/main.go#L10">源码地址</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">     <span style="color:#ae81ff">1</span>  <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-     <span style="color:#ae81ff">2</span>
-     <span style="color:#ae81ff">3</span>  <span style="color:#75715e">// 要使用的包在 import
-</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">4</span>  <span style="color:#f92672">import</span> (
-     <span style="color:#ae81ff">5</span>          <span style="color:#e6db74">&#34;errors&#34;</span>
-     <span style="color:#ae81ff">6</span>          <span style="color:#e6db74">&#34;fmt&#34;</span>
-     <span style="color:#ae81ff">7</span>          <span style="color:#e6db74">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-     <span style="color:#ae81ff">8</span>  )
-     <span style="color:#ae81ff">9</span>
-    <span style="color:#ae81ff">10</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#ae81ff">11</span>          <span style="color:#a6e22e">str</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;可以使用  := 快速定义类型  := 后面是什么类型就是什么类型&#34;</span>
-    <span style="color:#ae81ff">12</span>          <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">str</span>)
-    <span style="color:#ae81ff">13</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">bool</span>
-    <span style="color:#ae81ff">14</span>          <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">b</span>)
-    <span style="color:#ae81ff">15</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>
-    <span style="color:#ae81ff">16</span>          <span style="color:#a6e22e">age</span> = <span style="color:#ae81ff">18</span>
-    <span style="color:#ae81ff">17</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">age</span>)
-    <span style="color:#ae81ff">18</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
-    <span style="color:#ae81ff">19</span>          <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;lcc&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Hyper&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Cc&#34;</span>
-    <span style="color:#ae81ff">20</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">name</span>)
-    <span style="color:#ae81ff">21</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span>)
-    <span style="color:#ae81ff">22</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#66d9ef">float64</span>
-    <span style="color:#ae81ff">23</span>          <span style="color:#a6e22e">p</span> = <span style="color:#ae81ff">1.11</span><span style="color:#f92672">*</span><span style="color:#ae81ff">22</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">112.21</span>
-    <span style="color:#ae81ff">24</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">p</span>)
-    <span style="color:#ae81ff">25</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">d</span> <span style="color:#66d9ef">string</span>
-    <span style="color:#ae81ff">26</span>          <span style="color:#a6e22e">a</span> = <span style="color:#e6db74">&#34;a&#34;</span>
-    <span style="color:#ae81ff">27</span>          <span style="color:#a6e22e">d</span> = <span style="color:#e6db74">&#34;d&#34;</span>
-    <span style="color:#ae81ff">28</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">d</span>)
-    <span style="color:#ae81ff">29</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a1</span>, <span style="color:#a6e22e">a2</span> = <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">22</span>
-    <span style="color:#ae81ff">30</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">a1</span>, <span style="color:#a6e22e">a2</span>)
-    <span style="color:#ae81ff">31</span>          <span style="color:#a6e22e">s1</span>, <span style="color:#a6e22e">s2</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;lcc&#34;</span>, <span style="color:#e6db74">&#34;ok&#34;</span>
-    <span style="color:#ae81ff">32</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">s1</span>, <span style="color:#a6e22e">s2</span>)
-    <span style="color:#ae81ff">33</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span>
-    <span style="color:#ae81ff">34</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">f</span>)
-    <span style="color:#ae81ff">35</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">string</span>
-    <span style="color:#ae81ff">36</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">s</span>)
-    <span style="color:#ae81ff">37</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>
-    <span style="color:#ae81ff">38</span>          <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;error 为错误类型&#34;</span>)
-    <span style="color:#ae81ff">39</span>          <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-    <span style="color:#ae81ff">40</span>                  <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">Error</span>())
-    <span style="color:#ae81ff">41</span>          }
-    <span style="color:#ae81ff">42</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">int</span>
-    <span style="color:#ae81ff">43</span>          <span style="color:#a6e22e">array</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">2</span>
-    <span style="color:#ae81ff">44</span>          <span style="color:#a6e22e">array</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">2323</span>
-    <span style="color:#ae81ff">45</span>          <span style="color:#a6e22e">res</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;长度%d,容量%d&#34;</span>, len(<span style="color:#a6e22e">array</span>), cap(<span style="color:#a6e22e">array</span>))
-    <span style="color:#ae81ff">46</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">res</span>, <span style="color:#e6db74">&#34;内容&#34;</span>, <span style="color:#a6e22e">array</span>, <span style="color:#e6db74">&#34;可以通过下标查找更改&#34;</span>, <span style="color:#a6e22e">array</span>[<span style="color:#ae81ff">1</span>])
-    <span style="color:#ae81ff">47</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">chanType</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>
-    <span style="color:#ae81ff">48</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">chanType</span>)
-    <span style="color:#ae81ff">49</span>          <span style="color:#a6e22e">mapType</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">interface</span>{})
-    <span style="color:#ae81ff">50</span>          <span style="color:#a6e22e">mapType</span>[<span style="color:#e6db74">&#34;name&#34;</span>] = <span style="color:#e6db74">&#34;lcc&#34;</span>
-    <span style="color:#ae81ff">51</span>          <span style="color:#a6e22e">mapType</span>[<span style="color:#e6db74">&#34;age&#34;</span>] = <span style="color:#e6db74">&#34;18&#34;</span>
-    <span style="color:#ae81ff">52</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">mapType</span>)
-    <span style="color:#ae81ff">53</span>          <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">struct</span> {
-    <span style="color:#ae81ff">54</span>                  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
-    <span style="color:#ae81ff">55</span>                  <span style="color:#a6e22e">Age</span>  <span style="color:#66d9ef">int</span>
-    <span style="color:#ae81ff">56</span>          }
-    <span style="color:#ae81ff">57</span>          <span style="color:#a6e22e">user</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">User</span>)
-    <span style="color:#ae81ff">58</span>          <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Name</span> = <span style="color:#e6db74">&#34;Cc&#34;</span>
-    <span style="color:#ae81ff">59</span>          <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Age</span> = <span style="color:#ae81ff">23</span>
-    <span style="color:#ae81ff">60</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Age</span>, <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Name</span>)
-    <span style="color:#ae81ff">61</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">user</span>)
-    <span style="color:#ae81ff">62</span>          <span style="color:#75715e">// 常量
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">63</span>          <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">LENGTH</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">10</span>
-    <span style="color:#ae81ff">64</span>          <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">WIDTH</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">5</span>
-    <span style="color:#ae81ff">65</span>          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">area</span> <span style="color:#66d9ef">int</span>
-    <span style="color:#ae81ff">66</span>          <span style="color:#a6e22e">area</span> = <span style="color:#a6e22e">LENGTH</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">WIDTH</span>
-    <span style="color:#ae81ff">67</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;面积为 : %d ,可以做运算&#34;</span>, <span style="color:#a6e22e">area</span>)
-    <span style="color:#ae81ff">68</span>          <span style="color:#66d9ef">const</span> (
-    <span style="color:#ae81ff">69</span>                  <span style="color:#a6e22e">aa1</span> = <span style="color:#66d9ef">iota</span>
-    <span style="color:#ae81ff">70</span>                  <span style="color:#a6e22e">aa2</span>
-    <span style="color:#ae81ff">71</span>                  <span style="color:#a6e22e">aa3</span>
-    <span style="color:#ae81ff">72</span>          )
-    <span style="color:#ae81ff">73</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">aa1</span>, <span style="color:#a6e22e">aa2</span>, <span style="color:#a6e22e">aa3</span>)
-    <span style="color:#ae81ff">74</span>          <span style="color:#66d9ef">const</span> (
-    <span style="color:#ae81ff">75</span>                  <span style="color:#a6e22e">a11</span> = <span style="color:#66d9ef">iota</span> <span style="color:#75715e">// 0
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">76</span>                  <span style="color:#a6e22e">b12</span>        <span style="color:#75715e">// 1
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">77</span>                  <span style="color:#a6e22e">c13</span>        <span style="color:#75715e">// 2
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">78</span>                  <span style="color:#a6e22e">d14</span> = <span style="color:#e6db74">&#34;ha&#34;</span> <span style="color:#75715e">// 独立值，iota += 1
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">79</span>                  <span style="color:#a6e22e">e15</span>        <span style="color:#75715e">// &#34;ha&#34;   iota += 1
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">80</span>                  <span style="color:#a6e22e">f16</span> = <span style="color:#ae81ff">100</span>  <span style="color:#75715e">// iota +=1
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">81</span>                  <span style="color:#a6e22e">g17</span>        <span style="color:#75715e">// 100  iota +=1
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">82</span>                  <span style="color:#a6e22e">h18</span> = <span style="color:#66d9ef">iota</span> <span style="color:#75715e">// 7,恢复计数
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">83</span>                  <span style="color:#a6e22e">i19</span>        <span style="color:#75715e">// 8
-</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">84</span>          )
-    <span style="color:#ae81ff">85</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">a11</span>, <span style="color:#a6e22e">b12</span>, <span style="color:#a6e22e">c13</span>, <span style="color:#a6e22e">d14</span>, <span style="color:#a6e22e">e15</span>, <span style="color:#a6e22e">f16</span>, <span style="color:#a6e22e">g17</span>, <span style="color:#a6e22e">h18</span>, <span style="color:#a6e22e">i19</span>)
-    <span style="color:#ae81ff">86</span>          <span style="color:#66d9ef">const</span> (
-    <span style="color:#ae81ff">87</span>                  <span style="color:#a6e22e">i</span> = <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#66d9ef">iota</span>
-    <span style="color:#ae81ff">88</span>                  <span style="color:#a6e22e">j</span> = <span style="color:#ae81ff">3</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#66d9ef">iota</span>
-    <span style="color:#ae81ff">89</span>                  <span style="color:#a6e22e">k</span>
-    <span style="color:#ae81ff">90</span>                  <span style="color:#a6e22e">l</span>
-    <span style="color:#ae81ff">91</span>          )
-    <span style="color:#ae81ff">92</span>          <span style="color:#a6e22e">logs</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">l</span>)
-    <span style="color:#ae81ff">93</span>
-    <span style="color:#ae81ff">94</span>  }
-</code></pre></div><h5 id="执行结果">执行结果</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">可以使用</span>  <span style="color:#f92672">:=</span> <span style="color:#a6e22e">快速定义类型</span>  <span style="color:#f92672">:=</span> <span style="color:#a6e22e">后面是什么类型就是什么类型</span>
-<span style="color:#66d9ef">false</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.340</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">17</span>]  <span style="color:#ae81ff">18</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.360</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">20</span>]  <span style="color:#a6e22e">lccHyperCc</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.360</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">21</span>]  <span style="color:#a6e22e">lccHyperCc</span> <span style="color:#ae81ff">18</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.360</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">24</span>]  <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.360</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">28</span>]  <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">d</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.360</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">30</span>]  <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">22</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">32</span>]  <span style="color:#a6e22e">lcc</span> <span style="color:#a6e22e">ok</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">34</span>]  <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">36</span>]  &lt;<span style="color:#66d9ef">nil</span>&gt;
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">E</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">40</span>]  <span style="color:#66d9ef">error</span> <span style="color:#a6e22e">为错误类型</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">46</span>]  <span style="color:#a6e22e">长度2</span>,<span style="color:#a6e22e">容量2</span> <span style="color:#a6e22e">内容</span> [<span style="color:#ae81ff">2</span> <span style="color:#ae81ff">2323</span>] <span style="color:#a6e22e">可以通过下标查找更改</span> <span style="color:#ae81ff">2323</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">48</span>]  &lt;<span style="color:#66d9ef">nil</span>&gt;
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">52</span>]  <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">age</span>:<span style="color:#ae81ff">18</span> <span style="color:#a6e22e">name</span>:<span style="color:#a6e22e">lcc</span>]
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">60</span>]  <span style="color:#ae81ff">23</span> <span style="color:#a6e22e">Cc</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">61</span>]  <span style="color:#f92672">&amp;</span>{<span style="color:#a6e22e">Cc</span> <span style="color:#ae81ff">23</span>}
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">67</span>]  <span style="color:#a6e22e">面积为</span> : <span style="color:#ae81ff">50</span> ,<span style="color:#a6e22e">可以做运算</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">73</span>]  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">85</span>]  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#a6e22e">ha</span> <span style="color:#a6e22e">ha</span> <span style="color:#ae81ff">100</span> <span style="color:#ae81ff">100</span> <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">8</span>
-<span style="color:#ae81ff">2020</span><span style="color:#f92672">/</span><span style="color:#ae81ff">03</span><span style="color:#f92672">/</span><span style="color:#ae81ff">31</span> <span style="color:#ae81ff">22</span>:<span style="color:#ae81ff">51</span>:<span style="color:#ae81ff">28.361</span> [<span style="color:#a6e22e">I</span>] [<span style="color:#a6e22e">main</span>.<span style="color:#66d9ef">go</span>:<span style="color:#ae81ff">92</span>]  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">24</span>
-</code></pre></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">     <span class="mi">1</span>  <span class="kn">package</span> <span class="nx">main</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>  <span class="c1">// 要使用的包在 import
+</span><span class="c1"></span>     <span class="mi">4</span>  <span class="kn">import</span> <span class="p">(</span>
+     <span class="mi">5</span>          <span class="s">&#34;errors&#34;</span>
+     <span class="mi">6</span>          <span class="s">&#34;fmt&#34;</span>
+     <span class="mi">7</span>          <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+     <span class="mi">8</span>  <span class="p">)</span>
+     <span class="mi">9</span>
+    <span class="mi">10</span>  <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="mi">11</span>          <span class="nx">str</span> <span class="o">:=</span> <span class="s">&#34;可以使用  := 快速定义类型  := 后面是什么类型就是什么类型&#34;</span>
+    <span class="mi">12</span>          <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+    <span class="mi">13</span>          <span class="kd">var</span> <span class="nx">b</span> <span class="kt">bool</span>
+    <span class="mi">14</span>          <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+    <span class="mi">15</span>          <span class="kd">var</span> <span class="nx">age</span> <span class="kt">int</span>
+    <span class="mi">16</span>          <span class="nx">age</span> <span class="p">=</span> <span class="mi">18</span>
+    <span class="mi">17</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span>
+    <span class="mi">18</span>          <span class="kd">var</span> <span class="nx">name</span> <span class="kt">string</span>
+    <span class="mi">19</span>          <span class="nx">name</span> <span class="p">=</span> <span class="s">&#34;lcc&#34;</span> <span class="o">+</span> <span class="s">&#34;Hyper&#34;</span> <span class="o">+</span> <span class="s">&#34;Cc&#34;</span>
+    <span class="mi">20</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+    <span class="mi">21</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span>
+    <span class="mi">22</span>          <span class="kd">var</span> <span class="nx">p</span> <span class="kt">float64</span>
+    <span class="mi">23</span>          <span class="nx">p</span> <span class="p">=</span> <span class="mf">1.11</span><span class="o">*</span><span class="mi">22</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">100</span> <span class="o">-</span> <span class="mf">112.21</span>
+    <span class="mi">24</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+    <span class="mi">25</span>          <span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">d</span> <span class="kt">string</span>
+    <span class="mi">26</span>          <span class="nx">a</span> <span class="p">=</span> <span class="s">&#34;a&#34;</span>
+    <span class="mi">27</span>          <span class="nx">d</span> <span class="p">=</span> <span class="s">&#34;d&#34;</span>
+    <span class="mi">28</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span>
+    <span class="mi">29</span>          <span class="kd">var</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span> <span class="p">=</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span>
+    <span class="mi">30</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">)</span>
+    <span class="mi">31</span>          <span class="nx">s1</span><span class="p">,</span> <span class="nx">s2</span> <span class="o">:=</span> <span class="s">&#34;lcc&#34;</span><span class="p">,</span> <span class="s">&#34;ok&#34;</span>
+    <span class="mi">32</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">s1</span><span class="p">,</span> <span class="nx">s2</span><span class="p">)</span>
+    <span class="mi">33</span>          <span class="kd">var</span> <span class="nx">f</span> <span class="kt">float64</span>
+    <span class="mi">34</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+    <span class="mi">35</span>          <span class="kd">var</span> <span class="nx">s</span> <span class="o">*</span><span class="kt">string</span>
+    <span class="mi">36</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+    <span class="mi">37</span>          <span class="kd">var</span> <span class="nx">err</span> <span class="kt">error</span>
+    <span class="mi">38</span>          <span class="nx">err</span> <span class="p">=</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;error 为错误类型&#34;</span><span class="p">)</span>
+    <span class="mi">39</span>          <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="mi">40</span>                  <span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+    <span class="mi">41</span>          <span class="p">}</span>
+    <span class="mi">42</span>          <span class="kd">var</span> <span class="nx">array</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="kt">int</span>
+    <span class="mi">43</span>          <span class="nx">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">2</span>
+    <span class="mi">44</span>          <span class="nx">array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="mi">2323</span>
+    <span class="mi">45</span>          <span class="nx">res</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;长度%d,容量%d&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">array</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="nx">array</span><span class="p">))</span>
+    <span class="mi">46</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span> <span class="s">&#34;内容&#34;</span><span class="p">,</span> <span class="nx">array</span><span class="p">,</span> <span class="s">&#34;可以通过下标查找更改&#34;</span><span class="p">,</span> <span class="nx">array</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="mi">47</span>          <span class="kd">var</span> <span class="nx">chanType</span> <span class="kd">chan</span> <span class="kt">int</span>
+    <span class="mi">48</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">chanType</span><span class="p">)</span>
+    <span class="mi">49</span>          <span class="nx">mapType</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+    <span class="mi">50</span>          <span class="nx">mapType</span><span class="p">[</span><span class="s">&#34;name&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;lcc&#34;</span>
+    <span class="mi">51</span>          <span class="nx">mapType</span><span class="p">[</span><span class="s">&#34;age&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="s">&#34;18&#34;</span>
+    <span class="mi">52</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">mapType</span><span class="p">)</span>
+    <span class="mi">53</span>          <span class="kd">type</span> <span class="nx">User</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="mi">54</span>                  <span class="nx">Name</span> <span class="kt">string</span>
+    <span class="mi">55</span>                  <span class="nx">Age</span>  <span class="kt">int</span>
+    <span class="mi">56</span>          <span class="p">}</span>
+    <span class="mi">57</span>          <span class="nx">user</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">User</span><span class="p">)</span>
+    <span class="mi">58</span>          <span class="nx">user</span><span class="p">.</span><span class="nx">Name</span> <span class="p">=</span> <span class="s">&#34;Cc&#34;</span>
+    <span class="mi">59</span>          <span class="nx">user</span><span class="p">.</span><span class="nx">Age</span> <span class="p">=</span> <span class="mi">23</span>
+    <span class="mi">60</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">Age</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
+    <span class="mi">61</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span>
+    <span class="mi">62</span>          <span class="c1">// 常量
+</span><span class="c1"></span>    <span class="mi">63</span>          <span class="kd">const</span> <span class="nx">LENGTH</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">10</span>
+    <span class="mi">64</span>          <span class="kd">const</span> <span class="nx">WIDTH</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">5</span>
+    <span class="mi">65</span>          <span class="kd">var</span> <span class="nx">area</span> <span class="kt">int</span>
+    <span class="mi">66</span>          <span class="nx">area</span> <span class="p">=</span> <span class="nx">LENGTH</span> <span class="o">*</span> <span class="nx">WIDTH</span>
+    <span class="mi">67</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;面积为 : %d ,可以做运算&#34;</span><span class="p">,</span> <span class="nx">area</span><span class="p">)</span>
+    <span class="mi">68</span>          <span class="kd">const</span> <span class="p">(</span>
+    <span class="mi">69</span>                  <span class="nx">aa1</span> <span class="p">=</span> <span class="kc">iota</span>
+    <span class="mi">70</span>                  <span class="nx">aa2</span>
+    <span class="mi">71</span>                  <span class="nx">aa3</span>
+    <span class="mi">72</span>          <span class="p">)</span>
+    <span class="mi">73</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">aa1</span><span class="p">,</span> <span class="nx">aa2</span><span class="p">,</span> <span class="nx">aa3</span><span class="p">)</span>
+    <span class="mi">74</span>          <span class="kd">const</span> <span class="p">(</span>
+    <span class="mi">75</span>                  <span class="nx">a11</span> <span class="p">=</span> <span class="kc">iota</span> <span class="c1">// 0
+</span><span class="c1"></span>    <span class="mi">76</span>                  <span class="nx">b12</span>        <span class="c1">// 1
+</span><span class="c1"></span>    <span class="mi">77</span>                  <span class="nx">c13</span>        <span class="c1">// 2
+</span><span class="c1"></span>    <span class="mi">78</span>                  <span class="nx">d14</span> <span class="p">=</span> <span class="s">&#34;ha&#34;</span> <span class="c1">// 独立值，iota += 1
+</span><span class="c1"></span>    <span class="mi">79</span>                  <span class="nx">e15</span>        <span class="c1">// &#34;ha&#34;   iota += 1
+</span><span class="c1"></span>    <span class="mi">80</span>                  <span class="nx">f16</span> <span class="p">=</span> <span class="mi">100</span>  <span class="c1">// iota +=1
+</span><span class="c1"></span>    <span class="mi">81</span>                  <span class="nx">g17</span>        <span class="c1">// 100  iota +=1
+</span><span class="c1"></span>    <span class="mi">82</span>                  <span class="nx">h18</span> <span class="p">=</span> <span class="kc">iota</span> <span class="c1">// 7,恢复计数
+</span><span class="c1"></span>    <span class="mi">83</span>                  <span class="nx">i19</span>        <span class="c1">// 8
+</span><span class="c1"></span>    <span class="mi">84</span>          <span class="p">)</span>
+    <span class="mi">85</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">a11</span><span class="p">,</span> <span class="nx">b12</span><span class="p">,</span> <span class="nx">c13</span><span class="p">,</span> <span class="nx">d14</span><span class="p">,</span> <span class="nx">e15</span><span class="p">,</span> <span class="nx">f16</span><span class="p">,</span> <span class="nx">g17</span><span class="p">,</span> <span class="nx">h18</span><span class="p">,</span> <span class="nx">i19</span><span class="p">)</span>
+    <span class="mi">86</span>          <span class="kd">const</span> <span class="p">(</span>
+    <span class="mi">87</span>                  <span class="nx">i</span> <span class="p">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="kc">iota</span>
+    <span class="mi">88</span>                  <span class="nx">j</span> <span class="p">=</span> <span class="mi">3</span> <span class="o">&lt;&lt;</span> <span class="kc">iota</span>
+    <span class="mi">89</span>                  <span class="nx">k</span>
+    <span class="mi">90</span>                  <span class="nx">l</span>
+    <span class="mi">91</span>          <span class="p">)</span>
+    <span class="mi">92</span>          <span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">l</span><span class="p">)</span>
+    <span class="mi">93</span>
+    <span class="mi">94</span>  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="执行结果">执行结果</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">可以使用</span>  <span class="o">:=</span> <span class="nx">快速定义类型</span>  <span class="o">:=</span> <span class="nx">后面是什么类型就是什么类型</span>
+<span class="kc">false</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.340</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">17</span><span class="p">]</span>  <span class="mi">18</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.360</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>  <span class="nx">lccHyperCc</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.360</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">21</span><span class="p">]</span>  <span class="nx">lccHyperCc</span> <span class="mi">18</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.360</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">24</span><span class="p">]</span>  <span class="mi">0</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.360</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">28</span><span class="p">]</span>  <span class="nx">a</span> <span class="nx">d</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.360</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span>  <span class="mi">12</span> <span class="mi">22</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">32</span><span class="p">]</span>  <span class="nx">lcc</span> <span class="nx">ok</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">34</span><span class="p">]</span>  <span class="mi">0</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">36</span><span class="p">]</span>  <span class="p">&lt;</span><span class="kc">nil</span><span class="p">&gt;</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">E</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">40</span><span class="p">]</span>  <span class="kt">error</span> <span class="nx">为错误类型</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">46</span><span class="p">]</span>  <span class="nx">长度2</span><span class="p">,</span><span class="nx">容量2</span> <span class="nx">内容</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">2323</span><span class="p">]</span> <span class="nx">可以通过下标查找更改</span> <span class="mi">2323</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">48</span><span class="p">]</span>  <span class="p">&lt;</span><span class="kc">nil</span><span class="p">&gt;</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">52</span><span class="p">]</span>  <span class="kd">map</span><span class="p">[</span><span class="nx">age</span><span class="p">:</span><span class="mi">18</span> <span class="nx">name</span><span class="p">:</span><span class="nx">lcc</span><span class="p">]</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">60</span><span class="p">]</span>  <span class="mi">23</span> <span class="nx">Cc</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">61</span><span class="p">]</span>  <span class="o">&amp;</span><span class="p">{</span><span class="nx">Cc</span> <span class="mi">23</span><span class="p">}</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">67</span><span class="p">]</span>  <span class="nx">面积为</span> <span class="p">:</span> <span class="mi">50</span> <span class="p">,</span><span class="nx">可以做运算</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">73</span><span class="p">]</span>  <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">85</span><span class="p">]</span>  <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="nx">ha</span> <span class="nx">ha</span> <span class="mi">100</span> <span class="mi">100</span> <span class="mi">7</span> <span class="mi">8</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">03</span><span class="o">/</span><span class="mi">31</span> <span class="mi">22</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mf">28.361</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">main</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">92</span><span class="p">]</span>  <span class="mi">1</span> <span class="mi">6</span> <span class="mi">12</span> <span class="mi">24</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
