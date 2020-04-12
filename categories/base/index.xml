@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Tue, 07 Apr 2020 22:58:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2020 22:21:48 +0800</lastBuildDate>
     
 	<atom:link href="https://cc360428.github.io/categories/base/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MySQL 入门介绍</title>
+      <link>https://cc360428.github.io/post/system/mysql/day01/</link>
+      <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/mysql/day01/</guid>
+      <description>mysql 环境搭建 安装mysql 1 2 3 4 5 6 7 mysql&amp;gt; select version(); +------------+ | version() | +------------+ | 5.7.17-log | +------------+ 1 row in set (0.03 sec) 创建数据库，与查看 CREATE DATABASEmysql_crash_courseCHARACTER SET &#39;utf8&#39; COLLATE &#39;utf8_unicode_ci&#39;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</description>
+    </item>
+    
+    <item>
+      <title>Golang 入门介绍</title>
+      <link>https://cc360428.github.io/post/golang/base/base/</link>
+      <pubDate>Mon, 30 Mar 2020 23:31:59 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/base/</guid>
+      <description>Golang基础 本章源码 初步认识Golang Go 跨平台（linux、windows、mac），只要编写完代码之后交叉编译即可 Go 语言单一、简洁、</description>
+    </item>
     
     <item>
       <title>Day06（作用域与数组）</title>
@@ -55,15 +73,6 @@
       
       <guid>https://cc360428.github.io/post/golang/base/datatype/</guid>
       <description>数据类型、变量、常量 本章源码 数据类型 package builtin 可以看数据包builtin 布尔类型 默认值为：false 数字类型 整形 默认值为：0 浮点型 默认值为：0 字符</description>
-    </item>
-    
-    <item>
-      <title>Day01（Golang 入门介绍）</title>
-      <link>https://cc360428.github.io/post/golang/base/base/</link>
-      <pubDate>Mon, 30 Mar 2020 23:31:59 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/base/base/</guid>
-      <description>Golang基础 本章源码 初步认识Golang Go 跨平台（linux、windows、mac），只要编写完代码之后交叉编译即可 Go 语言单一、简洁、</description>
     </item>
     
   </channel>

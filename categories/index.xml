@@ -13,38 +13,20 @@
     
     
     <item>
-      <title>docs</title>
-      <link>https://cc360428.github.io/categories/docs/</link>
-      <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/categories/docs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>index</title>
-      <link>https://cc360428.github.io/categories/index/</link>
-      <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/categories/index/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>math</title>
-      <link>https://cc360428.github.io/categories/math/</link>
-      <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/categories/math/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>base</title>
       <link>https://cc360428.github.io/categories/base/</link>
-      <pubDate>Tue, 07 Apr 2020 22:58:36 +0800</pubDate>
+      <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
       
       <guid>https://cc360428.github.io/categories/base/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://cc360428.github.io/categories/mysql/</link>
+      <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/categories/mysql/</guid>
       <description></description>
     </item>
     
@@ -76,15 +58,6 @@
     </item>
     
     <item>
-      <title>mysql</title>
-      <link>https://cc360428.github.io/categories/mysql/</link>
-      <pubDate>Thu, 05 Mar 2020 16:02:24 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>me</title>
       <link>https://cc360428.github.io/categories/me/</link>
       <pubDate>Wed, 06 Jun 2018 12:48:54 +0800</pubDate>
@@ -99,6 +72,15 @@
       <pubDate>Fri, 26 Jan 2018 12:48:54 +0800</pubDate>
       
       <guid>https://cc360428.github.io/categories/java%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python基础</title>
+      <link>https://cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 26 Jan 2018 12:48:54 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     

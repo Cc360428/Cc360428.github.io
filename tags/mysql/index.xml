@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on Li Chao Cheng Blog</title>
+    <link>https://cc360428.github.io/tags/mysql/</link>
+    <description>Recent content in mysql on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Lcc</copyright>
+    <lastBuildDate>Wed, 08 Apr 2020 22:21:48 +0800</lastBuildDate>
+    
+	<atom:link href="https://cc360428.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL 入门介绍</title>
+      <link>https://cc360428.github.io/post/system/mysql/day01/</link>
+      <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/mysql/day01/</guid>
+      <description>mysql 环境搭建 安装mysql 1 2 3 4 5 6 7 mysql&amp;gt; select version(); +------------+ | version() | +------------+ | 5.7.17-log | +------------+ 1 row in set (0.03 sec) 创建数据库，与查看 CREATE DATABASEmysql_crash_courseCHARACTER SET &#39;utf8&#39; COLLATE &#39;utf8_unicode_ci&#39;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</description>
+    </item>
+    
+  </channel>
+</rss>

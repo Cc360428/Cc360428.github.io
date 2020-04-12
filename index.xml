@@ -13,68 +13,7 @@
     
     
     <item>
-      <title>Blog About</title>
-      <link>https://cc360428.github.io/about/</link>
-      <pubDate>Sun, 29 Mar 2020 21:07:37 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/about/</guid>
-      
-        <description>&lt;h2 id=&#34;作者&#34;&gt;作者&lt;/h2&gt;
-&lt;p&gt;Name:  &lt;code&gt;ChaoChengLi&lt;/code&gt;&lt;br&gt;
-Email:  &lt;code&gt;li_chao_cheng@163.com&lt;/code&gt;&lt;br&gt;
-&lt;a href=&#34;https://lichaocheng.top&#34;&gt;个人主页&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;博客内容&#34;&gt;博客内容&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Golang
-&lt;ul&gt;
-&lt;li&gt;base&lt;/li&gt;
-&lt;li&gt;web&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Java
-&lt;ul&gt;
-&lt;li&gt;base&lt;/li&gt;
-&lt;li&gt;web&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Python
-&lt;ul&gt;
-&lt;li&gt;base&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Client
-&lt;ul&gt;
-&lt;li&gt;html、css、js、jq&lt;/li&gt;
-&lt;li&gt;vue&lt;/li&gt;
-&lt;li&gt;BootStrap&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;System &lt;code&gt;感谢友人，云主机（yf，lgr）支持&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;linux&lt;/li&gt;
-&lt;li&gt;Windows&lt;/li&gt;
-&lt;li&gt;Mac&lt;/li&gt;
-&lt;li&gt;utils
-&lt;ul&gt;
-&lt;li&gt;Mysql&lt;/li&gt;
-&lt;li&gt;redis&lt;/li&gt;
-&lt;li&gt;docker&lt;/li&gt;
-&lt;li&gt;mongoDB&lt;/li&gt;
-&lt;li&gt;git&lt;/li&gt;
-&lt;li&gt;开发工具&lt;/li&gt;
-&lt;li&gt;消息队列&lt;/li&gt;
-&lt;li&gt;网络知识&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Day01</title>
+      <title>MySQL 入门介绍</title>
       <link>https://cc360428.github.io/post/system/mysql/day01/</link>
       <pubDate>Wed, 08 Apr 2020 22:21:48 +0800</pubDate>
       
@@ -82,10 +21,129 @@ Email:  &lt;code&gt;li_chao_cheng@163.com&lt;/code&gt;&lt;br&gt;
       
         <description>&lt;h2 id=&#34;mysql-&#34;&gt;&lt;code&gt;mysql&lt;/code&gt;&lt;/h2&gt;
 
-&lt;p&gt;考虑到工作临时需要&lt;/p&gt;
+&lt;h3 id=&#34;环境搭建&#34;&gt;环境搭建&lt;/h3&gt;
 
-&lt;p&gt;&lt;figure&gt;&lt;img src=&#34;http://images.lichaocheng.top/static/upload/2020/04/11/ee16d2ed61241f3ff785db756fbb77a9.jpg&#34; alt=&#34;图片测试&#34;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装&lt;code&gt;mysql&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+------------+&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+------------+&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+------------+&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;row&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;03&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sec&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;创建数据库，与查看&lt;/li&gt;
+&lt;/ul&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;CREATE DATABASE&lt;/code&gt;mysql_crash_course&lt;code&gt;CHARACTER SET &#39;utf8&#39; COLLATE &#39;utf8_unicode_ci&#39;;&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;show&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;databases&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+------------------------------+&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;Database&lt;/span&gt;                     &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+------------------------------+&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;information_schema&lt;/span&gt;           &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;accesshubTest&lt;/span&gt;                &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;beego_view&lt;/span&gt;                   &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;casbin&lt;/span&gt;                       &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gogs&lt;/span&gt;                         &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;hr&lt;/span&gt;                           &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;hyper_lichaocheng_top_server&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;images&lt;/span&gt;                       &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;                        &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mysql_crash_course&lt;/span&gt;           &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;performance_schema&lt;/span&gt;           &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;radius&lt;/span&gt;                       &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;share&lt;/span&gt;                        &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sys&lt;/span&gt;                          &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;                         &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tuzi&lt;/span&gt;                         &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+------------------------------+&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;16&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rows&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sec&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;下载需要的&lt;code&gt;sql&lt;/code&gt; 文件、与导入文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;下载文件 打开里面&lt;code&gt;.sql&lt;/code&gt;文件 里面有创建数据库语句、先创建数据库然后、进入创建的数据库、再导入文件，下载文件地址&lt;a href=&#34;http://images.lichaocheng.top/static/mysql/mysql_crash_course.zip&#34;&gt;download&lt;/a&gt;、或者直接查看&lt;a href=&#34;http://images.lichaocheng.top/static/mysql/mysql_crash_course.sql&#34;&gt;sql地址&lt;/a&gt;，导入或者执行语句、没有报错即可&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;查看以上导入的数据表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;show&lt;/span&gt; &lt;span class=&#34;kp&#34;&gt;tables&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+------------------------------+&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Tables_in_mysql_crash_course&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+------------------------------+&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;customers&lt;/span&gt;                    &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;orderitems&lt;/span&gt;                   &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;orders&lt;/span&gt;                       &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;productnotes&lt;/span&gt;                 &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;products&lt;/span&gt;                     &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vendors&lt;/span&gt;                      &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;+------------------------------+&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rows&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;03&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sec&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;h3 id=&#34;第4章检索数据&#34;&gt;第4章（检索数据）&lt;/h3&gt;
 
 &lt;h4 id=&#34;45-检索不同的行&#34;&gt;4.5 检索不同的行&lt;/h4&gt;
@@ -235,6 +293,361 @@ Email:  &lt;code&gt;li_chao_cheng@163.com&lt;/code&gt;&lt;br&gt;
     &lt;span class=&#34;n&#34;&gt;nattr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nasid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;92&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Golang 入门介绍</title>
+      <link>https://cc360428.github.io/post/golang/base/base/</link>
+      <pubDate>Mon, 30 Mar 2020 23:31:59 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/base/</guid>
+      
+        <description>&lt;h2 id=&#34;golang基础&#34;&gt;Golang基础&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/GolangCodeFile/blogcode/tree/master/helloWorld&#34;&gt;本章源码&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;初步认识golang&#34;&gt;初步认识Golang&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Go 跨平台（linux、windows、mac），只要编写完代码之后&lt;code&gt;交叉&lt;/code&gt;编译即可&lt;/li&gt;
+&lt;li&gt;Go 语言单一、简洁、天生高并发、CGO&lt;/li&gt;
+&lt;li&gt;Go  应用广（web应用、区块链、运维、云计算、大数据）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;go环境&#34;&gt;Go环境&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不管学那一语言都有自己运行环境（&lt;code&gt;html5&lt;/code&gt;除外），对于Go环境&lt;code&gt;golang&lt;/code&gt; 官网有windows、linux、mac ，源码安装以及对应安装包，自己安装即可&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;安装打开计算机终端检查是否安装成功&#34;&gt;安装打开计算机终端检查是否安装成功&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;version&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;version&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;go1&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;.13.4&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;windows&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;amd64&lt;/span&gt;
+
+&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GO111MODULE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOARCH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;amd64&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOBIN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOCACHE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;AppData&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Local&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;build&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOENV&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;AppData&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Roaming&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOEXE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;exe&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOHOSTARCH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;amd64&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOHOSTOS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;windows&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GONOPROXY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GONOSUMDB&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOOS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;windows&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOPATH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gopath&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOPRIVATE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOPROXY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//goproxy.io
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOROOT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Program&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Files&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Golang&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOSUMDB&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;golang&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;org&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOTMPDIR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOTOOLDIR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Program&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Files&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Golang&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pkg&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tool&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;windows_amd64&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GCCGO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gccgo&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;AR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ar&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CC&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gcc&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CXX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_ENABLED&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOMOD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_CFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;O2&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_CPPFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_CXXFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;O2&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_FFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;O2&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_LDFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;O2&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;PKG_CONFIG&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pkg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;config&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOGCCFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;m64&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mthreads&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmessage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fdebug&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;prefix&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;AppData&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Local&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Temp&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;build742472330&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tmp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;build&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gno&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gcc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;switches&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;环境变量&#34;&gt;环境变量&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注：GOROOT、GOPATH、GOOS、GOHOSTARCH  、GO111MODULE、GOPROXY 重要&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;git-工具安装&#34;&gt;Git 工具安装&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;go get&lt;/code&gt; 下载代码需要 依赖 &lt;code&gt;git&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;golang-开发工具&#34;&gt;Golang 开发工具&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;推荐开发工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Goland&lt;/li&gt;
+&lt;li&gt;vs code&lt;/li&gt;
+&lt;li&gt;vim&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;golang-helloworld-&#34;&gt;Golang &lt;code&gt;HelloWorld &lt;/code&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;在某个目录下面创建-maingo&#34;&gt;在某个目录下面创建 &lt;code&gt;main.go&lt;/code&gt;&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;编译运行&#34;&gt;编译运行&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gopath&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc360428&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;build&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;o&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;exe&lt;/span&gt;
+
+&lt;span class=&#34;nx&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gopath&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc360428&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;exe&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;Hello&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;World&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;
+
+&lt;span class=&#34;nx&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gopath&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc360428&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;基础语法&#34;&gt;基础语法&lt;/h3&gt;
+&lt;h4 id=&#34;分隔符&#34;&gt;分隔符&lt;/h4&gt;
+&lt;p&gt;一行代表一个结束，每一句不需要与其他语言一行&lt;code&gt;;&lt;/code&gt;来表示结束，Go语言在编译时i自动会完成&lt;/p&gt;
+&lt;h4 id=&#34;注释&#34;&gt;注释&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 单行注释
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/**
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;多行注释
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;标识符&#34;&gt;标识符&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;标识符用来命名变量、常量、实体&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;不能以数字开头&lt;/li&gt;
+&lt;li&gt;Go语言关键字不能使用&lt;/li&gt;
+&lt;li&gt;运算符不能使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;关键字&#34;&gt;关键字&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;25个关键保留字&lt;/li&gt;
+&lt;li&gt;36个预定义标识符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;常见&#34;&gt;常见&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;变量的声明必须使用空格隔开&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运算符之间加空格，一定时候加空格会跟好看，不要怕会占空间、&lt;code&gt;go&lt;/code&gt; 语言编译时候可以去掉空格和换行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;未使用的变量会编译不通过&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;写完代码之后常见使用&lt;code&gt;go fmt [*.go]&lt;/code&gt;格式化代码&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;pubulic&lt;/code&gt; And &lt;code&gt;private&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不管变量名或者是方法名，如果首字母大写就是(pubulic) ，首字母小写就是(private)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;基础学习路线&#34;&gt;基础学习路线&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;数据类型&lt;/li&gt;
+&lt;li&gt;变量&lt;/li&gt;
+&lt;li&gt;常量&lt;/li&gt;
+&lt;li&gt;运算符&lt;/li&gt;
+&lt;li&gt;条件语句&lt;/li&gt;
+&lt;li&gt;循环语句&lt;/li&gt;
+&lt;li&gt;函数&lt;/li&gt;
+&lt;li&gt;变量作用域&lt;/li&gt;
+&lt;li&gt;数组&lt;/li&gt;
+&lt;li&gt;指针&lt;/li&gt;
+&lt;li&gt;结构体&lt;/li&gt;
+&lt;li&gt;切片（Slice）&lt;/li&gt;
+&lt;li&gt;range使用&lt;/li&gt;
+&lt;li&gt;Map（集合）&lt;/li&gt;
+&lt;li&gt;递归函数&lt;/li&gt;
+&lt;li&gt;类型转换&lt;/li&gt;
+&lt;li&gt;接口&lt;/li&gt;
+&lt;li&gt;错误处理&lt;/li&gt;
+&lt;li&gt;并发&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;本教程代码所有都会公开到-giteecom&#34;&gt;本教程代码所有都会公开到 &lt;code&gt;gitee.com&lt;/code&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为什么不使用 &lt;code&gt;github.com &lt;/code&gt; 因为github 下载会受到网络影响，所以 &lt;code&gt;go&lt;/code&gt; 教程代码会使用&lt;code&gt;gitee &lt;/code&gt; 代码管理，在此也谢谢 &lt;code&gt;gitee &lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;gitee-仓库地址&#34;&gt;gitee 仓库地址&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/GolangCodeFile/blogcode&#34;&gt;gitee 地址&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>linux(CentOS7)基础知识</title>
+      <link>https://cc360428.github.io/post/system/redhad/1-3-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 23 Mar 2020 22:17:54 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/redhad/1-3-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+      
+        <description>&lt;h3 id=&#34;linux-基础知识&#34;&gt;linux 基础知识&lt;/h3&gt;
+&lt;p&gt;linux 历史发布&lt;/p&gt;
+&lt;h4 id=&#34;启动选择&#34;&gt;启动选择&lt;/h4&gt;
+&lt;h3 id=&#34;red-hat-安装&#34;&gt;Red Hat 安装&lt;/h3&gt;
+&lt;h4 id=&#34;安装之后远程登入&#34;&gt;安装之后远程登入&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;查看是否启动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-linx&#34; data-lang=&#34;linx&#34;&gt;[root@Cc ~]# ps -ef |grep sshd
+root      1377     1  0 Mar20 ?        00:00:00 /usr/sbin/sshd -D
+root     21020  1377  0 20:49 ?        00:00:00 sshd: root@pts/1
+root     21310 21022  0 21:02 pts/1    00:00:00 grep --color=auto sshd
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;查看sshd 端口多少&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;[root@Cc ~]# netstat -ntlp |grep sshd
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1377/sshd    
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;ssh 远程登入
+&lt;ul&gt;
+&lt;li&gt;服务终端命令登陆
+&lt;pre&gt;&lt;code class=&#34;language-linux&#34; data-lang=&#34;linux&#34;&gt;[root@Lgr ~]# ssh root@lichaocheng.top
+root@lichaocheng.top&#39;s password: 
+Last login: Mon Mar 23 21:04:51 2020 from 58.60.57.2
+      
+Welcome to Alibaba Cloud Elastic Compute Service !
+[root@Cc ~]# 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;可以使用工具
+&lt;ul&gt;
+&lt;li&gt;xshell&lt;/li&gt;
+&lt;li&gt;FinalShell&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;linux-图像界面&#34;&gt;linux 图像界面&lt;/h3&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Blog About</title>
+      <link>https://cc360428.github.io/about/</link>
+      <pubDate>Sun, 29 Mar 2020 21:07:37 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/about/</guid>
+      
+        <description>&lt;h2 id=&#34;作者&#34;&gt;作者&lt;/h2&gt;
+&lt;p&gt;Name:  &lt;code&gt;ChaoChengLi&lt;/code&gt;&lt;br&gt;
+Email:  &lt;code&gt;li_chao_cheng@163.com&lt;/code&gt;&lt;br&gt;
+&lt;a href=&#34;https://lichaocheng.top&#34;&gt;个人主页&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;博客内容&#34;&gt;博客内容&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Golang
+&lt;ul&gt;
+&lt;li&gt;base&lt;/li&gt;
+&lt;li&gt;web&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Java
+&lt;ul&gt;
+&lt;li&gt;base&lt;/li&gt;
+&lt;li&gt;web&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Python
+&lt;ul&gt;
+&lt;li&gt;base&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Client
+&lt;ul&gt;
+&lt;li&gt;html、css、js、jq&lt;/li&gt;
+&lt;li&gt;vue&lt;/li&gt;
+&lt;li&gt;BootStrap&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;System &lt;code&gt;感谢友人，云主机（yf，lgr）支持&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;linux&lt;/li&gt;
+&lt;li&gt;Windows&lt;/li&gt;
+&lt;li&gt;Mac&lt;/li&gt;
+&lt;li&gt;utils
+&lt;ul&gt;
+&lt;li&gt;Mysql&lt;/li&gt;
+&lt;li&gt;redis&lt;/li&gt;
+&lt;li&gt;docker&lt;/li&gt;
+&lt;li&gt;mongoDB&lt;/li&gt;
+&lt;li&gt;git&lt;/li&gt;
+&lt;li&gt;开发工具&lt;/li&gt;
+&lt;li&gt;消息队列&lt;/li&gt;
+&lt;li&gt;网络知识&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
       
     </item>
     
@@ -2668,242 +3081,6 @@ Email:  &lt;code&gt;li_chao_cheng@163.com&lt;/code&gt;&lt;br&gt;
     </item>
     
     <item>
-      <title>Day01（Golang 入门介绍）</title>
-      <link>https://cc360428.github.io/post/golang/base/base/</link>
-      <pubDate>Mon, 30 Mar 2020 23:31:59 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/base/base/</guid>
-      
-        <description>&lt;h2 id=&#34;golang基础&#34;&gt;Golang基础&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://gitee.com/GolangCodeFile/blogcode/tree/master/helloWorld&#34;&gt;本章源码&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;初步认识golang&#34;&gt;初步认识Golang&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Go 跨平台（linux、windows、mac），只要编写完代码之后&lt;code&gt;交叉&lt;/code&gt;编译即可&lt;/li&gt;
-&lt;li&gt;Go 语言单一、简洁、天生高并发、CGO&lt;/li&gt;
-&lt;li&gt;Go  应用广（web应用、区块链、运维、云计算、大数据）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;go环境&#34;&gt;Go环境&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;不管学那一语言都有自己运行环境（&lt;code&gt;html5&lt;/code&gt;除外），对于Go环境&lt;code&gt;golang&lt;/code&gt; 官网有windows、linux、mac ，源码安装以及对应安装包，自己安装即可&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;安装打开计算机终端检查是否安装成功&#34;&gt;安装打开计算机终端检查是否安装成功&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;version&lt;/span&gt;
-&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;version&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;go1&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;.13.4&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;windows&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;amd64&lt;/span&gt;
-
-&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GO111MODULE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOARCH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;amd64&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOBIN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOCACHE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;AppData&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Local&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;build&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOENV&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;AppData&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Roaming&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOEXE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;exe&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOHOSTARCH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;amd64&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOHOSTOS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;windows&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GONOPROXY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GONOSUMDB&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOOS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;windows&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOPATH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gopath&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOPRIVATE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOPROXY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//goproxy.io
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOROOT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Program&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Files&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Golang&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOSUMDB&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;golang&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;org&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOTMPDIR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOTOOLDIR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Program&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Files&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Golang&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pkg&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tool&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;windows_amd64&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GCCGO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gccgo&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;AR&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ar&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CC&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gcc&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CXX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_ENABLED&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOMOD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_CFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;O2&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_CPPFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_CXXFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;O2&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_FFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;O2&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;CGO_LDFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;O2&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;PKG_CONFIG&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pkg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;config&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;GOGCCFLAGS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;m64&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mthreads&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmessage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fdebug&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;prefix&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;AppData&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Local&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Temp&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;g&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;build742472330&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;tmp&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;build&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gno&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;record&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gcc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;switches&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Users&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;环境变量&#34;&gt;环境变量&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;注：GOROOT、GOPATH、GOOS、GOHOSTARCH  、GO111MODULE、GOPROXY 重要&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;git-工具安装&#34;&gt;Git 工具安装&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;go get&lt;/code&gt; 下载代码需要 依赖 &lt;code&gt;git&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;golang-开发工具&#34;&gt;Golang 开发工具&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;推荐开发工具&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Goland&lt;/li&gt;
-&lt;li&gt;vs code&lt;/li&gt;
-&lt;li&gt;vim&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;golang-helloworld-&#34;&gt;Golang &lt;code&gt;HelloWorld &lt;/code&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;在某个目录下面创建-maingo&#34;&gt;在某个目录下面创建 &lt;code&gt;main.go&lt;/code&gt;&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
-
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;编译运行&#34;&gt;编译运行&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;nx&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gopath&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc360428&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;go&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;build&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;o&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;exe&lt;/span&gt;
-
-&lt;span class=&#34;nx&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gopath&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc360428&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;exe&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;Hello&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;World&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;
-
-&lt;span class=&#34;nx&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;gopath&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Cc360428&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;helloWorld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;基础语法&#34;&gt;基础语法&lt;/h3&gt;
-&lt;h4 id=&#34;分隔符&#34;&gt;分隔符&lt;/h4&gt;
-&lt;p&gt;一行代表一个结束，每一句不需要与其他语言一行&lt;code&gt;;&lt;/code&gt;来表示结束，Go语言在编译时i自动会完成&lt;/p&gt;
-&lt;h4 id=&#34;注释&#34;&gt;注释&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 单行注释
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/**
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;多行注释
-&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;标识符&#34;&gt;标识符&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;标识符用来命名变量、常量、实体&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;不能以数字开头&lt;/li&gt;
-&lt;li&gt;Go语言关键字不能使用&lt;/li&gt;
-&lt;li&gt;运算符不能使用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;关键字&#34;&gt;关键字&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;25个关键保留字&lt;/li&gt;
-&lt;li&gt;36个预定义标识符&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;常见&#34;&gt;常见&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;变量的声明必须使用空格隔开&lt;/li&gt;
-&lt;li&gt;运算符之间加空格，一定时候加空格会跟好看，不要怕会占空间、&lt;code&gt;go&lt;/code&gt; 语言编译时候可以去掉空格和换行&lt;/li&gt;
-&lt;li&gt;未使用的变量会编译不通过&lt;/li&gt;
-&lt;li&gt;写完代码之后常见使用&lt;code&gt;go fmt [*.go]&lt;/code&gt;格式化代码&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pubulic&lt;/code&gt; And &lt;code&gt;private&lt;/code&gt;
-&lt;blockquote&gt;
-&lt;p&gt;不管变量名或者是方法名，如果首字母大写就是(pubulic) ，首字母小写就是(private)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;基础学习路线&#34;&gt;基础学习路线&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;数据类型&lt;/li&gt;
-&lt;li&gt;变量&lt;/li&gt;
-&lt;li&gt;常量&lt;/li&gt;
-&lt;li&gt;运算符&lt;/li&gt;
-&lt;li&gt;条件语句&lt;/li&gt;
-&lt;li&gt;循环语句&lt;/li&gt;
-&lt;li&gt;函数&lt;/li&gt;
-&lt;li&gt;变量作用域&lt;/li&gt;
-&lt;li&gt;数组&lt;/li&gt;
-&lt;li&gt;指针&lt;/li&gt;
-&lt;li&gt;结构体&lt;/li&gt;
-&lt;li&gt;切片（Slice）&lt;/li&gt;
-&lt;li&gt;range使用&lt;/li&gt;
-&lt;li&gt;Map（集合）&lt;/li&gt;
-&lt;li&gt;递归函数&lt;/li&gt;
-&lt;li&gt;类型转换&lt;/li&gt;
-&lt;li&gt;接口&lt;/li&gt;
-&lt;li&gt;错误处理&lt;/li&gt;
-&lt;li&gt;并发&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;本教程代码所有都会公开到-giteecom&#34;&gt;本教程代码所有都会公开到 &lt;code&gt;gitee.com&lt;/code&gt;&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;为什么不使用 &lt;code&gt;github.com &lt;/code&gt; 因为github 下载会受到网络影响，所以 &lt;code&gt;go&lt;/code&gt; 教程代码会使用&lt;code&gt;gitee &lt;/code&gt; 代码管理，在此也谢谢 &lt;code&gt;gitee &lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;gitee-仓库地址&#34;&gt;gitee 仓库地址&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://gitee.com/GolangCodeFile/blogcode&#34;&gt;gitee 地址&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
       <title>linux(CentOS7) 网络管理</title>
       <link>https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sun, 29 Mar 2020 00:49:12 +0800</pubDate>
@@ -4475,360 +4652,6 @@ nameserver 100.100.2.138
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#预留&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>linux(CentOS7) 系统启动控制、进程管理</title>
-      <link>https://cc360428.github.io/post/system/redhad/9%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%8E%A7%E5%88%B6%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</link>
-      <pubDate>Sun, 29 Mar 2020 00:48:12 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/system/redhad/9%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%8E%A7%E5%88%B6%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/</guid>
-      
-        <description>&lt;h2 id=&#34;系统启动控制进程管理&#34;&gt;系统启动控制、进程管理&lt;/h2&gt;
-&lt;h3 id=&#34;系统启动控制&#34;&gt;系统启动控制&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;0&amp;mdash;-停机&lt;/li&gt;
-&lt;li&gt;1&amp;mdash;单用户模式&lt;/li&gt;
-&lt;li&gt;2&amp;mdash;多用户模式（没有网络文件系统）&lt;/li&gt;
-&lt;li&gt;3&amp;mdash;完全多用户模式&lt;/li&gt;
-&lt;li&gt;4&amp;mdash;忽略&lt;/li&gt;
-&lt;li&gt;5&amp;mdash;X11 一般图形界面&lt;/li&gt;
-&lt;li&gt;6&amp;mdash; 重新启动（不推荐这操作，请谨慎操作）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果你远程黑进了系统 可以试试这个 &lt;strong&gt;6&lt;/strong&gt; 操作 应该会一直重启&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&#34;设置操作&#34;&gt;设置操作&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;runleve&lt;/code&gt; 查看当前系统启动状态，N代表代表上次运行级别&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;init&lt;/code&gt; 设置启动状态&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# runlevel&lt;/span&gt;
-N 3
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# init 5&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;linux-初始化脚本-etcinittab--的解析&#34;&gt;Linux 初始化脚本 &lt;code&gt;/etc/inittab&lt;/code&gt;  的解析&lt;/h4&gt;
-&lt;h4 id=&#34;linux-启动服务控制&#34;&gt;Linux 启动服务控制&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;start&lt;/code&gt; 开启&lt;/li&gt;
-&lt;li&gt;&lt;code&gt; stop&lt;/code&gt; 停止&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# /etc/init.d/network start&lt;/span&gt;
-Starting network &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;via systemctl&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;:                          &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;  确定  &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# /etc/init.d/network stop&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h5 id=&#34;使用chkconfig--查看各个服务运行级别情况&#34;&gt;使用&lt;code&gt;chkconfig&lt;/code&gt;  查看各个服务运行级别情况&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;查看&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# chkconfig --list&lt;/span&gt;
-
-注：该输出结果只显示 SysV 服务，并不包含
-原生 systemd 服务。SysV 配置数据
-可能被原生 systemd 配置覆盖。 
-
-      要列出 systemd 服务，请执行 &lt;span class=&#34;s1&#34;&gt;&amp;#39;systemctl list-unit-files&amp;#39;&lt;/span&gt;。
-      查看在具体 target 启用的服务请执行
-      &lt;span class=&#34;s1&#34;&gt;&amp;#39;systemctl list-dependencies [target]&amp;#39;&lt;/span&gt;。
-
-aegis           0:关    1:关    2:开    3:开    4:开    5:开    6:关
-cloudmonitor    0:关    1:关    2:开    3:开    4:开    5:开    6:关
-netconsole      0:关    1:关    2:关    3:关    4:关    5:关    6:关
-network         0:关    1:关    2:开    3:开    4:开    5:开    6:关
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;# 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;设置&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# chkconfig --list network&lt;/span&gt; 
-network        	0:off	1:off	2:on	3:on	4:on	5:on	6:off
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# chkconfig --level 6 network on&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# chkconfig --list network&lt;/span&gt; 
-network        	0:off	1:off	2:on	3:on	4:on	5:on	6:on
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;# 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;添加&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;chkconfig ---add [服务名]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;service [服务名] start&lt;/code&gt;   开始&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;service [服务名] stop&lt;/code&gt;     停止&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;service [服务名] restart&lt;/code&gt; 重启&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;进程管理&#34;&gt;进程管理&lt;/h3&gt;
-&lt;h4 id=&#34;概述&#34;&gt;概述&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;分类&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;交互进程&lt;/li&gt;
-&lt;li&gt;批处理进程&lt;/li&gt;
-&lt;li&gt;守护进程&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;父进程和子进程&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;两者管理关系和被管理关系，父进程终止时子进程也随之终止。但是子进程终止父进程不会因子进程终止而终止。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;进程管理工具常用命令&#34;&gt;进程管理工具、常用命令&lt;/h4&gt;
-&lt;h5 id=&#34;进程监视ps&#34;&gt;进程监视&lt;code&gt;ps&lt;/code&gt;&lt;/h5&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;    ps -u		按用户名启动时间顺序监视
-    ps -a		显示所用用户进程
-    ps -x		显示无控制终端进程
-    ps -l		长格式输出
-    ps -j		任务格式显示
-    ps -r		显示运行中进程
-    ps -f		列出全部进程相关信息
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h5 id=&#34;系统状态监视top&#34;&gt;系统状态监视&lt;code&gt;top&lt;/code&gt;&lt;/h5&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;    top -n 1			显示一次退出
-    top -n &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -p  1		显示某一进程状态且显示一次退出
-    top -u testUser		显示指定用户进程信息
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h5 id=&#34;终止进程&#34;&gt;终止进程&lt;/h5&gt;
-&lt;h6 id=&#34;下载web程序&#34;&gt;下载&lt;code&gt;web&lt;/code&gt;程序&lt;/h6&gt;
-&lt;ul&gt;
-&lt;li&gt;windows体验&lt;/li&gt;
-&lt;li&gt;Linux 运行：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h6 id=&#34;示例&#34;&gt;示例&lt;/h6&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;kill &lt;/code&gt;[进程ID]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;进程号终止进程&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# ps -ef  |grep HelloWorld&lt;/span&gt;
-root     &lt;span class=&#34;m&#34;&gt;18233&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;10980&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 21:38 pts/1    00:00:00 ./HelloWorld
-root     &lt;span class=&#34;m&#34;&gt;21817&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;17944&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 21:40 pts/4    00:00:00 grep --color&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;auto HelloWorld
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# kill -9 18233&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# ps -ef  |grep HelloWorld&lt;/span&gt;
-root     &lt;span class=&#34;m&#34;&gt;23420&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;17944&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 21:41 pts/4    00:00:00 grep --color&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;auto HelloWorld
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;# 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;killall &lt;/code&gt;[进程ID]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;终止一批进程&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# killall -9 HelloWorld&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;系统管理员常见操作&#34;&gt;系统管理员常见操作&lt;/h3&gt;
-&lt;h4 id=&#34;更改sshd-默认端口&#34;&gt;更改&lt;code&gt;sshd&lt;/code&gt; 默认端口&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc src&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# vim /etc/ssh/sshd_config&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;# semanage port -a -t ssh_port_t -p tcp #PORTNUMBER&lt;/span&gt;
-#
-Port 22
-Port 23456
-&lt;span class=&#34;c1&#34;&gt;#ListenAddress 0.0.0.0&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;#ListenAddress ::&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;# 建议保留 22&lt;/span&gt; 
-&lt;span class=&#34;c1&#34;&gt;# 防火墙需要放行 设置端口&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# semanage port -l|grep ssh&lt;/span&gt;
-ssh_port_t                     tcp      22
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# semanage port -a -t ssh_port_t -p tcp 23456&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# semanage port -l|grep ssh&lt;/span&gt;
-ssh_port_t                     tcp      23456, 22
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# netstat -ntlp |grep sshd&lt;/span&gt;
-tcp        &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;      &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 0.0.0.0:23456           0.0.0.0:*    LISTEN      18631/sshd          
-tcp        &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;      &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 0.0.0.0:22              0.0.0.0:*    LISTEN      18631/sshd          
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;# 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;通过另个服务器远程修改过端口的服务器&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Lgr init.d&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# ssh -p 23456 root@lichaocheng.top&lt;/span&gt;
-root@lichaocheng.top&lt;span class=&#34;err&#34;&gt;&amp;#39;&lt;/span&gt;s password: 
-Last login: Sat Mar &lt;span class=&#34;m&#34;&gt;28&lt;/span&gt; 21:38:24 &lt;span class=&#34;m&#34;&gt;2020&lt;/span&gt; from 113.118.200.16
-Welcome to Alibaba Cloud Elastic Compute Service !
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;# 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;查看某个用户所有进程&#34;&gt;查看某个用户所有进程&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# ps -ef |grep userTest&lt;/span&gt;
-root     &lt;span class=&#34;m&#34;&gt;32651&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;10980&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; 23:07 pts/1    00:00:00 grep --color&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;auto userTest
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc RedHad&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;# 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;终止某个用户所有进程&#34;&gt;终止某个用户所有进程&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;testUser❌1004:10002::/home/testUser:/bin/bash
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# killall -u testUser&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;# 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;根据端口查对应的进程&#34;&gt;根据端口查对应的进程&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# yum install -y lsof&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;# 在联网的情况下可以直接使用以上命令&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;# 如果没有联网使用 rpm 或者源码安装&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# lsof -i:8180&lt;/span&gt;
-COMMAND  PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-server  &lt;span class=&#34;m&#34;&gt;2155&lt;/span&gt; root    6u  IPv6  &lt;span class=&#34;m&#34;&gt;40398&lt;/span&gt;      0t0  TCP *:8180 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;LISTEN&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@Cc ~&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;# 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;通过以上知识可以做进程监控shell&#34;&gt;通过以上知识可以做进程监控（shell）&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;可能会用到 &lt;code&gt;rsync&lt;/code&gt;  命令 安装即可&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
-&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## 进程监控&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
