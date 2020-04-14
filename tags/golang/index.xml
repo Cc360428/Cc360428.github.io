@@ -1,16 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Golang on Li Chao Cheng Blog</title>
+    <title>golang on Li Chao Cheng Blog</title>
     <link>https://cc360428.github.io/tags/golang/</link>
-    <description>Recent content in Golang on Li Chao Cheng Blog</description>
+    <description>Recent content in golang on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Wed, 11 Mar 2020 16:19:11 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 22:58:36 +0800</lastBuildDate>
     
 	<atom:link href="https://cc360428.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Day06（作用域与数组）</title>
+      <link>https://cc360428.github.io/post/golang/base/variableandarray/</link>
+      <pubDate>Tue, 07 Apr 2020 22:58:36 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/variableandarray/</guid>
+      <description>作用域与数组 源码 变量作用域 局部变量 函数内定义的变量 1 2 3 4 5 6 7 8 9 10 package main import ( &amp;#34;fmt&amp;#34; ) func main() { var a, b, c = 1, 2, 3 fmt.Println(a, b, c) } 全局变量 函数外定义的变量 1 2</description>
+    </item>
+    
+    <item>
+      <title>Day05（函数）</title>
+      <link>https://cc360428.github.io/post/golang/base/func/</link>
+      <pubDate>Mon, 06 Apr 2020 22:05:18 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/func/</guid>
+      <description>函数 源码 go 至少一个函数 主函数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 package main import ( &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; ) func main() { _, _, _, err := FuncName(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;, false) if err != nil { logs.Error(err.Error()) } } // FuncName func FuncName(args1, args2 string, args3 bool) (return1, return2</description>
+    </item>
+    
+    <item>
+      <title>Day04（循环语句）</title>
+      <link>https://cc360428.github.io/post/golang/base/loopstatementfunc/</link>
+      <pubDate>Fri, 03 Apr 2020 00:10:00 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/loopstatementfunc/</guid>
+      <description>循环语句 源代码 for 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 package main import &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; func main() { array := make([]int, 5) logs.Info(array) for i := 0; i &amp;lt; len(array); i++ { array[i] = i } logs.Info(array) b := 3 for b &amp;gt;= 1 { b-- logs.Debug(b) } a := 5</description>
+    </item>
+    
+    <item>
+      <title>Day03（运算符与条件语句）</title>
+      <link>https://cc360428.github.io/post/golang/base/operatorcondition/</link>
+      <pubDate>Thu, 02 Apr 2020 13:13:45 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/operatorcondition/</guid>
+      <description>运算符与条件语句 本章源码 运算符 算数运算符 假定 A 值为 10，B 值为 20 运算符 描述 实例 + 相加 A + B 输出结果 30 - 相减 A - B 输出结果 -10 * 相乘 A * B 输出结</description>
+    </item>
+    
+    <item>
+      <title>Day02（入门基础）</title>
+      <link>https://cc360428.github.io/post/golang/base/datatype/</link>
+      <pubDate>Tue, 31 Mar 2020 21:18:30 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/datatype/</guid>
+      <description>数据类型、变量、常量 本章源码 数据类型 package builtin 可以看数据包builtin 布尔类型 默认值为：false 数字类型 整形 默认值为：0 浮点型 默认值为：0 字符</description>
+    </item>
+    
+    <item>
+      <title>Golang 入门介绍</title>
+      <link>https://cc360428.github.io/post/golang/base/base/</link>
+      <pubDate>Mon, 30 Mar 2020 23:31:59 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/base/</guid>
+      <description>Golang基础 本章源码 初步认识Golang Go 跨平台（linux、windows、mac），只要编写完代码之后交叉编译即可 Go 语言单一、简洁、</description>
+    </item>
     
     <item>
       <title>golang 包管理</title>
@@ -46,42 +100,6 @@
       
       <guid>https://cc360428.github.io/post/golang/golang-1.12/</guid>
       <description>go mod 1.12 学习 go modules(check version) 检查 golang 版本 如果没有生成 go.sum 或者报错请输入 export GOPROXY=https://goproxy.io C:\Users\admin&amp;gt;go version go version go1.12.9 windows/amd64 把 golang 升级到 1.11（现在1.12 已经发布了，建议使用1.12） 设置 GO111MODULE GO111MODULE</description>
-    </item>
-    
-    <item>
-      <title>Golang Gin</title>
-      <link>https://cc360428.github.io/post/golang/gin/gin-bast/</link>
-      <pubDate>Sun, 07 Jul 2019 13:21:03 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/gin/gin-bast/</guid>
-      <description>构建 安装Gin环境 go get -u github.com/gin-gonic/gin 安装Gin 工具 go get github.com/kardianos/govendor gin_demo 创建文件 mkdir gin_demo 初始化构建gin govendor init govendor fetch github.com/gin-gonic/gin@v1.3 Hello World Gin package main import ( &amp;quot;net/http&amp;quot; &amp;quot;github.com/gin-gonic/gin&amp;quot; ) func setupRouter() *gin.Engine { r := gin.Default() r.GET(&amp;quot;/&amp;quot;, func(c *gin.Context) { c.String(http.StatusOK, &amp;quot;Hello World Gin&amp;quot;) }) return</description>
-    </item>
-    
-    <item>
-      <title>Beego Base</title>
-      <link>https://cc360428.github.io/post/golang/beego/base-beego/</link>
-      <pubDate>Mon, 06 May 2019 15:21:24 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/beego/base-beego/</guid>
-      <description>下载安装 安装环境 go get github.com/astaxie/beego 安装bee 工具 go get github.com/beego/bee</description>
-    </item>
-    
-    <item>
-      <title>Golang Base</title>
-      <link>https://cc360428.github.io/post/golang/base/</link>
-      <pubDate>Thu, 07 Mar 2019 09:21:03 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/base/</guid>
-      <description>GoLang GoLang https://go-zh.org/ 基础 包、变量和函数、基本类型 包 package 每个程序都是由包组成 导入 import 圆括号可以组合导入 导出 在Go语言中首字母大写的名称是被导出的 导入了一个包后，</description>
-    </item>
-    
-    <item>
-      <title>环境搭建</title>
-      <link>https://cc360428.github.io/post/golang/system/</link>
-      <pubDate>Tue, 26 Feb 2019 08:20:53 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/system/</guid>
-      <description>linux 下载 https://studygolang.com/dl go1.13.5.linux-amd64.tar.gz 压缩 tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz git 安装 [root@test golang]# git version git version 1.8.3.1 go get beego go get github.com/astaxie/beego go get github.com/beego/bee Gin go get -u github.com/gin-gonic/gin Windows 下载源码 配置gopath即可 在环境变量里面配置 GOPATH 即可</description>
     </item>
     
   </channel>

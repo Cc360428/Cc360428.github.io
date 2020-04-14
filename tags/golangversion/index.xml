@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GolangVersion on Li Chao Cheng Blog</title>
+    <link>https://cc360428.github.io/tags/golangversion/</link>
+    <description>Recent content in GolangVersion on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Lcc</copyright>
+    <lastBuildDate>Fri, 06 Dec 2019 17:11:22 +0800</lastBuildDate>
+    
+	<atom:link href="https://cc360428.github.io/tags/golangversion/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Golang 版本更新 摘要</title>
+      <link>https://cc360428.github.io/post/golang/golang-1.12/</link>
+      <pubDate>Fri, 06 Dec 2019 17:11:22 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/golang-1.12/</guid>
+      <description>go mod 1.12 学习 go modules(check version) 检查 golang 版本 如果没有生成 go.sum 或者报错请输入 export GOPROXY=https://goproxy.io C:\Users\admin&amp;gt;go version go version go1.12.9 windows/amd64 把 golang 升级到 1.11（现在1.12 已经发布了，建议使用1.12） 设置 GO111MODULE GO111MODULE</description>
+    </item>
+    
+  </channel>
+</rss>

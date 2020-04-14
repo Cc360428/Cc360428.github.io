@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GoBase on Li Chao Cheng Blog</title>
+    <link>https://cc360428.github.io/tags/gobase/</link>
+    <description>Recent content in GoBase on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Lcc</copyright>
+    <lastBuildDate>Tue, 07 Apr 2020 22:58:36 +0800</lastBuildDate>
+    
+	<atom:link href="https://cc360428.github.io/tags/gobase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Day06（作用域与数组）</title>
+      <link>https://cc360428.github.io/post/golang/base/variableandarray/</link>
+      <pubDate>Tue, 07 Apr 2020 22:58:36 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/variableandarray/</guid>
+      <description>作用域与数组 源码 变量作用域 局部变量 函数内定义的变量 1 2 3 4 5 6 7 8 9 10 package main import ( &amp;#34;fmt&amp;#34; ) func main() { var a, b, c = 1, 2, 3 fmt.Println(a, b, c) } 全局变量 函数外定义的变量 1 2</description>
+    </item>
+    
+    <item>
+      <title>Day05（函数）</title>
+      <link>https://cc360428.github.io/post/golang/base/func/</link>
+      <pubDate>Mon, 06 Apr 2020 22:05:18 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/func/</guid>
+      <description>函数 源码 go 至少一个函数 主函数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 package main import ( &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; ) func main() { _, _, _, err := FuncName(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;, false) if err != nil { logs.Error(err.Error()) } } // FuncName func FuncName(args1, args2 string, args3 bool) (return1, return2</description>
+    </item>
+    
+    <item>
+      <title>Day04（循环语句）</title>
+      <link>https://cc360428.github.io/post/golang/base/loopstatementfunc/</link>
+      <pubDate>Fri, 03 Apr 2020 00:10:00 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/loopstatementfunc/</guid>
+      <description>循环语句 源代码 for 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 package main import &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; func main() { array := make([]int, 5) logs.Info(array) for i := 0; i &amp;lt; len(array); i++ { array[i] = i } logs.Info(array) b := 3 for b &amp;gt;= 1 { b-- logs.Debug(b) } a := 5</description>
+    </item>
+    
+    <item>
+      <title>Day03（运算符与条件语句）</title>
+      <link>https://cc360428.github.io/post/golang/base/operatorcondition/</link>
+      <pubDate>Thu, 02 Apr 2020 13:13:45 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/operatorcondition/</guid>
+      <description>运算符与条件语句 本章源码 运算符 算数运算符 假定 A 值为 10，B 值为 20 运算符 描述 实例 + 相加 A + B 输出结果 30 - 相减 A - B 输出结果 -10 * 相乘 A * B 输出结</description>
+    </item>
+    
+    <item>
+      <title>Day02（入门基础）</title>
+      <link>https://cc360428.github.io/post/golang/base/datatype/</link>
+      <pubDate>Tue, 31 Mar 2020 21:18:30 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/datatype/</guid>
+      <description>数据类型、变量、常量 本章源码 数据类型 package builtin 可以看数据包builtin 布尔类型 默认值为：false 数字类型 整形 默认值为：0 浮点型 默认值为：0 字符</description>
+    </item>
+    
+    <item>
+      <title>Golang 入门介绍</title>
+      <link>https://cc360428.github.io/post/golang/base/base/</link>
+      <pubDate>Mon, 30 Mar 2020 23:31:59 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/base/</guid>
+      <description>Golang基础 本章源码 初步认识Golang Go 跨平台（linux、windows、mac），只要编写完代码之后交叉编译即可 Go 语言单一、简洁、</description>
+    </item>
+    
+  </channel>
+</rss>
