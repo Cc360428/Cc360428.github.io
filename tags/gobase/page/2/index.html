@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Go 类型转换 - Li Chao Cheng Blog</title>
+  <title>GoBase · Li Chao Cheng Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,8 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="Cc" /><meta name="description" content="变量作用域,数组" />
-
+<meta name="author" content="Cc" />
+  <meta name="description" content="Hugo theme jane example site." />
   <meta name="keywords" content="Hugo, theme, jane" />
 
 
@@ -34,8 +34,8 @@
 <meta name="generator" content="Hugo 0.65.2" />
 
 
-<link rel="canonical" href="https://cc360428.github.io/post/golang/utils/variableandarray/" />
-
+<link rel="canonical" href="https://cc360428.github.io/tags/gobase/" />
+<link href="/tags/gobase/index.xml" rel="alternate" type="application/rss+xml" title="Li Chao Cheng Blog" />
 
 
 
@@ -58,23 +58,15 @@
 
 
 
-<meta property="og:title" content="Go 类型转换" />
-<meta property="og:description" content="变量作用域,数组" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/golang/utils/variableandarray/" />
-<meta property="article:published_time" content="2020-04-16T22:58:36+08:00" />
-<meta property="article:modified_time" content="2020-04-16T22:58:36+08:00" />
-<meta itemprop="name" content="Go 类型转换">
-<meta itemprop="description" content="变量作用域,数组">
-<meta itemprop="datePublished" content="2020-04-16T22:58:36&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-16T22:58:36&#43;08:00" />
-<meta itemprop="wordCount" content="312">
-
-
-
-<meta itemprop="keywords" content="golang,goUtils," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Go 类型转换"/>
-<meta name="twitter:description" content="变量作用域,数组"/>
+<meta property="og:title" content="GoBase" />
+<meta property="og:description" content="Hugo theme jane example site." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cc360428.github.io/tags/gobase/" />
+<meta property="og:updated_time" content="2019-04-27T09:19:29+08:00" />
+<meta itemprop="name" content="GoBase">
+<meta itemprop="description" content="Hugo theme jane example site."><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GoBase"/>
+<meta name="twitter:description" content="Hugo theme jane example site."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -333,357 +325,65 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          <article class="post bg-white">
-    
-    <header class="post-header">
-      <h1 class="post-title">Go 类型转换</h1>
-      
-      <div class="post-meta">
-        <time datetime="2020-04-16" class="post-time">
-          2020-04-16
-        </time>
-        <div class="post-category">
-            <a href="https://cc360428.github.io/categories/utils/"> utils </a>
-            
-          </div>
-        <span class="more-meta"> 约 312 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
-
-        
-        
-
-        
-        
-      </div>
-    </header>
-
-    
-    
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
-  <div class="post-toc-content">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#go类型转换">go类型转换</a>
-      <ul>
-        <li><a href="#string-int-int64">string int int64</a></li>
-        <li><a href="#整形互转">整形互转</a></li>
-        <li><a href="#bool-to-string">bool To string</a></li>
-        <li><a href="#fmtsprintf-to-string">fmt.Sprintf To string</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
-
-    
-    <div class="post-content">
-      <h2 id="go类型转换">go类型转换</h2>
-<h3 id="string-int-int64"><code>string int int64</code></h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;strconv&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">str</span> <span class="kt">string</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;str type:%T\n&#34;</span><span class="p">,</span> <span class="nx">str</span><span class="p">)</span>
-	<span class="nx">str</span> <span class="p">=</span> <span class="s">&#34;123&#34;</span>
-	<span class="kd">var</span> <span class="nx">strInt</span> <span class="kt">int</span>
-	<span class="c1">// string &gt; int
-</span><span class="c1"></span>	<span class="nx">strInt</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Atoi</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">strInt</span><span class="p">)</span>
-	<span class="kd">var</span> <span class="nx">strInt64</span> <span class="kt">int64</span>
-	<span class="c1">// string &gt; int64
-</span><span class="c1"></span>	<span class="nx">strInt64</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">ParseInt</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strInt64</span><span class="p">)</span>
-	<span class="kd">var</span> <span class="nx">intStr</span> <span class="kt">int</span>
-	<span class="nx">intStr</span> <span class="p">=</span> <span class="mi">100</span>
-	<span class="c1">// int &gt; string
-</span><span class="c1"></span>	<span class="nx">intToString</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nx">intStr</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">intToString</span><span class="p">)</span>
-	<span class="c1">// int64 &gt; string
-</span><span class="c1"></span>	<span class="nx">int64ToStr</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">FormatInt</span><span class="p">(</span><span class="nx">strInt64</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">int64ToStr</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="整形互转">整形互转</h3>
-<blockquote>
-<p>整形之间互转<code> int64(int)</code> 需要转什么类型就括号外面什么类型</p>
-</blockquote>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">int1</span> <span class="kt">int</span>
-	<span class="nx">int1</span> <span class="p">=</span> <span class="mi">21</span>
-	<span class="kd">var</span> <span class="nx">int2</span> <span class="kt">int64</span>
-	<span class="c1">// int &gt; int64
-</span><span class="c1"></span>	<span class="nx">int2</span> <span class="p">=</span> <span class="nb">int64</span><span class="p">(</span><span class="nx">int1</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">int2</span><span class="p">)</span>
-	<span class="kd">var</span> <span class="nx">inta</span> <span class="kt">int64</span>
-	<span class="nx">inta</span> <span class="p">=</span> <span class="mi">10</span>
-	<span class="kd">var</span> <span class="nx">intb</span> <span class="kt">int</span>
-	<span class="c1">// int64 &gt; int64
-</span><span class="c1"></span>	<span class="nx">intb</span> <span class="p">=</span> <span class="nb">int</span><span class="p">(</span><span class="nx">inta</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">intb</span><span class="p">)</span>
-	<span class="nx">u</span> <span class="o">:=</span> <span class="nb">uint32</span><span class="p">(</span><span class="nx">int1</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="bool-to-string">bool To string</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;strconv&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">b</span> <span class="kt">bool</span>
-	<span class="nx">formatBool</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">FormatBool</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">formatBool</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="fmtsprintf-to-string"><code>fmt.Sprintf</code> To <code>string</code></h3>
-<blockquote>
-<p><a href="https://studygolang.com/static/pkgdoc/pkg/fmt.htm">参考链接</a></p>
-</blockquote>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">byteType</span> <span class="kt">byte</span>
-	<span class="kd">var</span> <span class="nx">str</span> <span class="kt">string</span>
-	<span class="nx">str</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;整型 %d 浮点 %f byte %c %s&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="nx">byteType</span><span class="p">,</span> <span class="s">&#34;字符串拼接&#34;</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div>
-    </div>
-
-    
-    
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">Cc</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2020-04-16
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://blog.lichaocheng.top" target="_blank">LiChaoChengBlog</a></span>
-  </p>
-</div>
-
-
-    
-    
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">赞赏支持</label>
-  <div class="qr-code">
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/wechat.png">
-        <span>微信打赏</span>
-      </label>
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/alipay.png">
-        <span>支付宝打赏</span>
-      </label>
-  </div>
-</div>
-
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="https://cc360428.github.io/tags/golang/">golang</a>
-          <a href="https://cc360428.github.io/tags/goutils/">goUtils</a>
           
-        </div>
 
+<section id="archive" class="archive">
+  
+
+  
+    <div class="archive-post">
+      <time datetime="2019-03-30" class="archive-post-time">
+        2019-03-30
+      </time>
+      <span class="archive-post-title">
+        <a href="/post/golang/base/base/" class="archive-post-link">
+          Golang 入门介绍
+        </a>
+      </span>
+    </div>
+  
+</section>
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  <nav class="pagination">
+    <ul>
       
-      <nav class="post-nav">
-        
-          <a class="prev" href="/post/system/mysql/mysqlupdatepassword/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">MySQL 忘记密码</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        
-          <a class="next" href="/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/">
-            <span class="next-text nav-default">linux(CentOS7) 网络管理</span>
-            <span class="prev-text nav-mobile">下一篇</span>
-            
-            <i class="iconfont">
-              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
-</svg>
-
-            </i>
-          </a>
-      </nav>
-    </footer>
-  </article>
+      <li >
+        <a href="/tags/gobase/">1</a>
+      </li>
+      
+      <li  class="active" >
+        <a href="/tags/gobase/page/2/">2</a>
+      </li>
+      
+    </ul>
+  </nav>
 
   
   
 
-  
-  
 
-  
 
-  
-  
 
-  
-
-  
-
-  
-
-    
-
-  <div id="comments"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script>
-    if(window.location.hash){
-        var checkExist = setInterval(function() {
-            if ($(window.location.hash).length) {
-              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 700);
-              clearInterval(checkExist);
-            }
-        }, 10);
-    }
-  </script>
-  <script type="text/javascript">
-    new Valine({
-        el: '#comments' ,
-        appId: 'JcD72zxOvMLBD95kc0VW62eR-gzGzoHsz',
-        appKey: 'CnlQhdPzdvfO8QlI3CJLSGYV',
-        notify:  true , 
-        verify:  true , 
-        avatar:'test', 
-        placeholder: '说点什么吧...',
-        visitor:  false 
-    });
-  </script>
 
         </div>
       </div>
@@ -825,13 +525,6 @@
 
 
 
-  <script type="text/javascript">
-    window.MathJax = {
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 

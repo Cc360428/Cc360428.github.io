@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Go 类型转换 - Li Chao Cheng Blog</title>
+  <title>Day11（并发编程） - Li Chao Cheng Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,7 +22,8 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="Cc" /><meta name="description" content="变量作用域,数组" />
+<meta name="author" content="Cc" />
+  <meta name="description" content="并发编程 goroutine 时间片轮转以及调度goroutine 协程 使用 go 关键字创建，并发执行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 package" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -34,7 +35,7 @@
 <meta name="generator" content="Hugo 0.65.2" />
 
 
-<link rel="canonical" href="https://cc360428.github.io/post/golang/utils/variableandarray/" />
+<link rel="canonical" href="https://cc360428.github.io/post/golang/base/concurrent/" />
 
 
 
@@ -58,23 +59,23 @@
 
 
 
-<meta property="og:title" content="Go 类型转换" />
-<meta property="og:description" content="变量作用域,数组" />
+<meta property="og:title" content="Day11（并发编程）" />
+<meta property="og:description" content="并发编程 goroutine 时间片轮转以及调度goroutine 协程 使用 go 关键字创建，并发执行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 package" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/golang/utils/variableandarray/" />
-<meta property="article:published_time" content="2020-04-16T22:58:36+08:00" />
-<meta property="article:modified_time" content="2020-04-16T22:58:36+08:00" />
-<meta itemprop="name" content="Go 类型转换">
-<meta itemprop="description" content="变量作用域,数组">
-<meta itemprop="datePublished" content="2020-04-16T22:58:36&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-16T22:58:36&#43;08:00" />
-<meta itemprop="wordCount" content="312">
+<meta property="og:url" content="https://cc360428.github.io/post/golang/base/concurrent/" />
+<meta property="article:published_time" content="2019-04-27T09:19:29+08:00" />
+<meta property="article:modified_time" content="2019-04-27T09:19:29+08:00" />
+<meta itemprop="name" content="Day11（并发编程）">
+<meta itemprop="description" content="并发编程 goroutine 时间片轮转以及调度goroutine 协程 使用 go 关键字创建，并发执行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 package">
+<meta itemprop="datePublished" content="2019-04-27T09:19:29&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-27T09:19:29&#43;08:00" />
+<meta itemprop="wordCount" content="1261">
 
 
 
-<meta itemprop="keywords" content="golang,goUtils," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Go 类型转换"/>
-<meta name="twitter:description" content="变量作用域,数组"/>
+<meta itemprop="keywords" content="golang,GoBase," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Day11（并发编程）"/>
+<meta name="twitter:description" content="并发编程 goroutine 时间片轮转以及调度goroutine 协程 使用 go 关键字创建，并发执行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 package"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -336,18 +337,18 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Go 类型转换</h1>
+      <h1 class="post-title">Day11（并发编程）</h1>
       
       <div class="post-meta">
-        <time datetime="2020-04-16" class="post-time">
-          2020-04-16
+        <time datetime="2019-04-27" class="post-time">
+          2019-04-27
         </time>
         <div class="post-category">
-            <a href="https://cc360428.github.io/categories/utils/"> utils </a>
+            <a href="https://cc360428.github.io/categories/base/"> base </a>
             
           </div>
-        <span class="more-meta"> 约 312 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 1261 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
         
@@ -364,12 +365,10 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#go类型转换">go类型转换</a>
+    <li><a href="#并发编程">并发编程</a>
       <ul>
-        <li><a href="#string-int-int64">string int int64</a></li>
-        <li><a href="#整形互转">整形互转</a></li>
-        <li><a href="#bool-to-string">bool To string</a></li>
-        <li><a href="#fmtsprintf-to-string">fmt.Sprintf To string</a></li>
+        <li><a href="#goroutine">goroutine</a></li>
+        <li><a href="#channel">channel</a></li>
       </ul>
     </li>
   </ul>
@@ -379,8 +378,11 @@
 
     
     <div class="post-content">
-      <h2 id="go类型转换">go类型转换</h2>
-<h3 id="string-int-int64"><code>string int int64</code></h3>
+      <h2 id="并发编程">并发编程</h2>
+<h3 id="goroutine"><code>goroutine</code></h3>
+<ul>
+<li>时间片轮转以及调度<code>goroutine </code> 协程 使用 <code>go</code> 关键字创建，并发执行</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -411,42 +413,168 @@
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
 	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;strconv&#34;</span>
+	<span class="s">&#34;time&#34;</span>
 <span class="p">)</span>
 
+<span class="kd">func</span> <span class="nf">task</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span>
+	<span class="k">for</span> <span class="p">{</span>
+		<span class="nx">i</span><span class="o">++</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;new Task&#34;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nx">i</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+			<span class="k">break</span>
+		<span class="p">}</span>
+		<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">str</span> <span class="kt">string</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;str type:%T\n&#34;</span><span class="p">,</span> <span class="nx">str</span><span class="p">)</span>
-	<span class="nx">str</span> <span class="p">=</span> <span class="s">&#34;123&#34;</span>
-	<span class="kd">var</span> <span class="nx">strInt</span> <span class="kt">int</span>
-	<span class="c1">// string &gt; int
-</span><span class="c1"></span>	<span class="nx">strInt</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Atoi</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">strInt</span><span class="p">)</span>
-	<span class="kd">var</span> <span class="nx">strInt64</span> <span class="kt">int64</span>
-	<span class="c1">// string &gt; int64
-</span><span class="c1"></span>	<span class="nx">strInt64</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">ParseInt</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">strInt64</span><span class="p">)</span>
-	<span class="kd">var</span> <span class="nx">intStr</span> <span class="kt">int</span>
-	<span class="nx">intStr</span> <span class="p">=</span> <span class="mi">100</span>
-	<span class="c1">// int &gt; string
-</span><span class="c1"></span>	<span class="nx">intToString</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nx">intStr</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">intToString</span><span class="p">)</span>
-	<span class="c1">// int64 &gt; string
-</span><span class="c1"></span>	<span class="nx">int64ToStr</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">FormatInt</span><span class="p">(</span><span class="nx">strInt64</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">int64ToStr</span><span class="p">)</span>
+	<span class="k">go</span> <span class="nf">task</span><span class="p">()</span>
+	<span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span>
+	<span class="k">for</span> <span class="p">{</span>
+		<span class="nx">i</span><span class="o">++</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;main func&#34;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nx">i</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">{</span>
+			<span class="k">break</span>
+		<span class="p">}</span>
+		<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+	<span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="整形互转">整形互转</h3>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">new</span> <span class="nx">Task</span>
+<span class="nx">main</span> <span class="kd">func</span>
+<span class="nx">main</span> <span class="kd">func</span>
+<span class="nx">new</span> <span class="nx">Task</span>
+<span class="nx">main</span> <span class="kd">func</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>主协程退出其他子协程也会退出</p>
 <blockquote>
-<p>整形之间互转<code> int64(int)</code> 需要转什么类型就括号外面什么类型</p>
+<p>下面程序只会打印<code>main</code></p>
 </blockquote>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="k">go</span> <span class="kd">func</span> <span class="p">()</span>  <span class="p">{</span>
+		<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;子协程&#34;</span><span class="p">)</span>	
+		<span class="p">}</span>
+	<span class="p">}()</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;main&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><code>runtime</code>工具包</p>
+<blockquote>
+<p><code>Gosched</code>、<code>Goexit</code>、<code>GOMAXPROCS</code></p>
+</blockquote>
+<ul>
+<li><code>Gosched</code> 让出时间片 先让别的协程，执行再执行此协程</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+  
+<span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;runtime&#34;</span>
+<span class="p">)</span>
+  
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+          <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Cc&#34;</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="p">}()</span>
+  <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+      <span class="nx">runtime</span><span class="p">.</span><span class="nf">Gosched</span><span class="p">()</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Lcc&#34;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">Cc</span>
+<span class="nx">Cc</span>
+<span class="nx">Cc</span>
+<span class="nx">Lcc</span>
+<span class="nx">Lcc</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>Goexit</code> 终止此协程与<code>return</code> 不同后者终止次函数</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -469,31 +597,51 @@
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
-
+  
+<span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;runtime&#34;</span>
+  <span class="s">&#34;time&#34;</span>
+<span class="p">)</span>
+  
+<span class="kd">func</span> <span class="nf">exit</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;exit a&#34;</span><span class="p">)</span>
+  <span class="c1">// return
+</span><span class="c1"></span>  <span class="nx">runtime</span><span class="p">.</span><span class="nf">Goexit</span><span class="p">()</span>
+  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;exit b&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+  
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">int1</span> <span class="kt">int</span>
-	<span class="nx">int1</span> <span class="p">=</span> <span class="mi">21</span>
-	<span class="kd">var</span> <span class="nx">int2</span> <span class="kt">int64</span>
-	<span class="c1">// int &gt; int64
-</span><span class="c1"></span>	<span class="nx">int2</span> <span class="p">=</span> <span class="nb">int64</span><span class="p">(</span><span class="nx">int1</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">int2</span><span class="p">)</span>
-	<span class="kd">var</span> <span class="nx">inta</span> <span class="kt">int64</span>
-	<span class="nx">inta</span> <span class="p">=</span> <span class="mi">10</span>
-	<span class="kd">var</span> <span class="nx">intb</span> <span class="kt">int</span>
-	<span class="c1">// int64 &gt; int64
-</span><span class="c1"></span>	<span class="nx">intb</span> <span class="p">=</span> <span class="nb">int</span><span class="p">(</span><span class="nx">inta</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">intb</span><span class="p">)</span>
-	<span class="nx">u</span> <span class="o">:=</span> <span class="nb">uint32</span><span class="p">(</span><span class="nx">int1</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span>
+  <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;go func 1&#34;</span><span class="p">)</span>
+      <span class="nf">exit</span><span class="p">()</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;go fun 2&#34;</span><span class="p">)</span>
+  <span class="p">}()</span>
+  <span class="c1">// 等待
+</span><span class="c1"></span>  <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="bool-to-string">bool To string</h3>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="kd">func</span> <span class="mi">1</span>
+<span class="nx">exit</span> <span class="nx">a</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>GOMAXPROCS</code>指定核数运行   1~4 时打印交叉</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -508,26 +656,39 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
+  
 <span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;strconv&#34;</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;runtime&#34;</span>
+  <span class="s">&#34;time&#34;</span>
 <span class="p">)</span>
-
+  
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">b</span> <span class="kt">bool</span>
-	<span class="nx">formatBool</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">FormatBool</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">formatBool</span><span class="p">)</span>
+  <span class="nx">runtime</span><span class="p">.</span><span class="nf">GOMAXPROCS</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+  <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+      <span class="k">go</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="fmtsprintf-to-string"><code>fmt.Sprintf</code> To <code>string</code></h3>
+</div></li>
+</ul>
+<h3 id="channel"><code>channel</code></h3>
 <blockquote>
-<p><a href="https://studygolang.com/static/pkgdoc/pkg/fmt.htm">参考链接</a></p>
+<p>资源竞争共享内存</p>
 </blockquote>
+<ul>
+<li>每使用channel 造成资源竞争和共享内存问题，两个协程同时使用<code>printer</code>打印值会造成<strong>不一</strong>，不会同步，把相关的<code>ch</code> 注释且可以解决</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -540,21 +701,262 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
-<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;time&#34;</span>
+<span class="p">)</span>
+<span class="c1">// var ch = make(chan int)
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">printer</span><span class="p">(</span><span class="nx">word</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">word</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%c&#34;</span><span class="p">,</span> <span class="nx">v</span><span class="p">)</span>
+		<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// lcc 打印 title
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">lcc</span><span class="p">()</span> <span class="p">{</span>
+   <span class="c1">//  ch &lt;- 1
+</span><span class="c1"></span>	<span class="nf">printer</span><span class="p">(</span><span class="s">&#34;title&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Cc 打印 word
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">Cc</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">//  &lt;- ch
+</span><span class="c1"></span>	<span class="nf">printer</span><span class="p">(</span><span class="s">&#34;word&#34;</span><span class="p">)</span>
+<span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">byteType</span> <span class="kt">byte</span>
-	<span class="kd">var</span> <span class="nx">str</span> <span class="kt">string</span>
-	<span class="nx">str</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;整型 %d 浮点 %f byte %c %s&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="nx">byteType</span><span class="p">,</span> <span class="s">&#34;字符串拼接&#34;</span><span class="p">)</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+	<span class="k">go</span> <span class="nf">lcc</span><span class="p">()</span>
+	<span class="k">go</span> <span class="nf">Cc</span><span class="p">()</span>
+	<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">//创建channel
+</span><span class="c1"></span>	<span class="nx">ch</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">)</span>
+	<span class="k">defer</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;main  end&#34;</span><span class="p">)</span>
+	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">defer</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;func end&#34;</span><span class="p">)</span>
+		<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Func for&#34;</span><span class="p">)</span>
+		<span class="p">}</span>
+
+		<span class="nx">ch</span> <span class="o">&lt;-</span> <span class="s">&#34;ch wr&#34;</span>
+
+	<span class="p">}()</span>
+
+	<span class="nx">str</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">ch</span> <span class="c1">//没有数据前，阻塞
+</span><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;rd  = &#34;</span><span class="p">,</span> <span class="nx">str</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
 </div>
+</div><ul>
+<li>
+<p>无缓冲与有缓冲</p>
+<ul>
+<li>无缓冲接收前，不会保存任何通道值，需要发送端和接收端同时准备好才能完成操纵，则会造成堵塞等待</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+  
+<span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;time&#34;</span>
+<span class="p">)</span>
+  
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">//创建一个无缓存的channel
+</span><span class="c1"></span>  <span class="nx">ch</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  
+  <span class="c1">//len(ch)缓冲区剩余数据个数， cap(ch)缓冲区大小
+</span><span class="c1"></span>  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;len(ch) = %d, cap(ch)= %d\n&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">ch</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="nx">ch</span><span class="p">))</span>
+  
+  <span class="c1">//新建协程
+</span><span class="c1"></span>  <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+          <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;子协程：i = %d\n&#34;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
+          <span class="nx">ch</span> <span class="o">&lt;-</span> <span class="nx">i</span> <span class="c1">//往chan写内容
+</span><span class="c1"></span>      <span class="p">}</span>
+  <span class="p">}()</span>
+  
+  <span class="c1">//延时
+</span><span class="c1"></span>  <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+  
+  <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+      <span class="nx">num</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">ch</span> <span class="c1">//读管道中内容，没有内容前，阻塞
+</span><span class="c1"></span>      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;num = &#34;</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>有缓存接收前，会保存一个或多个通道值，只有通道没有接收值才会堵塞</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+  
+<span class="kn">import</span> <span class="p">(</span>
+  <span class="s">&#34;fmt&#34;</span>
+  <span class="s">&#34;time&#34;</span>
+<span class="p">)</span>
+  
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">//创建一个有缓存的channel
+</span><span class="c1"></span>  <span class="nx">ch</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+  
+  <span class="c1">//len(ch)缓冲区剩余数据个数， cap(ch)缓冲区大小
+</span><span class="c1"></span>  <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;len(ch) = %d, cap(ch)= %d\n&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">ch</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="nx">ch</span><span class="p">))</span>
+  
+  <span class="c1">//新建协程
+</span><span class="c1"></span>  <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+          <span class="nx">ch</span> <span class="o">&lt;-</span> <span class="nx">i</span> <span class="c1">//往chan写内容
+</span><span class="c1"></span>          <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;子协程[%d]: len(ch) = %d, cap(ch)= %d\n&#34;</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">ch</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="nx">ch</span><span class="p">))</span>
+      <span class="p">}</span>
+  <span class="p">}()</span>
+  
+  <span class="c1">//延时
+</span><span class="c1"></span>  <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+  
+  <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+      <span class="nx">num</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">ch</span> <span class="c1">//读管道中内容，没有内容前，阻塞
+</span><span class="c1"></span>      <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;num = &#34;</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+
     </div>
 
     
@@ -567,7 +969,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2020-04-16
+      2019-04-27
       
     </span>
   </p>
@@ -602,14 +1004,14 @@
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://cc360428.github.io/tags/golang/">golang</a>
-          <a href="https://cc360428.github.io/tags/goutils/">goUtils</a>
+          <a href="https://cc360428.github.io/tags/gobase/">GoBase</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/system/mysql/mysqlupdatepassword/">
+          <a class="prev" href="/post/golang/beego/base-beego/">
             
             <i class="iconfont">
               <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -619,12 +1021,12 @@
 </svg>
 
             </i>
-            <span class="prev-text nav-default">MySQL 忘记密码</span>
+            <span class="prev-text nav-default">Beego Base</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/">
-            <span class="next-text nav-default">linux(CentOS7) 网络管理</span>
+          <a class="next" href="/post/golang/base/interfaceanderror/">
+            <span class="next-text nav-default">Day10（接口和错误处理）</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">

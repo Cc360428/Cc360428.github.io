@@ -10,70 +10,14 @@
   
   <url>
     <loc>https://cc360428.github.io/categories/base/</loc>
-    <lastmod>2020-04-25T17:02:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/categories/</loc>
-    <lastmod>2020-04-25T17:02:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/base/interfaceanderror/</loc>
-    <lastmod>2020-04-25T17:02:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/gobase/</loc>
-    <lastmod>2020-04-25T17:02:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/golang/</loc>
-    <lastmod>2020-04-25T17:02:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/</loc>
-    <lastmod>2020-04-25T17:02:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/</loc>
-    <lastmod>2020-04-25T17:02:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/base/mapandcontainer/</loc>
-    <lastmod>2020-04-25T10:00:24+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/base/sliceandranger/</loc>
     <lastmod>2020-04-25T08:27:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/post/golang/base/pointerandstruct/</loc>
-    <lastmod>2020-04-23T22:04:03+08:00</lastmod>
+    <loc>https://cc360428.github.io/categories/</loc>
+    <lastmod>2020-04-25T08:27:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -81,6 +25,13 @@
   <url>
     <loc>https://cc360428.github.io/post/system/shell/base/</loc>
     <lastmod>2020-04-20T22:05:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/</loc>
+    <lastmod>2020-04-25T08:27:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -102,6 +53,13 @@
   <url>
     <loc>https://cc360428.github.io/categories/system/</loc>
     <lastmod>2020-04-20T22:05:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/</loc>
+    <lastmod>2020-04-25T08:27:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -205,57 +163,15 @@
   </url>
   
   <url>
+    <loc>https://cc360428.github.io/tags/golang/</loc>
+    <lastmod>2020-04-25T08:27:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cc360428.github.io/tags/goutils/</loc>
     <lastmod>2020-04-16T22:58:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/system/mysql/day01/</loc>
-    <lastmod>2020-04-08T22:21:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/base/variableandarray/</loc>
-    <lastmod>2020-04-07T22:58:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/base/func/</loc>
-    <lastmod>2020-04-06T22:05:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/base/loopstatementfunc/</loc>
-    <lastmod>2020-04-03T00:10:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/base/operatorcondition/</loc>
-    <lastmod>2020-04-02T13:13:45+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/base/datatype/</loc>
-    <lastmod>2020-03-31T21:18:30+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/base/base/</loc>
-    <lastmod>2020-03-30T23:31:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -485,6 +401,90 @@
   </url>
   
   <url>
+    <loc>https://cc360428.github.io/post/golang/base/concurrent/</loc>
+    <lastmod>2019-04-27T09:19:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/gobase/</loc>
+    <lastmod>2020-04-25T08:27:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/interfaceanderror/</loc>
+    <lastmod>2019-04-25T17:02:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/mapandcontainer/</loc>
+    <lastmod>2019-04-25T10:00:24+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/sliceandranger/</loc>
+    <lastmod>2020-04-25T08:27:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/pointerandstruct/</loc>
+    <lastmod>2019-04-23T22:04:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/variableandarray/</loc>
+    <lastmod>2019-04-07T22:58:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/func/</loc>
+    <lastmod>2019-04-06T22:05:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/loopstatementfunc/</loc>
+    <lastmod>2019-04-03T00:10:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/operatorcondition/</loc>
+    <lastmod>2019-04-02T13:13:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/datatype/</loc>
+    <lastmod>2019-03-31T21:18:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/base/</loc>
+    <lastmod>2019-03-30T23:31:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cc360428.github.io/post/golang/base/</loc>
     <lastmod>2019-03-07T09:21:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -550,6 +550,13 @@
   <url>
     <loc>https://cc360428.github.io/post/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</loc>
     <lastmod>2019-01-01T12:48:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/system/mysql/day01/</loc>
+    <lastmod>2018-12-08T22:21:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
