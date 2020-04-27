@@ -337,15 +337,18 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/golang/system/">环境搭建</a>
+      <a class="post-link" href="/post/system/nginx/nginx%E5%AE%89%E8%A3%85/">Nginx 安装</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2019-02-26" class="post-time">
-        2019-02-26
+      <time datetime="2020-03-11" class="post-time">
+        2020-03-11
       </time>
-      
-      <span class="more-meta"> 约 63 字 </span>
+      <div class="post-category">
+          <a href="https://cc360428.github.io/categories/utils/"> utils </a>
+          
+        </div>
+      <span class="more-meta"> 约 472 字 </span>
       <span class="more-meta"> 预计阅读 1 分钟 </span>
       
       
@@ -356,10 +359,10 @@
   <div class="post-content">
     
     <div class="post-summary">
-      linux 下载 https://studygolang.com/dl go1.13.5.linux-amd64.tar.gz 压缩 tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz git 安装 [root@test golang]# git version git version 1.8.3.1 go get beego go get github.com/astaxie/beego go get github.com/beego/bee Gin go get -u github.com/gin-gonic/gin Windows 下载源码 配置gopath即可 在环境变量里面配置 GOPATH 即可
+      linux 命令安装 1.添加Nginx到YUM源 添加CentOS 7 Nginx yum资源库,打开终端,使用以下命令: sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm 2.安装Nginx 在你的CentOS
     </div>
     <div class="read-more">
-      <a href="/post/golang/system/" class="read-more-link">阅读全文</a>
+      <a href="/post/system/nginx/nginx%E5%AE%89%E8%A3%85/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -370,19 +373,19 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/system/docker/docker%E5%AE%89%E8%A3%85/">Doker 安装</a>
+      <a class="post-link" href="/post/system/nginx/nginx%E9%85%8D%E7%BD%AE/">Nginx配置</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2019-01-26" class="post-time">
-        2019-01-26
+      <time datetime="2020-03-11" class="post-time">
+        2020-03-11
       </time>
       <div class="post-category">
           <a href="https://cc360428.github.io/categories/utils/"> utils </a>
           
         </div>
-      <span class="more-meta"> 约 16 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      <span class="more-meta"> 约 854 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
       
       
       
@@ -392,10 +395,10 @@
   <div class="post-content">
     
     <div class="post-summary">
-      Doker 安装 卸载就版本 sudo apt-get remove docker docker-engine docker.io containerd runc
+      配置https 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 server { listen 443 ssl; # 1.1版本后这样写 server_name lichaocheng.top; #填写绑定证书的域名 ssl_certificate /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem; # 指定证书的
     </div>
     <div class="read-more">
-      <a href="/post/system/docker/docker%E5%AE%89%E8%A3%85/" class="read-more-link">阅读全文</a>
+      <a href="/post/system/nginx/nginx%E9%85%8D%E7%BD%AE/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -406,18 +409,18 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/system/idea/idea%E4%BD%BF%E7%94%A8/">idea 使用</a>
+      <a class="post-link" href="/post/golang/golang%E5%8C%85%E7%AE%A1%E7%90%86/">golang 包管理</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2019-01-26" class="post-time">
-        2019-01-26
+      <time datetime="2020-03-11" class="post-time">
+        2020-03-11
       </time>
       <div class="post-category">
-          <a href="https://cc360428.github.io/categories/utils/"> utils </a>
+          <a href="https://cc360428.github.io/categories/golang/"> golang </a>
           
         </div>
-      <span class="more-meta"> 约 424 字 </span>
+      <span class="more-meta"> 约 453 字 </span>
       <span class="more-meta"> 预计阅读 1 分钟 </span>
       
       
@@ -428,10 +431,10 @@
   <div class="post-content">
     
     <div class="post-summary">
-      Alt+回车 导入包,自动修正 Ctrl+N 查找类 Ctrl+Shift+N 查找文件 Ctrl+Alt+L 格式化代码 Ctrl+Alt+O 优化导入的类和包 Alt+Insert 生成代码(如get,set方法,构造函数等) Ctrl+E或者A
+      godep 安装 go get -u -v github.com/tools/godep 使用 参考1 参考2 goverdor（go1.12下 推荐使用） 安装 go get -u github.com/kardianos/govendor 基本使用 进入项目目录 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
     </div>
     <div class="read-more">
-      <a href="/post/system/idea/idea%E4%BD%BF%E7%94%A8/" class="read-more-link">阅读全文</a>
+      <a href="/post/golang/golang%E5%8C%85%E7%AE%A1%E7%90%86/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -511,8 +514,6 @@
 
             
             
-              
-            
 
           
           
@@ -521,12 +522,6 @@
         
 
         
-        
-          <li class="">
-            <a href="/page/2/">
-              2
-            </a>
-          </li>
         
 
       
@@ -542,8 +537,6 @@
 
             
             
-              
-            
 
           
           
@@ -552,12 +545,6 @@
         
 
         
-        
-          <li class="">
-            <a href="/page/3/">
-              3
-            </a>
-          </li>
         
 
       
@@ -573,8 +560,6 @@
 
             
             
-              
-            
 
           
           
@@ -583,12 +568,6 @@
         
 
         
-        
-          <li class="">
-            <a href="/page/4/">
-              4
-            </a>
-          </li>
         
 
       
@@ -903,6 +882,99 @@
 
       
 
+        
+
+        
+        
+
+          
+          
+          
+
+            
+            
+              
+            
+
+          
+          
+
+        
+        
+
+        
+        
+          <li class="">
+            <a href="/page/15/">
+              15
+            </a>
+          </li>
+        
+
+      
+
+        
+
+        
+        
+
+          
+          
+          
+
+            
+            
+              
+            
+
+          
+          
+
+        
+        
+
+        
+        
+          <li class="">
+            <a href="/page/16/">
+              16
+            </a>
+          </li>
+        
+
+      
+
+        
+
+        
+        
+
+          
+          
+          
+
+            
+            
+              
+            
+
+          
+          
+
+        
+        
+
+        
+        
+          <li class="">
+            <a href="/page/17/">
+              17
+            </a>
+          </li>
+        
+
+      
+
       
       
       <li><a href="/page/12/">»</a></li>
@@ -910,7 +982,7 @@
 
       
       
-      <li><a href="/page/14/">»»</a></li>
+      <li><a href="/page/17/">»»</a></li>
       
 
       </ul>

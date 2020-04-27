@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>device on Li Chao Cheng Blog</title>
+    <link>https://cc360428.github.io/categories/device/</link>
+    <description>Recent content in device on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Lcc</copyright>
+    <lastBuildDate>Sat, 18 Apr 2020 14:33:04 +0800</lastBuildDate>
+    
+	<atom:link href="https://cc360428.github.io/categories/device/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>openWrt uci</title>
+      <link>https://cc360428.github.io/post/system/openwrt/uci/</link>
+      <pubDate>Sat, 18 Apr 2020 14:33:04 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/openwrt/uci/</guid>
+      <description>uci set 1 2 3 4 5 6 root@Accesshub:/etc/config# uci set qos.cc=interface root@Accesshub:/etc/config# uci set qos.cc.classgroup=default root@Accesshub:/etc/config# uci set qos.cc.enabled=1 root@Accesshub:/etc/config# uci set qos.cc.upload=134 root@Accesshub:/etc/config# uci set qos.cc.download=1000 root@Accesshub:/etc/config# uci commit qos 1 2 3 4 5 6 root@Accesshub:/etc/config# grep -A 6 cc qos config interface &amp;#39;cc&amp;#39; option classgroup &amp;#39;default&amp;#39; option enabled &amp;#39;1&amp;#39; option upload &amp;#39;134&amp;#39; option download &amp;#39;1000&amp;#39; uci add 1 2 3 4 5 6 root@Accesshub:/etc/config# uci add</description>
+    </item>
+    
+  </channel>
+</rss>
