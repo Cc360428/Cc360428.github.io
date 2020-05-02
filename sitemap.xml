@@ -352,6 +352,13 @@
   </url>
   
   <url>
+    <loc>https://cc360428.github.io/post/golang/utils/lock/</loc>
+    <lastmod>2019-12-12T22:58:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cc360428.github.io/post/golang/golang-1.12/</loc>
     <lastmod>2019-12-06T17:11:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -361,6 +368,27 @@
   <url>
     <loc>https://cc360428.github.io/tags/golangversion/</loc>
     <lastmod>2019-12-06T17:11:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/system/mysql/mysql-lock/</loc>
+    <lastmod>2019-09-18T12:21:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/docker/</loc>
+    <lastmod>2019-09-03T12:48:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/system/docker/docker-usr/</loc>
+    <lastmod>2019-09-03T12:48:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -569,15 +597,8 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/post/system/docker/docker-%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/</loc>
+    <loc>https://cc360428.github.io/post/system/docker/docker-install/</loc>
     <lastmod>2019-01-05T12:48:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/system/docker/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2019-01-03T12:48:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -662,6 +683,12 @@
   <url>
     <loc>https://cc360428.github.io/categories/python%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2018-01-26T12:48:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/system/docker/docker-%E9%83%A8%E7%BD%B2web-%E9%A1%B9%E7%9B%AE/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

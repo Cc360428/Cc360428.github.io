@@ -337,54 +337,18 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/golang/base/pointerandstruct/">Day07（指针和结构体）</a>
+      <a class="post-link" href="/post/golang/base/interfaceanderror/">Day10（接口和错误处理）</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2019-04-23" class="post-time">
-        2019-04-23
+      <time datetime="2019-04-25" class="post-time">
+        2019-04-25
       </time>
       <div class="post-category">
           <a href="https://cc360428.github.io/categories/base/"> base </a>
           
         </div>
-      <span class="more-meta"> 约 473 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      指针和结构体 源码 指针 Go 语言指针与C语言指针不一样理解,一个指针变量指向了一个值的内存地址。 类似于变量和常量，在使用指针前你需要声明指针 示例 示
-    </div>
-    <div class="read-more">
-      <a href="/post/golang/base/pointerandstruct/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/golang/base/variableandarray/">Day06（作用域与数组）</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2019-04-07" class="post-time">
-        2019-04-07
-      </time>
-      <div class="post-category">
-          <a href="https://cc360428.github.io/categories/base/"> base </a>
-          
-        </div>
-      <span class="more-meta"> 约 991 字 </span>
+      <span class="more-meta"> 约 546 字 </span>
       <span class="more-meta"> 预计阅读 2 分钟 </span>
       
       
@@ -395,10 +359,10 @@
   <div class="post-content">
     
     <div class="post-summary">
-      作用域与数组 源码 变量作用域 局部变量 函数内定义的变量 1 2 3 4 5 6 7 8 9 10 package main import ( &#34;fmt&#34; ) func main() { var a, b, c = 1, 2, 3 fmt.Println(a, b, c) } 全局变量 函数外定义的变量 1 2
+      interface And Panic、Error 源码 interface 接口创建使用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
     </div>
     <div class="read-more">
-      <a href="/post/golang/base/variableandarray/" class="read-more-link">阅读全文</a>
+      <a href="/post/golang/base/interfaceanderror/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -409,18 +373,18 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/golang/base/func/">Day05（函数）</a>
+      <a class="post-link" href="/post/golang/base/mapandcontainer/">Day09（MapAndContainer）</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2019-04-06" class="post-time">
-        2019-04-06
+      <time datetime="2019-04-25" class="post-time">
+        2019-04-25
       </time>
       <div class="post-category">
           <a href="https://cc360428.github.io/categories/base/"> base </a>
           
         </div>
-      <span class="more-meta"> 约 1653 字 </span>
+      <span class="more-meta"> 约 1917 字 </span>
       <span class="more-meta"> 预计阅读 4 分钟 </span>
       
       
@@ -431,10 +395,46 @@
   <div class="post-content">
     
     <div class="post-summary">
-      函数 源码 go 至少一个函数 主函数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 package main import ( &#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34; ) func main() { _, _, _, err := FuncName(&#34;&#34;, &#34;&#34;, false) if err != nil { logs.Error(err.Error()) } } // FuncName func FuncName(args1, args2 string, args3 bool) (return1, return2
+      集合(map) 和容器(Container) 源码 Map Map是一种无序键值对的集合，通过Key来检索数据，key 类似索引，指向数据值，可以使用fo
     </div>
     <div class="read-more">
-      <a href="/post/golang/base/func/" class="read-more-link">阅读全文</a>
+      <a href="/post/golang/base/mapandcontainer/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/golang/base/sliceandranger/">Day08（切片 slice 和 range）</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2019-04-24" class="post-time">
+        2019-04-24
+      </time>
+      <div class="post-category">
+          <a href="https://cc360428.github.io/categories/base/"> base </a>
+          
+        </div>
+      <span class="more-meta"> 约 1442 字 </span>
+      <span class="more-meta"> 预计阅读 3 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      切片（slice） 和range 使用 源码 切片（slice） Go 数组在一定情况下，不能满足开发业务需求（数组固定长度、有很多局限性），切片是可变长
+    </div>
+    <div class="read-more">
+      <a href="/post/golang/base/sliceandranger/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -490,9 +490,7 @@
           
 
             
-            
 
-          
           
 
         
@@ -513,9 +511,7 @@
           
 
             
-            
 
-          
           
 
         
@@ -536,9 +532,7 @@
           
 
             
-            
 
-          
           
 
         
@@ -559,9 +553,7 @@
           
 
             
-            
 
-          
           
 
         
@@ -582,9 +574,7 @@
           
 
             
-            
 
-          
           
 
         
@@ -605,9 +595,7 @@
           
 
             
-            
 
-          
           
 
         
@@ -627,12 +615,10 @@
           
           
 
-            
             
               
             
 
-          
           
 
         
@@ -659,11 +645,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -690,11 +674,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -721,11 +703,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -752,11 +732,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -783,11 +761,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -814,11 +790,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -845,11 +819,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -876,11 +848,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -907,11 +877,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -938,11 +906,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -969,11 +935,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -1000,11 +964,9 @@
           
 
             
-            
               
             
 
-          
           
 
         
@@ -1021,6 +983,27 @@
 
       
 
+        
+
+        
+        
+
+          
+          
+          
+
+            
+
+          
+
+        
+        
+
+        
+        
+
+      
+
       
       
       <li><a href="/page/14/">»</a></li>
@@ -1028,7 +1011,7 @@
 
       
       
-      <li><a href="/page/19/">»»</a></li>
+      <li><a href="/page/20/">»»</a></li>
       
 
       </ul>

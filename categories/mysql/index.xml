@@ -31,6 +31,15 @@
     </item>
     
     <item>
+      <title>MySQL 锁</title>
+      <link>https://cc360428.github.io/post/system/mysql/mysql-lock/</link>
+      <pubDate>Wed, 18 Sep 2019 12:21:48 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/mysql/mysql-lock/</guid>
+      <description>MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&amp;gt; show tables; +----------------+ | Tables_in_test | +----------------+ | mylock | | test | +----------------+ 2 rows in set (0.03 sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态</description>
+    </item>
+    
+    <item>
       <title>MySQL 入门介绍</title>
       <link>https://cc360428.github.io/post/system/mysql/day01/</link>
       <pubDate>Sat, 08 Dec 2018 22:21:48 +0800</pubDate>
