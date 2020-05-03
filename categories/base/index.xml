@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Day12（反射）</title>
+      <link>https://cc360428.github.io/post/golang/base/reflect/</link>
+      <pubDate>Sun, 28 Apr 2019 21:04:03 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/reflect/</guid>
+      <description>反射</description>
+    </item>
+    
+    <item>
       <title>Day11（并发编程）</title>
       <link>https://cc360428.github.io/post/golang/base/concurrent/</link>
       <pubDate>Sat, 27 Apr 2019 09:19:29 +0800</pubDate>
@@ -91,15 +100,6 @@
       
       <guid>https://cc360428.github.io/post/golang/base/loopstatementfunc/</guid>
       <description>循环语句 源代码 for 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 package main import &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; func main() { array := make([]int, 5) logs.Info(array) for i := 0; i &amp;lt; len(array); i++ { array[i] = i } logs.Info(array) b := 3 for b &amp;gt;= 1 { b-- logs.Debug(b) } a := 5</description>
-    </item>
-    
-    <item>
-      <title>Day03（运算符与条件语句）</title>
-      <link>https://cc360428.github.io/post/golang/base/operatorcondition/</link>
-      <pubDate>Tue, 02 Apr 2019 13:13:45 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/base/operatorcondition/</guid>
-      <description>运算符与条件语句 本章源码 运算符 算数运算符 假定 A 值为 10，B 值为 20 运算符 描述 实例 + 相加 A + B 输出结果 30 - 相减 A - B 输出结果 -10 * 相乘 A * B 输出结</description>
     </item>
     
   </channel>

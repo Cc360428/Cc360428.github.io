@@ -478,8 +478,8 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/post/golang/base/concurrent/</loc>
-    <lastmod>2019-04-27T09:19:29+08:00</lastmod>
+    <loc>https://cc360428.github.io/post/golang/base/reflect/</loc>
+    <lastmod>2019-04-28T21:04:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -487,6 +487,13 @@
   <url>
     <loc>https://cc360428.github.io/tags/gobase/</loc>
     <lastmod>2020-04-25T08:27:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/base/concurrent/</loc>
+    <lastmod>2019-04-27T09:19:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -583,7 +590,14 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/post/system/redis/redis-%E6%8C%81%E4%B9%85%E5%8C%96/</loc>
+    <loc>https://cc360428.github.io/tags/redis/</loc>
+    <lastmod>2019-01-26T12:48:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/system/redis/redis-all/</loc>
     <lastmod>2019-01-26T12:48:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

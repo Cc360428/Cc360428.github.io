@@ -69,7 +69,7 @@
 <meta itemprop="description" content="指针和结构体 源码 指针 Go 语言指针与C语言指针不一样理解,一个指针变量指向了一个值的内存地址。 类似于变量和常量，在使用指针前你需要声明指针 示例 示">
 <meta itemprop="datePublished" content="2019-04-23T22:04:03&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-23T22:04:03&#43;08:00" />
-<meta itemprop="wordCount" content="473">
+<meta itemprop="wordCount" content="476">
 
 
 
@@ -347,7 +347,7 @@
             <a href="https://cc360428.github.io/categories/base/"> base </a>
             
           </div>
-        <span class="more-meta"> 约 473 字 </span>
+        <span class="more-meta"> 约 476 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -428,10 +428,19 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><pre><code>2020/04/23 22:21:59.542 [I] [pointer.go:9]  0xc000012380
-2020/04/23 22:21:59.566 [I] [pointer.go:11]  &lt;nil&gt;
-2020/04/23 22:21:59.566 [I] [pointer.go:13]  0
-</code></pre><ul>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mi">23</span> <span class="mi">22</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mf">59.542</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">pointer</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>  <span class="mh">0xc000012380</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mi">23</span> <span class="mi">22</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mf">59.566</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">pointer</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="p">&lt;</span><span class="kc">nil</span><span class="p">&gt;</span>
+<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mi">23</span> <span class="mi">22</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mf">59.566</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">pointer</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>  <span class="mi">0</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>示例2</li>
 </ul>
 <div class="highlight"><div class="chroma">
