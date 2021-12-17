@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Mon, 20 Apr 2020 22:05:01 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Apr 2021 14:20:10 +0800</lastBuildDate>
     
 	<atom:link href="https://cc360428.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>utils</title>
+      <link>https://cc360428.github.io/categories/utils/</link>
+      <pubDate>Wed, 07 Apr 2021 14:20:10 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/categories/utils/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>base</title>
@@ -27,15 +36,6 @@
       <pubDate>Mon, 20 Apr 2020 22:05:01 +0800</pubDate>
       
       <guid>https://cc360428.github.io/categories/system/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>utils</title>
-      <link>https://cc360428.github.io/categories/utils/</link>
-      <pubDate>Sun, 19 Apr 2020 22:58:36 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/categories/utils/</guid>
       <description></description>
     </item>
     

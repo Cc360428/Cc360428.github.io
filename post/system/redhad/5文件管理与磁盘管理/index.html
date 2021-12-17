@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.65.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/redhad/5%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -66,13 +66,14 @@
 <meta property="article:modified_time" content="2020-03-26T23:23:12+08:00" />
 <meta itemprop="name" content="linux(CentOS7) 文件管理与磁盘管理">
 <meta itemprop="description" content="5（文件管理与磁盘管理）">
-<meta itemprop="datePublished" content="2020-03-26T23:23:12&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-26T23:23:12&#43;08:00" />
+<meta itemprop="datePublished" content="2020-03-26T23:23:12+08:00" />
+<meta itemprop="dateModified" content="2020-03-26T23:23:12+08:00" />
 <meta itemprop="wordCount" content="2152">
 
 
 
-<meta itemprop="keywords" content="CentOS7,Syetem," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="CentOS7,Syetem," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux(CentOS7) 文件管理与磁盘管理"/>
 <meta name="twitter:description" content="5（文件管理与磁盘管理）"/>
 
@@ -141,7 +142,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -300,7 +301,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -464,7 +465,7 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># touch test.sh</span>
 <span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ll</span>
-总用量 0
+总用量 <span class="m">0</span>
 -rw-r--r-- <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:02 test.sh
 <span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ./test.sh</span>
 -bash: ./test.sh: 权限不够
@@ -498,7 +499,7 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod o-r test.sh</span> 
 <span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ll</span>
-总用量 0
+总用量 <span class="m">0</span>
 -rwxr----- <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:02 test.sh
 <span class="o">[</span>root@Cc 5<span class="o">]</span># 
 </code></pre></td></tr></table>
@@ -521,7 +522,7 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ll</span>
-总用量 0
+总用量 <span class="m">0</span>
 -rwxr----- <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:02 test.sh
 -rwxrwxr-x <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:11 test.txt
 <span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod ugo+r test.txt</span> 
@@ -838,7 +839,7 @@ LOG <span class="s2">&#34;process end&#34;</span>
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://blog.lichaocheng.top" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -1051,7 +1052,7 @@ LOG <span class="s2">&#34;process end&#34;</span>
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -1060,14 +1061,14 @@ LOG <span class="s2">&#34;process end&#34;</span>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    个人主页 - <a class="theme-link" href="https://lichaocheng.top">lichaocheng</a>
+    个人主页 - <a class="theme-link" href="https://cc360428.gitee.io/lichaocheng.top">lichaocheng</a>
   </span>
 
   <span class="copyright-year">
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">

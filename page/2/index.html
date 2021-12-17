@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.65.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -62,9 +62,10 @@
 <meta property="og:description" content="Hugo theme jane example site." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://cc360428.github.io/" />
-<meta property="og:updated_time" content="2020-03-29T21:07:37+08:00" />
+<meta property="og:updated_time" content="2021-04-07T14:20:10+08:00" />
 <meta itemprop="name" content="Li Chao Cheng Blog">
-<meta itemprop="description" content="Hugo theme jane example site."><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="Hugo theme jane example site.">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Li Chao Cheng Blog"/>
 <meta name="twitter:description" content="Hugo theme jane example site."/>
 
@@ -133,7 +134,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -292,7 +293,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -337,91 +338,19 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/system/openwrt/uci/">openWrt uci</a>
+      <a class="post-link" href="/post/system/kubernetes/base/">Kubernetes 部署</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2020-04-18" class="post-time">
-        2020-04-18
-      </time>
-      <div class="post-category">
-          <a href="https://cc360428.github.io/categories/device/"> device </a>
-          
-        </div>
-      <span class="more-meta"> 约 434 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      uci set 1 2 3 4 5 6 root@Accesshub:/etc/config# uci set qos.cc=interface root@Accesshub:/etc/config# uci set qos.cc.classgroup=default root@Accesshub:/etc/config# uci set qos.cc.enabled=1 root@Accesshub:/etc/config# uci set qos.cc.upload=134 root@Accesshub:/etc/config# uci set qos.cc.download=1000 root@Accesshub:/etc/config# uci commit qos 1 2 3 4 5 6 root@Accesshub:/etc/config# grep -A 6 cc qos config interface &#39;cc&#39; option classgroup &#39;default&#39; option enabled &#39;1&#39; option upload &#39;134&#39; option download &#39;1000&#39; uci add 1 2 3 4 5 6 root@Accesshub:/etc/config# uci add
-    </div>
-    <div class="read-more">
-      <a href="/post/system/openwrt/uci/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/system/mysql/mysqlupdatepassword/">MySQL 忘记密码</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2020-04-18" class="post-time">
-        2020-04-18
-      </time>
-      <div class="post-category">
-          <a href="https://cc360428.github.io/categories/mysql/"> mysql </a>
-          
-        </div>
-      <span class="more-meta"> 约 877 字 </span>
-      <span class="more-meta"> 预计阅读 2 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to
-    </div>
-    <div class="read-more">
-      <a href="/post/system/mysql/mysqlupdatepassword/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/">linux(CentOS7) 网络管理</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2020-03-29" class="post-time">
-        2020-03-29
+      <time datetime="2021-03-17" class="post-time">
+        2021-03-17
       </time>
       <div class="post-category">
           <a href="https://cc360428.github.io/categories/utils/"> utils </a>
           
         </div>
-      <span class="more-meta"> 约 6612 字 </span>
-      <span class="more-meta"> 预计阅读 14 分钟 </span>
+      <span class="more-meta"> 约 1804 字 </span>
+      <span class="more-meta"> 预计阅读 4 分钟 </span>
       
       
       
@@ -431,10 +360,83 @@
   <div class="post-content">
     
     <div class="post-summary">
-      网络基础知识以及网络管理内容 网络管理协议 好多概念知识，会拿出时间来讲解这张预留的空白 TCP/IP协议概述 好多概念知识，会拿出时间来讲解这张预
+      Kubernetes 搭建 查看查询系统基本信息 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 uname -a # 查看版本当前操作系统内核信息 cat /proc/version # 查看当前系统版本信息 cat /etc/issue # 查
     </div>
     <div class="read-more">
-      <a href="/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/" class="read-more-link">阅读全文</a>
+      <a href="/post/system/kubernetes/base/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/system/shell/base/">linux Shell Base</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2020-04-20" class="post-time">
+        2020-04-20
+      </time>
+      <div class="post-category">
+          <a href="https://cc360428.github.io/categories/system/"> system </a>
+          <a href="https://cc360428.github.io/categories/base/"> base </a>
+          
+        </div>
+      <span class="more-meta"> 约 1627 字 </span>
+      <span class="more-meta"> 预计阅读 4 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      Shell Github helloworld 创建与写 1 2 3 4 5 6 7 8 touch helloworld.sh vim helloworld.sh #!/bin/bash echo &#34;Hello World !&#34; // #! 是个约定标记 // echo 向窗口输出文本 执行 1 2 3 4 chmod +x ./helloworld.sh ./helloworld.sh 就可以看到控制台输出 Hello World ! Shell 变量 命名规
+    </div>
+    <div class="read-more">
+      <a href="/post/system/shell/base/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/golang/utils/jurisdiction/">系统设计（自动化权限）</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2020-04-19" class="post-time">
+        2020-04-19
+      </time>
+      <div class="post-category">
+          <a href="https://cc360428.github.io/categories/utils/"> utils </a>
+          
+        </div>
+      <span class="more-meta"> 约 1184 字 </span>
+      <span class="more-meta"> 预计阅读 3 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      权限 自动化权限 准备知识：swagger、递归、注解、过滤器 设计 权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包
+    </div>
+    <div class="read-more">
+      <a href="/post/golang/utils/jurisdiction/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -1064,6 +1066,78 @@
 
       
 
+        
+
+        
+        
+
+          
+          
+          
+
+            
+            
+
+          
+          
+          
+
+        
+        
+
+        
+        
+
+      
+
+        
+
+        
+        
+
+          
+          
+          
+
+            
+            
+
+          
+          
+          
+
+        
+        
+
+        
+        
+
+      
+
+        
+
+        
+        
+
+          
+          
+          
+
+            
+            
+
+          
+          
+          
+
+        
+        
+
+        
+        
+
+      
+
       
       
       <li><a href="/page/3/">»</a></li>
@@ -1071,7 +1145,7 @@
 
       
       
-      <li><a href="/page/20/">»»</a></li>
+      <li><a href="/page/23/">»»</a></li>
       
 
       </ul>
@@ -1184,7 +1258,7 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -1193,14 +1267,14 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    个人主页 - <a class="theme-link" href="https://lichaocheng.top">lichaocheng</a>
+    个人主页 - <a class="theme-link" href="https://cc360428.gitee.io/lichaocheng.top">lichaocheng</a>
   </span>
 
   <span class="copyright-year">
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">

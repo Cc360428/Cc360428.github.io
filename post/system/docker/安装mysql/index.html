@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.65.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/docker/%E5%AE%89%E8%A3%85mysql/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -66,13 +66,14 @@
 <meta property="article:modified_time" content="2020-03-16T22:28:54+08:00" />
 <meta itemprop="name" content="Dockers 安装 Mysql">
 <meta itemprop="description" content="安装 mysql 以及使用">
-<meta itemprop="datePublished" content="2020-03-16T22:28:54&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-16T22:28:54&#43;08:00" />
-<meta itemprop="wordCount" content="500">
+<meta itemprop="datePublished" content="2020-03-16T22:28:54+08:00" />
+<meta itemprop="dateModified" content="2020-03-16T22:28:54+08:00" />
+<meta itemprop="wordCount" content="533">
 
 
 
-<meta itemprop="keywords" content="Syetem," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Syetem," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dockers 安装 Mysql"/>
 <meta name="twitter:description" content="安装 mysql 以及使用"/>
 
@@ -141,7 +142,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -300,7 +301,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -346,8 +347,8 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 500 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 533 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
         
@@ -414,33 +415,33 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-docker" data-lang="docker"><span class="o">[</span>root@test ~<span class="o">]</span><span class="c1"># docker version</span><span class="err">
-</span><span class="err"></span>Client: Docker Engine - Community<span class="err">
-</span><span class="err"></span> Version:           19.03.5<span class="err">
-</span><span class="err"></span> API version:       1.40<span class="err">
-</span><span class="err"></span> Go version:        go1.12.12<span class="err">
-</span><span class="err"></span> Git commit:        633a0ea<span class="err">
-</span><span class="err"></span> Built:             Wed Nov <span class="m">13</span> 07:25:41 2019<span class="err">
-</span><span class="err"></span> OS/Arch:           linux/amd64<span class="err">
-</span><span class="err"></span> Experimental:      <span class="nb">false</span><span class="err">
-</span><span class="err"></span>Server: Docker Engine - Community<span class="err">
-</span><span class="err"></span> Engine:<span class="err">
-</span><span class="err"></span>  Version:          19.03.5<span class="err">
-</span><span class="err"></span>  API version:      1.40 <span class="o">(</span>minimum version 1.12<span class="o">)</span><span class="err">
-</span><span class="err"></span>  Go version:       go1.12.12<span class="err">
-</span><span class="err"></span>  Git commit:       633a0ea<span class="err">
-</span><span class="err"></span>  Built:            Wed Nov <span class="m">13</span> 07:24:18 2019<span class="err">
-</span><span class="err"></span>  OS/Arch:          linux/amd64<span class="err">
-</span><span class="err"></span>  Experimental:     <span class="nb">false</span><span class="err">
-</span><span class="err"></span> containerd:<span class="err">
-</span><span class="err"></span>  Version:          1.2.10<span class="err">
-</span><span class="err"></span>  GitCommit:        b34a5c8af56e510852c35414db4c1f4fa6172339<span class="err">
-</span><span class="err"></span> runc:<span class="err">
-</span><span class="err"></span>  Version:          1.0.0-rc8+dev<span class="err">
-</span><span class="err"></span>  GitCommit:        3e425f80a8c931f88e6d94a8c831b9d5aa481657<span class="err">
-</span><span class="err"></span> docker-init:<span class="err">
-</span><span class="err"></span>  Version:          0.18.0<span class="err">
-</span><span class="err"></span>  GitCommit:        fec3683<span class="err">
+<pre class="chroma"><code class="language-docker" data-lang="docker"><span class="o">[</span>root@test ~<span class="o">]</span><span class="c1"># docker version</span><span class="err">
+</span><span class="err"></span>Client: Docker Engine - Community<span class="err">
+</span><span class="err"></span> Version:           19.03.5<span class="err">
+</span><span class="err"></span> API version:       1.40<span class="err">
+</span><span class="err"></span> Go version:        go1.12.12<span class="err">
+</span><span class="err"></span> Git commit:        633a0ea<span class="err">
+</span><span class="err"></span> Built:             Wed Nov <span class="m">13</span> 07:25:41 <span class="m">2019</span><span class="err">
+</span><span class="err"></span> OS/Arch:           linux/amd64<span class="err">
+</span><span class="err"></span> Experimental:      false<span class="err">
+</span><span class="err"></span>Server: Docker Engine - Community<span class="err">
+</span><span class="err"></span> Engine:<span class="err">
+</span><span class="err"></span>  Version:          19.03.5<span class="err">
+</span><span class="err"></span>  API version:      1.40 <span class="o">(</span>minimum version 1.12<span class="o">)</span><span class="err">
+</span><span class="err"></span>  Go version:       go1.12.12<span class="err">
+</span><span class="err"></span>  Git commit:       633a0ea<span class="err">
+</span><span class="err"></span>  Built:            Wed Nov <span class="m">13</span> 07:24:18 <span class="m">2019</span><span class="err">
+</span><span class="err"></span>  OS/Arch:          linux/amd64<span class="err">
+</span><span class="err"></span>  Experimental:     false<span class="err">
+</span><span class="err"></span> containerd:<span class="err">
+</span><span class="err"></span>  Version:          1.2.10<span class="err">
+</span><span class="err"></span>  GitCommit:        b34a5c8af56e510852c35414db4c1f4fa6172339<span class="err">
+</span><span class="err"></span> runc:<span class="err">
+</span><span class="err"></span>  Version:          1.0.0-rc8+dev<span class="err">
+</span><span class="err"></span>  GitCommit:        3e425f80a8c931f88e6d94a8c831b9d5aa481657<span class="err">
+</span><span class="err"></span> docker-init:<span class="err">
+</span><span class="err"></span>  Version:          0.18.0<span class="err">
+</span><span class="err"></span>  GitCommit:        fec3683<span class="err">
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="docker-国内镜像设置">docker 国内镜像设置</h3>
@@ -462,20 +463,20 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-docker" data-lang="docker">vim /etc/docker/daemon.json<span class="err">
-</span><span class="err"></span><span class="o">{</span><span class="err">
-</span><span class="err"></span><span class="s2">&#34;registry-mirrors&#34;</span>: <span class="o">[</span><span class="err">
-</span><span class="err"></span><span class="s2">&#34;https://kfwkfulq.mirror.aliyuncs.com&#34;</span>,<span class="err">
-</span><span class="err"></span><span class="s2">&#34;https://2lqq34jg.mirror.aliyuncs.com&#34;</span>,<span class="err">
-</span><span class="err"></span><span class="s2">&#34;https://pee6w651.mirror.aliyuncs.com&#34;</span>,<span class="err">
-</span><span class="err"></span><span class="s2">&#34;https://registry.docker-cn.com&#34;</span>,<span class="err">
-</span><span class="err"></span><span class="s2">&#34;http://hub-mirror.c.163.com&#34;</span><span class="err">
-</span><span class="err"></span><span class="o">]</span>,<span class="err">
-</span><span class="err"></span><span class="s2">&#34;dns&#34;</span>: <span class="o">[</span><span class="s2">&#34;8.8.8.8&#34;</span>,<span class="s2">&#34;8.8.4.4&#34;</span><span class="o">]</span><span class="err">
-</span><span class="err"></span><span class="o">}</span><span class="err">
-</span><span class="err"></span><span class="err">
-</span><span class="err"></span><span class="c">#重启docker服务</span><span class="err">
-</span><span class="err"></span>systemctl restart docker<span class="err">
+<pre class="chroma"><code class="language-docker" data-lang="docker">vim /etc/docker/daemon.json<span class="err">
+</span><span class="err"></span><span class="o">{</span><span class="err">
+</span><span class="err"></span><span class="s2">&#34;registry-mirrors&#34;</span>: <span class="o">[</span><span class="err">
+</span><span class="err"></span><span class="s2">&#34;https://kfwkfulq.mirror.aliyuncs.com&#34;</span>,<span class="err">
+</span><span class="err"></span><span class="s2">&#34;https://2lqq34jg.mirror.aliyuncs.com&#34;</span>,<span class="err">
+</span><span class="err"></span><span class="s2">&#34;https://pee6w651.mirror.aliyuncs.com&#34;</span>,<span class="err">
+</span><span class="err"></span><span class="s2">&#34;https://registry.docker-cn.com&#34;</span>,<span class="err">
+</span><span class="err"></span><span class="s2">&#34;http://hub-mirror.c.163.com&#34;</span><span class="err">
+</span><span class="err"></span><span class="o">]</span>,<span class="err">
+</span><span class="err"></span><span class="s2">&#34;dns&#34;</span>: <span class="o">[</span><span class="s2">&#34;8.8.8.8&#34;</span>,<span class="s2">&#34;8.8.4.4&#34;</span><span class="o">]</span><span class="err">
+</span><span class="err"></span><span class="o">}</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="c">#重启docker服务</span><span class="err">
+</span><span class="err"></span>systemctl restart docker<span class="err">
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="docker-安装mysql-57">docker 安装mysql 5.7</h3>
@@ -579,7 +580,7 @@
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://blog.lichaocheng.top" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -791,7 +792,7 @@
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -800,14 +801,14 @@
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    个人主页 - <a class="theme-link" href="https://lichaocheng.top">lichaocheng</a>
+    个人主页 - <a class="theme-link" href="https://cc360428.gitee.io/lichaocheng.top">lichaocheng</a>
   </span>
 
   <span class="copyright-year">
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">

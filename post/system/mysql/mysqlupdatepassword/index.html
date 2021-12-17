@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.65.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,13 +67,14 @@
 <meta property="article:modified_time" content="2020-04-18T12:21:48+08:00" />
 <meta itemprop="name" content="MySQL 忘记密码">
 <meta itemprop="description" content="MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to">
-<meta itemprop="datePublished" content="2020-04-18T12:21:48&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-18T12:21:48&#43;08:00" />
+<meta itemprop="datePublished" content="2020-04-18T12:21:48+08:00" />
+<meta itemprop="dateModified" content="2020-04-18T12:21:48+08:00" />
 <meta itemprop="wordCount" content="877">
 
 
 
-<meta itemprop="keywords" content="mysql,Error,Password," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="mysql,Error,Password," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL 忘记密码"/>
 <meta name="twitter:description" content="MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to"/>
 
@@ -142,7 +143,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -301,7 +302,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -370,9 +371,9 @@
         <li><a href="#关闭服务">关闭服务</a></li>
         <li><a href="#修改配置文件">修改配置文件</a></li>
         <li><a href="#重启服务">重启服务</a></li>
-        <li><a href="#进入mysql">进入mysql</a></li>
+        <li><a href="#进入mysql">进入<code>mysql</code></a></li>
         <li><a href="#删除修改的配置文件">删除修改的配置文件</a></li>
-        <li><a href="#重启mysqld-服务">重启mysqld 服务</a></li>
+        <li><a href="#重启mysqld-服务">重启<code>mysqld</code> 服务</a></li>
         <li><a href="#出现错误">出现错误</a></li>
         <li><a href="#修改成功">修改成功</a></li>
         <li><a href="#登陆成功">登陆成功</a></li>
@@ -739,7 +740,7 @@ default-character-set<span class="o">=</span>utf8
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://blog.lichaocheng.top" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -953,7 +954,7 @@ default-character-set<span class="o">=</span>utf8
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -962,14 +963,14 @@ default-character-set<span class="o">=</span>utf8
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    个人主页 - <a class="theme-link" href="https://lichaocheng.top">lichaocheng</a>
+    个人主页 - <a class="theme-link" href="https://cc360428.gitee.io/lichaocheng.top">lichaocheng</a>
   </span>
 
   <span class="copyright-year">
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">

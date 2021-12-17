@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.65.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/" />
@@ -52,7 +52,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -66,13 +66,14 @@
 <meta property="article:modified_time" content="2020-03-29T00:49:12+08:00" />
 <meta itemprop="name" content="linux(CentOS7) 网络管理">
 <meta itemprop="description" content="10（网络管理）">
-<meta itemprop="datePublished" content="2020-03-29T00:49:12&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-29T00:49:12&#43;08:00" />
+<meta itemprop="datePublished" content="2020-03-29T00:49:12+08:00" />
+<meta itemprop="dateModified" content="2020-03-29T00:49:12+08:00" />
 <meta itemprop="wordCount" content="6612">
 
 
 
-<meta itemprop="keywords" content="CentOS7,Syetem," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="CentOS7,Syetem," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux(CentOS7) 网络管理"/>
 <meta name="twitter:description" content="10（网络管理）"/>
 
@@ -141,7 +142,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -300,7 +301,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -522,13 +523,13 @@ rtt min/avg/max/mdev <span class="o">=</span> 0.647/0.709/0.771/0.062 ms
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ifconfig</span>
-eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
         inet 172.24.40.83  netmask 255.255.192.0  broadcast 172.24.63.255
         ether 00:16:3e:0c:d1:d9  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
         RX packets <span class="m">4270799</span>  bytes <span class="m">923464936</span> <span class="o">(</span>880.6 MiB<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame 0
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
         TX packets <span class="m">4640135</span>  bytes <span class="m">1228322385</span> <span class="o">(</span>1.1 GiB<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions 0
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
 <span class="o">[</span>root@Cc ~<span class="o">]</span># 
 </code></pre></td></tr></table>
 </div>
@@ -626,13 +627,13 @@ eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@iz2zeb00z6vr5gix5utl11z lichaocheng.top.server<span class="o">]</span><span class="c1"># ifconfig  eth0</span>
-eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
         inet 172.24.40.83  netmask 255.255.192.0  broadcast 172.24.63.255
         ether 00:16:3e:0c:d1:d9  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
         RX packets <span class="m">5310</span>  bytes <span class="m">575889</span> <span class="o">(</span>562.3 KiB<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame 0
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
         TX packets <span class="m">6178</span>  bytes <span class="m">1043414</span> <span class="o">(</span>1018.9 KiB<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions 0
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
 
 <span class="o">[</span>root@iz2zeb00z6vr5gix5utl11z lichaocheng.top.server<span class="o">]</span># 
 </code></pre></td></tr></table>
@@ -675,33 +676,33 @@ eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ifconfig docker</span>
-docker0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+docker0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
         inet 172.17.0.1  netmask 255.255.0.0  broadcast 0.0.0.0
         ether 02:42:5f:3a:85:e0  txqueuelen <span class="m">0</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
         RX packets <span class="m">34</span>  bytes <span class="m">2663</span> <span class="o">(</span>2.6 KiB<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame 0
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
         TX packets <span class="m">15</span>  bytes <span class="m">7621</span> <span class="o">(</span>7.4 KiB<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions 0
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
 
 <span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ifconfig docker0 172.24.40.88 netmask 255.255.192.0 up</span>
 <span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ifconfig docker</span>
-docker0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+docker0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
         inet 172.24.40.88  netmask 255.255.192.0  broadcast 172.24.63.255
         ether 02:42:5f:3a:85:e0  txqueuelen <span class="m">0</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
         RX packets <span class="m">34</span>  bytes <span class="m">2663</span> <span class="o">(</span>2.6 KiB<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame 0
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
         TX packets <span class="m">15</span>  bytes <span class="m">7621</span> <span class="o">(</span>7.4 KiB<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions 0
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
 
 <span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ifconfig docker0 hw ether 02:30:30:3f:5f:3a</span> 
 <span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ifconfig docker</span>
-docker0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+docker0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
         inet 172.24.40.88  netmask 255.255.192.0  broadcast 172.24.63.255
         ether 02:30:30:3f:5f:3a  txqueuelen <span class="m">0</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
         RX packets <span class="m">34</span>  bytes <span class="m">2663</span> <span class="o">(</span>2.6 KiB<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame 0
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
         TX packets <span class="m">15</span>  bytes <span class="m">7621</span> <span class="o">(</span>7.4 KiB<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions 0
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
 
 <span class="o">[</span>root@Cc ~<span class="o">]</span># 
 </code></pre></td></tr></table>
@@ -835,13 +836,13 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Lgr ~<span class="o">]</span><span class="c1"># curl ip.sb</span>
 115.28.138.45
 <span class="o">[</span>root@Lgr ~<span class="o">]</span><span class="c1"># ifconfig eth0</span>
-eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
         inet 172.31.220.39  netmask 255.255.240.0  broadcast 172.31.223.255
         ether 00:16:3e:08:80:34  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
         RX packets <span class="m">4840062</span>  bytes <span class="m">2017732415</span> <span class="o">(</span>1.8 GiB<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame 0
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
         TX packets <span class="m">4449497</span>  bytes <span class="m">952525473</span> <span class="o">(</span>908.3 MiB<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions 0
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
 
 <span class="o">[</span>root@Lgr ~<span class="o">]</span><span class="c1"># route -n</span>
 Kernel IP routing table
@@ -880,7 +881,7 @@ From 172.31.220.39 <span class="nv">icmp_seq</span><span class="o">=</span><span
 ^C
 --- 172.24.40.83 ping statistics ---
 <span class="m">5</span> packets transmitted, <span class="m">0</span> received, +4 errors, 100% packet loss, <span class="nb">time</span> 4000ms
-pipe 4
+pipe <span class="m">4</span>
 <span class="o">[</span>root@Lgr ~<span class="o">]</span># 
 <span class="c1"># 可能是哪里配错了</span>
 </code></pre></td></tr></table>
@@ -942,13 +943,13 @@ pipe 4
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># curl ip.sb</span>
 60.205.176.110
 <span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ifconfig eth0</span>
-eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+eth0: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu <span class="m">1500</span>
         inet 172.24.40.83  netmask 255.255.192.0  broadcast 172.24.63.255
         ether 00:16:3e:0c:d1:d9  txqueuelen <span class="m">1000</span>  <span class="o">(</span>Ethernet<span class="o">)</span>
         RX packets <span class="m">158625</span>  bytes <span class="m">26310297</span> <span class="o">(</span>25.0 MiB<span class="o">)</span>
-        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame 0
+        RX errors <span class="m">0</span>  dropped <span class="m">0</span>  overruns <span class="m">0</span>  frame <span class="m">0</span>
         TX packets <span class="m">161713</span>  bytes <span class="m">44000608</span> <span class="o">(</span>41.9 MiB<span class="o">)</span>
-        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions 0
+        TX errors <span class="m">0</span>  dropped <span class="m">0</span> overruns <span class="m">0</span>  carrier <span class="m">0</span>  collisions <span class="m">0</span>
 <span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># route -n</span>
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -983,7 +984,7 @@ From 172.24.40.83 <span class="nv">icmp_seq</span><span class="o">=</span><span 
 ^C
 --- 172.31.220.39 ping statistics ---
 <span class="m">5</span> packets transmitted, <span class="m">0</span> received, +4 errors, 100% packet loss, <span class="nb">time</span> 4000ms
-pipe 4
+pipe <span class="m">4</span>
 <span class="o">[</span>root@Cc ~<span class="o">]</span># 
 <span class="c1"># 可能是哪里配错了</span>
 </code></pre></td></tr></table>
@@ -1185,7 +1186,7 @@ scp.txt                                                    100%    <span class="
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>root@Lgr 10<span class="o">]</span><span class="c1"># ll</span>
-total 0
+total <span class="m">0</span>
 -rw-r--r-- <span class="m">1</span> root root <span class="m">0</span> Mar <span class="m">29</span> 13:46 scp.txt
 <span class="o">[</span>root@Lgr 10<span class="o">]</span># 
 </code></pre></td></tr></table>
@@ -1969,7 +1970,7 @@ nameserver 100.100.2.138
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://blog.lichaocheng.top" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -2182,7 +2183,7 @@ nameserver 100.100.2.138
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -2191,14 +2192,14 @@ nameserver 100.100.2.138
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    个人主页 - <a class="theme-link" href="https://lichaocheng.top">lichaocheng</a>
+    个人主页 - <a class="theme-link" href="https://cc360428.gitee.io/lichaocheng.top">lichaocheng</a>
   </span>
 
   <span class="copyright-year">
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">

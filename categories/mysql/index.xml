@@ -45,7 +45,7 @@
       <pubDate>Sat, 08 Dec 2018 22:21:48 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/system/mysql/day01/</guid>
-      <description>mysql 环境搭建 安装mysql 1 2 3 4 5 6 7 mysql&amp;gt; select version(); +------------+ | version() | +------------+ | 5.7.17-log | +------------+ 1 row in set (0.03 sec) 创建数据库，与查看 CREATE DATABASEmysql_crash_courseCHARACTER SET &#39;utf8&#39; COLLATE &#39;utf8_unicode_ci&#39;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</description>
+      <description>mysql 环境搭建 安装mysql 1 2 3 4 5 6 7 mysql&amp;gt; select version(); +------------+ | version() | +------------+ | 5.7.17-log | +------------+ 1 row in set (0.03 sec) 创建数据库，与查看 CREATE DATABASE mysql_crash_course CHARACTER SET &#39;utf8&#39; COLLATE &#39;utf8_unicode_ci&#39;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</description>
     </item>
     
   </channel>

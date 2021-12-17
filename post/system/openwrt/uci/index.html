@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.65.2" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/openwrt/uci/" />
@@ -53,7 +53,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -67,13 +67,14 @@
 <meta property="article:modified_time" content="2020-04-18T14:33:04+08:00" />
 <meta itemprop="name" content="openWrt uci">
 <meta itemprop="description" content="uci set 1 2 3 4 5 6 root@Accesshub:/etc/config# uci set qos.cc=interface root@Accesshub:/etc/config# uci set qos.cc.classgroup=default root@Accesshub:/etc/config# uci set qos.cc.enabled=1 root@Accesshub:/etc/config# uci set qos.cc.upload=134 root@Accesshub:/etc/config# uci set qos.cc.download=1000 root@Accesshub:/etc/config# uci commit qos 1 2 3 4 5 6 root@Accesshub:/etc/config# grep -A 6 cc qos config interface &#39;cc&#39; option classgroup &#39;default&#39; option enabled &#39;1&#39; option upload &#39;134&#39; option download &#39;1000&#39; uci add 1 2 3 4 5 6 root@Accesshub:/etc/config# uci add">
-<meta itemprop="datePublished" content="2020-04-18T14:33:04&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-18T14:33:04&#43;08:00" />
+<meta itemprop="datePublished" content="2020-04-18T14:33:04+08:00" />
+<meta itemprop="dateModified" content="2020-04-18T14:33:04+08:00" />
 <meta itemprop="wordCount" content="434">
 
 
 
-<meta itemprop="keywords" content="Syetem,openWrt,linux," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Syetem,openWrt,linux," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="openWrt uci"/>
 <meta name="twitter:description" content="uci set 1 2 3 4 5 6 root@Accesshub:/etc/config# uci set qos.cc=interface root@Accesshub:/etc/config# uci set qos.cc.classgroup=default root@Accesshub:/etc/config# uci set qos.cc.enabled=1 root@Accesshub:/etc/config# uci set qos.cc.upload=134 root@Accesshub:/etc/config# uci set qos.cc.download=1000 root@Accesshub:/etc/config# uci commit qos 1 2 3 4 5 6 root@Accesshub:/etc/config# grep -A 6 cc qos config interface &#39;cc&#39; option classgroup &#39;default&#39; option enabled &#39;1&#39; option upload &#39;134&#39; option download &#39;1000&#39; uci add 1 2 3 4 5 6 root@Accesshub:/etc/config# uci add"/>
 
@@ -142,7 +143,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -301,7 +302,7 @@
         
           
           
-            <a class="menu-item-link" href="https://lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -392,9 +393,9 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">root@Accesshub:/etc/config# uci <span class="nb">set</span> qos.cc<span class="o">=</span>interface
 root@Accesshub:/etc/config# uci <span class="nb">set</span> qos.cc.classgroup<span class="o">=</span>default
-root@Accesshub:/etc/config# uci <span class="nb">set</span> qos.cc.enabled<span class="o">=</span>1
-root@Accesshub:/etc/config# uci <span class="nb">set</span> qos.cc.upload<span class="o">=</span>134
-root@Accesshub:/etc/config# uci <span class="nb">set</span> qos.cc.download<span class="o">=</span>1000
+root@Accesshub:/etc/config# uci <span class="nb">set</span> qos.cc.enabled<span class="o">=</span><span class="m">1</span>
+root@Accesshub:/etc/config# uci <span class="nb">set</span> qos.cc.upload<span class="o">=</span><span class="m">134</span>
+root@Accesshub:/etc/config# uci <span class="nb">set</span> qos.cc.download<span class="o">=</span><span class="m">1000</span>
 root@Accesshub:/etc/config# uci commit qos
 </code></pre></td></tr></table>
 </div>
@@ -661,7 +662,7 @@ config class <span class="s1">&#39;Cc&#39;</span>
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://blog.lichaocheng.top" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -875,7 +876,7 @@ config class <span class="s1">&#39;Cc&#39;</span>
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -884,14 +885,14 @@ config class <span class="s1">&#39;Cc&#39;</span>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    个人主页 - <a class="theme-link" href="https://lichaocheng.top">lichaocheng</a>
+    个人主页 - <a class="theme-link" href="https://cc360428.gitee.io/lichaocheng.top">lichaocheng</a>
   </span>
 
   <span class="copyright-year">
     &copy;
     
       2019 -
-    2020
+    2021
     <span class="heart">
       
       <i class="iconfont">
