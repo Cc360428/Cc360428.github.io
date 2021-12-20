@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Pprof</title>
+      <link>https://cc360428.github.io/post/golang/utils/pprof/</link>
+      <pubDate>Wed, 17 Mar 2021 18:01:33 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/utils/pprof/</guid>
+      <description>Go pprof And Prometheus 在代码中使用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 import ( ... _ &amp;#34;net/http/pprof&amp;#34; &amp;#34;github.com/prometheus/client_golang/prometheus/promhttp&amp;#34; ... ) func main() { go func() { http.Handle(&amp;#34;/metrics&amp;#34;, promhttp.Handler()) _ = http.ListenAndServe(&amp;#34;14111&amp;#34;, nil) // &amp;#39;14111&amp;#39; 建议使用flag }() } 浏览器查看 http:/172.13.5.17:14111/debug/pprof/ 使用命令行查看</description>
+    </item>
+    
+    <item>
       <title>Kubectl</title>
       <link>https://cc360428.github.io/post/system/kubernetes/kubectl/</link>
       <pubDate>Wed, 17 Mar 2021 17:48:38 +0800</pubDate>
@@ -91,15 +100,6 @@
       
       <guid>https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/</guid>
       <description>MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to</description>
-    </item>
-    
-    <item>
-      <title>linux(CentOS7) 网络管理</title>
-      <link>https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
-      <pubDate>Sun, 29 Mar 2020 00:49:12 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
-      <description>网络基础知识以及网络管理内容 网络管理协议 好多概念知识，会拿出时间来讲解这张预留的空白 TCP/IP协议概述 好多概念知识，会拿出时间来讲解这张预</description>
     </item>
     
   </channel>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Sun, 19 Apr 2020 22:58:36 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Mar 2021 18:01:33 +0800</lastBuildDate>
     
 	<atom:link href="https://cc360428.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pprof</title>
+      <link>https://cc360428.github.io/post/golang/utils/pprof/</link>
+      <pubDate>Wed, 17 Mar 2021 18:01:33 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/utils/pprof/</guid>
+      <description>Go pprof And Prometheus 在代码中使用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 import ( ... _ &amp;#34;net/http/pprof&amp;#34; &amp;#34;github.com/prometheus/client_golang/prometheus/promhttp&amp;#34; ... ) func main() { go func() { http.Handle(&amp;#34;/metrics&amp;#34;, promhttp.Handler()) _ = http.ListenAndServe(&amp;#34;14111&amp;#34;, nil) // &amp;#39;14111&amp;#39; 建议使用flag }() } 浏览器查看 http:/172.13.5.17:14111/debug/pprof/ 使用命令行查看</description>
+    </item>
     
     <item>
       <title>系统设计（自动化权限）</title>
@@ -91,15 +100,6 @@
       
       <guid>https://cc360428.github.io/post/golang/beego/base-beego/</guid>
       <description>下载安装 安装环境 go get github.com/astaxie/beego 安装bee 工具 go get github.com/beego/bee</description>
-    </item>
-    
-    <item>
-      <title>Golang 算法</title>
-      <link>https://cc360428.github.io/post/golang/utils/algorithm/</link>
-      <pubDate>Mon, 29 Apr 2019 22:58:36 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/utils/algorithm/</guid>
-      <description>算法 常见的算法有</description>
     </item>
     
   </channel>
