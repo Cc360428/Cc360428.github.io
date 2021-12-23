@@ -31,6 +31,15 @@
     </item>
     
     <item>
+      <title>Databases（04735）</title>
+      <link>https://cc360428.github.io/post/selfstudy/databases/</link>
+      <pubDate>Fri, 20 Dec 2019 13:57:01 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/selfstudy/databases/</guid>
+      <description>数据库系统原理（04735） 第一章数据库系统概述 第三节数据库系统的结构 模式：物理独立性 外模式：逻辑独立性 数据库系统结构 客户端系统结构 浏览器/</description>
+    </item>
+    
+    <item>
       <title>MySQL 锁</title>
       <link>https://cc360428.github.io/post/system/mysql/mysql-lock/</link>
       <pubDate>Wed, 18 Sep 2019 12:21:48 +0800</pubDate>

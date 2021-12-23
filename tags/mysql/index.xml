@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mysql on Li Chao Cheng Blog</title>
+    <title>Mysql on Li Chao Cheng Blog</title>
     <link>https://cc360428.github.io/tags/mysql/</link>
-    <description>Recent content in mysql on Li Chao Cheng Blog</description>
+    <description>Recent content in Mysql on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
@@ -19,6 +19,15 @@
       
       <guid>https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/</guid>
       <description>MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to</description>
+    </item>
+    
+    <item>
+      <title>Databases（04735）</title>
+      <link>https://cc360428.github.io/post/selfstudy/databases/</link>
+      <pubDate>Fri, 20 Dec 2019 13:57:01 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/selfstudy/databases/</guid>
+      <description>数据库系统原理（04735） 第一章数据库系统概述 第三节数据库系统的结构 模式：物理独立性 外模式：逻辑独立性 数据库系统结构 客户端系统结构 浏览器/</description>
     </item>
     
     <item>
