@@ -22,30 +22,12 @@
     </item>
     
     <item>
-      <title>IP协议</title>
-      <link>https://cc360428.github.io/post/network/ip/</link>
-      <pubDate>Wed, 21 Aug 2019 12:48:54 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/network/ip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>HTTP协议</title>
       <link>https://cc360428.github.io/post/network/http/</link>
       <pubDate>Tue, 20 Aug 2019 12:48:54 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/network/http/</guid>
       <description>HTTP协议 Hyper Text Transfer Protocol 超文本传输协议 http 消息结构体、请求方法、响应头信息、状态码、content-type http 版本：HTTP/0.9、HTTP/1</description>
-    </item>
-    
-    <item>
-      <title>物理层</title>
-      <link>https://cc360428.github.io/post/network/bit/</link>
-      <pubDate>Mon, 19 Aug 2019 12:48:54 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/network/bit/</guid>
-      <description></description>
     </item>
     
     <item>

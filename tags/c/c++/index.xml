@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C/C&#43;&#43; on Li Chao Cheng Blog</title>
-    <link>https://cc360428.github.io/tags/c/c&#43;&#43;/</link>
+    <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/tags/c/c&#43;&#43;/</link>
     <description>Recent content in C/C&#43;&#43; on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
     
-	<atom:link href="https://cc360428.github.io/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clientcodefile.gitee.io/blog.lichaocheng.top/tags/c/c++/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>C</title>
-      <link>https://cc360428.github.io/post/cc&#43;&#43;/base/base/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/cc&#43;&#43;/base/base/</link>
       <pubDate>Mon, 12 Oct 2015 22:58:36 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/cc&#43;&#43;/base/base/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/cc&#43;&#43;/base/base/</guid>
       <description>C 基础</description>
     </item>
     

@@ -68,7 +68,7 @@
 <meta itemprop="description" content="redis 安装以及基本使用 、配置 ">
 <meta itemprop="datePublished" content="2019-01-26T12:48:54+08:00" />
 <meta itemprop="dateModified" content="2019-01-26T12:48:54+08:00" />
-<meta itemprop="wordCount" content="922">
+<meta itemprop="wordCount" content="1046">
 
 
 
@@ -347,8 +347,8 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 922 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 1046 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
         
@@ -373,7 +373,124 @@
 
     
     <div class="post-content">
-      <pre><code>方法一：源文件安装（推荐安装）
+      <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">方法一：源文件安装（推荐安装）
 
 在CentOS和Red Hat系统中，首先添加EPEL仓库，然后更新yum源：
 
@@ -394,10 +511,10 @@ vi /etc/redis.conf
 
 首先，注释这一行：
 
-#bind 127.0.0.1
+<span class="c1">#bind 127.0.0.1</span>
 另外，推荐给Redis设置密码，取消注释这一行：
 
-#requirepass foobared
+<span class="c1">#requirepass foobared</span>
 
 foobared即当前密码，可以自行修改为
 
@@ -407,17 +524,17 @@ requirepass 密码
 sudo systemctl restart redis
 
 
-systemctl start redis.service #启动redis服务器
+systemctl start redis.service <span class="c1">#启动redis服务器</span>
 
-systemctl stop redis.service #停止redis服务器
+systemctl stop redis.service <span class="c1">#停止redis服务器</span>
 
-systemctl restart redis.service #重新启动redis服务器
+systemctl restart redis.service <span class="c1">#重新启动redis服务器</span>
 
-systemctl status redis.service #获取redis服务器的运行状态
+systemctl status redis.service <span class="c1">#获取redis服务器的运行状态</span>
 
-systemctl enable redis.service #开机启动redis服务器
+systemctl <span class="nb">enable</span> redis.service <span class="c1">#开机启动redis服务器</span>
 
-systemctl disable redis.service #开机禁用redis服务器
+systemctl disable redis.service <span class="c1">#开机禁用redis服务器</span>
 
 
 
@@ -442,7 +559,7 @@ tar -zxvf redis-4.0.1.tar.gz
 
 通过make来编译，make是自动编译，会根据Makefile中描述的内容来进行编译。
 
-cd redis-4.0
+<span class="nb">cd</span> redis-4.0
 make
 可以看到在src目录下生成了几个新的文件。
 
@@ -486,22 +603,38 @@ rm -rf /usr/local/bin/redis*
 甚至可以把解压包也删除掉
 
 rm -rf /root/redis-stable
-</code></pre><h2 id="windows-redis-加入开机自启">windows redis 加入开机自启</h2>
-<pre><code>redis-server --service-install redis.windows-service.conf  --loglevel verbose
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="windows-redis-加入开机自启">windows redis 加入开机自启</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">redis-server --service-install redis.windows-service.conf  --loglevel verbose
 
 redis-server –service-install redis.windows.conf
 redis-cli.exe
 auth root
 
-config set requirepass root
+config <span class="nb">set</span> requirepass root
 
- CONFIG SET requirepass &quot;123456&quot;
+ CONFIG SET requirepass <span class="s2">&#34;123456&#34;</span>
  
- AUTH 123456
-
-
-
-</code></pre>
+ AUTH <span class="m">123456</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

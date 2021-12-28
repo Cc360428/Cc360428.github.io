@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>algorithm on Li Chao Cheng Blog</title>
-    <link>https://cc360428.github.io/tags/algorithm/</link>
+    <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/tags/algorithm/</link>
     <description>Recent content in algorithm on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
     <lastBuildDate>Mon, 29 Apr 2019 22:58:36 +0800</lastBuildDate>
     
-	<atom:link href="https://cc360428.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clientcodefile.gitee.io/blog.lichaocheng.top/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Golang 算法</title>
-      <link>https://cc360428.github.io/post/golang/utils/algorithm/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/utils/algorithm/</link>
       <pubDate>Mon, 29 Apr 2019 22:58:36 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/utils/algorithm/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/utils/algorithm/</guid>
       <description>算法 常见的算法有</description>
     </item>
     

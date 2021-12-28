@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>部署和学习网址 - Li Chao Cheng Blog</title>
+  <title>golang 包管理 - Li Chao Cheng Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,7 +22,7 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="Cc" /><meta name="description" content="kubernets  入门" />
+<meta name="author" content="Cc" /><meta name="description" content="go 代码管理工具" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -34,13 +34,13 @@
 <meta name="generator" content="Hugo 0.74.3" />
 
 
-<link rel="canonical" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/kubernetes/node/" />
+<link rel="canonical" href="https://cc360428.github.io/post/golang/golang-package/" />
 
 
 
 
 
-<link rel="icon" href="/blog.lichaocheng.top/favicon.ico" />
+<link rel="icon" href="/favicon.ico" />
 
 
 
@@ -52,30 +52,30 @@
 
 
 
-<link rel="stylesheet" href="/blog.lichaocheng.top/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
 
 
-<meta property="og:title" content="部署和学习网址" />
-<meta property="og:description" content="kubernets  入门" />
+<meta property="og:title" content="golang 包管理" />
+<meta property="og:description" content="go 代码管理工具" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/kubernetes/node/" />
-<meta property="article:published_time" content="2021-04-07T14:20:10+08:00" />
-<meta property="article:modified_time" content="2021-04-07T14:20:10+08:00" />
-<meta itemprop="name" content="部署和学习网址">
-<meta itemprop="description" content="kubernets  入门">
-<meta itemprop="datePublished" content="2021-04-07T14:20:10+08:00" />
-<meta itemprop="dateModified" content="2021-04-07T14:20:10+08:00" />
-<meta itemprop="wordCount" content="72">
+<meta property="og:url" content="https://cc360428.github.io/post/golang/golang-package/" />
+<meta property="article:published_time" content="2020-03-11T16:19:11+08:00" />
+<meta property="article:modified_time" content="2020-03-11T16:19:11+08:00" />
+<meta itemprop="name" content="golang 包管理">
+<meta itemprop="description" content="go 代码管理工具">
+<meta itemprop="datePublished" content="2020-03-11T16:19:11+08:00" />
+<meta itemprop="dateModified" content="2020-03-11T16:19:11+08:00" />
+<meta itemprop="wordCount" content="453">
 
 
 
-<meta itemprop="keywords" content="Syetem," />
+<meta itemprop="keywords" content="Golang,GoUtils," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="部署和学习网址"/>
-<meta name="twitter:description" content="kubernets  入门"/>
+<meta name="twitter:title" content="golang 包管理"/>
+<meta name="twitter:description" content="go 代码管理工具"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -93,7 +93,7 @@
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/blog.lichaocheng.top/" class="logo">Li Chao Cheng Blog</a>
+    <a href="/" class="logo">Li Chao Cheng Blog</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -107,35 +107,35 @@
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/">首页</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/">首页</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/post/">全部文章</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/post/">全部文章</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/tags/">归档</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/tags/">归档</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/categories/">类别</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/categories/">类别</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/about/">Blog About</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/about/">Blog About</a>
           
         
       </li><li class="mobile-menu-item">
@@ -173,8 +173,8 @@
 
 
 
-  <link rel="stylesheet" href="/blog.lichaocheng.top/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="/blog.lichaocheng.top/lib/photoswipe/default-skin/default-skin.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
 
 
 
@@ -231,7 +231,7 @@
 
   <header id="header" class="header container">
     <div class="logo-wrapper">
-  <a href="/blog.lichaocheng.top/" class="logo">
+  <a href="/" class="logo">
     
       Li Chao Cheng Blog
     
@@ -246,7 +246,7 @@
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/">首页</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/">首页</a>
           
 
         
@@ -257,7 +257,7 @@
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/post/">全部文章</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/post/">全部文章</a>
           
 
         
@@ -268,7 +268,7 @@
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/tags/">归档</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/tags/">归档</a>
           
 
         
@@ -279,7 +279,7 @@
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/categories/">类别</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/categories/">类别</a>
           
 
         
@@ -290,7 +290,7 @@
         
           
           
-            <a class="menu-item-link" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/about/">Blog About</a>
+            <a class="menu-item-link" href="https://cc360428.github.io/about/">Blog About</a>
           
 
         
@@ -337,17 +337,17 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">部署和学习网址</h1>
+      <h1 class="post-title">golang 包管理</h1>
       
       <div class="post-meta">
-        <time datetime="2021-04-07" class="post-time">
-          2021-04-07
+        <time datetime="2020-03-11" class="post-time">
+          2020-03-11
         </time>
         <div class="post-category">
-            <a href="https://clientcodefile.gitee.io/blog.lichaocheng.top/categories/utils/"> utils </a>
+            <a href="https://cc360428.github.io/categories/golang/"> golang </a>
             
           </div>
-        <span class="more-meta"> 约 72 字 </span>
+        <span class="more-meta"> 约 453 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -365,7 +365,26 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#记录">记录</a></li>
+    <li><a href="#godep">godep</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#使用">使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#goverdorgo112下-推荐使用">goverdor（go1.12下 推荐使用）</a>
+      <ul>
+        <li><a href="#安装-1">安装</a></li>
+        <li><a href="#基本使用">基本使用</a></li>
+        <li><a href="#更多使用">更多使用</a></li>
+        <li><a href="#缺点">缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#go-mod">go mod</a>
+      <ul>
+        <li><a href="#设置">设置</a></li>
+        <li><a href="#使用-1">使用</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -373,62 +392,207 @@
 
     
     <div class="post-content">
-      <h2 id="记录">记录</h2>
-<ul>
-<li>init</li>
-</ul>
+      <h2 id="godep">godep</h2>
+<h3 id="安装">安装</h3>
+<p><code>go get -u -v github.com/tools/godep</code></p>
+<h3 id="使用">使用</h3>
+<blockquote>
+<ol>
+<li><a href="https://google.com">参考1</a></li>
+<li><a href="https://www.baidu.com">参考2</a></li>
+</ol>
+</blockquote>
+<h2 id="goverdorgo112下-推荐使用">goverdor（go1.12下 推荐使用）</h2>
+<h3 id="安装-1">安装</h3>
+<p><code>go get -u github.com/kardianos/govendor</code></p>
+<h3 id="基本使用">基本使用</h3>
+<blockquote>
+<p>进入项目目录</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">kubeadm init <span class="se">\
-</span><span class="se"></span>--apiserver-advertise-address<span class="o">=</span>172.12.12.121 <span class="se">\
-</span><span class="se"></span>--image-repository registry.aliyuncs.com/google_containers <span class="se">\
-</span><span class="se"></span>--kubernetes-version v1.19.3 <span class="se">\
-</span><span class="se"></span>--service-cidr<span class="o">=</span>10.96.0.0/12 <span class="se">\
-</span><span class="se"></span>--pod-network-cidr<span class="o">=</span>10.244.0.0/1
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>join</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">kubeadm join 172.12.12.121:6443 --token jl6zjx.14wv2k41lr7akd6o <span class="se">\
-</span><span class="se"></span>    --discovery-token-ca-cert-hash sha256:4f3fef26676a2e81070ceacbe1a7f5ba302301acf2076021f9ae36d6f2b3b184
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>安装网络模块</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>kubernetes UI
-<ul>
-<li><a href="https://kuboard.cn/">https://kuboard.cn/</a></li>
-<li><a href="https://blog.csdn.net/mr_rsq/article/details/87914766">https://blog.csdn.net/mr_rsq/article/details/87914766</a></li>
-<li>echo $(kubectl -n kube-system get secret $(kubectl -n kube-system get secret | grep kuboard-user | awk &lsquo;{print $1}') -o go-template=&rsquo;{{.data.token}}&rsquo; | base64 -d)</li>
-</ul>
-</li>
-</ul>
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">govendor</span> <span class="nx">init</span>
+<span class="nx">govendor</span> <span class="nx">fetch</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">Cc360428</span><span class="o">/</span><span class="nx">HelpPackage</span><span class="o">/</span><span class="nx">UtilsHelp</span>
+<span class="nx">cat</span> <span class="nx">vendor</span><span class="o">/</span><span class="nx">vendor</span><span class="p">.</span><span class="nx">json</span>
+<span class="p">{</span>
+        <span class="s">&#34;comment&#34;</span><span class="p">:</span> <span class="s">&#34;&#34;</span><span class="p">,</span>
+        <span class="s">&#34;ignore&#34;</span><span class="p">:</span> <span class="s">&#34;test&#34;</span><span class="p">,</span>
+        <span class="s">&#34;package&#34;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                        <span class="s">&#34;checksumSHA1&#34;</span><span class="p">:</span> <span class="s">&#34;vT6zp7A2xIrOTza5mYU7ZR4it1c=&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;path&#34;</span><span class="p">:</span> <span class="s">&#34;github.com/Cc360428/HelpPackage&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;revision&#34;</span><span class="p">:</span> <span class="s">&#34;8c482c1a5d4c81ee28409d5efcc557b3fa1b89c2&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;revisionTime&#34;</span><span class="p">:</span> <span class="s">&#34;2020-03-05T05:01:58Z&#34;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                        <span class="s">&#34;path&#34;</span><span class="p">:</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp&#34;</span><span class="p">,</span>
+                        <span class="s">&#34;revision&#34;</span><span class="p">:</span> <span class="s">&#34;&#34;</span>
+                <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s">&#34;rootPath&#34;</span><span class="p">:</span> <span class="s">&#34;Cc360428/cloud&#34;</span>
+<span class="p">}</span>
 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="更多使用">更多使用</h3>
+<blockquote>
+<p>govendor &ndash;help</p>
+</blockquote>
+<ol>
+<li>依赖更新</li>
+<li>移除依赖</li>
+<li>查看依赖</li>
+<li>依赖丢失</li>
+</ol>
+<h3 id="缺点">缺点</h3>
+<blockquote>
+<p>必须在gopath 目录下使用</p>
+</blockquote>
+<h2 id="go-mod">go mod</h2>
+<blockquote>
+<p>注：golang 版本升级到 1.11(建议1.12)</p>
+</blockquote>
+<h3 id="设置">设置</h3>
+<blockquote>
+<p>注： GO111MODULE 有三个值（off、on、auto）</p>
+</blockquote>
+<h4 id="windows">windows</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"> <span class="nx">setx</span> <span class="nx">GO111MODULE</span> <span class="nx">on</span>
+ <span class="nx">setx</span> <span class="nx">GOPROXY</span> <span class="nx">https</span><span class="p">:</span><span class="c1">//goproxy.io
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="linux">linux</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">export</span> <span class="nx">GO111MODULE</span><span class="p">=</span><span class="nx">on</span>
+<span class="nx">export</span> <span class="nx">GOPROXY</span><span class="p">=</span><span class="nx">https</span><span class="p">:</span><span class="c1">//goproxy.io
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="使用-1">使用</h3>
+<blockquote>
+<p>进入项目根目录下</p>
+</blockquote>
+<ul>
+<li>初始化</li>
+</ul>
+<p><code>go mod init [mod 名字]</code></p>
+<ul>
+<li>拉取缺少模块</li>
+</ul>
+<p><code>go mod tidy</code></p>
+<ul>
+<li>下载依赖包</li>
+</ul>
+<p><code>go mod download</code></p>
+<ul>
+<li>编辑go.mod</li>
+</ul>
+<p><code>go mod edit</code></p>
+<ul>
+<li>打印模块依赖图</li>
+</ul>
+<p><code>go mod graph</code></p>
+<ul>
+<li>将依赖复制到vendor</li>
+</ul>
+<p><code>vendor</code></p>
+<ul>
+<li>验证依赖是否正确</li>
+</ul>
+<p><code>verify</code></p>
+<ul>
+<li>解释为什么需要依赖</li>
+</ul>
+<p><code>why</code></p>
+<h4 id="go-mod-help">go mod help</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="err">$</span> <span class="k">go</span> <span class="nx">help</span> <span class="nx">mod</span>
+<span class="nx">Go</span> <span class="nx">mod</span> <span class="nx">provides</span> <span class="nx">access</span> <span class="nx">to</span> <span class="nx">operations</span> <span class="nx">on</span> <span class="nx">modules</span><span class="p">.</span>
+
+<span class="nx">Note</span> <span class="nx">that</span> <span class="nx">support</span> <span class="k">for</span> <span class="nx">modules</span> <span class="nx">is</span> <span class="nx">built</span> <span class="nx">into</span> <span class="nx">all</span> <span class="nx">the</span> <span class="k">go</span> <span class="nx">commands</span><span class="p">,</span>
+<span class="nx">not</span> <span class="nx">just</span> <span class="err">&#39;</span><span class="k">go</span> <span class="nx">mod</span><span class="err">&#39;</span><span class="p">.</span> <span class="nx">For</span> <span class="nx">example</span><span class="p">,</span> <span class="nx">day</span><span class="o">-</span><span class="nx">to</span><span class="o">-</span><span class="nx">day</span> <span class="nx">adding</span><span class="p">,</span> <span class="nx">removing</span><span class="p">,</span> <span class="nx">upgrading</span><span class="p">,</span>
+<span class="nx">and</span> <span class="nx">downgrading</span> <span class="nx">of</span> <span class="nx">dependencies</span> <span class="nx">should</span> <span class="nx">be</span> <span class="nx">done</span> <span class="nx">using</span> <span class="err">&#39;</span><span class="k">go</span> <span class="nx">get</span><span class="err">&#39;</span><span class="p">.</span>
+<span class="nx">See</span> <span class="err">&#39;</span><span class="k">go</span> <span class="nx">help</span> <span class="nx">modules</span><span class="err">&#39;</span> <span class="k">for</span> <span class="nx">an</span> <span class="nx">overview</span> <span class="nx">of</span> <span class="nx">module</span> <span class="nx">functionality</span><span class="p">.</span>
+
+<span class="nx">Usage</span><span class="p">:</span>
+
+        <span class="k">go</span> <span class="nx">mod</span> <span class="p">&lt;</span><span class="nx">command</span><span class="p">&gt;</span> <span class="p">[</span><span class="nx">arguments</span><span class="p">]</span>
+
+<span class="nx">The</span> <span class="nx">commands</span> <span class="nx">are</span><span class="p">:</span>
+
+        <span class="nx">download</span>    <span class="nx">download</span> <span class="nx">modules</span> <span class="nx">to</span> <span class="nx">local</span> <span class="nx">cache</span>
+        <span class="nx">edit</span>        <span class="nx">edit</span> <span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">from</span> <span class="nx">tools</span> <span class="nx">or</span> <span class="nx">scripts</span>
+        <span class="nx">graph</span>       <span class="nx">print</span> <span class="nx">module</span> <span class="nx">requirement</span> <span class="nx">graph</span>
+        <span class="nx">init</span>        <span class="nx">initialize</span> <span class="nx">new</span> <span class="nx">module</span> <span class="nx">in</span> <span class="nx">current</span> <span class="nx">directory</span>
+        <span class="nx">tidy</span>        <span class="nx">add</span> <span class="nx">missing</span> <span class="nx">and</span> <span class="nx">remove</span> <span class="nx">unused</span> <span class="nx">modules</span>
+        <span class="nx">vendor</span>      <span class="nx">make</span> <span class="nx">vendored</span> <span class="nx">copy</span> <span class="nx">of</span> <span class="nx">dependencies</span>
+        <span class="nx">verify</span>      <span class="nx">verify</span> <span class="nx">dependencies</span> <span class="nx">have</span> <span class="nx">expected</span> <span class="nx">content</span>
+        <span class="nx">why</span>         <span class="nx">explain</span> <span class="nx">why</span> <span class="nx">packages</span> <span class="nx">or</span> <span class="nx">modules</span> <span class="nx">are</span> <span class="nx">needed</span>
+
+<span class="nx">Use</span> <span class="s">&#34;go help mod &lt;command&gt;&#34;</span> <span class="k">for</span> <span class="nx">more</span> <span class="nx">information</span> <span class="nx">about</span> <span class="nx">a</span> <span class="nx">command</span><span class="p">.</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -441,7 +605,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2021-04-07
+      2020-03-11
       
     </span>
   </p>
@@ -475,16 +639,30 @@
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://clientcodefile.gitee.io/blog.lichaocheng.top/tags/syetem/">Syetem</a>
+          <a href="https://cc360428.github.io/tags/golang/">Golang</a>
+          <a href="https://cc360428.github.io/tags/goutils/">GoUtils</a>
           
         </div>
 
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/system/nginx/nginx%E9%85%8D%E7%BD%AE/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Nginx配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
-          <a class="next" href="/blog.lichaocheng.top/post/golang/utils/pprof/">
-            <span class="next-text nav-default">Pprof</span>
+          <a class="next" href="/post/golang/mysql/gorm/">
+            <span class="next-text nav-default">Golang Mysql Gorm</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -519,31 +697,7 @@
 
     
 
-  <div id="comments"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <script>
-    if(window.location.hash){
-        var checkExist = setInterval(function() {
-            if ($(window.location.hash).length) {
-              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 700);
-              clearInterval(checkExist);
-            }
-        }, 10);
-    }
-  </script>
-  <script type="text/javascript">
-    new Valine({
-        el: '#comments' ,
-        appId: 'JcD72zxOvMLBD95kc0VW62eR-gzGzoHsz',
-        appKey: 'CnlQhdPzdvfO8QlI3CJLSGYV',
-        notify:  true , 
-        verify:  true , 
-        avatar:'test', 
-        placeholder: '说点什么吧...',
-        visitor:  false 
-    });
-  </script>
+  
 
         </div>
       </div>
@@ -638,7 +792,7 @@
     </a>
 
 
-<a href="https://clientcodefile.gitee.io/blog.lichaocheng.top/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="https://cc360428.github.io/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -701,13 +855,13 @@
     </div>
   </div>
   
-<script type="text/javascript" src="/blog.lichaocheng.top/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/blog.lichaocheng.top/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="/blog.lichaocheng.top/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
 
 
 
@@ -728,9 +882,9 @@
 
 
   
-    <script type="text/javascript" src="/blog.lichaocheng.top/js/load-photoswipe.js"></script>
-    <script type="text/javascript" src="/blog.lichaocheng.top/lib/photoswipe/photoswipe.min.js"></script>
-    <script type="text/javascript" src="/blog.lichaocheng.top/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
 
 

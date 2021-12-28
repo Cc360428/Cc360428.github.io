@@ -68,7 +68,7 @@
 <meta itemprop="description" content="linux 基础知识、认识、远程控制 ">
 <meta itemprop="datePublished" content="2020-03-23T22:17:54+08:00" />
 <meta itemprop="dateModified" content="2020-03-23T22:17:54+08:00" />
-<meta itemprop="wordCount" content="140">
+<meta itemprop="wordCount" content="152">
 
 
 
@@ -347,7 +347,7 @@
             <a href="https://cc360428.github.io/categories/utils/"> utils </a>
             
           </div>
-        <span class="more-meta"> 约 140 字 </span>
+        <span class="more-meta"> 约 152 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -387,26 +387,56 @@
 <ul>
 <li>查看是否启动</li>
 </ul>
-<pre><code class="language-linx" data-lang="linx">[root@Cc ~]# ps -ef |grep sshd
-root      1377     1  0 Mar20 ?        00:00:00 /usr/sbin/sshd -D
-root     21020  1377  0 20:49 ?        00:00:00 sshd: root@pts/1
-root     21310 21022  0 21:02 pts/1    00:00:00 grep --color=auto sshd
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ps -ef |grep sshd</span>
+root      <span class="m">1377</span>     <span class="m">1</span>  <span class="m">0</span> Mar20 ?        00:00:00 /usr/sbin/sshd -D
+root     <span class="m">21020</span>  <span class="m">1377</span>  <span class="m">0</span> 20:49 ?        00:00:00 sshd: root@pts/1
+root     <span class="m">21310</span> <span class="m">21022</span>  <span class="m">0</span> 21:02 pts/1    00:00:00 grep --color<span class="o">=</span>auto sshd
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>查看sshd 端口多少</li>
 </ul>
-<pre><code class="language-linux" data-lang="linux">[root@Cc ~]# netstat -ntlp |grep sshd
-tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1377/sshd    
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># netstat -ntlp |grep sshd</span>
+tcp        <span class="m">0</span>      <span class="m">0</span> 0.0.0.0:22              0.0.0.0:*               LISTEN      1377/sshd    
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>ssh 远程登入
 <ul>
 <li>服务终端命令登陆
-<pre><code class="language-linux" data-lang="linux">[root@Lgr ~]# ssh root@lichaocheng.top
-root@lichaocheng.top's password: 
-Last login: Mon Mar 23 21:04:51 2020 from 58.60.57.2
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Lgr ~<span class="o">]</span><span class="c1"># ssh root@lichaocheng.top</span>
+root@lichaocheng.top<span class="err">&#39;</span>s password: 
+Last login: Mon Mar <span class="m">23</span> 21:04:51 <span class="m">2020</span> from 58.60.57.2
       
 Welcome to Alibaba Cloud Elastic Compute Service !
-[root@Cc ~]# 
-</code></pre></li>
+<span class="o">[</span>root@Cc ~<span class="o">]</span># 
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>可以使用工具
 <ul>
 <li>xshell</li>

@@ -14,10 +14,10 @@
     
     <item>
       <title>golang 包管理</title>
-      <link>https://cc360428.github.io/post/golang/golang%E5%8C%85%E7%AE%A1%E7%90%86/</link>
+      <link>https://cc360428.github.io/post/golang/golang-package/</link>
       <pubDate>Wed, 11 Mar 2020 16:19:11 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/golang%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
+      <guid>https://cc360428.github.io/post/golang/golang-package/</guid>
       <description>godep 安装 go get -u -v github.com/tools/godep 使用 参考1 参考2 goverdor（go1.12下 推荐使用） 安装 go get -u github.com/kardianos/govendor 基本使用 进入项目目录 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17</description>
     </item>
     

@@ -338,18 +338,18 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/golang/base/variableandarray/">Day06（作用域与数组）</a>
+      <a class="post-link" href="/post/golang/base/base/">Golang 入门介绍</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2019-04-07" class="post-time">
-        2019-04-07
+      <time datetime="2019-03-30" class="post-time">
+        2019-03-30
       </time>
       <div class="post-category">
           <a href="https://cc360428.github.io/categories/base/"> base </a>
           
         </div>
-      <span class="more-meta"> 约 991 字 </span>
+      <span class="more-meta"> 约 879 字 </span>
       <span class="more-meta"> 预计阅读 2 分钟 </span>
       
       
@@ -360,10 +360,10 @@
   <div class="post-content">
     
     <div class="post-summary">
-      作用域与数组 源码 变量作用域 局部变量 函数内定义的变量 1 2 3 4 5 6 7 8 9 10 package main import ( &#34;fmt&#34; ) func main() { var a, b, c = 1, 2, 3 fmt.Println(a, b, c) } 全局变量 函数外定义的变量 1 2
+      Golang基础 本章源码 初步认识Golang Go 跨平台（linux、windows、mac），只要编写完代码之后交叉编译即可 Go 语言单一、简洁、
     </div>
     <div class="read-more">
-      <a href="/post/golang/base/variableandarray/" class="read-more-link">阅读全文</a>
+      <a href="/post/golang/base/base/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -374,19 +374,16 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/golang/base/func/">Day05（函数）</a>
+      <a class="post-link" href="/post/golang/base/">Golang Base</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2019-04-06" class="post-time">
-        2019-04-06
+      <time datetime="2019-03-07" class="post-time">
+        2019-03-07
       </time>
-      <div class="post-category">
-          <a href="https://cc360428.github.io/categories/base/"> base </a>
-          
-        </div>
-      <span class="more-meta"> 约 1653 字 </span>
-      <span class="more-meta"> 预计阅读 4 分钟 </span>
+      
+      <span class="more-meta"> 约 2581 字 </span>
+      <span class="more-meta"> 预计阅读 6 分钟 </span>
       
       
       
@@ -396,10 +393,10 @@
   <div class="post-content">
     
     <div class="post-summary">
-      函数 源码 go 至少一个函数 主函数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 package main import ( &#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34; ) func main() { _, _, _, err := FuncName(&#34;&#34;, &#34;&#34;, false) if err != nil { logs.Error(err.Error()) } } // FuncName func FuncName(args1, args2 string, args3 bool) (return1, return2
+      GoLang GoLang https://go-zh.org/ 基础 包、变量和函数、基本类型 包 package 每个程序都是由包组成 导入 import 圆括号可以组合导入 导出 在Go语言中首字母大写的名称是被导出的 导入了一个包后，
     </div>
     <div class="read-more">
-      <a href="/post/golang/base/func/" class="read-more-link">阅读全文</a>
+      <a href="/post/golang/base/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -410,19 +407,19 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/golang/base/loopstatementfunc/">Day04（循环语句）</a>
+      <a class="post-link" href="/post/system/idea/idea%E4%BD%BF%E7%94%A8/">idea 使用</a>
     </h1>
     
     <div class="post-meta">
-      <time datetime="2019-04-03" class="post-time">
-        2019-04-03
+      <time datetime="2019-01-26" class="post-time">
+        2019-01-26
       </time>
       <div class="post-category">
-          <a href="https://cc360428.github.io/categories/base/"> base </a>
+          <a href="https://cc360428.github.io/categories/utils/"> utils </a>
           
         </div>
-      <span class="more-meta"> 约 1244 字 </span>
-      <span class="more-meta"> 预计阅读 3 分钟 </span>
+      <span class="more-meta"> 约 462 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
       
       
       
@@ -432,10 +429,10 @@
   <div class="post-content">
     
     <div class="post-summary">
-      循环语句 源代码 for 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 package main import &#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34; func main() { array := make([]int, 5) logs.Info(array) for i := 0; i &lt; len(array); i++ { array[i] = i } logs.Info(array) b := 3 for b &gt;= 1 { b-- logs.Debug(b) } a := 5
+      1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 Alt+回车 导入包,自动修正 Ctrl+N 查找类 Ctrl+Shift+N 查找文件 Ctrl+Alt+L 格式化代码 Ctrl+Alt+O 优化
     </div>
     <div class="read-more">
-      <a href="/post/golang/base/loopstatementfunc/" class="read-more-link">阅读全文</a>
+      <a href="/post/system/idea/idea%E4%BD%BF%E7%94%A8/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -653,6 +650,8 @@
 
             
             
+              
+            
 
           
           
@@ -661,6 +660,12 @@
         
 
         
+        
+          <li class="">
+            <a href="/page/8/">
+              8
+            </a>
+          </li>
         
 
       
@@ -676,6 +681,8 @@
 
             
             
+              
+            
 
           
           
@@ -684,6 +691,12 @@
         
 
         
+        
+          <li class="">
+            <a href="/page/9/">
+              9
+            </a>
+          </li>
         
 
       
@@ -699,6 +712,8 @@
 
             
             
+              
+            
 
           
           
@@ -707,6 +722,12 @@
         
 
         
+        
+          <li class="">
+            <a href="/page/10/">
+              10
+            </a>
+          </li>
         
 
       
@@ -1021,99 +1042,6 @@
 
       
 
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/21/">
-              21
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/22/">
-              22
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/23/">
-              23
-            </a>
-          </li>
-        
-
-      
-
       
       
       <li><a href="/page/18/">»</a></li>
@@ -1121,7 +1049,7 @@
 
       
       
-      <li><a href="/page/23/">»»</a></li>
+      <li><a href="/page/20/">»»</a></li>
       
 
       </ul>

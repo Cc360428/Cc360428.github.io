@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Sun, 28 Apr 2019 21:04:03 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Apr 2019 09:19:29 +0800</lastBuildDate>
     
 	<atom:link href="https://cc360428.github.io/tags/gobase/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Day12（反射）</title>
-      <link>https://cc360428.github.io/post/golang/base/reflect/</link>
-      <pubDate>Sun, 28 Apr 2019 21:04:03 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/base/reflect/</guid>
-      <description>反射</description>
-    </item>
     
     <item>
       <title>Day11（并发编程）</title>
@@ -100,6 +91,15 @@
       
       <guid>https://cc360428.github.io/post/golang/base/operatorcondition/</guid>
       <description>运算符与条件语句 本章源码 运算符 算数运算符 假定 A 值为 10，B 值为 20 运算符 描述 实例 + 相加 A + B 输出结果 30 - 相减 A - B 输出结果 -10 * 相乘 A * B 输出结</description>
+    </item>
+    
+    <item>
+      <title>Day02（入门基础）</title>
+      <link>https://cc360428.github.io/post/golang/base/datatype/</link>
+      <pubDate>Sun, 31 Mar 2019 21:18:30 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/base/datatype/</guid>
+      <description>数据类型、变量、常量 本章源码 数据类型 package builtin 可以看数据包builtin 布尔类型 默认值为：false 数字类型 整形 默认值为：0 浮点型 默认值为：0 字符</description>
     </item>
     
   </channel>

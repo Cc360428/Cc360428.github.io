@@ -18,7 +18,7 @@
       <pubDate>Sun, 07 Jul 2019 13:21:03 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/golang/gin/gin-bast/</guid>
-      <description>构建 安装Gin环境 go get -u github.com/gin-gonic/gin 安装Gin 工具 go get github.com/kardianos/govendor gin_demo 创建文件 mkdir gin_demo 初始化构建gin govendor init govendor fetch github.com/gin-gonic/gin@v1.3 Hello World Gin package main import ( &amp;quot;net/http&amp;quot; &amp;quot;github.com/gin-gonic/gin&amp;quot; ) func setupRouter() *gin.Engine { r := gin.Default() r.GET(&amp;quot;/&amp;quot;, func(c *gin.Context) { c.String(http.StatusOK, &amp;quot;Hello World Gin&amp;quot;) }) return</description>
+      <description>构建 安装Gin环境 go get -u github.com/gin-gonic/gin 安装Gin 工具 1 go get github.com/kardianos/govendor gin_demo 创建文件 1 mkdir gin_demo 初始化构建gin 1 2 govendor init govendor fetch github.com/gin-gonic/gin@v1.3 Hello World Gin 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</description>
     </item>
     
   </channel>
