@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Li Chao Cheng Blog</title>
-    <link>https://cc360428.github.io/tags/git/</link>
+    <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/tags/git/</link>
     <description>Recent content in Git on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
     <lastBuildDate>Sat, 18 Apr 2020 14:33:04 +0800</lastBuildDate>
     
-	<atom:link href="https://cc360428.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clientcodefile.gitee.io/blog.lichaocheng.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git 基本命令 </title>
-      <link>https://cc360428.github.io/post/system/git/gitbase/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/git/gitbase/</link>
       <pubDate>Sat, 18 Apr 2020 14:33:04 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/system/git/gitbase/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/git/gitbase/</guid>
       <description>Git 工作用到的基本命令 模拟环境 自己搭建了gogs 开源Git仓库 注册账号地址 lcc、google 创建仓库Study 把lcc 添加管理协作者(收到邮</description>
     </item>
     

@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/kubernetes/kubectl/" />
@@ -61,19 +61,15 @@
 <meta property="og:title" content="Kubectl" />
 <meta property="og:description" content="Kubernetes 操作 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/kubernetes/kubectl/" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/kubernetes/kubectl/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-17T17:48:38+08:00" />
 <meta property="article:modified_time" content="2021-03-17T17:48:38+08:00" />
+
 <meta itemprop="name" content="Kubectl">
-<meta itemprop="description" content="Kubernetes 操作 ">
-<meta itemprop="datePublished" content="2021-03-17T17:48:38+08:00" />
+<meta itemprop="description" content="Kubernetes 操作 "><meta itemprop="datePublished" content="2021-03-17T17:48:38+08:00" />
 <meta itemprop="dateModified" content="2021-03-17T17:48:38+08:00" />
-<meta itemprop="wordCount" content="1860">
-
-
-
-<meta itemprop="keywords" content="CentOS7,Syetem,Kubernetes," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="1858">
+<meta itemprop="keywords" content="Kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubectl"/>
 <meta name="twitter:description" content="Kubernetes 操作 "/>
 
@@ -344,10 +340,10 @@
           2021-03-17
         </time>
         <div class="post-category">
-            <a href="https://cc360428.github.io/categories/utils/"> utils </a>
+            <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
             
           </div>
-        <span class="more-meta"> 约 1860 字 </span>
+        <span class="more-meta"> 约 1858 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
 
         
@@ -399,13 +395,13 @@
 <p>查看版本</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">kubectl version
-kubectl get nodes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl version
+</span></span><span class="line"><span class="cl">kubectl get nodes
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -420,7 +416,7 @@ kubectl get nodes
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -490,75 +486,75 @@ kubectl get nodes
 </span><span class="lnt">68
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@idn ~<span class="o">]</span><span class="c1"># kubectl --help</span>
-kubectl controls the Kubernetes cluster manager.
-
- Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/
-
-Basic Commands <span class="o">(</span>Beginner<span class="o">)</span>:
-  create        创建资源
-  expose        将控制器、服务、部署或pod暴露未新的Kubernetes服务
-  run           在集群上运行一个特定的镜像
-  <span class="nb">set</span>           设置对象的特定功能
-
-Basic Commands <span class="o">(</span>Intermediate<span class="o">)</span>:
-  explain       Documentation of resources
-  get           显示一个活多个资源
-  edit          编辑服务的资源
-  delete        按照文件名、资源名和名称资源、标签选择器删除资源
-
-Deploy Commands:
-  rollout       管理资源推出
-  scale         为deployment、replicaset controller 设置新的大小
-  autoscale     自动缩放 Deployment 、replicaset 或 Replication Controller
-
-Cluster Management Commands:
-  certificate   修改证书资源
-  cluster-info  显示集群信息
-  top           显示资源（cpu/内存/储存）使用情况
-  cordon        警戒线将节点标记为不可调度
-  uncordon      将节点标记为可调度
-  drain         移除节点，准备维护；容器驱离
-  taint         更新一个或多个节点上污点
-
-Troubleshooting and Debugging Commands:
-  describe      显示特定资源或资源组的详细信息
-  logs          打印pod中容器的日志
-  attach        附加到正在运行的容器
-  <span class="nb">exec</span>          在容器中执行命令
-  port-forward  将一个或多个本地端口转发到一个pod
-  proxy         运行一个到Kubernetes Api 服务代理
-  cp            在容器之间复制文件和目录
-  auth          检查授权
-
-Advanced Commands:
-  diff          将要应用的版本的Diff实时版本
-  apply         按照文件名或者目录标准输入将配置应用到资源
-  patch         补丁修改，更新资源字段
-  replace       使用配置文件或stdin 来替换资源
-  <span class="nb">wait</span>          在一个或多个资源上等待一个条件（不常用）
-  convert       在不同的API版本之间转换配置文件
-  kustomize     从目录或远程url 构建 kustomization 目标
-
-Settings Commands:
-  label         更新资源上的标签
-  annotate      更新资源上的注释
-  completion    为指定的shell<span class="o">(</span>bash OR zsh<span class="o">)</span> 输出完全代码
-
-Other Commands:
-  alpha         Commands <span class="k">for</span> features in alpha
-  api-resources 在服务器上打印支持的API资源
-  api-versions  在服务端上打印支持API版本，以‘组/版本’的形式
-  config        修改 Kubernetes 文件
-  plugin        提供与插件交互的使用程序
-  version       打印客户端与服务端的版本信息
-
-Usage:
-  kubectl <span class="o">[</span>flags<span class="o">]</span> <span class="o">[</span>options<span class="o">]</span>
-
-Use <span class="s2">&#34;kubectl &lt;command&gt; --help&#34;</span> <span class="k">for</span> more information about a given command.
-Use <span class="s2">&#34;kubectl options&#34;</span> <span class="k">for</span> a list of global command-line options <span class="o">(</span>applies to all commands<span class="o">)</span>.
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@idn ~<span class="o">]</span><span class="c1"># kubectl --help</span>
+</span></span><span class="line"><span class="cl">kubectl controls the Kubernetes cluster manager.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Basic Commands <span class="o">(</span>Beginner<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  create        创建资源
+</span></span><span class="line"><span class="cl">  expose        将控制器、服务、部署或pod暴露未新的Kubernetes服务
+</span></span><span class="line"><span class="cl">  run           在集群上运行一个特定的镜像
+</span></span><span class="line"><span class="cl">  <span class="nb">set</span>           设置对象的特定功能
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Basic Commands <span class="o">(</span>Intermediate<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  explain       Documentation of resources
+</span></span><span class="line"><span class="cl">  get           显示一个活多个资源
+</span></span><span class="line"><span class="cl">  edit          编辑服务的资源
+</span></span><span class="line"><span class="cl">  delete        按照文件名、资源名和名称资源、标签选择器删除资源
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Deploy Commands:
+</span></span><span class="line"><span class="cl">  rollout       管理资源推出
+</span></span><span class="line"><span class="cl">  scale         为deployment、replicaset controller 设置新的大小
+</span></span><span class="line"><span class="cl">  autoscale     自动缩放 Deployment 、replicaset 或 Replication Controller
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Cluster Management Commands:
+</span></span><span class="line"><span class="cl">  certificate   修改证书资源
+</span></span><span class="line"><span class="cl">  cluster-info  显示集群信息
+</span></span><span class="line"><span class="cl">  top           显示资源（cpu/内存/储存）使用情况
+</span></span><span class="line"><span class="cl">  cordon        警戒线将节点标记为不可调度
+</span></span><span class="line"><span class="cl">  uncordon      将节点标记为可调度
+</span></span><span class="line"><span class="cl">  drain         移除节点，准备维护；容器驱离
+</span></span><span class="line"><span class="cl">  taint         更新一个或多个节点上污点
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Troubleshooting and Debugging Commands:
+</span></span><span class="line"><span class="cl">  describe      显示特定资源或资源组的详细信息
+</span></span><span class="line"><span class="cl">  logs          打印pod中容器的日志
+</span></span><span class="line"><span class="cl">  attach        附加到正在运行的容器
+</span></span><span class="line"><span class="cl">  <span class="nb">exec</span>          在容器中执行命令
+</span></span><span class="line"><span class="cl">  port-forward  将一个或多个本地端口转发到一个pod
+</span></span><span class="line"><span class="cl">  proxy         运行一个到Kubernetes Api 服务代理
+</span></span><span class="line"><span class="cl">  cp            在容器之间复制文件和目录
+</span></span><span class="line"><span class="cl">  auth          检查授权
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Advanced Commands:
+</span></span><span class="line"><span class="cl">  diff          将要应用的版本的Diff实时版本
+</span></span><span class="line"><span class="cl">  apply         按照文件名或者目录标准输入将配置应用到资源
+</span></span><span class="line"><span class="cl">  patch         补丁修改，更新资源字段
+</span></span><span class="line"><span class="cl">  replace       使用配置文件或stdin 来替换资源
+</span></span><span class="line"><span class="cl">  <span class="nb">wait</span>          在一个或多个资源上等待一个条件（不常用）
+</span></span><span class="line"><span class="cl">  convert       在不同的API版本之间转换配置文件
+</span></span><span class="line"><span class="cl">  kustomize     从目录或远程url 构建 kustomization 目标
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Settings Commands:
+</span></span><span class="line"><span class="cl">  label         更新资源上的标签
+</span></span><span class="line"><span class="cl">  annotate      更新资源上的注释
+</span></span><span class="line"><span class="cl">  completion    为指定的shell<span class="o">(</span>bash OR zsh<span class="o">)</span> 输出完全代码
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Other Commands:
+</span></span><span class="line"><span class="cl">  alpha         Commands <span class="k">for</span> features in alpha
+</span></span><span class="line"><span class="cl">  api-resources 在服务器上打印支持的API资源
+</span></span><span class="line"><span class="cl">  api-versions  在服务端上打印支持API版本，以‘组/版本’的形式
+</span></span><span class="line"><span class="cl">  config        修改 Kubernetes 文件
+</span></span><span class="line"><span class="cl">  plugin        提供与插件交互的使用程序
+</span></span><span class="line"><span class="cl">  version       打印客户端与服务端的版本信息
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Usage:
+</span></span><span class="line"><span class="cl">  kubectl <span class="o">[</span>flags<span class="o">]</span> <span class="o">[</span>options<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Use <span class="s2">&#34;kubectl &lt;command&gt; --help&#34;</span> <span class="k">for</span> more information about a given command.
+</span></span><span class="line"><span class="cl">Use <span class="s2">&#34;kubectl options&#34;</span> <span class="k">for</span> a list of global command-line options <span class="o">(</span>applies to all commands<span class="o">)</span>.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="node">node</h3>
 <blockquote>
@@ -568,7 +564,7 @@ Use <span class="s2">&#34;kubectl options&#34;</span> <span class="k">for</span>
 <p><img src="/system/kubernetes/image-20211124155829434.png" alt="image-20211124155829434"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -583,25 +579,25 @@ Use <span class="s2">&#34;kubectl options&#34;</span> <span class="k">for</span>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 查看所有nodes</span> 
-kubectl get node
-kubectl delete node node-name <span class="c1"># 删除node</span>
-kubectl replace -f node-name.yaml <span class="c1"># 指定node 脱离调度范围</span>
-kubectl patch node node-name -p <span class="s1">&#39;{&#34;spec&#34;:&#34;{&#34;unschedulable&#34;:&#34;true&#34;}&#34;}&#39;</span> 
-<span class="c1"># 恢复</span>
-kubectl cordon node-name <span class="c1"># 将 node-name 节点设置为不可调度模式</span>
-kubectl drain node-name <span class="c1"># 将当前运行的 node-name 节点上容器驱离</span>
-kubectl uncordon node-name <span class="c1"># 执行完维护后，将节点重新加入调度</span>
-
-<span class="c1"># label 可以将pod调度指定到 node（project=name）</span>
-kubectl label node node-name <span class="nv">rele</span><span class="o">=</span>backend <span class="c1"># 添加 label</span> 
-kubectl label node node-name rele- <span class="c1"># 删除label</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看所有nodes </span>
+</span></span><span class="line"><span class="cl">kubectl get node
+</span></span><span class="line"><span class="cl">kubectl delete node node-name <span class="c1"># 删除node</span>
+</span></span><span class="line"><span class="cl">kubectl replace -f node-name.yaml <span class="c1"># 指定node 脱离调度范围</span>
+</span></span><span class="line"><span class="cl">kubectl patch node node-name -p <span class="s1">&#39;{&#34;spec&#34;:&#34;{&#34;unschedulable&#34;:&#34;true&#34;}&#34;}&#39;</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># 恢复</span>
+</span></span><span class="line"><span class="cl">kubectl cordon node-name <span class="c1"># 将 node-name 节点设置为不可调度模式</span>
+</span></span><span class="line"><span class="cl">kubectl drain node-name <span class="c1"># 将当前运行的 node-name 节点上容器驱离</span>
+</span></span><span class="line"><span class="cl">kubectl uncordon node-name <span class="c1"># 执行完维护后，将节点重新加入调度</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># label 可以将pod调度指定到 node（project=name）</span>
+</span></span><span class="line"><span class="cl">kubectl label node node-name <span class="nv">rele</span><span class="o">=</span>backend <span class="c1"># 添加 label </span>
+</span></span><span class="line"><span class="cl">kubectl label node node-name rele- <span class="c1"># 删除label</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="pod">Pod</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -647,78 +643,74 @@ kubectl label node node-name rele- <span class="c1"># 删除label</span>
 </span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># -n 指定 namespaces</span>
-kubectl run .... <span class="c1"># 创建</span>
-<span class="c1"># 查询pod资源 尾部加上 `-w` 可以查看到创建pod</span>
-kubectl get pods --all-namespaces <span class="c1"># or kubectl get pods -A</span>
-kubectl get pods -n common <span class="c1"># 指定 namespaces</span> 
-kubectl get pods,deployment,replicaset <span class="c1"># deployment-控制器，replicaset-副本集</span>
-
-kubectl expose -f ..*...yaml --port<span class="o">=</span><span class="m">8080</span> --target-port<span class="o">=</span><span class="m">8081</span> <span class="c1"># 为资源暴露为新的Kubernetes service</span>
-kubectl get service ferry -n common <span class="c1"># 查询服务暴露的端口 ;service 可以写成 svc</span> 
-kubectl get pod,svc -n common <span class="c1"># 查询pod 和 service 端口和运行状态</span>
-get pods -o wide -n common <span class="c1"># 查询网络状态</span>
-kubectl get pods  ferry-6cb8d5697c-tdbzc -o wide  -n common <span class="c1"># 指定pod 查询</span>
-
-kubectl get endpoints <span class="c1"># 查询关联后的节点</span>
-
-kubectl logs ferry-6cb8d5697c-tdbzc -n common <span class="p">|</span> more <span class="c1"># 查询日志 more-&gt; 可以分也查找</span>
-kubectl logs -f ferry-6cb8d5697c-tdbzc --tail<span class="o">=</span><span class="m">10</span> -n common <span class="c1"># 查看最后10条日志，-f 实时日志</span>
-
-
-
-<span class="c1"># 更新资源</span>
-kubectl rollout <span class="nb">history</span> deployment/ferry -n common <span class="c1"># 查看历史记录</span>
-kubectl rollout undo deployment/ferry -n common  <span class="c1"># 回滚到上次部署</span>
-kubectl rollout undo deployment/ferry --to-revision<span class="o">=</span><span class="m">2</span> -n common <span class="c1"># 回滚到指定版本</span>
-kubectl rollout status -w deployment/ferry -n common <span class="c1"># 查看是否会滚成功</span>
-kubectl rollout restart deployment/ferry -n common <span class="c1"># 轮替重启</span>
-
-kubectl edit deployment/ferry -n common <span class="c1"># 修改配置</span>
-kubectl <span class="nb">set</span> image deployment/ferry -n common <span class="nv">ferry</span><span class="o">=</span>repo.qianz.com/indonesia/game/chess/ferry:master #  
-
-<span class="c1"># 伸缩</span>
-kubectl scale --replicas<span class="o">=</span><span class="m">2</span> deployment/ferry -n common <span class="c1"># 伸缩到几个副本</span>
-kubectl scale --current-replicas<span class="o">=</span><span class="m">2</span> --replicas<span class="o">=</span><span class="m">1</span> deployment/ferry -n common <span class="c1"># 当前的一个副本修改成1个副本</span>
-kubectl scale --replicas<span class="o">=</span><span class="m">3</span> -f ferry.yaml <span class="c1"># 文件修改</span>
-kubectl scale --replicas<span class="o">=</span><span class="m">5</span> rc/a rc/b rc/c <span class="c1"># 多个控制</span>
-
-<span class="c1"># 删除</span>
-
-kubectl delete -f ./pod.json                                              <span class="c1"># 删除在 pod.json 中指定的类型和名称的 Pod</span>
-kubectl delete pod,service baz foo                                        <span class="c1"># 删除名称为 &#34;baz&#34; 和 &#34;foo&#34; 的 Pod 和服务</span>
-kubectl delete pods,services -l <span class="nv">name</span><span class="o">=</span>myLabel                              <span class="c1"># 删除包含 name=myLabel 标签的 pods 和服务</span>
-kubectl -n my-ns delete pod,svc --all                                     <span class="c1"># 删除在 my-ns 名字空间中全部的 Pods 和服务</span>
-<span class="c1"># 删除所有与 pattern1 或 pattern2 awk 模式匹配的 Pods</span>
-kubectl get pods  -n mynamespace --no-headers<span class="o">=</span><span class="nb">true</span> <span class="p">|</span> awk <span class="s1">&#39;/pattern1|pattern2/{print $1}&#39;</span> <span class="p">|</span> xargs  kubectl delete -n mynamespace pod
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># -n 指定 namespaces</span>
+</span></span><span class="line"><span class="cl">kubectl run .... <span class="c1"># 创建</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查询pod资源 尾部加上 `-w` 可以查看到创建pod</span>
+</span></span><span class="line"><span class="cl">kubectl get pods --all-namespaces <span class="c1"># or kubectl get pods -A</span>
+</span></span><span class="line"><span class="cl">kubectl get pods -n common <span class="c1"># 指定 namespaces </span>
+</span></span><span class="line"><span class="cl">kubectl get pods,deployment,replicaset <span class="c1"># deployment-控制器，replicaset-副本集</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl expose -f ..*...yaml --port<span class="o">=</span><span class="m">8080</span> --target-port<span class="o">=</span><span class="m">8081</span> <span class="c1"># 为资源暴露为新的Kubernetes service</span>
+</span></span><span class="line"><span class="cl">kubectl get service ferry -n common <span class="c1"># 查询服务暴露的端口 ;service 可以写成 svc </span>
+</span></span><span class="line"><span class="cl">kubectl get pod,svc -n common <span class="c1"># 查询pod 和 service 端口和运行状态</span>
+</span></span><span class="line"><span class="cl">get pods -o wide -n common <span class="c1"># 查询网络状态</span>
+</span></span><span class="line"><span class="cl">kubectl get pods  ferry-6cb8d5697c-tdbzc -o wide  -n common <span class="c1"># 指定pod 查询</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl get endpoints <span class="c1"># 查询关联后的节点</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl logs ferry-6cb8d5697c-tdbzc -n common <span class="p">|</span> more <span class="c1"># 查询日志 more-&gt; 可以分也查找</span>
+</span></span><span class="line"><span class="cl">kubectl logs -f ferry-6cb8d5697c-tdbzc --tail<span class="o">=</span><span class="m">10</span> -n common <span class="c1"># 查看最后10条日志，-f 实时日志</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新资源</span>
+</span></span><span class="line"><span class="cl">kubectl rollout <span class="nb">history</span> deployment/ferry -n common <span class="c1"># 查看历史记录</span>
+</span></span><span class="line"><span class="cl">kubectl rollout undo deployment/ferry -n common  <span class="c1"># 回滚到上次部署</span>
+</span></span><span class="line"><span class="cl">kubectl rollout undo deployment/ferry --to-revision<span class="o">=</span><span class="m">2</span> -n common <span class="c1"># 回滚到指定版本</span>
+</span></span><span class="line"><span class="cl">kubectl rollout status -w deployment/ferry -n common <span class="c1"># 查看是否会滚成功</span>
+</span></span><span class="line"><span class="cl">kubectl rollout restart deployment/ferry -n common <span class="c1"># 轮替重启</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl edit deployment/ferry -n common <span class="c1"># 修改配置</span>
+</span></span><span class="line"><span class="cl">kubectl <span class="nb">set</span> image deployment/ferry -n common <span class="nv">ferry</span><span class="o">=</span>repo.qianz.com/indonesia/game/chess/ferry:master <span class="c1">#  </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 伸缩</span>
+</span></span><span class="line"><span class="cl">kubectl scale --replicas<span class="o">=</span><span class="m">2</span> deployment/ferry -n common <span class="c1"># 伸缩到几个副本</span>
+</span></span><span class="line"><span class="cl">kubectl scale --current-replicas<span class="o">=</span><span class="m">2</span> --replicas<span class="o">=</span><span class="m">1</span> deployment/ferry -n common <span class="c1"># 当前的一个副本修改成1个副本</span>
+</span></span><span class="line"><span class="cl">kubectl scale --replicas<span class="o">=</span><span class="m">3</span> -f ferry.yaml <span class="c1"># 文件修改</span>
+</span></span><span class="line"><span class="cl">kubectl scale --replicas<span class="o">=</span><span class="m">5</span> rc/a rc/b rc/c <span class="c1"># 多个控制</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl delete -f ./pod.json                                              <span class="c1"># 删除在 pod.json 中指定的类型和名称的 Pod</span>
+</span></span><span class="line"><span class="cl">kubectl delete pod,service baz foo                                        <span class="c1"># 删除名称为 &#34;baz&#34; 和 &#34;foo&#34; 的 Pod 和服务</span>
+</span></span><span class="line"><span class="cl">kubectl delete pods,services -l <span class="nv">name</span><span class="o">=</span>myLabel                              <span class="c1"># 删除包含 name=myLabel 标签的 pods 和服务</span>
+</span></span><span class="line"><span class="cl">kubectl -n my-ns delete pod,svc --all                                     <span class="c1"># 删除在 my-ns 名字空间中全部的 Pods 和服务</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除所有与 pattern1 或 pattern2 awk 模式匹配的 Pods</span>
+</span></span><span class="line"><span class="cl">kubectl get pods  -n mynamespace --no-headers<span class="o">=</span><span class="nb">true</span> <span class="p">|</span> awk <span class="s1">&#39;/pattern1|pattern2/{print $1}&#39;</span> <span class="p">|</span> xargs  kubectl delete -n mynamespace pod
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="configmap">configmap</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">kubectl get configmap -n huoys <span class="c1"># 指定namespaces</span>
-kubectl get configmap -A <span class="c1"># 全部</span>
-kubectl get cm -n huoys <span class="c1"># 缩写</span>
-
-kubectl create configmap cc-cm -n common --from-literal<span class="o">=</span>user.name<span class="o">=</span>lcc --from-literal<span class="o">=</span>user.id<span class="o">=</span><span class="m">1</span> <span class="c1"># 使用from-literal创建 指定namespaces</span>
-kubectl create configmap configmap-name --from-file<span class="o">=</span>configmap*.yaml <span class="c1"># 使用 from-file 创建 可以是文件和目录</span>
-kubectl describe configmap hall-customize -n huoys <span class="p">|</span> more <span class="c1"># 查看配置</span>
-kubectl delete configmap cc-cm -n common
-
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl get configmap -n huoys <span class="c1"># 指定namespaces</span>
+</span></span><span class="line"><span class="cl">kubectl get configmap -A <span class="c1"># 全部</span>
+</span></span><span class="line"><span class="cl">kubectl get cm -n huoys <span class="c1"># 缩写</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubectl create configmap cc-cm -n common --from-literal<span class="o">=</span>user.name<span class="o">=</span>lcc --from-literal<span class="o">=</span>user.id<span class="o">=</span><span class="m">1</span> <span class="c1"># 使用from-literal创建 指定namespaces</span>
+</span></span><span class="line"><span class="cl">kubectl create configmap configmap-name --from-file<span class="o">=</span>configmap*.yaml <span class="c1"># 使用 from-file 创建 可以是文件和目录</span>
+</span></span><span class="line"><span class="cl">kubectl describe configmap hall-customize -n huoys <span class="p">|</span> more <span class="c1"># 查看配置</span>
+</span></span><span class="line"><span class="cl">kubectl delete configmap cc-cm -n common
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -747,28 +739,9 @@ kubectl delete configmap cc-cm -n common
 
     
     
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">赞赏支持</label>
-  <div class="qr-code">
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/wechat.png">
-        <span>微信打赏</span>
-      </label>
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/alipay.png">
-        <span>支付宝打赏</span>
-      </label>
-  </div>
-</div>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://cc360428.github.io/tags/centos7/">CentOS7</a>
-          <a href="https://cc360428.github.io/tags/syetem/">Syetem</a>
           <a href="https://cc360428.github.io/tags/kubernetes/">Kubernetes</a>
           
         </div>
@@ -842,6 +815,17 @@ kubectl delete configmap cc-cm -n common
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>
@@ -946,7 +930,7 @@ kubectl delete configmap cc-cm -n common
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

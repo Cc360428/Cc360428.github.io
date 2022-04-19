@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Wed, 17 Mar 2021 18:01:33 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Mar 2022 21:19:55 +0800</lastBuildDate><atom:link href="https://cc360428.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DataStructure（02142）</title>
+      <link>https://cc360428.github.io/post/selfstudy/datastructure/</link>
+      <pubDate>Thu, 31 Mar 2022 21:19:55 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/selfstudy/datastructure/</guid>
+      <description>数据结构导论（02142） 第一章 概论（重点） 1 引言 数据结构：是计算机组织数据和存储数据的方式 计算机解决问题步骤 建立数学模型 设计算法 编程实现算</description>
+    </item>
     
-	<atom:link href="https://cc360428.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>InternetPrinciples（04735）</title>
+      <link>https://cc360428.github.io/post/selfstudy/internetprinciples/</link>
+      <pubDate>Sat, 20 Mar 2021 13:57:01 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/selfstudy/internetprinciples/</guid>
+      <description>第一章 计算机概述 1 计算机网络基本概念 网络协议 - 网络通讯实体之间的在数据交换过程中需要遵循的规则或约定 - 三要素 - 语法（syntax） - 语义（s</description>
+    </item>
     
     <item>
       <title>Pprof</title>
@@ -49,6 +63,15 @@
     </item>
     
     <item>
+      <title>Go 1.13 版本更新 摘要</title>
+      <link>https://cc360428.github.io/post/golang/version/go-1.13/</link>
+      <pubDate>Fri, 25 Dec 2020 17:11:22 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/golang/version/go-1.13/</guid>
+      <description>Go 1.13 工具链、运行时、标准库 工具链 环境变量 Go111MODOULE 默认值 auto 增加了环境变量 GOPIVATE 私有变量</description>
+    </item>
+    
+    <item>
       <title>linux Shell Base</title>
       <link>https://cc360428.github.io/post/system/shell/base/</link>
       <pubDate>Mon, 20 Apr 2020 22:05:01 +0800</pubDate>
@@ -73,33 +96,6 @@
       
       <guid>https://cc360428.github.io/post/system/git/gitbase/</guid>
       <description>Git 工作用到的基本命令 模拟环境 自己搭建了gogs 开源Git仓库 注册账号地址 lcc、google 创建仓库Study 把lcc 添加管理协作者(收到邮</description>
-    </item>
-    
-    <item>
-      <title>openWrt uci</title>
-      <link>https://cc360428.github.io/post/system/openwrt/uci/</link>
-      <pubDate>Sat, 18 Apr 2020 14:33:04 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/system/openwrt/uci/</guid>
-      <description>uci set 1 2 3 4 5 6 root@Accesshub:/etc/config# uci set qos.cc=interface root@Accesshub:/etc/config# uci set qos.cc.classgroup=default root@Accesshub:/etc/config# uci set qos.cc.enabled=1 root@Accesshub:/etc/config# uci set qos.cc.upload=134 root@Accesshub:/etc/config# uci set qos.cc.download=1000 root@Accesshub:/etc/config# uci commit qos 1 2 3 4 5 6 root@Accesshub:/etc/config# grep -A 6 cc qos config interface &amp;#39;cc&amp;#39; option classgroup &amp;#39;default&amp;#39; option enabled &amp;#39;1&amp;#39; option upload &amp;#39;134&amp;#39; option download &amp;#39;1000&amp;#39; uci add 1 2 3 4 5 6 root@Accesshub:/etc/config# uci add</description>
-    </item>
-    
-    <item>
-      <title>MySQL 忘记密码</title>
-      <link>https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/</link>
-      <pubDate>Sat, 18 Apr 2020 12:21:48 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/</guid>
-      <description>MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to</description>
-    </item>
-    
-    <item>
-      <title>linux(CentOS7) 网络管理</title>
-      <link>https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</link>
-      <pubDate>Sun, 29 Mar 2020 00:49:12 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</guid>
-      <description>网络基础知识以及网络管理内容 网络管理协议 好多概念知识，会拿出时间来讲解这张预留的空白 TCP/IP协议概述 好多概念知识，会拿出时间来讲解这张预</description>
     </item>
     
   </channel>

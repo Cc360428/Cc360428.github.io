@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/golang/version/go-1.12/" />
@@ -61,19 +61,15 @@
 <meta property="og:title" content="Go 1.12 版本更新 摘要" />
 <meta property="og:description" content="golang 版本升级 、重要的摘要、学习、笔记 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/golang/version/go-1.12/" />
+<meta property="og:url" content="https://cc360428.github.io/post/golang/version/go-1.12/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-12-06T17:11:22+08:00" />
 <meta property="article:modified_time" content="2019-12-06T17:11:22+08:00" />
+
 <meta itemprop="name" content="Go 1.12 版本更新 摘要">
-<meta itemprop="description" content="golang 版本升级 、重要的摘要、学习、笔记 ">
-<meta itemprop="datePublished" content="2019-12-06T17:11:22+08:00" />
+<meta itemprop="description" content="golang 版本升级 、重要的摘要、学习、笔记 "><meta itemprop="datePublished" content="2019-12-06T17:11:22+08:00" />
 <meta itemprop="dateModified" content="2019-12-06T17:11:22+08:00" />
-<meta itemprop="wordCount" content="971">
-
-
-
-<meta itemprop="keywords" content="GolangVersion," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="968">
+<meta itemprop="keywords" content="golang,GoAdvanced,GoUtils," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Go 1.12 版本更新 摘要"/>
 <meta name="twitter:description" content="golang 版本升级 、重要的摘要、学习、笔记 "/>
 
@@ -343,8 +339,11 @@
         <time datetime="2019-12-06" class="post-time">
           2019-12-06
         </time>
-        
-        <span class="more-meta"> 约 971 字 </span>
+        <div class="post-category">
+            <a href="https://cc360428.github.io/categories/server/"> Server </a>
+            
+          </div>
+        <span class="more-meta"> 约 968 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -379,23 +378,23 @@
 <p>检查 golang 版本</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">如果没有生成 go.sum 或者报错请输入
-<span class="nb">export</span> <span class="nv">GOPROXY</span><span class="o">=</span>https://goproxy.io
-
-C:<span class="se">\U</span>sers<span class="se">\a</span>dmin&gt;go version
-go version go1.12.9 windows/amd64
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">如果没有生成 go.sum 或者报错请输入
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">GOPROXY</span><span class="o">=</span>https://goproxy.io
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">C:<span class="se">\U</span>sers<span class="se">\a</span>dmin&gt;go version
+</span></span><span class="line"><span class="cl">go version go1.12.9 windows/amd64
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -409,29 +408,27 @@ go version go1.12.9 windows/amd64
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
-</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">把 golang 升级到 1.11（现在1.12 已经发布了，建议使用1.12）
-设置 GO111MODULE
-
-GO111MODULE
-GO111MODULE 有三个值：off, on和auto（默认值）。
-
-<span class="nv">GO111MODULE</span><span class="o">=</span>off，go命令行将不会支持module功能，寻找依赖包的方式将会沿用旧版本那种通过vendor目录或者GOPATH模式来查找。
-<span class="nv">GO111MODULE</span><span class="o">=</span>on，go命令行会使用modules，而一点也不会去GOPATH目录下查找。
-<span class="nv">GO111MODULE</span><span class="o">=</span>auto，默认值，go命令行将会根据当前目录来决定是否启用module功能。这种情况下可以分为两种情形：
-
-当前目录在GOPATH/src之外且该目录包含go.mod文件
-当前文件在包含go.mod文件的目录下面。
-
-当modules 功能启用时，依赖包的存放位置变更为<span class="nv">$GOPATH</span>/pkg，允许同一个package多个版本并存，且多个项目可以共享缓存的 module。
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">把 golang 升级到 1.11（现在1.12 已经发布了，建议使用1.12）
+</span></span><span class="line"><span class="cl">设置 GO111MODULE
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">GO111MODULE
+</span></span><span class="line"><span class="cl">GO111MODULE 有三个值：off, on和auto（默认值）。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">GO111MODULE</span><span class="o">=</span>off，go命令行将不会支持module功能，寻找依赖包的方式将会沿用旧版本那种通过vendor目录或者GOPATH模式来查找。
+</span></span><span class="line"><span class="cl"><span class="nv">GO111MODULE</span><span class="o">=</span>on，go命令行会使用modules，而一点也不会去GOPATH目录下查找。
+</span></span><span class="line"><span class="cl"><span class="nv">GO111MODULE</span><span class="o">=</span>auto，默认值，go命令行将会根据当前目录来决定是否启用module功能。这种情况下可以分为两种情形：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">当前目录在GOPATH/src之外且该目录包含go.mod文件
+</span></span><span class="line"><span class="cl">当前文件在包含go.mod文件的目录下面。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">当modules 功能启用时，依赖包的存放位置变更为<span class="nv">$GOPATH</span>/pkg，允许同一个package多个版本并存，且多个项目可以共享缓存的 module。
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -463,45 +460,41 @@ GO111MODULE 有三个值：off, on和auto（默认值）。
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">命令
-说明
-
-download
-download modules to <span class="nb">local</span> cache<span class="o">(</span>下载依赖包<span class="o">)</span>
-
-
-edit
-edit go.mod from tools or scripts（编辑go.mod
-
-
-graph
-print module requirement graph <span class="o">(</span>打印模块依赖图<span class="o">)</span>
-
-init
-initialize new module in current directory（在当前目录初始化mod）
-
-
-tidy
-add missing and remove unused modules<span class="o">(</span>拉取缺少的模块，移除不用的模块<span class="o">)</span>
-
-
-vendor
-make vendored copy of dependencies<span class="o">(</span>将依赖复制到vendor下<span class="o">)</span>
-
-
-verify
-verify dependencies have expected content <span class="o">(</span>验证依赖是否正确）
-
-
-why
-explain why packages or modules are needed<span class="o">(</span>解释为什么需要依赖<span class="o">)</span>
-
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">命令
+</span></span><span class="line"><span class="cl">说明
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">download
+</span></span><span class="line"><span class="cl">download modules to <span class="nb">local</span> cache<span class="o">(</span>下载依赖包<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">edit
+</span></span><span class="line"><span class="cl">edit go.mod from tools or scripts（编辑go.mod
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">graph
+</span></span><span class="line"><span class="cl">print module requirement graph <span class="o">(</span>打印模块依赖图<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">init
+</span></span><span class="line"><span class="cl">initialize new module in current directory（在当前目录初始化mod）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tidy
+</span></span><span class="line"><span class="cl">add missing and remove unused modules<span class="o">(</span>拉取缺少的模块，移除不用的模块<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">vendor
+</span></span><span class="line"><span class="cl">make vendored copy of dependencies<span class="o">(</span>将依赖复制到vendor下<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">verify
+</span></span><span class="line"><span class="cl">verify dependencies have expected content <span class="o">(</span>验证依赖是否正确）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">why
+</span></span><span class="line"><span class="cl">explain why packages or modules are needed<span class="o">(</span>解释为什么需要依赖<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="实例">实例</h3>
 <blockquote>
@@ -509,7 +502,7 @@ explain why packages or modules are needed<span class="o">(</span>解释为什�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -558,58 +551,58 @@ explain why packages or modules are needed<span class="o">(</span>解释为什�
 </span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">cd</span> <span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">gomod</span><span class="o">/</span><span class="nx">hello</span>
-<span class="k">go</span> <span class="nx">mod</span> <span class="nx">init</span> <span class="nx">hello</span>
-
-<span class="p">[</span><span class="nx">root</span><span class="err">@</span><span class="nx">iz2zeb00z6vr5gix5utl11z</span> <span class="nx">hello</span><span class="p">]</span><span class="err">#</span> <span class="k">go</span> <span class="nx">run</span> <span class="nx">server</span><span class="p">.</span><span class="k">go</span>
-<span class="k">go</span><span class="p">:</span> <span class="nx">finding</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span>
-<span class="k">go</span><span class="p">:</span> <span class="nx">downloading</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span>
-<span class="k">go</span><span class="p">:</span> <span class="nx">downloading</span> <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190813064441</span><span class="o">-</span><span class="nx">fde4db37ae7a</span>
-<span class="k">go</span><span class="p">:</span> <span class="nx">extracting</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">valyala</span><span class="o">/</span><span class="nx">fasttemplate</span> <span class="nx">v1</span><span class="mf">.0.1</span>
-<span class="k">go</span><span class="p">:</span> <span class="nx">downloading</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">valyala</span><span class="o">/</span><span class="nx">bytebufferpool</span> <span class="nx">v1</span><span class="mf">.0.0</span>
-<span class="k">go</span><span class="p">:</span> <span class="nx">extracting</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">valyala</span><span class="o">/</span><span class="nx">bytebufferpool</span> <span class="nx">v1</span><span class="mf">.0.0</span>
-<span class="k">go</span><span class="p">:</span> <span class="nx">extracting</span> <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190813064441</span><span class="o">-</span><span class="nx">fde4db37ae7a</span>
-<span class="k">go</span><span class="p">:</span> <span class="nx">finding</span> <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">net</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190404232315</span><span class="o">-</span><span class="nx">eb5bcb51f2a3</span>
-<span class="k">go</span><span class="p">:</span> <span class="nx">finding</span> <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">text</span> <span class="nx">v0</span><span class="mf">.3.0</span>
-
-   <span class="nx">____</span>    <span class="nx">__</span>
-  <span class="o">/</span> <span class="nx">__</span><span class="o">/</span><span class="nx">___</span><span class="o">/</span> <span class="o">/</span>  <span class="nx">___</span>
- <span class="o">/</span> <span class="nx">_</span><span class="c1">// __/ _ \/ _ \
-</span><span class="c1"></span><span class="o">/</span><span class="nx">___</span><span class="o">/</span><span class="err">\</span><span class="nx">__</span><span class="o">/</span><span class="nx">_</span><span class="c1">//_/\___/ v3.3.10-dev
-</span><span class="c1"></span><span class="nx">High</span> <span class="nx">performance</span><span class="p">,</span> <span class="nx">minimalist</span> <span class="nx">Go</span> <span class="nx">web</span> <span class="nx">framework</span>
-<span class="nx">https</span><span class="p">:</span><span class="c1">//echo.labstack.com
-</span><span class="c1"></span><span class="nx">____________________________________O</span><span class="o">/</span><span class="nx">_______</span>
-                                    <span class="nx">O</span>\
-<span class="err">⇨</span> <span class="nx">http</span> <span class="nx">server</span> <span class="nx">started</span> <span class="nx">on</span> <span class="p">[::]:</span><span class="mi">8080</span>
-
-<span class="p">[</span><span class="nx">root</span><span class="err">@</span><span class="nx">iz2zeb00z6vr5gix5utl11z</span> <span class="nx">hello</span><span class="p">]</span><span class="err">#</span> <span class="nx">cat</span> <span class="k">go</span><span class="p">.</span><span class="nx">mod</span>
-<span class="nx">module</span> <span class="nx">hello</span>
-
-<span class="k">go</span> <span class="mf">1.13</span>
-
-<span class="nf">require</span> <span class="p">(</span>
-        <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span> <span class="c1">// indirect
-</span><span class="c1"></span>        <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">gommon</span> <span class="nx">v0</span><span class="mf">.3.0</span> <span class="c1">// indirect
-</span><span class="c1"></span>        <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">crypto</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20191119213627</span><span class="o">-</span><span class="mi">4</span><span class="nx">f8c1d86b1ba</span> <span class="c1">// indirect
-</span><span class="c1"></span><span class="p">)</span>
-<span class="p">[</span><span class="nx">root</span><span class="err">@</span><span class="nx">iz2zeb00z6vr5gix5utl11z</span> <span class="nx">hello</span><span class="p">]</span><span class="err">#</span> <span class="nx">cat</span> <span class="k">go</span><span class="p">.</span><span class="nx">sum</span>
-<span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">davecgh</span><span class="o">/</span><span class="k">go</span><span class="o">-</span><span class="nx">spew</span> <span class="nx">v1</span><span class="mf">.1.0</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">J7Y8YcW2NihsgmVo</span><span class="o">/</span><span class="nx">mv3lAwl</span><span class="o">/</span><span class="nx">skON4iLHjSsI</span><span class="o">+</span><span class="nx">c5H38</span><span class="p">=</span>
-<span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">pGRcYk231ExFAyoAjAfD85kQzRJCRI8bbnE7CX5OEgg</span><span class="p">=</span>
-<span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="mi">0</span><span class="nx">INS7j</span><span class="o">/</span><span class="nx">VjnFxD4E2wkz67b8cVwCLbBmJyDaka6Cmk1s</span><span class="p">=</span>
-<span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190215142949</span><span class="o">-</span><span class="nx">d0b11bdaac8a</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">STP8DvDyc</span><span class="o">/</span><span class="nx">dI5b8T5hshtkjS</span><span class="o">+</span><span class="nx">E42TnysNCUPdjciGhY</span><span class="p">=</span>
-<span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190222072716</span><span class="o">-</span><span class="nx">a9d3bda3a223</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">STP8DvDyc</span><span class="o">/</span><span class="nx">dI5b8T5hshtkjS</span><span class="o">+</span><span class="nx">E42TnysNCUPdjciGhY</span><span class="p">=</span>
-<span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190412213103</span><span class="o">-</span><span class="mi">97732733099</span><span class="nx">d</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs</span><span class="p">=</span>
-<span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190813064441</span><span class="o">-</span><span class="nx">fde4db37ae7a</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">aYOabOQFp6Vj6W1F80affTUvO9UxmJRx8K0gsfABByQ</span><span class="p">=</span>
-<span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190813064441</span><span class="o">-</span><span class="nx">fde4db37ae7a</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs</span><span class="p">=</span>
-<span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">text</span> <span class="nx">v0</span><span class="mf">.3.0</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">g61tztE5qeGQ89tm6NTjjM9VPIm088od1l6aSorWRWg</span><span class="p">=</span>
-<span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">text</span> <span class="nx">v0</span><span class="mf">.3.0</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">NqM8EUOU14njkJ3fqMW</span><span class="o">+</span><span class="nx">pc6Ldnwhi</span><span class="o">/</span><span class="nx">IjpwHt7yyuwOQ</span><span class="p">=</span>
-<span class="nx">gopkg</span><span class="p">.</span><span class="nx">in</span><span class="o">/</span><span class="nx">check</span><span class="p">.</span><span class="nx">v1</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20161208181325</span><span class="o">-</span><span class="mi">20</span><span class="nx">d25e280405</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">Co6ibVJAznAaIkqp8huTwlJQCZ016jof</span><span class="o">/</span><span class="nx">cbN4VW5Yz0</span><span class="p">=</span>
-<span class="nx">gopkg</span><span class="p">.</span><span class="nx">in</span><span class="o">/</span><span class="nx">yaml</span><span class="p">.</span><span class="nx">v2</span> <span class="nx">v2</span><span class="mf">.2.2</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">hI93XBmqTisBFMUTm0b8Fm</span><span class="o">+</span><span class="nx">jr3Dg1NNxqwp</span><span class="o">+</span><span class="mi">5</span><span class="nx">A1VGuI</span><span class="p">=</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">cd</span> <span class="o">/</span><span class="nx">opt</span><span class="o">/</span><span class="nx">gomod</span><span class="o">/</span><span class="nx">hello</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span> <span class="nx">mod</span> <span class="nx">init</span> <span class="nx">hello</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">root</span><span class="err">@</span><span class="nx">iz2zeb00z6vr5gix5utl11z</span> <span class="nx">hello</span><span class="p">]</span><span class="err">#</span> <span class="k">go</span> <span class="nx">run</span> <span class="nx">server</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">:</span> <span class="nx">finding</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">:</span> <span class="nx">downloading</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">:</span> <span class="nx">downloading</span> <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190813064441</span><span class="o">-</span><span class="nx">fde4db37ae7a</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">:</span> <span class="nx">extracting</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">valyala</span><span class="o">/</span><span class="nx">fasttemplate</span> <span class="nx">v1</span><span class="mf">.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">:</span> <span class="nx">downloading</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">valyala</span><span class="o">/</span><span class="nx">bytebufferpool</span> <span class="nx">v1</span><span class="mf">.0.0</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">:</span> <span class="nx">extracting</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">valyala</span><span class="o">/</span><span class="nx">bytebufferpool</span> <span class="nx">v1</span><span class="mf">.0.0</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">:</span> <span class="nx">extracting</span> <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190813064441</span><span class="o">-</span><span class="nx">fde4db37ae7a</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">:</span> <span class="nx">finding</span> <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">net</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190404232315</span><span class="o">-</span><span class="nx">eb5bcb51f2a3</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span><span class="p">:</span> <span class="nx">finding</span> <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">text</span> <span class="nx">v0</span><span class="mf">.3.0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nx">____</span>    <span class="nx">__</span>
+</span></span><span class="line"><span class="cl">  <span class="o">/</span> <span class="nx">__</span><span class="o">/</span><span class="nx">___</span><span class="o">/</span> <span class="o">/</span>  <span class="nx">___</span>
+</span></span><span class="line"><span class="cl"> <span class="o">/</span> <span class="nx">_</span><span class="c1">// __/ _ \/ _ \
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">/</span><span class="nx">___</span><span class="o">/</span><span class="err">\</span><span class="nx">__</span><span class="o">/</span><span class="nx">_</span><span class="c1">//_/\___/ v3.3.10-dev
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">High</span> <span class="nx">performance</span><span class="p">,</span> <span class="nx">minimalist</span> <span class="nx">Go</span> <span class="nx">web</span> <span class="nx">framework</span>
+</span></span><span class="line"><span class="cl"><span class="nx">https</span><span class="p">:</span><span class="c1">//echo.labstack.com
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">____________________________________O</span><span class="o">/</span><span class="nx">_______</span>
+</span></span><span class="line"><span class="cl">                                    <span class="nx">O</span>\
+</span></span><span class="line"><span class="cl"><span class="err">⇨</span> <span class="nx">http</span> <span class="nx">server</span> <span class="nx">started</span> <span class="nx">on</span> <span class="p">[::]:</span><span class="mi">8080</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">root</span><span class="err">@</span><span class="nx">iz2zeb00z6vr5gix5utl11z</span> <span class="nx">hello</span><span class="p">]</span><span class="err">#</span> <span class="nx">cat</span> <span class="k">go</span><span class="p">.</span><span class="nx">mod</span>
+</span></span><span class="line"><span class="cl"><span class="nx">module</span> <span class="nx">hello</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">go</span> <span class="mf">1.13</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">require</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span> <span class="c1">// indirect
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">gommon</span> <span class="nx">v0</span><span class="mf">.3.0</span> <span class="c1">// indirect
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">crypto</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20191119213627</span><span class="o">-</span><span class="mi">4</span><span class="nx">f8c1d86b1ba</span> <span class="c1">// indirect
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">root</span><span class="err">@</span><span class="nx">iz2zeb00z6vr5gix5utl11z</span> <span class="nx">hello</span><span class="p">]</span><span class="err">#</span> <span class="nx">cat</span> <span class="k">go</span><span class="p">.</span><span class="nx">sum</span>
+</span></span><span class="line"><span class="cl"><span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">davecgh</span><span class="o">/</span><span class="k">go</span><span class="o">-</span><span class="nx">spew</span> <span class="nx">v1</span><span class="mf">.1.0</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">J7Y8YcW2NihsgmVo</span><span class="o">/</span><span class="nx">mv3lAwl</span><span class="o">/</span><span class="nx">skON4iLHjSsI</span><span class="o">+</span><span class="nx">c5H38</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">pGRcYk231ExFAyoAjAfD85kQzRJCRI8bbnE7CX5OEgg</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">labstack</span><span class="o">/</span><span class="nx">echo</span> <span class="nx">v3</span><span class="mf">.3.10</span><span class="o">+</span><span class="nx">incompatible</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="mi">0</span><span class="nx">INS7j</span><span class="o">/</span><span class="nx">VjnFxD4E2wkz67b8cVwCLbBmJyDaka6Cmk1s</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190215142949</span><span class="o">-</span><span class="nx">d0b11bdaac8a</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">STP8DvDyc</span><span class="o">/</span><span class="nx">dI5b8T5hshtkjS</span><span class="o">+</span><span class="nx">E42TnysNCUPdjciGhY</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190222072716</span><span class="o">-</span><span class="nx">a9d3bda3a223</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">STP8DvDyc</span><span class="o">/</span><span class="nx">dI5b8T5hshtkjS</span><span class="o">+</span><span class="nx">E42TnysNCUPdjciGhY</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190412213103</span><span class="o">-</span><span class="mi">97732733099</span><span class="nx">d</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190813064441</span><span class="o">-</span><span class="nx">fde4db37ae7a</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">aYOabOQFp6Vj6W1F80affTUvO9UxmJRx8K0gsfABByQ</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">sys</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20190813064441</span><span class="o">-</span><span class="nx">fde4db37ae7a</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">text</span> <span class="nx">v0</span><span class="mf">.3.0</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">g61tztE5qeGQ89tm6NTjjM9VPIm088od1l6aSorWRWg</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">golang</span><span class="p">.</span><span class="nx">org</span><span class="o">/</span><span class="nx">x</span><span class="o">/</span><span class="nx">text</span> <span class="nx">v0</span><span class="mf">.3.0</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">NqM8EUOU14njkJ3fqMW</span><span class="o">+</span><span class="nx">pc6Ldnwhi</span><span class="o">/</span><span class="nx">IjpwHt7yyuwOQ</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">gopkg</span><span class="p">.</span><span class="nx">in</span><span class="o">/</span><span class="nx">check</span><span class="p">.</span><span class="nx">v1</span> <span class="nx">v0</span><span class="mf">.0.0</span><span class="o">-</span><span class="mi">20161208181325</span><span class="o">-</span><span class="mi">20</span><span class="nx">d25e280405</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">Co6ibVJAznAaIkqp8huTwlJQCZ016jof</span><span class="o">/</span><span class="nx">cbN4VW5Yz0</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="nx">gopkg</span><span class="p">.</span><span class="nx">in</span><span class="o">/</span><span class="nx">yaml</span><span class="p">.</span><span class="nx">v2</span> <span class="nx">v2</span><span class="mf">.2.2</span><span class="o">/</span><span class="k">go</span><span class="p">.</span><span class="nx">mod</span> <span class="nx">h1</span><span class="p">:</span><span class="nx">hI93XBmqTisBFMUTm0b8Fm</span><span class="o">+</span><span class="nx">jr3Dg1NNxqwp</span><span class="o">+</span><span class="mi">5</span><span class="nx">A1VGuI</span><span class="p">=</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -619,15 +612,15 @@ explain why packages or modules are needed<span class="o">(</span>解释为什�
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">    go.mod 提供了module, require、replace和exclude 四个命令
-    module 语句指定包的名字（路径）
-    require 语句指定的依赖项模块
-    replace 语句可以替换依赖项模块
-    exclude 语句可以忽略依赖项模块
-重新构建
-go mod init: go.mod already exists
-Go.mod已经存在
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">    go.mod 提供了module, require、replace和exclude 四个命令
+</span></span><span class="line"><span class="cl">    module 语句指定包的名字（路径）
+</span></span><span class="line"><span class="cl">    require 语句指定的依赖项模块
+</span></span><span class="line"><span class="cl">    replace 语句可以替换依赖项模块
+</span></span><span class="line"><span class="cl">    exclude 语句可以忽略依赖项模块
+</span></span><span class="line"><span class="cl">重新构建
+</span></span><span class="line"><span class="cl">go mod init: go.mod already exists
+</span></span><span class="line"><span class="cl">Go.mod已经存在
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -656,27 +649,12 @@ Go.mod已经存在
 
     
     
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">赞赏支持</label>
-  <div class="qr-code">
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/wechat.png">
-        <span>微信打赏</span>
-      </label>
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/alipay.png">
-        <span>支付宝打赏</span>
-      </label>
-  </div>
-</div>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://cc360428.github.io/tags/golangversion/">GolangVersion</a>
+          <a href="https://cc360428.github.io/tags/golang/">golang</a>
+          <a href="https://cc360428.github.io/tags/goadvanced/">GoAdvanced</a>
+          <a href="https://cc360428.github.io/tags/goutils/">GoUtils</a>
           
         </div>
 
@@ -749,6 +727,17 @@ Go.mod已经存在
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>
@@ -853,7 +842,7 @@ Go.mod已经存在
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

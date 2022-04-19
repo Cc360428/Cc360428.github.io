@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/redhad/4.4%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" />
@@ -61,19 +61,15 @@
 <meta property="og:title" content="linux(CentOS7) 目录结构" />
 <meta property="og:description" content="linux 目录 cp mv diff cat tail ……" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/redhad/4.4%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/redhad/4.4%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-03-24T23:17:54+08:00" />
 <meta property="article:modified_time" content="2020-03-24T23:17:54+08:00" />
+
 <meta itemprop="name" content="linux(CentOS7) 目录结构">
-<meta itemprop="description" content="linux 目录 cp mv diff cat tail ……">
-<meta itemprop="datePublished" content="2020-03-24T23:17:54+08:00" />
+<meta itemprop="description" content="linux 目录 cp mv diff cat tail ……"><meta itemprop="datePublished" content="2020-03-24T23:17:54+08:00" />
 <meta itemprop="dateModified" content="2020-03-24T23:17:54+08:00" />
-<meta itemprop="wordCount" content="4852">
-
-
-
-<meta itemprop="keywords" content="CentOS7,Syetem," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="4846">
+<meta itemprop="keywords" content="RedHad," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux(CentOS7) 目录结构"/>
 <meta name="twitter:description" content="linux 目录 cp mv diff cat tail ……"/>
 
@@ -343,8 +339,11 @@
         <time datetime="2020-03-24" class="post-time">
           2020-03-24
         </time>
-        
-        <span class="more-meta"> 约 4852 字 </span>
+        <div class="post-category">
+            <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
+            
+          </div>
+        <span class="more-meta"> 约 4846 字 </span>
           <span class="more-meta"> 预计阅读 10 分钟 </span>
 
         
@@ -387,24 +386,24 @@
 <h3 id="cp">cp</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1">#  cp /etc/nginx/conf.d/default.conf .</span>
-<span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">4</span>
--rw-r--r-- <span class="m">1</span> root root <span class="m">750</span> 3月  <span class="m">24</span> 22:17 default.conf
-<span class="o">[</span>root@Cc RedHad<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1">#  cp /etc/nginx/conf.d/default.conf .</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">4</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">750</span> 3月  <span class="m">24</span> 22:17 default.conf
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="cp---help">cp &ndash;help</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -473,79 +472,79 @@
 </span><span class="lnt">67
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># cp --help;</span>
-用法：cp <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>-T<span class="o">]</span> 源文件 目标文件
-　或：cp <span class="o">[</span>选项<span class="o">]</span>... 源文件... 目录
-　或：cp <span class="o">[</span>选项<span class="o">]</span>... -t 目录 源文件...
-Copy SOURCE to DEST, or multiple SOURCE<span class="o">(</span>s<span class="o">)</span> to DIRECTORY.
-
-Mandatory arguments to long options are mandatory <span class="k">for</span> short options too.
-  -a, --archive                 等于-dR --preserve<span class="o">=</span>all
-      --attributes-only 仅复制属性而不复制数据      --backup<span class="o">[=</span>CONTROL           为每个已存在的目标文件创建备份
-  -b                            类似--backup 但不接受参数
-      --copy-contents           在递归处理是复制特殊文件内容
-  -d                            等于--no-dereference --preserve<span class="o">=</span>links
-  -f, --force                  <span class="k">if</span> an existing destination file cannot be
-                                 opened, remove it and try again <span class="o">(</span>this option
-                                 is ignored when the -n option is also used<span class="o">)</span>
-  -i, --interactive            prompt before overwrite <span class="o">(</span>overrides a previous -n
-                                  option<span class="o">)</span>
-  -H                           follow command-line symbolic links in SOURCE
-  -l, --link                   hard link files instead of copying
-  -L, --dereference            always follow symbolic links in SOURCE
-  -n, --no-clobber              不要覆盖已存在的文件<span class="o">(</span>使前面的 -i 选项失效<span class="o">)</span>
-  -P, --no-dereference          不跟随源文件中的符号链接
-  -p                            等于--preserve<span class="o">=</span>模式,所有权,时间戳
-      --preserve<span class="o">[=</span>属性列表      保持指定的属性<span class="o">(</span>默认：模式,所有权,时间戳<span class="o">)</span>，如果
-                                        可能保持附加属性：环境、链接、xattr 等
-  -c                           deprecated, same as --preserve<span class="o">=</span>context
-      --sno-preserve<span class="o">=</span>属性列表   不保留指定的文件属性
-      --parents                 复制前在目标目录创建来源文件路径中的所有目录
-  -R, -r, --recursive           递归复制目录及其子目录内的所有内容
-      --reflink<span class="o">[=</span>WHEN<span class="o">]</span>          控制克隆/CoW 副本。请查看下面的内如。
-      --remove-destination      尝试打开目标文件前先删除已存在的目的地
-                                        文件 <span class="o">(</span>相对于 --force 选项<span class="o">)</span>
-      --sparse<span class="o">=</span>WHEN             控制创建稀疏文件的方式
-      --strip-trailing-slashes  删除参数中所有源文件/目录末端的斜杠
-  -s, --symbolic-link           只创建符号链接而不复制文件
-  -S, --suffix<span class="o">=</span>后缀             自行指定备份文件的后缀
-  -t,  --target-directory<span class="o">=</span>目录  将所有参数指定的源文件/目录
-                                           复制至目标目录
-  -T, --no-target-directory     将目标目录视作普通文件
-  -u, --update                  只在源文件比目标文件新，或目标文件
-                                        不存在时才进行复制
-  -v, --verbose         显示详细的进行步骤
-  -x, --one-file-system 不跨越文件系统进行操作
-  -Z                           <span class="nb">set</span> SELinux security context of destination
-                                 file to default <span class="nb">type</span>
-      --context<span class="o">[=</span>CTX<span class="o">]</span>          like -Z, or <span class="k">if</span> CTX is specified <span class="k">then</span> <span class="nb">set</span> the
-                                 SELinux or SMACK security context to CTX
-      --help            显示此帮助信息并退出
-      --version         显示版本信息并退出
-
-默认情况下，源文件的稀疏性仅仅通过简单的方法判断，对应的目标文件目标文件也
-被为稀疏。这是因为默认情况下使用了--sparse<span class="o">=</span>auto 参数。如果明确使用
---sparse<span class="o">=</span>always 参数则不论源文件是否包含足够长的0 序列也将目标文件创文
-建为稀疏件。
-使用--sparse<span class="o">=</span>never 参数禁止创建稀疏文件。
-
-当指定了--reflink<span class="o">[=</span>always<span class="o">]</span> 参数时执行轻量化的复制，即只在数据块被修改的
-情况下才复制。如果复制失败或者同时指定了--reflink<span class="o">=</span>auto，则返回标准复制模式。
-
-The backup suffix is <span class="s1">&#39;~&#39;</span>, unless <span class="nb">set</span> with --suffix or SIMPLE_BACKUP_SUFFIX.
-The version control method may be selected via the --backup option or through
-the VERSION_CONTROL environment variable.  Here are the values:
-
-  none, off       不进行备份<span class="o">(</span>即使使用了--backup 选项<span class="o">)</span>
-  numbered, t     备份文件加上数字进行排序
-  existing, nil   若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
-  simple, never   永远使用普通方式备份
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc RedHad<span class="o">]</span><span class="c1"># cp --help;</span>
+</span></span><span class="line"><span class="cl">用法：cp <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>-T<span class="o">]</span> 源文件 目标文件
+</span></span><span class="line"><span class="cl">　或：cp <span class="o">[</span>选项<span class="o">]</span>... 源文件... 目录
+</span></span><span class="line"><span class="cl">　或：cp <span class="o">[</span>选项<span class="o">]</span>... -t 目录 源文件...
+</span></span><span class="line"><span class="cl">Copy SOURCE to DEST, or multiple SOURCE<span class="o">(</span>s<span class="o">)</span> to DIRECTORY.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Mandatory arguments to long options are mandatory <span class="k">for</span> short options too.
+</span></span><span class="line"><span class="cl">  -a, --archive                 等于-dR --preserve<span class="o">=</span>all
+</span></span><span class="line"><span class="cl">      --attributes-only 仅复制属性而不复制数据      --backup<span class="o">[=</span>CONTROL           为每个已存在的目标文件创建备份
+</span></span><span class="line"><span class="cl">  -b                            类似--backup 但不接受参数
+</span></span><span class="line"><span class="cl">      --copy-contents           在递归处理是复制特殊文件内容
+</span></span><span class="line"><span class="cl">  -d                            等于--no-dereference --preserve<span class="o">=</span>links
+</span></span><span class="line"><span class="cl">  -f, --force                  <span class="k">if</span> an existing destination file cannot be
+</span></span><span class="line"><span class="cl">                                 opened, remove it and try again <span class="o">(</span>this option
+</span></span><span class="line"><span class="cl">                                 is ignored when the -n option is also used<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -i, --interactive            prompt before overwrite <span class="o">(</span>overrides a previous -n
+</span></span><span class="line"><span class="cl">                                  option<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -H                           follow command-line symbolic links in SOURCE
+</span></span><span class="line"><span class="cl">  -l, --link                   hard link files instead of copying
+</span></span><span class="line"><span class="cl">  -L, --dereference            always follow symbolic links in SOURCE
+</span></span><span class="line"><span class="cl">  -n, --no-clobber              不要覆盖已存在的文件<span class="o">(</span>使前面的 -i 选项失效<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -P, --no-dereference          不跟随源文件中的符号链接
+</span></span><span class="line"><span class="cl">  -p                            等于--preserve<span class="o">=</span>模式,所有权,时间戳
+</span></span><span class="line"><span class="cl">      --preserve<span class="o">[=</span>属性列表      保持指定的属性<span class="o">(</span>默认：模式,所有权,时间戳<span class="o">)</span>，如果
+</span></span><span class="line"><span class="cl">                                        可能保持附加属性：环境、链接、xattr 等
+</span></span><span class="line"><span class="cl">  -c                           deprecated, same as --preserve<span class="o">=</span>context
+</span></span><span class="line"><span class="cl">      --sno-preserve<span class="o">=</span>属性列表   不保留指定的文件属性
+</span></span><span class="line"><span class="cl">      --parents                 复制前在目标目录创建来源文件路径中的所有目录
+</span></span><span class="line"><span class="cl">  -R, -r, --recursive           递归复制目录及其子目录内的所有内容
+</span></span><span class="line"><span class="cl">      --reflink<span class="o">[=</span>WHEN<span class="o">]</span>          控制克隆/CoW 副本。请查看下面的内如。
+</span></span><span class="line"><span class="cl">      --remove-destination      尝试打开目标文件前先删除已存在的目的地
+</span></span><span class="line"><span class="cl">                                        文件 <span class="o">(</span>相对于 --force 选项<span class="o">)</span>
+</span></span><span class="line"><span class="cl">      --sparse<span class="o">=</span>WHEN             控制创建稀疏文件的方式
+</span></span><span class="line"><span class="cl">      --strip-trailing-slashes  删除参数中所有源文件/目录末端的斜杠
+</span></span><span class="line"><span class="cl">  -s, --symbolic-link           只创建符号链接而不复制文件
+</span></span><span class="line"><span class="cl">  -S, --suffix<span class="o">=</span>后缀             自行指定备份文件的后缀
+</span></span><span class="line"><span class="cl">  -t,  --target-directory<span class="o">=</span>目录  将所有参数指定的源文件/目录
+</span></span><span class="line"><span class="cl">                                           复制至目标目录
+</span></span><span class="line"><span class="cl">  -T, --no-target-directory     将目标目录视作普通文件
+</span></span><span class="line"><span class="cl">  -u, --update                  只在源文件比目标文件新，或目标文件
+</span></span><span class="line"><span class="cl">                                        不存在时才进行复制
+</span></span><span class="line"><span class="cl">  -v, --verbose         显示详细的进行步骤
+</span></span><span class="line"><span class="cl">  -x, --one-file-system 不跨越文件系统进行操作
+</span></span><span class="line"><span class="cl">  -Z                           <span class="nb">set</span> SELinux security context of destination
+</span></span><span class="line"><span class="cl">                                 file to default <span class="nb">type</span>
+</span></span><span class="line"><span class="cl">      --context<span class="o">[=</span>CTX<span class="o">]</span>          like -Z, or <span class="k">if</span> CTX is specified <span class="k">then</span> <span class="nb">set</span> the
+</span></span><span class="line"><span class="cl">                                 SELinux or SMACK security context to CTX
+</span></span><span class="line"><span class="cl">      --help            显示此帮助信息并退出
+</span></span><span class="line"><span class="cl">      --version         显示版本信息并退出
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">默认情况下，源文件的稀疏性仅仅通过简单的方法判断，对应的目标文件目标文件也
+</span></span><span class="line"><span class="cl">被为稀疏。这是因为默认情况下使用了--sparse<span class="o">=</span>auto 参数。如果明确使用
+</span></span><span class="line"><span class="cl">--sparse<span class="o">=</span>always 参数则不论源文件是否包含足够长的0 序列也将目标文件创文
+</span></span><span class="line"><span class="cl">建为稀疏件。
+</span></span><span class="line"><span class="cl">使用--sparse<span class="o">=</span>never 参数禁止创建稀疏文件。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">当指定了--reflink<span class="o">[=</span>always<span class="o">]</span> 参数时执行轻量化的复制，即只在数据块被修改的
+</span></span><span class="line"><span class="cl">情况下才复制。如果复制失败或者同时指定了--reflink<span class="o">=</span>auto，则返回标准复制模式。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">The backup suffix is <span class="s1">&#39;~&#39;</span>, unless <span class="nb">set</span> with --suffix or SIMPLE_BACKUP_SUFFIX.
+</span></span><span class="line"><span class="cl">The version control method may be selected via the --backup option or through
+</span></span><span class="line"><span class="cl">the VERSION_CONTROL environment variable.  Here are the values:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  none, off       不进行备份<span class="o">(</span>即使使用了--backup 选项<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  numbered, t     备份文件加上数字进行排序
+</span></span><span class="line"><span class="cl">  existing, nil   若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
+</span></span><span class="line"><span class="cl">  simple, never   永远使用普通方式备份
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="操作示例">操作示例</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -558,23 +557,23 @@ the VERSION_CONTROL environment variable.  Here are the values:
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># tree</span>
-.
-├── file1
-│   └── file1.txt
-├── file2
-│   ├── file2.exe
-│   └── file2.txt
-└── file3
-
-<span class="m">3</span> directories, <span class="m">3</span> files
-<span class="o">[</span>root@Cc cp<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># tree</span>
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── file1
+</span></span><span class="line"><span class="cl">│   └── file1.txt
+</span></span><span class="line"><span class="cl">├── file2
+</span></span><span class="line"><span class="cl">│   ├── file2.exe
+</span></span><span class="line"><span class="cl">│   └── file2.txt
+</span></span><span class="line"><span class="cl">└── file3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">3</span> directories, <span class="m">3</span> files
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="复制多个文件">复制多个文件</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -590,32 +589,30 @@ the VERSION_CONTROL environment variable.  Here are the values:
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
-</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cp -v file1/file1.txt  file2/file2.txt file3</span>
-<span class="s2">&#34;file1/file1.txt&#34;</span> -&gt; <span class="s2">&#34;file3/file1.txt&#34;</span>
-<span class="s2">&#34;file2/file2.txt&#34;</span> -&gt; <span class="s2">&#34;file3/file2.txt&#34;</span>
-<span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># tree</span>
-.
-├── file1
-│   └── file1.txt
-├── file2
-│   ├── file2.exe
-│   └── file2.txt
-└── file3
-    ├── file1.txt
-    └── file2.txt
-
-<span class="m">3</span> directories, <span class="m">5</span> files
-<span class="o">[</span>root@Cc cp<span class="o">]</span># 
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cp -v file1/file1.txt  file2/file2.txt file3</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;file1/file1.txt&#34;</span> -&gt; <span class="s2">&#34;file3/file1.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;file2/file2.txt&#34;</span> -&gt; <span class="s2">&#34;file3/file2.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># tree</span>
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── file1
+</span></span><span class="line"><span class="cl">│   └── file1.txt
+</span></span><span class="line"><span class="cl">├── file2
+</span></span><span class="line"><span class="cl">│   ├── file2.exe
+</span></span><span class="line"><span class="cl">│   └── file2.txt
+</span></span><span class="line"><span class="cl">└── file3
+</span></span><span class="line"><span class="cl">    ├── file1.txt
+</span></span><span class="line"><span class="cl">    └── file2.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">3</span> directories, <span class="m">5</span> files
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="复制文件夹">复制文件夹</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -633,34 +630,32 @@ the VERSION_CONTROL environment variable.  Here are the values:
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cp -rv file3 file5</span>
-<span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># tree</span>
-.
-├── file1
-│   └── file1.txt
-├── file2
-│   ├── file2.exe
-│   └── file2.txt
-├── file3
-│   ├── file1.txt
-│   └── file2.txt
-└── file5
-    └── file3
-        ├── file1.txt
-        └── file2.txt
-
-<span class="m">5</span> directories, <span class="m">7</span> files
-<span class="o">[</span>root@Cc cp<span class="o">]</span># 
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cp -rv file3 file5</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># tree</span>
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── file1
+</span></span><span class="line"><span class="cl">│   └── file1.txt
+</span></span><span class="line"><span class="cl">├── file2
+</span></span><span class="line"><span class="cl">│   ├── file2.exe
+</span></span><span class="line"><span class="cl">│   └── file2.txt
+</span></span><span class="line"><span class="cl">├── file3
+</span></span><span class="line"><span class="cl">│   ├── file1.txt
+</span></span><span class="line"><span class="cl">│   └── file2.txt
+</span></span><span class="line"><span class="cl">└── file5
+</span></span><span class="line"><span class="cl">    └── file3
+</span></span><span class="line"><span class="cl">        ├── file1.txt
+</span></span><span class="line"><span class="cl">        └── file2.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">5</span> directories, <span class="m">7</span> files
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="保留属性复制">保留属性复制</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -668,19 +663,17 @@ the VERSION_CONTROL environment variable.  Here are the values:
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cp -a /etc/nginx/conf.d/default.conf .</span>
-<span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">20</span>
--rw-r--r-- <span class="m">1</span> root root  <span class="m">750</span> 3月  <span class="m">23</span> 11:51 default.conf
-drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:21 file1
-drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:22 file2
-drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:23 file3
-drwxr-xr-x <span class="m">3</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:25 file5
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cp -a /etc/nginx/conf.d/default.conf .</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">20</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root  <span class="m">750</span> 3月  <span class="m">23</span> 11:51 default.conf
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:21 file1
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:22 file2
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:23 file3
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">3</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:25 file5
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="并不复制本身而是创建软链接">并不复制本身，而是创建软链接</h5>
 <blockquote>
@@ -688,7 +681,7 @@ drwxr-xr-x <span class="m">3</span> root root <span class="m">4096</span> 3月  
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -729,52 +722,52 @@ drwxr-xr-x <span class="m">3</span> root root <span class="m">4096</span> 3月  
 </span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">20</span>
--rw-r--r-- <span class="m">1</span> root root  <span class="m">750</span> 3月  <span class="m">23</span> 11:51 default.conf
-drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:21 file1
-drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:22 file2
-drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:23 file3
-drwxr-xr-x <span class="m">3</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:25 file5
-lrwxrwxrwx <span class="m">1</span> root root   <span class="m">12</span> 3月  <span class="m">24</span> 22:31 testCP_S -&gt; default.conf
-<span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cat testCP_S</span> 
-server <span class="o">{</span>
-      listen <span class="m">443</span> ssl default<span class="p">;</span>  <span class="c1"># 1.1版本后这样写</span>
-      server_name lichaocheng.top<span class="p">;</span> <span class="c1">#填写绑定证书的域名</span>
-      ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem<span class="p">;</span>  <span class="c1"># 指定证书的位置，绝对路径</span>
-      ssl_certificate_key /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.key<span class="p">;</span>  <span class="c1"># 绝对路径，同上</span>
-      ssl_session_timeout 5m<span class="p">;</span>
-      ssl_protocols TLSv1 TLSv1.1 TLSv1.2<span class="p">;</span> <span class="c1">#按照这个协议配置</span>
-      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE<span class="p">;</span><span class="c1">#按照这个套件配置</span>
-      ssl_prefer_server_ciphers on<span class="p">;</span>
-      location / <span class="o">{</span>
-          root   /opt/lichaocheng.top/lichaocheng.top<span class="p">;</span> <span class="c1">#站点目录，绝对路径</span>
-          index  index.html index.htm<span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cat default.conf</span> 
-server <span class="o">{</span>
-      listen <span class="m">443</span> ssl default<span class="p">;</span>  <span class="c1"># 1.1版本后这样写</span>
-      server_name lichaocheng.top<span class="p">;</span> <span class="c1">#填写绑定证书的域名</span>
-      ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem<span class="p">;</span>  <span class="c1"># 指定证书的位置，绝对路径</span>
-      ssl_certificate_key /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.key<span class="p">;</span>  <span class="c1"># 绝对路径，同上</span>
-      ssl_session_timeout 5m<span class="p">;</span>
-      ssl_protocols TLSv1 TLSv1.1 TLSv1.2<span class="p">;</span> <span class="c1">#按照这个协议配置</span>
-      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE<span class="p">;</span><span class="c1">#按照这个套件配置</span>
-      ssl_prefer_server_ciphers on<span class="p">;</span>
-      location / <span class="o">{</span>
-          root   /opt/lichaocheng.top/lichaocheng.top<span class="p">;</span> <span class="c1">#站点目录，绝对路径</span>
-          index  index.html index.htm<span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="o">[</span>root@Cc cp<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">20</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root  <span class="m">750</span> 3月  <span class="m">23</span> 11:51 default.conf
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:21 file1
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:22 file2
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:23 file3
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">3</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 22:25 file5
+</span></span><span class="line"><span class="cl">lrwxrwxrwx <span class="m">1</span> root root   <span class="m">12</span> 3月  <span class="m">24</span> 22:31 testCP_S -&gt; default.conf
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cat testCP_S </span>
+</span></span><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      listen <span class="m">443</span> ssl default<span class="p">;</span>  <span class="c1"># 1.1版本后这样写</span>
+</span></span><span class="line"><span class="cl">      server_name lichaocheng.top<span class="p">;</span> <span class="c1">#填写绑定证书的域名</span>
+</span></span><span class="line"><span class="cl">      ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem<span class="p">;</span>  <span class="c1"># 指定证书的位置，绝对路径</span>
+</span></span><span class="line"><span class="cl">      ssl_certificate_key /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.key<span class="p">;</span>  <span class="c1"># 绝对路径，同上</span>
+</span></span><span class="line"><span class="cl">      ssl_session_timeout 5m<span class="p">;</span>
+</span></span><span class="line"><span class="cl">      ssl_protocols TLSv1 TLSv1.1 TLSv1.2<span class="p">;</span> <span class="c1">#按照这个协议配置</span>
+</span></span><span class="line"><span class="cl">      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE<span class="p">;</span><span class="c1">#按照这个套件配置</span>
+</span></span><span class="line"><span class="cl">      ssl_prefer_server_ciphers on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">      location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          root   /opt/lichaocheng.top/lichaocheng.top<span class="p">;</span> <span class="c1">#站点目录，绝对路径</span>
+</span></span><span class="line"><span class="cl">          index  index.html index.htm<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># cat default.conf </span>
+</span></span><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      listen <span class="m">443</span> ssl default<span class="p">;</span>  <span class="c1"># 1.1版本后这样写</span>
+</span></span><span class="line"><span class="cl">      server_name lichaocheng.top<span class="p">;</span> <span class="c1">#填写绑定证书的域名</span>
+</span></span><span class="line"><span class="cl">      ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem<span class="p">;</span>  <span class="c1"># 指定证书的位置，绝对路径</span>
+</span></span><span class="line"><span class="cl">      ssl_certificate_key /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.key<span class="p">;</span>  <span class="c1"># 绝对路径，同上</span>
+</span></span><span class="line"><span class="cl">      ssl_session_timeout 5m<span class="p">;</span>
+</span></span><span class="line"><span class="cl">      ssl_protocols TLSv1 TLSv1.1 TLSv1.2<span class="p">;</span> <span class="c1">#按照这个协议配置</span>
+</span></span><span class="line"><span class="cl">      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE<span class="p">;</span><span class="c1">#按照这个套件配置</span>
+</span></span><span class="line"><span class="cl">      ssl_prefer_server_ciphers on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">      location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          root   /opt/lichaocheng.top/lichaocheng.top<span class="p">;</span> <span class="c1">#站点目录，绝对路径</span>
+</span></span><span class="line"><span class="cl">          index  index.html index.htm<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="mv">mv</h3>
 <h4 id="mv---help">mv &ndash;help</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -806,43 +799,43 @@ server <span class="o">{</span>
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># mv --help</span>
-用法：mv <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>-T<span class="o">]</span> 源文件 目标文件
-　或：mv <span class="o">[</span>选项<span class="o">]</span>... 源文件... 目录
-　或：mv <span class="o">[</span>选项<span class="o">]</span>... -t 目录 源文件...
-Rename SOURCE to DEST, or move SOURCE<span class="o">(</span>s<span class="o">)</span> to DIRECTORY.
-
-Mandatory arguments to long options are mandatory <span class="k">for</span> short options too.
-      --backup<span class="o">[=</span>CONTROL<span class="o">]</span>       为每个已存在的目标文件创建备份
-  -b                           类似--backup 但不接受参数
-  -f, --force                  覆盖前不询问
-  -i, --interactive            覆盖前询问
-  -n, --no-clobber             不覆盖已存在文件
-如果您指定了-i、-f、-n 中的多个，仅最后一个生效。
-      --strip-trailing-slashes  去掉每个源文件参数尾部的斜线
-  -S, --suffix<span class="o">=</span>SUFFIX           替换常用的备份文件后缀
-  -t, --target-directory<span class="o">=</span>DIRECTORY  move all SOURCE arguments into DIRECTORY
-  -T, --no-target-directory    treat DEST as a normal file
-  -u, --update                 move only when the SOURCE file is newer
-                                 than the destination file or when the
-                                 destination file is missing
-  -v, --verbose                explain what is being <span class="k">done</span>
-  -Z, --context                <span class="nb">set</span> SELinux security context of destination
-                                 file to default <span class="nb">type</span>
-      --help            显示此帮助信息并退出
-      --version         显示版本信息并退出
-  none, off       不进行备份<span class="o">(</span>即使使用了--backup 选项<span class="o">)</span>
-  numbered, t     备份文件加上数字进行排序
-  existing, nil   若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
-  simple, never   永远使用普通方式备份
-<span class="o">[</span>root@Cc cp<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># mv --help</span>
+</span></span><span class="line"><span class="cl">用法：mv <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>-T<span class="o">]</span> 源文件 目标文件
+</span></span><span class="line"><span class="cl">　或：mv <span class="o">[</span>选项<span class="o">]</span>... 源文件... 目录
+</span></span><span class="line"><span class="cl">　或：mv <span class="o">[</span>选项<span class="o">]</span>... -t 目录 源文件...
+</span></span><span class="line"><span class="cl">Rename SOURCE to DEST, or move SOURCE<span class="o">(</span>s<span class="o">)</span> to DIRECTORY.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Mandatory arguments to long options are mandatory <span class="k">for</span> short options too.
+</span></span><span class="line"><span class="cl">      --backup<span class="o">[=</span>CONTROL<span class="o">]</span>       为每个已存在的目标文件创建备份
+</span></span><span class="line"><span class="cl">  -b                           类似--backup 但不接受参数
+</span></span><span class="line"><span class="cl">  -f, --force                  覆盖前不询问
+</span></span><span class="line"><span class="cl">  -i, --interactive            覆盖前询问
+</span></span><span class="line"><span class="cl">  -n, --no-clobber             不覆盖已存在文件
+</span></span><span class="line"><span class="cl">如果您指定了-i、-f、-n 中的多个，仅最后一个生效。
+</span></span><span class="line"><span class="cl">      --strip-trailing-slashes  去掉每个源文件参数尾部的斜线
+</span></span><span class="line"><span class="cl">  -S, --suffix<span class="o">=</span>SUFFIX           替换常用的备份文件后缀
+</span></span><span class="line"><span class="cl">  -t, --target-directory<span class="o">=</span>DIRECTORY  move all SOURCE arguments into DIRECTORY
+</span></span><span class="line"><span class="cl">  -T, --no-target-directory    treat DEST as a normal file
+</span></span><span class="line"><span class="cl">  -u, --update                 move only when the SOURCE file is newer
+</span></span><span class="line"><span class="cl">                                 than the destination file or when the
+</span></span><span class="line"><span class="cl">                                 destination file is missing
+</span></span><span class="line"><span class="cl">  -v, --verbose                explain what is being <span class="k">done</span>
+</span></span><span class="line"><span class="cl">  -Z, --context                <span class="nb">set</span> SELinux security context of destination
+</span></span><span class="line"><span class="cl">                                 file to default <span class="nb">type</span>
+</span></span><span class="line"><span class="cl">      --help            显示此帮助信息并退出
+</span></span><span class="line"><span class="cl">      --version         显示版本信息并退出
+</span></span><span class="line"><span class="cl">  none, off       不进行备份<span class="o">(</span>即使使用了--backup 选项<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  numbered, t     备份文件加上数字进行排序
+</span></span><span class="line"><span class="cl">  existing, nil   若有数字的备份文件已经存在则使用数字，否则使用普通方式备份
+</span></span><span class="line"><span class="cl">  simple, never   永远使用普通方式备份
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="touch">touch</h3>
 <h4 id="touch---help">touch &ndash;help</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -860,29 +853,27 @@ Mandatory arguments to long options are mandatory <span class="k">for</span> sho
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># touch --help;</span>
-用法：touch <span class="o">[</span>选项<span class="o">]</span>... 文件...
-  -a                    只更改访问时间
-  -c, --no-create       不创建任何文件
-  -d, --date<span class="o">=</span>字符串     使用指定字符串表示时间而非当前时间
-  -f                    <span class="o">(</span>忽略<span class="o">)</span>
-  -h, --no-dereference          会影响符号链接本身，而非符号链接所指示的目的地
-                                <span class="o">(</span>当系统支持更改符号链接的所有者时，此选项才有用<span class="o">)</span>
-  -m                    只更改修改时间
-  -r, --reference<span class="o">=</span>FILE   use this file<span class="err">&#39;</span>s <span class="nb">times</span> instead of current <span class="nb">time</span>
-  -t STAMP               use <span class="o">[[</span>CC<span class="o">]</span>YY<span class="o">]</span>MMDDhhmm<span class="o">[</span>.ss<span class="o">]</span> instead of current <span class="nb">time</span>
-      --time<span class="o">=</span>WORD        change the specified time:
-                           WORD is access, atime, or use: equivalent to -a
-                           WORD is modify or mtime: equivalent to -m
-      --help            显示此帮助信息并退出
-      --version         显示版本信息并退出
-
-请注意，-d 和-t 选项可接受不同的时间/日期格式。
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc cp<span class="o">]</span><span class="c1"># touch --help;</span>
+</span></span><span class="line"><span class="cl">用法：touch <span class="o">[</span>选项<span class="o">]</span>... 文件...
+</span></span><span class="line"><span class="cl">  -a                    只更改访问时间
+</span></span><span class="line"><span class="cl">  -c, --no-create       不创建任何文件
+</span></span><span class="line"><span class="cl">  -d, --date<span class="o">=</span>字符串     使用指定字符串表示时间而非当前时间
+</span></span><span class="line"><span class="cl">  -f                    <span class="o">(</span>忽略<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -h, --no-dereference          会影响符号链接本身，而非符号链接所指示的目的地
+</span></span><span class="line"><span class="cl">                                <span class="o">(</span>当系统支持更改符号链接的所有者时，此选项才有用<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -m                    只更改修改时间
+</span></span><span class="line"><span class="cl">  -r, --reference<span class="o">=</span>FILE   use this file<span class="err">&#39;</span>s <span class="nb">times</span> instead of current <span class="nb">time</span>
+</span></span><span class="line"><span class="cl">  -t STAMP               use <span class="o">[[</span>CC<span class="o">]</span>YY<span class="o">]</span>MMDDhhmm<span class="o">[</span>.ss<span class="o">]</span> instead of current <span class="nb">time</span>
+</span></span><span class="line"><span class="cl">      --time<span class="o">=</span>WORD        change the specified time:
+</span></span><span class="line"><span class="cl">                           WORD is access, atime, or use: equivalent to -a
+</span></span><span class="line"><span class="cl">                           WORD is modify or mtime: equivalent to -m
+</span></span><span class="line"><span class="cl">      --help            显示此帮助信息并退出
+</span></span><span class="line"><span class="cl">      --version         显示版本信息并退出
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">请注意，-d 和-t 选项可接受不同的时间/日期格式。
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="示例">示例</h5>
 <blockquote>
@@ -901,7 +892,7 @@ Mandatory arguments to long options are mandatory <span class="k">for</span> sho
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -940,50 +931,50 @@ Mandatory arguments to long options are mandatory <span class="k">for</span> sho
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># touch t1</span>
-<span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># stat t1</span>
-  文件：<span class="s2">&#34;t1&#34;</span>
-  大小：0               块：0          IO 块：4096   普通空文件
-设备：fd01h/64769d      Inode：668181      硬链接：1
-权限：<span class="o">(</span>0644/-rw-r--r--<span class="o">)</span>  Uid：<span class="o">(</span>    0/    root<span class="o">)</span>   Gid：<span class="o">(</span>    0/    root<span class="o">)</span>
-最近访问：2020-03-24 22:44:43.908405308 +0800
-最近更改：2020-03-24 22:44:43.908405308 +0800
-最近改动：2020-03-24 22:44:43.908405308 +0800
-创建时间：-
-<span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># date</span>
-2020年 03月 24日 星期二 22:49:18 CST
-<span class="o">[</span>root@Cc touch<span class="o">]</span># 
-<span class="o">[</span>root@Cc touch<span class="o">]</span># 
-<span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># touch -d &#34;2 day ago&#34; t1</span>
-<span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># stat t1</span>
-  文件：<span class="s2">&#34;t1&#34;</span>
-  大小：0               块：0          IO 块：4096   普通空文件
-设备：fd01h/64769d      Inode：668185      硬链接：1
-权限：<span class="o">(</span>0644/-rw-r--r--<span class="o">)</span>  Uid：<span class="o">(</span>    0/    root<span class="o">)</span>   Gid：<span class="o">(</span>    0/    root<span class="o">)</span>
-最近访问：2020-03-22 22:49:50.941398201 +0800
-最近更改：2020-03-22 22:49:50.941398201 +0800
-最近改动：2020-03-24 22:49:50.941121499 +0800
-创建时间：-
-<span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># date</span>
-2020年 03月 24日 星期二 22:50:01 CST
-<span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># touch -t &#34;01231215&#34; t3</span>
-<span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># stat t3</span>
-  文件：<span class="s2">&#34;t3&#34;</span>
-  大小：0               块：0          IO 块：4096   普通空文件
-设备：fd01h/64769d      Inode：668187      硬链接：1
-权限：<span class="o">(</span>0644/-rw-r--r--<span class="o">)</span>  Uid：<span class="o">(</span>    0/    root<span class="o">)</span>   Gid：<span class="o">(</span>    0/    root<span class="o">)</span>
-最近访问：2020-01-23 12:15:00.000000000 +0800
-最近更改：2020-01-23 12:15:00.000000000 +0800
-最近改动：2020-03-24 22:50:53.180699023 +0800
-创建时间：-
-<span class="o">[</span>root@Cc touch<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># touch t1</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># stat t1</span>
+</span></span><span class="line"><span class="cl">  文件：<span class="s2">&#34;t1&#34;</span>
+</span></span><span class="line"><span class="cl">  大小：0               块：0          IO 块：4096   普通空文件
+</span></span><span class="line"><span class="cl">设备：fd01h/64769d      Inode：668181      硬链接：1
+</span></span><span class="line"><span class="cl">权限：<span class="o">(</span>0644/-rw-r--r--<span class="o">)</span>  Uid：<span class="o">(</span>    0/    root<span class="o">)</span>   Gid：<span class="o">(</span>    0/    root<span class="o">)</span>
+</span></span><span class="line"><span class="cl">最近访问：2020-03-24 22:44:43.908405308 +0800
+</span></span><span class="line"><span class="cl">最近更改：2020-03-24 22:44:43.908405308 +0800
+</span></span><span class="line"><span class="cl">最近改动：2020-03-24 22:44:43.908405308 +0800
+</span></span><span class="line"><span class="cl">创建时间：-
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># date</span>
+</span></span><span class="line"><span class="cl">2020年 03月 24日 星期二 22:49:18 CST
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># touch -d &#34;2 day ago&#34; t1</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># stat t1</span>
+</span></span><span class="line"><span class="cl">  文件：<span class="s2">&#34;t1&#34;</span>
+</span></span><span class="line"><span class="cl">  大小：0               块：0          IO 块：4096   普通空文件
+</span></span><span class="line"><span class="cl">设备：fd01h/64769d      Inode：668185      硬链接：1
+</span></span><span class="line"><span class="cl">权限：<span class="o">(</span>0644/-rw-r--r--<span class="o">)</span>  Uid：<span class="o">(</span>    0/    root<span class="o">)</span>   Gid：<span class="o">(</span>    0/    root<span class="o">)</span>
+</span></span><span class="line"><span class="cl">最近访问：2020-03-22 22:49:50.941398201 +0800
+</span></span><span class="line"><span class="cl">最近更改：2020-03-22 22:49:50.941398201 +0800
+</span></span><span class="line"><span class="cl">最近改动：2020-03-24 22:49:50.941121499 +0800
+</span></span><span class="line"><span class="cl">创建时间：-
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># date</span>
+</span></span><span class="line"><span class="cl">2020年 03月 24日 星期二 22:50:01 CST
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># touch -t &#34;01231215&#34; t3</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># stat t3</span>
+</span></span><span class="line"><span class="cl">  文件：<span class="s2">&#34;t3&#34;</span>
+</span></span><span class="line"><span class="cl">  大小：0               块：0          IO 块：4096   普通空文件
+</span></span><span class="line"><span class="cl">设备：fd01h/64769d      Inode：668187      硬链接：1
+</span></span><span class="line"><span class="cl">权限：<span class="o">(</span>0644/-rw-r--r--<span class="o">)</span>  Uid：<span class="o">(</span>    0/    root<span class="o">)</span>   Gid：<span class="o">(</span>    0/    root<span class="o">)</span>
+</span></span><span class="line"><span class="cl">最近访问：2020-01-23 12:15:00.000000000 +0800
+</span></span><span class="line"><span class="cl">最近更改：2020-01-23 12:15:00.000000000 +0800
+</span></span><span class="line"><span class="cl">最近改动：2020-03-24 22:50:53.180699023 +0800
+</span></span><span class="line"><span class="cl">创建时间：-
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="rm">rm</h3>
 <h4 id="rm---help">rm &ndash;help</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1015,43 +1006,41 @@ Mandatory arguments to long options are mandatory <span class="k">for</span> sho
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
-</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># rm --help;</span>
-用法：rm <span class="o">[</span>选项<span class="o">]</span>... 文件...
-Remove <span class="o">(</span>unlink<span class="o">)</span> the FILE<span class="o">(</span>s<span class="o">)</span>.
-
-  -f, --force           ignore nonexistent files and arguments, never prompt
-  -i                    prompt before every removal
-  -I                    prompt once before removing more than three files, or
-                          when removing recursively<span class="p">;</span> less intrusive than -i,
-                          <span class="k">while</span> still giving protection against most mistakes
-      --interactive<span class="o">[=</span>WHEN<span class="o">]</span>  prompt according to WHEN: never, once <span class="o">(</span>-I<span class="o">)</span>, or
-                          always <span class="o">(</span>-i<span class="o">)</span><span class="p">;</span> without WHEN, prompt always
-      --one-file-system         递归删除一个层级时，跳过所有不符合命令行参
-                                数的文件系统上的文件
-      --no-preserve-root  <span class="k">do</span> not treat <span class="s1">&#39;/&#39;</span> specially
-      --preserve-root   <span class="k">do</span> not remove <span class="s1">&#39;/&#39;</span> <span class="o">(</span>default<span class="o">)</span>
-  -r, -R, --recursive   remove directories and their contents recursively
-  -d, --dir             remove empty directories
-  -v, --verbose         explain what is being <span class="k">done</span>
-      --help            显示此帮助信息并退出
-      --version         显示版本信息并退出
-
-默认时，rm 不会删除目录。使用--recursive<span class="o">(</span>-r 或-R<span class="o">)</span>选项可删除每个给定
-的目录，以及其下所有的内容。
-
-To remove a file whose name starts with a <span class="s1">&#39;-&#39;</span>, <span class="k">for</span> example <span class="s1">&#39;-foo&#39;</span>,
-use one of these commands:
-  rm -- -foo
-
-  rm ./-foo
-
-请注意，如果使用rm 来删除文件，通常仍可以将该文件恢复原状。如果想保证
-该文件的内容无法还原，请考虑使用shred。
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># rm --help;</span>
+</span></span><span class="line"><span class="cl">用法：rm <span class="o">[</span>选项<span class="o">]</span>... 文件...
+</span></span><span class="line"><span class="cl">Remove <span class="o">(</span>unlink<span class="o">)</span> the FILE<span class="o">(</span>s<span class="o">)</span>.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  -f, --force           ignore nonexistent files and arguments, never prompt
+</span></span><span class="line"><span class="cl">  -i                    prompt before every removal
+</span></span><span class="line"><span class="cl">  -I                    prompt once before removing more than three files, or
+</span></span><span class="line"><span class="cl">                          when removing recursively<span class="p">;</span> less intrusive than -i,
+</span></span><span class="line"><span class="cl">                          <span class="k">while</span> still giving protection against most mistakes
+</span></span><span class="line"><span class="cl">      --interactive<span class="o">[=</span>WHEN<span class="o">]</span>  prompt according to WHEN: never, once <span class="o">(</span>-I<span class="o">)</span>, or
+</span></span><span class="line"><span class="cl">                          always <span class="o">(</span>-i<span class="o">)</span><span class="p">;</span> without WHEN, prompt always
+</span></span><span class="line"><span class="cl">      --one-file-system         递归删除一个层级时，跳过所有不符合命令行参
+</span></span><span class="line"><span class="cl">                                数的文件系统上的文件
+</span></span><span class="line"><span class="cl">      --no-preserve-root  <span class="k">do</span> not treat <span class="s1">&#39;/&#39;</span> specially
+</span></span><span class="line"><span class="cl">      --preserve-root   <span class="k">do</span> not remove <span class="s1">&#39;/&#39;</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -r, -R, --recursive   remove directories and their contents recursively
+</span></span><span class="line"><span class="cl">  -d, --dir             remove empty directories
+</span></span><span class="line"><span class="cl">  -v, --verbose         explain what is being <span class="k">done</span>
+</span></span><span class="line"><span class="cl">      --help            显示此帮助信息并退出
+</span></span><span class="line"><span class="cl">      --version         显示版本信息并退出
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">默认时，rm 不会删除目录。使用--recursive<span class="o">(</span>-r 或-R<span class="o">)</span>选项可删除每个给定
+</span></span><span class="line"><span class="cl">的目录，以及其下所有的内容。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">To remove a file whose name starts with a <span class="s1">&#39;-&#39;</span>, <span class="k">for</span> example <span class="s1">&#39;-foo&#39;</span>,
+</span></span><span class="line"><span class="cl">use one of these commands:
+</span></span><span class="line"><span class="cl">  rm -- -foo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  rm ./-foo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">请注意，如果使用rm 来删除文件，通常仍可以将该文件恢复原状。如果想保证
+</span></span><span class="line"><span class="cl">该文件的内容无法还原，请考虑使用shred。
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="查看文件">查看文件</h3>
 <ul>
@@ -1059,7 +1048,7 @@ use one of these commands:
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1083,36 +1072,36 @@ use one of these commands:
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># cat --help</span>
-用法：cat <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>文件<span class="o">]</span>...
-将<span class="o">[</span>文件<span class="o">]</span>或标准输入组合输出到标准输出。
-
-  -A, --show-all           等于-vET
-  -b, --number-nonblank    对非空输出行编号
-  -e                       等于-vE
-  -E, --show-ends          在每行结束处显示<span class="s2">&#34;</span>$<span class="s2">&#34;</span>
-  -n, --number             对输出的所有行编号
-  -s, --squeeze-blank      不输出多行空行
-  -t                       与-vT 等价
-  -T, --show-tabs          将跳格字符显示为^I
-  -u                       <span class="o">(</span>被忽略<span class="o">)</span>
-  -v, --show-nonprinting   使用^ 和M- 引用，除了LFD和 TAB 之外
-      --help            显示此帮助信息并退出
-      --version         显示版本信息并退出
-
-如果没有指定文件，或者文件为<span class="s2">&#34;-&#34;</span>，则从标准输入读取。
-
-示例：
-  cat f - g  先输出f 的内容，然后输出标准输入的内容，最后输出g 的内容。
-  cat        将标准输入的内容复制到标准输出。
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># cat --help</span>
+</span></span><span class="line"><span class="cl">用法：cat <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>文件<span class="o">]</span>...
+</span></span><span class="line"><span class="cl">将<span class="o">[</span>文件<span class="o">]</span>或标准输入组合输出到标准输出。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  -A, --show-all           等于-vET
+</span></span><span class="line"><span class="cl">  -b, --number-nonblank    对非空输出行编号
+</span></span><span class="line"><span class="cl">  -e                       等于-vE
+</span></span><span class="line"><span class="cl">  -E, --show-ends          在每行结束处显示<span class="s2">&#34;</span>$<span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  -n, --number             对输出的所有行编号
+</span></span><span class="line"><span class="cl">  -s, --squeeze-blank      不输出多行空行
+</span></span><span class="line"><span class="cl">  -t                       与-vT 等价
+</span></span><span class="line"><span class="cl">  -T, --show-tabs          将跳格字符显示为^I
+</span></span><span class="line"><span class="cl">  -u                       <span class="o">(</span>被忽略<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -v, --show-nonprinting   使用^ 和M- 引用，除了LFD和 TAB 之外
+</span></span><span class="line"><span class="cl">      --help            显示此帮助信息并退出
+</span></span><span class="line"><span class="cl">      --version         显示版本信息并退出
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">如果没有指定文件，或者文件为<span class="s2">&#34;-&#34;</span>，则从标准输入读取。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">示例：
+</span></span><span class="line"><span class="cl">  cat f - g  先输出f 的内容，然后输出标准输入的内容，最后输出g 的内容。
+</span></span><span class="line"><span class="cl">  cat        将标准输入的内容复制到标准输出。
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>tac</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1125,25 +1114,25 @@ use one of these commands:
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># tac --help</span>
-用法：tac <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>文件<span class="o">]</span>...
-Write each FILE to standard output, last line first.
-With no FILE, or when FILE is -, <span class="nb">read</span> standard input.
-
-Mandatory arguments to long options are mandatory <span class="k">for</span> short options too.
-  -b, --before                  在行前而非行尾添加分隔标志
-  -r, --regex                   将分隔标志视作正则表达式来解析
-  -s, --separator<span class="o">=</span>字符串        使用指定字符串代替换行作为分隔标志
-      --help            显示此帮助信息并退出
-      --version         显示版本信息并退出
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># tac --help</span>
+</span></span><span class="line"><span class="cl">用法：tac <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>文件<span class="o">]</span>...
+</span></span><span class="line"><span class="cl">Write each FILE to standard output, last line first.
+</span></span><span class="line"><span class="cl">With no FILE, or when FILE is -, <span class="nb">read</span> standard input.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Mandatory arguments to long options are mandatory <span class="k">for</span> short options too.
+</span></span><span class="line"><span class="cl">  -b, --before                  在行前而非行尾添加分隔标志
+</span></span><span class="line"><span class="cl">  -r, --regex                   将分隔标志视作正则表达式来解析
+</span></span><span class="line"><span class="cl">  -s, --separator<span class="o">=</span>字符串        使用指定字符串代替换行作为分隔标志
+</span></span><span class="line"><span class="cl">      --help            显示此帮助信息并退出
+</span></span><span class="line"><span class="cl">      --version         显示版本信息并退出
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>more</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1160,46 +1149,44 @@ Mandatory arguments to long options are mandatory <span class="k">for</span> sho
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># more --help</span>
-more: 未知选项 -help
-用法：more <span class="o">[</span>选项<span class="o">]</span> 文件...
-
-选项：
-  -d        显示帮助，而不是响铃
-  -f        统计逻辑行数而不是屏幕行数
-  -l        抑制换页<span class="o">(</span>form feed<span class="o">)</span>后的暂停
-  -p        不滚屏，清屏并显示文本
-  -c        不滚屏，显示文本并清理行尾
-  -u        抑制下划线
-  -s        将多个空行压缩为一行
-  -NUM      指定每屏显示的行数为 NUM
-  +NUM      从文件第 NUM 行开始显示
-  +/STRING  从匹配搜索字符串 STRING 的文件位置开始显示
-  -V        输出版本信息并退出
-<span class="o">[</span>root@Cc touch<span class="o">]</span># 
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># more --help</span>
+</span></span><span class="line"><span class="cl">more: 未知选项 -help
+</span></span><span class="line"><span class="cl">用法：more <span class="o">[</span>选项<span class="o">]</span> 文件...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">选项：
+</span></span><span class="line"><span class="cl">  -d        显示帮助，而不是响铃
+</span></span><span class="line"><span class="cl">  -f        统计逻辑行数而不是屏幕行数
+</span></span><span class="line"><span class="cl">  -l        抑制换页<span class="o">(</span>form feed<span class="o">)</span>后的暂停
+</span></span><span class="line"><span class="cl">  -p        不滚屏，清屏并显示文本
+</span></span><span class="line"><span class="cl">  -c        不滚屏，显示文本并清理行尾
+</span></span><span class="line"><span class="cl">  -u        抑制下划线
+</span></span><span class="line"><span class="cl">  -s        将多个空行压缩为一行
+</span></span><span class="line"><span class="cl">  -NUM      指定每屏显示的行数为 NUM
+</span></span><span class="line"><span class="cl">  +NUM      从文件第 NUM 行开始显示
+</span></span><span class="line"><span class="cl">  +/STRING  从匹配搜索字符串 STRING 的文件位置开始显示
+</span></span><span class="line"><span class="cl">  -V        输出版本信息并退出
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>less</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">这个好长
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">这个好长
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>tac</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1208,38 +1195,38 @@ more: 未知选项 -help
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># tac --help</span>
-用法：tac <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>文件<span class="o">]</span>...
-  -b, --before                  在行前而非行尾添加分隔标志
-  -r, --regex                   将分隔标志视作正则表达式来解析
-  -s, --separator<span class="o">=</span>字符串        使用指定字符串代替换行作为分隔标志
-      --help            显示此帮助信息并退出
-      --version         显示版本信息并退出
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># tac --help</span>
+</span></span><span class="line"><span class="cl">用法：tac <span class="o">[</span>选项<span class="o">]</span>... <span class="o">[</span>文件<span class="o">]</span>...
+</span></span><span class="line"><span class="cl">  -b, --before                  在行前而非行尾添加分隔标志
+</span></span><span class="line"><span class="cl">  -r, --regex                   将分隔标志视作正则表达式来解析
+</span></span><span class="line"><span class="cl">  -s, --separator<span class="o">=</span>字符串        使用指定字符串代替换行作为分隔标志
+</span></span><span class="line"><span class="cl">      --help            显示此帮助信息并退出
+</span></span><span class="line"><span class="cl">      --version         显示版本信息并退出
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>tail</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># tail -n 3 ../cp/default.conf</span> 
-          index  index.html index.htm<span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-// 最后三行
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc touch<span class="o">]</span><span class="c1"># tail -n 3 ../cp/default.conf </span>
+</span></span><span class="line"><span class="cl">          index  index.html index.htm<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">// 最后三行
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="find">find</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1266,32 +1253,32 @@ more: 未知选项 -help
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># find --help</span>
-用法: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[</span>-L<span class="o">]</span> <span class="o">[</span>-P<span class="o">]</span> <span class="o">[</span>-Olevel<span class="o">]</span> <span class="o">[</span>-D help<span class="p">|</span>tree<span class="p">|</span>search<span class="p">|</span>stat<span class="p">|</span>rates<span class="p">|</span>opt<span class="p">|</span>exec<span class="o">]</span> <span class="o">[</span>path...<span class="o">]</span> <span class="o">[</span>expression<span class="o">]</span>
-
-默认路径为当前目录；默认表达式为 -print
-表达式可能由下列成份组成：操作符、选项、测试表达式以及动作：
-
-操作符 <span class="o">(</span>优先级递减；未做任何指定时默认使用 -and<span class="o">)</span>:
-      <span class="o">(</span> EXPR <span class="o">)</span>   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2
-      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2
-
-比较测试 <span class="o">(</span>N 可以是 +N 或 -N 或 N<span class="o">)</span>: -amin N -anewer FILE -atime N -cmin N
-      -cnewer 文件 -ctime N -empty -false -fstype 类型 -gid N -group 名称
-      -ilname 匹配模式 -iname 匹配模式 -inum N -ipath 匹配模式 -iregex 匹配模式
-      -links N -lname 匹配模式 -mmin N -mtime N -name 匹配模式 -newer 文件
-      -nouser -nogroup -path PATTERN -perm <span class="o">[</span>-/<span class="o">]</span>MODE -regex PATTERN
-      -readable -writable -executable
-      -wholename PATTERN -size N<span class="o">[</span>bcwkMG<span class="o">]</span> -true -type <span class="o">[</span>bcdpflsD<span class="o">]</span> -uid N
-      -used N -user NAME -xtype <span class="o">[</span>bcdpfls<span class="o">]</span>
-      -context 文本
-
-
-操作: -delete -print0 -printf 格式 -fprintf 文件 格式 -print 
-      -fprint0 文件 -fprint 文件 -ls -fls 文件 -prune -quit
-      -exec 命令 <span class="p">;</span> -exec 命令 <span class="o">{}</span> + -ok 命令 <span class="p">;</span>
-      -execdir 命令 <span class="p">;</span> -execdir 命令 <span class="o">{}</span> + -okdir 命令 <span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># find --help</span>
+</span></span><span class="line"><span class="cl">用法: find <span class="o">[</span>-H<span class="o">]</span> <span class="o">[</span>-L<span class="o">]</span> <span class="o">[</span>-P<span class="o">]</span> <span class="o">[</span>-Olevel<span class="o">]</span> <span class="o">[</span>-D help<span class="p">|</span>tree<span class="p">|</span>search<span class="p">|</span>stat<span class="p">|</span>rates<span class="p">|</span>opt<span class="p">|</span>exec<span class="o">]</span> <span class="o">[</span>path...<span class="o">]</span> <span class="o">[</span>expression<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">默认路径为当前目录；默认表达式为 -print
+</span></span><span class="line"><span class="cl">表达式可能由下列成份组成：操作符、选项、测试表达式以及动作：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">操作符 <span class="o">(</span>优先级递减；未做任何指定时默认使用 -and<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">      <span class="o">(</span> EXPR <span class="o">)</span>   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2
+</span></span><span class="line"><span class="cl">      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">比较测试 <span class="o">(</span>N 可以是 +N 或 -N 或 N<span class="o">)</span>: -amin N -anewer FILE -atime N -cmin N
+</span></span><span class="line"><span class="cl">      -cnewer 文件 -ctime N -empty -false -fstype 类型 -gid N -group 名称
+</span></span><span class="line"><span class="cl">      -ilname 匹配模式 -iname 匹配模式 -inum N -ipath 匹配模式 -iregex 匹配模式
+</span></span><span class="line"><span class="cl">      -links N -lname 匹配模式 -mmin N -mtime N -name 匹配模式 -newer 文件
+</span></span><span class="line"><span class="cl">      -nouser -nogroup -path PATTERN -perm <span class="o">[</span>-/<span class="o">]</span>MODE -regex PATTERN
+</span></span><span class="line"><span class="cl">      -readable -writable -executable
+</span></span><span class="line"><span class="cl">      -wholename PATTERN -size N<span class="o">[</span>bcwkMG<span class="o">]</span> -true -type <span class="o">[</span>bcdpflsD<span class="o">]</span> -uid N
+</span></span><span class="line"><span class="cl">      -used N -user NAME -xtype <span class="o">[</span>bcdpfls<span class="o">]</span>
+</span></span><span class="line"><span class="cl">      -context 文本
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">操作: -delete -print0 -printf 格式 -fprintf 文件 格式 -print 
+</span></span><span class="line"><span class="cl">      -fprint0 文件 -fprint 文件 -ls -fls 文件 -prune -quit
+</span></span><span class="line"><span class="cl">      -exec 命令 <span class="p">;</span> -exec 命令 <span class="o">{}</span> + -ok 命令 <span class="p">;</span>
+</span></span><span class="line"><span class="cl">      -execdir 命令 <span class="p">;</span> -execdir 命令 <span class="o">{}</span> + -okdir 命令 <span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="文本文本操作">文本文本操作</h3>
 <ul>
@@ -1323,7 +1310,7 @@ more: 未知选项 -help
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1333,15 +1320,15 @@ more: 未知选项 -help
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc nmask<span class="o">]</span><span class="c1"># umask</span>
-<span class="m">0022</span>
-<span class="o">[</span>root@Cc nmask<span class="o">]</span><span class="c1"># touch file;mkdir dir</span>
-<span class="o">[</span>root@Cc nmask<span class="o">]</span><span class="c1"># ls -l</span>
-总用量 <span class="m">4</span>
-drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 23:28 dir
--rw-r--r-- <span class="m">1</span> root root    <span class="m">0</span> 3月  <span class="m">24</span> 23:28 file
-<span class="o">[</span>root@Cc nmask<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc nmask<span class="o">]</span><span class="c1"># umask</span>
+</span></span><span class="line"><span class="cl"><span class="m">0022</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc nmask<span class="o">]</span><span class="c1"># touch file;mkdir dir</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc nmask<span class="o">]</span><span class="c1"># ls -l</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">4</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">24</span> 23:28 dir
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">0</span> 3月  <span class="m">24</span> 23:28 file
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc nmask<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="目录管理">目录管理</h2>
 
@@ -1371,28 +1358,10 @@ drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  
 
     
     
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">赞赏支持</label>
-  <div class="qr-code">
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/wechat.png">
-        <span>微信打赏</span>
-      </label>
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/alipay.png">
-        <span>支付宝打赏</span>
-      </label>
-  </div>
-</div>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://cc360428.github.io/tags/centos7/">CentOS7</a>
-          <a href="https://cc360428.github.io/tags/syetem/">Syetem</a>
+          <a href="https://cc360428.github.io/tags/redhad/">RedHad</a>
           
         </div>
 
@@ -1465,6 +1434,17 @@ drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>
@@ -1569,7 +1549,7 @@ drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

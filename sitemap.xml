@@ -10,6 +10,76 @@
   
   <url>
     <loc>https://cc360428.github.io/categories/</loc>
+    <lastmod>2022-03-31T21:19:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/categories/computerbasics/</loc>
+    <lastmod>2022-03-31T21:19:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/datastructure/</loc>
+    <lastmod>2022-03-31T21:19:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/selfstudy/datastructure/</loc>
+    <lastmod>2022-03-31T21:19:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/</loc>
+    <lastmod>2022-03-31T21:19:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/</loc>
+    <lastmod>2022-03-31T21:19:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/selfstudy/</loc>
+    <lastmod>2022-03-31T21:19:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/</loc>
+    <lastmod>2022-03-31T21:19:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/selfstudy/internetprinciples/</loc>
+    <lastmod>2021-03-20T13:57:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/network/</loc>
+    <lastmod>2021-03-20T13:57:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/goadvanced/</loc>
     <lastmod>2021-03-17T18:01:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -30,20 +100,6 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/</loc>
-    <lastmod>2021-03-17T18:01:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/</loc>
-    <lastmod>2021-03-17T18:01:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://cc360428.github.io/post/golang/utils/pprof/</loc>
     <lastmod>2021-03-17T18:01:33+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -51,22 +107,8 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/tags/</loc>
+    <loc>https://cc360428.github.io/categories/server/</loc>
     <lastmod>2021-03-17T18:01:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/categories/utils/</loc>
-    <lastmod>2021-03-17T18:01:33+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/centos7/</loc>
-    <lastmod>2021-03-17T17:48:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -86,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/tags/syetem/</loc>
+    <loc>https://cc360428.github.io/categories/systemutils/</loc>
     <lastmod>2021-03-17T17:48:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -107,8 +149,8 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/categories/base/</loc>
-    <lastmod>2020-04-25T08:27:23+08:00</lastmod>
+    <loc>https://cc360428.github.io/post/golang/version/go-1.13/</loc>
+    <lastmod>2020-12-25T17:11:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -128,21 +170,7 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/tags/system/</loc>
-    <lastmod>2020-04-20T22:05:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/categories/system/</loc>
-    <lastmod>2020-04-20T22:05:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>https://cc360428.github.io/tags/goweb/</loc>
     <lastmod>2020-04-19T22:58:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -156,14 +184,7 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/categories/device/</loc>
-    <lastmod>2020-04-18T14:33:04+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/git/</loc>
+    <loc>https://cc360428.github.io/tags/devtools/</loc>
     <lastmod>2020-04-18T14:33:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -171,13 +192,6 @@
   
   <url>
     <loc>https://cc360428.github.io/post/system/git/gitbase/</loc>
-    <lastmod>2020-04-18T14:33:04+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/linux/</loc>
     <lastmod>2020-04-18T14:33:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -198,21 +212,14 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/tags/error/</loc>
-    <lastmod>2020-04-18T12:21:48+08:00</lastmod>
+    <loc>https://cc360428.github.io/categories/system/</loc>
+    <lastmod>2020-04-18T14:33:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cc360428.github.io/tags/mysql/</loc>
-    <lastmod>2020-04-18T12:21:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/categories/mysql/</loc>
     <lastmod>2020-04-18T12:21:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -226,14 +233,14 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/tags/password/</loc>
-    <lastmod>2020-04-18T12:21:48+08:00</lastmod>
+    <loc>https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2020-03-29T00:49:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/post/system/redhad/10%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</loc>
+    <loc>https://cc360428.github.io/tags/redhad/</loc>
     <lastmod>2020-03-29T00:49:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -303,6 +310,13 @@
   </url>
   
   <url>
+    <loc>https://cc360428.github.io/tags/frp/</loc>
+    <lastmod>2020-03-23T13:32:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://cc360428.github.io/post/system/utils/frp/</loc>
     <lastmod>2020-03-23T13:32:25+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -312,6 +326,20 @@
   <url>
     <loc>https://cc360428.github.io/post/system/kubernetes/k8sbase/</loc>
     <lastmod>2020-03-22T22:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/docker/</loc>
+    <lastmod>2020-03-16T22:28:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/system/docker/docker-%E9%83%A8%E7%BD%B2web-%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2020-03-16T22:28:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -345,14 +373,7 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/categories/golang/</loc>
-    <lastmod>2020-03-11T16:19:11+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/golang/golang-package/</loc>
+    <loc>https://cc360428.github.io/post/golang/utils/golang-package/</loc>
     <lastmod>2020-03-11T16:19:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -360,13 +381,6 @@
   
   <url>
     <loc>https://cc360428.github.io/post/golang/mysql/gorm/</loc>
-    <lastmod>2020-03-05T16:02:24+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/gomysql/</loc>
     <lastmod>2020-03-05T16:02:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -387,14 +401,21 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/categories/gowebserver/</loc>
-    <lastmod>2019-12-26T14:22:12+08:00</lastmod>
+    <loc>https://cc360428.github.io/post/golang/utils/baseall/</loc>
+    <lastmod>2020-01-16T22:58:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cc360428.github.io/tags/grpc/</loc>
+    <lastmod>2019-12-26T14:22:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/golang/utils/grpc/</loc>
     <lastmod>2019-12-26T14:22:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -408,14 +429,14 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/post/selfstudy/databases/</loc>
-    <lastmod>2019-12-20T13:57:01+08:00</lastmod>
+    <loc>https://cc360428.github.io/tags/microservices/</loc>
+    <lastmod>2019-12-26T14:22:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/tags/selfstudy/</loc>
+    <loc>https://cc360428.github.io/post/selfstudy/databases/</loc>
     <lastmod>2019-12-20T13:57:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -436,22 +457,8 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/tags/golangversion/</loc>
-    <lastmod>2019-12-06T17:11:22+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://cc360428.github.io/post/system/mysql/mysql-lock/</loc>
     <lastmod>2019-09-18T12:21:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/docker/</loc>
-    <lastmod>2019-09-03T12:48:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -464,28 +471,7 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/categories/network/</loc>
-    <lastmod>2019-08-22T12:48:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/network/</loc>
-    <lastmod>2019-08-22T12:48:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://cc360428.github.io/post/network/tcpip/</loc>
-    <lastmod>2019-08-22T12:48:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2019-08-22T12:48:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -494,6 +480,13 @@
   <url>
     <loc>https://cc360428.github.io/post/network/http/</loc>
     <lastmod>2019-08-20T12:48:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/network/bit/</loc>
+    <lastmod>2019-08-19T12:48:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -520,7 +513,7 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/tags/goweb/</loc>
+    <loc>https://cc360428.github.io/categories/gowebserver/</loc>
     <lastmod>2019-07-07T13:21:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -625,7 +618,7 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/post/golang/base/</loc>
+    <loc>https://cc360428.github.io/post/golang/base/baseall/</loc>
     <lastmod>2019-03-07T09:21:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -681,34 +674,64 @@
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/tags/love/</loc>
-    <lastmod>2018-06-06T12:48:54+08:00</lastmod>
+    <loc>https://cc360428.github.io/categories/client/</loc>
+    <lastmod>2018-10-12T22:58:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/categories/me/</loc>
-    <lastmod>2018-06-06T12:48:54+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://cc360428.github.io/post/love/%E4%BD%B3%E8%83%BD/</loc>
-    <lastmod>2018-06-06T12:48:54+08:00</lastmod>
+    <loc>https://cc360428.github.io/tags/vue/</loc>
+    <lastmod>2018-10-12T22:58:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://cc360428.github.io/post/client/vue/vue/</loc>
+    <lastmod>2018-10-12T22:58:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://cc360428.github.io/post/system/docker/docker-%E9%83%A8%E7%BD%B2web-%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>https://cc360428.github.io/post/client/vue/createvue/</loc>
+    <lastmod>2018-10-11T22:58:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/java/</loc>
+    <lastmod>2018-01-26T12:48:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/java/base/</loc>
+    <lastmod>2018-01-26T12:48:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/javabase/</loc>
+    <lastmod>2018-01-26T12:48:54+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/tags/c/</loc>
+    <lastmod>2015-10-12T22:58:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://cc360428.github.io/post/cc&#43;&#43;/base/base/</loc>
+    <lastmod>2015-10-12T22:58:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

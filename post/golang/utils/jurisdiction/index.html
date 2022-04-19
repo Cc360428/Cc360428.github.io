@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/golang/utils/jurisdiction/" />
@@ -62,19 +62,15 @@
 <meta property="og:title" content="系统设计（自动化权限）" />
 <meta property="og:description" content="权限 自动化权限 准备知识：swagger、递归、注解、过滤器 设计 权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/golang/utils/jurisdiction/" />
+<meta property="og:url" content="https://cc360428.github.io/post/golang/utils/jurisdiction/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-04-19T22:58:36+08:00" />
 <meta property="article:modified_time" content="2020-04-19T22:58:36+08:00" />
+
 <meta itemprop="name" content="系统设计（自动化权限）">
-<meta itemprop="description" content="权限 自动化权限 准备知识：swagger、递归、注解、过滤器 设计 权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包">
-<meta itemprop="datePublished" content="2020-04-19T22:58:36+08:00" />
+<meta itemprop="description" content="权限 自动化权限 准备知识：swagger、递归、注解、过滤器 设计 权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包"><meta itemprop="datePublished" content="2020-04-19T22:58:36+08:00" />
 <meta itemprop="dateModified" content="2020-04-19T22:58:36+08:00" />
 <meta itemprop="wordCount" content="1184">
-
-
-
-<meta itemprop="keywords" content="golang,goUtils,系统设计," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="golang,GoAdvanced,GoWeb,GoUtils," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="系统设计（自动化权限）"/>
 <meta name="twitter:description" content="权限 自动化权限 准备知识：swagger、递归、注解、过滤器 设计 权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包"/>
 
@@ -345,7 +341,7 @@
           2020-04-19
         </time>
         <div class="post-category">
-            <a href="https://cc360428.github.io/categories/utils/"> utils </a>
+            <a href="https://cc360428.github.io/categories/server/"> Server </a>
             
           </div>
         <span class="more-meta"> 约 1184 字 </span>
@@ -412,7 +408,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -423,16 +419,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// Login 用户登录
-</span><span class="c1">// @Tags 登录管理
-</span><span class="c1">// @Summary 用户登录
-</span><span class="c1">// @Param body body schema.LoginParam true &#34;请求参数&#34;
-</span><span class="c1">// @Success 200 {object} schema.LoginTokenInfo
-</span><span class="c1">// @Failure 400 {object} schema.HTTPError &#34;{error:{code:0,message:无效的请求参数}}&#34;
-</span><span class="c1">// @Failure 500 {object} schema.HTTPError &#34;{error:{code:0,message:服务器错误}}&#34;
-</span><span class="c1">// @Router /api/v1/pub/login [post]
-</span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span><span class="nx">Login</span><span class="p">)</span> <span class="nf">Login</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Login 用户登录
+</span></span></span><span class="line"><span class="cl"><span class="c1">// @Tags 登录管理
+</span></span></span><span class="line"><span class="cl"><span class="c1">// @Summary 用户登录
+</span></span></span><span class="line"><span class="cl"><span class="c1">// @Param body body schema.LoginParam true &#34;请求参数&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1">// @Success 200 {object} schema.LoginTokenInfo
+</span></span></span><span class="line"><span class="cl"><span class="c1">// @Failure 400 {object} schema.HTTPError &#34;{error:{code:0,message:无效的请求参数}}&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1">// @Failure 500 {object} schema.HTTPError &#34;{error:{code:0,message:服务器错误}}&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1">// @Router /api/v1/pub/login [post]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">a</span> <span class="o">*</span><span class="nx">Login</span><span class="p">)</span> <span class="nf">Login</span><span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">gin</span><span class="p">.</span><span class="nx">Context</span><span class="p">)</span> <span class="p">{}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="swagger">swagger</h3>
 <ul>
@@ -443,30 +439,30 @@
 <p>进入项目根目录 <code>swag init</code> 生成或者使用以下方式</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="nx">get</span> <span class="o">-</span><span class="nx">u</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">swaggo</span><span class="o">/</span><span class="nx">swag</span><span class="o">/</span><span class="nx">cmd</span><span class="o">/</span><span class="nx">swag</span>
-<span class="nx">swag</span> <span class="nx">init</span> <span class="o">-</span><span class="nx">g</span> <span class="p">.</span><span class="o">/</span><span class="nx">internal</span><span class="o">/</span><span class="nx">app</span><span class="o">/</span><span class="nx">routers</span><span class="o">/</span><span class="nx">swagger</span><span class="p">.</span><span class="k">go</span> <span class="o">-</span><span class="nx">o</span> <span class="p">.</span><span class="o">/</span><span class="nx">docs</span><span class="o">/</span><span class="nx">swagger</span>
-<span class="nx">swag</span> <span class="nx">init</span> <span class="o">-</span><span class="nx">g</span> <span class="p">.</span><span class="o">/</span><span class="nx">internal</span><span class="o">/</span><span class="nx">app</span><span class="o">/</span><span class="nx">routers</span><span class="o">/</span><span class="nx">swagger</span><span class="p">.</span><span class="k">go</span> <span class="o">-</span><span class="nx">o</span> <span class="p">.</span><span class="o">/</span><span class="nx">docs</span><span class="o">/</span><span class="nx">swagger</span><span class="o">/</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="k">go</span> <span class="nx">get</span> <span class="o">-</span><span class="nx">u</span> <span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">swaggo</span><span class="o">/</span><span class="nx">swag</span><span class="o">/</span><span class="nx">cmd</span><span class="o">/</span><span class="nx">swag</span>
+</span></span><span class="line"><span class="cl"><span class="nx">swag</span> <span class="nx">init</span> <span class="o">-</span><span class="nx">g</span> <span class="p">.</span><span class="o">/</span><span class="nx">internal</span><span class="o">/</span><span class="nx">app</span><span class="o">/</span><span class="nx">routers</span><span class="o">/</span><span class="nx">swagger</span><span class="p">.</span><span class="k">go</span> <span class="o">-</span><span class="nx">o</span> <span class="p">.</span><span class="o">/</span><span class="nx">docs</span><span class="o">/</span><span class="nx">swagger</span>
+</span></span><span class="line"><span class="cl"><span class="nx">swag</span> <span class="nx">init</span> <span class="o">-</span><span class="nx">g</span> <span class="p">.</span><span class="o">/</span><span class="nx">internal</span><span class="o">/</span><span class="nx">app</span><span class="o">/</span><span class="nx">routers</span><span class="o">/</span><span class="nx">swagger</span><span class="p">.</span><span class="k">go</span> <span class="o">-</span><span class="nx">o</span> <span class="p">.</span><span class="o">/</span><span class="nx">docs</span><span class="o">/</span><span class="nx">swagger</span><span class="o">/</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>会生成<code>docs</code>目录 里面有</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="p">|</span><span class="o">--</span> <span class="nx">docs</span><span class="p">.</span><span class="k">go</span>
-<span class="p">|</span><span class="o">--</span> <span class="nx">swagger</span><span class="p">.</span><span class="nx">json</span>
-<span class="p">|</span><span class="o">--</span> <span class="nx">swagger</span><span class="p">.</span><span class="nx">yaml</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">|</span><span class="o">--</span> <span class="nx">docs</span><span class="p">.</span><span class="k">go</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">--</span> <span class="nx">swagger</span><span class="p">.</span><span class="nx">json</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span><span class="o">--</span> <span class="nx">swagger</span><span class="p">.</span><span class="nx">yaml</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -477,7 +473,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -569,97 +565,97 @@
 </span><span class="lnt">90
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;encoding/json&#34;</span>
-	<span class="s">&#34;io/ioutil&#34;</span>
-	<span class="s">&#34;strings&#34;</span>
-
-	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-	<span class="s">&#34;github.com/Cc360428/HelpPackage/result&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// 所在 swagger.json 路径
-</span><span class="c1"></span>	<span class="nf">GetFile</span><span class="p">(</span><span class="s">&#34;swagger.json&#34;</span><span class="p">)</span>
-
-<span class="p">}</span>
-
-<span class="kd">type</span> <span class="nx">Resource</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">Name</span> <span class="kt">string</span> <span class="s">`json:&#34;name&#34;`</span> <span class="c1">//名称
-</span><span class="c1"></span>	<span class="nx">Url</span>  <span class="kt">string</span> <span class="s">`json:&#34;url&#34;`</span>  <span class="c1">//路径
-</span><span class="c1"></span><span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">SwaggerJson</span><span class="p">(</span><span class="nx">swagger</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">a</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
-	<span class="nx">xxx</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
-	<span class="nx">bytes</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadFile</span><span class="p">(</span><span class="nx">swagger</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
-	<span class="p">}</span>
-	<span class="nx">err</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">xxx</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="s">&#34;error&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
-	<span class="p">}</span>
-	<span class="nx">birds</span> <span class="o">:=</span> <span class="nx">xxx</span><span class="p">[</span><span class="s">&#34;paths&#34;</span><span class="p">].(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
-	<span class="c1">// logs.Info(&#34;返回 映射&#34;, birds)
-</span><span class="c1"></span>	<span class="k">return</span> <span class="nx">birds</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">GetOpId</span><span class="p">(</span><span class="nx">vv</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">(</span><span class="nx">ret</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
-	<span class="nx">dd</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
-	<span class="nx">_</span> <span class="p">=</span> <span class="nx">result</span><span class="p">.</span><span class="nf">HelperConvetInterface</span><span class="p">(</span><span class="nx">vv</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">dd</span><span class="p">)</span>
-	<span class="k">for</span> <span class="nx">kk</span><span class="p">,</span> <span class="nx">value</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">dd</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="nx">kk</span> <span class="o">==</span> <span class="s">&#34;summary&#34;</span> <span class="p">{</span>
-			<span class="nx">ret</span> <span class="p">=</span> <span class="nx">value</span>
-			<span class="k">return</span> <span class="nx">value</span>
-		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-			<span class="nx">ret</span> <span class="p">=</span> <span class="nf">GetOpId</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
-			<span class="k">if</span> <span class="nx">ret</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-				<span class="k">return</span> <span class="nx">ret</span>
-			<span class="p">}</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="kc">nil</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">GetFile</span><span class="p">(</span><span class="nx">path</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">birds</span> <span class="o">:=</span> <span class="nf">SwaggerJson</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
-	<span class="kd">var</span> <span class="nx">pps</span> <span class="p">[]</span><span class="o">*</span><span class="nx">Resource</span>
-	<span class="k">for</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">value</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">birds</span> <span class="p">{</span>
-		<span class="nx">name</span> <span class="o">:=</span> <span class="nf">GetOpId</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
-		<span class="kd">var</span> <span class="nx">pp</span> <span class="nx">Resource</span>
-		<span class="nx">pp</span><span class="p">.</span><span class="nx">Url</span> <span class="p">=</span> <span class="nx">url</span>
-		<span class="nx">_</span> <span class="p">=</span> <span class="nx">result</span><span class="p">.</span><span class="nf">HelperConvetInterface</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">pp</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
-		<span class="nx">pps</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">pps</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">pp</span><span class="p">)</span>
-		<span class="nx">n</span> <span class="o">:=</span> <span class="nf">InterfaceTurnString</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
-		<span class="c1">// 这里会根据自定义 符号分割
-</span><span class="c1"></span>		<span class="c1">// t := SplitUtil(n, &#34;.&#34;)
-</span><span class="c1"></span>		<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nf">PowerAddOne</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">PowerAddOne</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">url</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">id</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span>
-	<span class="k">return</span>
-
-	<span class="c1">//保存到数据库
-</span><span class="c1"></span><span class="p">}</span>
-
-<span class="c1">//字符串分割
-</span><span class="c1">//第一个参数为要分割的字符串，第二个参数为分割的条件
-</span><span class="c1">//返回分割后的数组
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">SplitUtil</span><span class="p">(</span><span class="nx">parameter</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">condition</span> <span class="kt">string</span><span class="p">)</span> <span class="p">[]</span><span class="kt">string</span> <span class="p">{</span>
-	<span class="nx">str</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="nx">parameter</span><span class="p">,</span> <span class="nx">condition</span><span class="p">)</span>
-	<span class="k">return</span> <span class="nx">str</span>
-<span class="p">}</span>
-
-<span class="c1">//interface 转 string
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">InterfaceTurnString</span><span class="p">(</span><span class="nx">pr</span> <span class="kd">interface</span><span class="p">{})</span> <span class="kt">string</span> <span class="p">{</span>
-	<span class="nx">s</span> <span class="o">:=</span> <span class="nx">pr</span><span class="p">.(</span><span class="kt">string</span><span class="p">)</span>
-	<span class="k">return</span> <span class="nx">s</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;encoding/json&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io/ioutil&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;strings&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/Cc360428/HelpPackage/result&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 所在 swagger.json 路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nf">GetFile</span><span class="p">(</span><span class="s">&#34;swagger.json&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Resource</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Name</span> <span class="kt">string</span> <span class="s">`json:&#34;name&#34;`</span> <span class="c1">//名称
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Url</span>  <span class="kt">string</span> <span class="s">`json:&#34;url&#34;`</span>  <span class="c1">//路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">SwaggerJson</span><span class="p">(</span><span class="nx">swagger</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">a</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">xxx</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">bytes</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadFile</span><span class="p">(</span><span class="nx">swagger</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">bytes</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">xxx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="s">&#34;error&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">birds</span> <span class="o">:=</span> <span class="nx">xxx</span><span class="p">[</span><span class="s">&#34;paths&#34;</span><span class="p">].(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// logs.Info(&#34;返回 映射&#34;, birds)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">return</span> <span class="nx">birds</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">GetOpId</span><span class="p">(</span><span class="nx">vv</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">(</span><span class="nx">ret</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">dd</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span> <span class="p">=</span> <span class="nx">result</span><span class="p">.</span><span class="nf">HelperConvetInterface</span><span class="p">(</span><span class="nx">vv</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">dd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">kk</span><span class="p">,</span> <span class="nx">value</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">dd</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">kk</span> <span class="o">==</span> <span class="s">&#34;summary&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">ret</span> <span class="p">=</span> <span class="nx">value</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nx">value</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">ret</span> <span class="p">=</span> <span class="nf">GetOpId</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="nx">ret</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="k">return</span> <span class="nx">ret</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">GetFile</span><span class="p">(</span><span class="nx">path</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">birds</span> <span class="o">:=</span> <span class="nf">SwaggerJson</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">pps</span> <span class="p">[]</span><span class="o">*</span><span class="nx">Resource</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">value</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">birds</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">name</span> <span class="o">:=</span> <span class="nf">GetOpId</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="kd">var</span> <span class="nx">pp</span> <span class="nx">Resource</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">pp</span><span class="p">.</span><span class="nx">Url</span> <span class="p">=</span> <span class="nx">url</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">_</span> <span class="p">=</span> <span class="nx">result</span><span class="p">.</span><span class="nf">HelperConvetInterface</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">pp</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">pps</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">pps</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">pp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">n</span> <span class="o">:=</span> <span class="nf">InterfaceTurnString</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// 这里会根据自定义 符号分割
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// t := SplitUtil(n, &#34;.&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nf">PowerAddOne</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">PowerAddOne</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">url</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">id</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">//保存到数据库
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//字符串分割
+</span></span></span><span class="line"><span class="cl"><span class="c1">//第一个参数为要分割的字符串，第二个参数为分割的条件
+</span></span></span><span class="line"><span class="cl"><span class="c1">//返回分割后的数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">SplitUtil</span><span class="p">(</span><span class="nx">parameter</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">condition</span> <span class="kt">string</span><span class="p">)</span> <span class="p">[]</span><span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">str</span> <span class="o">:=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="nx">parameter</span><span class="p">,</span> <span class="nx">condition</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">str</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//interface 转 string
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">InterfaceTurnString</span><span class="p">(</span><span class="nx">pr</span> <span class="kd">interface</span><span class="p">{})</span> <span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">s</span> <span class="o">:=</span> <span class="nx">pr</span><span class="p">.(</span><span class="kt">string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">s</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -688,29 +684,13 @@
 
     
     
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">赞赏支持</label>
-  <div class="qr-code">
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/wechat.png">
-        <span>微信打赏</span>
-      </label>
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/alipay.png">
-        <span>支付宝打赏</span>
-      </label>
-  </div>
-</div>
 
     <footer class="post-footer">
       <div class="post-tags">
           <a href="https://cc360428.github.io/tags/golang/">golang</a>
-          <a href="https://cc360428.github.io/tags/goutils/">goUtils</a>
-          <a href="https://cc360428.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">系统设计</a>
+          <a href="https://cc360428.github.io/tags/goadvanced/">GoAdvanced</a>
+          <a href="https://cc360428.github.io/tags/goweb/">GoWeb</a>
+          <a href="https://cc360428.github.io/tags/goutils/">GoUtils</a>
           
         </div>
 
@@ -783,6 +763,17 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>
@@ -887,7 +878,7 @@
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

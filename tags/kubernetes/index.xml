@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Wed, 17 Mar 2021 17:48:38 +0800</lastBuildDate>
-    
-	<atom:link href="https://cc360428.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 17 Mar 2021 17:48:38 +0800</lastBuildDate><atom:link href="https://cc360428.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubectl</title>
       <link>https://cc360428.github.io/post/system/kubernetes/kubectl/</link>
@@ -37,6 +33,15 @@
       
       <guid>https://cc360428.github.io/post/system/kubernetes/base/</guid>
       <description>Kubernetes 搭建 查看查询系统基本信息 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 uname -a # 查看版本当前操作系统内核信息 cat /proc/version # 查看当前系统版本信息 cat /etc/issue # 查</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes概述</title>
+      <link>https://cc360428.github.io/post/system/kubernetes/k8sbase/</link>
+      <pubDate>Sun, 22 Mar 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/system/kubernetes/k8sbase/</guid>
+      <description>什么是Kubernetes 为什叫k8sK~s 中间有8个字符，8代替了ubernete 参考文档 Kubernetes 你能做什么 快速部署应用 快速扩展应用 无缝对接新的</description>
     </item>
     
   </channel>

@@ -2,103 +2,103 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>base on Li Chao Cheng Blog</title>
-    <link>https://cc360428.github.io/categories/base/</link>
+    <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/categories/base/</link>
     <description>Recent content in base on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
     <lastBuildDate>Mon, 20 Apr 2020 22:05:01 +0800</lastBuildDate>
     
-	<atom:link href="https://cc360428.github.io/categories/base/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clientcodefile.gitee.io/blog.lichaocheng.top/categories/base/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>linux Shell Base</title>
-      <link>https://cc360428.github.io/post/system/shell/base/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/shell/base/</link>
       <pubDate>Mon, 20 Apr 2020 22:05:01 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/system/shell/base/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/shell/base/</guid>
       <description>Shell Github helloworld 创建与写 1 2 3 4 5 6 7 8 touch helloworld.sh vim helloworld.sh #!/bin/bash echo &amp;#34;Hello World !&amp;#34; // #! 是个约定标记 // echo 向窗口输出文本 执行 1 2 3 4 chmod +x ./helloworld.sh ./helloworld.sh 就可以看到控制台输出 Hello World ! Shell 变量 命名规</description>
     </item>
     
     <item>
       <title>Day11（并发编程）</title>
-      <link>https://cc360428.github.io/post/golang/base/concurrent/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/concurrent/</link>
       <pubDate>Sat, 27 Apr 2019 09:19:29 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/base/concurrent/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/concurrent/</guid>
       <description>并发编程 goroutine 时间片轮转以及调度goroutine 协程 使用 go 关键字创建，并发执行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 package</description>
     </item>
     
     <item>
       <title>Day10（接口和错误处理）</title>
-      <link>https://cc360428.github.io/post/golang/base/interfaceanderror/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/interfaceanderror/</link>
       <pubDate>Thu, 25 Apr 2019 17:02:59 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/base/interfaceanderror/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/interfaceanderror/</guid>
       <description>interface And Panic、Error 源码 interface 接口创建使用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48</description>
     </item>
     
     <item>
       <title>Day09（MapAndContainer）</title>
-      <link>https://cc360428.github.io/post/golang/base/mapandcontainer/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/mapandcontainer/</link>
       <pubDate>Thu, 25 Apr 2019 10:00:24 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/base/mapandcontainer/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/mapandcontainer/</guid>
       <description>集合(map) 和容器(Container) 源码 Map Map是一种无序键值对的集合，通过Key来检索数据，key 类似索引，指向数据值，可以使用fo</description>
     </item>
     
     <item>
       <title>Day08（切片 slice 和 range）</title>
-      <link>https://cc360428.github.io/post/golang/base/sliceandranger/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/sliceandranger/</link>
       <pubDate>Wed, 24 Apr 2019 22:37:18 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/base/sliceandranger/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/sliceandranger/</guid>
       <description>切片（slice） 和range 使用 源码 切片（slice） Go 数组在一定情况下，不能满足开发业务需求（数组固定长度、有很多局限性），切片是可变长</description>
     </item>
     
     <item>
       <title>Day07（指针和结构体）</title>
-      <link>https://cc360428.github.io/post/golang/base/pointerandstruct/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/pointerandstruct/</link>
       <pubDate>Tue, 23 Apr 2019 22:04:03 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/base/pointerandstruct/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/pointerandstruct/</guid>
       <description>指针和结构体 源码 指针 Go 语言指针与C语言指针不一样理解,一个指针变量指向了一个值的内存地址。 类似于变量和常量，在使用指针前你需要声明指针 示例 示</description>
     </item>
     
     <item>
       <title>Day06（作用域与数组）</title>
-      <link>https://cc360428.github.io/post/golang/base/variableandarray/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/variableandarray/</link>
       <pubDate>Sun, 07 Apr 2019 22:58:36 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/base/variableandarray/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/variableandarray/</guid>
       <description>作用域与数组 源码 变量作用域 局部变量 函数内定义的变量 1 2 3 4 5 6 7 8 9 10 package main import ( &amp;#34;fmt&amp;#34; ) func main() { var a, b, c = 1, 2, 3 fmt.Println(a, b, c) } 全局变量 函数外定义的变量 1 2</description>
     </item>
     
     <item>
       <title>Day05（函数）</title>
-      <link>https://cc360428.github.io/post/golang/base/func/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/func/</link>
       <pubDate>Sat, 06 Apr 2019 22:05:18 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/base/func/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/func/</guid>
       <description>函数 源码 go 至少一个函数 主函数 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 package main import ( &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; ) func main() { _, _, _, err := FuncName(&amp;#34;&amp;#34;, &amp;#34;&amp;#34;, false) if err != nil { logs.Error(err.Error()) } } // FuncName func FuncName(args1, args2 string, args3 bool) (return1, return2</description>
     </item>
     
     <item>
       <title>Day04（循环语句）</title>
-      <link>https://cc360428.github.io/post/golang/base/loopstatementfunc/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/loopstatementfunc/</link>
       <pubDate>Wed, 03 Apr 2019 00:10:00 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/base/loopstatementfunc/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/loopstatementfunc/</guid>
       <description>循环语句 源代码 for 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 package main import &amp;#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&amp;#34; func main() { array := make([]int, 5) logs.Info(array) for i := 0; i &amp;lt; len(array); i++ { array[i] = i } logs.Info(array) b := 3 for b &amp;gt;= 1 { b-- logs.Debug(b) } a := 5</description>
     </item>
     
     <item>
       <title>Day03（运算符与条件语句）</title>
-      <link>https://cc360428.github.io/post/golang/base/operatorcondition/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/operatorcondition/</link>
       <pubDate>Tue, 02 Apr 2019 13:13:45 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/base/operatorcondition/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/base/operatorcondition/</guid>
       <description>运算符与条件语句 本章源码 运算符 算数运算符 假定 A 值为 10，B 值为 20 运算符 描述 实例 + 相加 A + B 输出结果 30 - 相减 A - B 输出结果 -10 * 相乘 A * B 输出结</description>
     </item>
     

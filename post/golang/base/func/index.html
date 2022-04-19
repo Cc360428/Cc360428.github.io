@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/golang/base/func/" />
@@ -61,19 +61,15 @@
 <meta property="og:title" content="Day05（函数）" />
 <meta property="og:description" content="function 函数方法" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/golang/base/func/" />
+<meta property="og:url" content="https://cc360428.github.io/post/golang/base/func/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-04-06T22:05:18+08:00" />
 <meta property="article:modified_time" content="2019-04-06T22:05:18+08:00" />
+
 <meta itemprop="name" content="Day05（函数）">
-<meta itemprop="description" content="function 函数方法">
-<meta itemprop="datePublished" content="2019-04-06T22:05:18+08:00" />
+<meta itemprop="description" content="function 函数方法"><meta itemprop="datePublished" content="2019-04-06T22:05:18+08:00" />
 <meta itemprop="dateModified" content="2019-04-06T22:05:18+08:00" />
-<meta itemprop="wordCount" content="1653">
-
-
-
-<meta itemprop="keywords" content="golang,GoBase," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="1649">
+<meta itemprop="keywords" content="golang,GoBase," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Day05（函数）"/>
 <meta name="twitter:description" content="function 函数方法"/>
 
@@ -344,10 +340,10 @@
           2019-04-06
         </time>
         <div class="post-category">
-            <a href="https://cc360428.github.io/categories/base/"> base </a>
+            <a href="https://cc360428.github.io/categories/server/"> Server </a>
             
           </div>
-        <span class="more-meta"> 约 1653 字 </span>
+        <span class="more-meta"> 约 1649 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
 
         
@@ -387,7 +383,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -407,31 +403,29 @@
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
-</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">FuncName</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// FuncName 
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">FuncName</span><span class="p">(</span><span class="nx">args1</span><span class="p">,</span> <span class="nx">args2</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">args3</span> <span class="kt">bool</span><span class="p">)</span> <span class="p">(</span><span class="nx">return1</span><span class="p">,</span> <span class="nx">return2</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">return3</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">return4</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="cm">/**
-</span><span class="cm">	函数体
-</span><span class="cm">	 */</span>
-	<span class="k">return</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">FuncName</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// FuncName 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">FuncName</span><span class="p">(</span><span class="nx">args1</span><span class="p">,</span> <span class="nx">args2</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">args3</span> <span class="kt">bool</span><span class="p">)</span> <span class="p">(</span><span class="nx">return1</span><span class="p">,</span> <span class="nx">return2</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">return3</span> <span class="kt">bool</span><span class="p">,</span> <span class="nx">return4</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">	函数体
+</span></span></span><span class="line"><span class="cl"><span class="cm">	 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="说明">说明</h3>
 <ul>
@@ -450,7 +444,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -483,56 +477,54 @@
 </span><span class="lnt">31
 </span><span class="lnt">32
 </span><span class="lnt">33
-</span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-
-	<span class="nx">max</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">max</span><span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="s">&#34;lcc&#34;</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
-	<span class="p">}</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;%d最大值&#34;</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span>
-	<span class="nx">str</span> <span class="o">:=</span> <span class="nf">IsNull</span><span class="p">(</span><span class="s">&#34;66&#34;</span><span class="p">)</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
-
-<span class="p">}</span>
-
-<span class="c1">// max 格式一：
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">max</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">v</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;this name %s&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">a</span> <span class="p">&gt;</span> <span class="nx">b</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="kc">nil</span>
-	<span class="p">}</span>
-	<span class="nx">max</span> <span class="p">=</span> <span class="nx">b</span>
-	<span class="k">return</span>
-<span class="p">}</span>
-
-<span class="c1">// IsNull 格式一：
-</span><span class="c1"></span><span class="kd">func</span> <span class="nf">IsNull</span><span class="p">(</span><span class="nx">str</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">str</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="kc">true</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="kc">false</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">max</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">max</span><span class="p">(</span><span class="mi">66</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="s">&#34;lcc&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;%d最大值&#34;</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">str</span> <span class="o">:=</span> <span class="nf">IsNull</span><span class="p">(</span><span class="s">&#34;66&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// max 格式一：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="nx">max</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">v</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;this name %s&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">a</span> <span class="p">&gt;</span> <span class="nx">b</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">max</span> <span class="p">=</span> <span class="nx">b</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// IsNull 格式一：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">IsNull</span><span class="p">(</span><span class="nx">str</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">str</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">04.408</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func1</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="nx">this</span> <span class="nx">name</span> <span class="nx">lcc</span>
-<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">04.421</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func1</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="mi">99</span><span class="nx">最大值</span>
-<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">04.421</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func1</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>  <span class="kc">false</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">04.408</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func1</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="nx">this</span> <span class="nx">name</span> <span class="nx">lcc</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">04.421</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func1</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>  <span class="mi">99</span><span class="nx">最大值</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">22</span><span class="p">:</span><span class="mi">47</span><span class="p">:</span><span class="mf">04.421</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func1</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>  <span class="kc">false</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="函数值传递与引用传递">函数值传递与引用传递</h3>
 <h4 id="值传递">值传递</h4>
@@ -541,7 +533,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -571,55 +563,53 @@
 </span><span class="lnt">28
 </span><span class="lnt">29
 </span><span class="lnt">30
-</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="cm">/* 定义局部变量 */</span>
-	<span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">100</span>
-	<span class="kd">var</span> <span class="nx">b</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">200</span>
-
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换前，a 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换前，b 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
-
-	<span class="cm">/* 调用 swap() 函数
-</span><span class="cm">	* &amp;a 指向 a 指针，a 变量的地址
-</span><span class="cm">	* &amp;b 指向 b 指针，b 变量的地址
-</span><span class="cm">	*/</span>
-	<span class="nf">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">b</span><span class="p">)</span>
-
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换后，a 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换后，b 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">swap</span><span class="p">(</span><span class="nx">x</span> <span class="o">*</span><span class="kt">int</span><span class="p">,</span> <span class="nx">y</span> <span class="o">*</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">temp</span> <span class="kt">int</span>
-	<span class="nx">temp</span> <span class="p">=</span> <span class="o">*</span><span class="nx">x</span> <span class="cm">/* 保存 x 地址上的值 */</span>
-	<span class="o">*</span><span class="nx">x</span> <span class="p">=</span> <span class="o">*</span><span class="nx">y</span>   <span class="cm">/* 将 y 值赋给 x */</span>
-	<span class="o">*</span><span class="nx">y</span> <span class="p">=</span> <span class="nx">temp</span> <span class="cm">/* 将 temp 值赋给 y */</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 定义局部变量 */</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">b</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">200</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换前，a 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换前，b 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 调用 swap() 函数
+</span></span></span><span class="line"><span class="cl"><span class="cm">	* &amp;a 指向 a 指针，a 变量的地址
+</span></span></span><span class="line"><span class="cl"><span class="cm">	* &amp;b 指向 b 指针，b 变量的地址
+</span></span></span><span class="line"><span class="cl"><span class="cm">	*/</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换后，a 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换后，b 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">swap</span><span class="p">(</span><span class="nx">x</span> <span class="o">*</span><span class="kt">int</span><span class="p">,</span> <span class="nx">y</span> <span class="o">*</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">temp</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">temp</span> <span class="p">=</span> <span class="o">*</span><span class="nx">x</span> <span class="cm">/* 保存 x 地址上的值 */</span>
+</span></span><span class="line"><span class="cl">	<span class="o">*</span><span class="nx">x</span> <span class="p">=</span> <span class="o">*</span><span class="nx">y</span>   <span class="cm">/* 将 y 值赋给 x */</span>
+</span></span><span class="line"><span class="cl">	<span class="o">*</span><span class="nx">y</span> <span class="p">=</span> <span class="nx">temp</span> <span class="cm">/* 将 temp 值赋给 y */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mf">06.856</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func3</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span>  <span class="nx">交换前</span> <span class="nx">a</span> <span class="nx">的值为</span> <span class="p">:</span> <span class="mi">100</span>
-<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mf">06.858</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func3</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>  <span class="nx">交换前</span> <span class="nx">b</span> <span class="nx">的值为</span> <span class="p">:</span> <span class="mi">200</span>
-<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mf">06.858</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func3</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span>  <span class="nx">交换后</span> <span class="nx">a</span> <span class="nx">的值</span> <span class="p">:</span> <span class="mi">100</span>
-<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mf">06.858</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func3</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="nx">交换后</span> <span class="nx">b</span> <span class="nx">的值</span> <span class="p">:</span> <span class="mi">200</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mf">06.856</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func3</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span>  <span class="nx">交换前</span> <span class="nx">a</span> <span class="nx">的值为</span> <span class="p">:</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mf">06.858</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func3</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>  <span class="nx">交换前</span> <span class="nx">b</span> <span class="nx">的值为</span> <span class="p">:</span> <span class="mi">200</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mf">06.858</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func3</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span>  <span class="nx">交换后</span> <span class="nx">a</span> <span class="nx">的值</span> <span class="p">:</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mf">06.858</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func3</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="nx">交换后</span> <span class="nx">b</span> <span class="nx">的值</span> <span class="p">:</span> <span class="mi">200</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="引用传递">引用传递</h4>
 <blockquote>
@@ -627,7 +617,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -660,40 +650,40 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="cm">/* 定义局部变量 */</span>
-	<span class="kd">var</span> <span class="nx">a</span> <span class="p">=</span> <span class="mi">100</span>
-	<span class="kd">var</span> <span class="nx">b</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">200</span>
-
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换前 a 的值为 : %d&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换前 b 的值为 : %d&#34;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
-
-	<span class="cm">/* 通过调用函数来交换值 */</span>
-	<span class="nf">swap</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
-
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换后 a 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换后 b 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="cm">/* 定义相互交换值的函数 */</span>
-<span class="kd">func</span> <span class="nf">swap</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">temp</span> <span class="kt">int</span>
-
-	<span class="nx">temp</span> <span class="p">=</span> <span class="nx">x</span> <span class="cm">/* 保存 x 的值 */</span>
-	<span class="nx">x</span> <span class="p">=</span> <span class="nx">y</span>    <span class="cm">/* 将 y 值赋给 x */</span>
-	<span class="nx">y</span> <span class="p">=</span> <span class="nx">temp</span> <span class="cm">/* 将 temp 值赋给 y*/</span>
-
-	<span class="k">return</span> <span class="nx">temp</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 定义局部变量 */</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">a</span> <span class="p">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">b</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">200</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换前 a 的值为 : %d&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换前 b 的值为 : %d&#34;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 通过调用函数来交换值 */</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">swap</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换后 a 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;交换后 b 的值 : %d&#34;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 定义相互交换值的函数 */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">swap</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">temp</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">temp</span> <span class="p">=</span> <span class="nx">x</span> <span class="cm">/* 保存 x 的值 */</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">x</span> <span class="p">=</span> <span class="nx">y</span>    <span class="cm">/* 将 y 值赋给 x */</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">y</span> <span class="p">=</span> <span class="nx">temp</span> <span class="cm">/* 将 temp 值赋给 y*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div><pre><code class="language-2020/04/06" data-lang="2020/04/06">2020/04/06 23:00:31.759 [I] [func2.go:13]  交换前，b 的值 : 200
+</div><pre tabindex="0"><code class="language-2020/04/06" data-lang="2020/04/06">2020/04/06 23:00:31.759 [I] [func2.go:13]  交换前，b 的值 : 200
 2020/04/06 23:00:31.759 [I] [func2.go:21]  交换后，a 的值 : 200
 2020/04/06 23:00:31.759 [I] [func2.go:22]  交换后，b 的值 : 100
 </code></pre><h3 id="函数用法">函数用法</h3>
@@ -703,7 +693,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -719,35 +709,33 @@
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
-</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-	<span class="s">&#34;math&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="cm">/* 声明函数变量 */</span>
-	<span class="nx">getSquareRoot</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">x</span> <span class="kt">float64</span><span class="p">)</span> <span class="kt">float64</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">math</span><span class="p">.</span><span class="nf">Sqrt</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
-	<span class="p">}</span>
-
-	<span class="cm">/* 使用函数 */</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">getSquareRoot</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;math&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 声明函数变量 */</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">getSquareRoot</span> <span class="o">:=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">x</span> <span class="kt">float64</span><span class="p">)</span> <span class="kt">float64</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">math</span><span class="p">.</span><span class="nf">Sqrt</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 使用函数 */</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">getSquareRoot</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">09</span><span class="p">:</span><span class="mf">46.897</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func4</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="mi">3</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">09</span><span class="p">:</span><span class="mf">46.897</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func4</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>  <span class="mi">3</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="闭包">闭包</h4>
 <blockquote>
@@ -755,7 +743,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -783,49 +771,49 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-
-<span class="kd">func</span> <span class="nf">getSequence</span><span class="p">()</span> <span class="kd">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
-	<span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span>
-	<span class="k">return</span> <span class="kd">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
-		<span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span>
-		<span class="k">return</span> <span class="nx">i</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="cm">/* nextNumber 为一个函数，函数 i 为 0 */</span>
-	<span class="nx">nextNumber</span> <span class="o">:=</span> <span class="nf">getSequence</span><span class="p">()</span>
-
-	<span class="cm">/* 调用 nextNumber 函数，i 变量自增 1 并返回 */</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber</span><span class="p">())</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber</span><span class="p">())</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber</span><span class="p">())</span>
-
-	<span class="cm">/* 创建新的函数 nextNumber1，并查看结果 */</span>
-	<span class="nx">nextNumber1</span> <span class="o">:=</span> <span class="nf">getSequence</span><span class="p">()</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber1</span><span class="p">())</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber1</span><span class="p">())</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">getSequence</span><span class="p">()</span> <span class="kd">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kd">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">i</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* nextNumber 为一个函数，函数 i 为 0 */</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">nextNumber</span> <span class="o">:=</span> <span class="nf">getSequence</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 调用 nextNumber 函数，i 变量自增 1 并返回 */</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 创建新的函数 nextNumber1，并查看结果 */</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">nextNumber1</span> <span class="o">:=</span> <span class="nf">getSequence</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber1</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="nf">nextNumber1</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="mi">1</span>
-<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.450</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>  <span class="mi">2</span>
-<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.450</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">21</span><span class="p">]</span>  <span class="mi">3</span>
-<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.450</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span>  <span class="mi">1</span>
-<span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.450</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span>  <span class="mi">2</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.449</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span>  <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.450</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span>  <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.450</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">21</span><span class="p">]</span>  <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.450</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span>  <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mf">15.450</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func5</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">26</span><span class="p">]</span>  <span class="mi">2</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="方法">方法</h4>
 <blockquote>
@@ -833,7 +821,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -855,35 +843,35 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
-
-<span class="c1">// 定义结构体
-</span><span class="c1"></span><span class="kd">type</span> <span class="nx">Circle</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">radius</span> <span class="kt">float64</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">c1</span> <span class="nx">Circle</span>
-	<span class="nx">c1</span><span class="p">.</span><span class="nx">radius</span> <span class="p">=</span> <span class="mf">10.00</span>
-	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;圆的面积 = &#34;</span><span class="p">,</span> <span class="nx">c1</span><span class="p">.</span><span class="nf">getArea</span><span class="p">())</span>
-<span class="p">}</span>
-
-<span class="c1">// 该 method 属于 Circle 类型对象中的方法
-</span><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">c</span> <span class="nx">Circle</span><span class="p">)</span> <span class="nf">getArea</span><span class="p">()</span> <span class="kt">float64</span> <span class="p">{</span>
-	<span class="c1">//c.radius 即为 Circle 类型对象中的属性
-</span><span class="c1"></span>	<span class="k">return</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="nx">c</span><span class="p">.</span><span class="nx">radius</span> <span class="o">*</span> <span class="nx">c</span><span class="p">.</span><span class="nx">radius</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 定义结构体
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">Circle</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">radius</span> <span class="kt">float64</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">c1</span> <span class="nx">Circle</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">c1</span><span class="p">.</span><span class="nx">radius</span> <span class="p">=</span> <span class="mf">10.00</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">logs</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;圆的面积 = &#34;</span><span class="p">,</span> <span class="nx">c1</span><span class="p">.</span><span class="nf">getArea</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 该 method 属于 Circle 类型对象中的方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">c</span> <span class="nx">Circle</span><span class="p">)</span> <span class="nf">getArea</span><span class="p">()</span> <span class="kt">float64</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//c.radius 即为 Circle 类型对象中的属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">return</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="nx">c</span><span class="p">.</span><span class="nx">radius</span> <span class="o">*</span> <span class="nx">c</span><span class="p">.</span><span class="nx">radius</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mf">50.249</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func6</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>  <span class="nx">圆的面积</span> <span class="p">=</span>  <span class="mi">314</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="mi">2020</span><span class="o">/</span><span class="mo">04</span><span class="o">/</span><span class="mo">06</span> <span class="mi">23</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mf">50.249</span> <span class="p">[</span><span class="nx">I</span><span class="p">]</span> <span class="p">[</span><span class="nx">func6</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>  <span class="nx">圆的面积</span> <span class="p">=</span>  <span class="mi">314</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -912,23 +900,6 @@
 
     
     
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">赞赏支持</label>
-  <div class="qr-code">
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/wechat.png">
-        <span>微信打赏</span>
-      </label>
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/alipay.png">
-        <span>支付宝打赏</span>
-      </label>
-  </div>
-</div>
 
     <footer class="post-footer">
       <div class="post-tags">
@@ -1006,6 +977,17 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>
@@ -1110,7 +1092,7 @@
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mysql on Li Chao Cheng Blog</title>
-    <link>https://cc360428.github.io/categories/mysql/</link>
+    <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/categories/mysql/</link>
     <description>Recent content in mysql on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
     <lastBuildDate>Sat, 18 Apr 2020 12:21:48 +0800</lastBuildDate>
     
-	<atom:link href="https://cc360428.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://clientcodefile.gitee.io/blog.lichaocheng.top/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MySQL 忘记密码</title>
-      <link>https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/mysql/mysqlupdatepassword/</link>
       <pubDate>Sat, 18 Apr 2020 12:21:48 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/mysql/mysqlupdatepassword/</guid>
       <description>MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to</description>
     </item>
     
     <item>
       <title>Golang Mysql Gorm</title>
-      <link>https://cc360428.github.io/post/golang/mysql/gorm/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/mysql/gorm/</link>
       <pubDate>Thu, 05 Mar 2020 16:02:24 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/golang/mysql/gorm/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/golang/mysql/gorm/</guid>
       <description>Gorm 概述 官网 gorm 对数据库的操作 环境搭建 下载依赖 go get -u github.com/jinzhu/gorm 实例（连接） 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39</description>
     </item>
     
     <item>
       <title>Databases（04735）</title>
-      <link>https://cc360428.github.io/post/selfstudy/databases/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/selfstudy/databases/</link>
       <pubDate>Fri, 20 Dec 2019 13:57:01 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/selfstudy/databases/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/selfstudy/databases/</guid>
       <description>数据库系统原理（04735） 第一章数据库系统概述 第三节数据库系统的结构 模式：物理独立性 外模式：逻辑独立性 数据库系统结构 客户端系统结构 浏览器/</description>
     </item>
     
     <item>
       <title>MySQL 锁</title>
-      <link>https://cc360428.github.io/post/system/mysql/mysql-lock/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/mysql/mysql-lock/</link>
       <pubDate>Wed, 18 Sep 2019 12:21:48 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/system/mysql/mysql-lock/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/mysql/mysql-lock/</guid>
       <description>MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&amp;gt; show tables; +----------------+ | Tables_in_test | +----------------+ | mylock | | test | +----------------+ 2 rows in set (0.03 sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态</description>
     </item>
     
     <item>
       <title>MySQL 入门介绍</title>
-      <link>https://cc360428.github.io/post/system/mysql/day01/</link>
+      <link>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/mysql/day01/</link>
       <pubDate>Sat, 08 Dec 2018 22:21:48 +0800</pubDate>
       
-      <guid>https://cc360428.github.io/post/system/mysql/day01/</guid>
+      <guid>https://clientcodefile.gitee.io/blog.lichaocheng.top/post/system/mysql/day01/</guid>
       <description>mysql 环境搭建 安装mysql 1 2 3 4 5 6 7 mysql&amp;gt; select version(); +------------+ | version() | +------------+ | 5.7.17-log | +------------+ 1 row in set (0.03 sec) 创建数据库，与查看 CREATE DATABASE mysql_crash_course CHARACTER SET &#39;utf8&#39; COLLATE &#39;utf8_unicode_ci&#39;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</description>
     </item>
     

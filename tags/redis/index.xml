@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>redis on Li Chao Cheng Blog</title>
+    <title>Redis on Li Chao Cheng Blog</title>
     <link>https://cc360428.github.io/tags/redis/</link>
-    <description>Recent content in redis on Li Chao Cheng Blog</description>
+    <description>Recent content in Redis on Li Chao Cheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Sat, 26 Jan 2019 12:48:54 +0800</lastBuildDate>
-    
-	<atom:link href="https://cc360428.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 26 Jan 2019 12:48:54 +0800</lastBuildDate><atom:link href="https://cc360428.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Redis 汇总</title>
       <link>https://cc360428.github.io/post/system/redis/redis-all/</link>

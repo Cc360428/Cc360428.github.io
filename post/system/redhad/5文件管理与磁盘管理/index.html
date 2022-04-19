@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/redhad/5%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" />
@@ -61,19 +61,15 @@
 <meta property="og:title" content="linux(CentOS7) 文件管理与磁盘管理" />
 <meta property="og:description" content="5（文件管理与磁盘管理）" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/redhad/5%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/redhad/5%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-03-26T23:23:12+08:00" />
 <meta property="article:modified_time" content="2020-03-26T23:23:12+08:00" />
+
 <meta itemprop="name" content="linux(CentOS7) 文件管理与磁盘管理">
-<meta itemprop="description" content="5（文件管理与磁盘管理）">
-<meta itemprop="datePublished" content="2020-03-26T23:23:12+08:00" />
+<meta itemprop="description" content="5（文件管理与磁盘管理）"><meta itemprop="datePublished" content="2020-03-26T23:23:12+08:00" />
 <meta itemprop="dateModified" content="2020-03-26T23:23:12+08:00" />
 <meta itemprop="wordCount" content="2152">
-
-
-
-<meta itemprop="keywords" content="CentOS7,Syetem," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="RedHad," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux(CentOS7) 文件管理与磁盘管理"/>
 <meta name="twitter:description" content="5（文件管理与磁盘管理）"/>
 
@@ -344,7 +340,7 @@
           2020-03-26
         </time>
         <div class="post-category">
-            <a href="https://cc360428.github.io/categories/utils/"> utils </a>
+            <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
             
           </div>
         <span class="more-meta"> 约 2152 字 </span>
@@ -386,7 +382,7 @@
 <h3 id="认识分区">认识分区</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -394,13 +390,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># df -h</span>
-Filesystem      Size  Used Avail Use% Mounted on
-devtmpfs        909M     <span class="m">0</span>  909M   0% /dev
-<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># df -h</span>
-文件系统        容量  已用  可用 已用% 挂载点
-devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># df -h</span>
+</span></span><span class="line"><span class="cl">Filesystem      Size  Used Avail Use% Mounted on
+</span></span><span class="line"><span class="cl">devtmpfs        909M     <span class="m">0</span>  909M   0% /dev
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># df -h</span>
+</span></span><span class="line"><span class="cl">文件系统        容量  已用  可用 已用% 挂载点
+</span></span><span class="line"><span class="cl">devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="文件管理-1">文件管理</h3>
 <h4 id="文件类型">文件类型</h4>
@@ -422,19 +418,19 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 <h5 id="示例">示例</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">-rwxrw-r--
-<span class="o">[</span>-<span class="o">]</span>表示普通文件
-<span class="o">[</span>rwx<span class="o">]</span>表示读写执行权限
-<span class="o">[</span>rw-<span class="o">]</span>所属与同一组的用户就有读写权限
-<span class="o">[</span>r--<span class="o">]</span>表示其他用户对该文件只有读权限
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">-rwxrw-r--
+</span></span><span class="line"><span class="cl"><span class="o">[</span>-<span class="o">]</span>表示普通文件
+</span></span><span class="line"><span class="cl"><span class="o">[</span>rwx<span class="o">]</span>表示读写执行权限
+</span></span><span class="line"><span class="cl"><span class="o">[</span>rw-<span class="o">]</span>所属与同一组的用户就有读写权限
+</span></span><span class="line"><span class="cl"><span class="o">[</span>r--<span class="o">]</span>表示其他用户对该文件只有读权限
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p><code>-rwxrwxrx</code>：为文件最大权限，对应的编码为777，表示任何用户都有读写执行此文件</p>
@@ -454,7 +450,7 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 <h5 id="示例-1">示例</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -463,53 +459,53 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># touch test.sh</span>
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">0</span>
--rw-r--r-- <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:02 test.sh
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ./test.sh</span>
--bash: ./test.sh: 权限不够
-<span class="o">[</span>root@Cc 5<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># touch test.sh</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">0</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:02 test.sh
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ./test.sh</span>
+</span></span><span class="line"><span class="cl">-bash: ./test.sh: 权限不够
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p><code>test.sh</code>没有执行权限</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod u+x test.sh</span> 
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ./test.sh</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod u+x test.sh </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ./test.sh</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>加上权限</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod o-r test.sh</span> 
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">0</span>
--rwxr----- <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:02 test.sh
-<span class="o">[</span>root@Cc 5<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod o-r test.sh </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">0</span>
+</span></span><span class="line"><span class="cl">-rwxr----- <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:02 test.sh
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>设置其他用户不可读</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -521,17 +517,17 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">0</span>
--rwxr----- <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:02 test.sh
--rwxrwxr-x <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:11 test.txt
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod ugo+r test.txt</span> 
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod a+r test.txt</span> 
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod ug+w,o-w test.txt</span> 
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod u+x test.txt</span> 
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod -R a+r *</span>
-<span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod a-x test.txt</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">0</span>
+</span></span><span class="line"><span class="cl">-rwxr----- <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:02 test.sh
+</span></span><span class="line"><span class="cl">-rwxrwxr-x <span class="m">1</span> root root <span class="m">0</span> 3月  <span class="m">26</span> 22:11 test.txt
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod ugo+r test.txt </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod a+r test.txt </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod ug+w,o-w test.txt </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod u+x test.txt </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod -R a+r *</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 5<span class="o">]</span><span class="c1"># chmod a-x test.txt </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <ul>
@@ -555,7 +551,7 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 <h5 id="示例-2">示例</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -577,27 +573,27 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1"># du -sh</span>
-1.9G    .
-<span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1"># du --max-depth=1 -h</span>
-4.0K    ./vimTest
-78M     ./gogs
-181M    ./java
-130M    ./sonsul
-85M     ./rabbitmq
-1.2G    ./harbor
-6.5M    ./hugo
-112K    ./hf
-80K     ./sll
-11M     ./frp
-24K     ./file
-20K     ./C
-16M     ./frp1
-16K     ./ssl
-111M    ./mongodb
-1.9G    .
-<span class="o">[</span>root@Cc lichaocheng<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1"># du -sh</span>
+</span></span><span class="line"><span class="cl">1.9G    .
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1"># du --max-depth=1 -h</span>
+</span></span><span class="line"><span class="cl">4.0K    ./vimTest
+</span></span><span class="line"><span class="cl">78M     ./gogs
+</span></span><span class="line"><span class="cl">181M    ./java
+</span></span><span class="line"><span class="cl">130M    ./sonsul
+</span></span><span class="line"><span class="cl">85M     ./rabbitmq
+</span></span><span class="line"><span class="cl">1.2G    ./harbor
+</span></span><span class="line"><span class="cl">6.5M    ./hugo
+</span></span><span class="line"><span class="cl">112K    ./hf
+</span></span><span class="line"><span class="cl">80K     ./sll
+</span></span><span class="line"><span class="cl">11M     ./frp
+</span></span><span class="line"><span class="cl">24K     ./file
+</span></span><span class="line"><span class="cl">20K     ./C
+</span></span><span class="line"><span class="cl">16M     ./frp1
+</span></span><span class="line"><span class="cl">16K     ./ssl
+</span></span><span class="line"><span class="cl">111M    ./mongodb
+</span></span><span class="line"><span class="cl">1.9G    .
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>统计大小</li>
@@ -614,7 +610,7 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -671,62 +667,62 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 </span><span class="lnt">55
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1"># mount --help;</span>
-
-用法：
- mount <span class="o">[</span>-lhV<span class="o">]</span>
- mount -a <span class="o">[</span>选项<span class="o">]</span>
- mount <span class="o">[</span>选项<span class="o">]</span> <span class="o">[</span>--source<span class="o">]</span> &lt;源&gt; <span class="p">|</span> <span class="o">[</span>--target<span class="o">]</span> &lt;目录&gt;
- mount <span class="o">[</span>选项<span class="o">]</span> &lt;源&gt; &lt;目录&gt;
- mount &lt;操作&gt; &lt;挂载点&gt; <span class="o">[</span>&lt;目标&gt;<span class="o">]</span>
-
-选项：
- -a, --all               挂载 fstab 中的所有文件系统
- -c, --no-canonicalize   不对路径规范化
- -f, --fake              空运行；跳过 mount<span class="o">(</span>2<span class="o">)</span> 系统调用
- -F, --fork              对每个设备禁用 fork<span class="o">(</span>和 -a 选项一起使用<span class="o">)</span>
- -T, --fstab &lt;路径&gt;      /etc/fstab 的替代文件
- -h, --help              显示此帮助并退出
- -i, --internal-only     不调用 mount.&lt;类型&gt; 助手程序
- -l, --show-labels       列出所有带有指定标签的挂载
- -n, --no-mtab           不写 /etc/mtab
- -o, --options &lt;列表&gt;    挂载选项列表，以英文逗号分隔
- -O, --test-opts &lt;列表&gt;  限制文件系统集合<span class="o">(</span>和 -a 选项一起使用<span class="o">)</span>
- -r, --read-only         以只读方式挂载文件系统<span class="o">(</span>同 -o ro<span class="o">)</span>
- -t, --types &lt;列表&gt;      限制文件系统类型集合
-     --source &lt;源&gt;       指明源<span class="o">(</span>路径、标签、uuid<span class="o">)</span>
-     --target &lt;目标&gt;     指明挂载点
- -v, --verbose           打印当前进行的操作
- -V, --version           显示版本信息并退出
- -w, --rw, --read-write  以读写方式挂载文件系统<span class="o">(</span>默认<span class="o">)</span>
-
- -h, --help     显示此帮助并退出
- -V, --version  输出版本信息并退出
-
-源：
- -L, --label &lt;标签&gt;      同 <span class="nv">LABEL</span><span class="o">=</span>&lt;label&gt;
- -U, --uuid &lt;uuid&gt;       同 <span class="nv">UUID</span><span class="o">=</span>&lt;uuid&gt;
- <span class="nv">LABEL</span><span class="o">=</span>&lt;标签&gt;            按文件系统标签指定设备
- <span class="nv">UUID</span><span class="o">=</span>&lt;uuid&gt;             按文件系统 UUID 指定设备
- <span class="nv">PARTLABEL</span><span class="o">=</span>&lt;标签&gt;        按分区标签指定设备
- <span class="nv">PARTUUID</span><span class="o">=</span>&lt;uuid&gt;         按分区 UUID 指定设备
- &lt;设备&gt;                  按路径指定设备
- &lt;目录&gt;                  绑定挂载的挂载点<span class="o">(</span>参阅 --bind/rbind<span class="o">)</span>
- &lt;文件&gt;                  用于设置回环设备的常规文件
-
-操作：
- -B, --bind              挂载其他位置的子树<span class="o">(</span>同 -o <span class="nb">bind</span><span class="o">)</span>
- -M, --move              将子树移动到其他位置
- -R, --rbind             挂载其他位置的子树及其包含的所有挂载
- --make-shared           将子树标记为 共享
- --make-slave            将子树标记为 从属
- --make-private          将子树标记为 私有
- --make-unbindable       将子树标记为 不可绑定
- --make-rshared          递归地将整个子树标记为 共享
- --make-rslave           递归地将整个子树标记为 从属
- --make-rprivate         递归地将整个子树标记为 私有
- --make-runbindable      递归地将整个子树标记为 不可绑定
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1"># mount --help;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">用法：
+</span></span><span class="line"><span class="cl"> mount <span class="o">[</span>-lhV<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> mount -a <span class="o">[</span>选项<span class="o">]</span>
+</span></span><span class="line"><span class="cl"> mount <span class="o">[</span>选项<span class="o">]</span> <span class="o">[</span>--source<span class="o">]</span> &lt;源&gt; <span class="p">|</span> <span class="o">[</span>--target<span class="o">]</span> &lt;目录&gt;
+</span></span><span class="line"><span class="cl"> mount <span class="o">[</span>选项<span class="o">]</span> &lt;源&gt; &lt;目录&gt;
+</span></span><span class="line"><span class="cl"> mount &lt;操作&gt; &lt;挂载点&gt; <span class="o">[</span>&lt;目标&gt;<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">选项：
+</span></span><span class="line"><span class="cl"> -a, --all               挂载 fstab 中的所有文件系统
+</span></span><span class="line"><span class="cl"> -c, --no-canonicalize   不对路径规范化
+</span></span><span class="line"><span class="cl"> -f, --fake              空运行；跳过 mount<span class="o">(</span>2<span class="o">)</span> 系统调用
+</span></span><span class="line"><span class="cl"> -F, --fork              对每个设备禁用 fork<span class="o">(</span>和 -a 选项一起使用<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> -T, --fstab &lt;路径&gt;      /etc/fstab 的替代文件
+</span></span><span class="line"><span class="cl"> -h, --help              显示此帮助并退出
+</span></span><span class="line"><span class="cl"> -i, --internal-only     不调用 mount.&lt;类型&gt; 助手程序
+</span></span><span class="line"><span class="cl"> -l, --show-labels       列出所有带有指定标签的挂载
+</span></span><span class="line"><span class="cl"> -n, --no-mtab           不写 /etc/mtab
+</span></span><span class="line"><span class="cl"> -o, --options &lt;列表&gt;    挂载选项列表，以英文逗号分隔
+</span></span><span class="line"><span class="cl"> -O, --test-opts &lt;列表&gt;  限制文件系统集合<span class="o">(</span>和 -a 选项一起使用<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> -r, --read-only         以只读方式挂载文件系统<span class="o">(</span>同 -o ro<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> -t, --types &lt;列表&gt;      限制文件系统类型集合
+</span></span><span class="line"><span class="cl">     --source &lt;源&gt;       指明源<span class="o">(</span>路径、标签、uuid<span class="o">)</span>
+</span></span><span class="line"><span class="cl">     --target &lt;目标&gt;     指明挂载点
+</span></span><span class="line"><span class="cl"> -v, --verbose           打印当前进行的操作
+</span></span><span class="line"><span class="cl"> -V, --version           显示版本信息并退出
+</span></span><span class="line"><span class="cl"> -w, --rw, --read-write  以读写方式挂载文件系统<span class="o">(</span>默认<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> -h, --help     显示此帮助并退出
+</span></span><span class="line"><span class="cl"> -V, --version  输出版本信息并退出
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">源：
+</span></span><span class="line"><span class="cl"> -L, --label &lt;标签&gt;      同 <span class="nv">LABEL</span><span class="o">=</span>&lt;label&gt;
+</span></span><span class="line"><span class="cl"> -U, --uuid &lt;uuid&gt;       同 <span class="nv">UUID</span><span class="o">=</span>&lt;uuid&gt;
+</span></span><span class="line"><span class="cl"> <span class="nv">LABEL</span><span class="o">=</span>&lt;标签&gt;            按文件系统标签指定设备
+</span></span><span class="line"><span class="cl"> <span class="nv">UUID</span><span class="o">=</span>&lt;uuid&gt;             按文件系统 UUID 指定设备
+</span></span><span class="line"><span class="cl"> <span class="nv">PARTLABEL</span><span class="o">=</span>&lt;标签&gt;        按分区标签指定设备
+</span></span><span class="line"><span class="cl"> <span class="nv">PARTUUID</span><span class="o">=</span>&lt;uuid&gt;         按分区 UUID 指定设备
+</span></span><span class="line"><span class="cl"> &lt;设备&gt;                  按路径指定设备
+</span></span><span class="line"><span class="cl"> &lt;目录&gt;                  绑定挂载的挂载点<span class="o">(</span>参阅 --bind/rbind<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> &lt;文件&gt;                  用于设置回环设备的常规文件
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">操作：
+</span></span><span class="line"><span class="cl"> -B, --bind              挂载其他位置的子树<span class="o">(</span>同 -o <span class="nb">bind</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"> -M, --move              将子树移动到其他位置
+</span></span><span class="line"><span class="cl"> -R, --rbind             挂载其他位置的子树及其包含的所有挂载
+</span></span><span class="line"><span class="cl"> --make-shared           将子树标记为 共享
+</span></span><span class="line"><span class="cl"> --make-slave            将子树标记为 从属
+</span></span><span class="line"><span class="cl"> --make-private          将子树标记为 私有
+</span></span><span class="line"><span class="cl"> --make-unbindable       将子树标记为 不可绑定
+</span></span><span class="line"><span class="cl"> --make-rshared          递归地将整个子树标记为 共享
+</span></span><span class="line"><span class="cl"> --make-rslave           递归地将整个子树标记为 从属
+</span></span><span class="line"><span class="cl"> --make-rprivate         递归地将整个子树标记为 私有
+</span></span><span class="line"><span class="cl"> --make-runbindable      递归地将整个子树标记为 不可绑定
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="基本磁盘管理">基本磁盘管理</h4>
 <blockquote>
@@ -734,7 +730,7 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -752,30 +748,30 @@ devtmpfs        909M     <span class="m">0</span>  909M    0% /dev
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1"># fdisk --help</span>
-fdisk：无效选项 -- -
-用法：
- fdisk <span class="o">[</span>选项<span class="o">]</span> &lt;磁盘&gt;    更改分区表
- fdisk <span class="o">[</span>选项<span class="o">]</span> -l &lt;磁盘&gt; 列出分区表
- fdisk -s &lt;分区&gt;        给出分区大小<span class="o">(</span>块数<span class="o">)</span>
-
-选项：
- -b &lt;大小&gt;             扇区大小<span class="o">(</span>512、1024、2048或4096<span class="o">)</span>
- -c<span class="o">[=</span>&lt;模式&gt;<span class="o">]</span>           兼容模式：“dos”或“nondos”<span class="o">(</span>默认<span class="o">)</span>
- -h                    打印此帮助文本
- -u<span class="o">[=</span>&lt;单位&gt;<span class="o">]</span>           显示单位：“cylinders”<span class="o">(</span>柱面<span class="o">)</span>或“sectors”<span class="o">(</span>扇区，默认<span class="o">)</span>
- -v                    打印程序版本
- -C &lt;数字&gt;             指定柱面数
- -H &lt;数字&gt;             指定磁头数
- -S &lt;数字&gt;             指定每个磁道的扇区数
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1"># fdisk --help</span>
+</span></span><span class="line"><span class="cl">fdisk：无效选项 -- -
+</span></span><span class="line"><span class="cl">用法：
+</span></span><span class="line"><span class="cl"> fdisk <span class="o">[</span>选项<span class="o">]</span> &lt;磁盘&gt;    更改分区表
+</span></span><span class="line"><span class="cl"> fdisk <span class="o">[</span>选项<span class="o">]</span> -l &lt;磁盘&gt; 列出分区表
+</span></span><span class="line"><span class="cl"> fdisk -s &lt;分区&gt;        给出分区大小<span class="o">(</span>块数<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">选项：
+</span></span><span class="line"><span class="cl"> -b &lt;大小&gt;             扇区大小<span class="o">(</span>512、1024、2048或4096<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> -c<span class="o">[=</span>&lt;模式&gt;<span class="o">]</span>           兼容模式：“dos”或“nondos”<span class="o">(</span>默认<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> -h                    打印此帮助文本
+</span></span><span class="line"><span class="cl"> -u<span class="o">[=</span>&lt;单位&gt;<span class="o">]</span>           显示单位：“cylinders”<span class="o">(</span>柱面<span class="o">)</span>或“sectors”<span class="o">(</span>扇区，默认<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> -v                    打印程序版本
+</span></span><span class="line"><span class="cl"> -C &lt;数字&gt;             指定柱面数
+</span></span><span class="line"><span class="cl"> -H &lt;数字&gt;             指定磁头数
+</span></span><span class="line"><span class="cl"> -S &lt;数字&gt;             指定每个磁道的扇区数
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="交换空间管理">交换空间管理</h3>
 <h3 id="磁盘冗余阵列raid">磁盘冗余阵列RAID</h3>
 <h3 id="监控硬盘空间shell是个联系暂时不写">监控硬盘空间（shell）是个联系暂时不写</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -797,27 +793,27 @@ fdisk：无效选项 -- -
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/sh
-</span><span class="cp"></span><span class="k">function</span> LOG<span class="o">()</span>
-<span class="o">{</span>
-	<span class="nb">echo</span> <span class="s2">&#34;用于记录执行日志&#34;</span>
-<span class="o">}</span>
-<span class="k">function</span> sendmsg<span class="o">()</span>
-<span class="o">{</span>
-	<span class="nb">echo</span> <span class="s2">&#34;告警发生详细&#34;</span>
-<span class="o">}</span>
-<span class="k">function</span> process<span class="o">()</span>
-<span class="o">{</span>
-	<span class="nb">echo</span> <span class="s2">&#34;主处理逻辑&#34;</span>
-<span class="o">}</span>
-<span class="k">function</span> main<span class="o">()</span>
-<span class="o">{</span>
-	process
-<span class="o">}</span>
-LOG <span class="s2">&#34;process start&#34;</span>
-main
-LOG <span class="s2">&#34;process end&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">function</span> LOG<span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;用于记录执行日志&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">function</span> sendmsg<span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;告警发生详细&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">function</span> process<span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">echo</span> <span class="s2">&#34;主处理逻辑&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">function</span> main<span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">	process
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">LOG <span class="s2">&#34;process start&#34;</span>
+</span></span><span class="line"><span class="cl">main
+</span></span><span class="line"><span class="cl">LOG <span class="s2">&#34;process end&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -846,28 +842,10 @@ LOG <span class="s2">&#34;process end&#34;</span>
 
     
     
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">赞赏支持</label>
-  <div class="qr-code">
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/wechat.png">
-        <span>微信打赏</span>
-      </label>
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/love/alipay.png">
-        <span>支付宝打赏</span>
-      </label>
-  </div>
-</div>
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://cc360428.github.io/tags/centos7/">CentOS7</a>
-          <a href="https://cc360428.github.io/tags/syetem/">Syetem</a>
+          <a href="https://cc360428.github.io/tags/redhad/">RedHad</a>
           
         </div>
 
@@ -940,6 +918,17 @@ LOG <span class="s2">&#34;process end&#34;</span>
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>
@@ -1044,7 +1033,7 @@ LOG <span class="s2">&#34;process end&#34;</span>
     &copy;
     
       2019 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaBase on Li Chao Cheng Blog</title>
+    <link>https://cc360428.github.io/tags/javabase/</link>
+    <description>Recent content in JavaBase on Li Chao Cheng Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Lcc</copyright>
+    <lastBuildDate>Fri, 26 Jan 2018 12:48:54 +0800</lastBuildDate><atom:link href="https://cc360428.github.io/tags/javabase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>java base</title>
+      <link>https://cc360428.github.io/post/java/base/</link>
+      <pubDate>Fri, 26 Jan 2018 12:48:54 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/java/base/</guid>
+      <description>基础 project_url = &amp;ldquo;https://github.com/spf13/hugo&amp;quot;</description>
+    </item>
+    
+  </channel>
+</rss>
