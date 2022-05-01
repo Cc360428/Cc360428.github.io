@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.96.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/" />
@@ -61,14 +61,17 @@
 <meta property="og:title" content="阿里云docker 镜像仓库" />
 <meta property="og:description" content="aliyun 仓库操作 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/docker/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/" />
 <meta property="article:published_time" content="2019-01-01T12:48:54+08:00" />
 <meta property="article:modified_time" content="2019-01-01T12:48:54+08:00" />
-
 <meta itemprop="name" content="阿里云docker 镜像仓库">
-<meta itemprop="description" content="aliyun 仓库操作 "><meta itemprop="datePublished" content="2019-01-01T12:48:54+08:00" />
-<meta itemprop="dateModified" content="2019-01-01T12:48:54+08:00" />
+<meta itemprop="description" content="aliyun 仓库操作 ">
+<meta itemprop="datePublished" content="2019-01-01T12:48:54&#43;08:00" />
+<meta itemprop="dateModified" content="2019-01-01T12:48:54&#43;08:00" />
 <meta itemprop="wordCount" content="669">
+
+
+
 <meta itemprop="keywords" content="Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="阿里云docker 镜像仓库"/>
 <meta name="twitter:description" content="aliyun 仓库操作 "/>
@@ -368,7 +371,7 @@
       <h1 id="阿里云docker-镜像仓库">阿里云docker 镜像仓库</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -398,35 +401,35 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">1. 登录阿里云Docker Registry
-</span></span><span class="line"><span class="cl">$ sudo docker login --username<span class="o">=</span>hypeyhyper registry.cn-hangzhou.aliyuncs.com
-</span></span><span class="line"><span class="cl">用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">您可以在访问凭证页面修改凭证密码。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">2. 从Registry中拉取镜像
-</span></span><span class="line"><span class="cl">$ sudo docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:<span class="o">[</span>镜像版本号<span class="o">]</span>
-</span></span><span class="line"><span class="cl">3. 将镜像推送到Registry
-</span></span><span class="line"><span class="cl">$ sudo docker login --username<span class="o">=</span>hypeyhyper registry.cn-hangzhou.aliyuncs.com
-</span></span><span class="line"><span class="cl">$ sudo docker tag <span class="o">[</span>ImageId<span class="o">]</span> registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:<span class="o">[</span>镜像版本号<span class="o">]</span>
-</span></span><span class="line"><span class="cl">$ sudo docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:<span class="o">[</span>镜像版本号<span class="o">]</span>
-</span></span><span class="line"><span class="cl">请根据实际镜像信息替换示例中的<span class="o">[</span>ImageId<span class="o">]</span>和<span class="o">[</span>镜像版本号<span class="o">]</span>参数。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">4. 选择合适的镜像仓库地址
-</span></span><span class="line"><span class="cl">从ECS推送镜像时，可以选择使用镜像仓库内网地址。推送速度将得到提升并且将不会损耗您的公网流量。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">如果您使用的机器位于VPC网络，请使用 registry-vpc.cn-hangzhou.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。
-</span></span><span class="line"><span class="cl">5. 示例
-</span></span><span class="line"><span class="cl">使用<span class="s2">&#34;docker tag&#34;</span>命令重命名镜像，并将它通过专有网络地址推送至Registry。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">$ sudo docker images
-</span></span><span class="line"><span class="cl">REPOSITORY                                                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-</span></span><span class="line"><span class="cl">registry.aliyuncs.com/acs/agent                                    0.7-dfb6816         37bb9c63c8b2        <span class="m">7</span> days ago          37.89 MB
-</span></span><span class="line"><span class="cl">$ sudo docker tag 37bb9c63c8b2 registry-vpc.cn-hangzhou.aliyuncs.com/acs/agent:0.7-dfb6816
-</span></span><span class="line"><span class="cl">使用<span class="s2">&#34;docker images&#34;</span>命令找到镜像，将该镜像名称中的域名部分变更为Registry专有网络地址。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">$ sudo docker push registry-vpc.cn-hangzhou.aliyuncs.com/acs/agent:0.7-dfb6816
-</span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">1. 登录阿里云Docker Registry
+$ sudo docker login --username<span class="o">=</span>hypeyhyper registry.cn-hangzhou.aliyuncs.com
+用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
+
+您可以在访问凭证页面修改凭证密码。
+
+2. 从Registry中拉取镜像
+$ sudo docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:<span class="o">[</span>镜像版本号<span class="o">]</span>
+3. 将镜像推送到Registry
+$ sudo docker login --username<span class="o">=</span>hypeyhyper registry.cn-hangzhou.aliyuncs.com
+$ sudo docker tag <span class="o">[</span>ImageId<span class="o">]</span> registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:<span class="o">[</span>镜像版本号<span class="o">]</span>
+$ sudo docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:<span class="o">[</span>镜像版本号<span class="o">]</span>
+请根据实际镜像信息替换示例中的<span class="o">[</span>ImageId<span class="o">]</span>和<span class="o">[</span>镜像版本号<span class="o">]</span>参数。
+
+4. 选择合适的镜像仓库地址
+从ECS推送镜像时，可以选择使用镜像仓库内网地址。推送速度将得到提升并且将不会损耗您的公网流量。
+
+如果您使用的机器位于VPC网络，请使用 registry-vpc.cn-hangzhou.aliyuncs.com 作为Registry的域名登录，并作为镜像命名空间前缀。
+5. 示例
+使用<span class="s2">&#34;docker tag&#34;</span>命令重命名镜像，并将它通过专有网络地址推送至Registry。
+
+$ sudo docker images
+REPOSITORY                                                         TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+registry.aliyuncs.com/acs/agent                                    0.7-dfb6816         37bb9c63c8b2        <span class="m">7</span> days ago          37.89 MB
+$ sudo docker tag 37bb9c63c8b2 registry-vpc.cn-hangzhou.aliyuncs.com/acs/agent:0.7-dfb6816
+使用<span class="s2">&#34;docker images&#34;</span>命令找到镜像，将该镜像名称中的域名部分变更为Registry专有网络地址。
+
+$ sudo docker push registry-vpc.cn-hangzhou.aliyuncs.com/acs/agent:0.7-dfb6816
+</code></pre></td></tr></table>
 </div>
 </div><p><a href="https://www.cnblogs.com/leoxjy/p/9658598.html">参考地址</a></p>
 
@@ -532,17 +535,6 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
-</svg>
-
-    </a>
-  
-    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
-      title="google"  target="_blank"
-      >
-      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
-  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

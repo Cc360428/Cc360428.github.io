@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.96.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/redis/redis-centos-7/" />
@@ -61,14 +61,17 @@
 <meta property="og:title" content="Reids 安装" />
 <meta property="og:description" content="redis 安装以及基本使用 、配置 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/redis/redis-centos-7/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/redis/redis-centos-7/" />
 <meta property="article:published_time" content="2019-01-26T12:48:54+08:00" />
 <meta property="article:modified_time" content="2019-01-26T12:48:54+08:00" />
-
 <meta itemprop="name" content="Reids 安装">
-<meta itemprop="description" content="redis 安装以及基本使用 、配置 "><meta itemprop="datePublished" content="2019-01-26T12:48:54+08:00" />
-<meta itemprop="dateModified" content="2019-01-26T12:48:54+08:00" />
+<meta itemprop="description" content="redis 安装以及基本使用 、配置 ">
+<meta itemprop="datePublished" content="2019-01-26T12:48:54&#43;08:00" />
+<meta itemprop="dateModified" content="2019-01-26T12:48:54&#43;08:00" />
 <meta itemprop="wordCount" content="1046">
+
+
+
 <meta itemprop="keywords" content="Redis," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reids 安装"/>
 <meta name="twitter:description" content="redis 安装以及基本使用 、配置 "/>
@@ -371,7 +374,7 @@
     <div class="post-content">
       <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+<pre class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -486,125 +489,125 @@
 </span><span class="lnt">113
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">方法一：源文件安装（推荐安装）
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">在CentOS和Red Hat系统中，首先添加EPEL仓库，然后更新yum源：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo yum install epel-release
-</span></span><span class="line"><span class="cl">sudo yum update
-</span></span><span class="line"><span class="cl">然后安装Redis数据库：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo yum -y install redis
-</span></span><span class="line"><span class="cl">安装好后启动Redis服务即可：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo systemctl start redis
-</span></span><span class="line"><span class="cl">这里同样可以使用redis-cli进入Redis命令行模式操作。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">另外，为了可以使Redis能被远程连接，需要修改配置文件，路径为/etc/redis.conf
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">vi /etc/redis.conf
-</span></span><span class="line"><span class="cl">需要修改的地方：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">首先，注释这一行：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#bind 127.0.0.1</span>
-</span></span><span class="line"><span class="cl">另外，推荐给Redis设置密码，取消注释这一行：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#requirepass foobared</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">foobared即当前密码，可以自行修改为
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">requirepass 密码
-</span></span><span class="line"><span class="cl">然后重启Redis服务，使用的命令如下：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo systemctl restart redis
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">systemctl start redis.service <span class="c1">#启动redis服务器</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">systemctl stop redis.service <span class="c1">#停止redis服务器</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">systemctl restart redis.service <span class="c1">#重新启动redis服务器</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">systemctl status redis.service <span class="c1">#获取redis服务器的运行状态</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> redis.service <span class="c1">#开机启动redis服务器</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">systemctl disable redis.service <span class="c1">#开机禁用redis服务器</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">详情可参考链接：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Linux CentOS 7安装Redis服务器教程
-</span></span><span class="line"><span class="cl">​
-</span></span><span class="line"><span class="cl">www.centos.bz
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">方法二；压缩包安装
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">一、安装
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">1、在官网下载tar.gz的安装包，或者通过wget的方式下载　　
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">wget http://download.redis.io/releases/redis-4.0.1.tar.gz
-</span></span><span class="line"><span class="cl">2、解压
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">tar -zxvf redis-4.0.1.tar.gz
-</span></span><span class="line"><span class="cl">3、编译
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">通过make来编译，make是自动编译，会根据Makefile中描述的内容来进行编译。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> redis-4.0
-</span></span><span class="line"><span class="cl">make
-</span></span><span class="line"><span class="cl">可以看到在src目录下生成了几个新的文件。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">4、安装
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">make install
-</span></span><span class="line"><span class="cl">实际上，就是将这个几个文件加到/usr/local/bin目录下去。这个目录在Path下面的话，就可以直接执行这几个命令了。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">可以看到，这几个文件就已经被加载到bin目录下了
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">5、启动服务器，来看看安装是否成功。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">使用redis-server命令。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">再启动一个linux客户端，redis-cli打开客户端　　
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">6、关闭服务器
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">再启动一个linux客户端，通过server-cli shutdown来关闭服务器。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">二、配置
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">1、设置redis服务器后台启动
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">前面在启动redis服务器后，都是在前台启动的，需要重新启动一个客户端来进行登陆操作。这样非常不方便，
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">所以，我们需要设置后台启动。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">daemonize no
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">修改为：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">daemonize yes
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">卸载redis
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">卸载redis服务，只需把/usr/local/bin/目录下的redis删除即可
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">rm -rf /usr/local/bin/redis*
-</span></span><span class="line"><span class="cl">甚至可以把解压包也删除掉
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">rm -rf /root/redis-stable
-</span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">方法一：源文件安装（推荐安装）
+
+在CentOS和Red Hat系统中，首先添加EPEL仓库，然后更新yum源：
+
+sudo yum install epel-release
+sudo yum update
+然后安装Redis数据库：
+
+sudo yum -y install redis
+安装好后启动Redis服务即可：
+
+sudo systemctl start redis
+这里同样可以使用redis-cli进入Redis命令行模式操作。
+
+另外，为了可以使Redis能被远程连接，需要修改配置文件，路径为/etc/redis.conf
+
+vi /etc/redis.conf
+需要修改的地方：
+
+首先，注释这一行：
+
+<span class="c1">#bind 127.0.0.1</span>
+另外，推荐给Redis设置密码，取消注释这一行：
+
+<span class="c1">#requirepass foobared</span>
+
+foobared即当前密码，可以自行修改为
+
+requirepass 密码
+然后重启Redis服务，使用的命令如下：
+
+sudo systemctl restart redis
+
+
+systemctl start redis.service <span class="c1">#启动redis服务器</span>
+
+systemctl stop redis.service <span class="c1">#停止redis服务器</span>
+
+systemctl restart redis.service <span class="c1">#重新启动redis服务器</span>
+
+systemctl status redis.service <span class="c1">#获取redis服务器的运行状态</span>
+
+systemctl <span class="nb">enable</span> redis.service <span class="c1">#开机启动redis服务器</span>
+
+systemctl disable redis.service <span class="c1">#开机禁用redis服务器</span>
+
+
+
+详情可参考链接：
+
+Linux CentOS 7安装Redis服务器教程
+​
+www.centos.bz
+
+
+方法二；压缩包安装
+
+一、安装
+
+1、在官网下载tar.gz的安装包，或者通过wget的方式下载　　
+
+wget http://download.redis.io/releases/redis-4.0.1.tar.gz
+2、解压
+
+tar -zxvf redis-4.0.1.tar.gz
+3、编译
+
+通过make来编译，make是自动编译，会根据Makefile中描述的内容来进行编译。
+
+<span class="nb">cd</span> redis-4.0
+make
+可以看到在src目录下生成了几个新的文件。
+
+4、安装
+
+make install
+实际上，就是将这个几个文件加到/usr/local/bin目录下去。这个目录在Path下面的话，就可以直接执行这几个命令了。
+
+可以看到，这几个文件就已经被加载到bin目录下了
+
+5、启动服务器，来看看安装是否成功。
+
+使用redis-server命令。
+
+再启动一个linux客户端，redis-cli打开客户端　　
+
+6、关闭服务器
+
+再启动一个linux客户端，通过server-cli shutdown来关闭服务器。
+
+二、配置
+
+1、设置redis服务器后台启动
+
+前面在启动redis服务器后，都是在前台启动的，需要重新启动一个客户端来进行登陆操作。这样非常不方便，
+
+所以，我们需要设置后台启动。
+
+daemonize no
+
+修改为：
+
+daemonize yes
+
+
+卸载redis
+
+卸载redis服务，只需把/usr/local/bin/目录下的redis删除即可
+
+rm -rf /usr/local/bin/redis*
+甚至可以把解压包也删除掉
+
+rm -rf /root/redis-stable
+</code></pre></td></tr></table>
 </div>
 </div><h2 id="windows-redis-加入开机自启">windows redis 加入开机自启</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -617,18 +620,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">redis-server --service-install redis.windows-service.conf  --loglevel verbose
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">redis-server –service-install redis.windows.conf
-</span></span><span class="line"><span class="cl">redis-cli.exe
-</span></span><span class="line"><span class="cl">auth root
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">config <span class="nb">set</span> requirepass root
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"> CONFIG SET requirepass <span class="s2">&#34;123456&#34;</span>
-</span></span><span class="line"><span class="cl"> 
-</span></span><span class="line"><span class="cl"> AUTH <span class="m">123456</span>
-</span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">redis-server --service-install redis.windows-service.conf  --loglevel verbose
+
+redis-server –service-install redis.windows.conf
+redis-cli.exe
+auth root
+
+config <span class="nb">set</span> requirepass root
+
+ CONFIG SET requirepass <span class="s2">&#34;123456&#34;</span>
+ 
+ AUTH <span class="m">123456</span>
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -733,17 +736,6 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
-</svg>
-
-    </a>
-  
-    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
-      title="google"  target="_blank"
-      >
-      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
-  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

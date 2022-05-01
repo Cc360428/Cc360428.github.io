@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.96.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/" />
@@ -62,7 +62,7 @@
 <meta property="og:description" content="Hugo theme jane example site." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://cc360428.github.io/" />
-
+<meta property="og:updated_time" content="2020-03-29T21:07:37+08:00" />
 <meta itemprop="name" content="Li Chao Cheng Blog">
 <meta itemprop="description" content="Hugo theme jane example site."><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Li Chao Cheng Blog"/>
@@ -233,7 +233,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item">
+        <li class="menu-item active">
         
           
           
@@ -337,6 +337,78 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/system/shell/base/">linux Shell Base</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2020-04-20" class="post-time">
+        2020-04-20
+      </time>
+      <div class="post-category">
+          <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
+          
+        </div>
+      <span class="more-meta"> 约 1627 字 </span>
+      <span class="more-meta"> 预计阅读 4 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      Shell Github helloworld 创建与写 1 2 3 4 5 6 7 8 touch helloworld.sh vim helloworld.sh #!/bin/bash echo &#34;Hello World !&#34; // #! 是个约定标记 // echo 向窗口输出文本 执行 1 2 3 4 chmod +x ./helloworld.sh ./helloworld.sh 就可以看到控制台输出 Hello World ! Shell 变量 命名规
+    </div>
+    <div class="read-more">
+      <a href="/post/system/shell/base/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/golang/utils/jurisdiction/">系统设计（自动化权限）</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2020-04-19" class="post-time">
+        2020-04-19
+      </time>
+      <div class="post-category">
+          <a href="https://cc360428.github.io/categories/server/"> Server </a>
+          
+        </div>
+      <span class="more-meta"> 约 1184 字 </span>
+      <span class="more-meta"> 预计阅读 3 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      权限 自动化权限 准备知识：swagger、递归、注解、过滤器 设计 权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包
+    </div>
+    <div class="read-more">
+      <a href="/post/golang/utils/jurisdiction/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/system/git/gitbase/">Git 基本命令 </a>
     </h1>
     
@@ -363,78 +435,6 @@
     </div>
     <div class="read-more">
       <a href="/post/system/git/gitbase/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/system/openwrt/uci/">openWrt uci</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2020-04-18" class="post-time">
-        2020-04-18
-      </time>
-      <div class="post-category">
-          <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
-          
-        </div>
-      <span class="more-meta"> 约 434 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      uci set 1 2 3 4 5 6 root@Accesshub:/etc/config# uci set qos.cc=interface root@Accesshub:/etc/config# uci set qos.cc.classgroup=default root@Accesshub:/etc/config# uci set qos.cc.enabled=1 root@Accesshub:/etc/config# uci set qos.cc.upload=134 root@Accesshub:/etc/config# uci set qos.cc.download=1000 root@Accesshub:/etc/config# uci commit qos 1 2 3 4 5 6 root@Accesshub:/etc/config# grep -A 6 cc qos config interface &#39;cc&#39; option classgroup &#39;default&#39; option enabled &#39;1&#39; option upload &#39;134&#39; option download &#39;1000&#39; uci add 1 2 3 4 5 6 root@Accesshub:/etc/config# uci add
-    </div>
-    <div class="read-more">
-      <a href="/post/system/openwrt/uci/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/system/mysql/mysqlupdatepassword/">MySQL 忘记密码</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2020-04-18" class="post-time">
-        2020-04-18
-      </time>
-      <div class="post-category">
-          <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
-          
-        </div>
-      <span class="more-meta"> 约 561 字 </span>
-      <span class="more-meta"> 预计阅读 2 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to
-    </div>
-    <div class="read-more">
-      <a href="/post/system/mysql/mysqlupdatepassword/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -1168,17 +1168,6 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
-</svg>
-
-    </a>
-  
-    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
-      title="google"  target="_blank"
-      >
-      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
-  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

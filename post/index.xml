@@ -7,7 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Thu, 31 Mar 2022 21:19:55 +0800</lastBuildDate><atom:link href="https://cc360428.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Mar 2022 21:19:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://cc360428.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>DataStructure（02142）</title>
       <link>https://cc360428.github.io/post/selfstudy/datastructure/</link>
@@ -15,6 +19,24 @@
       
       <guid>https://cc360428.github.io/post/selfstudy/datastructure/</guid>
       <description>数据结构导论（02142） 第一章 概论（重点） 1 引言 数据结构：是计算机组织数据和存储数据的方式 计算机解决问题步骤 建立数学模型 设计算法 编程实现算</description>
+    </item>
+    
+    <item>
+      <title>React Project</title>
+      <link>https://cc360428.github.io/post/client/react/reactproject/</link>
+      <pubDate>Sun, 13 Feb 2022 22:58:36 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/client/react/reactproject/</guid>
+      <description>项目准备 1. 项目介绍 本节目标: 了解项目的定位和功能 项目功能演示 登录、退出 首页 内容（文章）管理：文章列表、发布文章、修改文章 技术 React 官方脚手架 create-react-app react</description>
+    </item>
+    
+    <item>
+      <title>React 基础</title>
+      <link>https://cc360428.github.io/post/client/react/reactbase/</link>
+      <pubDate>Sat, 12 Feb 2022 22:58:36 +0800</pubDate>
+      
+      <guid>https://cc360428.github.io/post/client/react/reactbase/</guid>
+      <description>React 基础 React 介绍 目标任务: 了解什么是 React 以及它的特点 React 是什么 ​ 一个专注于构建用户界面的 JavaScript 库，和 vue 和 angular 并称前端三大框架，不夸张的说，react 引领了</description>
     </item>
     
     <item>
@@ -78,24 +100,6 @@
       
       <guid>https://cc360428.github.io/post/system/shell/base/</guid>
       <description>Shell Github helloworld 创建与写 1 2 3 4 5 6 7 8 touch helloworld.sh vim helloworld.sh #!/bin/bash echo &amp;#34;Hello World !&amp;#34; // #! 是个约定标记 // echo 向窗口输出文本 执行 1 2 3 4 chmod +x ./helloworld.sh ./helloworld.sh 就可以看到控制台输出 Hello World ! Shell 变量 命名规</description>
-    </item>
-    
-    <item>
-      <title>系统设计（自动化权限）</title>
-      <link>https://cc360428.github.io/post/golang/utils/jurisdiction/</link>
-      <pubDate>Sun, 19 Apr 2020 22:58:36 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/golang/utils/jurisdiction/</guid>
-      <description>权限 自动化权限 准备知识：swagger、递归、注解、过滤器 设计 权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包</description>
-    </item>
-    
-    <item>
-      <title>Git 基本命令 </title>
-      <link>https://cc360428.github.io/post/system/git/gitbase/</link>
-      <pubDate>Sat, 18 Apr 2020 14:33:04 +0800</pubDate>
-      
-      <guid>https://cc360428.github.io/post/system/git/gitbase/</guid>
-      <description>Git 工作用到的基本命令 模拟环境 自己搭建了gogs 开源Git仓库 注册账号地址 lcc、google 创建仓库Study 把lcc 添加管理协作者(收到邮</description>
     </item>
     
   </channel>

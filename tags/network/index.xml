@@ -7,7 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Sat, 20 Mar 2021 13:57:01 +0800</lastBuildDate><atom:link href="https://cc360428.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Mar 2021 13:57:01 +0800</lastBuildDate>
+    
+	<atom:link href="https://cc360428.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>InternetPrinciples（04735）</title>
       <link>https://cc360428.github.io/post/selfstudy/internetprinciples/</link>

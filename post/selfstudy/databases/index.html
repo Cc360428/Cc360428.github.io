@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.96.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/selfstudy/databases/" />
@@ -62,14 +62,17 @@
 <meta property="og:title" content="Databases（04735）" />
 <meta property="og:description" content="数据库系统原理（04735） 第一章数据库系统概述 第三节数据库系统的结构 模式：物理独立性 外模式：逻辑独立性 数据库系统结构 客户端系统结构 浏览器/" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/selfstudy/databases/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://cc360428.github.io/post/selfstudy/databases/" />
 <meta property="article:published_time" content="2019-12-20T13:57:01+08:00" />
 <meta property="article:modified_time" content="2019-12-20T13:57:01+08:00" />
-
 <meta itemprop="name" content="Databases（04735）">
-<meta itemprop="description" content="数据库系统原理（04735） 第一章数据库系统概述 第三节数据库系统的结构 模式：物理独立性 外模式：逻辑独立性 数据库系统结构 客户端系统结构 浏览器/"><meta itemprop="datePublished" content="2019-12-20T13:57:01+08:00" />
-<meta itemprop="dateModified" content="2019-12-20T13:57:01+08:00" />
+<meta itemprop="description" content="数据库系统原理（04735） 第一章数据库系统概述 第三节数据库系统的结构 模式：物理独立性 外模式：逻辑独立性 数据库系统结构 客户端系统结构 浏览器/">
+<meta itemprop="datePublished" content="2019-12-20T13:57:01&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-20T13:57:01&#43;08:00" />
 <meta itemprop="wordCount" content="8394">
+
+
+
 <meta itemprop="keywords" content="Mysql,SelfStudy," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Databases（04735）"/>
 <meta name="twitter:description" content="数据库系统原理（04735） 第一章数据库系统概述 第三节数据库系统的结构 模式：物理独立性 外模式：逻辑独立性 数据库系统结构 客户端系统结构 浏览器/"/>
@@ -395,7 +398,7 @@
         <li><a href="#视图">视图</a></li>
       </ul>
     </li>
-    <li><a href="#第五章数据库编程难点">  第五章数据库编程（难点）</a>
+    <li><a href="#-第五章数据库编程难点">  第五章数据库编程（难点）</a>
       <ul>
         <li><a href="#存储过程"><strong>存储过程</strong></a></li>
         <li><a href="#存储函数">存储函数</a></li>
@@ -559,7 +562,7 @@
 <ul>
 <li>选择(select): σF(R)
 <ul>
-<li>查询性别为男的：σsex=&lsquo;男&rsquo;(S1)</li>
+<li>查询性别为男的：σsex='男&rsquo;(S1)</li>
 </ul>
 </li>
 <li>投影πA(R)
@@ -832,19 +835,19 @@
 <p>查看数据库（show）：show databases</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">;</span><span class="w"> </span><span class="c1"># 选择并且使用数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">alter</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">mysql_test</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">utf8</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">drop</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">drop</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">test</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">create</span> <span class="k">database</span> <span class="k">if</span> <span class="k">not</span> <span class="k">exists</span> <span class="n">mysql_test</span><span class="p">;</span>
+<span class="k">use</span> <span class="n">mysql_test</span><span class="p">;</span> <span class="c1"># 选择并且使用数据库
+</span><span class="c1"></span><span class="k">alter</span> <span class="k">database</span> <span class="n">mysql_test</span> <span class="k">default</span> <span class="k">character</span> <span class="kt">set</span> <span class="n">utf8</span><span class="p">;</span>
+<span class="k">drop</span> <span class="k">database</span> <span class="n">mysql_test</span><span class="p">;</span>
+<span class="k">drop</span> <span class="k">database</span> <span class="k">if</span> <span class="k">exists</span> <span class="n">test</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -854,22 +857,22 @@
 <p>查询表结构</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">show</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">desc</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">show</span> <span class="k">create</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span>
+<span class="k">show</span> <span class="n">columns</span> <span class="k">from</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span>
+<span class="k">desc</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>创建表</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -879,22 +882,22 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="nf">customers</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">cust_id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="kp">auto_increment</span><span class="p">,</span><span class="c1"># 设置自增，自动编号
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="n">cust_name</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">cust_sex</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="c1"># 指定默认值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="n">cust_address</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">cust_contact</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span><span class="w"> </span><span class="c1"># 主键
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">create</span> <span class="k">table</span> <span class="nf">customers</span> <span class="p">(</span>
+  <span class="n">cust_id</span> <span class="kt">int</span> <span class="k">not</span> <span class="no">null</span> <span class="kp">auto_increment</span><span class="p">,</span><span class="c1"># 设置自增，自动编号
+</span><span class="c1"></span>  <span class="n">cust_name</span> <span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">not</span> <span class="no">null</span><span class="p">,</span>
+  <span class="n">cust_sex</span> <span class="kt">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">not</span> <span class="no">null</span> <span class="k">default</span> <span class="mi">0</span><span class="p">,</span><span class="c1"># 指定默认值
+</span><span class="c1"></span>  <span class="n">cust_address</span> <span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="no">null</span><span class="p">,</span>
+  <span class="n">cust_contact</span> <span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="no">null</span><span class="p">,</span>
+  <span class="k">primary</span> <span class="k">key</span> <span class="p">(</span><span class="n">cust_id</span><span class="p">)</span> <span class="c1"># 主键
+</span><span class="c1"></span><span class="p">);</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>修改数据表和更改值</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -905,16 +908,16 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">cust_city</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;Wuhan&#39;</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">cust_sex</span><span class="p">;</span><span class="c1"># 添加一列，不能为空、默认值为&#39;wuhan&#39;、在&#39;cust_sex&#39;之后
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="k">change</span><span class="w"> </span><span class="n">cust_sex</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;m&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1"># 修改列名字，并且设置新的属性
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="k">alter</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="n">cust_city</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;Beijing&#39;</span><span class="p">;</span><span class="c1"># 修改字段属性
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="n">modify</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="n">cust_name</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="n">first</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="k">drop</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="n">cust_contact</span><span class="p">;</span><span class="c1"># 删除多余的列
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="k">rename</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">backup_customers</span><span class="p">;</span><span class="c1"># 修改表名
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">rename</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">backup_customers</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span><span class="c1"># 修改表名
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="w"> </span><span class="c1"># 删除表
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="w"> </span><span class="c1">#  询问是否存在再删除
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">alter</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="k">add</span> <span class="n">cust_city</span> <span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">not</span> <span class="no">null</span> <span class="k">default</span> <span class="s1">&#39;Wuhan&#39;</span> <span class="n">after</span> <span class="n">cust_sex</span><span class="p">;</span><span class="c1"># 添加一列，不能为空、默认值为&#39;wuhan&#39;、在&#39;cust_sex&#39;之后
+</span><span class="c1"></span><span class="k">alter</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="k">change</span> <span class="n">cust_sex</span> <span class="n">sex</span> <span class="kt">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="no">null</span> <span class="k">default</span> <span class="s1">&#39;m&#39;</span><span class="p">;</span> <span class="c1"># 修改列名字，并且设置新的属性
+</span><span class="c1"></span><span class="k">alter</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="k">alter</span> <span class="k">column</span> <span class="n">cust_city</span> <span class="kt">set</span> <span class="k">default</span> <span class="s1">&#39;Beijing&#39;</span><span class="p">;</span><span class="c1"># 修改字段属性
+</span><span class="c1"></span><span class="k">alter</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="n">modify</span> <span class="k">column</span> <span class="n">cust_name</span> <span class="kt">char</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="n">first</span><span class="p">;</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="k">drop</span> <span class="k">column</span> <span class="n">cust_contact</span><span class="p">;</span><span class="c1"># 删除多余的列
+</span><span class="c1"></span><span class="k">alter</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="k">rename</span> <span class="k">to</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">backup_customers</span><span class="p">;</span><span class="c1"># 修改表名
+</span><span class="c1"></span><span class="k">rename</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">backup_customers</span> <span class="k">to</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span><span class="c1"># 修改表名
+</span><span class="c1"></span><span class="k">drop</span> <span class="k">table</span> <span class="n">customers</span><span class="p">;</span> <span class="c1"># 删除表
+</span><span class="c1"></span><span class="k">drop</span> <span class="k">table</span> <span class="k">if</span> <span class="k">exists</span> <span class="n">customers</span><span class="p">;</span> <span class="c1">#  询问是否存在再删除
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -947,43 +950,43 @@
 <p>创建</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">index_name</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="nf">customers</span><span class="p">(</span><span class="nf">cust_name</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">asc</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1"># 索引升序
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">index_name_and_address</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="nf">customers</span><span class="p">(</span><span class="n">cust_name</span><span class="p">,</span><span class="n">cust_address</span><span class="p">);</span><span class="c1"># 创建组合索引
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="nf">index_seller_name</span><span class="p">(</span><span class="n">cust_contact</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">cust_index</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="c1"># 先添加临时字段
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="k">constraint</span><span class="w"> </span><span class="n">index_unique</span><span class="w"> </span><span class="k">unique</span><span class="p">(</span><span class="n">cust_index</span><span class="p">);</span><span class="c1"># 修改表时添加唯一字段
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">create</span> <span class="k">index</span> <span class="n">index_name</span> <span class="k">on</span> <span class="n">mysql_test</span><span class="p">.</span><span class="nf">customers</span><span class="p">(</span><span class="nf">cust_name</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">asc</span> <span class="p">);</span> <span class="c1"># 索引升序
+</span><span class="c1"></span><span class="k">create</span> <span class="k">index</span> <span class="n">index_name_and_address</span> <span class="k">on</span> <span class="n">mysql_test</span><span class="p">.</span><span class="nf">customers</span><span class="p">(</span><span class="n">cust_name</span><span class="p">,</span><span class="n">cust_address</span><span class="p">);</span><span class="c1"># 创建组合索引
+</span><span class="c1"></span><span class="k">alter</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="k">add</span> <span class="k">index</span> <span class="nf">index_seller_name</span><span class="p">(</span><span class="n">cust_contact</span><span class="p">);</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">customers</span> <span class="k">add</span> <span class="n">cust_index</span> <span class="kt">char</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="c1"># 先添加临时字段
+</span><span class="c1"></span><span class="k">alter</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="k">add</span> <span class="k">constraint</span> <span class="n">index_unique</span> <span class="k">unique</span><span class="p">(</span><span class="n">cust_index</span><span class="p">);</span><span class="c1"># 修改表时添加唯一字段
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>查看</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">show</span> <span class="k">index</span> <span class="k">from</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>删除</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">drop</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">index_unique</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="k">drop</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="n">index_name</span><span class="p">;</span><span class="c1"># 使用alter
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">drop</span> <span class="k">index</span> <span class="n">index_unique</span> <span class="k">on</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span>
+<span class="k">alter</span> <span class="k">table</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="k">drop</span> <span class="k">index</span> <span class="n">index_name</span><span class="p">;</span><span class="c1"># 使用alter
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1020,7 +1023,7 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1029,14 +1032,14 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">cust_name</span><span class="p">,</span><span class="n">cust_address</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="c1">#指定列
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="c1"># 通配符（全部）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="n">cust_name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">,</span><span class="n">cust_address</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="c1"># 别名查询
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">cust_sex</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;男&#39;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;女&#39;</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># case 表达式(cust_sex内容等于&#39;F&#39;，则显示男，否则显示女)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="n">cust_id</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="mi">902</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s2">&#34;一&#34;</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="mi">903</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="s1">&#39;二&#39;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;其他&#39;</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="n">cust_name</span><span class="p">,</span><span class="n">cust_sex</span><span class="w"> </span><span class="p">,</span><span class="n">cust_id</span><span class="o">+</span><span class="mi">100</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="c1"># 查处结果上cust_id都加上100
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span><span class="n">cust_address</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span><span class="c1">#指定列
+</span><span class="c1"></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span><span class="c1"># 通配符（全部）
+</span><span class="c1"></span><span class="k">select</span> <span class="n">cust_name</span> <span class="k">as</span> <span class="n">name</span> <span class="p">,</span><span class="n">cust_address</span> <span class="k">as</span> <span class="n">address</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span><span class="c1"># 别名查询
+</span><span class="c1"></span><span class="k">select</span> <span class="k">case</span> <span class="k">when</span> <span class="n">cust_sex</span><span class="o">=</span><span class="s1">&#39;F&#39;</span> <span class="k">then</span> <span class="s1">&#39;男&#39;</span> <span class="k">else</span> <span class="s1">&#39;女&#39;</span> <span class="n">end</span> <span class="k">as</span> <span class="n">sex</span> <span class="k">from</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span>
+<span class="c1"># case 表达式(cust_sex内容等于&#39;F&#39;，则显示男，否则显示女)
+</span><span class="c1"></span><span class="k">select</span> <span class="k">case</span> <span class="n">cust_id</span> <span class="k">when</span> <span class="mi">902</span> <span class="k">then</span> <span class="s2">&#34;一&#34;</span> <span class="k">when</span> <span class="mi">903</span> <span class="k">then</span> <span class="s1">&#39;二&#39;</span> <span class="k">else</span> <span class="s1">&#39;其他&#39;</span> <span class="n">end</span> <span class="k">as</span> <span class="n">name</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span><span class="n">cust_sex</span> <span class="p">,</span><span class="n">cust_id</span><span class="o">+</span><span class="mi">100</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span><span class="c1"># 查处结果上cust_id都加上100
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -1097,26 +1100,26 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="nf">avg</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">select</span> <span class="nf">count</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span>
+<span class="k">select</span> <span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span>
+<span class="k">select</span> <span class="nf">sum</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span>
+<span class="k">select</span> <span class="nf">min</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span>
+<span class="k">select</span> <span class="nf">avg</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p><code>from</code> 子句与多表连接查询</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1124,37 +1127,37 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1"># 准备
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">tbl1</span><span class="p">,</span><span class="n">tbl2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="nf">tbl1</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="n">sex</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="nf">tbl2</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="n">name</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">30</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">tbl1</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">tbl2</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Cc&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;CH&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;ChaoChengLi&#39;</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="s2">&#34;Test&#34;</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 准备
+</span><span class="c1"></span><span class="k">drop</span> <span class="k">table</span> <span class="n">tbl1</span><span class="p">,</span><span class="n">tbl2</span><span class="p">;</span>
+<span class="k">create</span> <span class="k">table</span> <span class="nf">tbl1</span> <span class="p">(</span><span class="n">id</span> <span class="kt">int</span><span class="p">,</span><span class="n">sex</span> <span class="kt">int</span><span class="p">);</span>
+<span class="k">create</span> <span class="k">table</span> <span class="nf">tbl2</span> <span class="p">(</span><span class="n">id</span> <span class="kt">int</span><span class="p">,</span><span class="n">name</span> <span class="kt">char</span><span class="p">(</span><span class="mi">30</span><span class="p">));</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">tbl1</span> <span class="k">values</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">tbl2</span> <span class="nf">value</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Cc&#39;</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;CH&#39;</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;ChaoChengLi&#39;</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="s2">&#34;Test&#34;</span><span class="p">);</span>
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
 <p>交叉连接（笛卡尔积）:两张表记录行数的乘积</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl1</span><span class="w"> </span><span class="k">cross</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">tbl2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl1</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">tbl2</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tbl1</span> <span class="k">cross</span> <span class="k">join</span> <span class="n">tbl2</span><span class="p">;</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tbl1</span> <span class="k">join</span> <span class="n">tbl2</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>内连接：通过设置连接条件，来移除查询结果中某些数据之后交叉连接；如果<code>on</code>子句中的连接条件使用运算符<code>=</code>方式为等值连接，其他的为非等值连接</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl1</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">tbl2</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">tbl1</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">tbl2</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="c1">#可以看到只查出了1，2，3
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tbl1</span> <span class="k">inner</span> <span class="k">join</span> <span class="n">tbl2</span> <span class="k">on</span> <span class="n">tbl1</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">tbl2</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="c1">#可以看到只查出了1，2，3
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>自连接：可以将一个表与它本身进行连接，称<code>自连接</code></li>
@@ -1167,11 +1170,11 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl1</span><span class="w"> </span><span class="n">laft</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">tbl2</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tbl1</span> <span class="n">laft</span> <span class="k">join</span> <span class="n">tbl2</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>右外连接：有表为基础，<code>from</code> 中使用<code>right outer join</code>或<code> right join</code></li>
@@ -1228,7 +1231,7 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1236,52 +1239,52 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">values</span><span class="p">(</span><span class="mi">901</span><span class="p">,</span><span class="s2">&#34;Cc&#34;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s2">&#34;japan&#34;</span><span class="p">,</span><span class="s1">&#39;sss&#39;</span><span class="p">),(</span><span class="mi">904</span><span class="p">,</span><span class="s2">&#34;ChaoCheng&#34;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s2">&#34;us&#34;</span><span class="p">,</span><span class="s1">&#39;ttt&#39;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_sex</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">;</span><span class="c1"># 查找男性用户
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_id</span><span class="w"> </span><span class="k">between</span><span class="w"> </span><span class="mi">901</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="mi">903</span><span class="p">;</span><span class="c1"># 判断范围
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">where</span><span class="w">  </span><span class="n">cust_id</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="mi">901</span><span class="p">,</span><span class="mi">903</span><span class="p">);</span><span class="c1"># 查询指定
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_contact</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="no">null</span><span class="p">;</span><span class="w"> </span><span class="c1"># 查询 联系为空的
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_contact</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">;</span><span class="c1"># 查询 联系不为空的
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">insert</span> <span class="k">into</span> <span class="n">customers</span> <span class="k">values</span><span class="p">(</span><span class="mi">901</span><span class="p">,</span><span class="s2">&#34;Cc&#34;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s2">&#34;japan&#34;</span><span class="p">,</span><span class="s1">&#39;sss&#39;</span><span class="p">),(</span><span class="mi">904</span><span class="p">,</span><span class="s2">&#34;ChaoCheng&#34;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s2">&#34;us&#34;</span><span class="p">,</span><span class="s1">&#39;ttt&#39;</span><span class="p">);</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">where</span> <span class="n">cust_sex</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">;</span><span class="c1"># 查找男性用户
+</span><span class="c1"></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">where</span> <span class="n">cust_id</span> <span class="k">between</span> <span class="mi">901</span> <span class="k">and</span> <span class="mi">903</span><span class="p">;</span><span class="c1"># 判断范围
+</span><span class="c1"></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">where</span>  <span class="n">cust_id</span> <span class="k">in</span> <span class="p">(</span><span class="mi">901</span><span class="p">,</span><span class="mi">903</span><span class="p">);</span><span class="c1"># 查询指定
+</span><span class="c1"></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">where</span> <span class="n">cust_contact</span> <span class="k">is</span> <span class="no">null</span><span class="p">;</span> <span class="c1"># 查询 联系为空的
+</span><span class="c1"></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">where</span> <span class="n">cust_contact</span> <span class="k">is</span> <span class="k">not</span> <span class="no">null</span><span class="p">;</span><span class="c1"># 查询 联系不为空的
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>子查询：把查出来的结果作为匹配的对象再次查询</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl1</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w">  </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl2</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="c1"># in 自查询结果集
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl1</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tbl2</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="c1"># 查询此值是否在自查询结果中
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">select</span> <span class="n">id</span> <span class="k">from</span> <span class="n">tbl1</span> <span class="k">where</span> <span class="n">id</span>  <span class="k">in</span> <span class="p">(</span><span class="k">select</span> <span class="n">id</span> <span class="k">from</span> <span class="n">tbl2</span> <span class="k">where</span> <span class="n">id</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span><span class="c1"># in 自查询结果集
+</span><span class="c1"></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tbl1</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">and</span> <span class="k">exists</span> <span class="p">(</span><span class="k">select</span> <span class="n">id</span> <span class="k">from</span> <span class="n">tbl2</span> <span class="k">where</span> <span class="n">id</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span><span class="c1"># 查询此值是否在自查询结果中
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li><code>group by</code>子句与分组：结果集中的数据根据选择列进行逻辑分组</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">update</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">cust_address</span><span class="o">=</span><span class="s1">&#39;beijing&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_id</span><span class="o">=</span><span class="mi">901</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="n">cust_address</span><span class="p">,</span><span class="n">cust_sex</span><span class="p">,</span><span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;人数&#39;</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">cust_address</span><span class="p">,</span><span class="n">cust_sex</span><span class="p">;</span><span class="c1"># 地址相同的男性和女性用户数量
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="n">cust_address</span><span class="p">,</span><span class="n">cust_sex</span><span class="p">,</span><span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;人数&#39;</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">cust_address</span><span class="p">,</span><span class="n">cust_sex</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">rollup</span><span class="p">;</span><span class="c1"># 在group by 上面再统计
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">update</span> <span class="n">customers</span> <span class="kt">set</span> <span class="n">cust_address</span><span class="o">=</span><span class="s1">&#39;beijing&#39;</span> <span class="k">where</span> <span class="n">cust_id</span><span class="o">=</span><span class="mi">901</span><span class="p">;</span>
+<span class="k">select</span> <span class="n">cust_address</span><span class="p">,</span><span class="n">cust_sex</span><span class="p">,</span><span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="s1">&#39;人数&#39;</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">group</span> <span class="k">by</span> <span class="n">cust_address</span><span class="p">,</span><span class="n">cust_sex</span><span class="p">;</span><span class="c1"># 地址相同的男性和女性用户数量
+</span><span class="c1"></span><span class="k">select</span> <span class="n">cust_address</span><span class="p">,</span><span class="n">cust_sex</span><span class="p">,</span><span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="s1">&#39;人数&#39;</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">group</span> <span class="k">by</span> <span class="n">cust_address</span><span class="p">,</span><span class="n">cust_sex</span> <span class="k">with</span> <span class="n">rollup</span><span class="p">;</span><span class="c1"># 在group by 上面再统计
+</span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
 <p>having</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">cust_name</span><span class="p">,</span><span class="n">cust_address</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">cust_address</span><span class="p">,</span><span class="n">cust_name</span><span class="w"> </span><span class="k">having</span><span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span><span class="n">cust_address</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">group</span> <span class="k">by</span> <span class="n">cust_address</span><span class="p">,</span><span class="n">cust_name</span> <span class="k">having</span> <span class="nf">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -1307,24 +1310,24 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 <p><code>order by</code>子句：排序</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="n">cust_name</span><span class="p">,</span><span class="n">cust_sex</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">cust_name</span><span class="w"> </span><span class="k">desc</span><span class="w"> </span><span class="p">,</span><span class="n">cust_address</span><span class="w"> </span><span class="k">desc</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">select</span> <span class="n">cust_name</span><span class="p">,</span><span class="n">cust_sex</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">order</span> <span class="k">by</span> <span class="n">cust_name</span> <span class="k">desc</span> <span class="p">,</span><span class="n">cust_address</span> <span class="k">desc</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p><code>limit</code> : 限制select语句返回行数，两个参数（1-偏移量、2-最大数目），初始偏移量是0（而不是1）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="c1"># 偏移2个,最大数目2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">limit</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1"># 一个参数只显示最大记录数目
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">limit</span> <span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="c1"># 偏移2个,最大数目2
+</span><span class="c1"></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">limit</span> <span class="mi">3</span><span class="p">;</span> <span class="c1"># 一个参数只显示最大记录数目
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1354,7 +1357,7 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 <p>操作</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1370,29 +1373,31 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1"># 创建视图
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">replace</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="n">customers_view</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_sex</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="k">option</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">create</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="n">customers_view_back</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_sex</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">check</span><span class="w"> </span><span class="k">option</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># delete
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="n">customers_view</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">drop</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="n">customers_view_back</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 查看
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="n">customers_view</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 插入
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">customers_view</span><span class="w"> </span><span class="nf">value</span><span class="p">(</span><span class="mi">910</span><span class="p">,</span><span class="s1">&#39;MySql&#39;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;US&#39;</span><span class="p">,</span><span class="s1">&#39;jp&#39;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 更新；更新视图内容会更新基表内容，基表内容修改也会修改视图内容
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">update</span><span class="w"> </span><span class="n">customers_view</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">cust_address</span><span class="o">=</span><span class="s1">&#39;Ch&#39;</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 删除；对于依赖多个基表的视图，不能使用delete语句
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers_view</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_name</span><span class="o">=</span><span class="s1">&#39;Cc&#39;</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 查询
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers_view</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_id</span><span class="o">=</span><span class="mi">902</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 创建视图
+</span><span class="c1"></span><span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="n">view</span> <span class="n">customers_view</span> <span class="k">as</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">where</span> <span class="n">cust_sex</span><span class="o">=</span><span class="s1">&#39;M&#39;</span> <span class="k">with</span> <span class="k">check</span> <span class="k">option</span><span class="p">;</span>
+<span class="k">create</span> <span class="n">view</span> <span class="n">customers_view_back</span> <span class="k">as</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">where</span> <span class="n">cust_sex</span><span class="o">=</span><span class="s1">&#39;M&#39;</span> <span class="k">with</span> <span class="k">check</span> <span class="k">option</span><span class="p">;</span>
+<span class="c1"># delete
+</span><span class="c1"></span><span class="k">drop</span> <span class="n">view</span> <span class="n">customers_view</span><span class="p">;</span>
+<span class="k">drop</span> <span class="n">view</span> <span class="n">customers_view_back</span><span class="p">;</span>
+<span class="c1"># 查看
+</span><span class="c1"></span><span class="k">show</span> <span class="k">create</span> <span class="n">view</span> <span class="n">customers_view</span><span class="p">;</span>
+<span class="c1"># 插入
+</span><span class="c1"></span><span class="k">insert</span> <span class="k">into</span> <span class="n">customers_view</span> <span class="nf">value</span><span class="p">(</span><span class="mi">910</span><span class="p">,</span><span class="s1">&#39;MySql&#39;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;US&#39;</span><span class="p">,</span><span class="s1">&#39;jp&#39;</span><span class="p">);</span>
+<span class="c1"># 更新；更新视图内容会更新基表内容，基表内容修改也会修改视图内容
+</span><span class="c1"></span><span class="k">update</span> <span class="n">customers_view</span> <span class="kt">set</span> <span class="n">cust_address</span><span class="o">=</span><span class="s1">&#39;Ch&#39;</span><span class="p">;</span>
+<span class="c1"># 删除；对于依赖多个基表的视图，不能使用delete语句
+</span><span class="c1"></span><span class="k">delete</span> <span class="k">from</span> <span class="n">customers_view</span> <span class="k">where</span> <span class="n">cust_name</span><span class="o">=</span><span class="s1">&#39;Cc&#39;</span><span class="p">;</span>
+<span class="c1"># 查询
+</span><span class="c1"></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">customers_view</span> <span class="k">where</span> <span class="n">cust_id</span><span class="o">=</span><span class="mi">902</span><span class="p">;</span>
+  
+</code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
-<h2 id="第五章数据库编程难点">  第五章数据库编程（难点）</h2>
+<h2 id="-第五章数据库编程难点">  第五章数据库编程（难点）</h2>
 <h3 id="存储过程"><strong>存储过程</strong></h3>
 <blockquote>
 <p>存储过程是一组为了完成某项特定功能的SQL语句集，其实质就是一段存储在数据库中的代码；存储过程可以有声明式的SQL语句（update 、create 、select）和过程式的SQL语句（if &hellip; then &hellip; else）组成。这组语句集经过编译后存储在数据库中，用户只需要通过指定存储过程的名字并给定参数（参数可有可无），可随时调用并执行，而不需要重新编译</p>
@@ -1412,7 +1417,7 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 <p>创建</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1420,13 +1425,13 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1"># 创建 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">delimiter</span><span class="w"> </span><span class="err">$$</span><span class="w"> </span><span class="c1"># 定义结束符 delimiter !! 但是需要和end !! 对应起来
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="nf">sp_update_sex</span><span class="p">(</span><span class="k">in</span><span class="w"> </span><span class="n">cid</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="n">csex</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">begin</span><span class="w"> </span><span class="c1"># 开始
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">update</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">cust_sex</span><span class="o">=</span><span class="n">csex</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_id</span><span class="o">=</span><span class="n">cid</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">end</span><span class="w"> </span><span class="err">$$</span><span class="w"> </span><span class="c1"># 结束
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 创建 
+</span><span class="c1"></span><span class="n">delimiter</span> <span class="err">$$</span> <span class="c1"># 定义结束符 delimiter !! 但是需要和end !! 对应起来
+</span><span class="c1"></span><span class="k">create</span> <span class="k">procedure</span> <span class="nf">sp_update_sex</span><span class="p">(</span><span class="k">in</span> <span class="n">cid</span> <span class="kt">int</span><span class="p">,</span><span class="n">csex</span> <span class="kt">char</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> 
+<span class="n">begin</span> <span class="c1"># 开始
+</span><span class="c1"></span><span class="k">update</span> <span class="n">customers</span> <span class="kt">set</span> <span class="n">cust_sex</span><span class="o">=</span><span class="n">csex</span> <span class="k">where</span> <span class="n">cust_id</span><span class="o">=</span><span class="n">cid</span><span class="p">;</span>
+<span class="n">end</span> <span class="err">$$</span> <span class="c1"># 结束
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -1471,7 +1476,7 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1494,28 +1499,28 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">delimiter</span><span class="w"> </span><span class="err">$$</span><span class="w"> </span><span class="c1"># mysql 默认是; delimiter ;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="nf">sp_sumofrow</span><span class="w"> </span><span class="p">(</span><span class="k">out</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">begin</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">declare</span><span class="w"> </span><span class="n">cid</span><span class="w"> </span><span class="kt">int</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">declare</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="n">boolean</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="no">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">declare</span><span class="w"> </span><span class="n">cur_cid</span><span class="w"> </span><span class="k">cursor</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="c1"># 创建游标
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="n">cust_id</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">declare</span><span class="w"> </span><span class="k">continue</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">found</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">set</span><span class="w"> </span><span class="n">found</span><span class="o">=</span><span class="no">false</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">set</span><span class="w"> </span><span class="n">rows</span><span class="o">=</span><span class="mi">0</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">open</span><span class="w"> </span><span class="n">cur_cid</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fetch</span><span class="w"> </span><span class="n">cur_id</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">cid</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">while</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="n">do</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">set</span><span class="w"> </span><span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="o">+</span><span class="mi">1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fetch</span><span class="w"> </span><span class="n">cur_cid</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">cid</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">end</span><span class="w"> </span><span class="k">while</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">close</span><span class="w"> </span><span class="n">cur_id</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">end</span><span class="w"> </span><span class="err">$$</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">delimiter</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">call</span><span class="w"> </span><span class="nf">sp_sumofrow</span><span class="p">(</span><span class="o">@</span><span class="n">rows</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">use</span> <span class="n">mysql_test</span><span class="p">;</span>
+<span class="n">delimiter</span> <span class="err">$$</span> <span class="c1"># mysql 默认是; delimiter ;
+</span><span class="c1"></span><span class="k">create</span> <span class="k">procedure</span> <span class="nf">sp_sumofrow</span> <span class="p">(</span><span class="k">out</span> <span class="n">rows</span> <span class="kt">int</span><span class="p">)</span>
+<span class="n">begin</span>
+<span class="k">declare</span> <span class="n">cid</span> <span class="kt">int</span> 
+<span class="k">declare</span> <span class="n">found</span> <span class="n">boolean</span> <span class="k">default</span> <span class="no">true</span>
+<span class="k">declare</span> <span class="n">cur_cid</span> <span class="k">cursor</span> <span class="k">for</span> <span class="c1"># 创建游标
+</span><span class="c1"></span><span class="k">select</span> <span class="n">cust_id</span> <span class="k">from</span> <span class="n">customers</span><span class="p">;</span>
+<span class="k">declare</span> <span class="k">continue</span> <span class="n">handler</span> <span class="k">for</span> <span class="k">not</span> <span class="n">found</span>
+<span class="kt">set</span> <span class="n">found</span><span class="o">=</span><span class="no">false</span>
+<span class="kt">set</span> <span class="n">rows</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">open</span> <span class="n">cur_cid</span>
+<span class="k">fetch</span> <span class="n">cur_id</span> <span class="k">into</span> <span class="n">cid</span>
+<span class="k">while</span> <span class="n">found</span> <span class="n">do</span>
+<span class="kt">set</span> <span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">fetch</span> <span class="n">cur_cid</span> <span class="k">into</span> <span class="n">cid</span>
+<span class="n">end</span> <span class="k">while</span>
+<span class="n">close</span> <span class="n">cur_id</span><span class="p">;</span>
+<span class="n">end</span> <span class="err">$$</span>
+<span class="n">delimiter</span><span class="p">;</span>
+<span class="k">call</span> <span class="nf">sp_sumofrow</span><span class="p">(</span><span class="o">@</span><span class="n">rows</span><span class="p">);</span>
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>注意事项
@@ -1531,19 +1536,19 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 <p>调用存储过程、删除、查看</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="n">status</span><span class="p">;</span><span class="c1"># 查看所有详情
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="n">sp_update_sex</span><span class="p">;</span><span class="c1"># 查看
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">call</span><span class="w"> </span><span class="nf">sp_update_sex</span><span class="p">(</span><span class="mi">909</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">);</span><span class="c1"># 调用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="n">sp_update_sex</span><span class="p">;</span><span class="w"> </span><span class="c1"># 删除
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">sp_update_sex</span><span class="p">;</span><span class="w"> </span><span class="c1">#  删除
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">show</span> <span class="k">procedure</span> <span class="n">status</span><span class="p">;</span><span class="c1"># 查看所有详情
+</span><span class="c1"></span><span class="k">show</span> <span class="k">create</span> <span class="k">procedure</span> <span class="n">sp_update_sex</span><span class="p">;</span><span class="c1"># 查看
+</span><span class="c1"></span><span class="k">call</span> <span class="nf">sp_update_sex</span><span class="p">(</span><span class="mi">909</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">);</span><span class="c1"># 调用
+</span><span class="c1"></span><span class="k">drop</span> <span class="k">procedure</span> <span class="n">sp_update_sex</span><span class="p">;</span> <span class="c1"># 删除
+</span><span class="c1"></span><span class="k">drop</span> <span class="k">procedure</span> <span class="k">if</span> <span class="k">exists</span> <span class="n">sp_update_sex</span><span class="p">;</span> <span class="c1">#  删除
+</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1566,7 +1571,7 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 <p>操作</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1591,30 +1596,30 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1"># 创建 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">use</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">delimiter</span><span class="w"> </span><span class="err">$$</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">create</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="nf">fn_search</span><span class="p">(</span><span class="n">cid</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">returns</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">deterministic</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">begin</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">declare</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="n">cust_sex</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">cust_id</span><span class="o">=</span><span class="n">cid</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="k">then</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="s1">&#39;没有该用户&#39;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">sex</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="w"> </span><span class="k">then</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="s1">&#39;女&#39;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">select</span><span class="s1">&#39;男&#39;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">end</span><span class="w"> </span><span class="k">if</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">end</span><span class="w"> </span><span class="k">if</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">end</span><span class="w"> </span><span class="err">$$</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">delimiter</span><span class="w"> </span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 调用 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="nf">fn_search</span><span class="p">(</span><span class="mi">902</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 删除
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">fn_search</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">drop</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">fn_search</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 创建 
+</span><span class="c1"></span><span class="k">use</span> <span class="n">mysql_test</span><span class="p">;</span>
+<span class="n">delimiter</span> <span class="err">$$</span>
+<span class="k">create</span> <span class="n">function</span> <span class="nf">fn_search</span><span class="p">(</span><span class="n">cid</span> <span class="kt">int</span><span class="p">)</span>
+<span class="n">returns</span> <span class="kt">char</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">deterministic</span>
+<span class="n">begin</span>
+<span class="k">declare</span> <span class="n">sex</span> <span class="kt">char</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">select</span> <span class="n">cust_sex</span> <span class="k">into</span> <span class="n">sex</span> <span class="k">from</span> <span class="n">customers</span> <span class="k">where</span> <span class="n">cust_id</span><span class="o">=</span><span class="n">cid</span><span class="p">;</span>
+<span class="k">if</span> <span class="n">sex</span> <span class="k">is</span> <span class="no">null</span> <span class="k">then</span> 
+<span class="k">return</span> <span class="p">(</span><span class="k">select</span><span class="s1">&#39;没有该用户&#39;</span><span class="p">);</span>
+<span class="k">else</span> <span class="k">if</span> <span class="n">sex</span><span class="o">=</span><span class="s1">&#39;f&#39;</span> <span class="k">then</span> 
+<span class="k">return</span> <span class="p">(</span><span class="k">select</span><span class="s1">&#39;女&#39;</span><span class="p">);</span>
+<span class="k">else</span> <span class="k">return</span> <span class="p">(</span><span class="k">select</span><span class="s1">&#39;男&#39;</span><span class="p">);</span>
+<span class="n">end</span> <span class="k">if</span><span class="p">;</span>
+<span class="n">end</span> <span class="k">if</span><span class="p">;</span>
+<span class="n">end</span> <span class="err">$$</span>
+<span class="n">delimiter</span> <span class="p">;</span>
+<span class="c1"># 调用 
+</span><span class="c1"></span><span class="k">select</span> <span class="nf">fn_search</span><span class="p">(</span><span class="mi">902</span><span class="p">);</span>
+<span class="c1"># 删除
+</span><span class="c1"></span><span class="k">drop</span> <span class="n">function</span> <span class="n">fn_search</span><span class="p">;</span>
+<span class="k">drop</span> <span class="n">function</span> <span class="k">if</span> <span class="k">exists</span> <span class="n">fn_search</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1656,7 +1661,7 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1669,18 +1674,18 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="nf">orders</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">order_id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="kp">auto_increment</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">order_product</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">order_product_type</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">cust_id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">order_date</span><span class="w"> </span><span class="kt">datetime</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">order_price</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">order_amount</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">(</span><span class="n">order_id</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">foreign</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span><span class="w"> </span><span class="k">references</span><span class="w"> </span><span class="nf">customers</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="k">restrict</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">restrict</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">use</span> <span class="n">mysql_test</span><span class="p">;</span>
+<span class="k">create</span> <span class="k">table</span> <span class="nf">orders</span> <span class="p">(</span>
+  <span class="n">order_id</span> <span class="kt">int</span> <span class="k">not</span> <span class="no">null</span> <span class="kp">auto_increment</span><span class="p">,</span>
+  <span class="n">order_product</span> <span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">not</span> <span class="no">null</span><span class="p">,</span>
+  <span class="n">order_product_type</span> <span class="kt">char</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">not</span> <span class="no">null</span><span class="p">,</span>
+  <span class="n">cust_id</span> <span class="kt">int</span> <span class="no">null</span><span class="p">,</span>
+  <span class="n">order_date</span> <span class="kt">datetime</span> <span class="k">not</span> <span class="no">null</span><span class="p">,</span>
+  <span class="n">order_price</span> <span class="kt">double</span> <span class="k">not</span> <span class="no">null</span><span class="p">,</span>
+  <span class="n">order_amount</span> <span class="kt">int</span> <span class="k">not</span> <span class="no">null</span><span class="p">,</span>
+  <span class="k">primary</span> <span class="k">key</span><span class="p">(</span><span class="n">order_id</span><span class="p">),</span>
+  <span class="k">foreign</span> <span class="k">key</span> <span class="p">(</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">references</span> <span class="nf">customers</span><span class="p">(</span><span class="n">cust_id</span><span class="p">)</span> <span class="k">on</span> <span class="k">delete</span> <span class="k">restrict</span> <span class="k">on</span> <span class="k">update</span> <span class="k">restrict</span><span class="p">);</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -1718,7 +1723,7 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 <p>操作</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1729,23 +1734,23 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1"># 创建
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">customers_insert_trigger</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="k">insert</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="o">@</span><span class="n">str</span><span class="o">=</span><span class="s1">&#39;one customers added!&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 删除
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">customers_insert_trigger</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">drop</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">customers_insert_trigger</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># insert
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">customers_insert_trigger</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="k">insert</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="o">@</span><span class="n">str</span><span class="o">=</span><span class="n">new</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># update
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="n">customers_update_trigger</span><span class="w"> </span><span class="k">before</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">customers</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">new</span><span class="p">.</span><span class="n">cust_address</span><span class="o">=</span><span class="n">old</span><span class="p">.</span><span class="n">cust_contact</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="c1"># 创建
+</span><span class="c1"></span><span class="k">create</span> <span class="k">trigger</span> <span class="n">customers_insert_trigger</span> <span class="n">after</span> <span class="k">insert</span> <span class="k">on</span> <span class="n">customers</span> <span class="k">for</span> <span class="k">each</span> <span class="n">row</span> <span class="kt">set</span> <span class="o">@</span><span class="n">str</span><span class="o">=</span><span class="s1">&#39;one customers added!&#39;</span>
+<span class="c1"># 删除
+</span><span class="c1"></span><span class="k">drop</span> <span class="k">trigger</span> <span class="n">customers_insert_trigger</span><span class="p">;</span>
+<span class="k">drop</span> <span class="k">trigger</span> <span class="k">if</span> <span class="k">exists</span> <span class="n">customers_insert_trigger</span><span class="p">;</span>
+<span class="c1"># insert
+</span><span class="c1"></span><span class="k">create</span> <span class="k">trigger</span> <span class="n">customers_insert_trigger</span> <span class="n">after</span> <span class="k">insert</span> <span class="k">on</span> <span class="n">customers</span> <span class="k">for</span> <span class="k">each</span> <span class="n">row</span> <span class="kt">set</span> <span class="o">@</span><span class="n">str</span><span class="o">=</span><span class="n">new</span><span class="p">.</span><span class="n">cust_id</span><span class="p">;</span>
+<span class="c1"># update
+</span><span class="c1"></span><span class="k">create</span> <span class="k">trigger</span> <span class="n">customers_update_trigger</span> <span class="k">before</span> <span class="k">update</span> <span class="k">on</span> <span class="n">customers</span> <span class="k">for</span> <span class="k">each</span> <span class="n">row</span> <span class="kt">set</span> <span class="n">new</span><span class="p">.</span><span class="n">cust_address</span><span class="o">=</span><span class="n">old</span><span class="p">.</span><span class="n">cust_contact</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
 <h3 id="安全性与访问控制防止不合法的操作而造成数据泄漏更改或破坏">安全性与访问控制：防止不合法的操作而造成数据泄漏，更改或破坏</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1757,17 +1762,17 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="k">identified</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="p">;</span><span class="c1"># 创建
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">show</span><span class="w"> </span><span class="n">grants</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1"># 查看
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">set</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;123456asdf&#39;</span><span class="p">;</span><span class="c1"># update password
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">drop</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1"># 删除
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="p">(</span><span class="n">cust_id</span><span class="p">,</span><span class="n">cust_name</span><span class="p">)</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1"># 授权 目标用户需要重新登录
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">select</span><span class="w"> </span><span class="n">cust_id</span><span class="p">,</span><span class="n">cust_name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span><span class="w"> </span><span class="c1">#  授权登录用户查看下结果
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">grant</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1">#  授权mysql_test 库的所有操作权限
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">grant</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1"># 创建用户的权限
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">revoke</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1"># 撤回权限
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">create</span> <span class="k">user</span> <span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="k">identified</span> <span class="k">by</span> <span class="s1">&#39;password&#39;</span><span class="p">;</span><span class="c1"># 创建
+</span><span class="c1"></span><span class="k">show</span> <span class="n">grants</span> <span class="k">for</span> <span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1"># 查看
+</span><span class="c1"></span><span class="kt">set</span> <span class="n">password</span> <span class="k">for</span> <span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="o">=</span> <span class="s1">&#39;123456asdf&#39;</span><span class="p">;</span><span class="c1"># update password
+</span><span class="c1"></span><span class="k">drop</span> <span class="k">user</span> <span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1"># 删除
+</span><span class="c1"></span><span class="k">grant</span> <span class="k">select</span> <span class="p">(</span><span class="n">cust_id</span><span class="p">,</span><span class="n">cust_name</span><span class="p">)</span> <span class="k">on</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span> <span class="k">to</span> <span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1"># 授权 目标用户需要重新登录
+</span><span class="c1"></span><span class="k">select</span> <span class="n">cust_id</span><span class="p">,</span><span class="n">cust_name</span> <span class="k">from</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="p">;</span> <span class="c1">#  授权登录用户查看下结果
+</span><span class="c1"></span><span class="k">grant</span> <span class="k">all</span> <span class="k">on</span> <span class="n">mysql_test</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1">#  授权mysql_test 库的所有操作权限
+</span><span class="c1"></span><span class="k">grant</span> <span class="k">create</span> <span class="k">user</span> <span class="k">on</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span> <span class="c1"># 创建用户的权限
+</span><span class="c1"></span>
+<span class="k">revoke</span> <span class="k">select</span> <span class="k">on</span> <span class="n">mysql_test</span><span class="p">.</span><span class="o">*</span> <span class="k">from</span> <span class="s1">&#39;Cc&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span><span class="c1"># 撤回权限
+</span></code></pre></td></tr></table>
 </div>
 </div><h3 id="事务与并发控制事务保证数据一致性的基本手段">事务与并发控制：事务保证数据一致性的基本手段</h3>
 <blockquote>
@@ -1839,19 +1844,19 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
 <p>操作</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INTO</span><span class="w"> </span><span class="k">OUTFILE</span><span class="w"> </span><span class="s1">&#39;/opt/work/backupfile.txt&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">FIELDS</span><span class="w"> </span><span class="k">TERMINATED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">OPTIONALLY</span><span class="w"> </span><span class="k">ENCLOSED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">LINES</span><span class="w"> </span><span class="k">TERMINATED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;?&#39;</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">mysql_test</span><span class="p">.</span><span class="n">customers</span>
+<span class="k">INTO</span> <span class="k">OUTFILE</span> <span class="s1">&#39;/opt/work/backupfile.txt&#39;</span>
+<span class="n">FIELDS</span> <span class="k">TERMINATED</span> <span class="k">BY</span> <span class="s1">&#39;,&#39;</span>
+<span class="k">OPTIONALLY</span> <span class="k">ENCLOSED</span> <span class="k">BY</span> <span class="s2">&#34;&#34;</span>
+<span class="k">LINES</span> <span class="k">TERMINATED</span> <span class="k">BY</span> <span class="s1">&#39;?&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -1964,17 +1969,6 @@ select：<code>insert into customers(cust_id,cust_name,cust_sex,cust_address,cus
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
-</svg>
-
-    </a>
-  
-    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
-      title="google"  target="_blank"
-      >
-      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
-  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

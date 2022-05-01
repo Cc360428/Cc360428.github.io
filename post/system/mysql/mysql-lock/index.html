@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Cc" />
-  <meta name="description" content="MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&amp;gt;showtables;&#43;----------------&#43;|Tables_in_test|&#43;----------------&#43;|mylock||test|&#43;----------------&#43;2rowsinset(0.03sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态变量 1 2 3 4 5 6 7 8 showstatuslike&amp;#39;table_locks%&amp;#39;;&#43;-----------------------&#43;-------&#43;|Variable_name|Value|&#43;-----------------------&#43;-------&#43;|Table_locks_immediate|104||Table_locks_waited|0|&#43;-----------------------&#43;-------&#43;2rowsinset(0.04sec) Table_loc" />
+  <meta name="description" content="MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&amp;gt; show tables; &#43;----------------&#43; | Tables_in_test | &#43;----------------&#43; | mylock | | test | &#43;----------------&#43; 2 rows in set (0.03 sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.96.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/mysql/mysql-lock/" />
@@ -60,19 +60,22 @@
 
 
 <meta property="og:title" content="MySQL 锁" />
-<meta property="og:description" content="MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&gt;showtables;&#43;----------------&#43;|Tables_in_test|&#43;----------------&#43;|mylock||test|&#43;----------------&#43;2rowsinset(0.03sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态变量 1 2 3 4 5 6 7 8 showstatuslike&#39;table_locks%&#39;;&#43;-----------------------&#43;-------&#43;|Variable_name|Value|&#43;-----------------------&#43;-------&#43;|Table_locks_immediate|104||Table_locks_waited|0|&#43;-----------------------&#43;-------&#43;2rowsinset(0.04sec) Table_loc" />
+<meta property="og:description" content="MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&gt; show tables; &#43;----------------&#43; | Tables_in_test | &#43;----------------&#43; | mylock | | test | &#43;----------------&#43; 2 rows in set (0.03 sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/mysql/mysql-lock/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/mysql/mysql-lock/" />
 <meta property="article:published_time" content="2019-09-18T12:21:48+08:00" />
 <meta property="article:modified_time" content="2019-09-18T12:21:48+08:00" />
-
 <meta itemprop="name" content="MySQL 锁">
-<meta itemprop="description" content="MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&gt;showtables;&#43;----------------&#43;|Tables_in_test|&#43;----------------&#43;|mylock||test|&#43;----------------&#43;2rowsinset(0.03sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态变量 1 2 3 4 5 6 7 8 showstatuslike&#39;table_locks%&#39;;&#43;-----------------------&#43;-------&#43;|Variable_name|Value|&#43;-----------------------&#43;-------&#43;|Table_locks_immediate|104||Table_locks_waited|0|&#43;-----------------------&#43;-------&#43;2rowsinset(0.04sec) Table_loc"><meta itemprop="datePublished" content="2019-09-18T12:21:48+08:00" />
-<meta itemprop="dateModified" content="2019-09-18T12:21:48+08:00" />
-<meta itemprop="wordCount" content="3163">
+<meta itemprop="description" content="MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&gt; show tables; &#43;----------------&#43; | Tables_in_test | &#43;----------------&#43; | mylock | | test | &#43;----------------&#43; 2 rows in set (0.03 sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态">
+<meta itemprop="datePublished" content="2019-09-18T12:21:48&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-18T12:21:48&#43;08:00" />
+<meta itemprop="wordCount" content="2419">
+
+
+
 <meta itemprop="keywords" content="Mysql," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL 锁"/>
-<meta name="twitter:description" content="MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&gt;showtables;&#43;----------------&#43;|Tables_in_test|&#43;----------------&#43;|mylock||test|&#43;----------------&#43;2rowsinset(0.03sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态变量 1 2 3 4 5 6 7 8 showstatuslike&#39;table_locks%&#39;;&#43;-----------------------&#43;-------&#43;|Variable_name|Value|&#43;-----------------------&#43;-------&#43;|Table_locks_immediate|104||Table_locks_waited|0|&#43;-----------------------&#43;-------&#43;2rowsinset(0.04sec) Table_loc"/>
+<meta name="twitter:description" content="MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&gt; show tables; &#43;----------------&#43; | Tables_in_test | &#43;----------------&#43; | mylock | | test | &#43;----------------&#43; 2 rows in set (0.03 sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -344,8 +347,8 @@
             <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
             
           </div>
-        <span class="more-meta"> 约 3163 字 </span>
-          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        <span class="more-meta"> 约 2419 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
 
         
         
@@ -383,7 +386,7 @@
 <p><img src="/system/mysql/mysql%E9%94%81.png" alt="mysql 锁"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -393,15 +396,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="kp">tables</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+----------------+</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">Tables_in_test</span><span class="w"> </span><span class="o">|</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+----------------+</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">mylock</span><span class="w">         </span><span class="o">|</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">test</span><span class="w">           </span><span class="o">|</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+----------------+</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">03</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">show</span> <span class="kp">tables</span><span class="p">;</span>
+<span class="o">+----------------+</span>
+<span class="o">|</span> <span class="n">Tables_in_test</span> <span class="o">|</span>
+<span class="o">+----------------+</span>
+<span class="o">|</span> <span class="n">mylock</span>         <span class="o">|</span>
+<span class="o">|</span> <span class="n">test</span>           <span class="o">|</span>
+<span class="o">+----------------+</span>
+<span class="mi">2</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">03</span> <span class="n">sec</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="表锁">表锁</h3>
 <blockquote>
@@ -411,7 +414,7 @@
 <h4 id="查询争用状态变量">查询争用状态变量</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -421,15 +424,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;table_locks%&#39;</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+-----------------------+-------+</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">Variable_name</span><span class="w">         </span><span class="o">|</span><span class="w"> </span><span class="n">Value</span><span class="w"> </span><span class="o">|</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+-----------------------+-------+</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">Table_locks_immediate</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">104</span><span class="w">   </span><span class="o">|</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">|</span><span class="w"> </span><span class="n">Table_locks_waited</span><span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="mi">0</span><span class="w">     </span><span class="o">|</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+-----------------------+-------+</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">04</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="k">show</span> <span class="n">status</span> <span class="k">like</span> <span class="s1">&#39;table_locks%&#39;</span><span class="p">;</span>
+<span class="o">+-----------------------+-------+</span>
+<span class="o">|</span> <span class="n">Variable_name</span>         <span class="o">|</span> <span class="n">Value</span> <span class="o">|</span>
+<span class="o">+-----------------------+-------+</span>
+<span class="o">|</span> <span class="n">Table_locks_immediate</span> <span class="o">|</span> <span class="mi">104</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="n">Table_locks_waited</span>    <span class="o">|</span> <span class="mi">0</span>     <span class="o">|</span>
+<span class="o">+-----------------------+-------+</span>
+<span class="mi">2</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">04</span> <span class="n">sec</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -450,7 +453,7 @@
 <p><img src="/system/mysql/%E8%A1%A8%E8%AF%BB%E9%94%81.png" alt="mysql 锁"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -460,15 +463,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="k">lock</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="k">read</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">给</span><span class="n">mylock表加读锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">可以查询</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">3</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tdep</span><span class="p">;</span><span class="w"> </span><span class="err">–不能访问非锁定表</span><span class="p">(</span><span class="mi">1100</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">Table</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="w"> </span><span class="n">was</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">locked</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">LOCK</span><span class="w"> </span><span class="kp">TABLES</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">4</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">可以查询</span><span class="w"> </span><span class="err">没有锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">修改阻塞</span><span class="p">,</span><span class="err">自动加行写锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">6</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">unlock</span><span class="w"> </span><span class="kp">tables</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">释放表锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">7</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="n">Rows</span><span class="w"> </span><span class="n">matched</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">Changed</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">Warnings</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">修改执行完成</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">8</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tdep</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">可以访问</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="k">lock</span> <span class="k">table</span> <span class="n">mylock</span> <span class="k">read</span><span class="p">;</span> <span class="err">–</span> <span class="err">给</span><span class="n">mylock表加读锁</span>
+<span class="mi">2</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span><span class="p">;</span> <span class="err">–</span> <span class="err">可以查询</span>
+<span class="mi">3</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tdep</span><span class="p">;</span> <span class="err">–不能访问非锁定表</span><span class="p">(</span><span class="mi">1100</span> <span class="o">-</span> <span class="k">Table</span> <span class="s1">&#39;test&#39;</span> <span class="n">was</span> <span class="k">not</span> <span class="n">locked</span> <span class="k">with</span> <span class="k">LOCK</span> <span class="kp">TABLES</span><span class="p">)</span>
+<span class="mi">4</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span><span class="p">;</span> <span class="err">–</span> <span class="err">可以查询</span> <span class="err">没有锁</span>
+<span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;x&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="err">–</span> <span class="err">修改阻塞</span><span class="p">,</span><span class="err">自动加行写锁</span>
+<span class="mi">6</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">unlock</span> <span class="kp">tables</span><span class="p">;</span> <span class="err">–</span> <span class="err">释放表锁</span>
+<span class="mi">7</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="n">Rows</span> <span class="n">matched</span><span class="p">:</span> <span class="mi">1</span> <span class="n">Changed</span><span class="p">:</span> <span class="mi">1</span> <span class="n">Warnings</span><span class="p">:</span> <span class="mi">0</span> <span class="err">–</span> <span class="err">修改执行完成</span>
+<span class="mi">8</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tdep</span><span class="p">;</span> <span class="o">--</span><span class="err">可以访问</span>
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>表独占写锁（Table Write Lock）</li>
@@ -476,7 +479,7 @@
 <p><img src="/system/mysql/%E8%A1%A8%E5%86%99%E9%94%81.png" alt="mysql 锁"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -486,15 +489,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="k">lock</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="k">write</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">给</span><span class="n">mylock表加写锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">当前</span><span class="n">session可以查询</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">3</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tdep</span><span class="p">;</span><span class="w"> </span><span class="err">–不能访问非锁定表</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">4</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">可以执行</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">查询阻塞</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">6</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">unlock</span><span class="w"> </span><span class="kp">tables</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">释放表锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">7</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="mi">4</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">22</span><span class="p">.</span><span class="mi">57</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">查询执行完成</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">8</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tdep</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">可以访问</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="k">lock</span> <span class="k">table</span> <span class="n">mylock</span> <span class="k">write</span><span class="p">;</span> <span class="err">–</span> <span class="err">给</span><span class="n">mylock表加写锁</span>
+<span class="mi">2</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span><span class="p">;</span> <span class="err">–</span> <span class="err">当前</span><span class="n">session可以查询</span>
+<span class="mi">3</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tdep</span><span class="p">;</span> <span class="err">–不能访问非锁定表</span>
+<span class="mi">4</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="o">--</span><span class="err">可以执行</span>
+<span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span><span class="p">;</span> <span class="err">–</span> <span class="err">查询阻塞</span>
+<span class="mi">6</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">unlock</span> <span class="kp">tables</span><span class="p">;</span> <span class="err">–</span> <span class="err">释放表锁</span>
+<span class="mi">7</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="mi">4</span> <span class="n">rows</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">22</span><span class="p">.</span><span class="mi">57</span> <span class="n">sec</span><span class="p">)</span> <span class="err">–</span> <span class="err">查询执行完成</span>
+<span class="mi">8</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">tdep</span><span class="p">;</span> <span class="o">--</span><span class="err">可以访问</span>
+</code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>元数据锁（MDL）<code>MetaDataLock</code></li>
@@ -513,19 +516,19 @@
 <p><img src="/system/mysql/%E5%85%83%E6%95%B0%E6%8D%AE%E9%94%81(MDL).png" alt="mysql 锁"></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="n">begin</span><span class="p">;</span><span class="err">–开启事务</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="p">;</span><span class="err">–加</span><span class="n">MDL读锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="p">:</span><span class="w"> </span><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">修改阻塞</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">3</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="n">commit</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">提交事务</span><span class="w"> </span><span class="err">或者</span><span class="w"> </span><span class="n">rollback</span><span class="w"> </span><span class="err">释放读锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">4</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="nf">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">38</span><span class="p">.</span><span class="mi">67</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w"> </span><span class="o">--</span><span class="err">修改完成</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="n">begin</span><span class="p">;</span><span class="err">–开启事务</span>
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span><span class="p">;</span><span class="err">–加</span><span class="n">MDL读锁</span>
+<span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="p">:</span> <span class="k">alter</span> <span class="k">table</span> <span class="n">mylock</span> <span class="k">add</span> <span class="n">f</span> <span class="kt">int</span><span class="p">;</span> <span class="err">–</span> <span class="err">修改阻塞</span>
+<span class="mi">3</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="n">commit</span><span class="p">;</span> <span class="o">--</span><span class="err">提交事务</span> <span class="err">或者</span> <span class="n">rollback</span> <span class="err">释放读锁</span>
+<span class="mi">4</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">38</span><span class="p">.</span><span class="mi">67</span> <span class="n">sec</span><span class="p">)</span> <span class="o">--</span><span class="err">修改完成</span>
+</code></pre></td></tr></table>
 </div>
 </div><h3 id="行锁innodb">行锁(<code>InnoDB</code>)</h3>
 <h4 id="按照范围分类">按照范围分类</h4>
@@ -549,7 +552,7 @@
 <p>行级锁</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -559,22 +562,22 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  	</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">lock</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">share</span><span class="w"> </span><span class="n">mode</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">手动加</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="err">的行读锁</span><span class="p">,</span><span class="err">使用索引</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 未锁定该行可以修改
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">3</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 锁定该行修改阻塞
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ERROR</span><span class="w"> </span><span class="mi">1205</span><span class="w"> </span><span class="p">(</span><span class="n">HY000</span><span class="p">):</span><span class="w"> </span><span class="k">Lock</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="n">exceeded</span><span class="p">;</span><span class="w"> </span><span class="n">try</span><span class="w"> </span><span class="n">restarting</span><span class="w"> </span><span class="n">transaction</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="c1">-- 锁定超时
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">4</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="n">commit</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">提交事务</span><span class="w"> </span><span class="err">或者</span><span class="w"> </span><span class="n">rollback</span><span class="w"> </span><span class="err">释放读锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">修改成功</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span>
+    <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span>  <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span> <span class="k">lock</span> <span class="k">in</span> <span class="n">share</span> <span class="n">mode</span><span class="p">;</span> <span class="o">--</span><span class="err">手动加</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="err">的行读锁</span><span class="p">,</span><span class="err">使用索引</span>
+<span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="c1">-- 未锁定该行可以修改
+</span><span class="c1"></span><span class="mi">3</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="c1">-- 锁定该行修改阻塞
+</span><span class="c1"></span><span class="n">ERROR</span> <span class="mi">1205</span> <span class="p">(</span><span class="n">HY000</span><span class="p">):</span> <span class="k">Lock</span> <span class="n">wait</span> <span class="n">timeout</span> <span class="n">exceeded</span><span class="p">;</span> <span class="n">try</span> <span class="n">restarting</span> <span class="n">transaction</span>
+ <span class="c1">-- 锁定超时
+</span><span class="c1"></span><span class="mi">4</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="n">commit</span><span class="p">;</span> <span class="o">--</span><span class="err">提交事务</span> <span class="err">或者</span> <span class="n">rollback</span> <span class="err">释放读锁</span>
+<span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="err">修改成功</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>行级锁升级为表锁（未使用索引行锁升级为表锁）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -584,15 +587,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="w">  </span><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    	</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">lock</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">share</span><span class="w"> </span><span class="n">mode</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">手动加</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="err">的行读锁</span><span class="p">,</span><span class="err">使用索引</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 未锁定该行可以修改
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="mi">3</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 锁定该行修改阻塞
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="n">ERROR</span><span class="w"> </span><span class="mi">1205</span><span class="w"> </span><span class="p">(</span><span class="n">HY000</span><span class="p">):</span><span class="w"> </span><span class="k">Lock</span><span class="w"> </span><span class="n">wait</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="n">exceeded</span><span class="p">;</span><span class="w"> </span><span class="n">try</span><span class="w"> </span><span class="n">restarting</span><span class="w"> </span><span class="n">transaction</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="c1">-- 锁定超时
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="mi">4</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="n">commit</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">提交事务</span><span class="w"> </span><span class="err">或者</span><span class="w"> </span><span class="n">rollback</span><span class="w"> </span><span class="err">释放读锁</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="err">修改成功</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql">  <span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span>
+        <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span>  <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span> <span class="k">lock</span> <span class="k">in</span> <span class="n">share</span> <span class="n">mode</span><span class="p">;</span> <span class="o">--</span><span class="err">手动加</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="err">的行读锁</span><span class="p">,</span><span class="err">使用索引</span>
+  <span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="c1">-- 未锁定该行可以修改
+</span><span class="c1"></span>  <span class="mi">3</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="c1">-- 锁定该行修改阻塞
+</span><span class="c1"></span>  <span class="n">ERROR</span> <span class="mi">1205</span> <span class="p">(</span><span class="n">HY000</span><span class="p">):</span> <span class="k">Lock</span> <span class="n">wait</span> <span class="n">timeout</span> <span class="n">exceeded</span><span class="p">;</span> <span class="n">try</span> <span class="n">restarting</span> <span class="n">transaction</span>
+   <span class="c1">-- 锁定超时
+</span><span class="c1"></span>  <span class="mi">4</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="n">commit</span><span class="p">;</span> <span class="o">--</span><span class="err">提交事务</span> <span class="err">或者</span> <span class="n">rollback</span> <span class="err">释放读锁</span>
+  <span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;y&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="err">修改成功</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -601,7 +604,7 @@
 <p>排他写锁（<strong>行写锁</strong>）<code>行产生写锁时，在MVCC下仍然可读，因为MVCC下的select读不需要获取锁（无锁），所以不会阻塞</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -611,15 +614,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="o">--</span><span class="err">手动加</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="err">的行写锁</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">update</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">-- 可以访问
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">3</span><span class="err">、</span><span class="n">session2</span><span class="p">:</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">-- 可以读 不加锁 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">4</span><span class="err">、</span><span class="n">session2</span><span class="p">:</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">mylock</span><span class="w">  </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">lock</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">share</span><span class="w"> </span><span class="n">mode</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">-- 加读锁被阻塞
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">5</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="n">commit</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 提交事务 或者 rollback 释放写锁
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：执行成功</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span>
+      <span class="o">--</span><span class="err">手动加</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="err">的行写锁</span><span class="p">,</span>
+      <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span>  <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span> <span class="k">for</span> <span class="k">update</span><span class="p">;</span>
+<span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span>  <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span> <span class="p">;</span> <span class="c1">-- 可以访问
+</span><span class="c1"></span><span class="mi">3</span><span class="err">、</span><span class="n">session2</span><span class="p">:</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span>  <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span> <span class="p">;</span> <span class="c1">-- 可以读 不加锁 
+</span><span class="c1"></span><span class="mi">4</span><span class="err">、</span><span class="n">session2</span><span class="p">:</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">mylock</span>  <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span> <span class="k">lock</span> <span class="k">in</span> <span class="n">share</span> <span class="n">mode</span> <span class="p">;</span> <span class="c1">-- 加读锁被阻塞
+</span><span class="c1"></span><span class="mi">5</span><span class="err">、</span><span class="n">session1</span><span class="err">：</span><span class="n">commit</span><span class="p">;</span> <span class="c1">-- 提交事务 或者 rollback 释放写锁
+</span><span class="c1"></span><span class="mi">5</span><span class="err">、</span><span class="n">session2</span><span class="err">：执行成功</span>
+</code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -635,7 +638,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -647,17 +650,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="o">--</span><span class="err">手动加行写锁</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="err">，使用索引</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">--</span><span class="err">手动加行写锁</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="w"> </span><span class="err">，使用索引</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;m&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w">   
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">3</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;nn&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 加写锁被阻塞
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">4</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span><span class="w"> </span><span class="n">mylock</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;nn&#39;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">-- 加写锁会死锁，不允许操作
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ERROR</span><span class="w"> </span><span class="mi">1213</span><span class="w"> </span><span class="p">(</span><span class="mi">40001</span><span class="p">):</span><span class="w"> </span><span class="n">Deadlock</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">trying</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="k">lock</span><span class="p">;</span><span class="w"> </span><span class="n">try</span><span class="w"> </span><span class="n">restarting</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">transaction</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="mi">1</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span>
+      <span class="o">--</span><span class="err">手动加行写锁</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span> <span class="err">，使用索引</span>
+      <span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;m&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="mi">2</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="n">begin</span><span class="p">;</span><span class="o">--</span><span class="err">开启事务未提交</span>
+<span class="o">--</span><span class="err">手动加行写锁</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span> <span class="err">，使用索引</span>
+      <span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;m&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>   
+<span class="mi">3</span><span class="err">、</span><span class="n">session1</span><span class="p">:</span> <span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;nn&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="c1">-- 加写锁被阻塞
+</span><span class="c1"></span><span class="mi">4</span><span class="err">、</span><span class="n">session2</span><span class="err">：</span><span class="k">update</span> <span class="n">mylock</span> <span class="kt">set</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;nn&#39;</span> <span class="k">where</span> <span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="c1">-- 加写锁会死锁，不允许操作
+</span><span class="c1"></span><span class="n">ERROR</span> <span class="mi">1213</span> <span class="p">(</span><span class="mi">40001</span><span class="p">):</span> <span class="n">Deadlock</span> <span class="n">found</span> <span class="k">when</span> <span class="n">trying</span> <span class="k">to</span> <span class="n">get</span> <span class="k">lock</span><span class="p">;</span> <span class="n">try</span> <span class="n">restarting</span>
+<span class="n">transaction</span>
+</code></pre></td></tr></table>
 </div>
 </div><h4 id="避免死锁">避免死锁</h4>
 <p>越是轻量的事务，占有越少的锁资源，这样发生死锁的几率就越小
@@ -766,17 +769,6 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
-</svg>
-
-    </a>
-  
-    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
-      title="google"  target="_blank"
-      >
-      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
-  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

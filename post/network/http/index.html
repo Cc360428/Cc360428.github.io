@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.96.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/network/http/" />
@@ -62,14 +62,17 @@
 <meta property="og:title" content="HTTP协议" />
 <meta property="og:description" content="HTTP协议 Hyper Text Transfer Protocol 超文本传输协议 http 消息结构体、请求方法、响应头信息、状态码、content-type http 版本：HTTP/0.9、HTTP/1" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/network/http/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://cc360428.github.io/post/network/http/" />
 <meta property="article:published_time" content="2019-08-20T12:48:54+08:00" />
 <meta property="article:modified_time" content="2019-08-20T12:48:54+08:00" />
-
 <meta itemprop="name" content="HTTP协议">
-<meta itemprop="description" content="HTTP协议 Hyper Text Transfer Protocol 超文本传输协议 http 消息结构体、请求方法、响应头信息、状态码、content-type http 版本：HTTP/0.9、HTTP/1"><meta itemprop="datePublished" content="2019-08-20T12:48:54+08:00" />
-<meta itemprop="dateModified" content="2019-08-20T12:48:54+08:00" />
-<meta itemprop="wordCount" content="4076">
+<meta itemprop="description" content="HTTP协议 Hyper Text Transfer Protocol 超文本传输协议 http 消息结构体、请求方法、响应头信息、状态码、content-type http 版本：HTTP/0.9、HTTP/1">
+<meta itemprop="datePublished" content="2019-08-20T12:48:54&#43;08:00" />
+<meta itemprop="dateModified" content="2019-08-20T12:48:54&#43;08:00" />
+<meta itemprop="wordCount" content="4075">
+
+
+
 <meta itemprop="keywords" content="network," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HTTP协议"/>
 <meta name="twitter:description" content="HTTP协议 Hyper Text Transfer Protocol 超文本传输协议 http 消息结构体、请求方法、响应头信息、状态码、content-type http 版本：HTTP/0.9、HTTP/1"/>
@@ -344,7 +347,7 @@
             <a href="https://cc360428.github.io/categories/computerbasics/"> ComputerBasics </a>
             
           </div>
-        <span class="more-meta"> 约 4076 字 </span>
+        <span class="more-meta"> 约 4075 字 </span>
           <span class="more-meta"> 预计阅读 9 分钟 </span>
 
         
@@ -405,56 +408,56 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">序号</th>
-<th style="text-align:left">方法</th>
-<th style="text-align:left">描述</th>
+<th align="left">序号</th>
+<th align="left">方法</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">GET</td>
-<td style="text-align:left">请求指定的页面信息，并返回实体主体。</td>
+<td align="left">1</td>
+<td align="left">GET</td>
+<td align="left">请求指定的页面信息，并返回实体主体。</td>
 </tr>
 <tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">HEAD</td>
-<td style="text-align:left">类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+<td align="left">2</td>
+<td align="left">HEAD</td>
+<td align="left">类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
 </tr>
 <tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">POST</td>
-<td style="text-align:left">向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和/或已有资源的修改。</td>
+<td align="left">3</td>
+<td align="left">POST</td>
+<td align="left">向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和/或已有资源的修改。</td>
 </tr>
 <tr>
-<td style="text-align:left">4</td>
-<td style="text-align:left">PUT</td>
-<td style="text-align:left">从客户端向服务器传送的数据取代指定的文档的内容。</td>
+<td align="left">4</td>
+<td align="left">PUT</td>
+<td align="left">从客户端向服务器传送的数据取代指定的文档的内容。</td>
 </tr>
 <tr>
-<td style="text-align:left">5</td>
-<td style="text-align:left">DELETE</td>
-<td style="text-align:left">请求服务器删除指定的页面。</td>
+<td align="left">5</td>
+<td align="left">DELETE</td>
+<td align="left">请求服务器删除指定的页面。</td>
 </tr>
 <tr>
-<td style="text-align:left">6</td>
-<td style="text-align:left">CONNECT</td>
-<td style="text-align:left">HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+<td align="left">6</td>
+<td align="left">CONNECT</td>
+<td align="left">HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
 </tr>
 <tr>
-<td style="text-align:left">7</td>
-<td style="text-align:left">OPTIONS</td>
-<td style="text-align:left">允许客户端查看服务器的性能。</td>
+<td align="left">7</td>
+<td align="left">OPTIONS</td>
+<td align="left">允许客户端查看服务器的性能。</td>
 </tr>
 <tr>
-<td style="text-align:left">8</td>
-<td style="text-align:left">TRACE</td>
-<td style="text-align:left">回显服务器收到的请求，主要用于测试或诊断。</td>
+<td align="left">8</td>
+<td align="left">TRACE</td>
+<td align="left">回显服务器收到的请求，主要用于测试或诊断。</td>
 </tr>
 <tr>
-<td style="text-align:left">9</td>
-<td style="text-align:left">PATCH</td>
-<td style="text-align:left">是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+<td align="left">9</td>
+<td align="left">PATCH</td>
+<td align="left">是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
 </tr>
 </tbody>
 </table>
@@ -462,58 +465,58 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">应答头</th>
-<th style="text-align:left">说明</th>
+<th align="left">应答头</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Allow</td>
-<td style="text-align:left">服务器支持哪些请求方法（如GET、POST等）。</td>
+<td align="left">Allow</td>
+<td align="left">服务器支持哪些请求方法（如GET、POST等）。</td>
 </tr>
 <tr>
-<td style="text-align:left">Content-Encoding</td>
-<td style="text-align:left">文档的编码（Encode）方法。只有在解码之后才可以得到Content-Type头指定的内容类型。利用gzip压缩文档能够显著地减少HTML文档的下载时间。Java的GZIPOutputStream可以很方便地进行gzip压缩，但只有Unix上的Netscape和Windows上的IE 4、IE 5才支持它。因此，Servlet应该通过查看Accept-Encoding头（即request.getHeader(&ldquo;Accept-Encoding&rdquo;)）检查浏览器是否支持gzip，为支持gzip的浏览器返回经gzip压缩的HTML页面，为其他浏览器返回普通页面。</td>
+<td align="left">Content-Encoding</td>
+<td align="left">文档的编码（Encode）方法。只有在解码之后才可以得到Content-Type头指定的内容类型。利用gzip压缩文档能够显著地减少HTML文档的下载时间。Java的GZIPOutputStream可以很方便地进行gzip压缩，但只有Unix上的Netscape和Windows上的IE 4、IE 5才支持它。因此，Servlet应该通过查看Accept-Encoding头（即request.getHeader(&ldquo;Accept-Encoding&rdquo;)）检查浏览器是否支持gzip，为支持gzip的浏览器返回经gzip压缩的HTML页面，为其他浏览器返回普通页面。</td>
 </tr>
 <tr>
-<td style="text-align:left">Content-Length</td>
-<td style="text-align:left">表示内容长度。只有当浏览器使用持久HTTP连接时才需要这个数据。如果你想要利用持久连接的优势，可以把输出文档写入 ByteArrayOutputStream，完成后查看其大小，然后把该值放入Content-Length头，最后通过byteArrayStream.writeTo(response.getOutputStream()发送内容。</td>
+<td align="left">Content-Length</td>
+<td align="left">表示内容长度。只有当浏览器使用持久HTTP连接时才需要这个数据。如果你想要利用持久连接的优势，可以把输出文档写入 ByteArrayOutputStream，完成后查看其大小，然后把该值放入Content-Length头，最后通过byteArrayStream.writeTo(response.getOutputStream()发送内容。</td>
 </tr>
 <tr>
-<td style="text-align:left">Content-Type</td>
-<td style="text-align:left">表示后面的文档属于什么MIME类型。Servlet默认为text/plain，但通常需要显式地指定为text/html。由于经常要设置Content-Type，因此HttpServletResponse提供了一个专用的方法setContentType。</td>
+<td align="left">Content-Type</td>
+<td align="left">表示后面的文档属于什么MIME类型。Servlet默认为text/plain，但通常需要显式地指定为text/html。由于经常要设置Content-Type，因此HttpServletResponse提供了一个专用的方法setContentType。</td>
 </tr>
 <tr>
-<td style="text-align:left">Date</td>
-<td style="text-align:left">当前的GMT时间。你可以用setDateHeader来设置这个头以避免转换时间格式的麻烦。</td>
+<td align="left">Date</td>
+<td align="left">当前的GMT时间。你可以用setDateHeader来设置这个头以避免转换时间格式的麻烦。</td>
 </tr>
 <tr>
-<td style="text-align:left">Expires</td>
-<td style="text-align:left">应该在什么时候认为文档已经过期，从而不再缓存它？</td>
+<td align="left">Expires</td>
+<td align="left">应该在什么时候认为文档已经过期，从而不再缓存它？</td>
 </tr>
 <tr>
-<td style="text-align:left">Last-Modified</td>
-<td style="text-align:left">文档的最后改动时间。客户可以通过If-Modified-Since请求头提供一个日期，该请求将被视为一个条件GET，只有改动时间迟于指定时间的文档才会返回，否则返回一个304（Not Modified）状态。Last-Modified也可用setDateHeader方法来设置。</td>
+<td align="left">Last-Modified</td>
+<td align="left">文档的最后改动时间。客户可以通过If-Modified-Since请求头提供一个日期，该请求将被视为一个条件GET，只有改动时间迟于指定时间的文档才会返回，否则返回一个304（Not Modified）状态。Last-Modified也可用setDateHeader方法来设置。</td>
 </tr>
 <tr>
-<td style="text-align:left">Location</td>
-<td style="text-align:left">表示客户应当到哪里去提取文档。Location通常不是直接设置的，而是通过HttpServletResponse的sendRedirect方法，该方法同时设置状态代码为302。</td>
+<td align="left">Location</td>
+<td align="left">表示客户应当到哪里去提取文档。Location通常不是直接设置的，而是通过HttpServletResponse的sendRedirect方法，该方法同时设置状态代码为302。</td>
 </tr>
 <tr>
-<td style="text-align:left">Refresh</td>
-<td style="text-align:left">表示浏览器应该在多少时间之后刷新文档，以秒计。除了刷新当前文档之外，你还可以通过setHeader(&ldquo;Refresh&rdquo;, &ldquo;5; URL=http://host/path&rdquo;)让浏览器读取指定的页面。 注意这种功能通常是通过设置HTML页面HEAD区的＜META HTTP-EQUIV=&ldquo;Refresh&rdquo; CONTENT=&ldquo;5;URL=http://host/path&quot;＞实现，这是因为，自动刷新或重定向对于那些不能使用CGI或Servlet的HTML编写者十分重要。但是，对于Servlet来说，直接设置Refresh头更加方便。  注意Refresh的意义是&quot;N秒之后刷新本页面或访问指定页面&rdquo;，而不是&quot;每隔N秒刷新本页面或访问指定页面&quot;。因此，连续刷新要求每次都发送一个Refresh头，而发送204状态代码则可以阻止浏览器继续刷新，不管是使用Refresh头还是＜META HTTP-EQUIV=&ldquo;Refresh&rdquo; &hellip;＞。  注意Refresh头不属于HTTP 1.1正式规范的一部分，而是一个扩展，但Netscape和IE都支持它。</td>
+<td align="left">Refresh</td>
+<td align="left">表示浏览器应该在多少时间之后刷新文档，以秒计。除了刷新当前文档之外，你还可以通过setHeader(&ldquo;Refresh&rdquo;, &ldquo;5; URL=http://host/path&rdquo;)让浏览器读取指定的页面。 注意这种功能通常是通过设置HTML页面HEAD区的＜META HTTP-EQUIV=&quot;Refresh&rdquo; CONTENT=&quot;5;URL=http://host/path&quot;＞实现，这是因为，自动刷新或重定向对于那些不能使用CGI或Servlet的HTML编写者十分重要。但是，对于Servlet来说，直接设置Refresh头更加方便。  注意Refresh的意义是&quot;N秒之后刷新本页面或访问指定页面&rdquo;，而不是&quot;每隔N秒刷新本页面或访问指定页面&rdquo;。因此，连续刷新要求每次都发送一个Refresh头，而发送204状态代码则可以阻止浏览器继续刷新，不管是使用Refresh头还是＜META HTTP-EQUIV=&quot;Refresh&rdquo; &hellip;＞。  注意Refresh头不属于HTTP 1.1正式规范的一部分，而是一个扩展，但Netscape和IE都支持它。</td>
 </tr>
 <tr>
-<td style="text-align:left">Server</td>
-<td style="text-align:left">服务器名字。Servlet一般不设置这个值，而是由Web服务器自己设置。</td>
+<td align="left">Server</td>
+<td align="left">服务器名字。Servlet一般不设置这个值，而是由Web服务器自己设置。</td>
 </tr>
 <tr>
-<td style="text-align:left">Set-Cookie</td>
-<td style="text-align:left">设置和页面关联的Cookie。Servlet不应使用response.setHeader(&ldquo;Set-Cookie&rdquo;, &hellip;)，而是应使用HttpServletResponse提供的专用方法addCookie。参见下文有关Cookie设置的讨论。</td>
+<td align="left">Set-Cookie</td>
+<td align="left">设置和页面关联的Cookie。Servlet不应使用response.setHeader(&ldquo;Set-Cookie&rdquo;, &hellip;)，而是应使用HttpServletResponse提供的专用方法addCookie。参见下文有关Cookie设置的讨论。</td>
 </tr>
 <tr>
-<td style="text-align:left">WWW-Authenticate</td>
-<td style="text-align:left">客户应该在Authorization头中提供什么类型的授权信息？在包含401（Unauthorized）状态行的应答中这个头是必需的。例如，response.setHeader(&ldquo;WWW-Authenticate&rdquo;, &ldquo;BASIC realm=＼&ldquo;executives＼&rdquo;&quot;)。 注意Servlet一般不进行这方面的处理，而是让Web服务器的专门机制来控制受密码保护页面的访问（例如.htaccess）。</td>
+<td align="left">WWW-Authenticate</td>
+<td align="left">客户应该在Authorization头中提供什么类型的授权信息？在包含401（Unauthorized）状态行的应答中这个头是必需的。例如，response.setHeader(&ldquo;WWW-Authenticate&rdquo;, &ldquo;BASIC realm=＼&ldquo;executives＼&quot;&quot;)。 注意Servlet一般不进行这方面的处理，而是让Web服务器的专门机制来控制受密码保护页面的访问（例如.htaccess）。</td>
 </tr>
 </tbody>
 </table>
@@ -524,30 +527,30 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">分类</th>
-<th style="text-align:left">分类描述</th>
+<th align="left">分类</th>
+<th align="left">分类描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">1**</td>
-<td style="text-align:left">信息，服务器收到请求，需要请求者继续执行操作</td>
+<td align="left">1**</td>
+<td align="left">信息，服务器收到请求，需要请求者继续执行操作</td>
 </tr>
 <tr>
-<td style="text-align:left">2**</td>
-<td style="text-align:left">成功，操作被成功接收并处理</td>
+<td align="left">2**</td>
+<td align="left">成功，操作被成功接收并处理</td>
 </tr>
 <tr>
-<td style="text-align:left">3**</td>
-<td style="text-align:left">重定向，需要进一步的操作以完成请求</td>
+<td align="left">3**</td>
+<td align="left">重定向，需要进一步的操作以完成请求</td>
 </tr>
 <tr>
-<td style="text-align:left">4**</td>
-<td style="text-align:left">客户端错误，请求包含语法错误或无法完成请求</td>
+<td align="left">4**</td>
+<td align="left">客户端错误，请求包含语法错误或无法完成请求</td>
 </tr>
 <tr>
-<td style="text-align:left">5**</td>
-<td style="text-align:left">服务器错误，服务器在处理请求的过程中发生了错误</td>
+<td align="left">5**</td>
+<td align="left">服务器错误，服务器在处理请求的过程中发生了错误</td>
 </tr>
 </tbody>
 </table>
@@ -557,236 +560,236 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">状态码</th>
-<th style="text-align:left">状态码英文名称</th>
-<th style="text-align:left">中文描述</th>
+<th align="left">状态码</th>
+<th align="left">状态码英文名称</th>
+<th align="left">中文描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">100</td>
-<td style="text-align:left">Continue</td>
-<td style="text-align:left">服务器收到了请求的初始部分，并且请客户端继续发送</td>
+<td align="left">100</td>
+<td align="left">Continue</td>
+<td align="left">服务器收到了请求的初始部分，并且请客户端继续发送</td>
 </tr>
 <tr>
-<td style="text-align:left">101</td>
-<td style="text-align:left">Switching Protocols</td>
-<td style="text-align:left">切换协议。服务器根据客户端的请求切换协议。只能切换到更高级的协议，例如，切换到HTTP的新版本协议。扩展（http 请求 <code>websocket</code> 就会提升切换成101）</td>
+<td align="left">101</td>
+<td align="left">Switching Protocols</td>
+<td align="left">切换协议。服务器根据客户端的请求切换协议。只能切换到更高级的协议，例如，切换到HTTP的新版本协议。扩展（http 请求 <code>websocket</code> 就会提升切换成101）</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">200</td>
-<td style="text-align:left">OK</td>
-<td style="text-align:left">请求成功。一般用于GET与POST请求</td>
+<td align="left">200</td>
+<td align="left">OK</td>
+<td align="left">请求成功。一般用于GET与POST请求</td>
 </tr>
 <tr>
-<td style="text-align:left">201</td>
-<td style="text-align:left">Created</td>
-<td style="text-align:left">已创建。成功请求并创建了新的资源</td>
+<td align="left">201</td>
+<td align="left">Created</td>
+<td align="left">已创建。成功请求并创建了新的资源</td>
 </tr>
 <tr>
-<td style="text-align:left">202</td>
-<td style="text-align:left">Accepted</td>
-<td style="text-align:left">已接受。已经接受请求，但未处理完成</td>
+<td align="left">202</td>
+<td align="left">Accepted</td>
+<td align="left">已接受。已经接受请求，但未处理完成</td>
 </tr>
 <tr>
-<td style="text-align:left">203</td>
-<td style="text-align:left">Non-Authoritative Information</td>
-<td style="text-align:left">非授权信息。请求成功。但返回的meta信息不在原始的服务器，而是一个副本</td>
+<td align="left">203</td>
+<td align="left">Non-Authoritative Information</td>
+<td align="left">非授权信息。请求成功。但返回的meta信息不在原始的服务器，而是一个副本</td>
 </tr>
 <tr>
-<td style="text-align:left">204</td>
-<td style="text-align:left">No Content</td>
-<td style="text-align:left">无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档</td>
+<td align="left">204</td>
+<td align="left">No Content</td>
+<td align="left">无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档</td>
 </tr>
 <tr>
-<td style="text-align:left">205</td>
-<td style="text-align:left">Reset Content</td>
-<td style="text-align:left">重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</td>
+<td align="left">205</td>
+<td align="left">Reset Content</td>
+<td align="left">重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</td>
 </tr>
 <tr>
-<td style="text-align:left">206</td>
-<td style="text-align:left">Partial Content</td>
-<td style="text-align:left">部分内容。服务器成功处理了部分GET请求</td>
+<td align="left">206</td>
+<td align="left">Partial Content</td>
+<td align="left">部分内容。服务器成功处理了部分GET请求</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">300</td>
-<td style="text-align:left">Multiple Choices</td>
-<td style="text-align:left">多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择</td>
+<td align="left">300</td>
+<td align="left">Multiple Choices</td>
+<td align="left">多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择</td>
 </tr>
 <tr>
-<td style="text-align:left">301</td>
-<td style="text-align:left">Moved Permanently</td>
-<td style="text-align:left">永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</td>
+<td align="left">301</td>
+<td align="left">Moved Permanently</td>
+<td align="left">永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</td>
 </tr>
 <tr>
-<td style="text-align:left">302</td>
-<td style="text-align:left">Found</td>
-<td style="text-align:left">临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</td>
+<td align="left">302</td>
+<td align="left">Found</td>
+<td align="left">临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</td>
 </tr>
 <tr>
-<td style="text-align:left">303</td>
-<td style="text-align:left">See Other</td>
-<td style="text-align:left">查看其它地址。与301类似。使用GET和POST请求查看</td>
+<td align="left">303</td>
+<td align="left">See Other</td>
+<td align="left">查看其它地址。与301类似。使用GET和POST请求查看</td>
 </tr>
 <tr>
-<td style="text-align:left">304</td>
-<td style="text-align:left">Not Modified</td>
-<td style="text-align:left">未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源</td>
+<td align="left">304</td>
+<td align="left">Not Modified</td>
+<td align="left">未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源</td>
 </tr>
 <tr>
-<td style="text-align:left">305</td>
-<td style="text-align:left">Use Proxy</td>
-<td style="text-align:left">使用代理。所请求的资源必须通过代理访问</td>
+<td align="left">305</td>
+<td align="left">Use Proxy</td>
+<td align="left">使用代理。所请求的资源必须通过代理访问</td>
 </tr>
 <tr>
-<td style="text-align:left">306</td>
-<td style="text-align:left">Unused</td>
-<td style="text-align:left">已经被废弃的HTTP状态码</td>
+<td align="left">306</td>
+<td align="left">Unused</td>
+<td align="left">已经被废弃的HTTP状态码</td>
 </tr>
 <tr>
-<td style="text-align:left">307</td>
-<td style="text-align:left">Temporary Redirect</td>
-<td style="text-align:left">临时重定向。与302类似。使用GET请求重定向</td>
+<td align="left">307</td>
+<td align="left">Temporary Redirect</td>
+<td align="left">临时重定向。与302类似。使用GET请求重定向</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">400</td>
-<td style="text-align:left">Bad Request</td>
-<td style="text-align:left">客户端请求的语法错误，服务器无法理解</td>
+<td align="left">400</td>
+<td align="left">Bad Request</td>
+<td align="left">客户端请求的语法错误，服务器无法理解</td>
 </tr>
 <tr>
-<td style="text-align:left">401</td>
-<td style="text-align:left">Unauthorized</td>
-<td style="text-align:left">请求要求用户的身份认证</td>
+<td align="left">401</td>
+<td align="left">Unauthorized</td>
+<td align="left">请求要求用户的身份认证</td>
 </tr>
 <tr>
-<td style="text-align:left">402</td>
-<td style="text-align:left">Payment Required</td>
-<td style="text-align:left">保留，将来使用</td>
+<td align="left">402</td>
+<td align="left">Payment Required</td>
+<td align="left">保留，将来使用</td>
 </tr>
 <tr>
-<td style="text-align:left">403</td>
-<td style="text-align:left">Forbidden</td>
-<td style="text-align:left">服务器理解请求客户端的请求，但是拒绝执行此请求</td>
+<td align="left">403</td>
+<td align="left">Forbidden</td>
+<td align="left">服务器理解请求客户端的请求，但是拒绝执行此请求</td>
 </tr>
 <tr>
-<td style="text-align:left">404</td>
-<td style="text-align:left">Not Found</td>
-<td style="text-align:left">服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置&quot;您所请求的资源无法找到&quot;的个性页面</td>
+<td align="left">404</td>
+<td align="left">Not Found</td>
+<td align="left">服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置&quot;您所请求的资源无法找到&quot;的个性页面</td>
 </tr>
 <tr>
-<td style="text-align:left">405</td>
-<td style="text-align:left">Method Not Allowed</td>
-<td style="text-align:left">客户端请求中的方法被禁止</td>
+<td align="left">405</td>
+<td align="left">Method Not Allowed</td>
+<td align="left">客户端请求中的方法被禁止</td>
 </tr>
 <tr>
-<td style="text-align:left">406</td>
-<td style="text-align:left">Not Acceptable</td>
-<td style="text-align:left">服务器无法根据客户端请求的内容特性完成请求</td>
+<td align="left">406</td>
+<td align="left">Not Acceptable</td>
+<td align="left">服务器无法根据客户端请求的内容特性完成请求</td>
 </tr>
 <tr>
-<td style="text-align:left">407</td>
-<td style="text-align:left">Proxy Authentication Required</td>
-<td style="text-align:left">请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权</td>
+<td align="left">407</td>
+<td align="left">Proxy Authentication Required</td>
+<td align="left">请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权</td>
 </tr>
 <tr>
-<td style="text-align:left">408</td>
-<td style="text-align:left">Request Time-out</td>
-<td style="text-align:left">服务器等待客户端发送的请求时间过长，超时</td>
+<td align="left">408</td>
+<td align="left">Request Time-out</td>
+<td align="left">服务器等待客户端发送的请求时间过长，超时</td>
 </tr>
 <tr>
-<td style="text-align:left">409</td>
-<td style="text-align:left">Conflict</td>
-<td style="text-align:left">服务器完成客户端的 PUT 请求时可能返回此代码，服务器处理请求时发生了冲突</td>
+<td align="left">409</td>
+<td align="left">Conflict</td>
+<td align="left">服务器完成客户端的 PUT 请求时可能返回此代码，服务器处理请求时发生了冲突</td>
 </tr>
 <tr>
-<td style="text-align:left">410</td>
-<td style="text-align:left">Gone</td>
-<td style="text-align:left">客户端请求的资源已经不存在。410不同于404，如果资源以前有现在被永久删除了可使用410代码，网站设计人员可通过301代码指定资源的新位置</td>
+<td align="left">410</td>
+<td align="left">Gone</td>
+<td align="left">客户端请求的资源已经不存在。410不同于404，如果资源以前有现在被永久删除了可使用410代码，网站设计人员可通过301代码指定资源的新位置</td>
 </tr>
 <tr>
-<td style="text-align:left">411</td>
-<td style="text-align:left">Length Required</td>
-<td style="text-align:left">服务器无法处理客户端发送的不带Content-Length的请求信息</td>
+<td align="left">411</td>
+<td align="left">Length Required</td>
+<td align="left">服务器无法处理客户端发送的不带Content-Length的请求信息</td>
 </tr>
 <tr>
-<td style="text-align:left">412</td>
-<td style="text-align:left">Precondition Failed</td>
-<td style="text-align:left">客户端请求信息的先决条件错误</td>
+<td align="left">412</td>
+<td align="left">Precondition Failed</td>
+<td align="left">客户端请求信息的先决条件错误</td>
 </tr>
 <tr>
-<td style="text-align:left">413</td>
-<td style="text-align:left">Request Entity Too Large</td>
-<td style="text-align:left">由于请求的实体过大，服务器无法处理，因此拒绝请求。为防止客户端的连续请求，服务器可能会关闭连接。如果只是服务器暂时无法处理，则会包含一个Retry-After的响应信息</td>
+<td align="left">413</td>
+<td align="left">Request Entity Too Large</td>
+<td align="left">由于请求的实体过大，服务器无法处理，因此拒绝请求。为防止客户端的连续请求，服务器可能会关闭连接。如果只是服务器暂时无法处理，则会包含一个Retry-After的响应信息</td>
 </tr>
 <tr>
-<td style="text-align:left">414</td>
-<td style="text-align:left">Request-URI Too Large</td>
-<td style="text-align:left">请求的URI过长（URI通常为网址），服务器无法处理</td>
+<td align="left">414</td>
+<td align="left">Request-URI Too Large</td>
+<td align="left">请求的URI过长（URI通常为网址），服务器无法处理</td>
 </tr>
 <tr>
-<td style="text-align:left">415</td>
-<td style="text-align:left">Unsupported Media Type</td>
-<td style="text-align:left">服务器无法处理请求附带的媒体格式</td>
+<td align="left">415</td>
+<td align="left">Unsupported Media Type</td>
+<td align="left">服务器无法处理请求附带的媒体格式</td>
 </tr>
 <tr>
-<td style="text-align:left">416</td>
-<td style="text-align:left">Requested range not satisfiable</td>
-<td style="text-align:left">客户端请求的范围无效</td>
+<td align="left">416</td>
+<td align="left">Requested range not satisfiable</td>
+<td align="left">客户端请求的范围无效</td>
 </tr>
 <tr>
-<td style="text-align:left">417</td>
-<td style="text-align:left">Expectation Failed</td>
-<td style="text-align:left">服务器无法满足Expect的请求头信息</td>
+<td align="left">417</td>
+<td align="left">Expectation Failed</td>
+<td align="left">服务器无法满足Expect的请求头信息</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">500</td>
-<td style="text-align:left">Internal Server Error</td>
-<td style="text-align:left">服务器内部错误，无法完成请求</td>
+<td align="left">500</td>
+<td align="left">Internal Server Error</td>
+<td align="left">服务器内部错误，无法完成请求</td>
 </tr>
 <tr>
-<td style="text-align:left">501</td>
-<td style="text-align:left">Not Implemented</td>
-<td style="text-align:left">服务器不支持请求的功能，无法完成请求</td>
+<td align="left">501</td>
+<td align="left">Not Implemented</td>
+<td align="left">服务器不支持请求的功能，无法完成请求</td>
 </tr>
 <tr>
-<td style="text-align:left">502</td>
-<td style="text-align:left">Bad Gateway</td>
-<td style="text-align:left">作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</td>
+<td align="left">502</td>
+<td align="left">Bad Gateway</td>
+<td align="left">作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</td>
 </tr>
 <tr>
-<td style="text-align:left">503</td>
-<td style="text-align:left">Service Unavailable</td>
-<td style="text-align:left">由于超载或系统维护，服务器暂时的无法处理客户端的请求。延时的长度可包含在服务器的Retry-After头信息中</td>
+<td align="left">503</td>
+<td align="left">Service Unavailable</td>
+<td align="left">由于超载或系统维护，服务器暂时的无法处理客户端的请求。延时的长度可包含在服务器的Retry-After头信息中</td>
 </tr>
 <tr>
-<td style="text-align:left">504</td>
-<td style="text-align:left">Gateway Time-out</td>
-<td style="text-align:left">充当网关或代理的服务器，未及时从远端服务器获取请求</td>
+<td align="left">504</td>
+<td align="left">Gateway Time-out</td>
+<td align="left">充当网关或代理的服务器，未及时从远端服务器获取请求</td>
 </tr>
 <tr>
-<td style="text-align:left">505</td>
-<td style="text-align:left">HTTP Version not supported</td>
-<td style="text-align:left">服务器不支持请求的HTTP协议的版本，无法完成处理</td>
+<td align="left">505</td>
+<td align="left">HTTP Version not supported</td>
+<td align="left">服务器不支持请求的HTTP协议的版本，无法完成处理</td>
 </tr>
 </tbody>
 </table>
@@ -918,17 +921,6 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
-</svg>
-
-    </a>
-  
-    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
-      title="google"  target="_blank"
-      >
-      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
-  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

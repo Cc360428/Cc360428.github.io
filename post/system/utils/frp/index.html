@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.96.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/utils/frp/" />
@@ -61,14 +61,17 @@
 <meta property="og:title" content="frp 内网穿透" />
 <meta property="og:description" content="网络服务映射" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/utils/frp/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/utils/frp/" />
 <meta property="article:published_time" content="2020-03-23T13:32:25+08:00" />
 <meta property="article:modified_time" content="2020-03-23T13:32:25+08:00" />
-
 <meta itemprop="name" content="frp 内网穿透">
-<meta itemprop="description" content="网络服务映射"><meta itemprop="datePublished" content="2020-03-23T13:32:25+08:00" />
-<meta itemprop="dateModified" content="2020-03-23T13:32:25+08:00" />
-<meta itemprop="wordCount" content="1138">
+<meta itemprop="description" content="网络服务映射">
+<meta itemprop="datePublished" content="2020-03-23T13:32:25&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-23T13:32:25&#43;08:00" />
+<meta itemprop="wordCount" content="1139">
+
+
+
 <meta itemprop="keywords" content="frp," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="frp 内网穿透"/>
 <meta name="twitter:description" content="网络服务映射"/>
@@ -343,7 +346,7 @@
             <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
             
           </div>
-        <span class="more-meta"> 约 1138 字 </span>
+        <span class="more-meta"> 约 1139 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -397,7 +400,7 @@
 <h5 id="目录结构">目录结构</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -405,22 +408,24 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master linux<span class="o">]</span><span class="c1"># ll</span>
-</span></span><span class="line"><span class="cl">总用量 <span class="m">11096</span>
-</span></span><span class="line"><span class="cl">-rwxrwxr-x <span class="m">1</span> admin admin <span class="m">11333632</span> 1月   <span class="m">6</span> 16:02 frps
-</span></span><span class="line"><span class="cl">-rw-rw-r-- <span class="m">1</span> admin admin     <span class="m">2518</span> 1月  <span class="m">17</span> 18:41 frps.ini
-</span></span><span class="line"><span class="cl">-rw-rw---- <span class="m">1</span> root  root      <span class="m">2377</span> 1月  <span class="m">17</span> 18:36 frps.log
-</span></span><span class="line"><span class="cl">-rw-rw-r-- <span class="m">1</span> admin admin    <span class="m">11358</span> 1月   <span class="m">6</span> 16:04 LICENSE
-</span></span><span class="line"><span class="cl">drwxrwxr-x <span class="m">2</span> admin admin     <span class="m">4096</span> 1月   <span class="m">6</span> 16:04 systemd
-</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master linux<span class="o">]</span><span class="c1"># </span>
-</span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@k8s-master linux<span class="o">]</span><span class="c1"># ll</span>
+总用量 <span class="m">11096</span>
+-rwxrwxr-x <span class="m">1</span> admin admin <span class="m">11333632</span> 1月   <span class="m">6</span> 16:02 frps
+-rw-rw-r-- <span class="m">1</span> admin admin     <span class="m">2518</span> 1月  <span class="m">17</span> 18:41 frps.ini
+-rw-rw---- <span class="m">1</span> root  root      <span class="m">2377</span> 1月  <span class="m">17</span> 18:36 frps.log
+-rw-rw-r-- <span class="m">1</span> admin admin    <span class="m">11358</span> 1月   <span class="m">6</span> 16:04 LICENSE
+drwxrwxr-x <span class="m">2</span> admin admin     <span class="m">4096</span> 1月   <span class="m">6</span> 16:04 systemd
+<span class="o">[</span>root@k8s-master linux<span class="o">]</span># 
+
+</code></pre></td></tr></table>
 </div>
 </div><h5 id="修改内容">修改内容</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -452,37 +457,37 @@
 </span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>common<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># binde_addr是指定frp内网穿透服务器端监听的IP地址,默认为127.0.0.1，</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#如果使用IPv6地址的话，必须用方括号包括起来，比如 “[::1]:80”, “[ipv6-host]:http” or “[ipv6-host%zone]:80”</span>
-</span></span><span class="line"><span class="cl"><span class="nv">bind_addr</span> <span class="o">=</span> 0.0.0.0
-</span></span><span class="line"><span class="cl"><span class="c1"># bind_port 是frp内网穿透服务器端监听的端口，默认是7000</span>
-</span></span><span class="line"><span class="cl"><span class="nv">bind_port</span> <span class="o">=</span> <span class="m">7000</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#frp内网穿透服务器可以支持虚拟主机的http和https协议，一般我们都用80，</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#可以直接用域名而不用增加端口号，如果使用其它端口，那么客户端也需要配置相同的其他端口。</span>
-</span></span><span class="line"><span class="cl"><span class="nv">vhost_http_port</span> <span class="o">=</span> <span class="m">8380</span>
-</span></span><span class="line"><span class="cl"><span class="nv">vhost_https_port</span> <span class="o">=</span> <span class="m">443</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">dashboard_user</span> <span class="o">=</span> admin  <span class="c1">#管理面板账号</span>
-</span></span><span class="line"><span class="cl"><span class="nv">dashboard_pwd</span> <span class="o">=</span> lichaocheng   <span class="c1">#管理面板密码</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 这个是frp内网穿透服务器的web界面的端口，可以通过http://你的ip:7500查看frp内网穿透服务器端的连接情况，和各个frp内网穿透客户端的连接情况。</span>
-</span></span><span class="line"><span class="cl"><span class="nv">dashboard_port</span> <span class="o">=</span> <span class="m">7500</span>
-</span></span><span class="line"><span class="cl"><span class="nv">auth_token</span> <span class="o">=</span> <span class="m">123</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 方括号内的ssh是代理名称，在同一个frp穿透服务器下的代理名称不能重复，否则不能启动。</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># bind_addr是frp客户端内网的ip，也可以是客户端内网同一局域网下的其他IP</span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span>ssh<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="c1">##### type = tcp</span>
-</span></span><span class="line"><span class="cl"><span class="nv">bind_addr</span> <span class="o">=</span> 0.0.0.0
-</span></span><span class="line"><span class="cl"><span class="nv">listen_port</span> <span class="o">=</span> <span class="m">6000</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>web01<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#http类型的内网穿透，必须设置vhost_http_port，并且所有的http类型的客户端都将通过同一个vhost_http_port访问。</span>
-</span></span><span class="line"><span class="cl"><span class="nb">type</span> <span class="o">=</span> http
-</span></span><span class="line"><span class="cl"><span class="c1"># custom_domains是通过frp服务器端访问客户端的域名，必须输入完整的域名，</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 并且不能是subdomain_host的子域名，否则frp服务不能启动，并且相应的域名需要解析到frp服务器端的公网IP并等待解析生效后，才可以使用。</span>
-</span></span><span class="line"><span class="cl"><span class="nv">custom_domains</span> <span class="o">=</span> zhishi.com
-</span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>common<span class="o">]</span>
+<span class="c1"># binde_addr是指定frp内网穿透服务器端监听的IP地址,默认为127.0.0.1，</span>
+<span class="c1">#如果使用IPv6地址的话，必须用方括号包括起来，比如 “[::1]:80”, “[ipv6-host]:http” or “[ipv6-host%zone]:80”</span>
+<span class="nv">bind_addr</span> <span class="o">=</span> 0.0.0.0
+<span class="c1"># bind_port 是frp内网穿透服务器端监听的端口，默认是7000</span>
+<span class="nv">bind_port</span> <span class="o">=</span> <span class="m">7000</span>
+<span class="c1">#frp内网穿透服务器可以支持虚拟主机的http和https协议，一般我们都用80，</span>
+<span class="c1">#可以直接用域名而不用增加端口号，如果使用其它端口，那么客户端也需要配置相同的其他端口。</span>
+<span class="nv">vhost_http_port</span> <span class="o">=</span> <span class="m">8380</span>
+<span class="nv">vhost_https_port</span> <span class="o">=</span> <span class="m">443</span>
+
+<span class="nv">dashboard_user</span> <span class="o">=</span> admin  <span class="c1">#管理面板账号</span>
+<span class="nv">dashboard_pwd</span> <span class="o">=</span> lichaocheng   <span class="c1">#管理面板密码</span>
+<span class="c1"># 这个是frp内网穿透服务器的web界面的端口，可以通过http://你的ip:7500查看frp内网穿透服务器端的连接情况，和各个frp内网穿透客户端的连接情况。</span>
+<span class="nv">dashboard_port</span> <span class="o">=</span> <span class="m">7500</span>
+<span class="nv">auth_token</span> <span class="o">=</span> <span class="m">123</span>
+
+<span class="c1"># 方括号内的ssh是代理名称，在同一个frp穿透服务器下的代理名称不能重复，否则不能启动。</span>
+<span class="c1"># bind_addr是frp客户端内网的ip，也可以是客户端内网同一局域网下的其他IP</span>
+<span class="o">[</span>ssh<span class="o">]</span>
+<span class="c1">##### type = tcp</span>
+<span class="nv">bind_addr</span> <span class="o">=</span> 0.0.0.0
+<span class="nv">listen_port</span> <span class="o">=</span> <span class="m">6000</span>
+
+<span class="o">[</span>web01<span class="o">]</span>
+<span class="c1">#http类型的内网穿透，必须设置vhost_http_port，并且所有的http类型的客户端都将通过同一个vhost_http_port访问。</span>
+<span class="nb">type</span> <span class="o">=</span> http
+<span class="c1"># custom_domains是通过frp服务器端访问客户端的域名，必须输入完整的域名，</span>
+<span class="c1"># 并且不能是subdomain_host的子域名，否则frp服务不能启动，并且相应的域名需要解析到frp服务器端的公网IP并等待解析生效后，才可以使用。</span>
+<span class="nv">custom_domains</span> <span class="o">=</span> zhishi.com
+</code></pre></td></tr></table>
 </div>
 </div><h4 id="运行方式">运行方式</h4>
 <p><code>./frps -c frps.ini</code></p>
@@ -490,7 +495,7 @@
 <h4 id="目录结构-1">目录结构</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -504,24 +509,24 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Administrator@DESKTOP-DHQ6SHN MINGW64 ~/Desktop/fsdownload/frp_windows_amd64/frp_0.29.1_windows_amd64
-</span></span><span class="line"><span class="cl">$ ll
-</span></span><span class="line"><span class="cl">total <span class="m">21230</span>
-</span></span><span class="line"><span class="cl">-rwxr-xr-x <span class="m">1</span> Administrator <span class="m">197121</span> <span class="m">10482688</span> 11月  <span class="m">2</span> 21:22 frpc.exe*
-</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>      <span class="m">126</span> 11月  <span class="m">2</span> 21:25 frpc.ini
-</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>     <span class="m">7042</span> 11月  <span class="m">2</span> 21:25 frpc_full.ini
-</span></span><span class="line"><span class="cl">-rwxr-xr-x <span class="m">1</span> Administrator <span class="m">197121</span> <span class="m">11220480</span> 11月  <span class="m">2</span> 21:23 frps.exe*
-</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>       <span class="m">26</span> 11月  <span class="m">2</span> 21:25 frps.ini
-</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>     <span class="m">2365</span> 11月  <span class="m">2</span> 21:25 frps_full.ini
-</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>    <span class="m">11358</span> 11月  <span class="m">2</span> 21:25 LICENSE
-</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">1</span> Administrator <span class="m">197121</span>        <span class="m">0</span> 11月  <span class="m">2</span> 21:25 systemd/
-</span></span><span class="line"><span class="cl">Administrator@DESKTOP-DHQ6SHN MINGW64 ~/Desktop/fsdownload/frp_windows_amd64/frp_0.29.1_windows_amd64
-</span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">Administrator@DESKTOP-DHQ6SHN MINGW64 ~/Desktop/fsdownload/frp_windows_amd64/frp_0.29.1_windows_amd64
+$ ll
+total <span class="m">21230</span>
+-rwxr-xr-x <span class="m">1</span> Administrator <span class="m">197121</span> <span class="m">10482688</span> 11月  <span class="m">2</span> 21:22 frpc.exe*
+-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>      <span class="m">126</span> 11月  <span class="m">2</span> 21:25 frpc.ini
+-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>     <span class="m">7042</span> 11月  <span class="m">2</span> 21:25 frpc_full.ini
+-rwxr-xr-x <span class="m">1</span> Administrator <span class="m">197121</span> <span class="m">11220480</span> 11月  <span class="m">2</span> 21:23 frps.exe*
+-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>       <span class="m">26</span> 11月  <span class="m">2</span> 21:25 frps.ini
+-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>     <span class="m">2365</span> 11月  <span class="m">2</span> 21:25 frps_full.ini
+-rw-r--r-- <span class="m">1</span> Administrator <span class="m">197121</span>    <span class="m">11358</span> 11月  <span class="m">2</span> 21:25 LICENSE
+drwxr-xr-x <span class="m">1</span> Administrator <span class="m">197121</span>        <span class="m">0</span> 11月  <span class="m">2</span> 21:25 systemd/
+Administrator@DESKTOP-DHQ6SHN MINGW64 ~/Desktop/fsdownload/frp_windows_amd64/frp_0.29.1_windows_amd64
+</code></pre></td></tr></table>
 </div>
 </div><h4 id="修改内容-1">修改内容</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -541,32 +546,32 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>common<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="nv">server_addr</span> <span class="o">=</span> 60.205.176.110
-</span></span><span class="line"><span class="cl"><span class="nv">server_port</span> <span class="o">=</span> <span class="m">7000</span>
-</span></span><span class="line"><span class="cl"><span class="nv">auth_token</span> <span class="o">=</span> <span class="m">123</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>ssh<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="nb">type</span> <span class="o">=</span> tcp
-</span></span><span class="line"><span class="cl"><span class="nv">local_ip</span> <span class="o">=</span> 127.0.0.1
-</span></span><span class="line"><span class="cl"><span class="nv">local_port</span> <span class="o">=</span> <span class="m">22</span>
-</span></span><span class="line"><span class="cl"><span class="nv">remote_port</span> <span class="o">=</span> <span class="m">6000</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">[</span>web01<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#http类型的内网穿透，必须设置vhost_http_port，</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#并且所有的http类型的客户端都将通过同一个vhost_http_port访问。</span>
-</span></span><span class="line"><span class="cl"><span class="nb">type</span> <span class="o">=</span> http
-</span></span><span class="line"><span class="cl"><span class="nv">local_ip</span> <span class="o">=</span> 127.0.0.1
-</span></span><span class="line"><span class="cl"><span class="nv">local_port</span> <span class="o">=</span> <span class="m">8380</span>
-</span></span><span class="line"><span class="cl"><span class="nv">custom_domains</span> <span class="o">=</span> web.zhishi.com
-</span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>common<span class="o">]</span>
+<span class="nv">server_addr</span> <span class="o">=</span> 60.205.176.110
+<span class="nv">server_port</span> <span class="o">=</span> <span class="m">7000</span>
+<span class="nv">auth_token</span> <span class="o">=</span> <span class="m">123</span>
+
+<span class="o">[</span>ssh<span class="o">]</span>
+<span class="nb">type</span> <span class="o">=</span> tcp
+<span class="nv">local_ip</span> <span class="o">=</span> 127.0.0.1
+<span class="nv">local_port</span> <span class="o">=</span> <span class="m">22</span>
+<span class="nv">remote_port</span> <span class="o">=</span> <span class="m">6000</span>
+
+<span class="o">[</span>web01<span class="o">]</span>
+<span class="c1">#http类型的内网穿透，必须设置vhost_http_port，</span>
+<span class="c1">#并且所有的http类型的客户端都将通过同一个vhost_http_port访问。</span>
+<span class="nb">type</span> <span class="o">=</span> http
+<span class="nv">local_ip</span> <span class="o">=</span> 127.0.0.1
+<span class="nv">local_port</span> <span class="o">=</span> <span class="m">8380</span>
+<span class="nv">custom_domains</span> <span class="o">=</span> web.zhishi.com
+</code></pre></td></tr></table>
 </div>
 </div><h4 id="运行方式-1">运行方式</h4>
 <p><code>./frpc.exe -c frpc.ini</code></p>
 <h3 id="nginx-代理域名映射">nginx 代理域名映射</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -575,14 +580,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server{</span>
-</span></span><span class="line"><span class="cl">    <span class="s">listen</span> <span class="mi">80</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">server_name</span> <span class="s">frp.lichaocheng.top</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">location</span> <span class="s">/</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://0.0.0.0:9000</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">}</span>
-</span></span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">server{</span>
+    <span class="s">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="k">server_name</span> <span class="s">frp.lichaocheng.top</span><span class="p">;</span>
+    <span class="k">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">proxy_pass</span> <span class="s">http://0.0.0.0:9000</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="k">}</span>
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -687,17 +692,6 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
-</svg>
-
-    </a>
-  
-    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
-      title="google"  target="_blank"
-      >
-      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="36" height="36">
-  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>
