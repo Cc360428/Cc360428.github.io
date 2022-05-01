@@ -497,7 +497,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">/src
-  //clien/react/project         项目资源文件，比如，图片 等
+  //client/react/project         项目资源文件，比如，图片 等
   /components     通用组件
   /pages          页面
   /store          mobx 状态仓库
@@ -854,7 +854,7 @@
 <ol>
 <li>在 Login/index.js 中创建登录页面基本结构</li>
 <li>在 Login 目录中创建 index.scss 文件，指定组件样式</li>
-<li>将 logo.png 和 login.png 拷贝到 /clien/react/project 目录中</li>
+<li>将 logo.png 和 login.png 拷贝到 /client/react/project 目录中</li>
 </ol>
 <p><strong>代码实现</strong></p>
 <p><code>pages/Login/index.js</code></p>
@@ -879,7 +879,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Card</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;antd&#39;</span>
-<span class="kr">import</span> <span class="nx">logo</span> <span class="nx">from</span> <span class="s1">&#39;@//clien/react/project/logo.png&#39;</span>
+<span class="kr">import</span> <span class="nx">logo</span> <span class="nx">from</span> <span class="s1">&#39;@//client/react/project/logo.png&#39;</span>
 <span class="kr">import</span> <span class="s1">&#39;./index.scss&#39;</span>
 
 <span class="kr">const</span> <span class="nx">Login</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -936,7 +936,7 @@
   <span class="nt">position</span><span class="nd">:</span> <span class="nt">absolute</span><span class="p">;</span>
   <span class="nt">left</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
   <span class="nt">top</span><span class="nd">:</span> <span class="nt">0</span><span class="p">;</span>
-  <span class="nt">background</span><span class="nd">:</span> <span class="nt">center</span><span class="o">/</span><span class="nt">cover</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;~@//clien/react/project/login.png&#39;</span><span class="o">)</span><span class="p">;</span>
+  <span class="nt">background</span><span class="nd">:</span> <span class="nt">center</span><span class="o">/</span><span class="nt">cover</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;~@//client/react/project/login.png&#39;</span><span class="o">)</span><span class="p">;</span>
 
   <span class="nc">.login-logo</span> <span class="p">{</span>
     <span class="nt">width</span><span class="nd">:</span> <span class="nt">200px</span><span class="p">;</span>
@@ -1469,7 +1469,7 @@
 </div>
 </div><h2 id="9-请求拦截器注入-token">9. 请求拦截器注入 token</h2>
 <p><code>本节目标:</code> 把 token 通过请求拦截器注入到请求头中</p>
-<p><img src="/clien/react/project/token.png" alt="token"></p>
+<p><img src="/client/react/project/token.png" alt="token"></p>
 <blockquote>
 <p>拼接方式：config.headers.Authorization = <code>Bearer ${token}}</code></p>
 </blockquote>
@@ -1795,7 +1795,7 @@
 <span class="nc">.logo</span> <span class="p">{</span>
   <span class="nt">width</span><span class="nd">:</span> <span class="nt">200px</span><span class="p">;</span>
   <span class="nt">height</span><span class="nd">:</span> <span class="nt">60px</span><span class="p">;</span>
-  <span class="nt">background</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;~@//clien/react/project/logo.png&#39;</span><span class="o">)</span> <span class="nt">no-repeat</span> <span class="nt">center</span> <span class="o">/</span> <span class="nt">160px</span>
+  <span class="nt">background</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;~@//client/react/project/logo.png&#39;</span><span class="o">)</span> <span class="nt">no-repeat</span> <span class="nt">center</span> <span class="o">/</span> <span class="nt">160px</span>
     <span class="nt">auto</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -2266,7 +2266,7 @@
 <blockquote>
 <p>说明：为了能够在非组件环境下拿到路由信息，需要我们安装一个 history 包</p>
 </blockquote>
-<p><img src="/clien/react/project/historyoutside.png" alt=""></p>
+<p><img src="/client/react/project/historyoutside.png" alt=""></p>
 <p><strong>实现步骤</strong></p>
 <ol>
 <li>安装：<code>yarn add history</code></li>
@@ -2358,7 +2358,7 @@
 </div>
 </div><h2 id="7-首页-home-图表展示">7. 首页 Home 图表展示</h2>
 <p><code>本节目标:</code> 实现首页 echart 图表封装展示</p>
-<p><img src="/clien/react/project/home.png" alt=""></p>
+<p><img src="/client/react/project/home.png" alt=""></p>
 <p><strong>需求描述：</strong></p>
 <ol>
 <li>使用 eharts 配合 react 封装柱状图组件 Bar</li>
@@ -2519,7 +2519,7 @@
 </div><h1 id="内容管理">内容管理</h1>
 <h2 id="1-筛选区结构">1. 筛选区结构</h2>
 <p><code>本节目标:</code> 能够使用 antd 组件库搭建筛选区域结构</p>
-<p><img src="/clien/react/project/search.png" alt=""></p>
+<p><img src="/client/react/project/search.png" alt=""></p>
 <blockquote>
 <p>重点关注</p>
 <ol>
@@ -2761,7 +2761,7 @@
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Table</span><span class="p">,</span> <span class="nx">Tag</span><span class="p">,</span> <span class="nx">Space</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;antd&#39;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">EditOutlined</span><span class="p">,</span> <span class="nx">DeleteOutlined</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@ant-design/icons&#39;</span>
 
-<span class="kr">import</span> <span class="nx">img404</span> <span class="nx">from</span> <span class="s1">&#39;@//clien/react/project/error.png&#39;</span>
+<span class="kr">import</span> <span class="nx">img404</span> <span class="nx">from</span> <span class="s1">&#39;@//client/react/project/error.png&#39;</span>
 
 <span class="kr">const</span> <span class="nx">Article</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="kr">const</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span>
