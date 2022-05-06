@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/golang/mysql/gorm/" />
@@ -61,17 +61,14 @@
 <meta property="og:title" content="Golang Mysql Gorm" />
 <meta property="og:description" content="Golang orm 对mysql的操作（初始化连接、增加、删除、查找、删除） " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/golang/mysql/gorm/" />
+<meta property="og:url" content="https://cc360428.github.io/post/golang/mysql/gorm/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-03-05T16:02:24+08:00" />
 <meta property="article:modified_time" content="2020-03-05T16:02:24+08:00" />
+
 <meta itemprop="name" content="Golang Mysql Gorm">
-<meta itemprop="description" content="Golang orm 对mysql的操作（初始化连接、增加、删除、查找、删除） ">
-<meta itemprop="datePublished" content="2020-03-05T16:02:24&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-05T16:02:24&#43;08:00" />
+<meta itemprop="description" content="Golang orm 对mysql的操作（初始化连接、增加、删除、查找、删除） "><meta itemprop="datePublished" content="2020-03-05T16:02:24+08:00" />
+<meta itemprop="dateModified" content="2020-03-05T16:02:24+08:00" />
 <meta itemprop="wordCount" content="476">
-
-
-
 <meta itemprop="keywords" content="ORM,golang," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Golang Mysql Gorm"/>
 <meta name="twitter:description" content="Golang orm 对mysql的操作（初始化连接、增加、删除、查找、删除） "/>
@@ -141,7 +138,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -300,7 +297,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -387,7 +384,7 @@ gorm 对数据库的操作</p>
 <h3 id="实例连接">实例（连接）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -433,124 +430,124 @@ gorm 对数据库的操作</p>
 </span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span> <span class="c1">// logs
-</span><span class="c1"></span>	<span class="s">&#34;github.com/jinzhu/gorm&#34;</span>                         <span class="c1">// gorm
-</span><span class="c1"></span>	<span class="nx">_</span> <span class="s">&#34;github.com/jinzhu/gorm/dialects/mysql&#34;</span>        <span class="c1">// 导入初始化包
-</span><span class="c1"></span><span class="p">)</span>
-
-<span class="kd">type</span> <span class="nx">Product</span> <span class="kd">struct</span> <span class="p">{</span>
-  <span class="nx">gorm</span><span class="p">.</span><span class="nx">Model</span>
-  <span class="nx">Code</span> <span class="kt">string</span>
-  <span class="nx">Price</span> <span class="kt">uint</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">db</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">gorm</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="nx">Databases</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span> <span class="c1">// 连接属性 （mysql）
-</span><span class="c1"></span>		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%s:%s@tcp(%s)/%s?charset=utf8&amp;parseTime=True&amp;loc=Local&#34;</span><span class="p">,</span>
-			<span class="nx">Databases</span><span class="p">.</span><span class="nx">User</span><span class="p">,</span>     <span class="c1">// 用户名
-</span><span class="c1"></span>			<span class="nx">Databases</span><span class="p">.</span><span class="nx">Password</span><span class="p">,</span> <span class="c1">// 密码
-</span><span class="c1"></span>			<span class="nx">Databases</span><span class="p">.</span><span class="nx">Host</span><span class="p">,</span>     <span class="c1">// 端口号
-</span><span class="c1"></span>			<span class="nx">Databases</span><span class="p">.</span><span class="nx">Name</span><span class="p">))</span> <span class="c1">// 数据库名字
-</span><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="s">&#34;mysql 连接错误！&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
-	<span class="p">}</span>
-	 <span class="k">defer</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-
-  <span class="c1">// Migrate the schema
-</span><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">AutoMigrate</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">Product</span><span class="p">{})</span>
-
-  <span class="c1">// 创建
-</span><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">Product</span><span class="p">{</span><span class="nx">Code</span><span class="p">:</span> <span class="s">&#34;L1212&#34;</span><span class="p">,</span> <span class="nx">Price</span><span class="p">:</span> <span class="mi">1000</span><span class="p">})</span>
-
-  <span class="c1">// 读取
-</span><span class="c1"></span>  <span class="kd">var</span> <span class="nx">product</span> <span class="nx">Product</span>
-  <span class="nx">db</span><span class="p">.</span><span class="nf">First</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">product</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// 查询id为1的product
-</span><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">First</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">product</span><span class="p">,</span> <span class="s">&#34;code = ?&#34;</span><span class="p">,</span> <span class="s">&#34;L1212&#34;</span><span class="p">)</span> <span class="c1">// 查询code为l1212的product
-</span><span class="c1"></span>
-  <span class="c1">// 更新 - 更新product的price为2000
-</span><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">Model</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">product</span><span class="p">).</span><span class="nf">Update</span><span class="p">(</span><span class="s">&#34;Price&#34;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
-
-  <span class="c1">// 删除 - 删除product
-</span><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">Delete</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">product</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/Cc360428/HelpPackage/UtilsHelp/logs&#34;</span> <span class="c1">// logs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="s">&#34;github.com/jinzhu/gorm&#34;</span>                         <span class="c1">// gorm
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">_</span> <span class="s">&#34;github.com/jinzhu/gorm/dialects/mysql&#34;</span>        <span class="c1">// 导入初始化包
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Product</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">gorm</span><span class="p">.</span><span class="nx">Model</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Code</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Price</span> <span class="kt">uint</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">db</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">gorm</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="nx">Databases</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span> <span class="c1">// 连接属性 （mysql）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%s:%s@tcp(%s)/%s?charset=utf8&amp;parseTime=True&amp;loc=Local&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">Databases</span><span class="p">.</span><span class="nx">User</span><span class="p">,</span>     <span class="c1">// 用户名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">Databases</span><span class="p">.</span><span class="nx">Password</span><span class="p">,</span> <span class="c1">// 密码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">Databases</span><span class="p">.</span><span class="nx">Host</span><span class="p">,</span>     <span class="c1">// 端口号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">Databases</span><span class="p">.</span><span class="nx">Name</span><span class="p">))</span> <span class="c1">// 数据库名字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">logs</span><span class="p">.</span><span class="nf">Error</span><span class="p">(</span><span class="s">&#34;mysql 连接错误！&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	 <span class="k">defer</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Migrate the schema
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">AutoMigrate</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">Product</span><span class="p">{})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 创建
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">Product</span><span class="p">{</span><span class="nx">Code</span><span class="p">:</span> <span class="s">&#34;L1212&#34;</span><span class="p">,</span> <span class="nx">Price</span><span class="p">:</span> <span class="mi">1000</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 读取
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kd">var</span> <span class="nx">product</span> <span class="nx">Product</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">db</span><span class="p">.</span><span class="nf">First</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">product</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// 查询id为1的product
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">First</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">product</span><span class="p">,</span> <span class="s">&#34;code = ?&#34;</span><span class="p">,</span> <span class="s">&#34;L1212&#34;</span><span class="p">)</span> <span class="c1">// 查询code为l1212的product
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 更新 - 更新product的price为2000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">Model</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">product</span><span class="p">).</span><span class="nf">Update</span><span class="p">(</span><span class="s">&#34;Price&#34;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 删除 - 删除product
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">db</span><span class="p">.</span><span class="nf">Delete</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">product</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="模型定义-struct">模型定义 struct</h3>
 <h4 id="struct-标记">Struct 标记</h4>
 <table>
 <thead>
 <tr>
-<th align="right">标记</th>
-<th align="left">实义</th>
+<th style="text-align:right">标记</th>
+<th style="text-align:left">实义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="right">column</td>
-<td align="left">指定列名</td>
+<td style="text-align:right">column</td>
+<td style="text-align:left">指定列名</td>
 </tr>
 <tr>
-<td align="right">type</td>
-<td align="left">~~数据类型</td>
+<td style="text-align:right">type</td>
+<td style="text-align:left">~~数据类型</td>
 </tr>
 <tr>
-<td align="right">size</td>
-<td align="left">~~大小，默认255</td>
+<td style="text-align:right">size</td>
+<td style="text-align:left">~~大小，默认255</td>
 </tr>
 <tr>
-<td align="right">primary_key</td>
-<td align="left">~~主键</td>
+<td style="text-align:right">primary_key</td>
+<td style="text-align:left">~~主键</td>
 </tr>
 <tr>
-<td align="right">unique</td>
-<td align="left">~~唯一</td>
+<td style="text-align:right">unique</td>
+<td style="text-align:left">~~唯一</td>
 </tr>
 <tr>
-<td align="right">default</td>
-<td align="left">~~默认值</td>
+<td style="text-align:right">default</td>
+<td style="text-align:left">~~默认值</td>
 </tr>
 <tr>
-<td align="right">precision</td>
-<td align="left">~~精度</td>
+<td style="text-align:right">precision</td>
+<td style="text-align:left">~~精度</td>
 </tr>
 <tr>
-<td align="right">not null</td>
-<td align="left">~~非空</td>
+<td style="text-align:right">not null</td>
+<td style="text-align:left">~~非空</td>
 </tr>
 <tr>
-<td align="right">auto_increment</td>
-<td align="left">~~自增类型</td>
+<td style="text-align:right">auto_increment</td>
+<td style="text-align:left">~~自增类型</td>
 </tr>
 <tr>
-<td align="right">index</td>
-<td align="left">创建索引</td>
+<td style="text-align:right">index</td>
+<td style="text-align:left">创建索引</td>
 </tr>
 <tr>
-<td align="right">unique_index</td>
-<td align="left">~~唯一索引</td>
+<td style="text-align:right">unique_index</td>
+<td style="text-align:left">~~唯一索引</td>
 </tr>
 <tr>
-<td align="right">embedde</td>
-<td align="left">将结构体设置为嵌入</td>
+<td style="text-align:right">embedde</td>
+<td style="text-align:left">将结构体设置为嵌入</td>
 </tr>
 <tr>
-<td align="right">embedde_prefix</td>
-<td align="left">设置嵌入结构的前缀</td>
+<td style="text-align:right">embedde_prefix</td>
+<td style="text-align:left">设置嵌入结构的前缀</td>
 </tr>
 <tr>
-<td align="right">-</td>
-<td align="left">忽略此字段</td>
+<td style="text-align:right">-</td>
+<td style="text-align:left">忽略此字段</td>
 </tr>
 </tbody>
 </table>
 <h4 id="user-struct-test">User struct Test</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -562,17 +559,17 @@ gorm 对数据库的操作</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">User</span> <span class="kd">struct</span><span class="p">{</span>
-    <span class="nx">gorm</span><span class="p">.</span><span class="nx">Model</span> <span class="c1">//  自增id 添加时间 修改时间 软删除时间
-</span><span class="c1"></span>    <span class="nx">Name</span> <span class="kt">string</span> <span class="s">`gorm:&#34;type:varchar(100);unique_index&#34;`</span> <span class="c1">// 类型 varchar 唯一索引
-</span><span class="c1"></span>    <span class="nx">Address</span> <span class="kt">string</span> <span class="s">`gorm:&#34;size(22)&#34;`</span><span class="c1">// 设置大小
-</span><span class="c1"></span>    <span class="nx">Image</span> <span class="kt">string</span> <span class="s">`gorm:&#34;unique;not null&#34;`</span> <span class="c1">// 唯一 且不为空
-</span><span class="c1"></span>    <span class="nx">Age</span> <span class="kt">int</span> <span class="s">`gorm:&#34;index:age&#34;`</span> <span class="c1">// 给age字段创建age索引
-</span><span class="c1"></span>    <span class="nx">Demo</span> <span class="kt">string</span> <span class="s">`gorm:&#34;-&#34;`</span> <span class="c1">// 忽略该字段
-</span><span class="c1"></span>    <span class="nx">Test</span> <span class="kt">int</span> <span class="s">`gorm:&#34;auto_increment&#34;`</span>  <span class="c1">// 设置自增
-</span><span class="c1"></span>    
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">User</span> <span class="kd">struct</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">gorm</span><span class="p">.</span><span class="nx">Model</span> <span class="c1">//  自增id 添加时间 修改时间 软删除时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">Name</span> <span class="kt">string</span> <span class="s">`gorm:&#34;type:varchar(100);unique_index&#34;`</span> <span class="c1">// 类型 varchar 唯一索引
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">Address</span> <span class="kt">string</span> <span class="s">`gorm:&#34;size(22)&#34;`</span><span class="c1">// 设置大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">Image</span> <span class="kt">string</span> <span class="s">`gorm:&#34;unique;not null&#34;`</span> <span class="c1">// 唯一 且不为空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">Age</span> <span class="kt">int</span> <span class="s">`gorm:&#34;index:age&#34;`</span> <span class="c1">// 给age字段创建age索引
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">Demo</span> <span class="kt">string</span> <span class="s">`gorm:&#34;-&#34;`</span> <span class="c1">// 忽略该字段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">Test</span> <span class="kt">int</span> <span class="s">`gorm:&#34;auto_increment&#34;`</span>  <span class="c1">// 设置自增
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -594,7 +591,7 @@ gorm 对数据库的操作</p>
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://cc360428.gitee.io/blog" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -678,6 +675,17 @@ gorm 对数据库的操作</p>
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

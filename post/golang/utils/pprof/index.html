@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/golang/utils/pprof/" />
@@ -62,17 +62,14 @@
 <meta property="og:title" content="Pprof" />
 <meta property="og:description" content="Go pprof And Prometheus 在代码中使用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 import ( ... _ &#34;net/http/pprof&#34; &#34;github.com/prometheus/client_golang/prometheus/promhttp&#34; ... ) func main() { go func() { http.Handle(&#34;/metrics&#34;, promhttp.Handler()) _ = http.ListenAndServe(&#34;14111&#34;, nil) // &#39;14111&#39; 建议使用flag }() } 浏览器查看 http:/172.13.5.17:14111/debug/pprof/ 使用命令行查看" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/golang/utils/pprof/" />
+<meta property="og:url" content="https://cc360428.github.io/post/golang/utils/pprof/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-17T18:01:33+08:00" />
 <meta property="article:modified_time" content="2021-03-17T18:01:33+08:00" />
+
 <meta itemprop="name" content="Pprof">
-<meta itemprop="description" content="Go pprof And Prometheus 在代码中使用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 import ( ... _ &#34;net/http/pprof&#34; &#34;github.com/prometheus/client_golang/prometheus/promhttp&#34; ... ) func main() { go func() { http.Handle(&#34;/metrics&#34;, promhttp.Handler()) _ = http.ListenAndServe(&#34;14111&#34;, nil) // &#39;14111&#39; 建议使用flag }() } 浏览器查看 http:/172.13.5.17:14111/debug/pprof/ 使用命令行查看">
-<meta itemprop="datePublished" content="2021-03-17T18:01:33&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-17T18:01:33&#43;08:00" />
-<meta itemprop="wordCount" content="657">
-
-
-
+<meta itemprop="description" content="Go pprof And Prometheus 在代码中使用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 import ( ... _ &#34;net/http/pprof&#34; &#34;github.com/prometheus/client_golang/prometheus/promhttp&#34; ... ) func main() { go func() { http.Handle(&#34;/metrics&#34;, promhttp.Handler()) _ = http.ListenAndServe(&#34;14111&#34;, nil) // &#39;14111&#39; 建议使用flag }() } 浏览器查看 http:/172.13.5.17:14111/debug/pprof/ 使用命令行查看"><meta itemprop="datePublished" content="2021-03-17T18:01:33+08:00" />
+<meta itemprop="dateModified" content="2021-03-17T18:01:33+08:00" />
+<meta itemprop="wordCount" content="656">
 <meta itemprop="keywords" content="golang,GoAdvanced,GoUtils," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pprof"/>
 <meta name="twitter:description" content="Go pprof And Prometheus 在代码中使用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 import ( ... _ &#34;net/http/pprof&#34; &#34;github.com/prometheus/client_golang/prometheus/promhttp&#34; ... ) func main() { go func() { http.Handle(&#34;/metrics&#34;, promhttp.Handler()) _ = http.ListenAndServe(&#34;14111&#34;, nil) // &#39;14111&#39; 建议使用flag }() } 浏览器查看 http:/172.13.5.17:14111/debug/pprof/ 使用命令行查看"/>
@@ -142,7 +139,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -301,7 +298,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -347,7 +344,7 @@
             <a href="https://cc360428.github.io/categories/server/"> Server </a>
             
           </div>
-        <span class="more-meta"> 约 657 字 </span>
+        <span class="more-meta"> 约 656 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -383,7 +380,7 @@
 <h2 id="在代码中使用">在代码中使用</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -400,22 +397,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">import</span> <span class="p">(</span>
-  <span class="o">...</span>
-	<span class="nx">_</span> <span class="s">&#34;net/http/pprof&#34;</span>
-  <span class="s">&#34;github.com/prometheus/client_golang/prometheus/promhttp&#34;</span>
-  <span class="o">...</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-  
- 	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-		<span class="nx">http</span><span class="p">.</span><span class="nf">Handle</span><span class="p">(</span><span class="s">&#34;/metrics&#34;</span><span class="p">,</span> <span class="nx">promhttp</span><span class="p">.</span><span class="nf">Handler</span><span class="p">())</span>
-		<span class="nx">_</span> <span class="p">=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;14111&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">// &#39;14111&#39; 建议使用flag
-</span><span class="c1"></span>	<span class="p">}()</span>
-  
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="o">...</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span> <span class="s">&#34;net/http/pprof&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s">&#34;github.com/prometheus/client_golang/prometheus/promhttp&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"> 	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">http</span><span class="p">.</span><span class="nf">Handle</span><span class="p">(</span><span class="s">&#34;/metrics&#34;</span><span class="p">,</span> <span class="nx">promhttp</span><span class="p">.</span><span class="nf">Handler</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">_</span> <span class="p">=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;14111&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">// &#39;14111&#39; 建议使用flag
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}()</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="浏览器查看">浏览器查看</h2>
 <blockquote>
@@ -425,7 +422,7 @@
 <h3 id="使用命令行查看所有">使用命令行查看所有</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -488,74 +485,72 @@
 </span><span class="lnt">61
 </span><span class="lnt">62
 </span><span class="lnt">63
-</span><span class="lnt">64
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">go tool pprof http://172.13.5.17:14611/debug/pprof/profile  <span class="c1"># 查看profile</span>
-
-<span class="o">(</span>pprof<span class="o">)</span> top
-Showing nodes accounting <span class="k">for</span> 3170ms, 64.69% of 4900ms total
-Dropped <span class="m">260</span> nodes <span class="o">(</span>cum &lt;<span class="o">=</span> 24.50ms<span class="o">)</span>
-Showing top <span class="m">10</span> nodes out of <span class="m">207</span>
-      flat  flat%   sum%        cum   cum%
-    1180ms 24.08% 24.08%     1180ms 24.08%  runtime.futex
-     560ms 11.43% 35.51%      600ms 12.24%  syscall.Syscall
-     460ms  9.39% 44.90%      460ms  9.39%  runtime.epollwait
-     370ms  7.55% 52.45%      370ms  7.55%  runtime.usleep
-     220ms  4.49% 56.94%      300ms  6.12%  runtime.scanobject
-      90ms  1.84% 58.78%       90ms  1.84%  runtime.lock
-      80ms  1.63% 60.41%       80ms  1.63%  runtime.step
-      70ms  1.43% 61.84%     1590ms 32.45%  runtime.findrunnable
-      70ms  1.43% 63.27%       90ms  1.84%  runtime.nanotime <span class="o">(</span>inline<span class="o">)</span>
-      70ms  1.43% 64.69%       70ms  1.43%  runtime.siftdownTimer
-<span class="o">(</span>pprof<span class="o">)</span> 
-
-go tool pprof http://172.13.5.17:14611/debug/pprof/heap  <span class="c1"># heap 查看那部分代码占比 比较高</span>
--------------------------------- top 
-<span class="o">(</span>pprof<span class="o">)</span> top         
-Showing nodes accounting <span class="k">for</span> 28238.94kB, 80.86% of 34922.60kB total
-Showing top <span class="m">10</span> nodes out of <span class="m">151</span>
-      flat  flat%   sum%        cum   cum%
-10752.80kB 30.79% 30.79% 12752.05kB 36.52%  time.NewTimer
- 3598.02kB 10.30% 41.09%  3598.02kB 10.30%  bufio.NewReaderSize
- 3598.02kB 10.30% 51.40%  3598.02kB 10.30%  bufio.NewWriterSize
- 2200.03kB  6.30% 57.70%  2200.03kB  6.30%  google.golang.org/protobuf/internal/strs.<span class="o">(</span>*Builder<span class="o">)</span>.AppendFullName
- 2054.76kB  5.88% 63.58%  2054.76kB  5.88%  git.huoys.com/indonesia/game/chess/qiuqiu/logic.<span class="o">(</span>*CardList<span class="o">)</span>.shuffle
- 1999.25kB  5.72% 69.30%  1999.25kB  5.72%  time.startTimer
- 1536.56kB  4.40% 73.70%  1536.56kB  4.40%  runtime.malg
- 1052.25kB  3.01% 76.72%  1052.25kB  3.01%  sync.<span class="o">(</span>*Map<span class="o">)</span>.dirtyLocked
-  902.59kB  2.58% 79.30%   902.59kB  2.58%  compress/flate.NewWriter
-  544.67kB  1.56% 80.86%   544.67kB  1.56%  bytes.makeSlice
-<span class="o">(</span>pprof<span class="o">)</span> 
-
--------------------------------- list 查看方法
-<span class="o">(</span>pprof<span class="o">)</span> list shuffle
-Total: 34.10MB
-<span class="nv">ROUTINE</span> <span class="o">========================</span> git.huoys.com/indonesia/game/chess/qiuqiu/logic.<span class="o">(</span>*CardList<span class="o">)</span>.shuffle in /go/src/git.huoys.com/indonesia/game/chess/qiuqiu/logic/card_help.go
-    2.01MB     2.01MB <span class="o">(</span>flat, cum<span class="o">)</span>  5.88% of Total
-         .          .      8:
-         .          .      9:// 洗牌
-         .          .     10:func <span class="o">(</span>p *CardList<span class="o">)</span> shuffle<span class="o">()</span> <span class="o">{</span>
-         .          .     11:   p.cardsMap <span class="o">=</span> make<span class="o">(</span>map<span class="o">[</span>xproto.CardID<span class="o">]</span>GoQiuQiu<span class="o">)</span>
-         .          .     12:   <span class="k">for</span> _, v :<span class="o">=</span> range _goQiuQiu <span class="o">{</span>
-    2.01MB     2.01MB     13:           p.cardsMap<span class="o">[</span>v.CardId<span class="o">]</span> <span class="o">=</span> v
-         .          .     14:   <span class="o">}</span>
-         .          .     15:<span class="o">}</span>
-         .          .     16:
-         .          .     17:// DispatchHandCardDebug Debug 发牌模式
-         .          .     18:func <span class="o">(</span>p *CardList<span class="o">)</span> DispatchHandCardDebug<span class="o">(</span>cardIds ...int<span class="o">)</span> *HandCard <span class="o">{</span>
-<span class="o">(</span>pprof<span class="o">)</span> 
--------------------------------- web （需要安装graphviz命令才能使用生成一个.svg 浏览器打开即可）
-
-
-
--------------------------------- 下面几个都可以使用 top list web <span class="p">;</span>或者可以直接 <span class="nb">help</span> 查看帮助帮助命令
-go tool pprof http://172.13.5.17:14611/debug/pprof/allocs
-go tool pprof http://172.13.5.17:14611/debug/pprof/goroutine 
-go tool pprof http://172.13.5.17:14611/debug/pprof/mutex
-go tool pprof http://172.13.5.17:14611/debug/pprof/block
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go tool pprof http://172.13.5.17:14611/debug/pprof/profile  <span class="c1"># 查看profile</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">(</span>pprof<span class="o">)</span> top
+</span></span><span class="line"><span class="cl">Showing nodes accounting <span class="k">for</span> 3170ms, 64.69% of 4900ms total
+</span></span><span class="line"><span class="cl">Dropped <span class="m">260</span> nodes <span class="o">(</span>cum &lt;<span class="o">=</span> 24.50ms<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Showing top <span class="m">10</span> nodes out of <span class="m">207</span>
+</span></span><span class="line"><span class="cl">      flat  flat%   sum%        cum   cum%
+</span></span><span class="line"><span class="cl">    1180ms 24.08% 24.08%     1180ms 24.08%  runtime.futex
+</span></span><span class="line"><span class="cl">     560ms 11.43% 35.51%      600ms 12.24%  syscall.Syscall
+</span></span><span class="line"><span class="cl">     460ms  9.39% 44.90%      460ms  9.39%  runtime.epollwait
+</span></span><span class="line"><span class="cl">     370ms  7.55% 52.45%      370ms  7.55%  runtime.usleep
+</span></span><span class="line"><span class="cl">     220ms  4.49% 56.94%      300ms  6.12%  runtime.scanobject
+</span></span><span class="line"><span class="cl">      90ms  1.84% 58.78%       90ms  1.84%  runtime.lock
+</span></span><span class="line"><span class="cl">      80ms  1.63% 60.41%       80ms  1.63%  runtime.step
+</span></span><span class="line"><span class="cl">      70ms  1.43% 61.84%     1590ms 32.45%  runtime.findrunnable
+</span></span><span class="line"><span class="cl">      70ms  1.43% 63.27%       90ms  1.84%  runtime.nanotime <span class="o">(</span>inline<span class="o">)</span>
+</span></span><span class="line"><span class="cl">      70ms  1.43% 64.69%       70ms  1.43%  runtime.siftdownTimer
+</span></span><span class="line"><span class="cl"><span class="o">(</span>pprof<span class="o">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">go tool pprof http://172.13.5.17:14611/debug/pprof/heap  <span class="c1"># heap 查看那部分代码占比 比较高</span>
+</span></span><span class="line"><span class="cl">-------------------------------- top 
+</span></span><span class="line"><span class="cl"><span class="o">(</span>pprof<span class="o">)</span> top         
+</span></span><span class="line"><span class="cl">Showing nodes accounting <span class="k">for</span> 28238.94kB, 80.86% of 34922.60kB total
+</span></span><span class="line"><span class="cl">Showing top <span class="m">10</span> nodes out of <span class="m">151</span>
+</span></span><span class="line"><span class="cl">      flat  flat%   sum%        cum   cum%
+</span></span><span class="line"><span class="cl">10752.80kB 30.79% 30.79% 12752.05kB 36.52%  time.NewTimer
+</span></span><span class="line"><span class="cl"> 3598.02kB 10.30% 41.09%  3598.02kB 10.30%  bufio.NewReaderSize
+</span></span><span class="line"><span class="cl"> 3598.02kB 10.30% 51.40%  3598.02kB 10.30%  bufio.NewWriterSize
+</span></span><span class="line"><span class="cl"> 2200.03kB  6.30% 57.70%  2200.03kB  6.30%  google.golang.org/protobuf/internal/strs.<span class="o">(</span>*Builder<span class="o">)</span>.AppendFullName
+</span></span><span class="line"><span class="cl"> 2054.76kB  5.88% 63.58%  2054.76kB  5.88%  git.huoys.com/indonesia/game/chess/qiuqiu/logic.<span class="o">(</span>*CardList<span class="o">)</span>.shuffle
+</span></span><span class="line"><span class="cl"> 1999.25kB  5.72% 69.30%  1999.25kB  5.72%  time.startTimer
+</span></span><span class="line"><span class="cl"> 1536.56kB  4.40% 73.70%  1536.56kB  4.40%  runtime.malg
+</span></span><span class="line"><span class="cl"> 1052.25kB  3.01% 76.72%  1052.25kB  3.01%  sync.<span class="o">(</span>*Map<span class="o">)</span>.dirtyLocked
+</span></span><span class="line"><span class="cl">  902.59kB  2.58% 79.30%   902.59kB  2.58%  compress/flate.NewWriter
+</span></span><span class="line"><span class="cl">  544.67kB  1.56% 80.86%   544.67kB  1.56%  bytes.makeSlice
+</span></span><span class="line"><span class="cl"><span class="o">(</span>pprof<span class="o">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-------------------------------- list 查看方法
+</span></span><span class="line"><span class="cl"><span class="o">(</span>pprof<span class="o">)</span> list shuffle
+</span></span><span class="line"><span class="cl">Total: 34.10MB
+</span></span><span class="line"><span class="cl"><span class="nv">ROUTINE</span> <span class="o">========================</span> git.huoys.com/indonesia/game/chess/qiuqiu/logic.<span class="o">(</span>*CardList<span class="o">)</span>.shuffle in /go/src/git.huoys.com/indonesia/game/chess/qiuqiu/logic/card_help.go
+</span></span><span class="line"><span class="cl">    2.01MB     2.01MB <span class="o">(</span>flat, cum<span class="o">)</span>  5.88% of Total
+</span></span><span class="line"><span class="cl">         .          .      8:
+</span></span><span class="line"><span class="cl">         .          .      9:// 洗牌
+</span></span><span class="line"><span class="cl">         .          .     10:func <span class="o">(</span>p *CardList<span class="o">)</span> shuffle<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">         .          .     11:   p.cardsMap <span class="o">=</span> make<span class="o">(</span>map<span class="o">[</span>xproto.CardID<span class="o">]</span>GoQiuQiu<span class="o">)</span>
+</span></span><span class="line"><span class="cl">         .          .     12:   <span class="k">for</span> _, v :<span class="o">=</span> range _goQiuQiu <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    2.01MB     2.01MB     13:           p.cardsMap<span class="o">[</span>v.CardId<span class="o">]</span> <span class="o">=</span> v
+</span></span><span class="line"><span class="cl">         .          .     14:   <span class="o">}</span>
+</span></span><span class="line"><span class="cl">         .          .     15:<span class="o">}</span>
+</span></span><span class="line"><span class="cl">         .          .     16:
+</span></span><span class="line"><span class="cl">         .          .     17:// DispatchHandCardDebug Debug 发牌模式
+</span></span><span class="line"><span class="cl">         .          .     18:func <span class="o">(</span>p *CardList<span class="o">)</span> DispatchHandCardDebug<span class="o">(</span>cardIds ...int<span class="o">)</span> *HandCard <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">(</span>pprof<span class="o">)</span> 
+</span></span><span class="line"><span class="cl">-------------------------------- web （需要安装graphviz命令才能使用生成一个.svg 浏览器打开即可）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-------------------------------- 下面几个都可以使用 top list web <span class="p">;</span>或者可以直接 <span class="nb">help</span> 查看帮助帮助命令
+</span></span><span class="line"><span class="cl">go tool pprof http://172.13.5.17:14611/debug/pprof/allocs
+</span></span><span class="line"><span class="cl">go tool pprof http://172.13.5.17:14611/debug/pprof/goroutine 
+</span></span><span class="line"><span class="cl">go tool pprof http://172.13.5.17:14611/debug/pprof/mutex
+</span></span><span class="line"><span class="cl">go tool pprof http://172.13.5.17:14611/debug/pprof/block
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="使用浏览器直接查看">使用浏览器直接查看</h3>
 <ul>
@@ -619,7 +614,7 @@ go tool pprof http://172.13.5.17:14611/debug/pprof/block
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://cc360428.gitee.io/blog" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -704,6 +699,17 @@ go tool pprof http://172.13.5.17:14611/debug/pprof/block
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

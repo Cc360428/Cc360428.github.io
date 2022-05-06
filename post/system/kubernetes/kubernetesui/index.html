@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/kubernetes/kubernetesui/" />
@@ -61,17 +61,14 @@
 <meta property="og:title" content="Kubernetes UI" />
 <meta property="og:description" content="kubernets UI" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/kubernetes/kubernetesui/" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/kubernetes/kubernetesui/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-17T17:45:54+08:00" />
 <meta property="article:modified_time" content="2021-03-17T17:45:54+08:00" />
+
 <meta itemprop="name" content="Kubernetes UI">
-<meta itemprop="description" content="kubernets UI">
-<meta itemprop="datePublished" content="2021-03-17T17:45:54&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-17T17:45:54&#43;08:00" />
-<meta itemprop="wordCount" content="679">
-
-
-
+<meta itemprop="description" content="kubernets UI"><meta itemprop="datePublished" content="2021-03-17T17:45:54+08:00" />
+<meta itemprop="dateModified" content="2021-03-17T17:45:54+08:00" />
+<meta itemprop="wordCount" content="680">
 <meta itemprop="keywords" content="Kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes UI"/>
 <meta name="twitter:description" content="kubernets UI"/>
@@ -141,7 +138,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -300,7 +297,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -346,7 +343,7 @@
             <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
             
           </div>
-        <span class="more-meta"> 约 679 字 </span>
+        <span class="more-meta"> 约 680 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -381,18 +378,18 @@
       <h3 id="kubernetes-ui">kubernetes UI</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">kubectl apply -f kuboard-v3.yaml
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl apply -f kuboard-v3.yaml
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="访问">访问</h3>
 <p><code>http://172.13.8.15:30080/kuboard/settings/ui</code></p>
 <h3 id="kuboard-v3yaml">kuboard-v3.yaml</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -696,309 +693,309 @@
 </span><span class="lnt">302
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
-</span><span class="w"></span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>Namespace<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard<span class="w">
-</span><span class="w">
-</span><span class="w"></span>---<span class="w">
-</span><span class="w"></span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ConfigMap<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard-v3-config<span class="w">
-</span><span class="w">  </span><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>kuboard<span class="w">
-</span><span class="w"></span><span class="k">data</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="c"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-built-in.html</span><span class="w">
-</span><span class="w">  </span><span class="c"># [common]</span><span class="w">
-</span><span class="w">  </span><span class="k">KUBOARD_SERVER_NODE_PORT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;30080&#39;</span><span class="w">
-</span><span class="w">  </span><span class="k">KUBOARD_AGENT_SERVER_UDP_PORT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;30081&#39;</span><span class="w">
-</span><span class="w">  </span><span class="k">KUBOARD_AGENT_SERVER_TCP_PORT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;30081&#39;</span><span class="w">
-</span><span class="w">  </span><span class="k">KUBOARD_SERVER_LOGRUS_LEVEL</span><span class="p">:</span><span class="w"> </span>info<span class="w">  </span><span class="c"># error / debug / trace</span><span class="w">
-</span><span class="w">  </span><span class="c"># KUBOARD_AGENT_KEY 是 Agent 与 Kuboard 通信时的密钥，请修改为一个任意的包含字母、数字的32位字符串，此密钥变更后，需要删除 Kuboard Agent 重新导入。</span><span class="w">
-</span><span class="w">  </span><span class="k">KUBOARD_AGENT_KEY</span><span class="p">:</span><span class="w"> </span>32b7d6572c6255211b4eec9009e4a816<span class="w">
-</span><span class="w">  </span><span class="k">KUBOARD_AGENT_IMAG</span><span class="p">:</span><span class="w"> </span>eipwork/kuboard-agent<span class="w">
-</span><span class="w">  </span><span class="k">KUBOARD_QUESTDB_IMAGE</span><span class="p">:</span><span class="w"> </span>questdb/questdb<span class="p">:</span><span class="m">6.0.4</span><span class="w">
-</span><span class="w">
-</span><span class="w">  </span><span class="c"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-gitlab.html</span><span class="w">
-</span><span class="w">  </span><span class="c"># [gitlab login]</span><span class="w">
-</span><span class="w">  </span><span class="c"># KUBOARD_LOGIN_TYPE: &#34;gitlab&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># KUBOARD_ROOT_USER: &#34;your-user-name-in-gitlab&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># GITLAB_BASE_URL: &#34;http://gitlab.mycompany.com&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># GITLAB_APPLICATION_ID: &#34;7c10882aa46810a0402d17c66103894ac5e43d6130b81c17f7f2d8ae182040b5&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># GITLAB_CLIENT_SECRET: &#34;77c149bd3a4b6870bffa1a1afaf37cba28a1817f4cf518699065f5a8fe958889&#34;</span><span class="w">
-</span><span class="w">  
-</span><span class="w">  </span><span class="c"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-github.html</span><span class="w">
-</span><span class="w">  </span><span class="c"># [github login]</span><span class="w">
-</span><span class="w">  </span><span class="c"># KUBOARD_LOGIN_TYPE: &#34;github&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># KUBOARD_ROOT_USER: &#34;your-user-name-in-github&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># GITHUB_CLIENT_ID: &#34;17577d45e4de7dad88e0&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># GITHUB_CLIENT_SECRET: &#34;ff738553a8c7e9ad39569c8d02c1d85ec19115a7&#34;</span><span class="w">
-</span><span class="w">
-</span><span class="w">  </span><span class="c"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-ldap.html</span><span class="w">
-</span><span class="w">  </span><span class="c"># [ldap login]</span><span class="w">
-</span><span class="w">  </span><span class="c"># KUBOARD_LOGIN_TYPE: &#34;ldap&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># KUBOARD_ROOT_USER: &#34;your-user-name-in-ldap&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_HOST: &#34;ldap-ip-address:389&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_BIND_DN: &#34;cn=admin,dc=example,dc=org&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_BIND_PASSWORD: &#34;admin&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_BASE_DN: &#34;dc=example,dc=org&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_FILTER: &#34;(objectClass=posixAccount)&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_ID_ATTRIBUTE: &#34;uid&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_USER_NAME_ATTRIBUTE: &#34;uid&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_EMAIL_ATTRIBUTE: &#34;mail&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_DISPLAY_NAME_ATTRIBUTE: &#34;cn&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_GROUP_SEARCH_BASE_DN: &#34;dc=example,dc=org&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_GROUP_SEARCH_FILTER: &#34;(objectClass=posixGroup)&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_USER_MACHER_USER_ATTRIBUTE: &#34;gidNumber&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_USER_MACHER_GROUP_ATTRIBUTE: &#34;gidNumber&#34;</span><span class="w">
-</span><span class="w">  </span><span class="c"># LDAP_GROUP_NAME_ATTRIBUTE: &#34;cn&#34;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span>---<span class="w">
-</span><span class="w"></span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ServiceAccount<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard-boostrap<span class="w">
-</span><span class="w">  </span><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>kuboard<span class="w">
-</span><span class="w">
-</span><span class="w"></span>---<span class="w">
-</span><span class="w"></span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>rbac.authorization.k8s.io/v1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ClusterRoleBinding<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard-boostrap-crb<span class="w">
-</span><span class="w"></span><span class="k">roleRef</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">apiGroup</span><span class="p">:</span><span class="w"> </span>rbac.authorization.k8s.io<span class="w">
-</span><span class="w">  </span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ClusterRole<span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>cluster-admin<span class="w">
-</span><span class="w"></span><span class="k">subjects</span><span class="p">:</span><span class="w">
-</span><span class="w"></span>- <span class="k">kind</span><span class="p">:</span><span class="w"> </span>ServiceAccount<span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard-boostrap<span class="w">
-</span><span class="w">  </span><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>kuboard<span class="w">
-</span><span class="w">
-</span><span class="w"></span>---<span class="w">
-</span><span class="w"></span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>apps/v1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>DaemonSet<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">labels</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span>kuboard-etcd<span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard-etcd<span class="w">
-</span><span class="w">  </span><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>kuboard<span class="w">
-</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">revisionHistoryLimit</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
-</span><span class="w">  </span><span class="k">selector</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">matchLabels</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span>kuboard-etcd<span class="w">
-</span><span class="w">  </span><span class="k">template</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">labels</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span>kuboard-etcd<span class="w">
-</span><span class="w">    </span><span class="k">spec</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">affinity</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">nodeAffinity</span><span class="p">:</span><span class="w">
-</span><span class="w">          </span><span class="k">requiredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span><span class="k">nodeSelectorTerms</span><span class="p">:</span><span class="w">
-</span><span class="w">              </span>- <span class="k">matchExpressions</span><span class="p">:</span><span class="w">
-</span><span class="w">                  </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span>node-role.kubernetes.io/master<span class="w">
-</span><span class="w">                    </span><span class="k">operator</span><span class="p">:</span><span class="w"> </span>Exists<span class="w">
-</span><span class="w">              </span>- <span class="k">matchExpressions</span><span class="p">:</span><span class="w">
-</span><span class="w">                  </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span>node-role.kubernetes.io/control-plane<span class="w">
-</span><span class="w">                    </span><span class="k">operator</span><span class="p">:</span><span class="w"> </span>Exists<span class="w">
-</span><span class="w">              </span>- <span class="k">matchExpressions</span><span class="p">:</span><span class="w">
-</span><span class="w">                  </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span>k8s.kuboard.cn/role<span class="w">
-</span><span class="w">                    </span><span class="k">operator</span><span class="p">:</span><span class="w"> </span>In<span class="w">
-</span><span class="w">                    </span><span class="k">values</span><span class="p">:</span><span class="w">
-</span><span class="w">                      </span>- etcd<span class="w">
-</span><span class="w">      </span><span class="k">containers</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="k">env</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>HOSTNAME<span class="w">
-</span><span class="w">              </span><span class="k">valueFrom</span><span class="p">:</span><span class="w">
-</span><span class="w">                </span><span class="k">fieldRef</span><span class="p">:</span><span class="w">
-</span><span class="w">                  </span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="w">                  </span><span class="k">fieldPath</span><span class="p">:</span><span class="w"> </span>spec.nodeName<span class="w">
-</span><span class="w">            </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>HOSTIP<span class="w">
-</span><span class="w">              </span><span class="k">valueFrom</span><span class="p">:</span><span class="w">
-</span><span class="w">                </span><span class="k">fieldRef</span><span class="p">:</span><span class="w">
-</span><span class="w">                  </span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="w">                  </span><span class="k">fieldPath</span><span class="p">:</span><span class="w"> </span>status.hostIP<span class="w">
-</span><span class="w">          </span><span class="k">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;eipwork/etcd-host:3.4.16-1&#39;</span><span class="w">
-</span><span class="w">          </span><span class="k">imagePullPolicy</span><span class="p">:</span><span class="w"> </span>Always<span class="w">
-</span><span class="w">          </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>etcd<span class="w">
-</span><span class="w">          </span><span class="k">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span>- <span class="k">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">2381</span><span class="w">
-</span><span class="w">              </span><span class="k">hostPort</span><span class="p">:</span><span class="w"> </span><span class="m">2381</span><span class="w">
-</span><span class="w">              </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>server<span class="w">
-</span><span class="w">              </span><span class="k">protocol</span><span class="p">:</span><span class="w"> </span>TCP<span class="w">
-</span><span class="w">            </span>- <span class="k">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">2382</span><span class="w">
-</span><span class="w">              </span><span class="k">hostPort</span><span class="p">:</span><span class="w"> </span><span class="m">2382</span><span class="w">
-</span><span class="w">              </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>peer<span class="w">
-</span><span class="w">              </span><span class="k">protocol</span><span class="p">:</span><span class="w"> </span>TCP<span class="w">
-</span><span class="w">          </span><span class="k">livenessProbe</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span><span class="k">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
-</span><span class="w">            </span><span class="k">httpGet</span><span class="p">:</span><span class="w">
-</span><span class="w">              </span><span class="k">path</span><span class="p">:</span><span class="w"> </span>/health<span class="w">
-</span><span class="w">              </span><span class="k">port</span><span class="p">:</span><span class="w"> </span><span class="m">2381</span><span class="w">
-</span><span class="w">              </span><span class="k">scheme</span><span class="p">:</span><span class="w"> </span>HTTP<span class="w">
-</span><span class="w">            </span><span class="k">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="m">30</span><span class="w">
-</span><span class="w">            </span><span class="k">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
-</span><span class="w">            </span><span class="k">successThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">            </span><span class="k">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">          </span><span class="k">volumeMounts</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span>- <span class="k">mountPath</span><span class="p">:</span><span class="w"> </span>/data<span class="w">
-</span><span class="w">              </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>data<span class="w">
-</span><span class="w">      </span><span class="k">dnsPolicy</span><span class="p">:</span><span class="w"> </span>ClusterFirst<span class="w">
-</span><span class="w">      </span><span class="k">hostNetwork</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w">      </span><span class="k">restartPolicy</span><span class="p">:</span><span class="w"> </span>Always<span class="w">
-</span><span class="w">      </span><span class="k">serviceAccount</span><span class="p">:</span><span class="w"> </span>kuboard-boostrap<span class="w">
-</span><span class="w">      </span><span class="k">serviceAccountName</span><span class="p">:</span><span class="w"> </span>kuboard-boostrap<span class="w">
-</span><span class="w">      </span><span class="k">tolerations</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span>node-role.kubernetes.io/master<span class="w">
-</span><span class="w">          </span><span class="k">operator</span><span class="p">:</span><span class="w"> </span>Exists<span class="w">
-</span><span class="w">        </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span>node-role.kubernetes.io/control-plane<span class="w">
-</span><span class="w">          </span><span class="k">operator</span><span class="p">:</span><span class="w"> </span>Exists<span class="w">
-</span><span class="w">      </span><span class="k">volumes</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="k">hostPath</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span><span class="k">path</span><span class="p">:</span><span class="w"> </span>/usr/share/kuboard/etcd<span class="w">
-</span><span class="w">          </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>data<span class="w">
-</span><span class="w">  </span><span class="k">updateStrategy</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">rollingUpdate</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">maxUnavailable</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">    </span><span class="k">type</span><span class="p">:</span><span class="w"> </span>RollingUpdate<span class="w">
-</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span>---<span class="w">
-</span><span class="w"></span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>apps/v1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>Deployment<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">annotations</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
-</span><span class="w">  </span><span class="k">labels</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span>kuboard-v3<span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard-v3<span class="w">
-</span><span class="w">  </span><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>kuboard<span class="w">
-</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">replicas</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">  </span><span class="k">revisionHistoryLimit</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
-</span><span class="w">  </span><span class="k">selector</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">matchLabels</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span>kuboard-v3<span class="w">
-</span><span class="w">  </span><span class="k">template</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">labels</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span>kuboard-v3<span class="w">
-</span><span class="w">    </span><span class="k">spec</span><span class="p">:</span><span class="w">
-</span><span class="w">      </span><span class="k">affinity</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">nodeAffinity</span><span class="p">:</span><span class="w">
-</span><span class="w">          </span><span class="k">preferredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span>- <span class="k">preference</span><span class="p">:</span><span class="w">
-</span><span class="w">                </span><span class="k">matchExpressions</span><span class="p">:</span><span class="w">
-</span><span class="w">                  </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span>node-role.kubernetes.io/master<span class="w">
-</span><span class="w">                    </span><span class="k">operator</span><span class="p">:</span><span class="w"> </span>Exists<span class="w">
-</span><span class="w">              </span><span class="k">weight</span><span class="p">:</span><span class="w"> </span><span class="m">100</span><span class="w">
-</span><span class="w">            </span>- <span class="k">preference</span><span class="p">:</span><span class="w">
-</span><span class="w">                </span><span class="k">matchExpressions</span><span class="p">:</span><span class="w">
-</span><span class="w">                  </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span>node-role.kubernetes.io/control-plane<span class="w">
-</span><span class="w">                    </span><span class="k">operator</span><span class="p">:</span><span class="w"> </span>Exists<span class="w">
-</span><span class="w">              </span><span class="k">weight</span><span class="p">:</span><span class="w"> </span><span class="m">100</span><span class="w">
-</span><span class="w">      </span><span class="k">containers</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="k">env</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>HOSTIP<span class="w">
-</span><span class="w">              </span><span class="k">valueFrom</span><span class="p">:</span><span class="w">
-</span><span class="w">                </span><span class="k">fieldRef</span><span class="p">:</span><span class="w">
-</span><span class="w">                  </span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="w">                  </span><span class="k">fieldPath</span><span class="p">:</span><span class="w"> </span>status.hostIP<span class="w">
-</span><span class="w">            </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>HOSTNAME<span class="w">
-</span><span class="w">              </span><span class="k">valueFrom</span><span class="p">:</span><span class="w">
-</span><span class="w">                </span><span class="k">fieldRef</span><span class="p">:</span><span class="w">
-</span><span class="w">                  </span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="w">                  </span><span class="k">fieldPath</span><span class="p">:</span><span class="w"> </span>spec.nodeName<span class="w">
-</span><span class="w">          </span><span class="k">envFrom</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span>- <span class="k">configMapRef</span><span class="p">:</span><span class="w">
-</span><span class="w">                </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard-v3-config<span class="w">
-</span><span class="w">          </span><span class="k">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;eipwork/kuboard:v3&#39;</span><span class="w">
-</span><span class="w">          </span><span class="k">imagePullPolicy</span><span class="p">:</span><span class="w"> </span>Always<span class="w">
-</span><span class="w">          </span><span class="k">livenessProbe</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span><span class="k">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
-</span><span class="w">            </span><span class="k">httpGet</span><span class="p">:</span><span class="w">
-</span><span class="w">              </span><span class="k">path</span><span class="p">:</span><span class="w"> </span>/kuboard-resources/version.json<span class="w">
-</span><span class="w">              </span><span class="k">port</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
-</span><span class="w">              </span><span class="k">scheme</span><span class="p">:</span><span class="w"> </span>HTTP<span class="w">
-</span><span class="w">            </span><span class="k">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="m">30</span><span class="w">
-</span><span class="w">            </span><span class="k">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
-</span><span class="w">            </span><span class="k">successThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">            </span><span class="k">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">          </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard<span class="w">
-</span><span class="w">          </span><span class="k">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span>- <span class="k">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
-</span><span class="w">              </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>web<span class="w">
-</span><span class="w">              </span><span class="k">protocol</span><span class="p">:</span><span class="w"> </span>TCP<span class="w">
-</span><span class="w">            </span>- <span class="k">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">443</span><span class="w">
-</span><span class="w">              </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>https<span class="w">
-</span><span class="w">              </span><span class="k">protocol</span><span class="p">:</span><span class="w"> </span>TCP<span class="w">
-</span><span class="w">            </span>- <span class="k">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
-</span><span class="w">              </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>peer<span class="w">
-</span><span class="w">              </span><span class="k">protocol</span><span class="p">:</span><span class="w"> </span>TCP<span class="w">
-</span><span class="w">            </span>- <span class="k">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
-</span><span class="w">              </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>peer-u<span class="w">
-</span><span class="w">              </span><span class="k">protocol</span><span class="p">:</span><span class="w"> </span>UDP<span class="w">
-</span><span class="w">          </span><span class="k">readinessProbe</span><span class="p">:</span><span class="w">
-</span><span class="w">            </span><span class="k">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
-</span><span class="w">            </span><span class="k">httpGet</span><span class="p">:</span><span class="w">
-</span><span class="w">              </span><span class="k">path</span><span class="p">:</span><span class="w"> </span>/kuboard-resources/version.json<span class="w">
-</span><span class="w">              </span><span class="k">port</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
-</span><span class="w">              </span><span class="k">scheme</span><span class="p">:</span><span class="w"> </span>HTTP<span class="w">
-</span><span class="w">            </span><span class="k">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="m">30</span><span class="w">
-</span><span class="w">            </span><span class="k">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
-</span><span class="w">            </span><span class="k">successThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">            </span><span class="k">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
-</span><span class="w">          </span><span class="k">resources</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
-</span><span class="w">          </span><span class="c"># startupProbe:</span><span class="w">
-</span><span class="w">          </span><span class="c">#   failureThreshold: 20</span><span class="w">
-</span><span class="w">          </span><span class="c">#   httpGet:</span><span class="w">
-</span><span class="w">          </span><span class="c">#     path: /kuboard-resources/version.json</span><span class="w">
-</span><span class="w">          </span><span class="c">#     port: 80</span><span class="w">
-</span><span class="w">          </span><span class="c">#     scheme: HTTP</span><span class="w">
-</span><span class="w">          </span><span class="c">#   initialDelaySeconds: 5</span><span class="w">
-</span><span class="w">          </span><span class="c">#   periodSeconds: 10</span><span class="w">
-</span><span class="w">          </span><span class="c">#   successThreshold: 1</span><span class="w">
-</span><span class="w">          </span><span class="c">#   timeoutSeconds: 1</span><span class="w">
-</span><span class="w">      </span><span class="k">dnsPolicy</span><span class="p">:</span><span class="w"> </span>ClusterFirst<span class="w">
-</span><span class="w">      </span><span class="k">restartPolicy</span><span class="p">:</span><span class="w"> </span>Always<span class="w">
-</span><span class="w">      </span><span class="k">serviceAccount</span><span class="p">:</span><span class="w"> </span>kuboard-boostrap<span class="w">
-</span><span class="w">      </span><span class="k">serviceAccountName</span><span class="p">:</span><span class="w"> </span>kuboard-boostrap<span class="w">
-</span><span class="w">      </span><span class="k">tolerations</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span>- <span class="k">key</span><span class="p">:</span><span class="w"> </span>node-role.kubernetes.io/master<span class="w">
-</span><span class="w">          </span><span class="k">operator</span><span class="p">:</span><span class="w"> </span>Exists<span class="w">
-</span><span class="w">
-</span><span class="w"></span>---<span class="w">
-</span><span class="w"></span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>Service<span class="w">
-</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">annotations</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
-</span><span class="w">  </span><span class="k">labels</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span>kuboard-v3<span class="w">
-</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>kuboard-v3<span class="w">
-</span><span class="w">  </span><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>kuboard<span class="w">
-</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">ports</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>web<span class="w">
-</span><span class="w">      </span><span class="k">nodePort</span><span class="p">:</span><span class="w"> </span><span class="m">30080</span><span class="w">
-</span><span class="w">      </span><span class="k">port</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
-</span><span class="w">      </span><span class="k">protocol</span><span class="p">:</span><span class="w"> </span>TCP<span class="w">
-</span><span class="w">      </span><span class="k">targetPort</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>tcp<span class="w">
-</span><span class="w">      </span><span class="k">nodePort</span><span class="p">:</span><span class="w"> </span><span class="m">30081</span><span class="w">
-</span><span class="w">      </span><span class="k">port</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
-</span><span class="w">      </span><span class="k">protocol</span><span class="p">:</span><span class="w"> </span>TCP<span class="w">
-</span><span class="w">      </span><span class="k">targetPort</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>udp<span class="w">
-</span><span class="w">      </span><span class="k">nodePort</span><span class="p">:</span><span class="w"> </span><span class="m">30081</span><span class="w">
-</span><span class="w">      </span><span class="k">port</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
-</span><span class="w">      </span><span class="k">protocol</span><span class="p">:</span><span class="w"> </span>UDP<span class="w">
-</span><span class="w">      </span><span class="k">targetPort</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
-</span><span class="w">  </span><span class="k">selector</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span>kuboard-v3<span class="w">
-</span><span class="w">  </span><span class="k">sessionAffinity</span><span class="p">:</span><span class="w"> </span>None<span class="w">
-</span><span class="w">  </span><span class="k">type</span><span class="p">:</span><span class="w"> </span>NodePort<span class="w">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Namespace</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ConfigMap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-v3-config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">data</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-built-in.html</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># [common]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">KUBOARD_SERVER_NODE_PORT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;30080&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">KUBOARD_AGENT_SERVER_UDP_PORT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;30081&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">KUBOARD_AGENT_SERVER_TCP_PORT</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;30081&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">KUBOARD_SERVER_LOGRUS_LEVEL</span><span class="p">:</span><span class="w"> </span><span class="l">info </span><span class="w"> </span><span class="c"># error / debug / trace</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># KUBOARD_AGENT_KEY 是 Agent 与 Kuboard 通信时的密钥，请修改为一个任意的包含字母、数字的32位字符串，此密钥变更后，需要删除 Kuboard Agent 重新导入。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">KUBOARD_AGENT_KEY</span><span class="p">:</span><span class="w"> </span><span class="l">32b7d6572c6255211b4eec9009e4a816</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">KUBOARD_AGENT_IMAG</span><span class="p">:</span><span class="w"> </span><span class="l">eipwork/kuboard-agent</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">KUBOARD_QUESTDB_IMAGE</span><span class="p">:</span><span class="w"> </span><span class="l">questdb/questdb:6.0.4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-gitlab.html</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># [gitlab login]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># KUBOARD_LOGIN_TYPE: &#34;gitlab&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># KUBOARD_ROOT_USER: &#34;your-user-name-in-gitlab&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># GITLAB_BASE_URL: &#34;http://gitlab.mycompany.com&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># GITLAB_APPLICATION_ID: &#34;7c10882aa46810a0402d17c66103894ac5e43d6130b81c17f7f2d8ae182040b5&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># GITLAB_CLIENT_SECRET: &#34;77c149bd3a4b6870bffa1a1afaf37cba28a1817f4cf518699065f5a8fe958889&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-github.html</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># [github login]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># KUBOARD_LOGIN_TYPE: &#34;github&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># KUBOARD_ROOT_USER: &#34;your-user-name-in-github&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># GITHUB_CLIENT_ID: &#34;17577d45e4de7dad88e0&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># GITHUB_CLIENT_SECRET: &#34;ff738553a8c7e9ad39569c8d02c1d85ec19115a7&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-ldap.html</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># [ldap login]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># KUBOARD_LOGIN_TYPE: &#34;ldap&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># KUBOARD_ROOT_USER: &#34;your-user-name-in-ldap&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_HOST: &#34;ldap-ip-address:389&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_BIND_DN: &#34;cn=admin,dc=example,dc=org&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_BIND_PASSWORD: &#34;admin&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_BASE_DN: &#34;dc=example,dc=org&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_FILTER: &#34;(objectClass=posixAccount)&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_ID_ATTRIBUTE: &#34;uid&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_USER_NAME_ATTRIBUTE: &#34;uid&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_EMAIL_ATTRIBUTE: &#34;mail&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_DISPLAY_NAME_ATTRIBUTE: &#34;cn&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_GROUP_SEARCH_BASE_DN: &#34;dc=example,dc=org&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_GROUP_SEARCH_FILTER: &#34;(objectClass=posixGroup)&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_USER_MACHER_USER_ATTRIBUTE: &#34;gidNumber&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_USER_MACHER_GROUP_ATTRIBUTE: &#34;gidNumber&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># LDAP_GROUP_NAME_ATTRIBUTE: &#34;cn&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ServiceAccount</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-boostrap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">rbac.authorization.k8s.io/v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ClusterRoleBinding</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-boostrap-crb</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">roleRef</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l">rbac.authorization.k8s.io</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ClusterRole</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">cluster-admin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">subjects</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ServiceAccount</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-boostrap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">DaemonSet</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-etcd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-etcd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">revisionHistoryLimit</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-etcd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-etcd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">affinity</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">nodeAffinity</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">requiredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">nodeSelectorTerms</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span>- <span class="nt">matchExpressions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">node-role.kubernetes.io/master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">Exists</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span>- <span class="nt">matchExpressions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">node-role.kubernetes.io/control-plane</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">Exists</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span>- <span class="nt">matchExpressions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">k8s.kuboard.cn/role</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">In</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">values</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                      </span>- <span class="l">etcd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">containers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">env</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">HOSTNAME</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l">spec.nodeName</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">HOSTIP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l">status.hostIP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;eipwork/etcd-host:3.4.16-1&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">Always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">etcd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">2381</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">hostPort</span><span class="p">:</span><span class="w"> </span><span class="m">2381</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">TCP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">2382</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">hostPort</span><span class="p">:</span><span class="w"> </span><span class="m">2382</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">peer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">TCP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">livenessProbe</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">httpGet</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/health</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">2381</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l">HTTP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="m">30</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">successThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l">/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">dnsPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">ClusterFirst</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hostNetwork</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">Always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">serviceAccount</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-boostrap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-boostrap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">tolerations</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">node-role.kubernetes.io/master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">Exists</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">node-role.kubernetes.io/control-plane</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">Exists</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">hostPath</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/usr/share/kuboard/etcd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">updateStrategy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">rollingUpdate</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">maxUnavailable</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">RollingUpdate</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">revisionHistoryLimit</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">affinity</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">nodeAffinity</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">preferredDuringSchedulingIgnoredDuringExecution</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">preference</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">matchExpressions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">node-role.kubernetes.io/master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">Exists</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">100</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">preference</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">matchExpressions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">node-role.kubernetes.io/control-plane</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">Exists</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">100</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">containers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">env</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">HOSTIP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l">status.hostIP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">HOSTNAME</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">fieldRef</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l">spec.nodeName</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">envFrom</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">configMapRef</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-v3-config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;eipwork/kuboard:v3&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">Always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">livenessProbe</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">httpGet</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/kuboard-resources/version.json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l">HTTP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="m">30</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">successThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">TCP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">443</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">https</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">TCP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">peer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">TCP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">peer-u</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">UDP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">readinessProbe</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">httpGet</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/kuboard-resources/version.json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l">HTTP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="m">30</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">successThreshold</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">timeoutSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c"># startupProbe:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#   failureThreshold: 20</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#   httpGet:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#     path: /kuboard-resources/version.json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#     port: 80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#     scheme: HTTP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#   initialDelaySeconds: 5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#   periodSeconds: 10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#   successThreshold: 1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="c">#   timeoutSeconds: 1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">dnsPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">ClusterFirst</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">Always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">serviceAccount</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-boostrap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-boostrap</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">tolerations</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">node-role.kubernetes.io/master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="l">Exists</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">nodePort</span><span class="p">:</span><span class="w"> </span><span class="m">30080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">TCP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">tcp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">nodePort</span><span class="p">:</span><span class="w"> </span><span class="m">30081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">TCP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">udp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">nodePort</span><span class="p">:</span><span class="w"> </span><span class="m">30081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l">UDP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="m">10081</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">k8s.kuboard.cn/name</span><span class="p">:</span><span class="w"> </span><span class="l">kuboard-v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">sessionAffinity</span><span class="p">:</span><span class="w"> </span><span class="l">None</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">NodePort</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -1020,7 +1017,7 @@
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://cc360428.gitee.io/blog" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -1103,6 +1100,17 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

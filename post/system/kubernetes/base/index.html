@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/kubernetes/base/" />
@@ -61,17 +61,14 @@
 <meta property="og:title" content="Kubernetes 部署" />
 <meta property="og:description" content="kubernets 前期准备" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/kubernetes/base/" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/kubernetes/base/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-17T16:43:33+08:00" />
 <meta property="article:modified_time" content="2021-03-17T16:43:33+08:00" />
+
 <meta itemprop="name" content="Kubernetes 部署">
-<meta itemprop="description" content="kubernets 前期准备">
-<meta itemprop="datePublished" content="2021-03-17T16:43:33&#43;08:00" />
-<meta itemprop="dateModified" content="2021-03-17T16:43:33&#43;08:00" />
+<meta itemprop="description" content="kubernets 前期准备"><meta itemprop="datePublished" content="2021-03-17T16:43:33+08:00" />
+<meta itemprop="dateModified" content="2021-03-17T16:43:33+08:00" />
 <meta itemprop="wordCount" content="1804">
-
-
-
 <meta itemprop="keywords" content="Kubernetes," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes 部署"/>
 <meta name="twitter:description" content="kubernets 前期准备"/>
@@ -141,7 +138,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -300,7 +297,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -393,7 +390,7 @@
 <p>查看查询系统基本信息</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -418,30 +415,30 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">uname -a <span class="c1">#  查看版本当前操作系统内核信息</span>
-cat /proc/version <span class="c1"># 查看当前系统版本信息</span>
-cat /etc/issue <span class="c1"># 查看版本当前操作系统发行版本信息</span>
-cat /etc/redhat-release <span class="c1"># 查看版本当前操作系统发行版本信息</span>
-cat /proc/cpuinfo  <span class="c1"># OR lscpu 查看CPU相关信息，包括型号、主频、内核信息</span> 
-getconf LONG_BIT <span class="c1"># 看版本说明当前CPU运行在32bit模式下， 但不代表CPU不支持64bit</span>
-hostname <span class="c1"># 查看服务器名称</span>
-  
-<span class="c1"># 查看网络信息</span> 
-cat /etc/sysconfig/network-scripts/ifcfg-ens*
-cat /etc/sysconfig/network-scripts/ifcfg-lo
-ifconfig
-  
-lsblk <span class="c1"># 查看磁盘信息 - 列出所有可用块设备的信息，而且还能显示他们之间的依赖关系，但是它不会列出RAM盘的信息</span>
-fdisk -l <span class="c1"># 观察硬盘实体使用情况，也可对硬盘分区</span>
-df -k <span class="c1"># df -k # 用于显示磁盘分区上的可使用的磁盘空</span>
-  
-env <span class="c1"># 查看环境变量</span>
-iptables -L <span class="c1"># 查看防火墙设置</span>
-route -n <span class="c1"># 查看路由表</span>
-swapon -s <span class="c1"># 查看所有交换分区</span>
-w <span class="c1"># 查看活动用户</span>
-last <span class="c1"># 查看用户登录信息</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">uname -a <span class="c1">#  查看版本当前操作系统内核信息</span>
+</span></span><span class="line"><span class="cl">cat /proc/version <span class="c1"># 查看当前系统版本信息</span>
+</span></span><span class="line"><span class="cl">cat /etc/issue <span class="c1"># 查看版本当前操作系统发行版本信息</span>
+</span></span><span class="line"><span class="cl">cat /etc/redhat-release <span class="c1"># 查看版本当前操作系统发行版本信息</span>
+</span></span><span class="line"><span class="cl">cat /proc/cpuinfo  <span class="c1"># OR lscpu 查看CPU相关信息，包括型号、主频、内核信息 </span>
+</span></span><span class="line"><span class="cl">getconf LONG_BIT <span class="c1"># 看版本说明当前CPU运行在32bit模式下， 但不代表CPU不支持64bit</span>
+</span></span><span class="line"><span class="cl">hostname <span class="c1"># 查看服务器名称</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看网络信息 </span>
+</span></span><span class="line"><span class="cl">cat /etc/sysconfig/network-scripts/ifcfg-ens*
+</span></span><span class="line"><span class="cl">cat /etc/sysconfig/network-scripts/ifcfg-lo
+</span></span><span class="line"><span class="cl">ifconfig
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">lsblk <span class="c1"># 查看磁盘信息 - 列出所有可用块设备的信息，而且还能显示他们之间的依赖关系，但是它不会列出RAM盘的信息</span>
+</span></span><span class="line"><span class="cl">fdisk -l <span class="c1"># 观察硬盘实体使用情况，也可对硬盘分区</span>
+</span></span><span class="line"><span class="cl">df -k <span class="c1"># df -k # 用于显示磁盘分区上的可使用的磁盘空</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">env <span class="c1"># 查看环境变量</span>
+</span></span><span class="line"><span class="cl">iptables -L <span class="c1"># 查看防火墙设置</span>
+</span></span><span class="line"><span class="cl">route -n <span class="c1"># 查看路由表</span>
+</span></span><span class="line"><span class="cl">swapon -s <span class="c1"># 查看所有交换分区</span>
+</span></span><span class="line"><span class="cl">w <span class="c1"># 查看活动用户</span>
+</span></span><span class="line"><span class="cl">last <span class="c1"># 查看用户登录信息</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -451,76 +448,76 @@ last <span class="c1"># 查看用户登录信息</span>
 <p>关闭防火墙</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl stop firewalld
-systemctl disable firewalld
-systemctl status firewalld <span class="c1"># 查看下状态</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl stop firewalld
+</span></span><span class="line"><span class="cl">systemctl disable firewalld
+</span></span><span class="line"><span class="cl">systemctl status firewalld <span class="c1"># 查看下状态</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>警用 <code>Swp</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">vim /etc/fstab 
-<span class="c1"># 注释 swap 行</span>
-swapoff -a 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim /etc/fstab 
+</span></span><span class="line"><span class="cl"><span class="c1"># 注释 swap 行</span>
+</span></span><span class="line"><span class="cl">swapoff -a 
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>关闭 <code>selinux</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">sed -i <span class="s1">&#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39;</span> /etc/selinux/config <span class="c1"># 永久关闭</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39;</span> /etc/selinux/config <span class="c1"># 永久关闭 </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>修改主机名</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">hostnamectl set-hostname master <span class="c1"># 永久生效 但需要重启</span>
-hostnamectl set-hostname nodeOne <span class="c1"># 永久生效 但需要重启</span>
-hostnamectl set-hostname nodeTwo <span class="c1"># 永久生效 但需要重启</span>
-reboot <span class="c1"># 重启</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hostnamectl set-hostname master <span class="c1"># 永久生效 但需要重启</span>
+</span></span><span class="line"><span class="cl">hostnamectl set-hostname nodeOne <span class="c1"># 永久生效 但需要重启</span>
+</span></span><span class="line"><span class="cl">hostnamectl set-hostname nodeTwo <span class="c1"># 永久生效 但需要重启</span>
+</span></span><span class="line"><span class="cl">reboot <span class="c1"># 重启</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>修改<code>hosts</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">vim /etc/hosts
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim /etc/hosts
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
 <h3 id="安装docker-20101-masternode">安装docker 20.10.1 （master/node）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -553,43 +550,43 @@ reboot <span class="c1"># 重启</span>
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-yum remove runc -y
-yum install container-selinux yum-utils ipvsadm -y
-rpm -ivh https://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/containerd.io-1.4.3-3.1.el7.x86_64.rpm    
-yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-yum clean all
-yum makecache
-yum install docker-ce docker-ce-cli -y
- 
-mkdir -p /data/docker /data/kubelet  /etc/docker /data/kubelet/plugins/nasplugin.csi.alibabacloud.com
-touch  /etc/docker/daemon.json
- 
-cat &gt; /etc/docker/daemon.json <span class="s">&lt;&lt;EOF
-</span><span class="s">{
-</span><span class="s">    &#34;data-root&#34;: &#34;/data/docker&#34;,
-</span><span class="s">    &#34;registry-mirrors&#34;: [
-</span><span class="s">        &#34;https://6mrynkvw.mirror.aliyuncs.com&#34;
-</span><span class="s">    ],
-</span><span class="s">    &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;],
-</span><span class="s">    &#34;log-driver&#34;: &#34;json-file&#34;,
-</span><span class="s">    &#34;log-opts&#34;: {
-</span><span class="s">        &#34;max-size&#34;: &#34;100m&#34;
-</span><span class="s">    },
-</span><span class="s">    &#34;storage-driver&#34;: &#34;overlay2&#34;,
-</span><span class="s">    &#34;storage-opts&#34;: [
-</span><span class="s">        &#34;overlay2.override_kernel_check=true&#34;
-</span><span class="s">            ]
-</span><span class="s">    }
-</span><span class="s">EOF</span>
-systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span> systemctl start docker
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">yum remove runc -y
+</span></span><span class="line"><span class="cl">yum install container-selinux yum-utils ipvsadm -y
+</span></span><span class="line"><span class="cl">rpm -ivh https://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/containerd.io-1.4.3-3.1.el7.x86_64.rpm    
+</span></span><span class="line"><span class="cl">yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</span></span><span class="line"><span class="cl">yum clean all
+</span></span><span class="line"><span class="cl">yum makecache
+</span></span><span class="line"><span class="cl">yum install docker-ce docker-ce-cli -y
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">mkdir -p /data/docker /data/kubelet  /etc/docker /data/kubelet/plugins/nasplugin.csi.alibabacloud.com
+</span></span><span class="line"><span class="cl">touch  /etc/docker/daemon.json
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">cat &gt; /etc/docker/daemon.json <span class="s">&lt;&lt;EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">{
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;data-root&#34;: &#34;/data/docker&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;registry-mirrors&#34;: [
+</span></span></span><span class="line"><span class="cl"><span class="s">        &#34;https://6mrynkvw.mirror.aliyuncs.com&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    ],
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;log-driver&#34;: &#34;json-file&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;log-opts&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s">        &#34;max-size&#34;: &#34;100m&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    },
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;storage-driver&#34;: &#34;overlay2&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;storage-opts&#34;: [
+</span></span></span><span class="line"><span class="cl"><span class="s">        &#34;overlay2.override_kernel_check=true&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">            ]
+</span></span></span><span class="line"><span class="cl"><span class="s">    }
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span> systemctl start docker
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="设置阿里云yum软件源-masternode">设置阿里云yum软件源 （master/node）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -598,30 +595,30 @@ systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">cat &gt; /etc/yum.repos.d/kubernetes.repo <span class="s">&lt;&lt; EOF
-</span><span class="s">[k8s]
-</span><span class="s">name=k8s
-</span><span class="s">enabled=1
-</span><span class="s">gpgcheck=0 
-</span><span class="s">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
-</span><span class="s">EOF</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat &gt; /etc/yum.repos.d/kubernetes.repo <span class="s">&lt;&lt; EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">[k8s]
+</span></span></span><span class="line"><span class="cl"><span class="s">name=k8s
+</span></span></span><span class="line"><span class="cl"><span class="s">enabled=1
+</span></span></span><span class="line"><span class="cl"><span class="s">gpgcheck=0 
+</span></span></span><span class="line"><span class="cl"><span class="s">baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="安装-kubeadmkubeletkubectl-masternode">安装 kubeadm、kubelet、kubectl （master/node）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"> yum install -y kubelet-1.19.2 kubectl-1.19.2 kubeadm-1.19.2
- systemctl <span class="nb">enable</span> kubelet
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> yum install -y kubelet-1.19.2 kubectl-1.19.2 kubeadm-1.19.2
+</span></span><span class="line"><span class="cl"> systemctl <span class="nb">enable</span> kubelet
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="kubernetes-init-master">kubernetes init （master）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -630,19 +627,19 @@ systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"> <span class="nb">echo</span> <span class="s2">&#34;1&#34;</span> &gt;/proc/sys/net/bridge/bridge-nf-call-iptables
- kubeadm init <span class="se">\
-</span><span class="se"></span>  --apiserver-advertise-address<span class="o">=</span>172.13.8.15 <span class="se">\
-</span><span class="se"></span>  --image-repository registry.aliyuncs.com/google_containers <span class="se">\
-</span><span class="se"></span>  --kubernetes-version v1.19.2 <span class="se">\
-</span><span class="se"></span>  --service-cidr<span class="o">=</span>10.1.0.0/16 <span class="se">\
-</span><span class="se"></span>  --pod-network-cidr<span class="o">=</span>10.244.0.0/16
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> <span class="nb">echo</span> <span class="s2">&#34;1&#34;</span> &gt;/proc/sys/net/bridge/bridge-nf-call-iptables
+</span></span><span class="line"><span class="cl"> kubeadm init <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --apiserver-advertise-address<span class="o">=</span>172.13.8.15 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --image-repository registry.aliyuncs.com/google_containers <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --kubernetes-version v1.19.2 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --service-cidr<span class="o">=</span>10.1.0.0/16 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --pod-network-cidr<span class="o">=</span>10.244.0.0/16
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="成功信息">成功信息</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -666,34 +663,34 @@ systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>bootstrap-token<span class="o">]</span> configured RBAC rules to allow certificate rotation <span class="k">for</span> all node client certificates in the cluster
-<span class="o">[</span>bootstrap-token<span class="o">]</span> Creating the <span class="s2">&#34;cluster-info&#34;</span> ConfigMap in the <span class="s2">&#34;kube-public&#34;</span> namespace
-<span class="o">[</span>kubelet-finalize<span class="o">]</span> Updating <span class="s2">&#34;/etc/kubernetes/kubelet.conf&#34;</span> to point to a rotatable kubelet client certificate and key
-<span class="o">[</span>addons<span class="o">]</span> Applied essential addon: CoreDNS
-<span class="o">[</span>addons<span class="o">]</span> Applied essential addon: kube-proxy
-
-Your Kubernetes control-plane has initialized successfully!
-
-To start using your cluster, you need to run the following as a regular user:
-
-  mkdir -p <span class="nv">$HOME</span>/.kube
-  sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
-  sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
-
-You should now deploy a pod network to the cluster.
-Run <span class="s2">&#34;kubectl apply -f [podnetwork].yaml&#34;</span> with one of the options listed at:
-  https://kubernetes.io/docs/concepts/cluster-administration/addons/
-
-Then you can join any number of worker nodes by running the following on each as root:
-
-kubeadm join 172.13.8.15:6443 --token etvpqx.urx0nmbm4w4wwmt9 <span class="se">\
-</span><span class="se"></span>    --discovery-token-ca-cert-hash sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>bootstrap-token<span class="o">]</span> configured RBAC rules to allow certificate rotation <span class="k">for</span> all node client certificates in the cluster
+</span></span><span class="line"><span class="cl"><span class="o">[</span>bootstrap-token<span class="o">]</span> Creating the <span class="s2">&#34;cluster-info&#34;</span> ConfigMap in the <span class="s2">&#34;kube-public&#34;</span> namespace
+</span></span><span class="line"><span class="cl"><span class="o">[</span>kubelet-finalize<span class="o">]</span> Updating <span class="s2">&#34;/etc/kubernetes/kubelet.conf&#34;</span> to point to a rotatable kubelet client certificate and key
+</span></span><span class="line"><span class="cl"><span class="o">[</span>addons<span class="o">]</span> Applied essential addon: CoreDNS
+</span></span><span class="line"><span class="cl"><span class="o">[</span>addons<span class="o">]</span> Applied essential addon: kube-proxy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Your Kubernetes control-plane has initialized successfully!
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">To start using your cluster, you need to run the following as a regular user:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  mkdir -p <span class="nv">$HOME</span>/.kube
+</span></span><span class="line"><span class="cl">  sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
+</span></span><span class="line"><span class="cl">  sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">You should now deploy a pod network to the cluster.
+</span></span><span class="line"><span class="cl">Run <span class="s2">&#34;kubectl apply -f [podnetwork].yaml&#34;</span> with one of the options listed at:
+</span></span><span class="line"><span class="cl">  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Then you can join any number of worker nodes by running the following on each as root:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">kubeadm join 172.13.8.15:6443 --token etvpqx.urx0nmbm4w4wwmt9 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --discovery-token-ca-cert-hash sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="输入创建测试是否okmasternode">输入创建测试是否OK（master/node）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -702,40 +699,40 @@ kubeadm join 172.13.8.15:6443 --token etvpqx.urx0nmbm4w4wwmt9 <span class="se">\
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">	scp admin.conf root@172.13.8.17:/etc/kubernetes
-	scp admin.conf root@172.13.8.16:/etc/kubernetes
-  mkdir -p <span class="nv">$HOME</span>/.kube
-  sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
-  sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
-  
-  kubectl get nodes  <span class="c1"># 测试</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">	scp admin.conf root@172.13.8.17:/etc/kubernetes
+</span></span><span class="line"><span class="cl">	scp admin.conf root@172.13.8.16:/etc/kubernetes
+</span></span><span class="line"><span class="cl">  mkdir -p <span class="nv">$HOME</span>/.kube
+</span></span><span class="line"><span class="cl">  sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
+</span></span><span class="line"><span class="cl">  sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  kubectl get nodes  <span class="c1"># 测试</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="安装网络插件">安装网络插件</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml <span class="c1"># 会提示报错，修改hosts</span>
-<span class="c1"># 追加hosts</span>
-<span class="c1"># 199.232.28.133 raw.githubusercontent.com</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml <span class="c1"># 会提示报错，修改hosts</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 追加hosts</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 199.232.28.133 raw.githubusercontent.com</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="node-加入-master-集群中">node 加入 master 集群中</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 在成功init 成功之后输出的内容</span>
-kubeadm join 172.13.8.15:6443 --token etvpqx.urx0nmbm4w4wwmt9 <span class="se">\
-</span><span class="se"></span>    --discovery-token-ca-cert-hash sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 在成功init 成功之后输出的内容</span>
+</span></span><span class="line"><span class="cl">kubeadm join 172.13.8.15:6443 --token etvpqx.urx0nmbm4w4wwmt9 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --discovery-token-ca-cert-hash sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="后记">后记</h3>
 <ul>
@@ -743,47 +740,47 @@ kubeadm join 172.13.8.15:6443 --token etvpqx.urx0nmbm4w4wwmt9 <span class="se">\
 <p>kubeadm init 之后没有来得及记录 join 信息</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#再生成一个token即可</span>
-kubeadm token create --print-join-command
-<span class="c1">#下在的命令可以查看历史的token</span>
-kubeadm token list
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#再生成一个token即可</span>
+</span></span><span class="line"><span class="cl">kubeadm token create --print-join-command
+</span></span><span class="line"><span class="cl"><span class="c1">#下在的命令可以查看历史的token</span>
+</span></span><span class="line"><span class="cl">kubeadm token list
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>node join 失败后 重新join</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#先执行</span>
-kubeadm -y reset
-<span class="c1">#再执行</span>
-kubeadm join  xx.....
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#先执行</span>
+</span></span><span class="line"><span class="cl">kubeadm -y reset
+</span></span><span class="line"><span class="cl"><span class="c1">#再执行</span>
+</span></span><span class="line"><span class="cl">kubeadm join  xx.....
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>重启 kubelet</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl daemon-reload
-systemctl restart kubelet
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl">systemctl restart kubelet
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -793,13 +790,13 @@ systemctl restart kubelet
 <p>ROLES 为 none</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">kubectl label node nodeone node-role.kubernetes.io/worker<span class="o">=</span>worker
-kubectl label node nodetwo node-role.kubernetes.io/worker<span class="o">=</span>worker
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl label node nodeone node-role.kubernetes.io/worker<span class="o">=</span>worker
+</span></span><span class="line"><span class="cl">kubectl label node nodetwo node-role.kubernetes.io/worker<span class="o">=</span>worker
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -809,11 +806,11 @@ kubectl label node nodetwo node-role.kubernetes.io/worker<span class="o">=</span
 <p><code>/proc/sys/net/bridge/bridge-nf-call-iptables contents are not set to 1</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">echo</span> <span class="s2">&#34;1&#34;</span> &gt;/proc/sys/net/bridge/bridge-nf-call-iptables <span class="c1"># 解决方法</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;1&#34;</span> &gt;/proc/sys/net/bridge/bridge-nf-call-iptables <span class="c1"># 解决方法</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -823,7 +820,7 @@ kubectl label node nodetwo node-role.kubernetes.io/worker<span class="o">=</span
 <p>kube-flannel.yml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -1062,244 +1059,244 @@ kubectl label node nodetwo node-role.kubernetes.io/worker<span class="o">=</span
 </span><span class="lnt">237
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">---
-apiVersion: policy/v1beta1
-kind: PodSecurityPolicy
-metadata:
-  name: psp.flannel.unprivileged
-  annotations:
-    seccomp.security.alpha.kubernetes.io/allowedProfileNames: docker/default
-    seccomp.security.alpha.kubernetes.io/defaultProfileName: docker/default
-    apparmor.security.beta.kubernetes.io/allowedProfileNames: runtime/default
-    apparmor.security.beta.kubernetes.io/defaultProfileName: runtime/default
-spec:
-  privileged: <span class="nb">false</span>
-  volumes:
-  - configMap
-  - secret
-  - emptyDir
-  - hostPath
-  allowedHostPaths:
-  - pathPrefix: <span class="s2">&#34;/etc/cni/net.d&#34;</span>
-  - pathPrefix: <span class="s2">&#34;/etc/kube-flannel&#34;</span>
-  - pathPrefix: <span class="s2">&#34;/run/flannel&#34;</span>
-  readOnlyRootFilesystem: <span class="nb">false</span>
-  <span class="c1"># Users and groups</span>
-  runAsUser:
-    rule: RunAsAny
-  supplementalGroups:
-    rule: RunAsAny
-  fsGroup:
-    rule: RunAsAny
-  <span class="c1"># Privilege Escalation</span>
-  allowPrivilegeEscalation: <span class="nb">false</span>
-  defaultAllowPrivilegeEscalation: <span class="nb">false</span>
-  <span class="c1"># Capabilities</span>
-  allowedCapabilities: <span class="o">[</span><span class="s1">&#39;NET_ADMIN&#39;</span>, <span class="s1">&#39;NET_RAW&#39;</span><span class="o">]</span>
-  defaultAddCapabilities: <span class="o">[]</span>
-  requiredDropCapabilities: <span class="o">[]</span>
-  <span class="c1"># Host namespaces</span>
-  hostPID: <span class="nb">false</span>
-  hostIPC: <span class="nb">false</span>
-  hostNetwork: <span class="nb">true</span>
-  hostPorts:
-  - min: <span class="m">0</span>
-    max: <span class="m">65535</span>
-  <span class="c1"># SELinux</span>
-  seLinux:
-    <span class="c1"># SELinux is unused in CaaSP</span>
-    rule: <span class="s1">&#39;RunAsAny&#39;</span>
----
-kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: flannel
-rules:
-- apiGroups: <span class="o">[</span><span class="s1">&#39;extensions&#39;</span><span class="o">]</span>
-  resources: <span class="o">[</span><span class="s1">&#39;podsecuritypolicies&#39;</span><span class="o">]</span>
-  verbs: <span class="o">[</span><span class="s1">&#39;use&#39;</span><span class="o">]</span>
-  resourceNames: <span class="o">[</span><span class="s1">&#39;psp.flannel.unprivileged&#39;</span><span class="o">]</span>
-- apiGroups:
-  - <span class="s2">&#34;&#34;</span>
-  resources:
-  - pods
-  verbs:
-  - get
-- apiGroups:
-  - <span class="s2">&#34;&#34;</span>
-  resources:
-  - nodes
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - <span class="s2">&#34;&#34;</span>
-  resources:
-  - nodes/status
-  verbs:
-  - patch
----
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: flannel
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: flannel
-subjects:
-- kind: ServiceAccount
-  name: flannel
-  namespace: kube-system
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: flannel
-  namespace: kube-system
----
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: kube-flannel-cfg
-  namespace: kube-system
-  labels:
-    tier: node
-    app: flannel
-data:
-  cni-conf.json: <span class="p">|</span>
-    <span class="o">{</span>
-      <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;cbr0&#34;</span>,
-      <span class="s2">&#34;cniVersion&#34;</span>: <span class="s2">&#34;0.3.1&#34;</span>,
-      <span class="s2">&#34;plugins&#34;</span>: <span class="o">[</span>
-        <span class="o">{</span>
-          <span class="s2">&#34;type&#34;</span>: <span class="s2">&#34;flannel&#34;</span>,
-          <span class="s2">&#34;delegate&#34;</span>: <span class="o">{</span>
-            <span class="s2">&#34;hairpinMode&#34;</span>: true,
-            <span class="s2">&#34;isDefaultGateway&#34;</span>: <span class="nb">true</span>
-          <span class="o">}</span>
-        <span class="o">}</span>,
-        <span class="o">{</span>
-          <span class="s2">&#34;type&#34;</span>: <span class="s2">&#34;portmap&#34;</span>,
-          <span class="s2">&#34;capabilities&#34;</span>: <span class="o">{</span>
-            <span class="s2">&#34;portMappings&#34;</span>: <span class="nb">true</span>
-          <span class="o">}</span>
-        <span class="o">}</span>
-      <span class="o">]</span>
-    <span class="o">}</span>
-  net-conf.json: <span class="p">|</span>
-    <span class="o">{</span>
-      <span class="s2">&#34;Network&#34;</span>: <span class="s2">&#34;10.244.0.0/16&#34;</span>,
-      <span class="s2">&#34;Backend&#34;</span>: <span class="o">{</span>
-        <span class="s2">&#34;Type&#34;</span>: <span class="s2">&#34;vxlan&#34;</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
----
-apiVersion: apps/v1
-kind: DaemonSet
-metadata:
-  name: kube-flannel-ds
-  namespace: kube-system
-  labels:
-    tier: node
-    app: flannel
-spec:
-  selector:
-    matchLabels:
-      app: flannel
-  template:
-    metadata:
-      labels:
-        tier: node
-        app: flannel
-    spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/os
-                operator: In
-                values:
-                - linux
-      hostNetwork: <span class="nb">true</span>
-      priorityClassName: system-node-critical
-      tolerations:
-      - operator: Exists
-        effect: NoSchedule
-      serviceAccountName: flannel
-      initContainers:
-      - name: install-cni-plugin
-        image: rancher/mirrored-flannelcni-flannel-cni-plugin:v1.0.0
-        command:
-        - cp
-        args:
-        - -f
-        - /flannel
-        - /opt/cni/bin/flannel
-        volumeMounts:
-        - name: cni-plugin
-          mountPath: /opt/cni/bin
-      - name: install-cni
-        image: quay.io/coreos/flannel:v0.15.1
-        command:
-        - cp
-        args:
-        - -f
-        - /etc/kube-flannel/cni-conf.json
-        - /etc/cni/net.d/10-flannel.conflist
-        volumeMounts:
-        - name: cni
-          mountPath: /etc/cni/net.d
-        - name: flannel-cfg
-          mountPath: /etc/kube-flannel/
-      containers:
-      - name: kube-flannel
-        image: quay.io/coreos/flannel:v0.15.1
-        command:
-        - /opt/bin/flanneld
-        args:
-        - --ip-masq
-        - --kube-subnet-mgr
-        resources:
-          requests:
-            cpu: <span class="s2">&#34;100m&#34;</span>
-            memory: <span class="s2">&#34;50Mi&#34;</span>
-          limits:
-            cpu: <span class="s2">&#34;100m&#34;</span>
-            memory: <span class="s2">&#34;50Mi&#34;</span>
-        securityContext:
-          privileged: <span class="nb">false</span>
-          capabilities:
-            add: <span class="o">[</span><span class="s2">&#34;NET_ADMIN&#34;</span>, <span class="s2">&#34;NET_RAW&#34;</span><span class="o">]</span>
-        env:
-        - name: POD_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.name
-        - name: POD_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        volumeMounts:
-        - name: run
-          mountPath: /run/flannel
-        - name: flannel-cfg
-          mountPath: /etc/kube-flannel/
-      volumes:
-      - name: run
-        hostPath:
-          path: /run/flannel
-      - name: cni-plugin
-        hostPath:
-          path: /opt/cni/bin
-      - name: cni
-        hostPath:
-          path: /etc/cni/net.d
-      - name: flannel-cfg
-        configMap:
-          name: kube-flannel-cfg
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">apiVersion: policy/v1beta1
+</span></span><span class="line"><span class="cl">kind: PodSecurityPolicy
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  name: psp.flannel.unprivileged
+</span></span><span class="line"><span class="cl">  annotations:
+</span></span><span class="line"><span class="cl">    seccomp.security.alpha.kubernetes.io/allowedProfileNames: docker/default
+</span></span><span class="line"><span class="cl">    seccomp.security.alpha.kubernetes.io/defaultProfileName: docker/default
+</span></span><span class="line"><span class="cl">    apparmor.security.beta.kubernetes.io/allowedProfileNames: runtime/default
+</span></span><span class="line"><span class="cl">    apparmor.security.beta.kubernetes.io/defaultProfileName: runtime/default
+</span></span><span class="line"><span class="cl">spec:
+</span></span><span class="line"><span class="cl">  privileged: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">  volumes:
+</span></span><span class="line"><span class="cl">  - configMap
+</span></span><span class="line"><span class="cl">  - secret
+</span></span><span class="line"><span class="cl">  - emptyDir
+</span></span><span class="line"><span class="cl">  - hostPath
+</span></span><span class="line"><span class="cl">  allowedHostPaths:
+</span></span><span class="line"><span class="cl">  - pathPrefix: <span class="s2">&#34;/etc/cni/net.d&#34;</span>
+</span></span><span class="line"><span class="cl">  - pathPrefix: <span class="s2">&#34;/etc/kube-flannel&#34;</span>
+</span></span><span class="line"><span class="cl">  - pathPrefix: <span class="s2">&#34;/run/flannel&#34;</span>
+</span></span><span class="line"><span class="cl">  readOnlyRootFilesystem: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Users and groups</span>
+</span></span><span class="line"><span class="cl">  runAsUser:
+</span></span><span class="line"><span class="cl">    rule: RunAsAny
+</span></span><span class="line"><span class="cl">  supplementalGroups:
+</span></span><span class="line"><span class="cl">    rule: RunAsAny
+</span></span><span class="line"><span class="cl">  fsGroup:
+</span></span><span class="line"><span class="cl">    rule: RunAsAny
+</span></span><span class="line"><span class="cl">  <span class="c1"># Privilege Escalation</span>
+</span></span><span class="line"><span class="cl">  allowPrivilegeEscalation: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">  defaultAllowPrivilegeEscalation: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Capabilities</span>
+</span></span><span class="line"><span class="cl">  allowedCapabilities: <span class="o">[</span><span class="s1">&#39;NET_ADMIN&#39;</span>, <span class="s1">&#39;NET_RAW&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">  defaultAddCapabilities: <span class="o">[]</span>
+</span></span><span class="line"><span class="cl">  requiredDropCapabilities: <span class="o">[]</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># Host namespaces</span>
+</span></span><span class="line"><span class="cl">  hostPID: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">  hostIPC: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">  hostNetwork: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">  hostPorts:
+</span></span><span class="line"><span class="cl">  - min: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">    max: <span class="m">65535</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># SELinux</span>
+</span></span><span class="line"><span class="cl">  seLinux:
+</span></span><span class="line"><span class="cl">    <span class="c1"># SELinux is unused in CaaSP</span>
+</span></span><span class="line"><span class="cl">    rule: <span class="s1">&#39;RunAsAny&#39;</span>
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">kind: ClusterRole
+</span></span><span class="line"><span class="cl">apiVersion: rbac.authorization.k8s.io/v1
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  name: flannel
+</span></span><span class="line"><span class="cl">rules:
+</span></span><span class="line"><span class="cl">- apiGroups: <span class="o">[</span><span class="s1">&#39;extensions&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">  resources: <span class="o">[</span><span class="s1">&#39;podsecuritypolicies&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">  verbs: <span class="o">[</span><span class="s1">&#39;use&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">  resourceNames: <span class="o">[</span><span class="s1">&#39;psp.flannel.unprivileged&#39;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">- apiGroups:
+</span></span><span class="line"><span class="cl">  - <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  resources:
+</span></span><span class="line"><span class="cl">  - pods
+</span></span><span class="line"><span class="cl">  verbs:
+</span></span><span class="line"><span class="cl">  - get
+</span></span><span class="line"><span class="cl">- apiGroups:
+</span></span><span class="line"><span class="cl">  - <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  resources:
+</span></span><span class="line"><span class="cl">  - nodes
+</span></span><span class="line"><span class="cl">  verbs:
+</span></span><span class="line"><span class="cl">  - list
+</span></span><span class="line"><span class="cl">  - watch
+</span></span><span class="line"><span class="cl">- apiGroups:
+</span></span><span class="line"><span class="cl">  - <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  resources:
+</span></span><span class="line"><span class="cl">  - nodes/status
+</span></span><span class="line"><span class="cl">  verbs:
+</span></span><span class="line"><span class="cl">  - patch
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">kind: ClusterRoleBinding
+</span></span><span class="line"><span class="cl">apiVersion: rbac.authorization.k8s.io/v1
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  name: flannel
+</span></span><span class="line"><span class="cl">roleRef:
+</span></span><span class="line"><span class="cl">  apiGroup: rbac.authorization.k8s.io
+</span></span><span class="line"><span class="cl">  kind: ClusterRole
+</span></span><span class="line"><span class="cl">  name: flannel
+</span></span><span class="line"><span class="cl">subjects:
+</span></span><span class="line"><span class="cl">- kind: ServiceAccount
+</span></span><span class="line"><span class="cl">  name: flannel
+</span></span><span class="line"><span class="cl">  namespace: kube-system
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">apiVersion: v1
+</span></span><span class="line"><span class="cl">kind: ServiceAccount
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  name: flannel
+</span></span><span class="line"><span class="cl">  namespace: kube-system
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">kind: ConfigMap
+</span></span><span class="line"><span class="cl">apiVersion: v1
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  name: kube-flannel-cfg
+</span></span><span class="line"><span class="cl">  namespace: kube-system
+</span></span><span class="line"><span class="cl">  labels:
+</span></span><span class="line"><span class="cl">    tier: node
+</span></span><span class="line"><span class="cl">    app: flannel
+</span></span><span class="line"><span class="cl">data:
+</span></span><span class="line"><span class="cl">  cni-conf.json: <span class="p">|</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;cbr0&#34;</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;cniVersion&#34;</span>: <span class="s2">&#34;0.3.1&#34;</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;plugins&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">        <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;type&#34;</span>: <span class="s2">&#34;flannel&#34;</span>,
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;delegate&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;hairpinMode&#34;</span>: true,
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;isDefaultGateway&#34;</span>: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">          <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>,
+</span></span><span class="line"><span class="cl">        <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;type&#34;</span>: <span class="s2">&#34;portmap&#34;</span>,
+</span></span><span class="line"><span class="cl">          <span class="s2">&#34;capabilities&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;portMappings&#34;</span>: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">          <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">      <span class="o">]</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  net-conf.json: <span class="p">|</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Network&#34;</span>: <span class="s2">&#34;10.244.0.0/16&#34;</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Backend&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Type&#34;</span>: <span class="s2">&#34;vxlan&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">apiVersion: apps/v1
+</span></span><span class="line"><span class="cl">kind: DaemonSet
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  name: kube-flannel-ds
+</span></span><span class="line"><span class="cl">  namespace: kube-system
+</span></span><span class="line"><span class="cl">  labels:
+</span></span><span class="line"><span class="cl">    tier: node
+</span></span><span class="line"><span class="cl">    app: flannel
+</span></span><span class="line"><span class="cl">spec:
+</span></span><span class="line"><span class="cl">  selector:
+</span></span><span class="line"><span class="cl">    matchLabels:
+</span></span><span class="line"><span class="cl">      app: flannel
+</span></span><span class="line"><span class="cl">  template:
+</span></span><span class="line"><span class="cl">    metadata:
+</span></span><span class="line"><span class="cl">      labels:
+</span></span><span class="line"><span class="cl">        tier: node
+</span></span><span class="line"><span class="cl">        app: flannel
+</span></span><span class="line"><span class="cl">    spec:
+</span></span><span class="line"><span class="cl">      affinity:
+</span></span><span class="line"><span class="cl">        nodeAffinity:
+</span></span><span class="line"><span class="cl">          requiredDuringSchedulingIgnoredDuringExecution:
+</span></span><span class="line"><span class="cl">            nodeSelectorTerms:
+</span></span><span class="line"><span class="cl">            - matchExpressions:
+</span></span><span class="line"><span class="cl">              - key: kubernetes.io/os
+</span></span><span class="line"><span class="cl">                operator: In
+</span></span><span class="line"><span class="cl">                values:
+</span></span><span class="line"><span class="cl">                - linux
+</span></span><span class="line"><span class="cl">      hostNetwork: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">      priorityClassName: system-node-critical
+</span></span><span class="line"><span class="cl">      tolerations:
+</span></span><span class="line"><span class="cl">      - operator: Exists
+</span></span><span class="line"><span class="cl">        effect: NoSchedule
+</span></span><span class="line"><span class="cl">      serviceAccountName: flannel
+</span></span><span class="line"><span class="cl">      initContainers:
+</span></span><span class="line"><span class="cl">      - name: install-cni-plugin
+</span></span><span class="line"><span class="cl">        image: rancher/mirrored-flannelcni-flannel-cni-plugin:v1.0.0
+</span></span><span class="line"><span class="cl">        command:
+</span></span><span class="line"><span class="cl">        - cp
+</span></span><span class="line"><span class="cl">        args:
+</span></span><span class="line"><span class="cl">        - -f
+</span></span><span class="line"><span class="cl">        - /flannel
+</span></span><span class="line"><span class="cl">        - /opt/cni/bin/flannel
+</span></span><span class="line"><span class="cl">        volumeMounts:
+</span></span><span class="line"><span class="cl">        - name: cni-plugin
+</span></span><span class="line"><span class="cl">          mountPath: /opt/cni/bin
+</span></span><span class="line"><span class="cl">      - name: install-cni
+</span></span><span class="line"><span class="cl">        image: quay.io/coreos/flannel:v0.15.1
+</span></span><span class="line"><span class="cl">        command:
+</span></span><span class="line"><span class="cl">        - cp
+</span></span><span class="line"><span class="cl">        args:
+</span></span><span class="line"><span class="cl">        - -f
+</span></span><span class="line"><span class="cl">        - /etc/kube-flannel/cni-conf.json
+</span></span><span class="line"><span class="cl">        - /etc/cni/net.d/10-flannel.conflist
+</span></span><span class="line"><span class="cl">        volumeMounts:
+</span></span><span class="line"><span class="cl">        - name: cni
+</span></span><span class="line"><span class="cl">          mountPath: /etc/cni/net.d
+</span></span><span class="line"><span class="cl">        - name: flannel-cfg
+</span></span><span class="line"><span class="cl">          mountPath: /etc/kube-flannel/
+</span></span><span class="line"><span class="cl">      containers:
+</span></span><span class="line"><span class="cl">      - name: kube-flannel
+</span></span><span class="line"><span class="cl">        image: quay.io/coreos/flannel:v0.15.1
+</span></span><span class="line"><span class="cl">        command:
+</span></span><span class="line"><span class="cl">        - /opt/bin/flanneld
+</span></span><span class="line"><span class="cl">        args:
+</span></span><span class="line"><span class="cl">        - --ip-masq
+</span></span><span class="line"><span class="cl">        - --kube-subnet-mgr
+</span></span><span class="line"><span class="cl">        resources:
+</span></span><span class="line"><span class="cl">          requests:
+</span></span><span class="line"><span class="cl">            cpu: <span class="s2">&#34;100m&#34;</span>
+</span></span><span class="line"><span class="cl">            memory: <span class="s2">&#34;50Mi&#34;</span>
+</span></span><span class="line"><span class="cl">          limits:
+</span></span><span class="line"><span class="cl">            cpu: <span class="s2">&#34;100m&#34;</span>
+</span></span><span class="line"><span class="cl">            memory: <span class="s2">&#34;50Mi&#34;</span>
+</span></span><span class="line"><span class="cl">        securityContext:
+</span></span><span class="line"><span class="cl">          privileged: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">          capabilities:
+</span></span><span class="line"><span class="cl">            add: <span class="o">[</span><span class="s2">&#34;NET_ADMIN&#34;</span>, <span class="s2">&#34;NET_RAW&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">        env:
+</span></span><span class="line"><span class="cl">        - name: POD_NAME
+</span></span><span class="line"><span class="cl">          valueFrom:
+</span></span><span class="line"><span class="cl">            fieldRef:
+</span></span><span class="line"><span class="cl">              fieldPath: metadata.name
+</span></span><span class="line"><span class="cl">        - name: POD_NAMESPACE
+</span></span><span class="line"><span class="cl">          valueFrom:
+</span></span><span class="line"><span class="cl">            fieldRef:
+</span></span><span class="line"><span class="cl">              fieldPath: metadata.namespace
+</span></span><span class="line"><span class="cl">        volumeMounts:
+</span></span><span class="line"><span class="cl">        - name: run
+</span></span><span class="line"><span class="cl">          mountPath: /run/flannel
+</span></span><span class="line"><span class="cl">        - name: flannel-cfg
+</span></span><span class="line"><span class="cl">          mountPath: /etc/kube-flannel/
+</span></span><span class="line"><span class="cl">      volumes:
+</span></span><span class="line"><span class="cl">      - name: run
+</span></span><span class="line"><span class="cl">        hostPath:
+</span></span><span class="line"><span class="cl">          path: /run/flannel
+</span></span><span class="line"><span class="cl">      - name: cni-plugin
+</span></span><span class="line"><span class="cl">        hostPath:
+</span></span><span class="line"><span class="cl">          path: /opt/cni/bin
+</span></span><span class="line"><span class="cl">      - name: cni
+</span></span><span class="line"><span class="cl">        hostPath:
+</span></span><span class="line"><span class="cl">          path: /etc/cni/net.d
+</span></span><span class="line"><span class="cl">      - name: flannel-cfg
+</span></span><span class="line"><span class="cl">        configMap:
+</span></span><span class="line"><span class="cl">          name: kube-flannel-cfg
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1323,7 +1320,7 @@ spec:
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://cc360428.gitee.io/blog" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -1406,6 +1403,17 @@ spec:
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

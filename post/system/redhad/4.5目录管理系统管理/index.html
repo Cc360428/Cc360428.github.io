@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/redhad/4.5%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/" />
@@ -61,17 +61,14 @@
 <meta property="og:title" content="linux(CentOS7) 目录管理、系统管理" />
 <meta property="og:description" content="4.5(目录管理、系统管理)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/redhad/4.5%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/redhad/4.5%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-03-25T23:48:12+08:00" />
 <meta property="article:modified_time" content="2020-03-25T23:48:12+08:00" />
+
 <meta itemprop="name" content="linux(CentOS7) 目录管理、系统管理">
-<meta itemprop="description" content="4.5(目录管理、系统管理)">
-<meta itemprop="datePublished" content="2020-03-25T23:48:12&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-25T23:48:12&#43;08:00" />
-<meta itemprop="wordCount" content="1150">
-
-
-
+<meta itemprop="description" content="4.5(目录管理、系统管理)"><meta itemprop="datePublished" content="2020-03-25T23:48:12+08:00" />
+<meta itemprop="dateModified" content="2020-03-25T23:48:12+08:00" />
+<meta itemprop="wordCount" content="1148">
 <meta itemprop="keywords" content="RedHad," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux(CentOS7) 目录管理、系统管理"/>
 <meta name="twitter:description" content="4.5(目录管理、系统管理)"/>
@@ -141,7 +138,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -300,7 +297,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -346,7 +343,7 @@
             <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
             
           </div>
-        <span class="more-meta"> 约 1150 字 </span>
+        <span class="more-meta"> 约 1148 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -426,7 +423,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -434,13 +431,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc 20200326<span class="o">]</span><span class="c1"># mkdir -m777 mkdira</span>
-<span class="o">[</span>root@Cc 20200326<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">8</span>
-drwxrwxrwx <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">25</span> 22:52 mkdira
-drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">25</span> 22:39 <span class="nb">pwd</span>
-<span class="o">[</span>root@Cc 20200326<span class="o">]</span>#
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc 20200326<span class="o">]</span><span class="c1"># mkdir -m777 mkdira</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 20200326<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">8</span>
+</span></span><span class="line"><span class="cl">drwxrwxrwx <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">25</span> 22:52 mkdira
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  <span class="m">25</span> 22:39 <span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc 20200326<span class="o">]</span><span class="c1">#</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="rmdir">rmdir</h3>
 <ul>
@@ -453,7 +450,7 @@ drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -465,23 +462,21 @@ drwxr-xr-x <span class="m">2</span> root root <span class="m">4096</span> 3月  
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
-</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1">#  ls -lhS</span>
-总用量 31M
--rw-r--r-- <span class="m">1</span> root  root   25M 11月  <span class="m">7</span> 23:31 gogs_0.11.91_linux_amd64.tar.gz
--rw-r--r-- <span class="m">1</span> root  root  5.8M 2月  <span class="m">26</span> 09:29 hugo.filepart
-drwxr-xr-x <span class="m">2</span> root  root  4.0K 2月   <span class="m">7</span> 12:51 C
-drwxr-xr-x <span class="m">3</span> root  root  4.0K 12月 <span class="m">17</span> 11:31 file
-drwxr-xr-x <span class="m">3</span> root  root  4.0K 1月  <span class="m">17</span> 17:34 frp
-drwxr-xr-x <span class="m">2</span> root  root  4.0K 11月 <span class="m">13</span> 10:37 frp1
-drwxr-xr-x <span class="m">8</span> admin admin 4.0K 1月  <span class="m">16</span> 16:54 gogs
-drwxr-xr-x <span class="m">3</span> root  root  4.0K 11月 <span class="m">28</span> 20:26 harbor
-drwxr-xr-x <span class="m">2</span> root  root  4.0K 12月 <span class="m">19</span> 15:54 hf
-drwxr-xr-x <span class="m">3</span> root  root  4.0K 2月  <span class="m">28</span> 23:03 hugo
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc lichaocheng<span class="o">]</span><span class="c1">#  ls -lhS</span>
+</span></span><span class="line"><span class="cl">总用量 31M
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root  root   25M 11月  <span class="m">7</span> 23:31 gogs_0.11.91_linux_amd64.tar.gz
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root  root  5.8M 2月  <span class="m">26</span> 09:29 hugo.filepart
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root  root  4.0K 2月   <span class="m">7</span> 12:51 C
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">3</span> root  root  4.0K 12月 <span class="m">17</span> 11:31 file
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">3</span> root  root  4.0K 1月  <span class="m">17</span> 17:34 frp
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root  root  4.0K 11月 <span class="m">13</span> 10:37 frp1
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">8</span> admin admin 4.0K 1月  <span class="m">16</span> 16:54 gogs
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">3</span> root  root  4.0K 11月 <span class="m">28</span> 20:26 harbor
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root  root  4.0K 12月 <span class="m">19</span> 15:54 hf
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">3</span> root  root  4.0K 2月  <span class="m">28</span> 23:03 hugo
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="pwd">pwd</h3>
 <ul>
@@ -502,7 +497,7 @@ drwxr-xr-x <span class="m">3</span> root  root  4.0K 2月  <span class="m">28</s
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -512,22 +507,22 @@ drwxr-xr-x <span class="m">3</span> root  root  4.0K 2月  <span class="m">28</s
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -cvf tarTest.txt.tar tarTest.txt</span> 
-tarTest.txt
-<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">16</span>
-drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月  <span class="m">25</span> 22:59 lcc
--rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
--rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
-<span class="o">[</span>root@Cc tar<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -cvf tarTest.txt.tar tarTest.txt </span>
+</span></span><span class="line"><span class="cl">tarTest.txt
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">16</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月  <span class="m">25</span> 22:59 lcc
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>打包并使用gzip压缩</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -538,29 +533,27 @@ drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月 
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -zcvf tarTest.txt.tar.gz ./lcc/</span>
-./lcc/
-./lcc/b
-./lcc/a
-<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">20</span>
-drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月  <span class="m">25</span> 22:59 lcc
--rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
--rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
--rw-r--r-- <span class="m">1</span> root root   <span class="m">144</span> 3月  <span class="m">25</span> 23:02 tarTest.txt.tar.gz
-<span class="o">[</span>root@Cc tar<span class="o">]</span># 
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -zcvf tarTest.txt.tar.gz ./lcc/</span>
+</span></span><span class="line"><span class="cl">./lcc/
+</span></span><span class="line"><span class="cl">./lcc/b
+</span></span><span class="line"><span class="cl">./lcc/a
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">20</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月  <span class="m">25</span> 22:59 lcc
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root   <span class="m">144</span> 3月  <span class="m">25</span> 23:02 tarTest.txt.tar.gz
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>使用bzip2</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -578,49 +571,49 @@ drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月 
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -jcvf tarTest.txt.tar.bz2 ./lcc/</span>
-./lcc/
-./lcc/b
-./lcc/a
-tar <span class="o">(</span>child<span class="o">)</span>: bzip2：无法 exec: 没有那个文件或目录
-tar <span class="o">(</span>child<span class="o">)</span>: Error is not recoverable: exiting now
-tar: Child returned status <span class="m">2</span>
-tar: Error is not recoverable: exiting now
-<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">20</span>
-drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月  <span class="m">25</span> 22:59 lcc
--rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
--rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
--rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:04 tarTest.txt.tar.bz2
--rw-r--r-- <span class="m">1</span> root root   <span class="m">144</span> 3月  <span class="m">25</span> 23:02 tarTest.txt.tar.gz
-<span class="o">[</span>root@Cc tar<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -jcvf tarTest.txt.tar.bz2 ./lcc/</span>
+</span></span><span class="line"><span class="cl">./lcc/
+</span></span><span class="line"><span class="cl">./lcc/b
+</span></span><span class="line"><span class="cl">./lcc/a
+</span></span><span class="line"><span class="cl">tar <span class="o">(</span>child<span class="o">)</span>: bzip2：无法 exec: 没有那个文件或目录
+</span></span><span class="line"><span class="cl">tar <span class="o">(</span>child<span class="o">)</span>: Error is not recoverable: exiting now
+</span></span><span class="line"><span class="cl">tar: Child returned status <span class="m">2</span>
+</span></span><span class="line"><span class="cl">tar: Error is not recoverable: exiting now
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">20</span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> root root  <span class="m">4096</span> 3月  <span class="m">25</span> 22:59 lcc
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:04 tarTest.txt.tar.bz2
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root   <span class="m">144</span> 3月  <span class="m">25</span> 23:02 tarTest.txt.tar.gz
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>查看当前压缩包</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -ztvf tarTest.txt.tar.gz</span> 
-drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
--rw-r--r-- root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/b
--rw-r--r-- root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/a
-<span class="o">[</span>root@Cc tar<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -ztvf tarTest.txt.tar.gz </span>
+</span></span><span class="line"><span class="cl">drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
+</span></span><span class="line"><span class="cl">-rw-r--r-- root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/b
+</span></span><span class="line"><span class="cl">-rw-r--r-- root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/a
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>解压之中指定文件</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -642,27 +635,27 @@ drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># rm -rf lcc/</span>
-<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
-总用量 <span class="m">16</span>
--rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
--rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
--rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:05 tarTest.txt.tar.bz2
--rw-r--r-- <span class="m">1</span> root root   <span class="m">144</span> 3月  <span class="m">25</span> 23:02 tarTest.txt.tar.gz
-<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -zxvf tarTest.txt.tar.gz ./lcc/b</span>
-./lcc/b
-<span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tree</span>
-.
-├── lcc
-│   └── b
-├── tarTest.txt
-├── tarTest.txt.tar
-├── tarTest.txt.tar.bz2
-└── tarTest.txt.tar.gz
-
-<span class="m">1</span> directory, <span class="m">5</span> files
-<span class="o">[</span>root@Cc tar<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># rm -rf lcc/</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">总用量 <span class="m">16</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:01 tarTest.txt
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">10240</span> 3月  <span class="m">25</span> 23:01 tarTest.txt.tar
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root     <span class="m">0</span> 3月  <span class="m">25</span> 23:05 tarTest.txt.tar.bz2
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root   <span class="m">144</span> 3月  <span class="m">25</span> 23:02 tarTest.txt.tar.gz
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tar -zxvf tarTest.txt.tar.gz ./lcc/b</span>
+</span></span><span class="line"><span class="cl">./lcc/b
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># tree</span>
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── lcc
+</span></span><span class="line"><span class="cl">│   └── b
+</span></span><span class="line"><span class="cl">├── tarTest.txt
+</span></span><span class="line"><span class="cl">├── tarTest.txt.tar
+</span></span><span class="line"><span class="cl">├── tarTest.txt.tar.bz2
+</span></span><span class="line"><span class="cl">└── tarTest.txt.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">1</span> directory, <span class="m">5</span> files
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc tar<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>保留文件属性
@@ -681,15 +674,15 @@ drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># man -c</span>
-您需要什么手册页？
-<span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># man yum</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># man -c</span>
+</span></span><span class="line"><span class="cl">您需要什么手册页？
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># man yum</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="export导出环境变量">export（导出环境变量）</h3>
 <ul>
@@ -697,7 +690,7 @@ drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -705,13 +698,13 @@ drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># go env |grep GOPATH</span>
-<span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&#34;/opt/gopath&#34;</span>
-<span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># export GOPATH=&#34;/root&#34;</span>
-<span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># go env |grep GOPATH</span>
-<span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&#34;/root&#34;</span>
-<span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># export GOPATH=&#34;/opt/gopath&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># go env |grep GOPATH</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&#34;/opt/gopath&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># export GOPATH=&#34;/root&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># go env |grep GOPATH</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GOPATH</span><span class="o">=</span><span class="s2">&#34;/root&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc system<span class="o">]</span><span class="c1"># export GOPATH=&#34;/opt/gopath&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>export -n</li>
@@ -725,11 +718,11 @@ drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># history -w history.txt</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># history -w history.txt </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>清楚当前history
@@ -738,13 +731,13 @@ drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># rm -rf ~/.bash_history</span> 
-<span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># history -c</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># rm -rf ~/.bash_history </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># history -c</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>可以配合<code>history |grep [docker]</code>查找</li>
@@ -760,15 +753,15 @@ drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
 <h3 id="uptime查看系统负载">uptime(查看系统负载)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># uptime</span>
- 23:33:15 up <span class="m">5</span> days, 14:18,  <span class="m">2</span> users,  load average: 0.21, 0.32, 0.31
-<span class="o">[</span>root@Cc history<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># uptime</span>
+</span></span><span class="line"><span class="cl"> 23:33:15 up <span class="m">5</span> days, 14:18,  <span class="m">2</span> users,  load average: 0.21, 0.32, 0.31
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc history<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="free显示系统内存状况">free(显示系统内存状况)</h3>
 <p><code>[root@Cc history]# free -m</code></p>
@@ -834,7 +827,7 @@ drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://cc360428.gitee.io/blog" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -917,6 +910,17 @@ drwxr-xr-x root/root         <span class="m">0</span> 2020-03-25 22:59 ./lcc/
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

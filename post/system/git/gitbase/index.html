@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/git/gitbase/" />
@@ -62,17 +62,14 @@
 <meta property="og:title" content="Git 基本命令 " />
 <meta property="og:description" content="Git 工作用到的基本命令 模拟环境 自己搭建了gogs 开源Git仓库 注册账号地址 lcc、google 创建仓库Study 把lcc 添加管理协作者(收到邮" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/git/gitbase/" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/git/gitbase/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-04-18T14:33:04+08:00" />
 <meta property="article:modified_time" content="2020-04-18T14:33:04+08:00" />
+
 <meta itemprop="name" content="Git 基本命令 ">
-<meta itemprop="description" content="Git 工作用到的基本命令 模拟环境 自己搭建了gogs 开源Git仓库 注册账号地址 lcc、google 创建仓库Study 把lcc 添加管理协作者(收到邮">
-<meta itemprop="datePublished" content="2020-04-18T14:33:04&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-18T14:33:04&#43;08:00" />
+<meta itemprop="description" content="Git 工作用到的基本命令 模拟环境 自己搭建了gogs 开源Git仓库 注册账号地址 lcc、google 创建仓库Study 把lcc 添加管理协作者(收到邮"><meta itemprop="datePublished" content="2020-04-18T14:33:04+08:00" />
+<meta itemprop="dateModified" content="2020-04-18T14:33:04+08:00" />
 <meta itemprop="wordCount" content="544">
-
-
-
 <meta itemprop="keywords" content="DevTools," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git 基本命令 "/>
 <meta name="twitter:description" content="Git 工作用到的基本命令 模拟环境 自己搭建了gogs 开源Git仓库 注册账号地址 lcc、google 创建仓库Study 把lcc 添加管理协作者(收到邮"/>
@@ -142,7 +139,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -301,7 +298,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -404,40 +401,40 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">You have been added as a collaborator of repository: google/Study
-View it on Gogs.
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">You have been added as a collaborator of repository: google/Study
+</span></span><span class="line"><span class="cl">View it on Gogs.
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="拉取仓库代码">拉取仓库代码</h3>
 <h4 id="git-clone-"><code>git clone </code></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git clone http://git.lichaocheng.top/google/Study.git
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clone http://git.lichaocheng.top/google/Study.git
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="git-pull"><code>git pull</code></h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">mkdir Study
-<span class="nb">cd</span> Study
-git init
-git remote add origin http://git.lichaocheng.top/google/Study.git
-git pull origin master<span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir Study
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> Study
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git remote add origin http://git.lichaocheng.top/google/Study.git
+</span></span><span class="line"><span class="cl">git pull origin master<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="提交文件代码">提交文件（代码）</h4>
 <blockquote>
@@ -447,18 +444,18 @@ git pull origin master<span class="p">;</span>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git add .
-git commit -m <span class="s2">&#34;提交备注&#34;</span><span class="p">;</span>
-git push origin master<span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;提交备注&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">git push origin master<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="查看状态status">查看状态（status）</h3>
-<pre><code>git status
+<pre tabindex="0"><code>git status
 git status -s // 查看修改的文件摘要
 </code></pre><ul>
 <li>查看修改未 <code>push</code> 文件</li>
@@ -467,17 +464,17 @@ git status -s // 查看修改的文件摘要
 <h3 id="查看修改缓存状态">查看修改缓存状态</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git diff
-git diff --cached <span class="o">[</span>file<span class="o">]</span>	// 查看以缓存的改的
-git diff HEAD <span class="o">[</span>file<span class="o">]</span>		// 查看以缓存与缓存的改的,默认全部 file 可以指定文件
-git diff --stat <span class="o">[</span>file<span class="o">]</span>		// 查看缓存状态摘要,默认全部 file 可以指定文件
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git diff
+</span></span><span class="line"><span class="cl">git diff --cached <span class="o">[</span>file<span class="o">]</span>	// 查看以缓存的改的
+</span></span><span class="line"><span class="cl">git diff HEAD <span class="o">[</span>file<span class="o">]</span>		// 查看以缓存与缓存的改的,默认全部 file 可以指定文件
+</span></span><span class="line"><span class="cl">git diff --stat <span class="o">[</span>file<span class="o">]</span>		// 查看缓存状态摘要,默认全部 file 可以指定文件
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="取消以缓存内容">取消以缓存内容</h3>
 <blockquote>
@@ -485,7 +482,7 @@ git diff --stat <span class="o">[</span>file<span class="o">]</span>		// 查看�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -496,16 +493,16 @@ git diff --stat <span class="o">[</span>file<span class="o">]</span>		// 查看�
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git status -s
-M  README
-M  hello.php
-$ git reset HEAD hello.php 
-Unstaged changes after reset:
-M    hello.go
-$ git status -s
-M  README
- M hello.go
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git status -s
+</span></span><span class="line"><span class="cl">M  README
+</span></span><span class="line"><span class="cl">M  hello.php
+</span></span><span class="line"><span class="cl">$ git reset HEAD hello.php 
+</span></span><span class="line"><span class="cl">Unstaged changes after reset:
+</span></span><span class="line"><span class="cl">M    hello.go
+</span></span><span class="line"><span class="cl">$ git status -s
+</span></span><span class="line"><span class="cl">M  README
+</span></span><span class="line"><span class="cl"> M hello.go
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>你只需<code>git commit </code> 操作只会对<code>README</code>文件的改动提交</p>
@@ -513,30 +510,30 @@ M  README
 <h3 id="强制回退">强制回退</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git status
-git reset --hard b99df44a36afb2f768c56bd714bbd28789ffc252
-// 提示信息 HEAD is now at b99df44 Initial commit
-git push -f -u origin
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git status
+</span></span><span class="line"><span class="cl">git reset --hard b99df44a36afb2f768c56bd714bbd28789ffc252
+</span></span><span class="line"><span class="cl">// 提示信息 HEAD is now at b99df44 Initial commit
+</span></span><span class="line"><span class="cl">git push -f -u origin
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="分支管理">分支管理</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git branch <span class="o">[</span>name<span class="o">]</span>			// 创建分支
-git checkout <span class="o">[</span>name<span class="o">]</span>			// 切换分支
-git push origin <span class="o">[</span>dev<span class="o">]</span>		// 提交该分支
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git branch <span class="o">[</span>name<span class="o">]</span>			// 创建分支
+</span></span><span class="line"><span class="cl">git checkout <span class="o">[</span>name<span class="o">]</span>			// 切换分支
+</span></span><span class="line"><span class="cl">git push origin <span class="o">[</span>dev<span class="o">]</span>		// 提交该分支
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="列出分支">列出分支</h4>
 <blockquote>
@@ -544,17 +541,17 @@ git push origin <span class="o">[</span>dev<span class="o">]</span>		// 提交�
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git branch
-  dev2
-* dev
-  master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git branch
+</span></span><span class="line"><span class="cl">  dev2
+</span></span><span class="line"><span class="cl">* dev
+</span></span><span class="line"><span class="cl">  master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="代码冲突">代码冲突</h3>
 <ul>
@@ -565,13 +562,13 @@ git push origin <span class="o">[</span>dev<span class="o">]</span>		// 提交�
 <h3 id="查看提交日志">查看提交日志</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git log
-git log <span class="o">[</span>file<span class="o">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git log
+</span></span><span class="line"><span class="cl">git log <span class="o">[</span>file<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -593,7 +590,7 @@ git log <span class="o">[</span>file<span class="o">]</span>
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://cc360428.gitee.io/blog" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -676,6 +673,17 @@ git log <span class="o">[</span>file<span class="o">]</span>
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

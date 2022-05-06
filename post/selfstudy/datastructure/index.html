@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/selfstudy/datastructure/" />
@@ -62,17 +62,14 @@
 <meta property="og:title" content="DataStructure（02142）" />
 <meta property="og:description" content="数据结构导论（02142） 第一章 概论（重点） 1 引言 数据结构：是计算机组织数据和存储数据的方式 计算机解决问题步骤 建立数学模型 设计算法 编程实现算" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/selfstudy/datastructure/" />
+<meta property="og:url" content="https://cc360428.github.io/post/selfstudy/datastructure/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2022-03-31T21:19:55+08:00" />
 <meta property="article:modified_time" content="2022-03-31T21:19:55+08:00" />
+
 <meta itemprop="name" content="DataStructure（02142）">
-<meta itemprop="description" content="数据结构导论（02142） 第一章 概论（重点） 1 引言 数据结构：是计算机组织数据和存储数据的方式 计算机解决问题步骤 建立数学模型 设计算法 编程实现算">
-<meta itemprop="datePublished" content="2022-03-31T21:19:55&#43;08:00" />
-<meta itemprop="dateModified" content="2022-03-31T21:19:55&#43;08:00" />
-<meta itemprop="wordCount" content="12463">
-
-
-
+<meta itemprop="description" content="数据结构导论（02142） 第一章 概论（重点） 1 引言 数据结构：是计算机组织数据和存储数据的方式 计算机解决问题步骤 建立数学模型 设计算法 编程实现算"><meta itemprop="datePublished" content="2022-03-31T21:19:55+08:00" />
+<meta itemprop="dateModified" content="2022-03-31T21:19:55+08:00" />
+<meta itemprop="wordCount" content="12461">
 <meta itemprop="keywords" content="DataStructure,SelfStudy," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="DataStructure（02142）"/>
 <meta name="twitter:description" content="数据结构导论（02142） 第一章 概论（重点） 1 引言 数据结构：是计算机组织数据和存储数据的方式 计算机解决问题步骤 建立数学模型 设计算法 编程实现算"/>
@@ -142,7 +139,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -301,7 +298,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -347,7 +344,7 @@
             <a href="https://cc360428.github.io/categories/computerbasics/"> ComputerBasics </a>
             
           </div>
-        <span class="more-meta"> 约 12463 字 </span>
+        <span class="more-meta"> 约 12461 字 </span>
           <span class="more-meta"> 预计阅读 25 分钟 </span>
 
         
@@ -594,7 +591,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -607,18 +604,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">InsertSeqList</span><span class="p">(</span> <span class="n">Seqlist</span> <span class="o">*</span><span class="n">L</span> <span class="n">DataType</span> <span class="n">x</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">.</span><span class="n">length</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>
-        <span class="n">exit</span><span class="p">(</span> <span class="err">“</span> <span class="err">位置</span> <span class="err">错</span> <span class="err">误</span> <span class="err">”</span> <span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">L</span><span class="p">.</span><span class="n">length</span> <span class="o">==</span> <span class="n">MaxSize</span> <span class="p">)</span>
-        <span class="n">exit</span> <span class="p">(</span><span class="err">“</span> <span class="err">溢出</span> <span class="s">&#34;);</span>
-       <span class="k">for</span><span class="p">(</span> <span class="n">j</span><span class="o">=</span><span class="n">L</span><span class="p">.</span><span class="n">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">&gt;=</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span>
-              <span class="n">L</span><span class="p">.</span><span class="n">data</span><span class="p">[</span> <span class="n">j</span> <span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span> <span class="p">];</span>        <span class="c1">//依次后移   L.data[ i-1] = x;
-</span><span class="c1"></span>         <span class="n">L</span><span class="p">.</span><span class="n">length</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">InsertSeqList</span><span class="p">(</span> <span class="n">Seqlist</span> <span class="o">*</span><span class="n">L</span> <span class="n">DataType</span> <span class="n">x</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">.</span><span class="n">length</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">exit</span><span class="p">(</span> <span class="err">“</span> <span class="err">位置</span> <span class="err">错</span> <span class="err">误</span> <span class="err">”</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">L</span><span class="p">.</span><span class="n">length</span> <span class="o">==</span> <span class="n">MaxSize</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">exit</span> <span class="p">(</span><span class="err">“</span> <span class="err">溢出</span> <span class="s">&#34;);</span>
+</span></span><span class="line"><span class="cl">       <span class="k">for</span><span class="p">(</span> <span class="n">j</span><span class="o">=</span><span class="n">L</span><span class="p">.</span><span class="n">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">&gt;=</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">              <span class="n">L</span><span class="p">.</span><span class="n">data</span><span class="p">[</span> <span class="n">j</span> <span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span> <span class="p">];</span>        <span class="c1">//依次后移   L.data[ i-1] = x;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>         <span class="n">L</span><span class="p">.</span><span class="n">length</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>删除操作运算
@@ -630,7 +627,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -642,17 +639,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">DeleteSeqList</span><span class="p">(</span> <span class="n">SeqList</span> <span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">.</span><span class="n">length</span> <span class="p">)</span>
-        <span class="n">Error</span><span class="p">(</span> <span class="err">“</span> <span class="err">位置</span> <span class="err">错</span> <span class="err">误</span> <span class="err">”</span> <span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">.</span><span class="n">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
-        <span class="n">L</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-  
-    <span class="n">L</span><span class="p">.</span><span class="n">length</span><span class="o">--</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">DeleteSeqList</span><span class="p">(</span> <span class="n">SeqList</span> <span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	  <span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">.</span><span class="n">length</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">Error</span><span class="p">(</span> <span class="err">“</span> <span class="err">位置</span> <span class="err">错</span> <span class="err">误</span> <span class="err">”</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">.</span><span class="n">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">L</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">L</span><span class="p">.</span><span class="n">length</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>优点
@@ -698,7 +695,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -715,22 +712,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">InsertLinkList</span><span class="p">(</span> <span class="n">LinkList</span> <span class="n">head</span><span class="p">,</span> <span class="n">Data</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span>     <span class="cm">/* 在表中head的第i个数据元素结点之前插入一个以X为值的新结点。 */</span>
-<span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="o">*</span><span class="n">q</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span>
-        <span class="n">q</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-    <span class="k">else</span> <span class="n">q</span> <span class="o">=</span> <span class="n">GetLinkList</span><span class="p">(</span> <span class="n">head</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>            <span class="cm">/* 找第i-1个数据元素结点 */</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">q</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>                                <span class="cm">/* 第i-1个结点不存在 */</span>
-        <span class="n">exit</span><span class="p">(</span> <span class="err">“</span> <span class="err">找到</span> <span class="err">插入位置</span> <span class="err">”</span> <span class="p">);</span>
-    <span class="k">else</span><span class="p">{</span> <span class="n">p</span>		<span class="o">=</span> <span class="n">malloc</span><span class="p">(</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">)</span> <span class="p">);</span>       <span class="cm">/* 生成新结点 */</span>
-          <span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span>	<span class="o">=</span> <span class="n">x</span><span class="p">;</span>                            <span class="cm">/* 生成新结点指向X */</span>
-          <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span>	<span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>                      <span class="cm">/* 新结点链域指向*q的后继结点 */</span>  <span class="mi">1</span>
-          <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>                            <span class="cm">/* 修改*q的链域 */</span>              <span class="mi">2</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="c1">// 特别要注意：上面1和2二行代码不可颠倒顺序，否则*q链先断了会找不到。
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">InsertLinkList</span><span class="p">(</span> <span class="n">LinkList</span> <span class="n">head</span><span class="p">,</span> <span class="n">Data</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span>     <span class="cm">/* 在表中head的第i个数据元素结点之前插入一个以X为值的新结点。 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Node</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="o">*</span><span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">q</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">q</span> <span class="o">=</span> <span class="n">GetLinkList</span><span class="p">(</span> <span class="n">head</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>            <span class="cm">/* 找第i-1个数据元素结点 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">q</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>                                <span class="cm">/* 第i-1个结点不存在 */</span>
+</span></span><span class="line"><span class="cl">		<span class="n">exit</span><span class="p">(</span> <span class="err">“</span> <span class="err">找到</span> <span class="err">插入位置</span> <span class="err">”</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span><span class="p">{</span> <span class="n">p</span>		<span class="o">=</span> <span class="n">malloc</span><span class="p">(</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">)</span> <span class="p">);</span>       <span class="cm">/* 生成新结点 */</span>
+</span></span><span class="line"><span class="cl">	      <span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span>	<span class="o">=</span> <span class="n">x</span><span class="p">;</span>                            <span class="cm">/* 生成新结点指向X */</span>
+</span></span><span class="line"><span class="cl">	      <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span>	<span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>                      <span class="cm">/* 新结点链域指向*q的后继结点 */</span>  <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">	      <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>                            <span class="cm">/* 修改*q的链域 */</span>              <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 特别要注意：上面1和2二行代码不可颠倒顺序，否则*q链先断了会找不到。
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>删除运算
@@ -742,7 +739,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -757,20 +754,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">DeleteLinkList</span><span class="p">(</span> <span class="n">LinkList</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span><span class="n">q</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span>
-        <span class="n">p</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
-    <span class="k">else</span> <span class="n">p</span> <span class="o">=</span> <span class="n">GetLinkList</span><span class="p">(</span> <span class="n">head</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>    <span class="cm">/* 先找待删结点的直接前驱 */</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">p</span> <span class="err">！</span> <span class="o">=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">q</span>	<span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>              <span class="cm">/* P指向待删结点 */</span>
-        <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>              <span class="cm">/* 移出待删结点 */</span>
-        <span class="n">free</span><span class="p">(</span> <span class="n">q</span> <span class="p">);</span>                      <span class="cm">/* 释放已移出结点P的空间 */</span>
-    <span class="p">}</span>  <span class="k">else</span> <span class="n">printf</span><span class="p">(</span> <span class="err">”</span> <span class="n">error</span> <span class="err">”</span> <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">DeleteLinkList</span><span class="p">(</span> <span class="n">LinkList</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Node</span> <span class="o">*</span><span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">p</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">p</span> <span class="o">=</span> <span class="n">GetLinkList</span><span class="p">(</span> <span class="n">head</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>    <span class="cm">/* 先找待删结点的直接前驱 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">p</span> <span class="err">！</span> <span class="o">=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">q</span>	<span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>              <span class="cm">/* P指向待删结点 */</span>
+</span></span><span class="line"><span class="cl">		<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>              <span class="cm">/* 移出待删结点 */</span>
+</span></span><span class="line"><span class="cl">		<span class="n">free</span><span class="p">(</span> <span class="n">q</span> <span class="p">);</span>                      <span class="cm">/* 释放已移出结点P的空间 */</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>  <span class="k">else</span> <span class="n">printf</span><span class="p">(</span> <span class="err">”</span> <span class="n">error</span> <span class="err">”</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -792,34 +789,34 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">q</span><span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
-<span class="n">free</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">q</span><span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">free</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>插入</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">t</span><span class="o">-&gt;</span><span class="n">prior</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>
-<span class="n">t</span><span class="o">-&gt;</span><span class="n">next</span>		<span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span>	<span class="o">=</span> <span class="n">t</span><span class="p">;</span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span>		<span class="o">=</span> <span class="n">t</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">t</span><span class="o">-&gt;</span><span class="n">prior</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">t</span><span class="o">-&gt;</span><span class="n">next</span>		<span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span>	<span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span>		<span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1068,7 +1065,7 @@
 <li>对任何一棵二叉树，如果其终端结点数为n0，度为2的结点数为n2，则n0＝n2＋1。即：叶结点数n0=度为2的结点数n2+1</li>
 <li>下图其中度为2的结点数共有5个，即ABCEF（有2个孩子的，如G就不是），叶子共有6个，即IJKLMH(没有结点，度为0的)，得出这二叉树终端结点数=度为2的结点数+1，即6=5+1</li>
 </ul>
-<pre><code class="language-mermaid" data-lang="mermaid">graph TB;
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TB;
 A((A))
 B((B))
 C((C))
@@ -1095,7 +1092,7 @@ C--&gt;H
 </code></pre><ul>
 <li>满二叉树:深度为k(k&gt;=1)且有<code>2^k-1</code>个结点的二叉树；下图满二叉树结点 2^3-1=7</li>
 </ul>
-<pre><code class="language-mermaid" data-lang="mermaid">graph TB;
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TB;
 1((1))
 2((2))
 3((3))
@@ -1146,7 +1143,7 @@ C--&gt;H
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1158,24 +1155,24 @@ C--&gt;H
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span>   <span class="nf">preorder</span><span class="p">(</span> <span class="n">bitreptr</span> <span class="n">r</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="cm">/*先序遍历以r为根的二叉树*/</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">r</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">);</span>         <span class="cm">/*访问根结点*/</span>
-    <span class="n">preorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">lchild</span> <span class="p">)</span> <span class="err">；</span>
-    <span class="n">preorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">rchild</span> <span class="p">);</span>
-    <span class="cm">/*先序遍历以r的右孩子为根的右子树*/</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span>   <span class="nf">preorder</span><span class="p">(</span> <span class="n">bitreptr</span> <span class="n">r</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*先序遍历以r为根的二叉树*/</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">r</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">);</span>         <span class="cm">/*访问根结点*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">preorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">lchild</span> <span class="p">)</span> <span class="err">；</span>
+</span></span><span class="line"><span class="cl">	<span class="n">preorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">rchild</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*先序遍历以r的右孩子为根的右子树*/</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>中序遍历(LDR)-左根右 <strong>D-&gt;H-&gt;B-&gt;E-&gt;I-&gt;A-&gt;J-&gt;F-&gt;K-&gt;C-&gt;G</strong></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1187,24 +1184,24 @@ C--&gt;H
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span>   <span class="nf">inorder</span><span class="p">(</span> <span class="n">bitreptr</span> <span class="n">r</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="cm">/*中序遍历以r为根的二叉树*/</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">r</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="n">inorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">lchild</span> <span class="p">)</span> <span class="err">；</span>
-    <span class="cm">/*中序遍历以r的左孩子为根的左子树*/</span>
-    <span class="n">printf</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">);</span>              <span class="cm">/*访问根结点*/</span>
-    <span class="n">inorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">rchild</span> <span class="p">);</span>           <span class="cm">/*…….*/</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span>   <span class="nf">inorder</span><span class="p">(</span> <span class="n">bitreptr</span> <span class="n">r</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*中序遍历以r为根的二叉树*/</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">r</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">inorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">lchild</span> <span class="p">)</span> <span class="err">；</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*中序遍历以r的左孩子为根的左子树*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">);</span>              <span class="cm">/*访问根结点*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">inorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">rchild</span> <span class="p">);</span>           <span class="cm">/*…….*/</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>后序遍历(LRD)-左右根 <strong>H-&gt;D-&gt;I-&gt;E-&gt;B-&gt;J-&gt;K-&gt;F-&gt;G-&gt;C-&gt;A</strong></li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1216,19 +1213,19 @@ C--&gt;H
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span>   <span class="nf">postorder</span><span class="p">(</span> <span class="n">bitreptr</span> <span class="n">r</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="cm">/*后序遍历以r为根的二叉树*/</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">r</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="n">postorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">lchild</span> <span class="p">)</span> <span class="err">；</span>
-    <span class="cm">/*后序遍历以r的左孩子为根的左子树*/</span>
-    <span class="n">postorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">rchild</span> <span class="p">)</span> <span class="err">；</span>
-    <span class="n">printf</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">);</span>       <span class="cm">/*访问根结点*/</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span>   <span class="nf">postorder</span><span class="p">(</span> <span class="n">bitreptr</span> <span class="n">r</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*后序遍历以r为根的二叉树*/</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">r</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">postorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">lchild</span> <span class="p">)</span> <span class="err">；</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*后序遍历以r的左孩子为根的左子树*/</span>
+</span></span><span class="line"><span class="cl">	<span class="n">postorder</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">rchild</span> <span class="p">)</span> <span class="err">；</span>
+</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span> <span class="n">r</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">);</span>       <span class="cm">/*访问根结点*/</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div><pre><code class="language-mermaid" data-lang="mermaid">graph TB;
+</div><pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TB;
 A((A))
 B((B))
 C((C))
@@ -1307,7 +1304,7 @@ F--&gt;K
 <li>后序遍历：先依次后续遍历每棵子树，最后访问根结点<strong>B-&gt;D-&gt;C-&gt;E-&gt;A</strong></li>
 <li>层次遍历：遍历每个兄弟结点<strong>A-&gt;B-&gt;C-&gt;E-&gt;D</strong></li>
 </ul>
-<pre><code class="language-mermaid" data-lang="mermaid">graph TB;
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TB;
 A((A))
 B((B))
 C((C))
@@ -1475,7 +1472,7 @@ C--&gt;D
 <ul>
 <li>
 <p>方法：为了克服顶点的重复访问，设立辅助数组（visited[n]）</p>
-<pre><code class="language-math" data-lang="math">visted[i]=\left\{
+<pre tabindex="0"><code class="language-math" data-lang="math">visted[i]=\left\{
 \begin{aligned}
 1=&amp;顶点i已被访问过 \\
 0=&amp;顶点i未被访问过\\
@@ -1701,7 +1698,7 @@ C--&gt;D
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1715,25 +1712,23 @@ C--&gt;D
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
-</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">straightsort</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span> <span class="p">);</span>
-<span class="p">{</span>                                               <span class="cm">/* 用直接插入排序法对r[1]…r[n]进行排序 */</span>
-    <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>                    <span class="cm">/* n为表长，从第二个记录进行插入 */</span>
-    <span class="p">{</span>
-        <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>                         <span class="cm">/* 第i个记录复制为岗哨 */</span>
-        <span class="n">j</span>	<span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>            <span class="cm">/* 与岗哨比较，直到健不大于岗哨键值 */</span>
-        <span class="p">{</span>
-            <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>                 <span class="cm">/* 将第j个记录赋值给第j+1个记录 */</span>
-            <span class="n">j</span>		<span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>                       <span class="cm">/* 将第i个记录插入到序列中 */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">straightsort</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>                                               <span class="cm">/* 用直接插入排序法对r[1]…r[n]进行排序 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>                    <span class="cm">/* n为表长，从第二个记录进行插入 */</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>                         <span class="cm">/* 第i个记录复制为岗哨 */</span>
+</span></span><span class="line"><span class="cl">		<span class="n">j</span>	<span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">while</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>            <span class="cm">/* 与岗哨比较，直到健不大于岗哨键值 */</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>                 <span class="cm">/* 将第j个记录赋值给第j+1个记录 */</span>
+</span></span><span class="line"><span class="cl">			<span class="n">j</span>		<span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>                       <span class="cm">/* 将第i个记录插入到序列中 */</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -1744,14 +1739,14 @@ C--&gt;D
 <li>基本思想：通过多次重复比较、交换相邻记录而实现排序；每一趟的效果都是将当前键值最大的记录换到最后。它是对n个元素排序，所历经的<strong>趟数至少为1，至多为n-1</strong></li>
 <li>原理：通过两两数进行多次对比，把最大的数放在最后面，如下面多次比较才得到第一趟结果把49放在最后面，这就是冒泡的原理(<code>21，25，49，25，16，08</code>)</li>
 </ul>
-<pre><code>    第一趟：21，25，25，16，08，49
+<pre tabindex="0"><code>    第一趟：21，25，25，16，08，49
     第二趟：21，25，16，08，25，49
     第三趟：21，16，08，25，25，49
     第四趟：16，08，21，25，25，49
     第五趟：08，16，21，25，25，49
 </code></pre><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1770,24 +1765,24 @@ C--&gt;D
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">Void</span> <span class="nf">bubbleSort</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span>
-<span class="p">{</span>                                                       <span class="cm">/* 用冒泡排序法对r[1]…r[n]进行排序 */</span>
-    <span class="cm">/* flag:标志文件是否已排好序 */</span>
-    <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                               <span class="cm">/* 若循环中记录未作交换,则说明序列已有序 */</span>
-        <span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
-            <span class="k">if</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">flag</span>		<span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="cm">/* 排序前先为0，若在一趟起泡中交换了记录，则置为1 */</span>
-                <span class="n">p</span>		<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-                <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="n">flag</span> <span class="p">)</span>
-            <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">Void</span> <span class="nf">bubbleSort</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>                                                       <span class="cm">/* 用冒泡排序法对r[1]…r[n]进行排序 */</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* flag:标志文件是否已排好序 */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>                               <span class="cm">/* 若循环中记录未作交换,则说明序列已有序 */</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">flag</span>		<span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="cm">/* 排序前先为0，若在一趟起泡中交换了记录，则置为1 */</span>
+</span></span><span class="line"><span class="cl">				<span class="n">p</span>		<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">				<span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span> <span class="n">flag</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>快速排序</li>
@@ -1795,7 +1790,7 @@ C--&gt;D
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1825,41 +1820,39 @@ C--&gt;D
 </span><span class="lnt">28
 </span><span class="lnt">29
 </span><span class="lnt">30
-</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span>  <span class="nf">quickpass</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span> <span class="p">)</span>
-<span class="p">{</span>
-	<span class="cm">/* 对顺序表r中的子序列r[h]至r[p]进行快速排序 */</span>
-	<span class="n">i</span>	<span class="o">=</span> <span class="n">h</span><span class="p">;</span>    <span class="n">j</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/* 左右指针置初值 */</span>
-	<span class="n">x</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">h</span><span class="p">];</span>         <span class="cm">/* 取处理元素（即作为枢轴记录） */</span>
-	<span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="err">＜</span> <span class="n">j</span>  <span class="p">)</span>       <span class="cm">/* 左右指针未碰头则反复做： */</span>
-	<span class="p">{</span>
-		<span class="k">while</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">key</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">)</span>
-			<span class="o">--</span><span class="n">j</span><span class="p">;</span>
-		<span class="cm">/*右边未找到小关键字，则右指针j继续左移*/</span>
-		<span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">)</span>    <span class="cm">/*右边找到比枢轴记录小的记录，则将其送到左边*/</span>
-		<span class="p">{</span>
-			<span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-			<span class="o">++</span><span class="n">i</span><span class="p">;</span>
-		<span class="p">}</span>
-		<span class="k">while</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">.</span><span class="n">key</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">)</span>
-			<span class="o">++</span><span class="n">i</span><span class="p">;</span>
-		<span class="cm">/*边未找到大关键字，则左指针i继续右移*/</span>
-		<span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">)</span>                    <span class="cm">/*左边找到比枢轴记录大的记录，则将其送到右边*/</span>
-		<span class="p">{</span>
-			<span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-			<span class="o">-</span> <span class="o">-</span><span class="n">j</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>                               <span class="cm">/*枢轴记录定位*/</span>
-	<span class="k">if</span> <span class="p">(</span> <span class="n">h</span> <span class="o">&lt;</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
-		<span class="n">quickpass</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>       <span class="cm">/*对左子序列进行快速排序*/</span>
-	<span class="k">if</span> <span class="p">(</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">high</span> <span class="p">)</span>
-		<span class="n">quickpass</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span> <span class="p">);</span>       <span class="cm">/*对右子序列进行快速排序*/</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span>  <span class="nf">quickpass</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/* 对顺序表r中的子序列r[h]至r[p]进行快速排序 */</span>
+</span></span><span class="line"><span class="cl">	<span class="n">i</span>	<span class="o">=</span> <span class="n">h</span><span class="p">;</span>    <span class="n">j</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/* 左右指针置初值 */</span>
+</span></span><span class="line"><span class="cl">	<span class="n">x</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">h</span><span class="p">];</span>         <span class="cm">/* 取处理元素（即作为枢轴记录） */</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="err">＜</span> <span class="n">j</span>  <span class="p">)</span>       <span class="cm">/* 左右指针未碰头则反复做： */</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">while</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">key</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="o">--</span><span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="cm">/*右边未找到小关键字，则右指针j继续左移*/</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">)</span>    <span class="cm">/*右边找到比枢轴记录小的记录，则将其送到左边*/</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="o">++</span><span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">while</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">.</span><span class="n">key</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="o">++</span><span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="cm">/*边未找到大关键字，则左指针i继续右移*/</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">)</span>                    <span class="cm">/*左边找到比枢轴记录大的记录，则将其送到右边*/</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="o">-</span> <span class="o">-</span><span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>                               <span class="cm">/*枢轴记录定位*/</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">h</span> <span class="o">&lt;</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">quickpass</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>       <span class="cm">/*对左子序列进行快速排序*/</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">high</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">quickpass</span><span class="p">(</span> <span class="n">r</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span> <span class="p">);</span>       <span class="cm">/*对右子序列进行快速排序*/</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>算法分析
@@ -1886,7 +1879,7 @@ C--&gt;D
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1905,24 +1898,24 @@ C--&gt;D
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">void</span>  <span class="nf">select</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="cm">/*用选择排序法对r[1]….r[n]进行排序*/</span>
-    <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">k</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>                                  <span class="cm">/*选择第i小的记录，并交换位*/</span>
-        <span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
-            <span class="k">if</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>      <span class="cm">/*在r.[i]…r.[n-1]中找最小者*/</span>
-                <span class="n">k</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">i</span> <span class="p">)</span>                           <span class="cm">/*交换记录*/</span>
-        <span class="p">{</span>
-            <span class="n">temp</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-            <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-            <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>	<span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span>  <span class="nf">select</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="cm">/*用选择排序法对r[1]….r[n]进行排序*/</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">k</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>                                  <span class="cm">/*选择第i小的记录，并交换位*/</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>      <span class="cm">/*在r.[i]…r.[n-1]中找最小者*/</span>
+</span></span><span class="line"><span class="cl">				<span class="n">k</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">i</span> <span class="p">)</span>                           <span class="cm">/*交换记录*/</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">temp</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>	<span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>分析
@@ -2036,7 +2029,7 @@ C--&gt;D
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://cc360428.gitee.io/blog" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -2107,6 +2100,17 @@ C--&gt;D
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

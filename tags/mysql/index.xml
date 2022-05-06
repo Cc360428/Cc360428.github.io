@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Lcc</copyright>
-    <lastBuildDate>Sat, 18 Apr 2020 12:21:48 +0800</lastBuildDate>
-    
-	<atom:link href="https://cc360428.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 18 Apr 2020 12:21:48 +0800</lastBuildDate><atom:link href="https://cc360428.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL 忘记密码</title>
       <link>https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/</link>
@@ -36,7 +32,7 @@
       <pubDate>Wed, 18 Sep 2019 12:21:48 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/system/mysql/mysql-lock/</guid>
-      <description>MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&amp;gt; show tables; +----------------+ | Tables_in_test | +----------------+ | mylock | | test | +----------------+ 2 rows in set (0.03 sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态</description>
+      <description>MySQL 锁 表级锁 和 行级锁 1 2 3 4 5 6 7 8 mysql&amp;gt;showtables;+----------------+|Tables_in_test|+----------------+|mylock||test|+----------------+2rowsinset(0.03sec) 表锁 表锁有两种 元数据锁（Meta Data Lock，MDL） 查询争用状态变量 1 2 3 4 5 6 7 8 showstatuslike&amp;#39;table_locks%&amp;#39;;+-----------------------+-------+|Variable_name|Value|+-----------------------+-------+|Table_locks_immediate|104||Table_locks_waited|0|+-----------------------+-------+2rowsinset(0.04sec) Table_loc</description>
     </item>
     
     <item>
@@ -45,7 +41,7 @@
       <pubDate>Sat, 08 Dec 2018 22:21:48 +0800</pubDate>
       
       <guid>https://cc360428.github.io/post/system/mysql/day01/</guid>
-      <description>mysql 环境搭建 安装mysql 1 2 3 4 5 6 7 mysql&amp;gt; select version(); +------------+ | version() | +------------+ | 5.7.17-log | +------------+ 1 row in set (0.03 sec) 创建数据库，与查看 CREATE DATABASE mysql_crash_course CHARACTER SET &#39;utf8&#39; COLLATE &#39;utf8_unicode_ci&#39;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16</description>
+      <description>mysql 环境搭建 安装mysql 1 2 3 4 5 6 7 mysql&amp;gt;selectversion();+------------+|version()|+------------+|5.7.17-log|+------------+1rowinset(0.03sec) 创建数据库，与查看 CREATE DATABASE mysql_crash_course CHARACTER SET &#39;utf8&#39; COLLATE &#39;utf8_unicode_ci&#39;; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 mysql&amp;gt;showdatabases;+------------------------------+|Database|+------------------------------+|information_schema||accesshubTest||beego_view||casbin||gogs||hr||hyper_lichaocheng_top_server||images||mysql||mysql_crash_course||performance_schema||radius||share||sys||test||tuzi|+------------------------------+16rowsinset(0.10sec) 下载需要的sql 文件</description>
     </item>
     
   </channel>

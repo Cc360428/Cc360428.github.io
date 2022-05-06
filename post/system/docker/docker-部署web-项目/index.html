@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/docker/docker-%E9%83%A8%E7%BD%B2web-%E9%A1%B9%E7%9B%AE/" />
@@ -62,17 +62,14 @@
 <meta property="og:title" content="docker 部署 Go Web 程序" />
 <meta property="og:description" content="docker 部署 Go Web 程序 http 1 2 3 4 5 [root@Cc dockerFile]# tree . ├── Dockerfile ├── go.mod └── main.go 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 [root@Cc dockerFile]# cat DockerfileFROMgolang:alpine# 为我们的镜像设置" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/docker/docker-%E9%83%A8%E7%BD%B2web-%E9%A1%B9%E7%9B%AE/" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/docker/docker-%E9%83%A8%E7%BD%B2web-%E9%A1%B9%E7%9B%AE/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-03-16T22:28:54+08:00" />
 <meta property="article:modified_time" content="2020-03-16T22:28:54+08:00" />
+
 <meta itemprop="name" content="docker 部署 Go Web 程序">
-<meta itemprop="description" content="docker 部署 Go Web 程序 http 1 2 3 4 5 [root@Cc dockerFile]# tree . ├── Dockerfile ├── go.mod └── main.go 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 [root@Cc dockerFile]# cat DockerfileFROMgolang:alpine# 为我们的镜像设置">
-<meta itemprop="datePublished" content="2020-03-16T22:28:54&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-16T22:28:54&#43;08:00" />
+<meta itemprop="description" content="docker 部署 Go Web 程序 http 1 2 3 4 5 [root@Cc dockerFile]# tree . ├── Dockerfile ├── go.mod └── main.go 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 [root@Cc dockerFile]# cat DockerfileFROMgolang:alpine# 为我们的镜像设置"><meta itemprop="datePublished" content="2020-03-16T22:28:54+08:00" />
+<meta itemprop="dateModified" content="2020-03-16T22:28:54+08:00" />
 <meta itemprop="wordCount" content="243">
-
-
-
 <meta itemprop="keywords" content="Docker,Golang,GoWeb," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="docker 部署 Go Web 程序"/>
 <meta name="twitter:description" content="docker 部署 Go Web 程序 http 1 2 3 4 5 [root@Cc dockerFile]# tree . ├── Dockerfile ├── go.mod └── main.go 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 [root@Cc dockerFile]# cat DockerfileFROMgolang:alpine# 为我们的镜像设置"/>
@@ -142,7 +139,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -301,7 +298,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -381,23 +378,23 @@
 <h3 id="http">http</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc dockerFile<span class="o">]</span><span class="c1"># tree</span>
-.
-├── Dockerfile
-├── go.mod
-└── main.go
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc dockerFile<span class="o">]</span><span class="c1"># tree</span>
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── Dockerfile
+</span></span><span class="line"><span class="cl">├── go.mod
+</span></span><span class="line"><span class="cl">└── main.go
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -428,36 +425,36 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="o">[</span>root@Cc dockerFile<span class="o">]</span><span class="c1"># cat Dockerfile</span><span class="err">
-</span><span class="err"></span><span class="k">FROM</span><span class="s"> golang:alpine</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 为我们的镜像设置必要的环境变量</span><span class="err">
-</span><span class="err"></span><span class="k">ENV</span> <span class="nv">GO111MODULE</span><span class="o">=</span>on <span class="se">\
-</span><span class="se"></span>    <span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> <span class="se">\
-</span><span class="se"></span>    <span class="nv">GOOS</span><span class="o">=</span>linux <span class="se">\
-</span><span class="se"></span>    <span class="nv">GOARCH</span><span class="o">=</span>amd64
-
-<span class="c"># 移动到工作目录：/build</span><span class="err">
-</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /build</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 将代码复制到容器中</span><span class="err">
-</span><span class="err"></span><span class="k">COPY</span> . .<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 将我们的代码编译成二进制可执行文件app</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> go build -o app .<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 移动到用于存放生成的二进制文件的 /dist 目录</span><span class="err">
-</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /dist</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 将二进制文件从 /build 目录复制到这里</span><span class="err">
-</span><span class="err"></span><span class="k">RUN</span> cp /build/app .<span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 声明服务端口</span><span class="err">
-</span><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 8888</span><span class="err">
-</span><span class="err">
-</span><span class="err"></span><span class="c"># 启动容器时运行的命令</span><span class="err">
-</span><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;/dist/app&#34;</span><span class="p">]</span><span class="err">
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="o">[</span>root@Cc dockerFile<span class="o">]</span><span class="c1"># cat Dockerfile</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="s"> golang:alpine</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 为我们的镜像设置必要的环境变量</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> <span class="nv">GO111MODULE</span><span class="o">=</span>on <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nv">GOOS</span><span class="o">=</span>linux <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nv">GOARCH</span><span class="o">=</span>amd64
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 移动到工作目录：/build</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /build</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 将代码复制到容器中</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> . .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 将我们的代码编译成二进制可执行文件app</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> go build -o app .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 移动到用于存放生成的二进制文件的 /dist 目录</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /dist</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 将二进制文件从 /build 目录复制到这里</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> cp /build/app .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 声明服务端口</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 8888</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 启动容器时运行的命令</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;/dist/app&#34;</span><span class="p">]</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -479,7 +476,7 @@
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://cc360428.gitee.io/blog" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -564,6 +561,17 @@
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>

@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.96.0" />
 
 
 <link rel="canonical" href="https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/" />
@@ -62,17 +62,14 @@
 <meta property="og:title" content="MySQL 忘记密码" />
 <meta property="og:description" content="MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/" />
+<meta property="og:url" content="https://cc360428.github.io/post/system/mysql/mysqlupdatepassword/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-04-18T12:21:48+08:00" />
 <meta property="article:modified_time" content="2020-04-18T12:21:48+08:00" />
+
 <meta itemprop="name" content="MySQL 忘记密码">
-<meta itemprop="description" content="MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to">
-<meta itemprop="datePublished" content="2020-04-18T12:21:48&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-18T12:21:48&#43;08:00" />
-<meta itemprop="wordCount" content="877">
-
-
-
+<meta itemprop="description" content="MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to"><meta itemprop="datePublished" content="2020-04-18T12:21:48+08:00" />
+<meta itemprop="dateModified" content="2020-04-18T12:21:48+08:00" />
+<meta itemprop="wordCount" content="561">
 <meta itemprop="keywords" content="Mysql," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL 忘记密码"/>
 <meta name="twitter:description" content="MySQL 忘记密码 注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q! 关闭服务 1 2 3 4 5 6 [root@Cc ~]# ps -ef |grep mysql root 3658 8508 0 12:47 pts/1 00:00:00 grep --color=auto mysql mysql 20039 1 0 12:39 ? 00:00:00 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid [root@Cc ~]# service mysqld stop Redirecting to"/>
@@ -142,7 +139,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -301,7 +298,7 @@
         
           
           
-            <a class="menu-item-link" href="https://cc360428.gitee.io/lichaocheng.top" rel="noopener" target="_blank">
+            <a class="menu-item-link" href="https://cc360428.gitee.io/Cc" rel="noopener" target="_blank">
               个人主页
               
               <i class="iconfont">
@@ -347,7 +344,7 @@
             <a href="https://cc360428.github.io/categories/systemutils/"> SystemUtils </a>
             
           </div>
-        <span class="more-meta"> 约 877 字 </span>
+        <span class="more-meta"> 约 561 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -392,7 +389,7 @@
 <h3 id="关闭服务">关闭服务</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -400,13 +397,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ps -ef |grep mysql</span>
-root      <span class="m">3658</span>  <span class="m">8508</span>  <span class="m">0</span> 12:47 pts/1    00:00:00 grep --color<span class="o">=</span>auto mysql
-mysql    <span class="m">20039</span>     <span class="m">1</span>  <span class="m">0</span> 12:39 ?        00:00:00 /usr/sbin/mysqld --daemonize --pid-file<span class="o">=</span>/var/run/mysqld/mysqld.pid
-<span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># service mysqld stop</span>
-Redirecting to /bin/systemctl stop mysqld.service
-<span class="o">[</span>root@Cc ~<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># ps -ef |grep mysql</span>
+</span></span><span class="line"><span class="cl">root      <span class="m">3658</span>  <span class="m">8508</span>  <span class="m">0</span> 12:47 pts/1    00:00:00 grep --color<span class="o">=</span>auto mysql
+</span></span><span class="line"><span class="cl">mysql    <span class="m">20039</span>     <span class="m">1</span>  <span class="m">0</span> 12:39 ?        00:00:00 /usr/sbin/mysqld --daemonize --pid-file<span class="o">=</span>/var/run/mysqld/mysqld.pid
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># service mysqld stop</span>
+</span></span><span class="line"><span class="cl">Redirecting to /bin/systemctl stop mysqld.service
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="修改配置文件">修改配置文件</h3>
 <blockquote>
@@ -414,7 +411,7 @@ Redirecting to /bin/systemctl stop mysqld.service
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -427,31 +424,31 @@ Redirecting to /bin/systemctl stop mysqld.service
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># vim /etc/my.cnf</span>
-.....
-<span class="c1"># sort_buffer_size = 2M</span>
-<span class="c1"># read_rnd_buffer_size = 2M</span>
-<span class="nv">datadir</span><span class="o">=</span>/var/lib/mysql
-<span class="nv">socket</span><span class="o">=</span>/var/lib/mysql/mysql.sock
-skip-grant-tables
-<span class="o">[</span>client<span class="o">]</span>
-default-character-set<span class="o">=</span>utf8
-...
-:wq
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># vim /etc/my.cnf</span>
+</span></span><span class="line"><span class="cl">.....
+</span></span><span class="line"><span class="cl"><span class="c1"># sort_buffer_size = 2M</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># read_rnd_buffer_size = 2M</span>
+</span></span><span class="line"><span class="cl"><span class="nv">datadir</span><span class="o">=</span>/var/lib/mysql
+</span></span><span class="line"><span class="cl"><span class="nv">socket</span><span class="o">=</span>/var/lib/mysql/mysql.sock
+</span></span><span class="line"><span class="cl">skip-grant-tables
+</span></span><span class="line"><span class="cl"><span class="o">[</span>client<span class="o">]</span>
+</span></span><span class="line"><span class="cl">default-character-set<span class="o">=</span>utf8
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">:wq
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="重启服务">重启服务</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># service mysqld start</span>
-Redirecting to /bin/systemctl start mysqld.service
-<span class="o">[</span>root@Cc ~<span class="o">]</span># 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># service mysqld start</span>
+</span></span><span class="line"><span class="cl">Redirecting to /bin/systemctl start mysqld.service
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="进入mysql">进入<code>mysql</code></h3>
 <blockquote>
@@ -459,7 +456,7 @@ Redirecting to /bin/systemctl start mysqld.service
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -490,36 +487,36 @@ Redirecting to /bin/systemctl start mysqld.service
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="p">[</span><span class="n">root</span><span class="o">@</span><span class="n">Cc</span> <span class="o">~</span><span class="p">]</span><span class="c1"># mysql -u root -p
-</span><span class="c1"></span><span class="n">Enter</span> <span class="n">password</span><span class="p">:</span> 
-<span class="n">Welcome</span> <span class="k">to</span> <span class="n">the</span> <span class="n">MySQL</span> <span class="n">monitor</span><span class="p">.</span>  <span class="n">Commands</span> <span class="n">end</span> <span class="k">with</span> <span class="p">;</span> <span class="k">or</span> <span class="err">\</span><span class="n">g</span><span class="p">.</span>
-<span class="n">Your</span> <span class="n">MySQL</span> <span class="n">connection</span> <span class="n">id</span> <span class="k">is</span> <span class="mi">2</span>
-<span class="n">Server</span> <span class="n">version</span><span class="p">:</span> <span class="mi">5</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">29</span> <span class="n">MySQL</span> <span class="n">Community</span> <span class="nf">Server</span> <span class="p">(</span><span class="n">GPL</span><span class="p">)</span>
-
-<span class="nf">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="n">Oracle</span> <span class="k">and</span><span class="o">/</span><span class="k">or</span> <span class="n">its</span> <span class="n">affiliates</span><span class="p">.</span> <span class="k">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="p">.</span>
-
-<span class="n">Oracle</span> <span class="k">is</span> <span class="n">a</span> <span class="n">registered</span> <span class="n">trademark</span> <span class="n">of</span> <span class="n">Oracle</span> <span class="n">Corporation</span> <span class="k">and</span><span class="o">/</span><span class="k">or</span> <span class="n">its</span>
-<span class="n">affiliates</span><span class="p">.</span> <span class="n">Other</span> <span class="n">names</span> <span class="n">may</span> <span class="n">be</span> <span class="n">trademarks</span> <span class="n">of</span> <span class="n">their</span> <span class="n">respective</span>
-<span class="n">owners</span><span class="p">.</span>
-
-<span class="n">Type</span> <span class="s1">&#39;help;&#39;</span> <span class="k">or</span> <span class="s1">&#39;\h&#39;</span> <span class="k">for</span> <span class="n">help</span><span class="p">.</span> <span class="n">Type</span> <span class="s1">&#39;\c&#39;</span> <span class="k">to</span> <span class="n">clear</span> <span class="n">the</span> <span class="n">current</span> <span class="n">input</span> <span class="n">statement</span><span class="p">.</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">use</span> <span class="n">mysql</span>
-<span class="n">Reading</span> <span class="k">table</span> <span class="n">information</span> <span class="k">for</span> <span class="n">completion</span> <span class="n">of</span> <span class="k">table</span> <span class="k">and</span> <span class="k">column</span> <span class="n">names</span>
-<span class="n">You</span> <span class="n">can</span> <span class="n">turn</span> <span class="n">off</span> <span class="n">this</span> <span class="n">feature</span> <span class="k">to</span> <span class="n">get</span> <span class="n">a</span> <span class="n">quicker</span> <span class="n">startup</span> <span class="k">with</span> <span class="o">-</span><span class="n">A</span>
-
-<span class="k">Database</span> <span class="n">changed</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">update</span> <span class="n">mysql</span><span class="p">.</span><span class="k">user</span> <span class="kt">set</span> <span class="n">authentication_string</span><span class="o">=</span><span class="nf">password</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">)</span> <span class="k">where</span> <span class="k">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="n">row</span> <span class="n">affected</span><span class="p">,</span> <span class="mi">1</span> <span class="nf">warning</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-<span class="n">Rows</span> <span class="n">matched</span><span class="p">:</span> <span class="mi">1</span>  <span class="n">Changed</span><span class="p">:</span> <span class="mi">1</span>  <span class="n">Warnings</span><span class="p">:</span> <span class="mi">1</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">flush</span> <span class="k">privileges</span><span class="p">;</span>
-<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">0</span> <span class="n">rows</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">exit</span>
-<span class="n">Bye</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="p">[</span><span class="n">root</span><span class="o">@</span><span class="n">Cc</span><span class="w"> </span><span class="o">~</span><span class="p">]</span><span class="c1"># mysql -u root -p
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Enter</span><span class="w"> </span><span class="n">password</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Welcome</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">monitor</span><span class="p">.</span><span class="w">  </span><span class="n">Commands</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="err">\</span><span class="n">g</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Your</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">connection</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Server</span><span class="w"> </span><span class="n">version</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">29</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">Community</span><span class="w"> </span><span class="nf">Server</span><span class="w"> </span><span class="p">(</span><span class="n">GPL</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nf">Copyright</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w"> </span><span class="n">Oracle</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">affiliates</span><span class="p">.</span><span class="w"> </span><span class="k">All</span><span class="w"> </span><span class="n">rights</span><span class="w"> </span><span class="n">reserved</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Oracle</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">registered</span><span class="w"> </span><span class="n">trademark</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Oracle</span><span class="w"> </span><span class="n">Corporation</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="n">its</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">affiliates</span><span class="p">.</span><span class="w"> </span><span class="n">Other</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">trademarks</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">respective</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">owners</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Type</span><span class="w"> </span><span class="s1">&#39;help;&#39;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="s1">&#39;\h&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span><span class="p">.</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="s1">&#39;\c&#39;</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">clear</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="n">statement</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">mysql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Reading</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">information</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">completion</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="n">names</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">You</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">turn</span><span class="w"> </span><span class="n">off</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">feature</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">get</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">quicker</span><span class="w"> </span><span class="n">startup</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="o">-</span><span class="n">A</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">Database</span><span class="w"> </span><span class="n">changed</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="n">mysql</span><span class="p">.</span><span class="k">user</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="n">authentication_string</span><span class="o">=</span><span class="nf">password</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="n">affected</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nf">warning</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Rows</span><span class="w"> </span><span class="n">matched</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">Changed</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">Warnings</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">flush</span><span class="w"> </span><span class="k">privileges</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">rows</span><span class="w"> </span><span class="nf">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">exit</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Bye</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="进入数据库-修改表">进入数据库 修改表</h5>
 <p><code>update mysql.user set authentication_string=password('这里是填写mysql密码') where user='root';</code></p>
@@ -529,7 +526,7 @@ Redirecting to /bin/systemctl start mysqld.service
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -541,17 +538,17 @@ Redirecting to /bin/systemctl start mysqld.service
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># vim /etc/my.cnf</span>
-...
-<span class="c1"># read_rnd_buffer_size = 2M</span>
-<span class="nv">datadir</span><span class="o">=</span>/var/lib/mysql
-<span class="nv">socket</span><span class="o">=</span>/var/lib/mysql/mysql.sock
-<span class="c1">#skip-grant-tables</span>
-<span class="o">[</span>client<span class="o">]</span>
-default-character-set<span class="o">=</span>utf8
-...
-:wq
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@Cc ~<span class="o">]</span><span class="c1"># vim /etc/my.cnf</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl"><span class="c1"># read_rnd_buffer_size = 2M</span>
+</span></span><span class="line"><span class="cl"><span class="nv">datadir</span><span class="o">=</span>/var/lib/mysql
+</span></span><span class="line"><span class="cl"><span class="nv">socket</span><span class="o">=</span>/var/lib/mysql/mysql.sock
+</span></span><span class="line"><span class="cl"><span class="c1">#skip-grant-tables</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>client<span class="o">]</span>
+</span></span><span class="line"><span class="cl">default-character-set<span class="o">=</span>utf8
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">:wq
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="重启mysqld-服务">重启<code>mysqld</code> 服务</h3>
 <p><code>[root@Cc ~]# service mysqld restart</code></p>
@@ -568,7 +565,7 @@ default-character-set<span class="o">=</span>utf8
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -623,65 +620,65 @@ default-character-set<span class="o">=</span>utf8
 </span><span class="lnt">53
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="k">user</span> <span class="k">where</span> <span class="k">user</span> <span class="o">=</span><span class="s2">&#34;root&#34;</span><span class="err">\</span><span class="n">G</span><span class="p">;</span>
-<span class="o">***************************</span> <span class="mi">1</span><span class="p">.</span> <span class="n">row</span> <span class="o">***************************</span>
-                  <span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span>
-                  <span class="k">User</span><span class="p">:</span> <span class="n">root</span>
-           <span class="n">Select_priv</span><span class="p">:</span> <span class="n">Y</span>
-           <span class="n">Insert_priv</span><span class="p">:</span> <span class="n">Y</span>
-           <span class="n">Update_priv</span><span class="p">:</span> <span class="n">Y</span>
-           <span class="n">Delete_priv</span><span class="p">:</span> <span class="n">Y</span>
-           <span class="n">Create_priv</span><span class="p">:</span> <span class="n">Y</span>
-             <span class="n">Drop_priv</span><span class="p">:</span> <span class="n">Y</span>
-           <span class="n">Reload_priv</span><span class="p">:</span> <span class="n">Y</span>
-         <span class="n">Shutdown_priv</span><span class="p">:</span> <span class="n">Y</span>
-          <span class="n">Process_priv</span><span class="p">:</span> <span class="n">Y</span>
-             <span class="n">File_priv</span><span class="p">:</span> <span class="n">Y</span>
-            <span class="n">Grant_priv</span><span class="p">:</span> <span class="n">Y</span>
-       <span class="n">References_priv</span><span class="p">:</span> <span class="n">Y</span>
-            <span class="n">Index_priv</span><span class="p">:</span> <span class="n">Y</span>
-            <span class="n">Alter_priv</span><span class="p">:</span> <span class="n">Y</span>
-          <span class="n">Show_db_priv</span><span class="p">:</span> <span class="n">Y</span>
-            <span class="n">Super_priv</span><span class="p">:</span> <span class="n">Y</span>
- <span class="n">Create_tmp_table_priv</span><span class="p">:</span> <span class="n">Y</span>
-      <span class="n">Lock_tables_priv</span><span class="p">:</span> <span class="n">Y</span>
-          <span class="n">Execute_priv</span><span class="p">:</span> <span class="n">Y</span>
-       <span class="n">Repl_slave_priv</span><span class="p">:</span> <span class="n">Y</span>
-      <span class="n">Repl_client_priv</span><span class="p">:</span> <span class="n">Y</span>
-      <span class="n">Create_view_priv</span><span class="p">:</span> <span class="n">Y</span>
-        <span class="n">Show_view_priv</span><span class="p">:</span> <span class="n">Y</span>
-   <span class="n">Create_routine_priv</span><span class="p">:</span> <span class="n">Y</span>
-    <span class="n">Alter_routine_priv</span><span class="p">:</span> <span class="n">Y</span>
-      <span class="n">Create_user_priv</span><span class="p">:</span> <span class="n">Y</span>
-            <span class="n">Event_priv</span><span class="p">:</span> <span class="n">Y</span>
-          <span class="n">Trigger_priv</span><span class="p">:</span> <span class="n">Y</span>
-<span class="n">Create_tablespace_priv</span><span class="p">:</span> <span class="n">Y</span>
-              <span class="n">ssl_type</span><span class="p">:</span> 
-            <span class="n">ssl_cipher</span><span class="p">:</span> 
-           <span class="n">x509_issuer</span><span class="p">:</span> 
-          <span class="n">x509_subject</span><span class="p">:</span> 
-         <span class="n">max_questions</span><span class="p">:</span> <span class="mi">0</span>
-           <span class="n">max_updates</span><span class="p">:</span> <span class="mi">0</span>
-       <span class="n">max_connections</span><span class="p">:</span> <span class="mi">0</span>
-  <span class="n">max_user_connections</span><span class="p">:</span> <span class="mi">0</span>
-                <span class="n">plugin</span><span class="p">:</span> <span class="n">mysql_native_password</span>
- <span class="n">authentication_string</span><span class="p">:</span> <span class="o">*</span><span class="n">A021A79F3EE5D774BF4197B804D3FDAAE6511167</span>
-      <span class="n">password_expired</span><span class="p">:</span> <span class="n">N</span>
- <span class="n">password_last_changed</span><span class="p">:</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">18</span> <span class="mi">13</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">34</span>
-     <span class="n">password_lifetime</span><span class="p">:</span> <span class="no">NULL</span>
-        <span class="n">account_locked</span><span class="p">:</span> <span class="n">N</span>
-<span class="mi">1</span> <span class="n">row</span> <span class="k">in</span> <span class="kt">set</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
-
-<span class="n">ERROR</span><span class="p">:</span> 
-<span class="n">No</span> <span class="n">query</span> <span class="n">specified</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="o">=</span><span class="s2">&#34;root&#34;</span><span class="err">\</span><span class="n">G</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">***************************</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">***************************</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="n">Host</span><span class="p">:</span><span class="w"> </span><span class="n">localhost</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                  </span><span class="k">User</span><span class="p">:</span><span class="w"> </span><span class="n">root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">Select_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">Insert_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">Update_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">Delete_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">Create_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="n">Drop_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">Reload_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="n">Shutdown_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="n">Process_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="n">File_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Grant_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">References_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Index_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Alter_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="n">Show_db_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Super_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">Create_tmp_table_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">Lock_tables_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="n">Execute_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">Repl_slave_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">Repl_client_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">Create_view_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Show_view_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="n">Create_routine_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Alter_routine_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">Create_user_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Event_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="n">Trigger_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Create_tablespace_priv</span><span class="p">:</span><span class="w"> </span><span class="n">Y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">              </span><span class="n">ssl_type</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">ssl_cipher</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">x509_issuer</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="n">x509_subject</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="n">max_questions</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="n">max_updates</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="n">max_connections</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">max_user_connections</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">plugin</span><span class="p">:</span><span class="w"> </span><span class="n">mysql_native_password</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">authentication_string</span><span class="p">:</span><span class="w"> </span><span class="o">*</span><span class="n">A021A79F3EE5D774BF4197B804D3FDAAE6511167</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">password_expired</span><span class="p">:</span><span class="w"> </span><span class="n">N</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="n">password_last_changed</span><span class="p">:</span><span class="w"> </span><span class="mi">2020</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">18</span><span class="w"> </span><span class="mi">13</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span><span class="mi">34</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="n">password_lifetime</span><span class="p">:</span><span class="w"> </span><span class="no">NULL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">account_locked</span><span class="p">:</span><span class="w"> </span><span class="n">N</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="mi">1</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ERROR</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">No</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="n">specified</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> 
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="修改成功">修改成功</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -698,22 +695,22 @@ default-character-set<span class="o">=</span>utf8
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="p">[</span><span class="n">root</span><span class="o">@</span><span class="n">Cc</span> <span class="n">filebrowser</span><span class="p">]</span><span class="c1"># mysql -u root -p
-</span><span class="c1"></span><span class="n">Enter</span> <span class="n">password</span><span class="p">:</span> 
-<span class="n">Welcome</span> <span class="k">to</span> <span class="n">the</span> <span class="n">MySQL</span> <span class="n">monitor</span><span class="p">.</span>  <span class="n">Commands</span> <span class="n">end</span> <span class="k">with</span> <span class="p">;</span> <span class="k">or</span> <span class="err">\</span><span class="n">g</span><span class="p">.</span>
-<span class="n">Your</span> <span class="n">MySQL</span> <span class="n">connection</span> <span class="n">id</span> <span class="k">is</span> <span class="mi">105</span>
-<span class="n">Server</span> <span class="n">version</span><span class="p">:</span> <span class="mi">5</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">29</span> <span class="n">MySQL</span> <span class="n">Community</span> <span class="nf">Server</span> <span class="p">(</span><span class="n">GPL</span><span class="p">)</span>
-
-<span class="nf">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="n">Oracle</span> <span class="k">and</span><span class="o">/</span><span class="k">or</span> <span class="n">its</span> <span class="n">affiliates</span><span class="p">.</span> <span class="k">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="p">.</span>
-
-<span class="n">Oracle</span> <span class="k">is</span> <span class="n">a</span> <span class="n">registered</span> <span class="n">trademark</span> <span class="n">of</span> <span class="n">Oracle</span> <span class="n">Corporation</span> <span class="k">and</span><span class="o">/</span><span class="k">or</span> <span class="n">its</span>
-<span class="n">affiliates</span><span class="p">.</span> <span class="n">Other</span> <span class="n">names</span> <span class="n">may</span> <span class="n">be</span> <span class="n">trademarks</span> <span class="n">of</span> <span class="n">their</span> <span class="n">respective</span>
-<span class="n">owners</span><span class="p">.</span>
-
-<span class="n">Type</span> <span class="s1">&#39;help;&#39;</span> <span class="k">or</span> <span class="s1">&#39;\h&#39;</span> <span class="k">for</span> <span class="n">help</span><span class="p">.</span> <span class="n">Type</span> <span class="s1">&#39;\c&#39;</span> <span class="k">to</span> <span class="n">clear</span> <span class="n">the</span> <span class="n">current</span> <span class="n">input</span> <span class="n">statement</span><span class="p">.</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="p">[</span><span class="n">root</span><span class="o">@</span><span class="n">Cc</span><span class="w"> </span><span class="n">filebrowser</span><span class="p">]</span><span class="c1"># mysql -u root -p
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Enter</span><span class="w"> </span><span class="n">password</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Welcome</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">monitor</span><span class="p">.</span><span class="w">  </span><span class="n">Commands</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="err">\</span><span class="n">g</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Your</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">connection</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="mi">105</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Server</span><span class="w"> </span><span class="n">version</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">29</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">Community</span><span class="w"> </span><span class="nf">Server</span><span class="w"> </span><span class="p">(</span><span class="n">GPL</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nf">Copyright</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span><span class="w"> </span><span class="mi">2020</span><span class="p">,</span><span class="w"> </span><span class="n">Oracle</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="n">its</span><span class="w"> </span><span class="n">affiliates</span><span class="p">.</span><span class="w"> </span><span class="k">All</span><span class="w"> </span><span class="n">rights</span><span class="w"> </span><span class="n">reserved</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Oracle</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">registered</span><span class="w"> </span><span class="n">trademark</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Oracle</span><span class="w"> </span><span class="n">Corporation</span><span class="w"> </span><span class="k">and</span><span class="o">/</span><span class="k">or</span><span class="w"> </span><span class="n">its</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">affiliates</span><span class="p">.</span><span class="w"> </span><span class="n">Other</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">trademarks</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">respective</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">owners</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Type</span><span class="w"> </span><span class="s1">&#39;help;&#39;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="s1">&#39;\h&#39;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">help</span><span class="p">.</span><span class="w"> </span><span class="n">Type</span><span class="w"> </span><span class="s1">&#39;\c&#39;</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">clear</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="n">statement</span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> 
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="登陆成功">登陆成功</h3>
 <blockquote>
@@ -739,7 +736,7 @@ default-character-set<span class="o">=</span>utf8
   
   <p class="copyright-item">
     <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://clientcodefile.gitee.io/blog.lichaocheng.top/" target="_blank">LiChaoChengBlog</a></span>
+    <span class="item-content"><a rel="license noopener" href="https://cc360428.gitee.io/blog" target="_blank">LiChaoChengBlog</a></span>
   </p>
 </div>
 
@@ -822,6 +819,17 @@ default-character-set<span class="o">=</span>utf8
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="36" height="36">
   <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="http://localhost:1313" rel="me noopener" class="iconfont"
+      title="google"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M853.333333 85.333333C900.266667 85.333333 938.666667 123.733333 938.666667 170.666667L938.666667 853.333333C938.666667 900.266667 900.266667 938.666667 853.333333 938.666667L170.666667 938.666667C123.733333 938.666667 85.333333 900.266667 85.333333 853.333333L85.333333 170.666667C85.333333 123.306667 123.733333 85.333333 170.666667 85.333333L853.333333 85.333333M853.333333 512 768 512 768 426.666667 725.333333 426.666667 725.333333 512 640 512 640 554.666667 725.333333 554.666667 725.333333 640 768 640 768 554.666667 853.333333 554.666667 853.333333 512M384 481.706667 384 554.666667 506.026667 554.666667C499.626667 584.96 469.333333 645.973333 384 645.973333 311.04 645.973333 253.013333 584.96 253.013333 512 253.013333 439.04 311.04 378.026667 384 378.026667 426.666667 378.026667 453.973333 396.373333 469.333333 411.306667L527.36 356.693333C490.666667 320 442.026667 298.666667 384 298.666667 264.96 298.666667 170.666667 392.96 170.666667 512 170.666667 631.04 264.96 725.333333 384 725.333333 506.026667 725.333333 588.373333 640 588.373333 517.973333 588.373333 503.04 588.373333 493.653333 584.96 481.706667L384 481.706667Z"></path>
 </svg>
 
     </a>
