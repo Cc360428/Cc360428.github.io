@@ -707,18 +707,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -782,7 +770,7 @@
 
       <em>
         
-          <a href="https://Cc360428.gitee.io/cc/">Cc</a>
+          <a href="https://Cc360428.github.io/cc/">Cc</a>
         
       </em>
     </span>
@@ -811,7 +799,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="861 字">
+  title="857 字">
   <em>4 分钟</em>阅读</span>
 
     </div>
@@ -822,53 +810,32 @@
 
 <div class="post-content">
   <h2 id="frp-内网穿透"><span class="mr-2">frp 内网穿透</span><a href="#frp-内网穿透" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
 <h3 id="环境准备"><span class="mr-2">环境准备</span><a href="#环境准备" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
 <ul>
-  <li><a href="http://images.lichaocheng.top/static/upload/2020/03/23/4433791b371e04241e11393d93dd133c.gz">Linux 环境</a></li>
-  <li><a href="http://images.lichaocheng.top/static/upload/2020/03/23/614c7358459652fbc72f15dbc69227f5.zip">Windows 环境</a></li>
+  <li><a href="http://images.lichaocheng.top/static/upload/2020/03/23/4433791b371e04241e11393d93dd133c.gz">Linux环境</a></li>
+  <li><a href="http://images.lichaocheng.top/static/upload/2020/03/23/614c7358459652fbc72f15dbc69227f5.zip">Windows环境</a></li>
   <li>Linux 云服务 开启需要端口</li>
-  <li>Windows</li>
-</ul>
-
-<h2 id="配置文件"><span class="mr-2">配置文件</span><a href="#配置文件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<ul>
+  <li>Windows
+    <h2 id="配置文件"><span class="mr-2">配置文件</span><a href="#配置文件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  </li>
   <li>*s.ini 是服务端配置文件</li>
-  <li>*c.ini 是客服端配置文件</li>
+  <li>*c.ini 是客服端配置文件
+    <h4 id="frpsinilinux"><span class="mr-2">frps.ini（linux）</span><a href="#frpsinilinux" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <h5 id="目录结构"><span class="mr-2">目录结构</span><a href="#目录结构" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+    <p>```shell
+[root@k8s-master linux]# ll
+总用量 11096
+-rwxrwxr-x 1 admin admin 11333632 1月   6 16:02 frps
+-rw-rw-r– 1 admin admin     2518 1月  17 18:41 frps.ini
+-rw-rw—- 1 root  root      2377 1月  17 18:36 frps.log
+-rw-rw-r– 1 admin admin    11358 1月   6 16:04 LICENSE
+drwxrwxr-x 2 admin admin     4096 1月   6 16:04 systemd
+[root@k8s-master linux]#</p>
+  </li>
 </ul>
 
-<h4 id="frpsinilinux"><span class="mr-2">frps.ini（linux）</span><a href="#frpsinilinux" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<h5 id="目录结构"><span class="mr-2">目录结构</span><a href="#目录结构" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-shell highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="o">[</span>root@k8s-master linux]# ll
-总用量 11096
-<span class="nt">-rwxrwxr-x</span> 1 admin admin 11333632 1月   6 16:02 frps
-<span class="nt">-rw-rw-r--</span> 1 admin admin     2518 1月  17 18:41 frps.ini
-<span class="nt">-rw-rw----</span> 1 root  root      2377 1月  17 18:36 frps.log
-<span class="nt">-rw-rw-r--</span> 1 admin admin    11358 1月   6 16:04 LICENSE
-drwxrwxr-x 2 admin admin     4096 1月   6 16:04 systemd
-<span class="o">[</span>root@k8s-master linux]#
-
-</pre></td></tr></tbody></table></code></div></div>
-
-<h5 id="修改内容"><span class="mr-2">修改内容</span><a href="#修改内容" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
-
-<div class="language-shell highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -899,46 +866,45 @@ drwxrwxr-x 2 admin admin     4096 1月   6 16:04 systemd
 28
 29
 30
-</pre></td><td class="rouge-code"><pre><span class="o">[</span>common]
-<span class="c"># binde_addr是指定frp内网穿透服务器端监听的IP地址,默认为127.0.0.1，</span>
-<span class="c">#如果使用IPv6地址的话，必须用方括号包括起来，比如 “[::1]:80”, “[ipv6-host]:http” or “[ipv6-host%zone]:80”</span>
-bind_addr <span class="o">=</span> 0.0.0.0
-<span class="c"># bind_port 是frp内网穿透服务器端监听的端口，默认是7000</span>
-bind_port <span class="o">=</span> 7000
-<span class="c">#frp内网穿透服务器可以支持虚拟主机的http和https协议，一般我们都用80，</span>
-<span class="c">#可以直接用域名而不用增加端口号，如果使用其它端口，那么客户端也需要配置相同的其他端口。</span>
-vhost_http_port <span class="o">=</span> 8380
-vhost_https_port <span class="o">=</span> 443
+31
+32
+</pre></td><td class="rouge-code"><pre>##### 修改内容
+```shell
+[common]
+# binde_addr是指定frp内网穿透服务器端监听的IP地址,默认为127.0.0.1，
+#如果使用IPv6地址的话，必须用方括号包括起来，比如 “[::1]:80”, “[ipv6-host]:http” or “[ipv6-host%zone]:80”
+bind_addr = 0.0.0.0
+# bind_port 是frp内网穿透服务器端监听的端口，默认是7000
+bind_port = 7000
+#frp内网穿透服务器可以支持虚拟主机的http和https协议，一般我们都用80，
+#可以直接用域名而不用增加端口号，如果使用其它端口，那么客户端也需要配置相同的其他端口。
+vhost_http_port = 8380
+vhost_https_port = 443
 
-dashboard_user <span class="o">=</span> admin  <span class="c">#管理面板账号</span>
-dashboard_pwd <span class="o">=</span> lichaocheng   <span class="c">#管理面板密码</span>
-<span class="c"># 这个是frp内网穿透服务器的web界面的端口，可以通过http://你的ip:7500查看frp内网穿透服务器端的连接情况，和各个frp内网穿透客户端的连接情况。</span>
-dashboard_port <span class="o">=</span> 7500
-auth_token <span class="o">=</span> 123
+dashboard_user = admin  #管理面板账号
+dashboard_pwd = lichaocheng   #管理面板密码
+# 这个是frp内网穿透服务器的web界面的端口，可以通过http://你的ip:7500查看frp内网穿透服务器端的连接情况，和各个frp内网穿透客户端的连接情况。
+dashboard_port = 7500
+auth_token = 123
 
-<span class="c"># 方括号内的ssh是代理名称，在同一个frp穿透服务器下的代理名称不能重复，否则不能启动。</span>
-<span class="c"># bind_addr是frp客户端内网的ip，也可以是客户端内网同一局域网下的其他IP</span>
-<span class="o">[</span>ssh]
-<span class="c">##### type = tcp</span>
-bind_addr <span class="o">=</span> 0.0.0.0
-listen_port <span class="o">=</span> 6000
+# 方括号内的ssh是代理名称，在同一个frp穿透服务器下的代理名称不能重复，否则不能启动。
+# bind_addr是frp客户端内网的ip，也可以是客户端内网同一局域网下的其他IP
+[ssh]
+##### type = tcp
+bind_addr = 0.0.0.0
+listen_port = 6000
 
-<span class="o">[</span>web01]
-<span class="c">#http类型的内网穿透，必须设置vhost_http_port，并且所有的http类型的客户端都将通过同一个vhost_http_port访问。</span>
-<span class="nb">type</span> <span class="o">=</span> http
-<span class="c"># custom_domains是通过frp服务器端访问客户端的域名，必须输入完整的域名，</span>
-<span class="c"># 并且不能是subdomain_host的子域名，否则frp服务不能启动，并且相应的域名需要解析到frp服务器端的公网IP并等待解析生效后，才可以使用。</span>
-custom_domains <span class="o">=</span> zhishi.com
+[web01]
+#http类型的内网穿透，必须设置vhost_http_port，并且所有的http类型的客户端都将通过同一个vhost_http_port访问。
+type = http
+# custom_domains是通过frp服务器端访问客户端的域名，必须输入完整的域名，
+# 并且不能是subdomain_host的子域名，否则frp服务不能启动，并且相应的域名需要解析到frp服务器端的公网IP并等待解析生效后，才可以使用。
+custom_domains = zhishi.com
 </pre></td></tr></tbody></table></code></div></div>
-
 <h4 id="运行方式"><span class="mr-2">运行方式</span><a href="#运行方式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
 <p><code class="language-plaintext highlighter-rouge">./frps -c frps.ini</code></p>
-
 <h3 id="frpciniwindows"><span class="mr-2">frpc.ini（Windows）</span><a href="#frpciniwindows" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
 <h4 id="目录结构-1"><span class="mr-2">目录结构</span><a href="#目录结构-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -966,9 +932,7 @@ total 21230
 drwxr-xr-x 1 Administrator 197121        0 11月  2 21:25 systemd/
 Administrator@DESKTOP-DHQ6SHN MINGW64 ~/Desktop/fsdownload/frp_windows_amd64/frp_0.29.1_windows_amd64
 </pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="修改内容-1"><span class="mr-2">修改内容</span><a href="#修改内容-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
+<h4 id="修改内容"><span class="mr-2">修改内容</span><a href="#修改内容" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -1008,13 +972,9 @@ local_ip <span class="o">=</span> 127.0.0.1
 local_port <span class="o">=</span> 8380
 custom_domains <span class="o">=</span> web.zhishi.com
 </pre></td></tr></tbody></table></code></div></div>
-
 <h4 id="运行方式-1"><span class="mr-2">运行方式</span><a href="#运行方式-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
 <p><code class="language-plaintext highlighter-rouge">./frpc.exe -c frpc.ini</code></p>
-
 <h3 id="nginx-代理域名映射"><span class="mr-2">nginx 代理域名映射</span><a href="#nginx-代理域名映射" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
 <div class="language-nginx highlighter-rouge"><div class="code-header">
         <span data-label-text="Nginx"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -3312,7 +3272,7 @@ cat /e...
     <div class="footer-left">
       <p class="mb-0">
         © 2022
-        <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+        <a href="https://Cc360428.github.io/cc/">Cc</a>.
         
         <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span>
         
