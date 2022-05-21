@@ -1,47 +1,47 @@
 const resource = [
 
   /* --- CSS --- */
-  '/blog/assets/css/style.css',
+  '/assets/css/style.css',
 
   /* --- PWA --- */
-  '/blog/app.js',
-  '/blog/sw.js',
+  '/app.js',
+  '/sw.js',
 
   /* --- HTML --- */
-  '/blog/index.html',
-  '/blog/404.html',
+  '/index.html',
+  '/404.html',
   
-    '/blog/categories/',
+    '/categories/',
   
-    '/blog/tags/',
+    '/tags/',
   
-    '/blog/archives/',
+    '/archives/',
   
-    '/blog/about/',
+    '/about/',
   
 
   /* --- Favicons & compressed JS --- */
   
   
-    '/blog/assets/img/favicons/all.png',
-    '/blog/assets/img/favicons/android-chrome-192x192.png',
-    '/blog/assets/img/favicons/android-chrome-512x512.png',
-    '/blog/assets/img/favicons/apple-touch-icon.png',
-    '/blog/assets/img/favicons/browserconfig.xml',
-    '/blog/assets/img/favicons/favicon-16x16.png',
-    '/blog/assets/img/favicons/favicon-32x32.png',
-    '/blog/assets/img/favicons/favicon.ico',
-    '/blog/assets/img/favicons/mstile-150x150.png',
-    '/blog/assets/img/favicons/safari-pinned-tab.svg',
-    '/blog/assets/img/favicons/site.webmanifest',
-    '/blog/assets/js/dist/categories.min.js',
-    '/blog/assets/js/dist/commons.min.js',
-    '/blog/assets/js/dist/home.min.js',
-    '/blog/assets/js/dist/misc.min.js',
-    '/blog/assets/js/dist/page.min.js',
-    '/blog/assets/js/dist/post.min.js',
-    '/blog/assets/js/dist/pvreport.min.js',
-    '/blog/assets/img/favicons/.DS_Store'
+    '/assets/img/favicons/all.png',
+    '/assets/img/favicons/android-chrome-192x192.png',
+    '/assets/img/favicons/android-chrome-512x512.png',
+    '/assets/img/favicons/apple-touch-icon.png',
+    '/assets/img/favicons/browserconfig.xml',
+    '/assets/img/favicons/favicon-16x16.png',
+    '/assets/img/favicons/favicon-32x32.png',
+    '/assets/img/favicons/favicon.ico',
+    '/assets/img/favicons/mstile-150x150.png',
+    '/assets/img/favicons/safari-pinned-tab.svg',
+    '/assets/img/favicons/site.webmanifest',
+    '/assets/js/dist/categories.min.js',
+    '/assets/js/dist/commons.min.js',
+    '/assets/js/dist/home.min.js',
+    '/assets/js/dist/misc.min.js',
+    '/assets/js/dist/page.min.js',
+    '/assets/js/dist/post.min.js',
+    '/assets/js/dist/pvreport.min.js',
+    '/assets/img/favicons/.DS_Store'
 
 ];
 
@@ -52,7 +52,7 @@ const allowedDomains = [
   'localhost:4000',
 
   
-    'cc360428.gitee.io',
+    'cc360428.github.io',
   
 
   'fonts.gstatic.com',
