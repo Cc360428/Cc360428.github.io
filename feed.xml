@@ -1,0 +1,341 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Cc</title>
+  <subtitle>查看所有</subtitle>
+  <updated>2022-05-21T10:07:53+08:00</updated>
+  <author>
+    <name>Cc</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="zh-CN"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
+  <rights> © 2022 Cc </rights>
+  <icon>//assets/img/favicons/favicon.ico</icon>
+  <logo>//assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>DataStructure（02142）</title>
+    <link href="http://localhost:4000/posts/DataStructure/" rel="alternate" type="text/html" title="DataStructure（02142）" />
+    <published>2022-03-31T21:19:55+08:00</published>
+  
+    <updated>2022-03-31T21:19:55+08:00</updated>
+  
+    <id>http://localhost:4000/posts/DataStructure/</id>
+    <content src="http://localhost:4000/posts/DataStructure/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="ComputerBasics" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      数据结构导论（02142）
+第一章 概论（重点）
+
+1 引言
+
+  数据结构：是计算机组织数据和存储数据的方式
+  计算机解决问题步骤
+    
+      建立数学模型
+      设计算法
+      编程实现算法
+    
+  
+  程序=数据结构+算法
+  通常操作：查找、读取、插入、删除、更新
+  合理的数据结构有什么用
+    
+      可降低程序设计的复杂性
+      提高程序的执行效率
+    
+  
+
+
+2 基本概念和术语
+
+  数据：所有被计算机存储、处理的的对象
+  数据元素：是数据这个集合的一个个体积数据的基本单位
+  数据项：数据元素常常分为若干个数据项，是数据的具有意义的最小单位
+    
+      数据-&amp;gt;数据元素-&amp;gt;数据项
+    
+  
+  逻辑结构：元素之间的结构关系（集合、线性、树形、图结构）
+    
+      线性结构：...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>React Project</title>
+    <link href="http://localhost:4000/posts/reactProject/" rel="alternate" type="text/html" title="React Project" />
+    <published>2022-02-13T22:58:36+08:00</published>
+  
+    <updated>2022-05-20T23:34:02+08:00</updated>
+  
+    <id>http://localhost:4000/posts/reactProject/</id>
+    <content src="http://localhost:4000/posts/reactProject/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Client" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      项目准备
+
+1. 项目介绍
+
+本节目标: 了解项目的定位和功能
+
+
+  项目功能演示
+    
+      登录、退出
+      首页
+      内容（文章）管理：文章列表、发布文章、修改文章
+    
+  
+  技术
+    
+      React 官方脚手架 create-react-app
+      react hooks
+      状态管理：mobx
+      UI 组件库：antd v4
+      ajax 请求库：axios
+      路由：react-router-dom 以及 history
+      富文本编辑器：react-quill
+      CSS 预编译器：sass
+    
+  
+
+
+2. 项目搭建
+
+本节目标: 能够基于脚手架搭建项目基本结构
+
+实现步骤
+
+
+  
+    使用 create-react-app 生成项目 npx cr...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>React 基础</title>
+    <link href="http://localhost:4000/posts/reactBase/" rel="alternate" type="text/html" title="React 基础" />
+    <published>2022-02-12T22:58:36+08:00</published>
+  
+    <updated>2022-05-21T09:46:52+08:00</updated>
+  
+    <id>http://localhost:4000/posts/reactBase/</id>
+    <content src="http://localhost:4000/posts/reactBase/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Client" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      React 基础
+
+React 介绍
+
+目标任务: 了解什么是 React 以及它的特点
+
+React 是什么
+
+​ 一个专注于构建用户界面的 JavaScript 库，和 vue 和 angular 并称前端三大框架，不夸张的说，react 引领了很多新思想，世界范围内是最流行的 js 前端框架，最近发布了 18 版本，加入了很多新特性
+
+​ React 英文文档（https://reactjs.org/）
+
+​ React 中文文档 （https://zh-hans.reactjs.org/）
+
+​ React 新文档 （https://beta.reactjs.org/）（开发中….）
+
+React 有什么特点
+
+
+  
+    声明式 UI（JSX）
+
+    写 UI 就和写普通的 HTML 一样，抛弃命令式的繁琐实现
+
+    
+  
+  
+    组件化
+
+    组件...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>InternetPrinciples（04735）</title>
+    <link href="http://localhost:4000/posts/InternetPrinciples/" rel="alternate" type="text/html" title="InternetPrinciples（04735）" />
+    <published>2021-03-20T13:57:01+08:00</published>
+  
+    <updated>2021-03-20T13:57:01+08:00</updated>
+  
+    <id>http://localhost:4000/posts/InternetPrinciples/</id>
+    <content src="http://localhost:4000/posts/InternetPrinciples/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="ComputerBasics" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      第一章 计算机概述
+1 计算机网络基本概念
+网络协议
+- 网络通讯实体之间的在数据交换过程中需要遵循的规则或约定
+- 三要素
+    - 语法（syntax）
+    - 语义（semantics）
+    - 时序（timing） #### 网络功能（核心功能：资源共享）
+- 硬件资源共享
+- 软件资源共享
+- 信息资源共享 #### 网络分类
+- 按覆盖范围分类
+    - 个域网：PAN 1-10m 
+    - 局域网：LAN 10m-1km 
+    - 城域网：MAN 5-50km 
+    - 广域网：WAN 几十到几千米
+- 按拓扑结构分类
+    - 星形拓扑结构：易监管，故障诊断隔离；中央结点网络瓶颈，一旦故障全网瘫痪；受限中央结点
+    - 总线型拓扑结构：所需电缆数少，易于扩展；通信范围受限，故障诊断与隔离难，容易发生冲突
+    - 环形拓扑结构：所需电缆...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Pprof</title>
+    <link href="http://localhost:4000/posts/pprof/" rel="alternate" type="text/html" title="Pprof" />
+    <published>2021-03-17T18:01:33+08:00</published>
+  
+    <updated>2022-05-20T23:34:02+08:00</updated>
+  
+    <id>http://localhost:4000/posts/pprof/</id>
+    <content src="http://localhost:4000/posts/pprof/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Server" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Go pprof And Prometheus
+
+在代码中使用
+
+import (
+  ...
+	_ "net/http/pprof"
+  "github.com/prometheus/client_golang/prometheus/promhttp"
+  ...
+)
+
+func main() {
+
+ 	go func() {
+		http.Handle("/metrics", promhttp.Handler())
+		_ = http.ListenAndServe("14111", nil) // '14111' 建议使用flag
+	}()
+
+}
+
+
+浏览器查看
+
+
+  http:/172.13.5.17:14111/debug/pprof/
+
+
+
+使用命令行查看所有
+
+go tool pprof http://172.13.5.17:14611/debug/pprof/pro...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
