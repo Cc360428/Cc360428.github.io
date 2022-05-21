@@ -1,33 +1,33 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>http://localhost:4000/blog/</id>
   <title>Cc</title>
   <subtitle>查看所有</subtitle>
-  <updated>2022-05-21T10:07:53+08:00</updated>
+  <updated>2022-05-21T10:00:36+08:00</updated>
   <author>
     <name>Cc</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>http://localhost:4000/blog/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/blog/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="zh-CN"
-    href="http://localhost:4000/"/>
+    href="http://localhost:4000/blog/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <rights> © 2022 Cc </rights>
-  <icon>//assets/img/favicons/favicon.ico</icon>
-  <logo>//assets/img/favicons/favicon-96x96.png</logo>
+  <icon>/blog/assets/img/favicons/favicon.ico</icon>
+  <logo>/blog/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
     <title>DataStructure（02142）</title>
-    <link href="http://localhost:4000/posts/DataStructure/" rel="alternate" type="text/html" title="DataStructure（02142）" />
+    <link href="http://localhost:4000/blog/posts/DataStructure/" rel="alternate" type="text/html" title="DataStructure（02142）" />
     <published>2022-03-31T21:19:55+08:00</published>
   
     <updated>2022-03-31T21:19:55+08:00</updated>
   
-    <id>http://localhost:4000/posts/DataStructure/</id>
-    <content src="http://localhost:4000/posts/DataStructure/" />
+    <id>http://localhost:4000/blog/posts/DataStructure/</id>
+    <content src="http://localhost:4000/blog/posts/DataStructure/" />
     <author>
       <name>Cc</name>
     </author>
@@ -89,13 +89,13 @@
   
   <entry>
     <title>React Project</title>
-    <link href="http://localhost:4000/posts/reactProject/" rel="alternate" type="text/html" title="React Project" />
+    <link href="http://localhost:4000/blog/posts/reactProject/" rel="alternate" type="text/html" title="React Project" />
     <published>2022-02-13T22:58:36+08:00</published>
   
     <updated>2022-05-20T23:34:02+08:00</updated>
   
-    <id>http://localhost:4000/posts/reactProject/</id>
-    <content src="http://localhost:4000/posts/reactProject/" />
+    <id>http://localhost:4000/blog/posts/reactProject/</id>
+    <content src="http://localhost:4000/blog/posts/reactProject/" />
     <author>
       <name>Cc</name>
     </author>
@@ -159,13 +159,13 @@
   
   <entry>
     <title>React 基础</title>
-    <link href="http://localhost:4000/posts/reactBase/" rel="alternate" type="text/html" title="React 基础" />
+    <link href="http://localhost:4000/blog/posts/reactBase/" rel="alternate" type="text/html" title="React 基础" />
     <published>2022-02-12T22:58:36+08:00</published>
   
     <updated>2022-05-21T09:46:52+08:00</updated>
   
-    <id>http://localhost:4000/posts/reactBase/</id>
-    <content src="http://localhost:4000/posts/reactBase/" />
+    <id>http://localhost:4000/blog/posts/reactBase/</id>
+    <content src="http://localhost:4000/blog/posts/reactBase/" />
     <author>
       <name>Cc</name>
     </author>
@@ -222,13 +222,13 @@ React 有什么特点
   
   <entry>
     <title>InternetPrinciples（04735）</title>
-    <link href="http://localhost:4000/posts/InternetPrinciples/" rel="alternate" type="text/html" title="InternetPrinciples（04735）" />
+    <link href="http://localhost:4000/blog/posts/InternetPrinciples/" rel="alternate" type="text/html" title="InternetPrinciples（04735）" />
     <published>2021-03-20T13:57:01+08:00</published>
   
     <updated>2021-03-20T13:57:01+08:00</updated>
   
-    <id>http://localhost:4000/posts/InternetPrinciples/</id>
-    <content src="http://localhost:4000/posts/InternetPrinciples/" />
+    <id>http://localhost:4000/blog/posts/InternetPrinciples/</id>
+    <content src="http://localhost:4000/blog/posts/InternetPrinciples/" />
     <author>
       <name>Cc</name>
     </author>
@@ -275,13 +275,13 @@ React 有什么特点
   
   <entry>
     <title>Pprof</title>
-    <link href="http://localhost:4000/posts/pprof/" rel="alternate" type="text/html" title="Pprof" />
+    <link href="http://localhost:4000/blog/posts/pprof/" rel="alternate" type="text/html" title="Pprof" />
     <published>2021-03-17T18:01:33+08:00</published>
   
     <updated>2022-05-20T23:34:02+08:00</updated>
   
-    <id>http://localhost:4000/posts/pprof/</id>
-    <content src="http://localhost:4000/posts/pprof/" />
+    <id>http://localhost:4000/blog/posts/pprof/</id>
+    <content src="http://localhost:4000/blog/posts/pprof/" />
     <author>
       <name>Cc</name>
     </author>
