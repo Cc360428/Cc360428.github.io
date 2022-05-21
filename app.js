@@ -1,5 +1,5 @@
 /* Registering Service Worker */
 if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js');
+  navigator.serviceWorker.register('/Cc360428/sw.js');
 };
 
