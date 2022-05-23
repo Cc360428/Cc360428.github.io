@@ -44,8 +44,8 @@
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Golang基础问题" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="Golang基础问题" />
-<meta property="og:description" content="Golang基础问题" />
+<meta name="description" content="Golang 基础问题" />
+<meta property="og:description" content="Golang 基础问题" />
 <link rel="canonical" href="http://localhost:4000/posts/baseall/" />
 <meta property="og:url" content="http://localhost:4000/posts/baseall/" />
 <meta property="og:site_name" content="Cc" />
@@ -54,7 +54,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Golang基础问题" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-01-16T22:58:36+08:00","datePublished":"2020-01-16T22:58:36+08:00","description":"Golang基础问题","headline":"Golang基础问题","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/baseall/"},"url":"http://localhost:4000/posts/baseall/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-01-16T22:58:36+08:00","datePublished":"2020-01-16T22:58:36+08:00","description":"Golang 基础问题","headline":"Golang基础问题","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/baseall/"},"url":"http://localhost:4000/posts/baseall/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -835,15 +835,18 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="golang基础问题"><span class="mr-2">Golang基础问题</span><a href="#golang基础问题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h2 id="golang-基础问题"><span class="mr-2">Golang 基础问题</span><a href="#golang-基础问题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="内置标识符"><span class="mr-2">内置标识符</span><a href="#内置标识符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <ul>
-  <li>const
+  <li>
+    <p>const</p>
+
     <ul>
       <li>
         <p>iota
-iota是一个预定义的标识符，代表顺序按行增加的无符号整数，每个const声明单元（被括号括起来）相互独立，分别从0开始。</p>
+iota 是一个预定义的标识符，代表顺序按行增加的无符号整数，每个 const 声明单元（被括号括起来）相互独立，分别从 0 开始。</p>
 
         <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code small"></i></span>
@@ -888,7 +891,7 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
     <span class="n">Test</span>                               <span class="c">// 404</span>
     <span class="n">HttpResponse404Error</span> <span class="o">=</span> <span class="s">"not found"</span> <span class="c">// not found</span>
 <span class="p">)</span>
-    
+
 <span class="k">const</span> <span class="p">(</span>
     <span class="c">//8421 (15)</span>
     <span class="c">/**
@@ -918,7 +921,7 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
   </li>
   <li>
     <p>func new
-内建函数new分配内存。其第一个实参为类型，而非值。其返回值为指向该类型的新分配的零值的指针</p>
+内建函数 new 分配内存。其第一个实参为类型，而非值。其返回值为指向该类型的新分配的零值的指针</p>
 
     <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code small"></i></span>
@@ -934,7 +937,7 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
 </pre></td><td class="rouge-code"><pre><span class="k">type</span> <span class="n">user</span> <span class="k">struct</span> <span class="p">{</span>
 <span class="n">Name</span> <span class="kt">string</span>
 <span class="p">}</span>
-  
+
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">u</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
     <span class="n">u</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s">"Cc"</span>
@@ -944,17 +947,17 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
   </li>
   <li>
     <p>func make
-内建函数make分配并初始化一个类型为切片、映射、或通道的对象。其第一个实参为类型，而非值。make的返回类型与其参数相同，而非指向它的指针。其具体结果取决于具体的类型：</p>
+内建函数 make 分配并初始化一个类型为切片、映射、或通道的对象。其第一个实参为类型，而非值。make 的返回类型与其参数相同，而非指向它的指针。其具体结果取决于具体的类型：</p>
 
     <ul>
       <li>
-        <p>切片：size指定了其长度。该切片的容量等于其长度。切片支持第二个整数实参可用来指定不同的容量； 它必须不小于其长度，因此 make([]int, 0, 10) 会分配一个长度为0，容量为10的切片。</p>
+        <p>切片：size 指定了其长度。该切片的容量等于其长度。切片支持第二个整数实参可用来指定不同的容量； 它必须不小于其长度，因此 make([]int, 0, 10) 会分配一个长度为 0，容量为 10 的切片。</p>
       </li>
       <li>
-        <p>映射：初始分配的创建取决于size，但产生的映射长度为0。size可以省略，这种情况下就会分配一个 小的起始大小。</p>
+        <p>映射：初始分配的创建取决于 size，但产生的映射长度为 0。size 可以省略，这种情况下就会分配一个 小的起始大小。</p>
       </li>
       <li>
-        <p>通道：通道的缓存根据指定的缓存容量初始化。若 size为零或被省略，该信道即为无缓存的。</p>
+        <p>通道：通道的缓存根据指定的缓存容量初始化。若 size 为零或被省略，该信道即为无缓存的。</p>
 
         <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code small"></i></span>
@@ -981,16 +984,16 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
 
     <ul>
       <li>
-        <p>数组：v中元素的数量，与 len(v) 相同</p>
+        <p>数组：v 中元素的数量，与 len(v) 相同</p>
       </li>
       <li>
-        <p>数组指针：*v中元素的数量，与len(v) 相同</p>
+        <p>数组指针：*v 中元素的数量，与 len(v) 相同</p>
       </li>
       <li>
-        <p>切片：切片的容量（底层数组的长度）；若 v为nil，cap(v) 即为零</p>
+        <p>切片：切片的容量（底层数组的长度）；若 v 为 nil，cap(v) 即为零</p>
       </li>
       <li>
-        <p>信道：按照元素的单元，相应信道缓存的容量；若v为nil，cap(v)即为零</p>
+        <p>信道：按照元素的单元，相应信道缓存的容量；若 v 为 nil，cap(v)即为零</p>
 
         <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code small"></i></span>
@@ -1007,13 +1010,13 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
 11
 </pre></td><td class="rouge-code"><pre><span class="n">array</span> <span class="o">:=</span> <span class="p">[</span><span class="m">4</span><span class="p">]</span><span class="kt">int64</span><span class="p">{</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">}</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">array</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="n">array</span><span class="p">))</span> <span class="c">// 4 4</span>
-    
+
 <span class="n">slice</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int64</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">slice</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="n">slice</span><span class="p">))</span> <span class="c">// 1 10</span>
-    
+
 <span class="n">cha</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="kt">int</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cha</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="n">cha</span><span class="p">))</span> <span class="c">// 0 0</span>
-    
+
 <span class="n">m</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">),</span> <span class="s">"没有容量"</span><span class="p">)</span> <span class="c">//0 没有容量</span>
 </pre></td></tr></tbody></table></code></div>        </div>
@@ -1058,11 +1061,11 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
 28
 </pre></td><td class="rouge-code"><pre><span class="n">appEnd</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="nb">cap</span><span class="p">(</span><span class="n">appEnd</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">appEnd</span><span class="p">),</span> <span class="n">appEnd</span><span class="p">)</span> <span class="c">// 3 3 [0 0 0]</span>
-  
+
 <span class="n">appEnd</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">appEnd</span><span class="p">,</span> <span class="m">24</span><span class="p">)</span>
 <span class="n">appEnd</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">appEnd</span><span class="p">,</span> <span class="m">12</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="nb">cap</span><span class="p">(</span><span class="n">appEnd</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">appEnd</span><span class="p">),</span> <span class="n">appEnd</span><span class="p">)</span> <span class="c">// 6 5 [0 0 0 24 12]</span>
-  
+
 <span class="c">/**
     make 已经初始化 [0 0 0]
     当 追加的值 超过容量，扩大一赔的增加容量
@@ -1075,22 +1078,24 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
     appEnd2 初始长度为 2 ，容量20
     追加 没有超过容量所以没有扩容
  */</span>
-  
+
 <span class="n">stringSlice</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
 <span class="n">stringSlice</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">"oo"</span>
 <span class="n">stringSlice</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">stringSlice</span><span class="p">,</span> <span class="s">"a"</span><span class="p">,</span> <span class="s">"8"</span><span class="p">)</span> <span class="c">// [oo          a 8]</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">stringSlice</span><span class="p">)</span>
-  
+
 <span class="n">byteSlice</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
 <span class="n">byteSlice</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">byteSlice</span><span class="p">,</span> <span class="s">"asdf"</span><span class="o">...</span><span class="p">)</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">byteSlice</span><span class="p">)</span> <span class="c">// [0 0 0 0 0 0 0 0 0 0 97 115 100 102]</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
-  <li>copy</li>
+  <li>
+    <p>copy</p>
+  </li>
 </ul>
 
 <blockquote>
-  <p>内建函数copy将元素从来源切片复制到目标切片中，也能将字节从字符串复制到字节切片中。copy返回被复制的元素数量，它会是 len(src) 和 len(dst) 中较小的那个。来源和目标的底层内存可以重叠</p>
+  <p>内建函数 copy 将元素从来源切片复制到目标切片中，也能将字节从字符串复制到字节切片中。copy 返回被复制的元素数量，它会是 len(src) 和 len(dst) 中较小的那个。来源和目标的底层内存可以重叠</p>
 </blockquote>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
@@ -1134,7 +1139,7 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
 </ul>
 
 <blockquote>
-  <p>内建函数delete按照指定的键将元素从映射中删除。若m为nil或无此元素，delete不进行操作</p>
+  <p>内建函数 delete 按照指定的键将元素从映射中删除。若 m 为 nil 或无此元素，delete 不进行操作</p>
 </blockquote>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
@@ -1155,11 +1160,11 @@ iota是一个预定义的标识符，代表顺序按行增加的无符号整数�
 
 <ul>
   <li>func close
-chan 关闭chan</li>
+chan 关闭 chan</li>
   <li>func panic
 终止程序</li>
   <li>func recover
-内建函数recover允许程序管理恐慌过程中的Go程。在defer的函数中，执行recover调用会取回传至panic调用的错误值，恢复正常执行，停止恐慌过程。若recover在defer的函数之外被调用，它将不会停止恐慌过程序列。在此情况下，或当该Go程不在恐慌过程中时，或提供给panic的实参为nil时，recover就会返回nil</li>
+内建函数 recover 允许程序管理恐慌过程中的 Go 程。在 defer 的函数中，执行 recover 调用会取回传至 panic 调用的错误值，恢复正常执行，停止恐慌过程。若 recover 在 defer 的函数之外被调用，它将不会停止恐慌过程序列。在此情况下，或当该 Go 程不在恐慌过程中时，或提供给 panic 的实参为 nil 时，recover 就会返回 nil</li>
   <li>func print
 输出</li>
   <li>func println
@@ -1169,7 +1174,7 @@ chan 关闭chan</li>
 <h2 id="数据结构"><span class="mr-2">数据结构</span><a href="#数据结构" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>heap 对任意类型（实现了heap.Interface接口）的堆操作
+  <li>heap 对任意类型（实现了 heap.Interface 接口）的堆操作
     <ul>
       <li>Push</li>
       <li>Pop</li>
@@ -1246,13 +1251,13 @@ chan 关闭chan</li>
 <span class="n">s</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="m">3</span>
 <span class="n">s1</span> <span class="o">:=</span> <span class="n">s</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="p">]</span>     <span class="c">// 截取下标元素1以后</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span> <span class="c">// [2 3]</span>
-  
+
 <span class="n">s2</span> <span class="o">:=</span> <span class="n">s</span><span class="p">[</span><span class="o">:</span><span class="m">1</span><span class="p">]</span>     <span class="c">// 从第一个到目标元素结束</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span> <span class="c">// [1]</span>
-  
+
 <span class="n">s3</span> <span class="o">:=</span> <span class="n">s</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">]</span>    <span class="c">// 取中间</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span> <span class="c">// [2]</span>
-  
+
 <span class="c">// 切片的长度 和容量</span>
 <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="c">// 3 6</span>
 </pre></td></tr></tbody></table></code></div>    </div>
@@ -1289,7 +1294,7 @@ chan 关闭chan</li>
     <span class="s">"gaoxiao"</span><span class="o">:</span>      <span class="m">15</span><span class="p">,</span>
     <span class="s">"shengyun"</span><span class="o">:</span>     <span class="m">14</span><span class="p">,</span>
 <span class="p">}</span>
-    
+
 <span class="k">var</span> <span class="n">names</span> <span class="p">[]</span><span class="kt">string</span>
 <span class="k">for</span> <span class="n">name</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">slice1</span> <span class="p">{</span>
     <span class="n">names</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -1323,13 +1328,13 @@ chan 关闭chan</li>
 <span class="n">m</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">"a"</span>
 <span class="n">m</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">"c"</span>
 <span class="n">m</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">"b"</span>
-    
+
 <span class="k">var</span> <span class="n">keys</span> <span class="p">[]</span><span class="kt">int</span>
 <span class="k">for</span> <span class="n">k</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">m</span> <span class="p">{</span>
     <span class="n">keys</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="n">sort</span><span class="o">.</span><span class="n">Ints</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
-    
+
 <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">k</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">keys</span> <span class="p">{</span>
     <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Key:"</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="s">"Value:"</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 <span class="p">}</span>
@@ -1418,7 +1423,7 @@ chan 关闭chan</li>
     <span class="n">ch</span> <span class="o">&lt;-</span> <span class="s">"发送"</span>                   <span class="c">// 接收数据</span>
     <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"接收：---&gt;"</span><span class="p">,</span> <span class="o">&lt;-</span><span class="n">ch</span><span class="p">)</span> <span class="c">// 接收：---&gt; 发送</span>
 
-<span class="n">经典</span>  
+<span class="n">经典</span>
 <span class="k">type</span> <span class="n">messages</span> <span class="k">struct</span> <span class="p">{</span>
     <span class="n">user</span>        <span class="kt">string</span>
     <span class="n">age</span>         <span class="kt">int</span>
@@ -1471,7 +1476,7 @@ chan 关闭chan</li>
     <p>协程的概念</p>
 
     <ul>
-      <li>协程 使用 go 关键字开启，可以使用chan 类型搭配使用协程之间通讯</li>
+      <li>协程 使用 go 关键字开启，可以使用 chan 类型搭配使用协程之间通讯</li>
     </ul>
   </li>
   <li>
@@ -1528,7 +1533,7 @@ chan 关闭chan</li>
 
 <ul>
   <li>清理释放内存</li>
-  <li>执行recove</li>
+  <li>执行 recove</li>
 </ul>
 
 <h3 id="例子"><span class="mr-2">例子</span><a href="#例子" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1555,7 +1560,7 @@ chan 关闭chan</li>
     <span class="k">return</span> <span class="m">3</span>
 <span class="p">}</span>
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="m">1</span><span class="p">))</span> <span class="c">// 3 </span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="m">1</span><span class="p">))</span> <span class="c">// 3</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
@@ -1603,7 +1608,7 @@ chan 关闭chan</li>
 
     <ul>
       <li>可以创建为其他结构体的字段；零值为解锁状态。</li>
-      <li>Mutex类型的锁和线程无关，可以由不同的线程加锁和解锁。</li>
+      <li>Mutex 类型的锁和线程无关，可以由不同的线程加锁和解锁。</li>
     </ul>
   </li>
   <li>
@@ -1611,8 +1616,8 @@ chan 关闭chan</li>
 
     <ul>
       <li>该锁可以被同时多个读取者持有或唯一个写入者持有。</li>
-      <li>RWMutex可以创建为其他结构体的字段；零值为解锁状态。</li>
-      <li>RWMutex类型的锁也和线程无关，可以由不同的线程加读取锁/写入和解读取锁/写入锁。</li>
+      <li>RWMutex 可以创建为其他结构体的字段；零值为解锁状态。</li>
+      <li>RWMutex 类型的锁也和线程无关，可以由不同的线程加读取锁/写入和解读取锁/写入锁。</li>
     </ul>
   </li>
   <li>
@@ -1620,13 +1625,13 @@ chan 关闭chan</li>
 
     <ul>
       <li>
-        <p>父线程调用Add方法来设定应等待的线程的数量。</p>
+        <p>父线程调用 Add 方法来设定应等待的线程的数量。</p>
       </li>
       <li>
-        <p>每个被等待的线程在结束时应调用Done方法。</p>
+        <p>每个被等待的线程在结束时应调用 Done 方法。</p>
       </li>
       <li>
-        <p>同时，主线程里可以调用Wait方法阻塞至所有线程结束</p>
+        <p>同时，主线程里可以调用 Wait 方法阻塞至所有线程结束</p>
 
         <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code small"></i></span>
@@ -1689,18 +1694,18 @@ chan 关闭chan</li>
 57
 58
 </pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
-    
+
 <span class="k">import</span> <span class="p">(</span>
     <span class="s">"fmt"</span>
     <span class="s">"sync"</span>
     <span class="s">"time"</span>
 <span class="p">)</span>
-    
+
 <span class="k">type</span> <span class="n">User</span> <span class="k">struct</span> <span class="p">{</span>
     <span class="n">Name</span>   <span class="kt">string</span>
     <span class="n">Locker</span> <span class="o">*</span><span class="n">sync</span><span class="o">.</span><span class="n">Mutex</span>
 <span class="p">}</span>
-    
+
 <span class="k">func</span> <span class="p">(</span><span class="n">u</span> <span class="o">*</span><span class="n">User</span><span class="p">)</span> <span class="n">SetName</span><span class="p">(</span><span class="n">wati</span> <span class="o">*</span><span class="n">sync</span><span class="o">.</span><span class="n">WaitGroup</span><span class="p">,</span> <span class="n">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">defer</span> <span class="k">func</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Unlock set name:"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -1708,25 +1713,25 @@ chan 关闭chan</li>
         <span class="c">//Done方法减少WaitGroup计数器的值，应在线程的最后执行</span>
         <span class="n">wati</span><span class="o">.</span><span class="n">Done</span><span class="p">()</span>
     <span class="p">}()</span>
-    
+
     <span class="n">u</span><span class="o">.</span><span class="n">Locker</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
     <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Lock set name:"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="m">1</span> <span class="o">*</span> <span class="n">time</span><span class="o">.</span><span class="n">Second</span><span class="p">)</span>
     <span class="n">u</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="n">name</span>
 <span class="p">}</span>
-    
+
 <span class="k">func</span> <span class="p">(</span><span class="n">u</span> <span class="o">*</span><span class="n">User</span><span class="p">)</span> <span class="n">GetName</span><span class="p">(</span><span class="n">wati</span> <span class="o">*</span><span class="n">sync</span><span class="o">.</span><span class="n">WaitGroup</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">defer</span> <span class="k">func</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Unlock get name:"</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
         <span class="n">u</span><span class="o">.</span><span class="n">Locker</span><span class="o">.</span><span class="n">Unlock</span><span class="p">()</span>
         <span class="n">wati</span><span class="o">.</span><span class="n">Done</span><span class="p">()</span>
     <span class="p">}()</span>
-    
+
     <span class="n">u</span><span class="o">.</span><span class="n">Locker</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
     <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Lock get name:"</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">Sleep</span><span class="p">(</span><span class="m">1</span> <span class="o">*</span> <span class="n">time</span><span class="o">.</span><span class="n">Second</span><span class="p">)</span>
 <span class="p">}</span>
-    
+
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">user</span> <span class="o">:=</span> <span class="n">User</span><span class="p">{}</span>
     <span class="n">user</span><span class="o">.</span><span class="n">Locker</span> <span class="o">=</span> <span class="nb">new</span><span class="p">(</span><span class="n">sync</span><span class="o">.</span><span class="n">Mutex</span><span class="p">)</span>
@@ -1774,7 +1779,7 @@ chan 关闭chan</li>
     <p>copy And =</p>
 
     <ul>
-      <li>copy：值复制，不会覆盖目标type</li>
+      <li>copy：值复制，不会覆盖目标 type</li>
       <li>= 会影响目标索引指针</li>
     </ul>
   </li>
@@ -1782,7 +1787,7 @@ chan 关闭chan</li>
     <p>cap(容量) And len（长度）</p>
 
     <ul>
-      <li>容量：当append(追加) 超过容量会翻一赔的扩容</li>
+      <li>容量：当 append(追加) 超过容量会翻一赔的扩容</li>
       <li>长度：可以看到元素个数</li>
     </ul>
   </li>
@@ -1790,7 +1795,7 @@ chan 关闭chan</li>
     <p>new 和 make</p>
 
     <ul>
-      <li>new分配内存，make 分配并且初始化</li>
+      <li>new 分配内存，make 分配并且初始化</li>
       <li>使用
         <ul>
           <li>new 常用 struct(结构体)</li>
@@ -1834,14 +1839,14 @@ chan 关闭chan</li>
       </li>
       <li>遍历
         <ul>
-          <li>slice遍历的速度: 0s</li>
-          <li>list遍历的速度: 56.0378ms</li>
+          <li>slice 遍历的速度: 0s</li>
+          <li>list 遍历的速度: 56.0378ms</li>
         </ul>
       </li>
     </ul>
 
     <blockquote>
-      <p>频繁的插入和删除用list,频繁的遍历查询选slice</p>
+      <p>频繁的插入和删除用 list,频繁的遍历查询选 slice</p>
     </blockquote>
   </li>
 </ul>
@@ -1855,7 +1860,8 @@ chan 关闭chan</li>
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/server/'>Server</a>
+      <a href='/categories/server/'>Server</a>,
+      <a href='/categories/golang/'>Golang</a>
   </div>
   
 
@@ -1955,16 +1961,6 @@ chan 关闭chan</li>
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1975,7 +1971,7 @@ chan 关闭chan</li>
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -2053,143 +2049,6 @@ chan 关闭chan</li>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2279,155 +2138,10 @@ chan 关闭chan</li>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2592,12 +2306,141 @@ chan 关闭chan</li>
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2737,6 +2580,366 @@ chan 关闭chan</li>
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2779,6 +2982,9 @@ chan 关闭chan</li>
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2795,9 +3001,6 @@ chan 关闭chan</li>
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -3155,85 +3358,202 @@ chan 关闭chan</li>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -3920,80 +4240,17 @@ chan 关闭chan</li>
 
                 Go 1.13
 
+
   工具链、运行时、标准库
 
 
 工具链
 
+
   环境变量 Go111MODOULE 默认值 auto
   增加了环境变量 GOPIVATE 私有变量
 
 
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/pprof/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1615975293"
-    data-df="YYYY-MM-DD"
-    >
-  2021-03-17
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Pprof</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Go pprof And Prometheus
-
-在代码中使用
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-import (
-  ...
-	_ &quot;net/http/pprof&quot;
-  &quot;github.com/prometheus/client_golang/prometheus/promhttp&quot;
-  ...
-)
-
-func main() {
-
- 	go func...
               </p>
             </div>
           </div>
@@ -4038,6 +4295,56 @@ func main() {
 
 
 
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/go-1.12/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1575623482"
+    data-df="YYYY-MM-DD"
+    >
+  2019-12-06
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Go 1.12 版本更新 摘要</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                go mod 1.12 学习
+
+go modules(check version)
+
+检查 golang 版本
+
+如果没有生成 go.sum 或者报错请输入
+export GOPROXY=https://goproxy.io
+
+C:\Users\admin&amp;gt;go version
+go version go1.12.9 windows/amd64
+
+
+把 golang 升级到 1.11（...
               </p>
             </div>
           </div>
@@ -4197,143 +4504,6 @@ func main() {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4423,155 +4593,10 @@ func main() {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -4736,12 +4761,141 @@ func main() {
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4881,6 +5035,366 @@ func main() {
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4923,6 +5437,9 @@ func main() {
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4939,9 +5456,6 @@ func main() {
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Cc</title>
   <subtitle>查看所有</subtitle>
-  <updated>2022-05-21T18:53:07+08:00</updated>
+  <updated>2022-05-23T11:30:42+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>http://localhost:4000/</uri>
@@ -34,6 +34,10 @@
 
   
     
+    <category term="Cc" />
+    
+    <category term="SelfStudy" />
+    
     <category term="ComputerBasics" />
     
   
@@ -47,9 +51,11 @@
 
 
       数据结构导论（02142）
+
 第一章 概论（重点）
 
 1 引言
+
 
   数据结构：是计算机组织数据和存储数据的方式
   计算机解决问题步骤
@@ -71,6 +77,7 @@
 
 2 基本概念和术语
 
+
   数据：所有被计算机存储、处理的的对象
   数据元素：是数据这个集合的一个个体积数据的基本单位
   数据项：数据元素常常分为若干个数据项，是数据的具有意义的最小单位
@@ -80,7 +87,7 @@
   
   逻辑结构：元素之间的结构关系（集合、线性、树形、图结构）
     
-      线性结构：...
+      线性...
     </summary>
   
 
@@ -92,7 +99,7 @@
     <link href="http://localhost:4000/posts/reactProject/" rel="alternate" type="text/html" title="React Project" />
     <published>2022-02-13T22:58:36+08:00</published>
   
-    <updated>2022-05-20T23:34:02+08:00</updated>
+    <updated>2022-02-13T22:58:36+08:00</updated>
   
     <id>http://localhost:4000/posts/reactProject/</id>
     <content src="http://localhost:4000/posts/reactProject/" />
@@ -103,6 +110,8 @@
   
     
     <category term="Client" />
+    
+    <category term="React" />
     
   
 
@@ -162,7 +171,7 @@
     <link href="http://localhost:4000/posts/reactBase/" rel="alternate" type="text/html" title="React 基础" />
     <published>2022-02-12T22:58:36+08:00</published>
   
-    <updated>2022-05-21T09:46:52+08:00</updated>
+    <updated>2022-02-12T22:58:36+08:00</updated>
   
     <id>http://localhost:4000/posts/reactBase/</id>
     <content src="http://localhost:4000/posts/reactBase/" />
@@ -173,6 +182,8 @@
   
     
     <category term="Client" />
+    
+    <category term="React" />
     
   
 
@@ -235,6 +246,10 @@ React 有什么特点
 
   
     
+    <category term="Cc" />
+    
+    <category term="SelfStudy" />
+    
     <category term="ComputerBasics" />
     
   
@@ -248,25 +263,36 @@ React 有什么特点
 
 
       第一章 计算机概述
+
 1 计算机网络基本概念
+
 网络协议
+
 - 网络通讯实体之间的在数据交换过程中需要遵循的规则或约定
 - 三要素
     - 语法（syntax）
     - 语义（semantics）
-    - 时序（timing） #### 网络功能（核心功能：资源共享）
+    - 时序（timing）
+
+
+网络功能（核心功能：资源共享）
+
 - 硬件资源共享
 - 软件资源共享
-- 信息资源共享 #### 网络分类
+- 信息资源共享
+
+
+网络分类
+
 - 按覆盖范围分类
-    - 个域网：PAN 1-10m 
-    - 局域网：LAN 10m-1km 
-    - 城域网：MAN 5-50km 
+    - 个域网：PAN 1-10m
+    - 局域网：LAN 10m-1km
+    - 城域网：MAN 5-50km
     - 广域网：WAN 几十到几千米
 - 按拓扑结构分类
     - 星形拓扑结构：易监管，故障诊断隔离；中央结点网络瓶颈，一旦故障全网瘫痪；受限中央结点
     - 总线型拓扑结构：所需电缆数少，易于扩展；通信范围受限，故障诊断与隔离难，容易发生冲突
-    - 环形拓扑结构：所需电缆...
+    - 环形拓扑结构：所需电缆短，可以...
     </summary>
   
 
@@ -278,7 +304,7 @@ React 有什么特点
     <link href="http://localhost:4000/posts/pprof/" rel="alternate" type="text/html" title="Pprof" />
     <published>2021-03-17T18:01:33+08:00</published>
   
-    <updated>2022-05-20T23:34:02+08:00</updated>
+    <updated>2021-03-17T18:01:33+08:00</updated>
   
     <id>http://localhost:4000/posts/pprof/</id>
     <content src="http://localhost:4000/posts/pprof/" />
@@ -289,6 +315,8 @@ React 有什么特点
   
     
     <category term="Server" />
+    
+    <category term="Golang" />
     
   
 
@@ -324,13 +352,12 @@ func main() {
 浏览器查看
 
 
-  http:/172.13.5.17:14111/debug/pprof/
-
+  http:/172.13.5.17:14111/debug/pprof/ &amp;gt; 
 
 
 使用命令行查看所有
 
-go tool pprof http://172.13.5.17:14611/debug/pprof/pro...
+go tool pprof http://172.13.5.17:14611/debug/ppro...
     </summary>
   
 

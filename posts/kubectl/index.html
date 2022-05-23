@@ -704,6 +704,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -878,7 +890,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1575 字">
+  title="1572 字">
   <em>8 分钟</em>阅读</span>
 
     </div>
@@ -888,7 +900,7 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>## 大厅kubernetes 服务</p>
+  <h2 id="大厅-kubernetes-服务"><span class="mr-2">大厅 kubernetes 服务</span><a href="#大厅-kubernetes-服务" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h2 id="准备工作"><span class="mr-2">准备工作</span><a href="#准备工作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -897,10 +909,10 @@
     <p>安装 kubectl</p>
   </li>
   <li>
-    <p>登录到Kubernetes 集群中</p>
+    <p>登录到 Kubernetes 集群中</p>
 
     <ul>
-      <li>获取 ` cat /root/kuber/config `</li>
+      <li>获取 <code class="language-plaintext highlighter-rouge">cat /root/kuber/config</code></li>
       <li>放入到目标机器的 <code class="language-plaintext highlighter-rouge">~/.kube/config</code></li>
     </ul>
   </li>
@@ -1074,7 +1086,7 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
 <h3 id="node"><span class="mr-2">node</span><a href="#node" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>在生产过程中会遇到服务资源不足情况，需要增加新的服务器对应用系统进行水平扩展以实现扩容，在Kubernetes 中加一个node 只需要在node 节点上安装 docker 、kubelet 、kube-proxy服务，给kubelet 和kube-proxy启动启动参数重master rul 指定 Kubernetes集群master 地址。kubelet 会自动注册机制，新的node 会自动加入到Kubernetes集群中
+  <p>在生产过程中会遇到服务资源不足情况，需要增加新的服务器对应用系统进行水平扩展以实现扩容，在 Kubernetes 中加一个 node 只需要在 node 节点上安装 docker 、kubelet 、kube-proxy 服务，给 kubelet 和 kube-proxy 启动启动参数重 master rul 指定 Kubernetes 集群 master 地址。kubelet 会自动注册机制，新的 node 会自动加入到 Kubernetes 集群中
 <img data-src="https://cc360428.github.io//assets/img/system/kubernetes/image-20211124155709295.png" alt="image-20211124155709295" data-proofer-ignore></p>
 </blockquote>
 
@@ -1230,7 +1242,6 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
 
 </pre></td></tr></tbody></table></code></div></div>
 
-
 </div>
 
 <div class="post-tail-wrapper text-muted">
@@ -1240,6 +1251,8 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
+      <a href='/categories/system/'>System</a>,
+      <a href='/categories/kubernetes/'>Kubernetes</a>,
       <a href='/categories/systemutils/'>SystemUtils</a>
   </div>
   
@@ -1334,16 +1347,6 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1354,7 +1357,7 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1432,143 +1435,6 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1658,155 +1524,10 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1971,12 +1692,141 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2116,6 +1966,366 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2158,6 +2368,9 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2174,9 +2387,6 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -3250,6 +3460,123 @@ kubectl delete configmap cc-cm <span class="nt">-n</span> common
   
 
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
 
 
 
@@ -3345,12 +3672,16 @@ cat /proc/cpuinfo  # OR...
 
 
                 kubernetes UI
+
 kubectl apply -f kuboard-v3.yaml
 
 
 访问
+
 http://172.13.8.15:30080/kuboard/settings/ui
+
 kuboard-v3.yaml
+
 ---
 apiVersion: v1
 kind: Namespace
@@ -3358,8 +3689,7 @@ metadata:
   name: kuboard
 
 ---
-apiVersion: v1
-kin...
+apiVersion: v1...
               </p>
             </div>
           </div>
@@ -3396,10 +3726,10 @@ kin...
 
 
 
-                什么是Kubernetes
+                什么是 Kubernetes
 
 
-  为什叫k8sK~s 中间有8个字符，8代替了ubernete    参考文档
+  为什叫k8sK~s 中间有 8 个字符，8 代替了ubernete 参考文档
 
 
 Kubernetes 你能做什么
@@ -3409,10 +3739,13 @@ Kubernetes 你能做什么
   快速扩展应用
   无缝对接新的应用功能
   节省资源，优化硬件资源的使用
-    Kubernetes 特点
-  
+
+
+Kubernetes 特点
+
+
   可移植: 支持公有云，私有云，混合云，多重云（multi-cloud）
-  可扩展: 模块化, ...
+  可扩展: 模块化, 插件...
               </p>
             </div>
           </div>
@@ -3572,143 +3905,6 @@ Kubernetes 你能做什么
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3798,155 +3994,10 @@ Kubernetes 你能做什么
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -4111,12 +4162,141 @@ Kubernetes 你能做什么
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4256,6 +4436,366 @@ Kubernetes 你能做什么
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4298,6 +4838,9 @@ Kubernetes 你能做什么
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4314,9 +4857,6 @@ Kubernetes 你能做什么
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

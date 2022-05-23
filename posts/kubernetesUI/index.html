@@ -670,7 +670,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1002 字">
+  title="1001 字">
   <em>5 分钟</em>阅读</span>
 
     </div>
@@ -681,6 +681,7 @@
 
 <div class="post-content">
   <h3 id="kubernetes-ui"><span class="mr-2">kubernetes UI</span><a href="#kubernetes-ui" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -688,8 +689,11 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="访问"><span class="mr-2">访问</span><a href="#访问" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p><code class="language-plaintext highlighter-rouge">http://172.13.8.15:30080/kuboard/settings/ui</code></p>
+
 <h3 id="kuboard-v3yaml"><span class="mr-2">kuboard-v3.yaml</span><a href="#kuboard-v3yaml" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <div class="language-yaml highlighter-rouge"><div class="code-header">
         <span data-label-text="YAML"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -993,7 +997,6 @@
 299
 300
 301
-302
 </pre></td><td class="rouge-code"><pre><span class="nn">---</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">Namespace</span>
@@ -1009,10 +1012,10 @@
 <span class="na">data</span><span class="pi">:</span>
   <span class="c1"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-built-in.html</span>
   <span class="c1"># [common]</span>
-  <span class="na">KUBOARD_SERVER_NODE_PORT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">30080'</span>
-  <span class="na">KUBOARD_AGENT_SERVER_UDP_PORT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">30081'</span>
-  <span class="na">KUBOARD_AGENT_SERVER_TCP_PORT</span><span class="pi">:</span> <span class="s1">'</span><span class="s">30081'</span>
-  <span class="na">KUBOARD_SERVER_LOGRUS_LEVEL</span><span class="pi">:</span> <span class="s">info</span>  <span class="c1"># error / debug / trace</span>
+  <span class="na">KUBOARD_SERVER_NODE_PORT</span><span class="pi">:</span> <span class="s2">"</span><span class="s">30080"</span>
+  <span class="na">KUBOARD_AGENT_SERVER_UDP_PORT</span><span class="pi">:</span> <span class="s2">"</span><span class="s">30081"</span>
+  <span class="na">KUBOARD_AGENT_SERVER_TCP_PORT</span><span class="pi">:</span> <span class="s2">"</span><span class="s">30081"</span>
+  <span class="na">KUBOARD_SERVER_LOGRUS_LEVEL</span><span class="pi">:</span> <span class="s">info</span> <span class="c1"># error / debug / trace</span>
   <span class="c1"># KUBOARD_AGENT_KEY 是 Agent 与 Kuboard 通信时的密钥，请修改为一个任意的包含字母、数字的32位字符串，此密钥变更后，需要删除 Kuboard Agent 重新导入。</span>
   <span class="na">KUBOARD_AGENT_KEY</span><span class="pi">:</span> <span class="s">32b7d6572c6255211b4eec9009e4a816</span>
   <span class="na">KUBOARD_AGENT_IMAG</span><span class="pi">:</span> <span class="s">eipwork/kuboard-agent</span>
@@ -1025,7 +1028,7 @@
   <span class="c1"># GITLAB_BASE_URL: "http://gitlab.mycompany.com"</span>
   <span class="c1"># GITLAB_APPLICATION_ID: "7c10882aa46810a0402d17c66103894ac5e43d6130b81c17f7f2d8ae182040b5"</span>
   <span class="c1"># GITLAB_CLIENT_SECRET: "77c149bd3a4b6870bffa1a1afaf37cba28a1817f4cf518699065f5a8fe958889"</span>
-  
+
   <span class="c1"># 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-github.html</span>
   <span class="c1"># [github login]</span>
   <span class="c1"># KUBOARD_LOGIN_TYPE: "github"</span>
@@ -1069,9 +1072,9 @@
   <span class="na">kind</span><span class="pi">:</span> <span class="s">ClusterRole</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">cluster-admin</span>
 <span class="na">subjects</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">kind</span><span class="pi">:</span> <span class="s">ServiceAccount</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">kuboard-boostrap</span>
-  <span class="na">namespace</span><span class="pi">:</span> <span class="s">kuboard</span>
+  <span class="pi">-</span> <span class="na">kind</span><span class="pi">:</span> <span class="s">ServiceAccount</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">kuboard-boostrap</span>
+    <span class="na">namespace</span><span class="pi">:</span> <span class="s">kuboard</span>
 
 <span class="nn">---</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
@@ -1118,7 +1121,7 @@
                 <span class="na">fieldRef</span><span class="pi">:</span>
                   <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
                   <span class="na">fieldPath</span><span class="pi">:</span> <span class="s">status.hostIP</span>
-          <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">eipwork/etcd-host:3.4.16-1'</span>
+          <span class="na">image</span><span class="pi">:</span> <span class="s2">"</span><span class="s">eipwork/etcd-host:3.4.16-1"</span>
           <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">Always</span>
           <span class="na">name</span><span class="pi">:</span> <span class="s">etcd</span>
           <span class="na">ports</span><span class="pi">:</span>
@@ -1161,7 +1164,6 @@
     <span class="na">rollingUpdate</span><span class="pi">:</span>
       <span class="na">maxUnavailable</span><span class="pi">:</span> <span class="m">1</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">RollingUpdate</span>
-
 
 <span class="nn">---</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">apps/v1</span>
@@ -1211,7 +1213,7 @@
           <span class="na">envFrom</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="na">configMapRef</span><span class="pi">:</span>
                 <span class="na">name</span><span class="pi">:</span> <span class="s">kuboard-v3-config</span>
-          <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">eipwork/kuboard:v3'</span>
+          <span class="na">image</span><span class="pi">:</span> <span class="s2">"</span><span class="s">eipwork/kuboard:v3"</span>
           <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">Always</span>
           <span class="na">livenessProbe</span><span class="pi">:</span>
             <span class="na">failureThreshold</span><span class="pi">:</span> <span class="m">3</span>
@@ -1307,6 +1309,8 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
+      <a href='/categories/system/'>System</a>,
+      <a href='/categories/kubernetes/'>Kubernetes</a>,
       <a href='/categories/systemutils/'>SystemUtils</a>
   </div>
   
@@ -1401,16 +1405,6 @@
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1421,7 +1415,7 @@
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1499,143 +1493,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1725,155 +1582,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2038,12 +1750,141 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2183,6 +2024,366 @@
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2225,6 +2426,9 @@
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2241,9 +2445,6 @@
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -3317,6 +3518,123 @@
   
 
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
 
 
 
@@ -3411,7 +3729,7 @@ cat /proc/cpuinfo  # OR...
 
 
 
-                ## 大厅kubernetes 服务
+                大厅 kubernetes 服务
 
 准备工作
 
@@ -3420,10 +3738,10 @@ cat /proc/cpuinfo  # OR...
     安装 kubectl
   
   
-    登录到Kubernetes 集群中
+    登录到 Kubernetes 集群中
 
     
-      获取 ` cat /root/kuber/config `
+      获取 cat /root/kuber/config
       放入到目标机器的 ~/.kube/config
     
   
@@ -3433,7 +3751,7 @@ cat /proc/cpuinfo  # OR...
     1
 2
 kubectl version
-kubectl...
+kubectl get ...
               </p>
             </div>
           </div>
@@ -3470,10 +3788,10 @@ kubectl...
 
 
 
-                什么是Kubernetes
+                什么是 Kubernetes
 
 
-  为什叫k8sK~s 中间有8个字符，8代替了ubernete    参考文档
+  为什叫k8sK~s 中间有 8 个字符，8 代替了ubernete 参考文档
 
 
 Kubernetes 你能做什么
@@ -3483,10 +3801,13 @@ Kubernetes 你能做什么
   快速扩展应用
   无缝对接新的应用功能
   节省资源，优化硬件资源的使用
-    Kubernetes 特点
-  
+
+
+Kubernetes 特点
+
+
   可移植: 支持公有云，私有云，混合云，多重云（multi-cloud）
-  可扩展: 模块化, ...
+  可扩展: 模块化, 插件...
               </p>
             </div>
           </div>
@@ -3646,143 +3967,6 @@ Kubernetes 你能做什么
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3872,155 +4056,10 @@ Kubernetes 你能做什么
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -4185,12 +4224,141 @@ Kubernetes 你能做什么
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4330,6 +4498,366 @@ Kubernetes 你能做什么
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4372,6 +4900,9 @@ Kubernetes 你能做什么
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4388,9 +4919,6 @@ Kubernetes 你能做什么
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

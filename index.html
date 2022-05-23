@@ -485,9 +485,11 @@
 
 
           数据结构导论（02142）
+
 第一章 概论（重点）
 
 1 引言
+
 
   数据结构：是计算机组织数据和存储数据的方式
   计算机解决问题步骤
@@ -502,7 +504,7 @@
   合理的数据结构有什么用
     
       可降低程序设计的复杂性
-      提...
+     ...
         </p>
       </div>
 
@@ -533,6 +535,8 @@
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            Cc,
+            SelfStudy,
             ComputerBasics
           </span>
           
@@ -610,7 +614,8 @@
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Client
+            Client,
+            React
           </span>
           
 
@@ -678,7 +683,8 @@ React 是什么
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Client
+            Client,
+            React
           </span>
           
 
@@ -706,18 +712,29 @@ React 是什么
 
 
           第一章 计算机概述
+
 1 计算机网络基本概念
+
 网络协议
+
 - 网络通讯实体之间的在数据交换过程中需要遵循的规则或约定
 - 三要素
     - 语法（syntax）
     - 语义（semantics）
-    - 时序（timing） #### 网络功能（核心功能：资源共享）
+    - 时序（timing）
+
+
+网络功能（核心功能：资源共享）
+
 - 硬件资源共享
 - 软件资源共享
-- 信息资源共享 #### 网络分类
+- 信息资源共享
+
+
+网络分类
+
 - 按覆盖范围分类
-    - 个域网：PA...
+    - 个域网：PAN...
         </p>
       </div>
 
@@ -748,6 +765,8 @@ React 是什么
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            Cc,
+            SelfStudy,
             ComputerBasics
           </span>
           
@@ -820,7 +839,8 @@ func main() {
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server
+            Server,
+            Golang
           </span>
           
 
@@ -847,7 +867,7 @@ func main() {
 
 
 
-          ## 大厅kubernetes 服务
+          大厅 kubernetes 服务
 
 准备工作
 
@@ -856,10 +876,10 @@ func main() {
     安装 kubectl
   
   
-    登录到Kubernetes 集群中
+    登录到 Kubernetes 集群中
 
     
-      获取 ` cat /root/kuber/config `
+      获取 cat /root/kuber/config
       放入到目标机器的 ~/.kube/config
     
   
@@ -867,7 +887,7 @@ func main() {
     查看版本
 
     kubectl version
-kubectl get...
+kubectl get node...
         </p>
       </div>
 
@@ -898,6 +918,8 @@ kubectl get...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            System,
+            Kubernetes,
             SystemUtils
           </span>
           
@@ -926,12 +948,16 @@ kubectl get...
 
 
           kubernetes UI
+
 kubectl apply -f kuboard-v3.yaml
 
 
 访问
+
 http://172.13.8.15:30080/kuboard/settings/ui
+
 kuboard-v3.yaml
+
 ---
 apiVersion: v1
 kind: Namespace
@@ -939,8 +965,7 @@ metadata:
   name: kuboard
 
 ---
-apiVersion: v1
-kin...
+apiVersion: v1...
         </p>
       </div>
 
@@ -971,6 +996,8 @@ kin...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            System,
+            Kubernetes,
             SystemUtils
           </span>
           
@@ -1039,6 +1066,8 @@ cat /proc/cpuinfo  # OR...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            System,
+            Kubernetes,
             SystemUtils
           </span>
           
@@ -1068,10 +1097,12 @@ cat /proc/cpuinfo  # OR...
 
           Go 1.13
 
+
   工具链、运行时、标准库
 
 
 工具链
+
 
   环境变量 Go111MODOULE 默认值 auto
   增加了环境变量 GOPIVATE 私有变量
@@ -1107,7 +1138,8 @@ cat /proc/cpuinfo  # OR...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server
+            Server,
+            Golang
           </span>
           
 
@@ -1123,7 +1155,7 @@ cat /proc/cpuinfo  # OR...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/system-shell-base/">linux Shell Base</a>
+        <a href="/posts/etcd_pro/">etcd Pro</a>
       </h1>
 
       <div class="post-content">
@@ -1134,27 +1166,19 @@ cat /proc/cpuinfo  # OR...
 
 
 
-          Shell
+          etcd 的初步使用
 
-Github
+StormZhu · 2018-11-21 01:34:40 · 1305 次点击 · 预计阅读时间 4 分钟 · 不到 1 分钟之前 开始浏览
 
-helloworld
+这是一个创建于 2018-11-21 01:34:40 的文章，其中的信息可能已经有所发展或是发生改变。
+
+简介
 
 
-  创建与写
-    touch helloworld.sh
-vim helloworld.sh
 
-#!/bin/bash
-echo &quot;Hello World !&quot;
+etcd 介绍.png
 
-// #! 是个约定标记
-// echo 向窗口输出文本
-    
-  
-  执行
-    chmod +x ./helloworld.sh
-./helloworld.s...
+etcd是一个golang编写的分布式、高可用的一致性键值存储系统，用于提供...
         </p>
       </div>
 
@@ -1185,6 +1209,8 @@ echo &quot;Hello World !&quot;
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            System,
+            Etcd,
             SystemUtils
           </span>
           
@@ -1347,9 +1373,24 @@ echo &quot;Hello World !&quot;
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page8">8</a>
+        <a class="page-link btn-box-shadow" href="/page9">9</a>
       </li>
     
 
@@ -1358,7 +1399,7 @@ echo &quot;Hello World !&quot;
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>1</span>
-    <span class="text-muted">/ 8</span>
+    <span class="text-muted">/ 9</span>
   </li>
 
   <!-- right arrow -->
@@ -1408,16 +1449,6 @@ echo &quot;Hello World !&quot;
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1428,7 +1459,7 @@ echo &quot;Hello World !&quot;
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1506,143 +1537,6 @@ echo &quot;Hello World !&quot;
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1732,155 +1626,10 @@ echo &quot;Hello World !&quot;
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2045,12 +1794,141 @@ echo &quot;Hello World !&quot;
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2190,6 +2068,366 @@ echo &quot;Hello World !&quot;
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2232,6 +2470,9 @@ echo &quot;Hello World !&quot;
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2248,9 +2489,6 @@ echo &quot;Hello World !&quot;
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2382,143 +2620,6 @@ echo &quot;Hello World !&quot;
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2608,155 +2709,10 @@ echo &quot;Hello World !&quot;
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2921,12 +2877,141 @@ echo &quot;Hello World !&quot;
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3066,6 +3151,366 @@ echo &quot;Hello World !&quot;
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3108,6 +3553,9 @@ echo &quot;Hello World !&quot;
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -3124,9 +3572,6 @@ echo &quot;Hello World !&quot;
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

@@ -474,7 +474,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/MySQL-lock/">MySQL 锁</a>
+        <a href="/posts/k8sBase/">Kubernetes概述</a>
       </h1>
 
       <div class="post-content">
@@ -485,27 +485,236 @@
 
 
 
-          MySQL 锁
+          什么是 Kubernetes
 
 
-  表级锁 和 行级锁
+  为什叫k8sK~s 中间有 8 个字符，8 代替了ubernete 参考文档
+
+
+Kubernetes 你能做什么
+
+
+  快速部署应用
+  快速扩展应用
+  无缝对接新的应用功能
+  节省资源，优化硬件资源的使用
+
+
+Kubernetes 特点
+
+
+  可移植: 支持公有云，私有云，混合云，多重云（multi-cloud）
+  可扩展: 模块化, 插件...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
 
 
 
-mysql&amp;gt; show tables;
-+----------------+
-| Tables_in_test |
-+----------------+
-| mylock         |
-| test           |
-+----------------+
-2 rows in set (0.03 sec)
+
+<em class=""
+    data-ts="1584885600"
+    data-df="YYYY-MM-DD"
+    >
+  2020-03-22
+</em>
 
 
-表锁
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Kubernetes,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/%E5%AE%89%E8%A3%85mysql/">Dockers 安装 Mysql</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
 
 
+
+
+
+          前期工作安装 docker
+
+docker version
+
+[root@test ~]# docker version
+Client: Docker Engine - Community
+ Version:           19.03.5
+ API version:       1.40
+ Go version:        go1.12.12
+ Git commit:       ...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1584368934"
+    data-df="YYYY-MM-DD"
+    >
+  2020-03-16
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Docker,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/docker-%E9%83%A8%E7%BD%B2web-%E9%A1%B9%E7%9B%AE/">docker 部署 Go Web 程序</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          docker 部署 Go Web 程序
+
+http
+
+[root@Cc dockerFile]# tree
+.
+├── Dockerfile
+├── go.mod
+└── main.go
+
+
+[root@Cc dockerFile]# cat Dockerfile
+FROM golang:alpine
+
+# 为我们的镜像设置必要的环境变量
+ENV GO111MODULE=on \
+    C...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1584368934"
+    data-df="YYYY-MM-DD"
+    >
+  2020-03-16
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Docker,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Nginx%E9%85%8D%E7%BD%AE/">Nginx配置</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          配置 https
+
+server {
+    listen 443 ssl;  # 1.1版本后这样写
+    server_name lichaocheng.top; #填写绑定证书的域名
+    ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem;  # 指定证书的位置，绝对路径
   ...
         </p>
       </div>
@@ -525,10 +734,10 @@ mysql&amp;gt; show tables;
 
 
 <em class=""
-    data-ts="1568780508"
+    data-ts="1583936584"
     data-df="YYYY-MM-DD"
     >
-  2019-09-18
+  2020-03-11
 </em>
 
 
@@ -537,6 +746,8 @@ mysql&amp;gt; show tables;
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            System,
+            Nginx,
             SystemUtils
           </span>
           
@@ -553,7 +764,7 @@ mysql&amp;gt; show tables;
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/docker-usr/">docker 实战</a>
+        <a href="/posts/Nginx%E5%AE%89%E8%A3%85/">Nginx 安装</a>
       </h1>
 
       <div class="post-content">
@@ -564,18 +775,14 @@ mysql&amp;gt; show tables;
 
 
 
-          docker 实战
-docker 基本命令
+          linux 命令安装
 
-  docker 操作基础命令
-  
-    docker images
-    docker image ls
-    docker ps
-    docker ps -a
-    docker stop [CONTAINER ID]
-    docker rm [CONTAINER ID]
-    docker restart [CONTAI...
+1.添加Nginx到YUM源
+添加CentOS 7 Nginx yum资源库,打开终端,使用以下命令:
+
+sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+2.安装Nginx
+在你的CentOS 7 服务器中使...
         </p>
       </div>
 
@@ -594,10 +801,10 @@ docker 基本命令
 
 
 <em class=""
-    data-ts="1567486134"
+    data-ts="1583936584"
     data-df="YYYY-MM-DD"
     >
-  2019-09-03
+  2020-03-11
 </em>
 
 
@@ -606,6 +813,8 @@ docker 基本命令
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            System,
+            Nginx,
             SystemUtils
           </span>
           
@@ -622,7 +831,7 @@ docker 基本命令
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/tcpip/">TCP/IP</a>
+        <a href="/posts/golang-package/">golang 包管理</a>
       </h1>
 
       <div class="post-content">
@@ -633,395 +842,35 @@ docker 基本命令
 
 
 
-          TCP/IP
+          godep
 
+安装
 
-  TCP/IP 在传输层连个不同协议，传输控制协议(TCP)、用户数据协议(UDP)
+go get -u -v github.com/tools/godep
 
-
-TCP——UDP
-
-
-  TCP 数据传输单位 TCP 报文段，UDP 数据传输单位 UDP 报文或者用户数据报
-  TCP 面向连接，UDP 面向无连接
-  TCP 高度可靠，UDP 不能保证数据可靠性传输
-  TCP 复杂性因此开销大，UDP 简单性具有较高的传输效率
-
-
-TCP...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1566449334"
-    data-df="YYYY-MM-DD"
-    >
-  2019-08-22
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            ComputerBasics
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/ip/">IP协议</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          
-
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1566362934"
-    data-df="YYYY-MM-DD"
-    >
-  2019-08-21
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            ComputerBasics
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/http/">HTTP协议</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          HTTP 协议
-
-
-  Hyper Text Transfer Protocol 超文本传输协议
-
-
-
-  http 消息结构体、请求方法、响应头信息、状态码、content-type
-  http 版本：HTTP/0.9、HTTP/1.0、HTTP/1.1、HTTP/2.0
-
-
-消息结构体
+使用
 
 
   
-    客户端
-
-    
-  
-  
-    服务端
-
-    
+    参考 1
+    参考 2
   
 
 
-请求方法
+goverdor（go1.12 下 推荐使用）
 
-...
-        </p>
-      </div>
+安装
 
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
+go get -u github.com/kardianos/govendor
 
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+基本使用
 
 
-
-
-
-<em class=""
-    data-ts="1566276534"
-    data-df="YYYY-MM-DD"
-    >
-  2019-08-20
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            ComputerBasics
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/bit/">物理层</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          物理层
-
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1566190134"
-    data-df="YYYY-MM-DD"
-    >
-  2019-08-19
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            ComputerBasics
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/NetworkEngineerBase/">网络基础</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          计算机网络基础
-
-OSI与TCP/IP
-
-OSI
-
-TCP/IP
-
-物理层
-
-
-  网络接口
-
-
-网际层
-
-
-  IP协议：主要的网际层协议，用于网络互联
-  ICMP协议：报文协议，用于报告差错，向路由器主机发送差错报文
-  ARP协议：地址解析协议，用于将IP 解析成物理地址
-  RARP协议：逆地址协议，物理地址解析到IP地址
-
-
-运输层
-
-
-  TCP：传输控制协议是面向连接协议，提...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1566103734"
-    data-df="YYYY-MM-DD"
-    >
-  2019-08-18
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            ComputerBasics
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/Gin-bast/">Golang Gin</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          构建
-
-
-  安装Gin环境
-
-
-go get -u github.com/gin-gonic/gin
-
-
-  安装Gin 工具
-
-
-go get github.com/kardianos/govendor
-
-gin_demo
-
-  创建文件
-
-
-mkdir gin_demo
-
-
-
-  初始化构建gin
+  进入项目目录
 
 
 govendor init
-govendor fetch github.com/gi...
+govendor fetch g...
         </p>
       </div>
 
@@ -1040,10 +889,10 @@ govendor fetch github.com/gi...
 
 
 <em class=""
-    data-ts="1562476863"
+    data-ts="1583914751"
     data-df="YYYY-MM-DD"
     >
-  2019-07-07
+  2020-03-11
 </em>
 
 
@@ -1052,7 +901,8 @@ govendor fetch github.com/gi...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            GoWebServer
+            Server,
+            Golang
           </span>
           
 
@@ -1068,7 +918,7 @@ govendor fetch github.com/gi...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/base-beego/">Beego Base</a>
+        <a href="/posts/gorm/">Golang Mysql Gorm</a>
       </h1>
 
       <div class="post-content">
@@ -1079,12 +929,25 @@ govendor fetch github.com/gi...
 
 
 
-          下载安装
-安装环境
-go get github.com/astaxie/beego
-安装bee 工具
-go get github.com/beego/bee
+          Gorm 概述
 
+官网
+gorm 对数据库的操作
+
+环境搭建
+
+下载依赖
+
+go get -u github.com/jinzhu/gorm
+
+实例（连接）
+
+package main
+
+import (
+	&quot;fmt&quot;
+	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot; // logs
+	&quot;github.com/jinzhu/gorm&quot;    ...
         </p>
       </div>
 
@@ -1103,10 +966,10 @@ go get github.com/beego/bee
 
 
 <em class=""
-    data-ts="1557127284"
+    data-ts="1583395344"
     data-df="YYYY-MM-DD"
     >
-  2019-05-06
+  2020-03-05
 </em>
 
 
@@ -1115,7 +978,8 @@ go get github.com/beego/bee
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server
+            Server,
+            Golang
           </span>
           
 
@@ -1131,7 +995,7 @@ go get github.com/beego/bee
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/algorithm/">Golang 算法</a>
+        <a href="/posts/utils-variableAndArray/">Go 类型转换</a>
       </h1>
 
       <div class="post-content">
@@ -1142,14 +1006,24 @@ go get github.com/beego/bee
 
 
 
-          算法
+          go 类型转换
 
+string int int64
 
-  常见的算法有
+package main
 
+import (
+	&quot;fmt&quot;
+	&quot;strconv&quot;
+)
 
-
-
+func main() {
+	var str string
+	fmt.Printf(&quot;str type:%T\n&quot;, str)
+	str = &quot;123&quot;
+	var strInt int
+	// string &amp;gt; int
+	strInt, _ = ...
         </p>
       </div>
 
@@ -1168,10 +1042,10 @@ go get github.com/beego/bee
 
 
 <em class=""
-    data-ts="1556549916"
+    data-ts="1579186716"
     data-df="YYYY-MM-DD"
     >
-  2019-04-29
+  2020-01-16
 </em>
 
 
@@ -1180,7 +1054,152 @@ go get github.com/beego/bee
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server
+            Server,
+            Golang
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/baseall/">Golang基础问题</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          Golang 基础问题
+
+内置标识符
+
+
+  
+    const
+
+    
+      
+        iota
+iota 是一个预定义的标识符，代表顺序按行增加的无符号整数，每个 const 声明单元（被括号括起来）相互独立，分别从 0 开始。
+
+        // 常量
+const (
+    ResponseCodeOk       = iota        // 0
+   ...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1579186716"
+    data-df="YYYY-MM-DD"
+    >
+  2020-01-16
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/gRPC/">gRPC 和 ui 操作</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          gRPC
+
+安装 protoc 工具
+
+
+  https://github.com/protocolbuffers/protobuf/releases
+
+
+
+  -I 参数：指定 import 路径，可以指定多个-I 参数，编译时按顺序查找，不指定时默认查找当前目录
+  –go_out ：golang 编译支持，支持以下参数 - plugins=plugin1+plugin2 - 指定插件，...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1577341332"
+    data-df="YYYY-MM-DD"
+    >
+  2019-12-26
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang
           </span>
           
 
@@ -1349,9 +1368,24 @@ go get github.com/beego/bee
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page8">8</a>
+        <a class="page-link btn-box-shadow" href="/page9">9</a>
       </li>
     
 
@@ -1360,7 +1394,7 @@ go get github.com/beego/bee
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>4</span>
-    <span class="text-muted">/ 8</span>
+    <span class="text-muted">/ 9</span>
   </li>
 
   <!-- right arrow -->
@@ -1410,16 +1444,6 @@ go get github.com/beego/bee
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1430,7 +1454,7 @@ go get github.com/beego/bee
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1508,143 +1532,6 @@ go get github.com/beego/bee
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1734,155 +1621,10 @@ go get github.com/beego/bee
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2047,12 +1789,141 @@ go get github.com/beego/bee
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2192,6 +2063,366 @@ go get github.com/beego/bee
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2234,6 +2465,9 @@ go get github.com/beego/bee
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2250,9 +2484,6 @@ go get github.com/beego/bee
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2384,143 +2615,6 @@ go get github.com/beego/bee
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2610,155 +2704,10 @@ go get github.com/beego/bee
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2923,12 +2872,141 @@ go get github.com/beego/bee
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3068,6 +3146,366 @@ go get github.com/beego/bee
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3110,6 +3548,9 @@ go get github.com/beego/bee
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -3126,9 +3567,6 @@ go get github.com/beego/bee
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

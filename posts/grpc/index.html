@@ -682,7 +682,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="683 字">
+  title="688 字">
   <em>3 分钟</em>阅读</span>
 
     </div>
@@ -693,28 +693,27 @@
 
 <div class="post-content">
   <h1 id="grpc">gRPC</h1>
-<h2 id="安装protoc工具"><span class="mr-2">安装protoc工具</span><a href="#安装protoc工具" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h2 id="安装-protoc-工具"><span class="mr-2">安装 protoc 工具</span><a href="#安装-protoc-工具" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
   <p>https://github.com/protocolbuffers/protobuf/releases</p>
-  <ul>
-    <li>-I 参数：指定import路径，可以指定多个-I参数，编译时按顺序查找，不指定时默认查找当前目录</li>
-    <li>–go_out ：golang编译支持，支持以下参数
-      <ul>
-        <li>plugins=plugin1+plugin2 - 指定插件，目前只支持grpc，即：plugins=grpc</li>
-        <li>M 参数 - 指定导入的.proto文件路径编译后对应的golang包名(不指定本参数默认就是.proto文件中import语句的路径)</li>
-        <li>import_prefix=xxx - 为所有import路径添加前缀，主要用于编译子目录内的多个proto文件，这个参数按理说很有用，尤其适用替代一些情况时的M参数，但是实际使用时有个蛋疼的问题导致并不能达到我们预想的效果，自己尝试看看吧</li>
-        <li>import_path=foo/bar - 用于指定未声明package或go_package的文件的包名，最右面的斜线前的字符会被忽略</li>
-        <li>末尾 :编译文件路径 .proto文件路径(支持通配符)
-完整实例</li>
-      </ul>
-    </li>
-  </ul>
 </blockquote>
+
+<ul>
+  <li>-I 参数：指定 import 路径，可以指定多个-I 参数，编译时按顺序查找，不指定时默认查找当前目录</li>
+  <li>–go_out ：golang 编译支持，支持以下参数 - plugins=plugin1+plugin2 - 指定插件，目前只支持 grpc，即：plugins=grpc - M 参数 - 指定导入的.proto 文件路径编译后对应的 golang 包名(不指定本参数默认就是.proto 文件中 import 语句的路径) - import_prefix=xxx - 为所有 import 路径添加前缀，主要用于编译子目录内的多个 proto 文件，这个参数按理说很有用，尤其适用替代一些情况时的 M 参数，但是实际使用时有个蛋疼的问题导致并不能达到我们预想的效果，自己尝试看看吧 - import_path=foo/bar - 用于指定未声明 package 或 go_package 的文件的包名，最右面的斜线前的字符会被忽略 - 末尾 :编译文件路径 .proto 文件路径(支持通配符)
+    <blockquote>
+      <p>完整实例</p>
+    </blockquote>
+  </li>
+</ul>
 
 <blockquote>
   <p>使用前安装：<code class="language-plaintext highlighter-rouge">go get -u github.com/golang/protobuf/protoc-gen-go</code></p>
-  <div class="language-shell highlighter-rouge"><div class="code-header">
+</blockquote>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -730,14 +729,15 @@ protoc <span class="nt">--java_out</span><span class="o">=</span>:. zhly_pay.pro
 protoc <span class="nt">--js_out</span><span class="o">=</span>:. zhly_pay.protoc
 protoc <span class="nt">-I</span><span class="o">=</span><span class="nv">$DIR</span>  yun_mao.protoc  <span class="se">\ </span><span class="nt">--grpc-web_out</span><span class="o">=</span><span class="nv">import_style</span><span class="o">=</span>commonjs,mode<span class="o">=</span>grpcwebtext:<span class="nv">$OUT_DIR</span>
 protoc <span class="nt">--js_out</span><span class="o">=</span><span class="nv">import_style</span><span class="o">=</span>commonjs,binary:. yun_mao.protoc
-</pre></td></tr></tbody></table></code></div>  </div>
-  <h2 id="下载工具依赖"><span class="mr-2">下载工具依赖</span><a href="#下载工具依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-  <p>go get google.golang.org/grpc<br />
-go get -u github.com/golang/protobuf/protoc-gen-go<br />
-go get -u github.com/golang/protobuf/</p>
-</blockquote>
+</pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="创建protoc文件"><span class="mr-2">创建.protoc文件</span><a href="#创建protoc文件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="下载工具依赖"><span class="mr-2">下载工具依赖</span><a href="#下载工具依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>go get google.golang.org/grpc
+go get -u github.com/golang/protobuf/protoc-gen-go
+go get -u github.com/golang/protobuf/</p>
+
+<h2 id="创建protoc-文件"><span class="mr-2">创建.protoc 文件</span><a href="#创建protoc-文件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code small"></i></span>
@@ -904,13 +904,12 @@ go <span class="nb">install </span>github.com/fullstorydev/grpcui/cmd/grpcui
 
 验证下
 grpcui <span class="nt">-help</span>
-成功则会在 gopath/bin 目录下生成 grpcui 
+成功则会在 gopath/bin 目录下生成 grpcui
 
 grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 <span class="nt">-plaintext</span> 47.244.225.92:8502
             webiui地址          端口号             grpc地址
 grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 <span class="nt">-plaintext</span> 0.0.0.0:8502
 </pre></td></tr></tbody></table></code></div></div>
-
 
 </div>
 
@@ -921,7 +920,8 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/server/'>Server</a>
+      <a href='/categories/server/'>Server</a>,
+      <a href='/categories/golang/'>Golang</a>
   </div>
   
 
@@ -1021,16 +1021,6 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1041,7 +1031,7 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1119,143 +1109,6 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1345,155 +1198,10 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1658,12 +1366,141 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1803,6 +1640,366 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1845,6 +2042,9 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -1861,9 +2061,6 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2234,85 +2431,202 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -2986,80 +3300,17 @@ grpcui <span class="nt">-bind</span> 0.0.0.0 <span class="nt">-port</span> 8506 
 
                 Go 1.13
 
+
   工具链、运行时、标准库
 
 
 工具链
 
+
   环境变量 Go111MODOULE 默认值 auto
   增加了环境变量 GOPIVATE 私有变量
 
 
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/pprof/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1615975293"
-    data-df="YYYY-MM-DD"
-    >
-  2021-03-17
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Pprof</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Go pprof And Prometheus
-
-在代码中使用
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-import (
-  ...
-	_ &quot;net/http/pprof&quot;
-  &quot;github.com/prometheus/client_golang/prometheus/promhttp&quot;
-  ...
-)
-
-func main() {
-
- 	go func...
               </p>
             </div>
           </div>
@@ -3104,6 +3355,56 @@ func main() {
 
 
 
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/go-1.12/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1575623482"
+    data-df="YYYY-MM-DD"
+    >
+  2019-12-06
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Go 1.12 版本更新 摘要</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                go mod 1.12 学习
+
+go modules(check version)
+
+检查 golang 版本
+
+如果没有生成 go.sum 或者报错请输入
+export GOPROXY=https://goproxy.io
+
+C:\Users\admin&amp;gt;go version
+go version go1.12.9 windows/amd64
+
+
+把 golang 升级到 1.11（...
               </p>
             </div>
           </div>
@@ -3263,143 +3564,6 @@ func main() {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3489,155 +3653,10 @@ func main() {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -3802,12 +3821,141 @@ func main() {
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3947,6 +4095,366 @@ func main() {
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3989,6 +4497,9 @@ func main() {
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4005,9 +4516,6 @@ func main() {
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

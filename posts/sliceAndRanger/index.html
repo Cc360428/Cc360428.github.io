@@ -751,11 +751,11 @@
 <h4 id="切片什么时候扩容"><span class="mr-2">切片什么时候扩容</span><a href="#切片什么时候扩容" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li>如果切片的容量小于1024个元素，那么扩容的时候<code class="language-plaintext highlighter-rouge">slice</code>的<code class="language-plaintext highlighter-rouge">cap</code>就翻番，乘以2；一旦元素个数超过1024个元素，增长因子就变成1.25，即每次增加原来容量的四分之一。</li>
-  <li>如果扩容之后，还没有触及原数组的容量，那么，切片中的指针指向的位置，就还是原数组，如果扩容之后，超过了原数组的容量，那么，Go就会开辟一块新的内存，把原来的值拷贝过来，这种情况丝毫不会影响到原数组</li>
-  <li>首先判断，如果新申请容量（<code class="language-plaintext highlighter-rouge">cap</code>）大于2倍的旧容量（<code class="language-plaintext highlighter-rouge">old.cap</code>），最终容量（<code class="language-plaintext highlighter-rouge">newcap</code>）就是新申请的容量（<code class="language-plaintext highlighter-rouge">cap</code>）。</li>
-  <li>否则判断，如果旧切片的长度小于1024，则最终容量(<code class="language-plaintext highlighter-rouge">newcap</code>)就是旧容量(<code class="language-plaintext highlighter-rouge">old.cap</code>)的两倍，即（<code class="language-plaintext highlighter-rouge">newcap=doublecap</code>），</li>
-  <li>否则判断，如果旧切片长度大于等于1024，则最终容量（<code class="language-plaintext highlighter-rouge">newcap</code>）从旧容量（<code class="language-plaintext highlighter-rouge">old.cap</code>）开始循环增加原来的1/4，即（<code class="language-plaintext highlighter-rouge">newcap=old.cap,for {newcap += newcap/4}</code>）直到最终容量（<code class="language-plaintext highlighter-rouge">newcap</code>）大于等于新申请的容量(<code class="language-plaintext highlighter-rouge">cap</code>)，即（<code class="language-plaintext highlighter-rouge">newcap &gt;= cap</code>）</li>
+  <li>如果切片的容量小于 1024 个元素，那么扩容的时候<code class="language-plaintext highlighter-rouge">slice</code>的<code class="language-plaintext highlighter-rouge">cap</code>就翻番，乘以 2；一旦元素个数超过 1024 个元素，增长因子就变成 1.25，即每次增加原来容量的四分之一。</li>
+  <li>如果扩容之后，还没有触及原数组的容量，那么，切片中的指针指向的位置，就还是原数组，如果扩容之后，超过了原数组的容量，那么，Go 就会开辟一块新的内存，把原来的值拷贝过来，这种情况丝毫不会影响到原数组</li>
+  <li>首先判断，如果新申请容量（<code class="language-plaintext highlighter-rouge">cap</code>）大于 2 倍的旧容量（<code class="language-plaintext highlighter-rouge">old.cap</code>），最终容量（<code class="language-plaintext highlighter-rouge">newcap</code>）就是新申请的容量（<code class="language-plaintext highlighter-rouge">cap</code>）。</li>
+  <li>否则判断，如果旧切片的长度小于 1024，则最终容量(<code class="language-plaintext highlighter-rouge">newcap</code>)就是旧容量(<code class="language-plaintext highlighter-rouge">old.cap</code>)的两倍，即（<code class="language-plaintext highlighter-rouge">newcap=doublecap</code>），</li>
+  <li>否则判断，如果旧切片长度大于等于 1024，则最终容量（<code class="language-plaintext highlighter-rouge">newcap</code>）从旧容量（<code class="language-plaintext highlighter-rouge">old.cap</code>）开始循环增加原来的 1/4，即（<code class="language-plaintext highlighter-rouge">newcap=old.cap,for {newcap += newcap/4}</code>）直到最终容量（<code class="language-plaintext highlighter-rouge">newcap</code>）大于等于新申请的容量(<code class="language-plaintext highlighter-rouge">cap</code>)，即（<code class="language-plaintext highlighter-rouge">newcap &gt;= cap</code>）</li>
   <li>如果最终容量（<code class="language-plaintext highlighter-rouge">cap</code>）计算值溢出，则最终容量（<code class="language-plaintext highlighter-rouge">cap</code>）就是新申请容量（<code class="language-plaintext highlighter-rouge">cap</code>）。</li>
 </ul>
 
@@ -968,7 +968,7 @@
 <h4 id="删除元素和sortints排序"><span class="mr-2">删除元素和<code class="language-plaintext highlighter-rouge"><span class="mr-2">sort.Ints()</code>排序</span><a href="#删除元素和sortints排序" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <blockquote>
-  <p>总结一下就是：要从切片a中删除索引为<code class="language-plaintext highlighter-rouge">index</code>的元素，操作方法是<code class="language-plaintext highlighter-rouge">a = append(a[:index], a[index+1:]...)</code></p>
+  <p>总结一下就是：要从切片 a 中删除索引为<code class="language-plaintext highlighter-rouge">index</code>的元素，操作方法是<code class="language-plaintext highlighter-rouge">a = append(a[:index], a[index+1:]...)</code></p>
 </blockquote>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
@@ -1135,7 +1135,6 @@
 <span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">25</span> <span class="m">09</span><span class="o">:</span><span class="m">47</span><span class="o">:</span><span class="m">23.511</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="k">range</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">35</span><span class="p">]</span>  <span class="n">age</span> <span class="m">18</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-
 </div>
 
 <div class="post-tail-wrapper text-muted">
@@ -1145,7 +1144,8 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/server/'>Server</a>
+      <a href='/categories/server/'>Server</a>,
+      <a href='/categories/golang/'>Golang</a>
   </div>
   
 
@@ -1242,16 +1242,6 @@
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1262,7 +1252,7 @@
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1340,143 +1330,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1566,155 +1419,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1879,12 +1587,141 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2024,6 +1861,366 @@
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2066,6 +2263,9 @@
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2082,9 +2282,6 @@
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2741,85 +2938,202 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -3206,16 +3520,21 @@
 
 
                 GoLang
+
 GoLang
+
 https://go-zh.org/
+
 基础
+
 包、变量和函数、基本类型
 
-  包  package
-  每个程序都是由包组成
-  导入  import
-  圆括号可以组合导入
-  导出  在Go语言中首字母大写的名称是被导出的
+
+  包 package
+每个程序都是由包组成
+  导入 import
+圆括号可以组合导入
+  导出 在 Go 语言中首字母大写的名称是被导出的
     
       导入了一个包后，可以导出名称来调用他
       Foo 和 FOO 都是被导出的名称。名称 foo 是不会被导出的
@@ -3256,20 +3575,22 @@ https://go-zh.org/
 
 
 
-                Golang基础
+                Golang 基础
+
 本章源码
-初步认识Golang
+
+初步认识 Golang
 
 
   Go 跨平台（linux、windows、mac），只要编写完代码之后交叉编译即可
   Go 语言单一、简洁、天生高并发、CGO
-  Go  应用广（web应用、区块链、运维、云计算、大数据）
+  Go 应用广（web 应用、区块链、运维、云计算、大数据）
 
 
-Go环境
+Go 环境
 
 
-  不管学那一语言都有自己运行环境（html5除外），对于Go环境golang 官网有windows、linux、mac ，...
+  不管学那一语言都有自己运行环境（html5除外），对于 Go 环境golang 官网有 windows、lin...
               </p>
             </div>
           </div>
@@ -3279,7 +3600,7 @@ Go环境
       
       
       <div class="card">
-        <a href="/posts/datatype/">
+        <a href="/posts/OperatorCondition/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3291,13 +3612,13 @@ Go环境
 
 
 <em class="small"
-    data-ts="1554038310"
+    data-ts="1554182025"
     data-df="YYYY-MM-DD"
     >
-  2019-03-31
+  2019-04-02
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day02（入门基础）</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day03（运算符与条件语句）</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3306,35 +3627,39 @@ Go环境
 
 
 
-                数据类型、变量、常量
-
-本章源码
-
-数据类型
+                运算符与条件语句
 
 
-  package builtin  可以看数据包builtin
+  本章源码
+
+
+运算符
+
+算数运算符
+
+
+  假定 A 值为 10，B 值为 20
 
 
 
-  布尔类型
+  
     
-      默认值为：false
+      运算符
+      描述
+      实例
     
   
-  数字类型
+  
     
-      
-        整形
-
-        
-          默认值为：0
-        
-      
-      
-        浮点型
-
-      ...
+      +
+      相加
+      A + B 输出结果 30
+    
+    
+      -
+      相减
+      A - B 输出结果 -10
+   ...
               </p>
             </div>
           </div>
@@ -3494,143 +3819,6 @@ Go环境
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3720,155 +3908,10 @@ Go环境
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -4033,12 +4076,141 @@ Go环境
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4178,6 +4350,366 @@ Go环境
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4220,6 +4752,9 @@ Go环境
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4236,9 +4771,6 @@ Go环境
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

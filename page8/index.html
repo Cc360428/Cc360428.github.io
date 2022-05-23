@@ -51,6 +51,7 @@
 <meta property="og:site_name" content="Cc" />
 <meta property="og:type" content="website" />
 <link rel="prev" href="http://localhost:4000/page7" />
+<link rel="next" href="http://localhost:4000/page9" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Cc" />
 <script type="application/ld+json">
@@ -473,7 +474,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/8-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%AE%A1%E7%90%86/">8（应用程序管理）</a>
+        <a href="/posts/Flutter%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">环境搭建</a>
       </h1>
 
       <div class="post-content">
@@ -484,22 +485,29 @@
 
 
 
-          +++
-title = “linux(CentOS7) 应用程序管理”
-date = “2020-03-28T16:11:12+08:00”
-draft= false
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “8（应用程序管理）” 
-+++
-应用程序管理
-软件包基础
+          Dart
 
-常见安装工具包
+环境安装
 
 
-  RPM
- ...
+  下载 DartSDK
+  添加环境变量
+
+
+export DART_HOME=/usr/local/dart/dart-sdk/bin
+export PATH=&quot;${DART_HOME}:${PATH}&quot;
+
+
+Flutter
+
+环境搭建
+
+
+  获取 SDK
+    
+      zip
+        
+          https://flutter.de...
         </p>
       </div>
 
@@ -518,14 +526,21 @@ description = “8（应用程序管理）”
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1549983516"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-02-12
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Client,
+            Flutter
+          </span>
           
 
         </div>
@@ -540,7 +555,7 @@ description = “8（应用程序管理）”
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/7-%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/">7（用户和组）</a>
+        <a href="/posts/Flutter-HelloWorld/">Flutter HelloWorld</a>
       </h1>
 
       <div class="post-content">
@@ -551,23 +566,22 @@ description = “8（应用程序管理）”
 
 
 
-          +++
-title = “linux(CentOS7) 用户和组”
-date = “2020-03-28T00:03:12+08:00”
-draft= false
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “7（用户和组）” 
-+++
+          Android Studio 环境搭建
 
-用户和组
-
-Linux 用户管理
-
-登录时发生了什么
+查看 Android SDK
 
 
-  不管是...
+  安装 Android Studio 查看安装 Android SDK 位置
+
+
+File-&amp;gt;other Settings -&amp;gt; Defaylt Project Structure
+
+
+
+  可以看到 Android SDK location
+
+
+Android Studio 中安装 Flutter 插...
         </p>
       </div>
 
@@ -586,14 +600,21 @@ Linux 用户管理
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1549983516"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-02-12
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Client,
+            Flutter
+          </span>
           
 
         </div>
@@ -608,7 +629,7 @@ Linux 用户管理
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/6-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/">6（日志系统）</a>
+        <a href="/posts/Error/">手机推送</a>
       </h1>
 
       <div class="post-content">
@@ -619,20 +640,25 @@ Linux 用户管理
 
 
 
-          +++
-title = “linux(CentOS7) 日志系统”
-date = “2020-03-26T23:24:12+08:00”
-draft= false
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “6（日志系统）” 
-+++
-Linux 日志系统
+          Error
 
-  日志用途
-  
-    系统审计
-    ...
+获取包错误
+
+Waiting for another flutter command to release the startup lock...
+
+
+  解决办法
+
+
+cd /usr/local/dart/flutter/bin/cache
+rm -rf lockfile
+
+
+拉依赖包
+
+This is taking an unexpectedly long time.
+
+E...
         </p>
       </div>
 
@@ -651,14 +677,21 @@ Linux 日志系统
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1549983516"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-02-12
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Client,
+            Flutter
+          </span>
           
 
         </div>
@@ -673,7 +706,7 @@ Linux 日志系统
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/5-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/">5（文件管理与磁盘管理）</a>
+        <a href="/posts/appOffLinePush/">手机推送</a>
       </h1>
 
       <div class="post-content">
@@ -684,17 +717,20 @@ Linux 日志系统
 
 
 
-          +++
-title = “linux(CentOS7) 文件管理与磁盘管理”
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-date = “2020-03-26T23:23:12+08:00”
-draft= false
-description = “5（文件管理与磁盘管理）” 
-+++
-文件管理
-认识分区
-[root@Cc ~]# df...
+          手机推送
+
+IOS
+
+github 方法
+
+https://www.jianshu.com/p/c90204ef6e4a
+github Test1
+
+方法
+
+https://blog.csdn.net/jeffasd/article/details/69950979
+https://www.jb51.cc/go/188684.html
+http://docs-im.easemob.com/i...
         </p>
       </div>
 
@@ -713,14 +749,21 @@ description = “5（文件管理与磁盘管理）”
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1549983516"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-02-12
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Client,
+            AppPush
+          </span>
           
 
         </div>
@@ -735,7 +778,7 @@ description = “5（文件管理与磁盘管理）”
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/4.5(%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86-%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86)/">4.5(目录管理、系统管理)</a>
+        <a href="/posts/redis-centos-7/">Reids 安装</a>
       </h1>
 
       <div class="post-content">
@@ -746,19 +789,19 @@ description = “5（文件管理与磁盘管理）”
 
 
 
-          +++
-title = “linux(CentOS7) 目录管理、系统管理”
-date = “2020-03-25T23:48:12+08:00”
-draft= false
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “4.5(目录管理、系统管理)” 
-+++
-目录管理命令
-nkdri
+          方法一：源文件安装（推荐安装）
 
-  指定权限创建
-...
+在CentOS和Red Hat系统中，首先添加EPEL仓库，然后更新yum源：
+
+sudo yum install epel-release
+sudo yum update
+然后安装Redis数据库：
+
+sudo yum -y install redis
+安装好后启动Redis服务即可：
+
+sudo systemctl start redis
+这里同样可以使...
         </p>
       </div>
 
@@ -777,14 +820,22 @@ nkdri
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1548478134"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-01-26
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Redis,
+            SystemUtils
+          </span>
           
 
         </div>
@@ -799,7 +850,7 @@ nkdri
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/4.4-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/">4.4（目录结构）</a>
+        <a href="/posts/redis-all/">Redis 汇总</a>
       </h1>
 
       <div class="post-content">
@@ -810,17 +861,14 @@ nkdri
 
 
 
-          +++
-title = “linux(CentOS7) 目录结构”
-date = “2020-03-24T23:17:54+08:00”
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “linux 目录 cp mv diff cat tail ……” 
-+++
-linux目录结构
-常用命令
-cp
-[root@...
+          Redis（Remote Dictionary Server）
+
+什么是 Redis
+
+
+  是一个使用 C 语言编写的，开源的（BSD 许可）高性能非关系型（NoSQL）的键值对数据库。
+  Redis 可以存储键和五种不同类型的值之间的映射。键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。
+  与传统数据库不同的是 Redis 的数据是存在内存中的，所以读...
         </p>
       </div>
 
@@ -839,14 +887,22 @@ cp
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1548478134"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-01-26
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Redis,
+            SystemUtils
+          </span>
           
 
         </div>
@@ -861,7 +917,7 @@ cp
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/4.1~4.3-%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C/">4.1~4.3（命令操作）</a>
+        <a href="/posts/idea%E4%BD%BF%E7%94%A8/">idea 使用</a>
       </h1>
 
       <div class="post-content">
@@ -872,18 +928,16 @@ cp
 
 
 
-          +++
-title = “linux(CentOS7) 命令操作”
-date = “2020-03-23T22:17:54+08:00”
-draft= false
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “linux shell 终端命令操作（历史命令、管道）” 
-+++
-前言
-linux 系统架构
-
-...
+          Alt+回车 导入包,自动修正 
+Ctrl+N 查找类 
+Ctrl+Shift+N 查找文件 
+Ctrl+Alt+L 格式化代码 
+Ctrl+Alt+O 优化导入的类和包 
+Alt+Insert 生成代码(如get,set方法,构造函数等) 
+Ctrl+E或者Alt+Shift+C 最近更改的代码 
+Ctrl+R 替换文本 
+Ctrl+F 查找文本 
+Ctrl+Shift+Space 自动补...
         </p>
       </div>
 
@@ -902,14 +956,21 @@ linux 系统架构
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1548478134"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-01-26
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            IDEA
+          </span>
           
 
         </div>
@@ -924,7 +985,7 @@ linux 系统架构
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/10-%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/">10（网络管理）</a>
+        <a href="/posts/docker%E5%AE%89%E8%A3%85/">Doker 安装</a>
       </h1>
 
       <div class="post-content">
@@ -935,20 +996,12 @@ linux 系统架构
 
 
 
-          +++
-title = “linux(CentOS7) 网络管理”
-date = “2020-03-29T00:49:12+08:00”
-draft= false
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “10（网络管理）” 
-+++
+          Doker 安装
 
-网络基础知识以及网络管理内容
-网络管理协议
+卸载就版本
 
+sudo apt-get remove docker docker-engine docker.io containerd runc
 
-  好多概念知识，...
         </p>
       </div>
 
@@ -967,14 +1020,22 @@ description = “10（网络管理）”
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1548478134"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-01-26
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Docker,
+            SystemUtils
+          </span>
           
 
         </div>
@@ -989,7 +1050,7 @@ description = “10（网络管理）”
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/1-3-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">1 3 （基础知识）</a>
+        <a href="/posts/docker-install/">docker 安装实例</a>
       </h1>
 
       <div class="post-content">
@@ -1000,17 +1061,24 @@ description = “10（网络管理）”
 
 
 
-          +++
-title = “linux(CentOS7)基础知识”
-date = “2020-03-23T22:17:54+08:00”
-draft= false
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “linux 基础知识、认识、远程控制 “ 
-project_url = “”
-+++
+          安装 redis
 
-linux ...
+拉去镜像
+
+
+  docker pull redis:latest
+
+
+启动
+
+
+  docker run -d –name redis -p 6379:6379 redis –requirepass “redispassword”
+
+
+docker容器设置开机自启动：
+--restart具体参数值详细信息
+no - 容器退出时，不重启容器
+on-failure - 只有...
         </p>
       </div>
 
@@ -1029,14 +1097,91 @@ linux ...
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1546663734"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-01-05
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Docker,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">阿里云docker 镜像仓库</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          阿里云 docker 镜像仓库
+
+1. 登录阿里云Docker Registry
+$ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com
+用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
+
+您可以在访问凭证页面修改凭证密码。
+
+2. 从Registry中拉取镜像
+$ sudo doc...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1546318134"
+    data-df="YYYY-MM-DD"
+    >
+  2019-01-01
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Docker,
+            SystemUtils
+          </span>
           
 
         </div>
@@ -1163,10 +1308,8 @@ linux ...
     
 
     
-      <!-- show number -->
-      <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page6">6</a>
-      </li>
+      <!-- hide number -->
+      
     
 
   
@@ -1205,17 +1348,34 @@ linux ...
 
   
 
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- show number -->
+      <li class="page-item ">
+        <a class="page-link btn-box-shadow" href="/page9">9</a>
+      </li>
+    
+
+  
+
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>8</span>
-    <span class="text-muted">/ 8</span>
+    <span class="text-muted">/ 9</span>
   </li>
 
   <!-- right arrow -->
   
 
-  <li class="page-item disabled">
-    <a class="page-link btn-box-shadow" href="#" aria-label="next-page">
+  <li class="page-item ">
+    <a class="page-link btn-box-shadow" href="/page9" aria-label="next-page">
       <i class="fas fa-angle-right"></i>
     </a>
   </li>
@@ -1258,16 +1418,6 @@ linux ...
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1278,7 +1428,7 @@ linux ...
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1356,143 +1506,6 @@ linux ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1582,155 +1595,10 @@ linux ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1895,12 +1763,141 @@ linux ...
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2040,6 +2037,366 @@ linux ...
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2082,6 +2439,9 @@ linux ...
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2098,9 +2458,6 @@ linux ...
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2232,143 +2589,6 @@ linux ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2458,155 +2678,10 @@ linux ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2771,12 +2846,141 @@ linux ...
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2916,6 +3120,366 @@ linux ...
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2958,6 +3522,9 @@ linux ...
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2974,9 +3541,6 @@ linux ...
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

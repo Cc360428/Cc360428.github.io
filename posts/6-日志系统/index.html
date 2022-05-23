@@ -42,24 +42,24 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="6（日志系统）" />
+<meta property="og:title" content="linux(CentOS7) 日志系统" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="+++ title = “linux(CentOS7) 日志系统” date = “2020-03-26T23:24:12+08:00” draft= false tags = [ “RedHad” ] categories = [ “SystemUtils” ] description = “6（日志系统）” +++ Linux 日志系统 日志用途 系统审计 检测追踪 分析统计 Web 应用请求量 错误码分布 性能 是否需要扩容 多少用户量" />
-<meta property="og:description" content="+++ title = “linux(CentOS7) 日志系统” date = “2020-03-26T23:24:12+08:00” draft= false tags = [ “RedHad” ] categories = [ “SystemUtils” ] description = “6（日志系统）” +++ Linux 日志系统 日志用途 系统审计 检测追踪 分析统计 Web 应用请求量 错误码分布 性能 是否需要扩容 多少用户量" />
+<meta name="description" content="6（日志系统）" />
+<meta property="og:description" content="6（日志系统）" />
 <link rel="canonical" href="http://localhost:4000/posts/6-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/" />
 <meta property="og:url" content="http://localhost:4000/posts/6-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/" />
 <meta property="og:site_name" content="Cc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2015-10-12T00:00:00+08:00" />
+<meta property="article:published_time" content="2020-03-26T23:24:12+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="6（日志系统）" />
+<meta property="twitter:title" content="linux(CentOS7) 日志系统" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2015-10-12T00:00:00+08:00","datePublished":"2015-10-12T00:00:00+08:00","description":"+++ title = “linux(CentOS7) 日志系统” date = “2020-03-26T23:24:12+08:00” draft= false tags = [ “RedHad” ] categories = [ “SystemUtils” ] description = “6（日志系统）” +++ Linux 日志系统 日志用途 系统审计 检测追踪 分析统计 Web 应用请求量 错误码分布 性能 是否需要扩容 多少用户量","headline":"6（日志系统）","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/6-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/"},"url":"http://localhost:4000/posts/6-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-03-26T23:24:12+08:00","datePublished":"2020-03-26T23:24:12+08:00","description":"6（日志系统）","headline":"linux(CentOS7) 日志系统","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/6-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/"},"url":"http://localhost:4000/posts/6-%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>6（日志系统） | Cc
+  <title>linux(CentOS7) 日志系统 | Cc
   </title>
 
   <!--
@@ -422,7 +422,7 @@
         
 
           
-            <span>6（日志系统）</span>
+            <span>linux(CentOS7) 日志系统</span>
           
 
         
@@ -705,7 +705,7 @@
 
 
 
-<h1 data-toc-skip>6（日志系统）</h1>
+<h1 data-toc-skip>linux(CentOS7) 日志系统</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -721,10 +721,10 @@
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1585236252"
     data-df="YYYY-MM-DD"
     data-toggle="tooltip" data-placement="bottom">
-  2015-10-12
+  2020-03-26
 </em>
 
     </span>
@@ -775,7 +775,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="596 字">
+  title="563 字">
   <em>3 分钟</em>阅读</span>
 
     </div>
@@ -785,31 +785,25 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>+++
-title = “linux(CentOS7) 日志系统”
-date = “2020-03-26T23:24:12+08:00”
-draft= false
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “6（日志系统）” 
-+++</p>
-<h2 id="linux-日志系统"><span class="mr-2">Linux 日志系统</span><a href="#linux-日志系统" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h2 id="linux-日志系统"><span class="mr-2">Linux 日志系统</span><a href="#linux-日志系统" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <blockquote>
   <p>日志用途</p>
-  <ul>
-    <li>系统审计</li>
-    <li>检测追踪</li>
-    <li>分析统计
-      <ul>
-        <li>Web 应用请求量</li>
-        <li>错误码分布</li>
-        <li>性能</li>
-        <li>是否需要扩容</li>
-        <li>多少用户量</li>
-      </ul>
-    </li>
-  </ul>
 </blockquote>
+
+<ul>
+  <li>系统审计</li>
+  <li>检测追踪</li>
+  <li>分析统计
+    <ul>
+      <li>Web 应用请求量</li>
+      <li>错误码分布</li>
+      <li>性能</li>
+      <li>是否需要扩容</li>
+      <li>多少用户量</li>
+    </ul>
+  </li>
+</ul>
 
 <h3 id="常见的日志文件"><span class="mr-2">常见的日志文件</span><a href="#常见的日志文件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -842,7 +836,7 @@ mysql                                      <span class="k">**</span>从未登录
 redis                                      <span class="k">**</span>从未登录过<span class="k">**</span>
 dockerroot                                 <span class="k">**</span>从未登录过<span class="k">**</span>
 yf               pts/5                     一 3月 23 21:14:45 +0800 2020
-<span class="o">[</span>root@Cc log]# 
+<span class="o">[</span>root@Cc log]#
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -857,8 +851,8 @@ yf               pts/5                     一 3月 23 21:14:45 +0800 2020
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="o">[</span>root@Cc log]# last reboot
-reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 22:55 <span class="o">(</span>6+05:41<span class="o">)</span>   
-reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o">(</span><span class="nt">-7</span>:-59<span class="o">)</span>  
+reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 22:55 <span class="o">(</span>6+05:41<span class="o">)</span>
+reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o">(</span><span class="nt">-7</span>:-59<span class="o">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="日志文件说明"><span class="mr-2">日志文件说明</span><a href="#日志文件说明" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
@@ -890,9 +884,9 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 <h3 id="使用日志轮转"><span class="mr-2">使用日志轮转</span><a href="#使用日志轮转" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>主要配置文件  <code class="language-plaintext highlighter-rouge">/etc/logrotate.conf</code></p>
+  <p>主要配置文件 <code class="language-plaintext highlighter-rouge">/etc/logrotate.conf</code></p>
 
-  <p>主要配置目录	<code class="language-plaintext highlighter-rouge">/etc/logrotate.d</code></p>
+  <p>主要配置目录 <code class="language-plaintext highlighter-rouge">/etc/logrotate.d</code></p>
 </blockquote>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
@@ -917,7 +911,7 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
   -?						帮助文档
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="查看nginx"><span class="mr-2">查看nginx</span><a href="#查看nginx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h5 id="查看-nginx"><span class="mr-2">查看 nginx</span><a href="#查看-nginx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
@@ -938,7 +932,7 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 15
 16
 17
-</pre></td><td class="rouge-code"><pre><span class="o">[</span>root@Cc logrotate.d]# <span class="nb">cat</span> <span class="nt">-n</span> /etc/logrotate.d/nginx 
+</pre></td><td class="rouge-code"><pre><span class="o">[</span>root@Cc logrotate.d]# <span class="nb">cat</span> <span class="nt">-n</span> /etc/logrotate.d/nginx
      1  /var/log/nginx/<span class="k">*</span>.log <span class="o">{</span>
      2          daily
      3          missingok
@@ -954,7 +948,7 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
     13                  <span class="k">fi
     </span>14          endscript
     15  <span class="o">}</span>
-<span class="o">[</span>root@Cc logrotate.d]# 
+<span class="o">[</span>root@Cc logrotate.d]#
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="范例利用系统日志定位问题"><span class="mr-2">范例—————利用系统日志定位问题</span><a href="#范例利用系统日志定位问题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -973,8 +967,24 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 
   <!-- categories -->
   
+  <div class="post-meta mb-3">
+    <i class="far fa-folder-open fa-fw mr-1"></i>
+    
+      <a href='/categories/system/'>System</a>,
+      <a href='/categories/redhad/'>RedHad</a>,
+      <a href='/categories/systemutils/'>SystemUtils</a>
+  </div>
+  
 
   <!-- tags -->
+  
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw mr-1"></i>
+      
+      <a href="/tags/redhad/"
+          class="post-tag no-text-decoration" >RedHad</a>
+      
+  </div>
   
 
   <div class="post-tail-bottom
@@ -1056,16 +1066,6 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1076,7 +1076,7 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1154,143 +1154,6 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1380,155 +1243,10 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1693,12 +1411,141 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1838,6 +1685,366 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1880,6 +2087,9 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -1896,9 +2106,6 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2256,644 +2463,761 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -2982,36 +3306,6 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 
 
 
-  
-    
-    
-      
-      
-        
-        
-        
-      
-    
-  
-    
-    
-      
-      
-        
-        
-        
-      
-    
-  
-    
-    
-      
-      
-        
-        
-        
-          
-
 
 
   <div id="related-posts" class="mt-5 mb-2 mb-sm-4">
@@ -3022,7 +3316,7 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
       
       
       <div class="card">
-        <a href="/posts/DataStructure/">
+        <a href="/posts/1-3-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3034,13 +3328,13 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 
 
 <em class="small"
-    data-ts="1648732795"
+    data-ts="1584973074"
     data-df="YYYY-MM-DD"
     >
-  2022-03-31
+  2020-03-23
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DataStructure（02142）</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>linux(CentOS7)基础知识</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3049,25 +3343,23 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 
 
 
-                数据结构导论（02142）
-第一章 概论（重点）
+                linux 基础知识
 
-1 引言
+linux 历史发布
 
-  数据结构：是计算机组织数据和存储数据的方式
-  计算机解决问题步骤
-    
-      建立数学模型
-      设计算法
-      编程实现算法
-    
-  
-  程序=数据结构+算法
-  通常操作：查找、读取、插入、删除、更新
-  合理的数据结构有什么用
-    
-      可降低程序设计的复杂性
-      提...
+启动选择
+
+Red Hat 安装
+
+安装之后远程登入
+
+
+  查看是否启动
+
+
+[root@Cc ~]# ps -ef |grep sshd
+root      1377     1  0 Mar20 ?        00:00:00 /usr/sbin/sshd -D
+root     21020  1377  0 20:49 ?     ...
               </p>
             </div>
           </div>
@@ -3077,7 +3369,7 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
       
       
       <div class="card">
-        <a href="/posts/reactProject/">
+        <a href="/posts/4.1~4.3-%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3089,13 +3381,13 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 
 
 <em class="small"
-    data-ts="1644764316"
+    data-ts="1584973074"
     data-df="YYYY-MM-DD"
     >
-  2022-02-13
+  2020-03-23
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>React Project</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>linux(CentOS7) 命令操作</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3104,26 +3396,38 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 
 
 
-                项目准备
+                前言
 
-1. 项目介绍
-
-本节目标: 了解项目的定位和功能
+linux 系统架构
 
 
-  项目功能演示
+  硬件
+  系统内核
+  命令解析器
+  上层应用程序
+
+
+初认命令行
+
+
+  [当前用户@计算机名字~]#
+  [当前用户@计算机名字~]$
     
-      登录、退出
-      首页
-      内容（文章）管理：文章列表、发布文章、修改文章
+      #为 root 用户，$普通用户
     
   
-  技术
-    
-      React 官方脚手架 create-react-app
-      react hooks
-      状态管理：mobx
-      UI 组件...
+
+
+[root@Cc ~]# su yf
+[yf@Cc root]$ su root
+Password:
+[root@Cc ~]#
+
+
+
+
+
+...
               </p>
             </div>
           </div>
@@ -3133,7 +3437,7 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
       
       
       <div class="card">
-        <a href="/posts/reactBase/">
+        <a href="/posts/4.4-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3145,13 +3449,13 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 
 
 <em class="small"
-    data-ts="1644677916"
+    data-ts="1585063074"
     data-df="YYYY-MM-DD"
     >
-  2022-02-12
+  2020-03-24
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>React 基础</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>linux(CentOS7) 目录结构</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3160,17 +3464,22 @@ reboot   system boot  3.10.0-1062.4.1. Fri Mar 20 17:14 - 09:14  <span class="o"
 
 
 
-                React 基础
+                linux 目录结构
 
-React 介绍
+常用命令
 
-目标任务: 了解什么是 React 以及它的特点
+cp
 
-React 是什么
+[root@Cc RedHad]#  cp /etc/nginx/conf.d/default.conf .
+[root@Cc RedHad]# ll
+总用量 4
+-rw-r--r-- 1 root root 750 3月  24 22:17 default.conf
+[root@Cc RedHad]#
 
-​ 一个专注于构建用户界面的 JavaScript 库，和 vue 和 angular 并称前端三大框架，不夸张的说，react 引领了很多新思想，世界范围内是最流行的 js 前端框架，最近发布了 18 版本，加入了很多新特性
 
-​ React 英文文档（https://reac...
+cp –help
+
+[root@Cc R...
               </p>
             </div>
           </div>
@@ -3191,14 +3500,14 @@ React 是什么
   
   <a href="/posts/5-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E4%B8%8E%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" class="btn btn-outline-primary"
     prompt="上一篇">
-    <p>5（文件管理与磁盘管理）</p>
+    <p>linux(CentOS7) 文件管理与磁盘管理</p>
   </a>
   
 
   
   <a href="/posts/7-%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/" class="btn btn-outline-primary"
     prompt="下一篇">
-    <p>7（用户和组）</p>
+    <p>linux(CentOS7) 用户和组</p>
   </a>
   
 
@@ -3330,143 +3639,6 @@ React 是什么
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3556,155 +3728,10 @@ React 是什么
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -3869,12 +3896,141 @@ React 是什么
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4014,6 +4170,366 @@ React 是什么
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4056,6 +4572,9 @@ React 是什么
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4072,9 +4591,6 @@ React 是什么
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

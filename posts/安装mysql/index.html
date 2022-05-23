@@ -762,8 +762,10 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="前期工作安装docker"><span class="mr-2">前期工作安装docker</span><a href="#前期工作安装docker" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h2 id="前期工作安装-docker"><span class="mr-2">前期工作安装 docker</span><a href="#前期工作安装-docker" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <p><code class="language-plaintext highlighter-rouge">docker version</code></p>
+
 <div class="language-docker highlighter-rouge"><div class="code-header">
         <span data-label-text="Docker"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -821,7 +823,9 @@ Server: Docker Engine - Community
   Version:          0.18.0
   GitCommit:        fec3683
 </pre></td></tr></tbody></table></code></div></div>
+
 <h3 id="docker-国内镜像设置"><span class="mr-2">docker 国内镜像设置</span><a href="#docker-国内镜像设置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <div class="language-docker highlighter-rouge"><div class="code-header">
         <span data-label-text="Docker"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -853,30 +857,40 @@ Server: Docker Engine - Community
 #重启docker服务
 systemctl restart docker
 </pre></td></tr></tbody></table></code></div></div>
-<h3 id="docker-安装mysql-57"><span class="mr-2">docker 安装mysql 5.7</span><a href="#docker-安装mysql-57" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="docker-安装-mysql-57"><span class="mr-2">docker 安装 mysql 5.7</span><a href="#docker-安装-mysql-57" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p><code class="language-plaintext highlighter-rouge">docker pull mysql:5.7</code></p>
+
 <h3 id="查看镜像"><span class="mr-2">查看镜像</span><a href="#查看镜像" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p><code class="language-plaintext highlighter-rouge">docker images</code></p>
-<h3 id="运行docker-镜像"><span class="mr-2">运行docker 镜像</span><a href="#运行docker-镜像" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p><code class="language-plaintext highlighter-rouge">docker run --name mysql -e MYSQL_ROOT_PASSWORD=lgr123456 -d -i -p 3306:3306 --restart=always  mysql:5.7</code></p>
+
+<h3 id="运行-docker-镜像"><span class="mr-2">运行 docker 镜像</span><a href="#运行-docker-镜像" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">docker run --name mysql -e MYSQL_ROOT_PASSWORD=lgr123456 -d -i -p 3306:3306 --restart=always mysql:5.7</code></p>
+
 <h4 id="以上参数说明"><span class="mr-2">以上参数说明</span><a href="#以上参数说明" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
 <ul>
-  <li>name mysql  将容器命名为mysql，后面可以用这个name进行容器的启动暂停等操作</li>
-  <li>e MYSQL_ROOT_PASSWORD=123456 设置MySQL密码为123456</li>
-  <li>d 此容器在后台运行,并且返回容器的ID</li>
+  <li>name mysql 将容器命名为 mysql，后面可以用这个 name 进行容器的启动暂停等操作</li>
+  <li>e MYSQL_ROOT_PASSWORD=123456 设置 MySQL 密码为 123456</li>
+  <li>d 此容器在后台运行,并且返回容器的 ID</li>
   <li>i 以交互模式运行容器</li>
   <li>p 进行端口映射，格式为主机(宿主)端口:容器端口</li>
-  <li>restart=always 当docker重启时，该容器自动重启</li>
+  <li>restart=always 当 docker 重启时，该容器自动重启</li>
 </ul>
 
 <h3 id="连接测试"><span class="mr-2">连接测试</span><a href="#连接测试" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="进入docker-中mysql"><span class="mr-2">进入docker 中mysql</span><a href="#进入docker-中mysql" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="进入-docker-中-mysql"><span class="mr-2">进入 docker 中 mysql</span><a href="#进入-docker-中-mysql" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p><code class="language-plaintext highlighter-rouge">docker exec -ti mysql bash</code>
 <code class="language-plaintext highlighter-rouge">mysql </code></p>
+
 <pre><code class="language-mysql">[root@test ~]# docker exec -ti mysql bash
 root@d5806ebc7793:/# mysql -uroot -p
-Enter password: 
+Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 2
 Server version: 5.7.29 MySQL Community Server (GPL)
@@ -900,7 +914,7 @@ mysql&gt; show databases;
 +--------------------+
 4 rows in set (0.00 sec)
 
-mysql&gt; 
+mysql&gt;
 
 </code></pre>
 
@@ -913,6 +927,8 @@ mysql&gt;
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
+      <a href='/categories/system/'>System</a>,
+      <a href='/categories/docker/'>Docker</a>,
       <a href='/categories/systemutils/'>SystemUtils</a>
   </div>
   
@@ -1007,16 +1023,6 @@ mysql&gt;
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1027,7 +1033,7 @@ mysql&gt;
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1105,143 +1111,6 @@ mysql&gt;
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1331,155 +1200,10 @@ mysql&gt;
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1644,12 +1368,141 @@ mysql&gt;
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1789,6 +1642,366 @@ mysql&gt;
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1831,6 +2044,9 @@ mysql&gt;
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -1847,9 +2063,6 @@ mysql&gt;
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2116,85 +2329,202 @@ mysql&gt;
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -2970,7 +3300,7 @@ mysql&gt;
 
 
 
-                阿里云docker 镜像仓库
+                阿里云 docker 镜像仓库
 
 1. 登录阿里云Docker Registry
 $ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com
@@ -2979,7 +3309,7 @@ $ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com
 您可以在访问凭证页面修改凭证密码。
 
 2. 从Registry中拉取镜像
-$ sudo dock...
+$ sudo doc...
               </p>
             </div>
           </div>
@@ -3016,13 +3346,16 @@ $ sudo dock...
 
 
 
-                安装redis
+                安装 redis
+
 拉去镜像
+
 
   docker pull redis:latest
 
 
 启动
+
 
   docker run -d –name redis -p 6379:6379 redis –requirepass “redispassword”
 
@@ -3030,7 +3363,7 @@ $ sudo dock...
 docker容器设置开机自启动：
 --restart具体参数值详细信息
 no - 容器退出时，不重启容器
-on-failure - 只有在非0状...
+on-failure - 只有...
               </p>
             </div>
           </div>
@@ -3068,17 +3401,22 @@ on-failure - 只有在非0状...
 
 
                 docker 实战
+
 docker 基本命令
 
+
   docker 操作基础命令
-  
-    docker images
-    docker image ls
-    docker ps
-    docker ps -a
-    docker stop [CONTAINER ID]
-    docker rm [CONTAINER ID]
-    docker restart [CONTAI...
+
+
+
+  docker images
+  docker image ls
+  docker ps
+  docker ps -a
+  docker stop [CONTAINER ID]
+  docker rm [CONTAINER ID]
+  docker restart [CONTAINER ID]
+  do...
               </p>
             </div>
           </div>
@@ -3238,143 +3576,6 @@ docker 基本命令
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3464,155 +3665,10 @@ docker 基本命令
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -3777,12 +3833,141 @@ docker 基本命令
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3922,6 +4107,366 @@ docker 基本命令
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3964,6 +4509,9 @@ docker 基本命令
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -3980,9 +4528,6 @@ docker 基本命令
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

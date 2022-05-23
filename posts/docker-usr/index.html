@@ -44,8 +44,8 @@
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="docker 实战" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="docker 实战 docker 基本命令 docker 操作基础命令 docker images docker image ls docker ps docker ps -a docker stop [CONTAINER ID] docker rm [CONTAINER ID] docker restart [CONTAINER ID] docker start [CONTAINER ID] docker rm [CONTAINER ID] docker rmi [IMAGE ID] docker logs [CONTAINER ID] docker login –username=[hypeyhyper] [registry.cn-hangzhou.aliyuncs.com] docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]" />
-<meta property="og:description" content="docker 实战 docker 基本命令 docker 操作基础命令 docker images docker image ls docker ps docker ps -a docker stop [CONTAINER ID] docker rm [CONTAINER ID] docker restart [CONTAINER ID] docker start [CONTAINER ID] docker rm [CONTAINER ID] docker rmi [IMAGE ID] docker logs [CONTAINER ID] docker login –username=[hypeyhyper] [registry.cn-hangzhou.aliyuncs.com] docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]" />
+<meta name="description" content="docker 实战" />
+<meta property="og:description" content="docker 实战" />
 <link rel="canonical" href="http://localhost:4000/posts/docker-usr/" />
 <meta property="og:url" content="http://localhost:4000/posts/docker-usr/" />
 <meta property="og:site_name" content="Cc" />
@@ -54,7 +54,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="docker 实战" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-09-03T12:48:54+08:00","datePublished":"2019-09-03T12:48:54+08:00","description":"docker 实战 docker 基本命令 docker 操作基础命令 docker images docker image ls docker ps docker ps -a docker stop [CONTAINER ID] docker rm [CONTAINER ID] docker restart [CONTAINER ID] docker start [CONTAINER ID] docker rm [CONTAINER ID] docker rmi [IMAGE ID] docker logs [CONTAINER ID] docker login –username=[hypeyhyper] [registry.cn-hangzhou.aliyuncs.com] docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号] docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]","headline":"docker 实战","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/docker-usr/"},"url":"http://localhost:4000/posts/docker-usr/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-09-03T12:48:54+08:00","datePublished":"2019-09-03T12:48:54+08:00","description":"docker 实战","headline":"docker 实战","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/docker-usr/"},"url":"http://localhost:4000/posts/docker-usr/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -907,29 +907,33 @@
 
 <div class="post-content">
   <h2 id="docker-实战"><span class="mr-2">docker 实战</span><a href="#docker-实战" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <h3 id="docker-基本命令"><span class="mr-2">docker 基本命令</span><a href="#docker-基本命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <blockquote>
   <p><code class="language-plaintext highlighter-rouge">docker</code> 操作基础命令</p>
-  <ul>
-    <li>docker images</li>
-    <li>docker image ls</li>
-    <li>docker ps</li>
-    <li>docker ps -a</li>
-    <li>docker stop [CONTAINER ID]</li>
-    <li>docker rm [CONTAINER ID]</li>
-    <li>docker restart [CONTAINER ID]</li>
-    <li>docker start [CONTAINER ID]</li>
-    <li>docker rm [CONTAINER ID]</li>
-    <li>docker rmi [IMAGE ID]</li>
-    <li>docker logs [CONTAINER ID]</li>
-    <li>docker login –username=[hypeyhyper] [registry.cn-hangzhou.aliyuncs.com]</li>
-    <li>docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]</li>
-    <li>docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]</li>
-    <li>docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]</li>
-  </ul>
 </blockquote>
 
+<ul>
+  <li>docker images</li>
+  <li>docker image ls</li>
+  <li>docker ps</li>
+  <li>docker ps -a</li>
+  <li>docker stop [CONTAINER ID]</li>
+  <li>docker rm [CONTAINER ID]</li>
+  <li>docker restart [CONTAINER ID]</li>
+  <li>docker start [CONTAINER ID]</li>
+  <li>docker rm [CONTAINER ID]</li>
+  <li>docker rmi [IMAGE ID]</li>
+  <li>docker logs [CONTAINER ID]</li>
+  <li>docker login –username=[hypeyhyper] [registry.cn-hangzhou.aliyuncs.com]</li>
+  <li>docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]</li>
+  <li>docker push registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]</li>
+  <li>docker pull registry.cn-hangzhou.aliyuncs.com/chaochengli/tcpserverandcluster:[镜像版本号]</li>
+</ul>
+
 <h3 id="dockerfile"><span class="mr-2">Dockerfile</span><a href="#dockerfile" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <ul>
   <li>FORM</li>
   <li>MAINTAINER</li>
@@ -946,17 +950,19 @@
 </ul>
 
 <h4 id="form"><span class="mr-2">FORM</span><a href="#form" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
 <p><code class="language-plaintext highlighter-rouge">FROM baseImage</code>、<code class="language-plaintext highlighter-rouge">FORM &lt;image&gt;</code></p>
 
 <ul>
-  <li>FROM指定构建镜像的基础源镜像，如果本地没有指定的镜像，则会自动从 Docker 的公共库 pull 镜像下来。</li>
-  <li>FROM必须是 Dockerfile 中非注释行的第一个指令，即一个 Dockerfile 从FROM语句开始。</li>
-  <li>FROM可以在一个 Dockerfile 中出现多次，如果有需求在一个 Dockerfile 中创建多个镜像。</li>
-  <li>如果FROM语句没有指定镜像标签，则默认使用latest标签。</li>
+  <li>FROM 指定构建镜像的基础源镜像，如果本地没有指定的镜像，则会自动从 Docker 的公共库 pull 镜像下来。</li>
+  <li>FROM 必须是 Dockerfile 中非注释行的第一个指令，即一个 Dockerfile 从 FROM 语句开始。</li>
+  <li>FROM 可以在一个 Dockerfile 中出现多次，如果有需求在一个 Dockerfile 中创建多个镜像。</li>
+  <li>如果 FROM 语句没有指定镜像标签，则默认使用 latest 标签。</li>
 </ul>
 
 <h4 id="maintainer"><span class="mr-2">MAINTAINER</span><a href="#maintainer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-<p><code class="language-plaintext highlighter-rouge">MAINTAINER &lt;name&gt; &lt;email&gt;</code> <br />
+
+<p><code class="language-plaintext highlighter-rouge">MAINTAINER &lt;name&gt; &lt;email&gt;</code>
 <code class="language-plaintext highlighter-rouge">MAINTAINER Cc "li_chao_cheng@163.com"</code></p>
 
 <blockquote>
@@ -976,8 +982,8 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
-  <p>注：用于执行后面跟着的命令行命令<br />
-两种格式 shell 和exec</p>
+  <p>注：用于执行后面跟着的命令行命令
+两种格式 shell 和 exec</p>
 </blockquote>
 
 <div class="language-dockerfile highlighter-rouge"><div class="code-header">
@@ -1001,17 +1007,18 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="cmd"><span class="mr-2">CMD</span><a href="#cmd" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">CMD  "executable","param1","param2"</code></li>
-  <li><code class="language-plaintext highlighter-rouge">CMD  "param1","param2"</code></li>
-  <li><code class="language-plaintext highlighter-rouge">CMD command param1 param2 (shell form)</code>
-    <ul>
-      <li>CMD指定在 Dockerfile 中只能使用一次，如果有多个，则只有最后一个会生效。</li>
-      <li>CMD的目的是为了在启动容器时提供一个默认的命令执行选项。如果用户启动容器时指定了运行的命令，则会覆盖掉CMD指定的命令。</li>
-      <li>CMD会在启动容器的时候执行，build 时不执行，而RUN只是在构建镜像的时候执行，后续镜像构建完成之后，启动容器就与RUN无关了</li>
-    </ul>
-  </li>
+  <li><code class="language-plaintext highlighter-rouge">CMD "executable","param1","param2"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">CMD "param1","param2"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">CMD command param1 param2 (shell form)</code></li>
 </ol>
+
+<ul>
+  <li>CMD 指定在 Dockerfile 中只能使用一次，如果有多个，则只有最后一个会生效。</li>
+  <li>CMD 的目的是为了在启动容器时提供一个默认的命令执行选项。如果用户启动容器时指定了运行的命令，则会覆盖掉 CMD 指定的命令。</li>
+  <li>CMD 会在启动容器的时候执行，build 时不执行，而 RUN 只是在构建镜像的时候执行，后续镜像构建完成之后，启动容器就与 RUN 无关了</li>
+</ul>
 
 <h4 id="env"><span class="mr-2">ENV</span><a href="#env" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -1030,10 +1037,11 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="expose"><span class="mr-2">EXPOSE</span><a href="#expose" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
 <p><code class="language-plaintext highlighter-rouge">EXPOSE &lt;port&gt; [&lt;port&gt;...]</code></p>
 
 <blockquote>
-  <p>告诉 Docker 服务端容器对外映射的本地端口，可以指定<code class="language-plaintext highlighter-rouge">tcp</code> 或者<code class="language-plaintext highlighter-rouge">udp</code> 需要在 docker run 的时候使用-p或者-P选项生效。</p>
+  <p>告诉 Docker 服务端容器对外映射的本地端口，可以指定<code class="language-plaintext highlighter-rouge">tcp</code> 或者<code class="language-plaintext highlighter-rouge">udp</code> 需要在 docker run 的时候使用-p 或者-P 选项生效。</p>
 </blockquote>
 
 <h4 id="label"><span class="mr-2">LABEL</span><a href="#label" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
@@ -1057,8 +1065,8 @@
 </blockquote>
 
 <ul>
-  <li>COPY指令能够将构建命令所在的主机本地的文件或目录，复制到镜像文件系统。</li>
-  <li><code class="language-plaintext highlighter-rouge">ADD</code>允许``是一个URL，是一个常见的压缩格式，如tar.gz。那么它会被解压。</li>
+  <li>COPY 指令能够将构建命令所在的主机本地的文件或目录，复制到镜像文件系统。</li>
+  <li><code class="language-plaintext highlighter-rouge">ADD</code>允许``是一个 URL，是一个常见的压缩格式，如 tar.gz。那么它会被解压。</li>
 </ul>
 
 <p><code class="language-plaintext highlighter-rouge">COPY source dest</code></p>
@@ -1076,11 +1084,14 @@
 <h4 id="entrupoint-and-cmd"><span class="mr-2">ENTRUPOINT and CMD</span><a href="#entrupoint-and-cmd" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li>ENTRYPOINT指令，往往用于设置容器启动后的<strong>第一个命令</strong>，这对一个容器来说往往是固定的。</li>
-  <li>CMD指令，往往用于设置容器启动的第一个命令的<strong>默认参数</strong>，这对一个容器来说可以是变化的。</li>
-  <li>docker run <command />往往用于给出替换CMD的<strong>临时参数</strong>
-    <h3 id="创建-dockerfile"><span class="mr-2">创建 Dockerfile</span><a href="#创建-dockerfile" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-  </li>
+  <li>ENTRYPOINT 指令，往往用于设置容器启动后的<strong>第一个命令</strong>，这对一个容器来说往往是固定的。</li>
+  <li>CMD 指令，往往用于设置容器启动的第一个命令的<strong>默认参数</strong>，这对一个容器来说可以是变化的。</li>
+  <li>docker run <command />往往用于给出替换 CMD 的<strong>临时参数</strong></li>
+</ul>
+
+<h3 id="创建-dockerfile"><span class="mr-2">创建 Dockerfile</span><a href="#创建-dockerfile" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
   <li>创建<code class="language-plaintext highlighter-rouge">main.go</code> 执行 <code class="language-plaintext highlighter-rouge">go mod init dockerhttp</code></li>
 </ul>
 
@@ -1131,7 +1142,7 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>创建Dockerfile</li>
+  <li>创建 Dockerfile</li>
 </ul>
 
 <div class="language-dockerfile highlighter-rouge"><div class="code-header">
@@ -1171,7 +1182,7 @@
 <span class="c"># 使用 pwd 查看所在当前目录位置</span>
 <span class="k">COPY</span><span class="s"> . .</span>
 <span class="k">RUN </span><span class="nb">pwd</span>
-<span class="k">RUN </span>go mod tidy 
+<span class="k">RUN </span>go mod tidy
 <span class="k">RUN </span>go build <span class="nt">-o</span> imagesServer .
 <span class="c"># 通过开发计算机上容器的8888端口暴露该应用程序。最后一行，</span>
 <span class="k">EXPOSE</span><span class="s"> 8888/tcp</span>
@@ -1183,7 +1194,7 @@
 </ul>
 
 <blockquote>
-  <p>进入项目目录下，<code class="language-plaintext highlighter-rouge">docker build . -o imagesname</code>   但是需要小写，使用docker 仓库时需要与创库一致</p>
+  <p>进入项目目录下，<code class="language-plaintext highlighter-rouge">docker build . -o imagesname</code> 但是需要小写，使用 docker 仓库时需要与创库一致</p>
 </blockquote>
 
 <ul>
@@ -1196,7 +1207,7 @@
 </ul>
 
 <blockquote>
-  <p>docker run -dit -p 8888:8888  [IMAGE ID]</p>
+  <p>docker run -dit -p 8888:8888 [IMAGE ID]</p>
 </blockquote>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
@@ -1216,9 +1227,12 @@ docker run <span class="nt">-it</span> <span class="nt">--name</span> docker_cc 
 </pre></td><td class="rouge-code"><pre>[root@iz2zeb00z6vr5gix5utl11z ~]# docker images
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 </pre></td></tr></tbody></table></code></div></div>
+
 <blockquote>
-  <p>上述错误可能是没有启动docker</p>
-  <div class="language-plaintext highlighter-rouge"><div class="code-header">
+  <p>上述错误可能是没有启动 docker</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1230,12 +1244,12 @@ Redirecting to /bin/systemctl start docker.service
 [root@iz2zeb00z6vr5gix5utl11z ~]# docker images;
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 [root@iz2zeb00z6vr5gix5utl11z ~]#
-</pre></td></tr></tbody></table></code></div>  </div>
-</blockquote>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="导入导出"><span class="mr-2">导入导出</span><a href="#导入导出" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <ul>
-  <li>导出tar</li>
+  <li>导出 tar</li>
 </ul>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
@@ -1243,10 +1257,13 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>docker  save <span class="nt">-o</span> name.tar tcpserver:latest
 </pre></td></tr></tbody></table></code></div></div>
+
 <p><code class="language-plaintext highlighter-rouge">docker run --name beegoview -d -p 8380:8380 beegoview:latest</code></p>
 
 <h2 id="container"><span class="mr-2">container</span><a href="#container" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <h3 id="docker-container-ls--f-statusexited"><span class="mr-2">docker container ls -f “status=exited”</span><a href="#docker-container-ls--f-statusexited" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p><code class="language-plaintext highlighter-rouge">docker rm $(docker container ls -f "status=exited" -p)</code></p>
 
 <h3 id="安装可视化界面"><span class="mr-2">安装可视化界面</span><a href="#安装可视化界面" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1278,8 +1295,8 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 Unable to find image <span class="s1">'portainer/portainer:latest'</span> locally
 
 latest: Pulling from portainer/portainer
-d1e017099d17: Pull <span class="nb">complete 
-</span>a7dca5b5a9e8: Pull <span class="nb">complete 
+d1e017099d17: Pull <span class="nb">complete
+</span>a7dca5b5a9e8: Pull <span class="nb">complete
 </span>Digest: sha256:4ae7f14330b56ffc8728e63d355bc4bc7381417fa45ba0597e5dd32682901080
 Status: Downloaded newer image <span class="k">for </span>portainer/portainer:latest
 5742748f575e316b07cdeab8cf4746891179e2ea1169f824336d234ce295e933
@@ -1287,7 +1304,7 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
 
 <ul>
   <li>填写用户名和密码</li>
-  <li>选择local即可</li>
+  <li>选择 local 即可</li>
 </ul>
 
 </div>
@@ -1299,6 +1316,8 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
+      <a href='/categories/system/'>System</a>,
+      <a href='/categories/docker/'>Docker</a>,
       <a href='/categories/systemutils/'>SystemUtils</a>
   </div>
   
@@ -1393,16 +1412,6 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1413,7 +1422,7 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1491,143 +1500,6 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1717,155 +1589,10 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2030,12 +1757,141 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2175,6 +2031,366 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2217,6 +2433,9 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2233,9 +2452,6 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2697,85 +2913,202 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -3356,7 +3689,7 @@ Status: Downloaded newer image <span class="k">for </span>portainer/portainer:la
 
 
 
-                阿里云docker 镜像仓库
+                阿里云 docker 镜像仓库
 
 1. 登录阿里云Docker Registry
 $ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com
@@ -3365,7 +3698,7 @@ $ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com
 您可以在访问凭证页面修改凭证密码。
 
 2. 从Registry中拉取镜像
-$ sudo dock...
+$ sudo doc...
               </p>
             </div>
           </div>
@@ -3402,13 +3735,16 @@ $ sudo dock...
 
 
 
-                安装redis
+                安装 redis
+
 拉去镜像
+
 
   docker pull redis:latest
 
 
 启动
+
 
   docker run -d –name redis -p 6379:6379 redis –requirepass “redispassword”
 
@@ -3416,7 +3752,7 @@ $ sudo dock...
 docker容器设置开机自启动：
 --restart具体参数值详细信息
 no - 容器退出时，不重启容器
-on-failure - 只有在非0状...
+on-failure - 只有...
               </p>
             </div>
           </div>
@@ -3658,143 +3994,6 @@ http
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3884,155 +4083,10 @@ http
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -4197,12 +4251,141 @@ http
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4342,6 +4525,366 @@ http
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4384,6 +4927,9 @@ http
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4400,9 +4946,6 @@ http
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

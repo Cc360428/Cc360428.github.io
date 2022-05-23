@@ -907,7 +907,7 @@ git pull origin master<span class="p">;</span>
 <blockquote>
   <p><code class="language-plaintext highlighter-rouge">add</code> 后面跟着 <code class="language-plaintext highlighter-rouge">.</code>就是当前下所有文件</p>
 
-  <p><code class="language-plaintext highlighter-rouge">push</code> 跟着 仓库地址 ，<code class="language-plaintext highlighter-rouge">master</code> 是仓库分支  ，其中 <code class="language-plaintext highlighter-rouge">origin</code> 是<strong>别名</strong>在当前目录 <code class="language-plaintext highlighter-rouge">.git</code> 下 <code class="language-plaintext highlighter-rouge">config</code></p>
+  <p><code class="language-plaintext highlighter-rouge">push</code> 跟着 仓库地址 ，<code class="language-plaintext highlighter-rouge">master</code> 是仓库分支 ，其中 <code class="language-plaintext highlighter-rouge">origin</code> 是<strong>别名</strong>在当前目录 <code class="language-plaintext highlighter-rouge">.git</code> 下 <code class="language-plaintext highlighter-rouge">config</code></p>
 
   <p>在<code class="language-plaintext highlighter-rouge">commit</code> 时 <code class="language-plaintext highlighter-rouge">git commit -m "Title" -m "Description ..........";</code></p>
 </blockquote>
@@ -954,7 +954,7 @@ git diff <span class="nt">--stat</span> <span class="o">[</span>file]		// 查看
 <h3 id="取消以缓存内容"><span class="mr-2">取消以缓存内容</span><a href="#取消以缓存内容" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">git reset HEAD  [reset.txt] </code></p>
+  <p><code class="language-plaintext highlighter-rouge">git reset HEAD [reset.txt] </code></p>
 </blockquote>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
@@ -971,7 +971,7 @@ git diff <span class="nt">--stat</span> <span class="o">[</span>file]		// 查看
 </pre></td><td class="rouge-code"><pre>git status <span class="nt">-s</span>
 M  README
 M  hello.php
-<span class="nv">$ </span>git reset HEAD hello.php 
+<span class="nv">$ </span>git reset HEAD hello.php
 Unstaged changes after reset:
 M    hello.go
 <span class="nv">$ </span>git status <span class="nt">-s</span>
@@ -1045,7 +1045,6 @@ git push origin <span class="o">[</span>dev]		// 提交该分支
 git log <span class="o">[</span>file]
 </pre></td></tr></tbody></table></code></div></div>
 
-
 </div>
 
 <div class="post-tail-wrapper text-muted">
@@ -1055,7 +1054,8 @@ git log <span class="o">[</span>file]
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/system/'>System</a>
+      <a href='/categories/system/'>System</a>,
+      <a href='/categories/git/'>Git</a>
   </div>
   
 
@@ -1149,16 +1149,6 @@ git log <span class="o">[</span>file]
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1169,7 +1159,7 @@ git log <span class="o">[</span>file]
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1247,143 +1237,6 @@ git log <span class="o">[</span>file]
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1473,155 +1326,10 @@ git log <span class="o">[</span>file]
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1786,12 +1494,141 @@ git log <span class="o">[</span>file]
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1931,6 +1768,366 @@ git log <span class="o">[</span>file]
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1973,6 +2170,9 @@ git log <span class="o">[</span>file]
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -1989,9 +2189,6 @@ git log <span class="o">[</span>file]
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2206,7 +2403,124 @@ git log <span class="o">[</span>file]
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -3075,26 +3389,6 @@ git log <span class="o">[</span>file]
 
 
 
-  
-    
-    
-      
-      
-        
-        
-        
-      
-    
-  
-    
-    
-      
-      
-        
-        
-        
-          
-
 
 
   <div id="related-posts" class="mt-5 mb-2 mb-sm-4">
@@ -3151,7 +3445,7 @@ Ctrl+Shift+Space 自动补...
       
       
       <div class="card">
-        <a href="/posts/DataStructure/">
+        <a href="/posts/etcd_pro/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3163,13 +3457,13 @@ Ctrl+Shift+Space 自动补...
 
 
 <em class="small"
-    data-ts="1648732795"
+    data-ts="1587391501"
     data-df="YYYY-MM-DD"
     >
-  2022-03-31
+  2020-04-20
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>DataStructure（02142）</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>etcd Pro</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3178,25 +3472,19 @@ Ctrl+Shift+Space 自动补...
 
 
 
-                数据结构导论（02142）
-第一章 概论（重点）
+                etcd 的初步使用
 
-1 引言
+StormZhu · 2018-11-21 01:34:40 · 1305 次点击 · 预计阅读时间 4 分钟 · 不到 1 分钟之前 开始浏览
 
-  数据结构：是计算机组织数据和存储数据的方式
-  计算机解决问题步骤
-    
-      建立数学模型
-      设计算法
-      编程实现算法
-    
-  
-  程序=数据结构+算法
-  通常操作：查找、读取、插入、删除、更新
-  合理的数据结构有什么用
-    
-      可降低程序设计的复杂性
-      提...
+这是一个创建于 2018-11-21 01:34:40 的文章，其中的信息可能已经有所发展或是发生改变。
+
+简介
+
+
+
+etcd 介绍.png
+
+etcd是一个golang编写的分布式、高可用的一致性键值存储系统，用于提供...
               </p>
             </div>
           </div>
@@ -3206,7 +3494,7 @@ Ctrl+Shift+Space 自动补...
       
       
       <div class="card">
-        <a href="/posts/reactProject/">
+        <a href="/posts/day01/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3218,13 +3506,13 @@ Ctrl+Shift+Space 自动补...
 
 
 <em class="small"
-    data-ts="1644764316"
+    data-ts="1544278908"
     data-df="YYYY-MM-DD"
     >
-  2022-02-13
+  2018-12-08
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>React Project</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>MySQL 入门介绍</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3233,26 +3521,28 @@ Ctrl+Shift+Space 自动补...
 
 
 
-                项目准备
+                mysql 
 
-1. 项目介绍
-
-本节目标: 了解项目的定位和功能
+环境搭建
 
 
-  项目功能演示
-    
-      登录、退出
-      首页
-      内容（文章）管理：文章列表、发布文章、修改文章
-    
   
-  技术
+    安装mysql
+
+    mysql&amp;gt; select version();
++------------+
+| version()  |
++------------+
+| 5.7.17-log |
++------------+
+1 row in set (0.03 sec)
+
+  
+  
+    创建数据库，与查看
+
     
-      React 官方脚手架 create-react-app
-      react hooks
-      状态管理：mobx
-      UI 组件...
+      CR...
               </p>
             </div>
           </div>
@@ -3412,143 +3702,6 @@ Ctrl+Shift+Space 自动补...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3638,155 +3791,10 @@ Ctrl+Shift+Space 自动补...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -3951,12 +3959,141 @@ Ctrl+Shift+Space 自动补...
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4096,6 +4233,366 @@ Ctrl+Shift+Space 自动补...
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4138,6 +4635,9 @@ Ctrl+Shift+Space 自动补...
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4154,9 +4654,6 @@ Ctrl+Shift+Space 自动补...
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

@@ -869,19 +869,19 @@
 <span class="nb">cat</span> /proc/version <span class="c"># 查看当前系统版本信息</span>
 <span class="nb">cat</span> /etc/issue <span class="c"># 查看版本当前操作系统发行版本信息</span>
 <span class="nb">cat</span> /etc/redhat-release <span class="c"># 查看版本当前操作系统发行版本信息</span>
-<span class="nb">cat</span> /proc/cpuinfo  <span class="c"># OR lscpu 查看CPU相关信息，包括型号、主频、内核信息 </span>
+<span class="nb">cat</span> /proc/cpuinfo  <span class="c"># OR lscpu 查看CPU相关信息，包括型号、主频、内核信息</span>
 getconf LONG_BIT <span class="c"># 看版本说明当前CPU运行在32bit模式下， 但不代表CPU不支持64bit</span>
 <span class="nb">hostname</span> <span class="c"># 查看服务器名称</span>
-  
-<span class="c"># 查看网络信息 </span>
+
+<span class="c"># 查看网络信息</span>
 <span class="nb">cat</span> /etc/sysconfig/network-scripts/ifcfg-ens<span class="k">*</span>
 <span class="nb">cat</span> /etc/sysconfig/network-scripts/ifcfg-lo
 ifconfig
-  
+
 lsblk <span class="c"># 查看磁盘信息 - 列出所有可用块设备的信息，而且还能显示他们之间的依赖关系，但是它不会列出RAM盘的信息</span>
 fdisk <span class="nt">-l</span> <span class="c"># 观察硬盘实体使用情况，也可对硬盘分区</span>
 <span class="nb">df</span> <span class="nt">-k</span> <span class="c"># df -k # 用于显示磁盘分区上的可使用的磁盘空</span>
-  
+
 <span class="nb">env</span> <span class="c"># 查看环境变量</span>
 iptables <span class="nt">-L</span> <span class="c"># 查看防火墙设置</span>
 route <span class="nt">-n</span> <span class="c"># 查看路由表</span>
@@ -916,9 +916,9 @@ systemctl status firewalld <span class="c"># 查看下状态</span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>vim /etc/fstab 
+</pre></td><td class="rouge-code"><pre>vim /etc/fstab
 <span class="c"># 注释 swap 行</span>
-swapoff <span class="nt">-a</span> 
+swapoff <span class="nt">-a</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
   <li>
@@ -927,7 +927,7 @@ swapoff <span class="nt">-a</span>
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/SELINUX=enforcing/SELINUX=disabled/g'</span> /etc/selinux/config <span class="c"># 永久关闭 </span>
+</pre></td><td class="rouge-code"><pre><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/SELINUX=enforcing/SELINUX=disabled/g'</span> /etc/selinux/config <span class="c"># 永久关闭</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
   <li>
@@ -956,7 +956,7 @@ reboot <span class="c"># 重启</span>
   </li>
 </ul>
 
-<h3 id="安装docker-20101-masternode"><span class="mr-2">安装docker 20.10.1 （master/node）</span><a href="#安装docker-20101-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="安装-docker-20101-masternode"><span class="mr-2">安装 docker 20.10.1 （master/node）</span><a href="#安装-docker-20101-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
@@ -995,15 +995,15 @@ reboot <span class="c"># 重启</span>
 
 yum remove runc <span class="nt">-y</span>
 yum <span class="nb">install </span>container-selinux yum-utils ipvsadm <span class="nt">-y</span>
-rpm <span class="nt">-ivh</span> https://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/containerd.io-1.4.3-3.1.el7.x86_64.rpm    
+rpm <span class="nt">-ivh</span> https://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/containerd.io-1.4.3-3.1.el7.x86_64.rpm
 yum-config-manager <span class="nt">--add-repo</span> https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 yum clean all
 yum makecache
 yum <span class="nb">install </span>docker-ce docker-ce-cli <span class="nt">-y</span>
- 
+
 <span class="nb">mkdir</span> <span class="nt">-p</span> /data/docker /data/kubelet  /etc/docker /data/kubelet/plugins/nasplugin.csi.alibabacloud.com
 <span class="nb">touch</span>  /etc/docker/daemon.json
- 
+
 <span class="nb">cat</span> <span class="o">&gt;</span> /etc/docker/daemon.json <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
 {
     "data-root": "/data/docker",
@@ -1024,7 +1024,7 @@ yum <span class="nb">install </span>docker-ce docker-ce-cli <span class="nt">-y<
 </span>systemctl <span class="nb">enable </span>docker <span class="o">&amp;&amp;</span> systemctl start docker
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="设置阿里云yum软件源-masternode"><span class="mr-2">设置阿里云yum软件源 （master/node）</span><a href="#设置阿里云yum软件源-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="设置阿里云-yum-软件源-masternode"><span class="mr-2">设置阿里云 yum 软件源 （master/node）</span><a href="#设置阿里云-yum-软件源-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
@@ -1039,7 +1039,7 @@ yum <span class="nb">install </span>docker-ce docker-ce-cli <span class="nt">-y<
 [k8s]
 name=k8s
 enabled=1
-gpgcheck=0 
+gpgcheck=0
 baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
 </span><span class="no">EOF
 </span></pre></td></tr></tbody></table></code></div></div>
@@ -1121,10 +1121,10 @@ Run <span class="s2">"kubectl apply -f [podnetwork].yaml"</span> with one of the
 Then you can <span class="nb">join </span>any number of worker nodes by running the following on each as root:
 
 kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</span> etvpqx.urx0nmbm4w4wwmt9 <span class="se">\</span>
-    <span class="nt">--discovery-token-ca-cert-hash</span> sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd 
+    <span class="nt">--discovery-token-ca-cert-hash</span> sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="输入创建测试是否okmasternode"><span class="mr-2">输入创建测试是否OK（master/node）</span><a href="#输入创建测试是否okmasternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="输入创建测试是否-okmasternode"><span class="mr-2">输入创建测试是否 OK（master/node）</span><a href="#输入创建测试是否-okmasternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
@@ -1140,7 +1140,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
   <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$HOME</span>/.kube
   <span class="nb">sudo cp</span> <span class="nt">-i</span> /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
   <span class="nb">sudo chown</span> <span class="si">$(</span><span class="nb">id</span> <span class="nt">-u</span><span class="si">)</span>:<span class="si">$(</span><span class="nb">id</span> <span class="nt">-g</span><span class="si">)</span> <span class="nv">$HOME</span>/.kube/config
-  
+
   kubectl get nodes  <span class="c"># 测试</span>
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1165,7 +1165,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
 3
 </pre></td><td class="rouge-code"><pre><span class="c"># 在成功init 成功之后输出的内容</span>
 kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</span> etvpqx.urx0nmbm4w4wwmt9 <span class="se">\</span>
-    <span class="nt">--discovery-token-ca-cert-hash</span> sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd 
+    <span class="nt">--discovery-token-ca-cert-hash</span> sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="后记"><span class="mr-2">后记</span><a href="#后记" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1187,7 +1187,7 @@ kubeadm token list
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
   <li>
-    <p>node join 失败后 重新join</p>
+    <p>node join 失败后 重新 join</p>
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
@@ -1730,7 +1730,6 @@ spec:
   </li>
 </ul>
 
-
 </div>
 
 <div class="post-tail-wrapper text-muted">
@@ -1740,6 +1739,8 @@ spec:
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
+      <a href='/categories/system/'>System</a>,
+      <a href='/categories/kubernetes/'>Kubernetes</a>,
       <a href='/categories/systemutils/'>SystemUtils</a>
   </div>
   
@@ -1834,16 +1835,6 @@ spec:
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1854,7 +1845,7 @@ spec:
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1932,143 +1923,6 @@ spec:
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2158,155 +2012,10 @@ spec:
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2471,12 +2180,141 @@ spec:
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2616,6 +2454,366 @@ spec:
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2658,6 +2856,9 @@ spec:
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2674,9 +2875,6 @@ spec:
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -3750,6 +3948,123 @@ spec:
   
 
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
 
 
 
@@ -3798,13 +4113,17 @@ spec:
 
 
                 kubernetes UI
+
 1
 kubectl apply -f kuboard-v3.yaml
 
 
 访问
+
 http://172.13.8.15:30080/kuboard/settings/ui
+
 kuboard-v3.yaml
+
 1
 2
 3
@@ -3834,8 +4153,7 @@ kuboard-v3.yaml
 27
 28
 29
-30
-3...
+...
               </p>
             </div>
           </div>
@@ -3872,7 +4190,7 @@ kuboard-v3.yaml
 
 
 
-                ## 大厅kubernetes 服务
+                大厅 kubernetes 服务
 
 准备工作
 
@@ -3881,10 +4199,10 @@ kuboard-v3.yaml
     安装 kubectl
   
   
-    登录到Kubernetes 集群中
+    登录到 Kubernetes 集群中
 
     
-      获取 ` cat /root/kuber/config `
+      获取 cat /root/kuber/config
       放入到目标机器的 ~/.kube/config
     
   
@@ -3894,7 +4212,7 @@ kuboard-v3.yaml
     1
 2
 kubectl version
-kubectl...
+kubectl get ...
               </p>
             </div>
           </div>
@@ -3931,10 +4249,10 @@ kubectl...
 
 
 
-                什么是Kubernetes
+                什么是 Kubernetes
 
 
-  为什叫k8sK~s 中间有8个字符，8代替了ubernete    参考文档
+  为什叫k8sK~s 中间有 8 个字符，8 代替了ubernete 参考文档
 
 
 Kubernetes 你能做什么
@@ -3944,10 +4262,13 @@ Kubernetes 你能做什么
   快速扩展应用
   无缝对接新的应用功能
   节省资源，优化硬件资源的使用
-    Kubernetes 特点
-  
+
+
+Kubernetes 特点
+
+
   可移植: 支持公有云，私有云，混合云，多重云（multi-cloud）
-  可扩展: 模块化, ...
+  可扩展: 模块化, 插件...
               </p>
             </div>
           </div>
@@ -4107,143 +4428,6 @@ Kubernetes 你能做什么
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4333,155 +4517,10 @@ Kubernetes 你能做什么
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -4646,12 +4685,141 @@ Kubernetes 你能做什么
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4791,6 +4959,366 @@ Kubernetes 你能做什么
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4833,6 +5361,9 @@ Kubernetes 你能做什么
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4849,9 +5380,6 @@ Kubernetes 你能做什么
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

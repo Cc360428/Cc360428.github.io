@@ -474,7 +474,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">阿里云docker 镜像仓库</a>
+        <a href="/posts/opencv-base/">openCV</a>
       </h1>
 
       <div class="post-content">
@@ -485,77 +485,17 @@
 
 
 
-          阿里云docker 镜像仓库
+          OpenCV
 
-1. 登录阿里云Docker Registry
-$ sudo docker login --username=hypeyhyper registry.cn-hangzhou.aliyuncs.com
-用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。
+地址
 
-您可以在访问凭证页面修改凭证密码。
+goCv
 
-2. 从Registry中拉取镜像
-$ sudo dock...
-        </p>
-      </div>
+gocv
 
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
+参考网址
 
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1546318134"
-    data-df="YYYY-MM-DD"
-    >
-  2019-01-01
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            SystemUtils
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/">Docker 理论知识</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          为什么要使用docker
-简易部署
-兼容平台
-简化配置
+csdn
 
         </p>
       </div>
@@ -575,10 +515,10 @@ $ sudo dock...
 
 
 <em class=""
-    data-ts="1546318134"
+    data-ts="1556116638"
     data-df="YYYY-MM-DD"
     >
-  2019-01-01
+  2019-04-24
 </em>
 
 
@@ -587,7 +527,9 @@ $ sudo dock...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            utils
+            Server,
+            Golang,
+            AI
           </span>
           
 
@@ -603,7 +545,7 @@ $ sudo dock...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/day01/">MySQL 入门介绍</a>
+        <a href="/posts/sliceAndRanger/">Day08（切片 slice 和 range）</a>
       </h1>
 
       <div class="post-content">
@@ -614,176 +556,106 @@ $ sudo dock...
 
 
 
-          mysql 
+          切片（slice） 和range 使用
 
-环境搭建
+源码
+
+切片（slice）
+
+
+  Go 数组在一定情况下，不能满足开发业务需求（数组固定长度、有很多局限性），切片是可变长度序列，切片底层就是数组做了一层封装（也叫做动态数组）。切片可以自动扩容，切片是引用类型，包含地址、长度（len）、容量（cap）
+
+
+切片什么时候扩容
+
+
+  如果切片的容量小于 1024 个元素，那么扩容的时候slice的c...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1556116638"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-24
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/PointerAndstruct/">Day07（指针和结构体）</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          指针和结构体
+
+源码
+
+指针
+
+
+  Go 语言指针与 C 语言指针不一样理解,一个指针变量指向了一个值的内存地址。
+
+  类似于变量和常量，在使用指针前你需要声明指针
+
+
+示例
 
 
   
-    安装mysql
-
-    mysql&amp;gt; select version();
-+------------+
-| version()  |
-+------------+
-| 5.7.17-log |
-+------------+
-1 row in set (0.03 sec)
-
-  
-  
-    创建数据库，与查看
+    示例一：
 
     
-      CR...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1544278908"
-    data-df="YYYY-MM-DD"
-    >
-  2018-12-08
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            SystemUtils
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/vue/">Vue</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          vue
-学习网址
-https://developer.aliyun.com/mirror/NPM?from=tnpm
-
-脚手架
-
-#全局安装vue的命令行工具
-npm install -g @vue/cli
-
-#验证Vue是否安装成功
-vue -V
-
-#通过脚手架命令行方式创建vue项目
-vue create vue-demo
-
-#通过vue提供的界面来创建vue项目
-vue ui
-
-#启动...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1539356316"
-    data-df="YYYY-MM-DD"
-    >
-  2018-10-12
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Client
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/createVue/">Vue 创建项目</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          检查安装环境
-
-  node
-node 下载
-  cnpm
-    
-      npm install cnpm -g –registry=https://registry.npm.taobao.org
+      func new(Type) *Type 说明 new()方法 返回值就是指针
     
   
-  npm
-      D:\file\vue\vue&amp;gt;node -v
-  v10.16.3
-    
-  D:\file\vue\vue&amp;gt;npm 0v
-  ^...
+
+
+package main
+
+import (
+	&quot;github...
         </p>
       </div>
 
@@ -802,10 +674,10 @@ node 下载
 
 
 <em class=""
-    data-ts="1539269916"
+    data-ts="1556028243"
     data-df="YYYY-MM-DD"
     >
-  2018-10-11
+  2019-04-23
 </em>
 
 
@@ -814,7 +686,8 @@ node 下载
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Client
+            Server,
+            Golang
           </span>
           
 
@@ -830,7 +703,7 @@ node 下载
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/%E4%BD%B3%E8%83%BD/">佳能入门</a>
+        <a href="/posts/go-base-variableAndArray/">Day06（作用域与数组）</a>
       </h1>
 
       <div class="post-content">
@@ -841,160 +714,42 @@ node 下载
 
 
 
-          安装镜头与卸载
+          作用域与数组
 
-安装
+源码
 
+变量作用域
 
-  镜头上有个白色的正方快点
-  与机身上的白色点对应起来
-  向下旋转镜头
-  可以听到一声卡住的响声
+局部变量
 
 
-卸载
+  函数内定义的变量
 
 
-  按住镜头上的白色对应的半椭圆形的按键按钮
-  按住同时向上旋转镜头
+package main
 
+import (
+	&quot;fmt&quot;
+)
 
-镜头上 stabilizer 开关
-
-防抖开关，区别就是在快门速度较慢的情况下，辅助稳定画质
-
-AF 和 MF 区别
-
-
-  AF：自动对焦
-  MF：手动对焦
-    ...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1528260534"
-    data-df="YYYY-MM-DD"
-    >
-  2018-06-06
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            me
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/java-base/">java base</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          基础
-project_url = “https://github.com/spf13/hugo”
-
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1516942134"
-    data-df="YYYY-MM-DD"
-    >
-  2018-01-26
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Server
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/base/">C</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          C 基础
-
-#include &amp;lt;stdio.h&amp;gt;
-int main(void)
-{
- printf(&quot;Hello World!\n&quot;);
+func main() {
+	var a, b, c = 1, 2, 3
+	fmt.Println(a, b, c)
 }
 
 
+全局变量
+
+
+  函数外定义的变量
+
+
+package main
+
+import &quot;fmt&quot;
+
+// 定义全局变量
+var ...
         </p>
       </div>
 
@@ -1013,10 +768,10 @@ int main(void)
 
 
 <em class=""
-    data-ts="1444661916"
+    data-ts="1554649116"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-04-07
 </em>
 
 
@@ -1025,7 +780,8 @@ int main(void)
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server
+            Server,
+            Golang
           </span>
           
 
@@ -1041,7 +797,7 @@ int main(void)
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/python-base/">Python Base</a>
+        <a href="/posts/func/">Day05（函数）</a>
       </h1>
 
       <div class="post-content">
@@ -1052,15 +808,24 @@ int main(void)
 
 
 
-          +++
-date = 2018-01-26T12:48:54+08:00
-draft= true
-title = “Python base”
-tags = [ “python” ]
-categories = [ “Python基础” ]
-#series = [ “base” ]
-slug = “hugo”
-project_url = “https://github.com/spf13/hug...
+          函数
+
+源码
+
+
+  go 至少一个函数 主函数
+
+
+package main
+
+import (
+	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
+)
+
+func main() {
+	_, _, _, err := FuncName(&quot;&quot;, &quot;&quot;, false)
+	if err != nil {
+		logs.Error(err.Error...
         </p>
       </div>
 
@@ -1079,14 +844,21 @@ project_url = “https://github.com/spf13/hug...
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1554559518"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-04-06
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang
+          </span>
           
 
         </div>
@@ -1101,7 +873,7 @@ project_url = “https://github.com/spf13/hug...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/9-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%8E%A7%E5%88%B6-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">9（系统启动控制、进程管理）</a>
+        <a href="/posts/LoopStatementFunc/">Day04（循环语句）</a>
       </h1>
 
       <div class="post-content">
@@ -1112,18 +884,21 @@ project_url = “https://github.com/spf13/hug...
 
 
 
-          +++
-title = “linux(CentOS7) 系统启动控制、进程管理”
-date = “2020-03-29T00:48:12+08:00”
-draft= false
-tags = [ “RedHad” ]
-categories = [ “SystemUtils” ]
-description = “9（系统启动控制、进程管理）” 
-+++
+          循环语句
 
-系统启动控制、进程管理
+源代码
 
-系统启动控制
+for
+
+package main
+
+import &quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
+
+func main() {
+	array := make([]int, 5)
+	logs.Info(array)
+	for i := 0; i &amp;lt; len(array); i++ {
+		array[i] = i
 ...
         </p>
       </div>
@@ -1143,14 +918,352 @@ description = “9（系统启动控制、进程管理）”
 
 
 <em class=""
-    data-ts="1444579200"
+    data-ts="1554221400"
     data-df="YYYY-MM-DD"
     >
-  2015-10-12
+  2019-04-03
 </em>
 
 
           <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/OperatorCondition/">Day03（运算符与条件语句）</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          运算符与条件语句
+
+
+  本章源码
+
+
+运算符
+
+算数运算符
+
+
+  假定 A 值为 10，B 值为 20
+
+
+
+  
+    
+      运算符
+      描述
+      实例
+    
+  
+  
+    
+      +
+      相加
+      A + B 输出结果 30
+    
+    
+      -
+      相减
+      A - B 输出结果 -10
+   ...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1554182025"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-02
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/datatype/">Day02（入门基础）</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          数据类型、变量、常量
+
+本章源码
+
+数据类型
+
+
+  package builtin 可以看数据包builtin
+
+
+
+  布尔类型
+    
+      默认值为：false
+    
+  
+  
+    数字类型
+
+    
+      
+        整形
+
+        
+          默认值为：0
+        
+      
+      
+        浮点型
+
+ ...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1554038310"
+    data-df="YYYY-MM-DD"
+    >
+  2019-03-31
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/go_base/">Golang 入门介绍</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          Golang 基础
+
+本章源码
+
+初步认识 Golang
+
+
+  Go 跨平台（linux、windows、mac），只要编写完代码之后交叉编译即可
+  Go 语言单一、简洁、天生高并发、CGO
+  Go 应用广（web 应用、区块链、运维、云计算、大数据）
+
+
+Go 环境
+
+
+  不管学那一语言都有自己运行环境（html5除外），对于 Go 环境golang 官网有 windows、lin...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1553959919"
+    data-df="YYYY-MM-DD"
+    >
+  2019-03-30
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/baseAll/">Golang Base</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          GoLang
+
+GoLang
+
+https://go-zh.org/
+
+基础
+
+包、变量和函数、基本类型
+
+
+  包 package
+每个程序都是由包组成
+  导入 import
+圆括号可以组合导入
+  导出 在 Go 语言中首字母大写的名称是被导出的
+    
+      导入了一个包后，可以导出名称来调用他
+      Foo 和 FOO 都是被导出的名称。名称 foo 是不会被导出的
+...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1551921663"
+    data-df="YYYY-MM-DD"
+    >
+  2019-03-07
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang
+          </span>
           
 
         </div>
@@ -1319,10 +1432,27 @@ description = “9（系统启动控制、进程管理）”
 
   
 
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- show number -->
+      <li class="page-item ">
+        <a class="page-link btn-box-shadow" href="/page9">9</a>
+      </li>
+    
+
+  
+
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>7</span>
-    <span class="text-muted">/ 8</span>
+    <span class="text-muted">/ 9</span>
   </li>
 
   <!-- right arrow -->
@@ -1372,16 +1502,6 @@ description = “9（系统启动控制、进程管理）”
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1392,7 +1512,7 @@ description = “9（系统启动控制、进程管理）”
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1470,143 +1590,6 @@ description = “9（系统启动控制、进程管理）”
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1696,155 +1679,10 @@ description = “9（系统启动控制、进程管理）”
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2009,12 +1847,141 @@ description = “9（系统启动控制、进程管理）”
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2154,6 +2121,366 @@ description = “9（系统启动控制、进程管理）”
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2196,6 +2523,9 @@ description = “9（系统启动控制、进程管理）”
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2212,9 +2542,6 @@ description = “9（系统启动控制、进程管理）”
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2346,143 +2673,6 @@ description = “9（系统启动控制、进程管理）”
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2572,155 +2762,10 @@ description = “9（系统启动控制、进程管理）”
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2885,12 +2930,141 @@ description = “9（系统启动控制、进程管理）”
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3030,6 +3204,366 @@ description = “9（系统启动控制、进程管理）”
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3072,6 +3606,9 @@ description = “9（系统启动控制、进程管理）”
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -3088,9 +3625,6 @@ description = “9（系统启动控制、进程管理）”
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

@@ -885,7 +885,7 @@
     <p>下载需要的<code class="language-plaintext highlighter-rouge">sql</code> 文件、与导入文件</p>
 
     <blockquote>
-      <p>下载文件 打开里面<code class="language-plaintext highlighter-rouge">.sql</code>文件 里面有创建数据库语句、先创建数据库然后、进入创建的数据库、再导入文件，下载文件地址<a href="http://images.lichaocheng.top/static/mysql/mysql_crash_course.zip">download</a>、或者直接查看<a href="http://images.lichaocheng.top/static/mysql/mysql_crash_course.sql">sql地址</a>，导入或者执行语句、没有报错即可</p>
+      <p>下载文件 打开里面<code class="language-plaintext highlighter-rouge">.sql</code>文件 里面有创建数据库语句、先创建数据库然后、进入创建的数据库、再导入文件，下载文件地址<a href="http://images.lichaocheng.top/static/mysql/mysql_crash_course.zip">download</a>、或者直接查看<a href="http://images.lichaocheng.top/static/mysql/mysql_crash_course.sql">sql 地址</a>，导入或者执行语句、没有报错即可</p>
     </blockquote>
   </li>
   <li>
@@ -907,12 +907,12 @@
   </li>
 </ul>
 
-<h3 id="第4章检索数据"><span class="mr-2">第4章（检索数据）</span><a href="#第4章检索数据" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="第-4-章检索数据"><span class="mr-2">第 4 章（检索数据）</span><a href="#第-4-章检索数据" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <h4 id="45-检索不同的行"><span class="mr-2">4.5 检索不同的行</span><a href="#45-检索不同的行" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <pre><code class="language-mysql">SELECT
-	vend_id 
+	vend_id
 FROM
 	products;
 </code></pre>
@@ -920,22 +920,22 @@ FROM
 <h4 id="46-限制结果"><span class="mr-2">4.6 限制结果</span><a href="#46-限制结果" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <pre><code class="language-mysql">SELECT
-	prod_name 
+	prod_name
 FROM
-	products 
+	products
 	LIMIT 5,
 	5;
 </code></pre>
 
-<h3 id="第6章过滤数据"><span class="mr-2">第6章（过滤数据）</span><a href="#第6章过滤数据" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="第-6-章过滤数据"><span class="mr-2">第 6 章（过滤数据）</span><a href="#第-6-章过滤数据" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <h4 id="61-where-字句"><span class="mr-2">6.1 where 字句</span><a href="#61-where-字句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <pre><code class="language-mysql">SELECT
 	prod_name,
-	prod_price 
+	prod_price
 FROM
-	products 
+	products
 WHERE
 	prod_price = 2.50;
 </code></pre>
@@ -950,31 +950,32 @@ WHERE
   <li><code class="language-plaintext highlighter-rouge">&gt;=</code></li>
   <li>&lt;=</li>
   <li>&lt;</li>
-  <li>BETWEEN  指定两者之间</li>
+  <li>BETWEEN 指定两者之间</li>
 </ul>
 
 <h5 id="621"><span class="mr-2">6.2.1</span><a href="#621" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+
 <pre><code class="language-mysql">SELECT
 	prod_name,
-	prod_price 
+	prod_price
 FROM
-	products 
+	products
 WHERE
 	prod_price &lt; 10;
 </code></pre>
 
-<h3 id="第7章数据过滤"><span class="mr-2">第7章（数据过滤）</span><a href="#第7章数据过滤" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="第-7-章数据过滤"><span class="mr-2">第 7 章（数据过滤）</span><a href="#第-7-章数据过滤" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="第14章使用子查询"><span class="mr-2">第14章（使用子查询）</span><a href="#第14章使用子查询" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="第-14-章使用子查询"><span class="mr-2">第 14 章（使用子查询）</span><a href="#第-14-章使用子查询" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <h4 id="142"><span class="mr-2">14.2</span><a href="#142" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <pre><code class="language-mysql">SELECT
-	cust_id 
+	cust_id
 FROM
-	orders 
+	orders
 WHERE
-	order_num IN ( SELECT order_num FROM orderitems WHERE prod_id = 'TNT2' )	
+	order_num IN ( SELECT order_num FROM orderitems WHERE prod_id = 'TNT2' )
 </code></pre>
 
 <h3 id="if-else-语句"><span class="mr-2">if else 语句</span><a href="#if-else-语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -982,18 +983,17 @@ WHERE
 <pre><code class="language-mysql">EXPLAIN SELECT
 	nattr.vpcname,
 CASE
-	( SELECT attr.STATUS FROM tb_nasnetattr attr WHERE nasid = 92 ) 
+	( SELECT attr.STATUS FROM tb_nasnetattr attr WHERE nasid = 92 )
 	WHEN 0 THEN
-	'查询原来的表' 
+	'查询原来的表'
 	WHEN 1 THEN
-	'查询修改的表' 
-	END AS long_and_lati 
+	'查询修改的表'
+	END AS long_and_lati
 FROM
-	tb_nasnetattr nattr 
+	tb_nasnetattr nattr
 WHERE
 	nattr.nasid = 92;
 </code></pre>
-
 
 </div>
 
@@ -1004,6 +1004,8 @@ WHERE
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
+      <a href='/categories/system/'>System</a>,
+      <a href='/categories/mysql/'>Mysql</a>,
       <a href='/categories/systemutils/'>SystemUtils</a>
   </div>
   
@@ -1098,16 +1100,6 @@ WHERE
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1118,7 +1110,7 @@ WHERE
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1196,143 +1188,6 @@ WHERE
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1422,155 +1277,10 @@ WHERE
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1735,12 +1445,141 @@ WHERE
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1880,6 +1719,366 @@ WHERE
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1922,6 +2121,9 @@ WHERE
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -1938,9 +2140,6 @@ WHERE
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2805,137 +3004,254 @@ WHERE
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -3034,67 +3350,6 @@ WHERE
       
       
       <div class="card">
-        <a href="/posts/databases/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1576821421"
-    data-df="YYYY-MM-DD"
-    >
-  2019-12-20
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Databases（04735）</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                数据库系统原理（04735）
-
-第一章数据库系统概述
-
-第三节数据库系统的结构
-
-模式：物理独立性 外模式：逻辑独立性
-
-
-  数据库系统结构
-    
-      客户端系统结构
-      浏览器/服务器结构
-        
-          表示层、处理层、数据层
-        
-      
-    
-  
-
-
-第四节数据模型
-
-
-  数据模型的分类：概念层数据模型、逻辑层数据...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/MySQL-lock/">
           <div class="card-body">
             <!--
@@ -3183,7 +3438,7 @@ mysql&amp;gt; show tables;
                 MySQL 忘记密码
 
 
-  注：vim 修改文件 i  保存退出 :wq ， 不修改退出 :q!
+  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
 
 
 关闭服务
@@ -3196,7 +3451,68 @@ mysql&amp;gt; show tables;
 6
 [root@Cc ~]# ps -ef |grep mysql
 root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
-mysql    20039     1  0...
+mysql    20039     1  0 ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/databases/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1576821421"
+    data-df="YYYY-MM-DD"
+    >
+  2019-12-20
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Databases（04735）</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                数据库系统原理（04735）
+
+第一章数据库系统概述
+
+第三节数据库系统的结构
+
+模式：物理独立性 外模式：逻辑独立性
+
+
+  数据库系统结构
+    
+      客户端系统结构
+      浏览器/服务器结构
+        
+          表示层、处理层、数据层
+        
+      
+    
+  
+
+
+第四节数据模型
+
+
+  数据模型的分类：概念层数据模型、逻辑层数据...
               </p>
             </div>
           </div>
@@ -3356,143 +3672,6 @@ mysql    20039     1  0...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3582,155 +3761,10 @@ mysql    20039     1  0...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -3895,12 +3929,141 @@ mysql    20039     1  0...
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4040,6 +4203,366 @@ mysql    20039     1  0...
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -4082,6 +4605,9 @@ mysql    20039     1  0...
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -4098,9 +4624,6 @@ mysql    20039     1  0...
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>

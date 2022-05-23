@@ -474,6 +474,377 @@
 
     <div class="post-preview">
       <h1>
+        <a href="/posts/etcd_base/">etcd Base</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          etcd 简介
+
+etcd 是 CoreOS 团队于 2013 年 6 月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd 内部采用raft协议作为一致性算法，etcd 基于 Go 语言实现。
+
+etcd 作为服务发现系统，有以下的特点：
+
+
+  简单：安装配置简单，而且提供了 HTTP API 进行交互，使用也很简单
+  安全：支持 SSL 证书验...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587391501"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-20
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Etcd,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/consul_base/">Consul Base</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          安装
+
+https://www.consul.io/downloads.html
+
+docker 单机部署
+
+ docker run -d -p 8500:8500 -v /data/consul:/consul/data -e CONSUL_BIND_INTERFACE=&#39;eth0&#39; --name=consul1 consul agent -server -bootstrap -ui -c...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587391501"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-20
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Consul,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/system-shell-base/">linux Shell Base</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          Shell
+
+Github
+
+helloworld
+
+
+  
+    创建与写
+
+    touch helloworld.sh
+vim helloworld.sh
+
+#!/bin/bash
+echo &quot;Hello World !&quot;
+
+// #! 是个约定标记
+// echo 向窗口输出文本
+    
+  
+  
+    执行
+    chmod +x ./helloworld.sh
+./h...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587391501"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-20
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Shell,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/bash_shell/">零散的脚本</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          开发 sh 脚本
+
+杀死进程
+
+kill.sh
+
+#!/bin/sh
+#根据进程名杀死进程
+if [ $# -lt 1 ]
+then
+  echo &quot;缺少参数：procedure_name&quot;
+  exit 1
+fi
+
+PROCESS=`ps -ef|grep $1|grep -v grep|grep -v PPID|awk &#39;{ print $2}&#39;`
+for i in $PROCESS
+d...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587391501"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-20
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Shell,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/other/">System Linux Error</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          ssh 工具
+
+
+  MobaXterm
+  Xshell
+
+
+记录
+
+开启 root 用户登录
+https://blog.csdn.net/wy_97/article/details/78294562
+
+yum install htop
+
+No package htop available.
+Error: Nothing to do
+
+解决办法
+解决办法，安装epel-release之后，...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587391501"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-20
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            Other,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
         <a href="/posts/Jurisdiction/">系统设计（自动化权限）</a>
       </h1>
 
@@ -535,7 +906,8 @@
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server
+            Server,
+            Golang
           </span>
           
 
@@ -600,6 +972,8 @@ root@Accesshub:/...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            System,
+            OpenWrt,
             SystemUtils
           </span>
           
@@ -681,7 +1055,8 @@ View i...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            System
+            System,
+            Git
           </span>
           
 
@@ -711,14 +1086,14 @@ View i...
           MySQL 忘记密码
 
 
-  注：vim 修改文件 i  保存退出 :wq ， 不修改退出 :q!
+  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
 
 
 关闭服务
 
 [root@Cc ~]# ps -ef |grep mysql
 root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
-mysql    20039     1  0 12:39 ?    ...
+mysql    20039     1  0 12:39 ?     ...
         </p>
       </div>
 
@@ -749,6 +1124,8 @@ mysql    20039     1  0 12:39 ?    ...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
+            System,
+            Mysql,
             SystemUtils
           </span>
           
@@ -765,7 +1142,7 @@ mysql    20039     1  0 12:39 ?    ...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/frp/">frp 内网穿透</a>
+        <a href="/posts/9-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%8E%A7%E5%88%B6-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">linux(CentOS7) 网络管理</a>
       </h1>
 
       <div class="post-content">
@@ -776,23 +1153,29 @@ mysql    20039     1  0 12:39 ?    ...
 
 
 
-          frp 内网穿透
-环境准备
+          系统启动控制、进程管理
 
-  Linux环境
-  Windows环境
-  Linux 云服务 开启需要端口
-  Windows
-    配置文件
-  
-  *s.ini 是服务端配置文件
-  *c.ini 是客服端配置文件
-    frps.ini（linux）
-    目录结构
-    ```shell
-[root@k8s-master linux]# ll
-总用量 11096
--rw...
+系统启动控制
+
+
+  0—-停机
+  1—单用户模式
+  2—多用户模式（没有网络文件系统）
+  3—完全多用户模式
+  4—忽略
+  5—X11 一般图形界面
+  6— 重新启动（不推荐这操作，请谨慎操作）
+
+
+
+  如果你远程黑进了系统 可以试试这个 6 操作 应该会一直重启
+
+
+设置操作
+
+
+  runleve 查看当前系统启动状态，N 代表代表上次运行级别
+...
         </p>
       </div>
 
@@ -811,10 +1194,10 @@ mysql    20039     1  0 12:39 ?    ...
 
 
 <em class=""
-    data-ts="1584941545"
+    data-ts="1585414152"
     data-df="YYYY-MM-DD"
     >
-  2020-03-23
+  2020-03-29
 </em>
 
 
@@ -823,346 +1206,8 @@ mysql    20039     1  0 12:39 ?    ...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            SystemUtils
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/k8sBase/">Kubernetes概述</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          什么是Kubernetes
-
-
-  为什叫k8sK~s 中间有8个字符，8代替了ubernete    参考文档
-
-
-Kubernetes 你能做什么
-
-
-  快速部署应用
-  快速扩展应用
-  无缝对接新的应用功能
-  节省资源，优化硬件资源的使用
-    Kubernetes 特点
-  
-  可移植: 支持公有云，私有云，混合云，多重云（multi-cloud）
-  可扩展: 模块化, ...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1584885600"
-    data-df="YYYY-MM-DD"
-    >
-  2020-03-22
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            SystemUtils
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/%E5%AE%89%E8%A3%85mysql/">Dockers 安装 Mysql</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          前期工作安装docker
-docker version
-[root@test ~]# docker version
-Client: Docker Engine - Community
- Version:           19.03.5
- API version:       1.40
- Go version:        go1.12.12
- Git commit:        63...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1584368934"
-    data-df="YYYY-MM-DD"
-    >
-  2020-03-16
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            SystemUtils
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/docker-%E9%83%A8%E7%BD%B2web-%E9%A1%B9%E7%9B%AE/">docker 部署 Go Web 程序</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          docker 部署 Go Web 程序
-
-http
-
-[root@Cc dockerFile]# tree
-.
-├── Dockerfile
-├── go.mod
-└── main.go
-
-
-[root@Cc dockerFile]# cat Dockerfile
-FROM golang:alpine
-
-# 为我们的镜像设置必要的环境变量
-ENV GO111MODULE=on \
-    C...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1584368934"
-    data-df="YYYY-MM-DD"
-    >
-  2020-03-16
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            SystemUtils
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/Nginx%E9%85%8D%E7%BD%AE/">Nginx配置</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          配置https
-server {
-    listen 443 ssl;  # 1.1版本后这样写
-    server_name lichaocheng.top; #填写绑定证书的域名
-    ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem;  # 指定证书的位置，绝对路径
-    ...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1583936584"
-    data-df="YYYY-MM-DD"
-    >
-  2020-03-11
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            SystemUtils
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/Nginx%E5%AE%89%E8%A3%85/">Nginx 安装</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          linux 命令安装
-1.添加Nginx到YUM源
-添加CentOS 7 Nginx yum资源库,打开终端,使用以下命令:
-
-sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-2.安装Nginx
-在你的CentOS 7 服务器中使用...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1583936584"
-    data-df="YYYY-MM-DD"
-    >
-  2020-03-11
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
+            System,
+            RedHad,
             SystemUtils
           </span>
           
@@ -1325,9 +1370,24 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page8">8</a>
+        <a class="page-link btn-box-shadow" href="/page9">9</a>
       </li>
     
 
@@ -1336,7 +1396,7 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>2</span>
-    <span class="text-muted">/ 8</span>
+    <span class="text-muted">/ 9</span>
   </li>
 
   <!-- right arrow -->
@@ -1386,16 +1446,6 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
         
         
         
-      <li><a href="/posts/Interview/">Golang面试</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/reactBase/">React 基础</a></li>
-      
-        
-        
-        
       <li><a href="/posts/redis-all/">Redis 汇总</a></li>
       
         
@@ -1406,7 +1456,7 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
         
         
         
-      <li><a href="/posts/mapAndContainer/">Day09（MapAndContainer）</a></li>
+      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1484,143 +1534,6 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1710,155 +1623,10 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2023,12 +1791,141 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2168,6 +2065,366 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2210,6 +2467,9 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -2226,9 +2486,6 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
@@ -2360,143 +2617,6 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2586,155 +2706,10 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2899,12 +2874,141 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3044,6 +3148,366 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3086,6 +3550,9 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
@@ -3102,9 +3569,6 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     
       
       <a class="post-tag" href="/tags/mysql/">Mysql</a>
-    
-      
-      <a class="post-tag" href="/tags/selfstudy/">SelfStudy</a>
     
 
     </div>
