@@ -54,7 +54,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Nginx 安装" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-03-11T22:23:04+08:00","datePublished":"2020-03-11T22:23:04+08:00","description":"Nginx 配置http、https、静态绑定、转发","headline":"Nginx 安装","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Nginx%E5%AE%89%E8%A3%85/"},"url":"http://localhost:4000/posts/Nginx%E5%AE%89%E8%A3%85/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-23T11:34:09+08:00","datePublished":"2020-03-11T22:23:04+08:00","description":"Nginx 配置http、https、静态绑定、转发","headline":"Nginx 安装","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Nginx%E5%AE%89%E8%A3%85/"},"url":"http://localhost:4000/posts/Nginx%E5%AE%89%E8%A3%85/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -638,6 +638,26 @@
 
     <!-- lastmod date -->
     
+    <span>
+      更新于
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1653276849"
+    data-df="YYYY-MM-DD"
+    data-toggle="tooltip" data-placement="bottom">
+  2022-05-23
+</em>
+
+    </span>
+    
 
   
 
@@ -913,17 +933,27 @@ sudo /etc/init.d/nginx {start|restart|stop}
         
         
         
-      <li><a href="/posts/redis-all/">Redis 汇总</a></li>
+      <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
       
         
         
         
-      <li><a href="/posts/kubectl/">Kubectl</a></li>
+      <li><a href="/posts/day01/">MySQL 入门介绍</a></li>
       
         
         
         
-      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
+      <li><a href="/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/">Docker 理论知识</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">阿里云docker 镜像仓库</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/docker-install/">docker 安装实例</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -2427,33 +2457,33 @@ sudo /etc/init.d/nginx {start|restart|stop}
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -3233,7 +3263,7 @@ server {
       
       
       <div class="card">
-        <a href="/posts/etcd_pro/">
+        <a href="/posts/consul_base/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3251,7 +3281,7 @@ server {
   2020-04-20
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>etcd Pro</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Consul Base</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3260,19 +3290,14 @@ server {
 
 
 
-                etcd 的初步使用
+                安装
 
-StormZhu · 2018-11-21 01:34:40 · 1305 次点击 · 预计阅读时间 4 分钟 · 不到 1 分钟之前 开始浏览
+https://www.consul.io/downloads.html
 
-这是一个创建于 2018-11-21 01:34:40 的文章，其中的信息可能已经有所发展或是发生改变。
+docker 单机部署
 
-简介
-
-
-
-etcd 介绍.png
-
-etcd是一个golang编写的分布式、高可用的一致性键值存储系统，用于提供...
+1
+ docker run -d -p 8500:8500 -v /data/consul:/consul/data -e CONSUL_BIND_INTERFACE=&#39;eth0&#39; --name=consul1 consul agent -server -bootstrap -ui ...
               </p>
             </div>
           </div>

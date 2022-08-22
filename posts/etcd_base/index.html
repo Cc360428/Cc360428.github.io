@@ -1619,17 +1619,27 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
         
         
         
-      <li><a href="/posts/redis-all/">Redis 汇总</a></li>
+      <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
       
         
         
         
-      <li><a href="/posts/kubectl/">Kubectl</a></li>
+      <li><a href="/posts/day01/">MySQL 入门介绍</a></li>
       
         
         
         
-      <li><a href="/posts/MySQL-lock/">MySQL 锁</a></li>
+      <li><a href="/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/">Docker 理论知识</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">阿里云docker 镜像仓库</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/docker-install/">docker 安装实例</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -2821,33 +2831,33 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -3918,6 +3928,49 @@ etcd是一个golang编写的分布式、高可用的一致性键值存储系统�
       
       
       <div class="card">
+        <a href="/posts/consul_base/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1587391501"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-20
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Consul Base</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                安装
+
+https://www.consul.io/downloads.html
+
+docker 单机部署
+
+ docker run -d -p 8500:8500 -v /data/consul:/consul/data -e CONSUL_BIND_INTERFACE=&#39;eth0&#39; --name=consul1 consul agent -server -bootstrap -ui -c...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/day01/">
           <div class="card-body">
             <!--
@@ -3967,50 +4020,6 @@ etcd是一个golang编写的分布式、高可用的一致性键值存储系统�
 
     
       CR...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1546318134"
-    data-df="YYYY-MM-DD"
-    >
-  2019-01-01
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Docker 理论知识</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                为什么要使用 docker
-
-简易部署
-
-兼容平台
-
-简化配置
-
               </p>
             </div>
           </div>
