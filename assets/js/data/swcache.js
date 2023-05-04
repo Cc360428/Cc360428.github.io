@@ -40,8 +40,7 @@ const resource = [
     '/assets/js/dist/misc.min.js',
     '/assets/js/dist/page.min.js',
     '/assets/js/dist/post.min.js',
-    '/assets/js/dist/pvreport.min.js',
-    '/assets/img/favicons/.DS_Store'
+    '/assets/js/dist/pvreport.min.js'
 
 ];
 
@@ -49,10 +48,10 @@ const resource = [
 const allowedDomains = [
   
 
-  'localhost:4000',
+  'cc360428.github.io/',
 
   
-    'cc360428.github.io',
+    'cc360428.gitee.io',
   
 
   'fonts.gstatic.com',

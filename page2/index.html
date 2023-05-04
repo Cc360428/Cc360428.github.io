@@ -46,16 +46,16 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="查看所有" />
 <meta property="og:description" content="查看所有" />
-<link rel="canonical" href="http://localhost:4000/page2/" />
-<meta property="og:url" content="http://localhost:4000/page2/" />
+<link rel="canonical" href="https://cc360428.github.io//page2/" />
+<meta property="og:url" content="https://cc360428.github.io//page2/" />
 <meta property="og:site_name" content="Cc" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="http://localhost:4000/" />
-<link rel="next" href="http://localhost:4000/page3" />
+<link rel="prev" href="https://cc360428.github.io//" />
+<link rel="next" href="https://cc360428.github.io//page3" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Cc" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"查看所有","headline":"Cc","url":"http://localhost:4000/page2/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"查看所有","headline":"Cc","url":"https://cc360428.github.io//page2/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -268,7 +268,7 @@
       <a href="/" class="mx-auto">
         
         
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://cc360428.gitee.io/blog/assets/img/favicons/all.png" alt="avatar" onerror="this.style.display='none'">
         
       </a>
     </div>
@@ -474,7 +474,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/system-shell-base/">linux Shell Base</a>
+        <a href="/posts/k8s-base/">Kubernetes 部署</a>
       </h1>
 
       <div class="post-content">
@@ -485,30 +485,17 @@
 
 
 
-          Shell
-
-Github
-
-helloworld
+          Kubernetes 搭建
 
 
   
-    创建与写
+    查看查询系统基本信息
 
-    touch helloworld.sh
-vim helloworld.sh
-
-#!/bin/bash
-echo &quot;Hello World !&quot;
-
-// #! 是个约定标记
-// echo 向窗口输出文本
-    
-  
-  
-    执行
-    chmod +x ./helloworld.sh
-./h...
+    uname -a #  查看版本当前操作系统内核信息
+cat /proc/version # 查看当前系统版本信息
+cat /etc/issue # 查看版本当前操作系统发行版本信息
+cat /etc/redhat-release # 查看版本当前操作系统发行版本信息
+cat /proc/cpuinfo  # OR...
         </p>
       </div>
 
@@ -527,10 +514,10 @@ echo &quot;Hello World !&quot;
 
 
 <em class=""
-    data-ts="1587391501"
+    data-ts="1615970613"
     data-df="YYYY-MM-DD"
     >
-  2020-04-20
+  2021-03-17
 </em>
 
 
@@ -540,7 +527,7 @@ echo &quot;Hello World !&quot;
           <span>
             
             System,
-            Shell,
+            Kubernetes,
             SystemUtils
           </span>
           
@@ -557,7 +544,7 @@ echo &quot;Hello World !&quot;
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/bash_shell/">零散的脚本</a>
+        <a href="/posts/go-1.13/">Go 1.13 版本更新 摘要</a>
       </h1>
 
       <div class="post-content">
@@ -568,23 +555,19 @@ echo &quot;Hello World !&quot;
 
 
 
-          开发 sh 脚本
+          Go 1.13
 
-杀死进程
 
-kill.sh
+  工具链、运行时、标准库
 
-#!/bin/sh
-#根据进程名杀死进程
-if [ $# -lt 1 ]
-then
-  echo &quot;缺少参数：procedure_name&quot;
-  exit 1
-fi
 
-PROCESS=`ps -ef|grep $1|grep -v grep|grep -v PPID|awk &#39;{ print $2}&#39;`
-for i in $PROCESS
-d...
+工具链
+
+
+  环境变量 Go111MODOULE 默认值 auto
+  增加了环境变量 GOPIVATE 私有变量
+
+
         </p>
       </div>
 
@@ -603,167 +586,10 @@ d...
 
 
 <em class=""
-    data-ts="1587391501"
+    data-ts="1608887482"
     data-df="YYYY-MM-DD"
     >
-  2020-04-20
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            System,
-            Shell,
-            SystemUtils
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/other/">System Linux Error</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          ssh 工具
-
-
-  MobaXterm
-  Xshell
-
-
-记录
-
-开启 root 用户登录
-https://blog.csdn.net/wy_97/article/details/78294562
-
-yum install htop
-
-No package htop available.
-Error: Nothing to do
-
-解决办法
-解决办法，安装epel-release之后，...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1587391501"
-    data-df="YYYY-MM-DD"
-    >
-  2020-04-20
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            System,
-            Other,
-            SystemUtils
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/Jurisdiction/">系统设计（自动化权限）</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          权限
-
-自动化权限
-
-
-  准备知识：swagger、递归、注解、过滤器
-
-
-设计
-
-
-  权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包比如：“Casbin、GRABC”，但是其怎么判断其实原理都是一样的
-
-
-
-
-表结构说明
-
-
-  用户表和用户与角色中间表：无论是超级管理员添加的还是注册用户都会有一个角色初始权限。如果是超级管理员添加添加是可以指定那些角色...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1587308316"
-    data-df="YYYY-MM-DD"
-    >
-  2020-04-19
+  2020-12-25
 </em>
 
 
@@ -789,7 +615,7 @@ Error: Nothing to do
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/uci/">openWrt uci</a>
+        <a href="/posts/Go-Micro%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">Micro hello Index</a>
       </h1>
 
       <div class="post-content">
@@ -800,14 +626,12 @@ Error: Nothing to do
 
 
 
-          
-  uci set
+          go-micro 中文网
 
 
-root@Accesshub:/etc/config# uci set qos.cc=interface
-root@Accesshub:/etc/config# uci set qos.cc.classgroup=default
-root@Accesshub:/etc/config# uci set qos.cc.enabled=1
-root@Accesshub:/...
+  https://microhq.cn/index-cn
+
+
         </p>
       </div>
 
@@ -826,10 +650,10 @@ root@Accesshub:/...
 
 
 <em class=""
-    data-ts="1587191584"
+    data-ts="1593152532"
     data-df="YYYY-MM-DD"
     >
-  2020-04-18
+  2020-06-26
 </em>
 
 
@@ -838,9 +662,9 @@ root@Accesshub:/...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            System,
-            OpenWrt,
-            SystemUtils
+            Server,
+            Golang,
+            Micro
           </span>
           
 
@@ -856,7 +680,7 @@ root@Accesshub:/...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/gitbase/">Git 基本命令 </a>
+        <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
       </h1>
 
       <div class="post-content">
@@ -867,30 +691,33 @@ root@Accesshub:/...
 
 
 
-          Git 工作用到的基本命令
-
-模拟环境
+          go-Micro
 
 
-  自己搭建了gogs 开源Git仓库
+  参考资料
 
 
-注册账号地址
+1 环境搭建
 
 
   
-    lcc、google
+    
+      work
+      version
+    
   
   
-    创建仓库Study
-  
-  
-    把lcc 添加管理协作者(收到邮件)
-  
-
-
-You have been added as a collaborator of repository: google/Study
-View i...
+    
+      System
+      windows 8.1
+    
+    
+      golang
+      go version go1.13.4 windows/amd64
+    
+    
+      micro
+   ...
         </p>
       </div>
 
@@ -909,10 +736,10 @@ View i...
 
 
 <em class=""
-    data-ts="1587191584"
+    data-ts="1593152532"
     data-df="YYYY-MM-DD"
     >
-  2020-04-18
+  2020-06-26
 </em>
 
 
@@ -921,8 +748,9 @@ View i...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            System,
-            Git
+            Server,
+            Golang,
+            Micro
           </span>
           
 
@@ -938,7 +766,7 @@ View i...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/mysqlupdatepassword/">MySQL 忘记密码</a>
+        <a href="/posts/Go-Micro-1.2-api/">Micro API</a>
       </h1>
 
       <div class="post-content">
@@ -949,17 +777,22 @@ View i...
 
 
 
-          MySQL 忘记密码
+          micro API
+
+Go API 是基于服务发现驱动开发的可插拔 API 框架，旨在帮助构建强大的 API 网关。
+
+指令
 
 
-  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
+  micro api 参数
 
 
-关闭服务
+$ micro api -h
+NAME:
+   micro.exe api - Run the api gateway
 
-[root@Cc ~]# ps -ef |grep mysql
-root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
-mysql    20039     1  0 12:39 ?     ...
+USAGE:
+   micro.exe api [command options] [arguments.....
         </p>
       </div>
 
@@ -978,10 +811,10 @@ mysql    20039     1  0 12:39 ?     ...
 
 
 <em class=""
-    data-ts="1587183708"
+    data-ts="1593152532"
     data-df="YYYY-MM-DD"
     >
-  2020-04-18
+  2020-06-26
 </em>
 
 
@@ -990,9 +823,9 @@ mysql    20039     1  0 12:39 ?     ...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            System,
-            Mysql,
-            SystemUtils
+            Server,
+            Golang,
+            Micro
           </span>
           
 
@@ -1008,7 +841,7 @@ mysql    20039     1  0 12:39 ?     ...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/9-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%8E%A7%E5%88%B6-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">linux(CentOS7) 网络管理</a>
+        <a href="/posts/kratos-%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%8F%91%E7%8E%B0(discovery)/">kratos discovery</a>
       </h1>
 
       <div class="post-content">
@@ -1019,29 +852,173 @@ mysql    20039     1  0 12:39 ?     ...
 
 
 
-          系统启动控制、进程管理
-
-系统启动控制
+          常见的微服务注册中心
 
 
-  0—-停机
-  1—单用户模式
-  2—多用户模式（没有网络文件系统）
-  3—完全多用户模式
-  4—忽略
-  5—X11 一般图形界面
-  6— 重新启动（不推荐这操作，请谨慎操作）
+  consul
+  etcd
+  zookeeper
+  Eureka
+  kratos(discovery)
+
+
+discovery
+
+安装
+
+源码安装
+
+
+  github
+  下载生成可执行文件
+
+
+git clone https://github.com/bilibili/discovery.git
+cd discovery/cmd/discovery
+g...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
 
 
-  如果你远程黑进了系统 可以试试这个 6 操作 应该会一直重启
 
 
-设置操作
+<em class=""
+    data-ts="1593152532"
+    data-df="YYYY-MM-DD"
+    >
+  2020-06-26
+</em>
 
 
-  runleve 查看当前系统启动状态，N 代表代表上次运行级别
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang,
+            kratos
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/kratos-kratos-%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%A5%E5%8F%A3/">kratos interface</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          kratos 微服务
+
+常见的 url
+
+
+  查看所有 discovery 表：http://172.12.15.81:7171/discovery/fetch/all
+  查看服务的所有 http 对外接口：http://127.0.0.1:36001/metadata
+
+
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1593152532"
+    data-df="YYYY-MM-DD"
+    >
+  2020-06-26
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang,
+            kratos
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/kratos-kratos-%E5%B7%A5%E5%85%B7/">kratos utils</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          安装所有 kraots 工具集
+
+
+  通过 kratos 安装
+
+
+执行命令:kratos tool install all
+
+$ kratos tool install all
+go get -u github.com/go-kratos/kratos/tool/kratos@v0.5.0
 ...
+kratos: 安装成功!
+...
+protoc: 安装成功!
+...
+genbts: 安...
         </p>
       </div>
 
@@ -1060,10 +1037,10 @@ mysql    20039     1  0 12:39 ?     ...
 
 
 <em class=""
-    data-ts="1585414152"
+    data-ts="1593152532"
     data-df="YYYY-MM-DD"
     >
-  2020-03-29
+  2020-06-26
 </em>
 
 
@@ -1072,9 +1049,9 @@ mysql    20039     1  0 12:39 ?     ...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            System,
-            RedHad,
-            SystemUtils
+            Server,
+            Golang,
+            kratos
           </span>
           
 
@@ -1090,7 +1067,7 @@ mysql    20039     1  0 12:39 ?     ...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/10-%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/">linux(CentOS7) 网络管理</a>
+        <a href="/posts/kratos-kratos-%E5%85%A5%E9%97%A8/">kratos base</a>
       </h1>
 
       <div class="post-content">
@@ -1101,36 +1078,18 @@ mysql    20039     1  0 12:39 ?     ...
 
 
 
-          网络基础知识以及网络管理内容
-
-网络管理协议
+          kratos 环境搭建
 
 
-  好多概念知识，会拿出时间来讲解这张预留的空白
+  安装 kratos
+go get -u github.com/go-kratos/kratos/tool/kratos
 
 
-TCP/IP 协议概述
+使用 kratos 脚手架创建项目
 
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-OSI 参考模型
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-包（packet）
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-网络字节顺序
-
-
-  好多概念知识，会拿出时间来讲解这...
+$ kratos new kratos_7
+go get -u github.com/go-kratos/kratos/tool/kratos-gen-project@v0.5.0
+go: found...
         </p>
       </div>
 
@@ -1149,10 +1108,10 @@ OSI 参考模型
 
 
 <em class=""
-    data-ts="1585414152"
+    data-ts="1593152532"
     data-df="YYYY-MM-DD"
     >
-  2020-03-29
+  2020-06-26
 </em>
 
 
@@ -1161,9 +1120,9 @@ OSI 参考模型
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            System,
-            RedHad,
-            SystemUtils
+            Server,
+            Golang,
+            kratos
           </span>
           
 
@@ -1179,7 +1138,7 @@ OSI 参考模型
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/8-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%AE%A1%E7%90%86/">linux(CentOS7) 应用程序管理</a>
+        <a href="/posts/kratos-kratos-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">kratos 依赖注入</a>
       </h1>
 
       <div class="post-content">
@@ -1190,27 +1149,8 @@ OSI 参考模型
 
 
 
-          应用程序管理
+          
 
-软件包基础
-
-常见安装工具包
-
-
-  RPM
-  DPKG
-
-
-RPM 使用
-
-安装软件 （rz 示例）
-
-
-  都和以下载
-
-  ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm
-
-  wget http://images...
         </p>
       </div>
 
@@ -1229,10 +1169,10 @@ RPM 使用
 
 
 <em class=""
-    data-ts="1585383072"
+    data-ts="1593152532"
     data-df="YYYY-MM-DD"
     >
-  2020-03-28
+  2020-06-26
 </em>
 
 
@@ -1241,9 +1181,9 @@ RPM 使用
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            System,
-            RedHad,
-            SystemUtils
+            Server,
+            Golang,
+            kratos
           </span>
           
 
@@ -1420,9 +1360,54 @@ RPM 使用
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page9">9</a>
+        <a class="page-link btn-box-shadow" href="/page12">12</a>
       </li>
     
 
@@ -1431,7 +1416,7 @@ RPM 使用
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>2</span>
-    <span class="text-muted">/ 9</span>
+    <span class="text-muted">/ 12</span>
   </li>
 
   <!-- right arrow -->
@@ -1481,27 +1466,27 @@ RPM 使用
         
         
         
+      <li><a href="/posts/databases/">Databases（04735）</a></li>
+      
+        
+        
+        
       <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
       
         
         
         
-      <li><a href="/posts/day01/">MySQL 入门介绍</a></li>
+      <li><a href="/posts/DataStructure/">DataStructure（02142）</a></li>
       
         
         
         
-      <li><a href="/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/">Docker 理论知识</a></li>
+      <li><a href="/posts/appOffLinePush/">手机推送</a></li>
       
         
         
         
-      <li><a href="/posts/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">阿里云docker 镜像仓库</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/docker-install/">docker 安装实例</a></li>
+      <li><a href="/posts/Concurrent/">Day11（并发编程）</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1599,60 +1584,6 @@ RPM 使用
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1672,599 +1603,6 @@ RPM 使用
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2439,6 +1777,50 @@ RPM 使用
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2470,6 +1852,772 @@ RPM 使用
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2506,31 +2654,31 @@ RPM 使用
       <a class="post-tag" href="/tags/golang/">golang</a>
     
       
-      <a class="post-tag" href="/tags/gobase/">GoBase</a>
-    
-      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
-      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+      <a class="post-tag" href="/tags/gobase/">GoBase</a>
     
       
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
-      <a class="post-tag" href="/tags/network/">network</a>
-    
-      
-      <a class="post-tag" href="/tags/docker/">Docker</a>
-    
-      
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
-      <a class="post-tag" href="/tags/kubernetes/">Kubernetes</a>
+      <a class="post-tag" href="/tags/grpc/">gRPC</a>
     
       
-      <a class="post-tag" href="/tags/mysql/">Mysql</a>
+      <a class="post-tag" href="/tags/microservices/">Microservices</a>
+    
+      
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
+      <a class="post-tag" href="/tags/gointerview/">GoInterview</a>
+    
+      
+      <a class="post-tag" href="/tags/kratos/">kratos</a>
     
 
     </div>
@@ -2556,7 +2704,7 @@ RPM 使用
   <div class="d-flex justify-content-between align-items-center text-muted">
     <div class="footer-left">
       <p class="mb-0">
-        © 2022
+        © 2023
         <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
         
         <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span>
@@ -2682,60 +2830,6 @@ RPM 使用
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2755,599 +2849,6 @@ RPM 使用
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3522,6 +3023,50 @@ RPM 使用
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3553,6 +3098,772 @@ RPM 使用
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3589,31 +3900,31 @@ RPM 使用
       <a class="post-tag" href="/tags/golang/">golang</a>
     
       
-      <a class="post-tag" href="/tags/gobase/">GoBase</a>
-    
-      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
-      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+      <a class="post-tag" href="/tags/gobase/">GoBase</a>
     
       
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
-      <a class="post-tag" href="/tags/network/">network</a>
-    
-      
-      <a class="post-tag" href="/tags/docker/">Docker</a>
-    
-      
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
-      <a class="post-tag" href="/tags/kubernetes/">Kubernetes</a>
+      <a class="post-tag" href="/tags/grpc/">gRPC</a>
     
       
-      <a class="post-tag" href="/tags/mysql/">Mysql</a>
+      <a class="post-tag" href="/tags/microservices/">Microservices</a>
+    
+      
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
+      <a class="post-tag" href="/tags/gointerview/">GoInterview</a>
+    
+      
+      <a class="post-tag" href="/tags/kratos/">kratos</a>
     
 
     </div>

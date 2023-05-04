@@ -1,33 +1,198 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>https://cc360428.github.io//</id>
   <title>Cc</title>
   <subtitle>查看所有</subtitle>
-  <updated>2022-08-22T22:28:43+08:00</updated>
+  <updated>2023-05-04T17:19:15+08:00</updated>
   <author>
     <name>Cc</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>https://cc360428.github.io//</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="https://cc360428.github.io//feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="zh-CN"
-    href="http://localhost:4000/"/>
+    href="https://cc360428.github.io//"/>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
-  <rights> © 2022 Cc </rights>
+  <rights> © 2023 Cc </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
+    <title>Leetcode Day02（数组）</title>
+    <link href="https://cc360428.github.io//posts/leetcode-array/" rel="alternate" type="text/html" title="Leetcode Day02（数组）" />
+    <published>2023-01-02T08:08:09+08:00</published>
+  
+    <updated>2023-01-02T08:08:09+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/leetcode-array/</id>
+    <content src="https://cc360428.github.io//posts/leetcode-array/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Server" />
+    
+    <category term="Algorith" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      数组
+
+两数之和
+
+
+  题目连接
+  
+    题目解释
+
+    
+      给定一个整数数组 nums和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那两个整数，并返回它们的数组下标。
+      你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+      你可以按任意顺序返回答案。
+    
+  
+  
+    示例 1
+
+    输入：nums = [2,7,11,15], target = 9
+输出：[0,1]
+解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1]
+    
+  
+  
+    示例 2
+
+    输入：nums = [3,2,4], target = 6
+输出：[1,2]
+    
+  
+  
+    示例 3
+
+    输入：nums = [3,3], tar...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Leetcode Day01（Readme）</title>
+    <link href="https://cc360428.github.io//posts/leetcode-readme/" rel="alternate" type="text/html" title="Leetcode Day01（Readme）" />
+    <published>2023-01-01T08:08:08+08:00</published>
+  
+    <updated>2023-01-01T08:08:08+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/leetcode-readme/</id>
+    <content src="https://cc360428.github.io//posts/leetcode-readme/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Server" />
+    
+    <category term="Algorith" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      LeetCode
+
+
+  中国站
+  国际站
+  PS
+    
+      建议在中国站做完之后，可以去看下国际站，国际上对题目的理解
+    
+  
+  解题语言全部使用Golang
+
+
+解题顺序
+
+
+  按照 Tag 分类
+  从简单到困难
+
+
+解题方法
+
+
+  先思考、写出方法
+  写出伪代码
+  写出自己答案
+  运行查看结果维度
+  复习
+    
+      第一遍：解题
+      第二遍：写出最优解题方案
+      第三遍：最快时间写出解题答案
+    
+  
+
+
+解题Tag顺序
+
+
+  数组
+  链表
+  哈希表
+  字符串
+  双指针罚
+  栈与队列
+  二叉树
+  回溯算法
+  贪心算法
+  动态规划
+  单调栈
+  Other
+
+
+算法性能分析
+
+
+  详细可以查看本站文章：DataStructure
+
+
+
+  时间复杂度：运行时需要的总步数，通常时问题规...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>DataStructure（02142）</title>
-    <link href="http://localhost:4000/posts/DataStructure/" rel="alternate" type="text/html" title="DataStructure（02142）" />
+    <link href="https://cc360428.github.io//posts/DataStructure/" rel="alternate" type="text/html" title="DataStructure（02142）" />
     <published>2022-03-31T21:19:55+08:00</published>
   
-    <updated>2022-03-31T21:19:55+08:00</updated>
+    <updated>2022-10-24T20:11:44+08:00</updated>
   
-    <id>http://localhost:4000/posts/DataStructure/</id>
-    <content src="http://localhost:4000/posts/DataStructure/" />
+    <id>https://cc360428.github.io//posts/DataStructure/</id>
+    <content src="https://cc360428.github.io//posts/DataStructure/" />
     <author>
       <name>Cc</name>
     </author>
@@ -87,9 +252,8 @@
       数据-&amp;gt;数据元素-&amp;gt;数据项
     
   
-  逻辑结构：元素之间的结构关系（集合、线性、树形、图结构）
-    
-  ...
+  逻辑结构：元素之间的结构关系（集合、线性、树形、图结构）线性和非线性
+ ...
     </summary>
   
 
@@ -98,13 +262,13 @@
   
   <entry>
     <title>InternetPrinciples（04735）</title>
-    <link href="http://localhost:4000/posts/InternetPrinciples/" rel="alternate" type="text/html" title="InternetPrinciples（04735）" />
+    <link href="https://cc360428.github.io//posts/InternetPrinciples/" rel="alternate" type="text/html" title="InternetPrinciples（04735）" />
     <published>2022-03-20T13:57:01+08:00</published>
   
-    <updated>2022-05-25T22:41:12+08:00</updated>
+    <updated>2022-10-24T20:11:44+08:00</updated>
   
-    <id>http://localhost:4000/posts/InternetPrinciples/</id>
-    <content src="http://localhost:4000/posts/InternetPrinciples/" />
+    <id>https://cc360428.github.io//posts/InternetPrinciples/</id>
+    <content src="https://cc360428.github.io//posts/InternetPrinciples/" />
     <author>
       <name>Cc</name>
     </author>
@@ -160,7 +324,9 @@
 网络分类
 
 
-  按覆盖范围分类
+  
+    按覆盖范围分类
+
     
       个域网：PAN 1-10m
       局域网：LAN 10m-1km
@@ -168,10 +334,11 @@
       广域网：WAN 几十到几千米
     
   
-  按拓扑结构分类
+  
+    按拓扑结构分类
+
     
-      星形拓扑结构：易监管，故障诊断隔离；中央结点网络瓶颈，一旦故障全网瘫痪；受限中央结点
-      总...
+      星形拓扑结构：易监管，故障诊断隔离；中央结点网络瓶颈，一旦故障全网瘫痪；受限...
     </summary>
   
 
@@ -179,14 +346,14 @@
 
   
   <entry>
-    <title>Pprof</title>
-    <link href="http://localhost:4000/posts/pprof/" rel="alternate" type="text/html" title="Pprof" />
-    <published>2021-03-17T18:01:33+08:00</published>
+    <title>Go mod</title>
+    <link href="https://cc360428.github.io//posts/go.mod/" rel="alternate" type="text/html" title="Go mod" />
+    <published>2021-03-18T18:01:33+08:00</published>
   
-    <updated>2021-03-17T18:01:33+08:00</updated>
+    <updated>2021-03-18T18:01:33+08:00</updated>
   
-    <id>http://localhost:4000/posts/pprof/</id>
-    <content src="http://localhost:4000/posts/pprof/" />
+    <id>https://cc360428.github.io//posts/go.mod/</id>
+    <content src="https://cc360428.github.io//posts/go.mod/" />
     <author>
       <name>Cc</name>
     </author>
@@ -207,180 +374,37 @@
 
 
 
-      Go pprof And Prometheus
+      Go mod
 
-在代码中使用
+基础
 
-import (
-  ...
-	_ "net/http/pprof"
-  "github.com/prometheus/client_golang/prometheus/promhttp"
-  ...
-)
+使用 go mod 管理依赖是官方推荐的方式，可以方便地管理代码的版本和依赖。
 
-func main() {
+下面是一些常见的 go mod 使用方法：
 
- 	go func() {
-		http.Handle("/metrics", promhttp.Handler())
-		_ = http.ListenAndServe("14111", nil) // '14111' 建议使用flag
-	}()
+1. 初始化项目
 
-}
+在项目的根目录下，执行以下命令初始化 go mod：
+
+go mod init &amp;lt;module-name&amp;gt;
 
 
-浏览器查看
+其中 &amp;lt;module-name&amp;gt; 是项目的模块名，通常是一个域名的反转加上项目名，例如 github.com/example-project。
+
+2. 添加依赖
+
+假设你要添加一个名为 example-dependency 的依赖，你可以执行以下命令：
+
+go get example-dependency
 
 
-  http:/172.13.5.17:14111/debug/pprof/ &amp;gt; 
+这会将 example-dependency 下载到本地，并自动更新 go.mod 文件中的依赖信息。
 
+3. 升级依赖
 
-使用命令行查看所有
+你可以使用以下命令来升级项目的依赖：
 
-go tool pprof http://172.13.5.17:14611/debug/ppro...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Kubectl</title>
-    <link href="http://localhost:4000/posts/kubectl/" rel="alternate" type="text/html" title="Kubectl" />
-    <published>2021-03-17T17:48:38+08:00</published>
-  
-    <updated>2022-05-23T11:34:09+08:00</updated>
-  
-    <id>http://localhost:4000/posts/kubectl/</id>
-    <content src="http://localhost:4000/posts/kubectl/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="System" />
-    
-    <category term="Kubernetes" />
-    
-    <category term="SystemUtils" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      大厅 kubernetes 服务
-
-准备工作
-
-
-  
-    安装 kubectl
-  
-  
-    登录到 Kubernetes 集群中
-
-    
-      获取 cat /root/kuber/config
-      放入到目标机器的 ~/.kube/config
-    
-  
-  
-    查看版本
-
-    kubectl version
-kubectl get nodes
-    
-  
-
-
-Kubernetes 工作原理
-
-
-  参考地址
-
-
-kubectl 使用介绍
-
-
-  官方文档
-
-  官方文档备忘清单
-
-
-[root@idn ~]# kubectl --help
-kubectl controls the Kubernetes cluster manager.
-
- Find more information at: https://kubernetes....
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Kubernetes UI</title>
-    <link href="http://localhost:4000/posts/kubernetesUI/" rel="alternate" type="text/html" title="Kubernetes UI" />
-    <published>2021-03-17T17:45:54+08:00</published>
-  
-    <updated>2022-05-23T11:34:09+08:00</updated>
-  
-    <id>http://localhost:4000/posts/kubernetesUI/</id>
-    <content src="http://localhost:4000/posts/kubernetesUI/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="System" />
-    
-    <category term="Kubernetes" />
-    
-    <category term="SystemUtils" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      kubernetes UI
-
-kubectl apply -f kuboard-v3.yaml
-
-
-访问
-
-http://172.13.8.15:30080/kuboard/settings/ui
-
-kuboard-v3.yaml
-
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: kuboard
-
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: kuboard-v3-config
-  namespace: kuboard
-data:
-  # 关于如下参数的解释，请参考文档 https://kuboard.cn/install/v3/install-built-in.html
-  # [common]
-  KUBOARD_SERVER_NODE_PORT: "30080"...
+go ge...
     </summary>
   
 

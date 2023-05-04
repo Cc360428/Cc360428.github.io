@@ -46,16 +46,16 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="查看所有" />
 <meta property="og:description" content="查看所有" />
-<link rel="canonical" href="http://localhost:4000/page4/" />
-<meta property="og:url" content="http://localhost:4000/page4/" />
+<link rel="canonical" href="https://cc360428.github.io//page4/" />
+<meta property="og:url" content="https://cc360428.github.io//page4/" />
 <meta property="og:site_name" content="Cc" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="http://localhost:4000/page3" />
-<link rel="next" href="http://localhost:4000/page5" />
+<link rel="prev" href="https://cc360428.github.io//page3" />
+<link rel="next" href="https://cc360428.github.io//page5" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Cc" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"查看所有","headline":"Cc","url":"http://localhost:4000/page4/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"查看所有","headline":"Cc","url":"https://cc360428.github.io//page4/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -268,7 +268,7 @@
       <a href="/" class="mx-auto">
         
         
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://cc360428.gitee.io/blog/assets/img/favicons/all.png" alt="avatar" onerror="this.style.display='none'">
         
       </a>
     </div>
@@ -474,7 +474,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/docker-%E9%83%A8%E7%BD%B2web-%E9%A1%B9%E7%9B%AE/">docker 部署 Go Web 程序</a>
+        <a href="/posts/system-shell-base/">linux Shell Base</a>
       </h1>
 
       <div class="post-content">
@@ -485,23 +485,30 @@
 
 
 
-          docker 部署 Go Web 程序
+          Shell
 
-http
+Github
 
-[root@Cc dockerFile]# tree
-.
-├── Dockerfile
-├── go.mod
-└── main.go
+helloworld
 
 
-[root@Cc dockerFile]# cat Dockerfile
-FROM golang:alpine
+  
+    创建与写
 
-# 为我们的镜像设置必要的环境变量
-ENV GO111MODULE=on \
-    C...
+    touch helloworld.sh
+vim helloworld.sh
+
+#!/bin/bash
+echo &quot;Hello World !&quot;
+
+// #! 是个约定标记
+// echo 向窗口输出文本
+    
+  
+  
+    执行
+    chmod +x ./helloworld.sh
+./h...
         </p>
       </div>
 
@@ -520,10 +527,10 @@ ENV GO111MODULE=on \
 
 
 <em class=""
-    data-ts="1584368934"
+    data-ts="1587391501"
     data-df="YYYY-MM-DD"
     >
-  2020-03-16
+  2020-04-20
 </em>
 
 
@@ -533,7 +540,7 @@ ENV GO111MODULE=on \
           <span>
             
             System,
-            Docker,
+            Shell,
             SystemUtils
           </span>
           
@@ -550,7 +557,7 @@ ENV GO111MODULE=on \
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Nginx%E9%85%8D%E7%BD%AE/">Nginx配置</a>
+        <a href="/posts/bash_shell/">零散的脚本</a>
       </h1>
 
       <div class="post-content">
@@ -561,13 +568,23 @@ ENV GO111MODULE=on \
 
 
 
-          配置 https
+          开发 sh 脚本
 
-server {
-    listen 443 ssl;  # 1.1版本后这样写
-    server_name lichaocheng.top; #填写绑定证书的域名
-    ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem;  # 指定证书的位置，绝对路径
-  ...
+杀死进程
+
+kill.sh
+
+#!/bin/sh
+#根据进程名杀死进程
+if [ $# -lt 1 ]
+then
+  echo &quot;缺少参数：procedure_name&quot;
+  exit 1
+fi
+
+PROCESS=`ps -ef|grep $1|grep -v grep|grep -v PPID|awk &#39;{ print $2}&#39;`
+for i in $PROCESS
+d...
         </p>
       </div>
 
@@ -586,10 +603,10 @@ server {
 
 
 <em class=""
-    data-ts="1583936584"
+    data-ts="1587391501"
     data-df="YYYY-MM-DD"
     >
-  2020-03-11
+  2020-04-20
 </em>
 
 
@@ -599,7 +616,7 @@ server {
           <span>
             
             System,
-            Nginx,
+            Shell,
             SystemUtils
           </span>
           
@@ -616,7 +633,7 @@ server {
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Nginx%E5%AE%89%E8%A3%85/">Nginx 安装</a>
+        <a href="/posts/shellother/">System Linux Error</a>
       </h1>
 
       <div class="post-content">
@@ -627,14 +644,25 @@ server {
 
 
 
-          linux 命令安装
+          ssh 工具
 
-1.添加Nginx到YUM源
-添加CentOS 7 Nginx yum资源库,打开终端,使用以下命令:
 
-sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-2.安装Nginx
-在你的CentOS 7 服务器中使...
+  MobaXterm
+  Xshell
+
+
+记录
+
+开启 root 用户登录
+https://blog.csdn.net/wy_97/article/details/78294562
+
+yum install htop
+
+No package htop available.
+Error: Nothing to do
+
+解决办法
+解决办法，安装epel-release之后，...
         </p>
       </div>
 
@@ -653,10 +681,10 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
 
 
 <em class=""
-    data-ts="1583936584"
+    data-ts="1587391501"
     data-df="YYYY-MM-DD"
     >
-  2020-03-11
+  2020-04-20
 </em>
 
 
@@ -666,7 +694,7 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
           <span>
             
             System,
-            Nginx,
+            Other,
             SystemUtils
           </span>
           
@@ -683,7 +711,7 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/golang-package/">golang 包管理</a>
+        <a href="/posts/Jurisdiction/">系统设计（自动化权限）</a>
       </h1>
 
       <div class="post-content">
@@ -694,35 +722,175 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
 
 
 
-          godep
+          权限
 
-安装
+自动化权限
 
-go get -u -v github.com/tools/godep
 
-使用
+  准备知识：swagger、递归、注解、过滤器
+
+
+设计
+
+
+  权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包比如：“Casbin、GRABC”，但是其怎么判断其实原理都是一样的
+
+
+
+
+表结构说明
+
+
+  用户表和用户与角色中间表：无论是超级管理员添加的还是注册用户都会有一个角色初始权限。如果是超级管理员添加添加是可以指定那些角色...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587308316"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-19
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Server,
+            Golang
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/uci/">openWrt uci</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          
+  uci set
+
+
+root@Accesshub:/etc/config# uci set qos.cc=interface
+root@Accesshub:/etc/config# uci set qos.cc.classgroup=default
+root@Accesshub:/etc/config# uci set qos.cc.enabled=1
+root@Accesshub:/...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587191584"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-18
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            System,
+            OpenWrt,
+            SystemUtils
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/gitbase/">Git 基本命令 </a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          Git 工作用到的基本命令
+
+模拟环境
+
+
+  自己搭建了gogs 开源Git仓库
+
+
+注册账号地址
 
 
   
-    参考 1
-    参考 2
+    lcc、google
+  
+  
+    创建仓库Study
+  
+  
+    把lcc 添加管理协作者(收到邮件)
   
 
 
-goverdor（go1.12 下 推荐使用）
-
-安装
-
-go get -u github.com/kardianos/govendor
-
-基本使用
-
-
-  进入项目目录
-
-
-govendor init
-govendor fetch g...
+You have been added as a collaborator of repository: google/Study
+View i...
         </p>
       </div>
 
@@ -741,10 +909,10 @@ govendor fetch g...
 
 
 <em class=""
-    data-ts="1583914751"
+    data-ts="1587191584"
     data-df="YYYY-MM-DD"
     >
-  2020-03-11
+  2020-04-18
 </em>
 
 
@@ -753,8 +921,8 @@ govendor fetch g...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server,
-            Golang
+            System,
+            Git
           </span>
           
 
@@ -770,7 +938,7 @@ govendor fetch g...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/gorm/">Golang Mysql Gorm</a>
+        <a href="/posts/mysqlupdatepassword/">MySQL 忘记密码</a>
       </h1>
 
       <div class="post-content">
@@ -781,25 +949,17 @@ govendor fetch g...
 
 
 
-          Gorm 概述
+          MySQL 忘记密码
 
-官网
-gorm 对数据库的操作
 
-环境搭建
+  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
 
-下载依赖
 
-go get -u github.com/jinzhu/gorm
+关闭服务
 
-实例（连接）
-
-package main
-
-import (
-	&quot;fmt&quot;
-	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot; // logs
-	&quot;github.com/jinzhu/gorm&quot;    ...
+[root@Cc ~]# ps -ef |grep mysql
+root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
+mysql    20039     1  0 12:39 ?     ...
         </p>
       </div>
 
@@ -818,10 +978,10 @@ import (
 
 
 <em class=""
-    data-ts="1583395344"
+    data-ts="1587183708"
     data-df="YYYY-MM-DD"
     >
-  2020-03-05
+  2020-04-18
 </em>
 
 
@@ -830,8 +990,9 @@ import (
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server,
-            Golang
+            System,
+            Mysql,
+            SystemUtils
           </span>
           
 
@@ -847,7 +1008,7 @@ import (
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/utils-variableAndArray/">Go 类型转换</a>
+        <a href="/posts/9-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%8E%A7%E5%88%B6-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">linux(CentOS7) 网络管理</a>
       </h1>
 
       <div class="post-content">
@@ -858,24 +1019,29 @@ import (
 
 
 
-          go 类型转换
+          系统启动控制、进程管理
 
-string int int64
+系统启动控制
 
-package main
 
-import (
-	&quot;fmt&quot;
-	&quot;strconv&quot;
-)
+  0—-停机
+  1—单用户模式
+  2—多用户模式（没有网络文件系统）
+  3—完全多用户模式
+  4—忽略
+  5—X11 一般图形界面
+  6— 重新启动（不推荐这操作，请谨慎操作）
 
-func main() {
-	var str string
-	fmt.Printf(&quot;str type:%T\n&quot;, str)
-	str = &quot;123&quot;
-	var strInt int
-	// string &amp;gt; int
-	strInt, _ = ...
+
+
+  如果你远程黑进了系统 可以试试这个 6 操作 应该会一直重启
+
+
+设置操作
+
+
+  runleve 查看当前系统启动状态，N 代表代表上次运行级别
+...
         </p>
       </div>
 
@@ -894,10 +1060,10 @@ func main() {
 
 
 <em class=""
-    data-ts="1579186716"
+    data-ts="1585414152"
     data-df="YYYY-MM-DD"
     >
-  2020-01-16
+  2020-03-29
 </em>
 
 
@@ -906,8 +1072,9 @@ func main() {
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server,
-            Golang
+            System,
+            RedHad,
+            SystemUtils
           </span>
           
 
@@ -923,7 +1090,7 @@ func main() {
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/baseall/">Golang基础问题</a>
+        <a href="/posts/10-%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/">linux(CentOS7) 网络管理</a>
       </h1>
 
       <div class="post-content">
@@ -934,23 +1101,36 @@ func main() {
 
 
 
-          Golang 基础问题
+          网络基础知识以及网络管理内容
 
-内置标识符
+网络管理协议
 
 
-  
-    const
+  好多概念知识，会拿出时间来讲解这张预留的空白
 
-    
-      
-        iota
-iota 是一个预定义的标识符，代表顺序按行增加的无符号整数，每个 const 声明单元（被括号括起来）相互独立，分别从 0 开始。
 
-        // 常量
-const (
-    ResponseCodeOk       = iota        // 0
-   ...
+TCP/IP 协议概述
+
+
+  好多概念知识，会拿出时间来讲解这张预留的空白
+
+
+OSI 参考模型
+
+
+  好多概念知识，会拿出时间来讲解这张预留的空白
+
+
+包（packet）
+
+
+  好多概念知识，会拿出时间来讲解这张预留的空白
+
+
+网络字节顺序
+
+
+  好多概念知识，会拿出时间来讲解这...
         </p>
       </div>
 
@@ -969,10 +1149,10 @@ const (
 
 
 <em class=""
-    data-ts="1579186716"
+    data-ts="1585414152"
     data-df="YYYY-MM-DD"
     >
-  2020-01-16
+  2020-03-29
 </em>
 
 
@@ -981,8 +1161,9 @@ const (
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server,
-            Golang
+            System,
+            RedHad,
+            SystemUtils
           </span>
           
 
@@ -998,7 +1179,7 @@ const (
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/gRPC/">gRPC 和 ui 操作</a>
+        <a href="/posts/8-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%AE%A1%E7%90%86/">linux(CentOS7) 应用程序管理</a>
       </h1>
 
       <div class="post-content">
@@ -1009,17 +1190,27 @@ const (
 
 
 
-          gRPC
+          应用程序管理
 
-安装 protoc 工具
+软件包基础
 
-
-  https://github.com/protocolbuffers/protobuf/releases
-
+常见安装工具包
 
 
-  -I 参数：指定 import 路径，可以指定多个-I 参数，编译时按顺序查找，不指定时默认查找当前目录
-  –go_out ：golang 编译支持，支持以下参数 - plugins=plugin1+plugin2 - 指定插件，...
+  RPM
+  DPKG
+
+
+RPM 使用
+
+安装软件 （rz 示例）
+
+
+  都和以下载
+
+  ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm
+
+  wget http://images...
         </p>
       </div>
 
@@ -1038,10 +1229,10 @@ const (
 
 
 <em class=""
-    data-ts="1577341332"
+    data-ts="1585383072"
     data-df="YYYY-MM-DD"
     >
-  2019-12-26
+  2020-03-28
 </em>
 
 
@@ -1050,167 +1241,9 @@ const (
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Server,
-            Golang
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/grpc/">gRPCDemo and grpcUI</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          gRPC
-
-源码
-
-code
-
-server
-
-package main
-
-import (
-	&quot;context&quot;
-	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
-	&quot;google.golang.org/grpc&quot;
-	&quot;google.golang.org/grpc/reflection&quot;
-	pd &quot;grpc_demo/api&quot;
-	&quot;net&quot;...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1577341332"
-    data-df="YYYY-MM-DD"
-    >
-  2019-12-26
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Server,
-            Golang
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/databases/">Databases（04735）</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          数据库系统原理（04735）
-
-第一章数据库系统概述
-
-第三节数据库系统的结构
-
-模式：物理独立性 外模式：逻辑独立性
-
-
-  数据库系统结构
-    
-      客户端系统结构
-      浏览器/服务器结构
-        
-          表示层、处理层、数据层
-        
-      
-    
-  
-
-
-第四节数据模型
-
-
-  数据模型的分类：概念层数据模型、逻辑层数据...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1576821421"
-    data-df="YYYY-MM-DD"
-    >
-  2019-12-20
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Cc,
-            SelfStudy,
-            ComputerBasics
+            System,
+            RedHad,
+            SystemUtils
           </span>
           
 
@@ -1394,9 +1427,54 @@ import (
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page9">9</a>
+        <a class="page-link btn-box-shadow" href="/page12">12</a>
       </li>
     
 
@@ -1405,7 +1483,7 @@ import (
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>4</span>
-    <span class="text-muted">/ 9</span>
+    <span class="text-muted">/ 12</span>
   </li>
 
   <!-- right arrow -->
@@ -1455,27 +1533,27 @@ import (
         
         
         
+      <li><a href="/posts/databases/">Databases（04735）</a></li>
+      
+        
+        
+        
       <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
       
         
         
         
-      <li><a href="/posts/day01/">MySQL 入门介绍</a></li>
+      <li><a href="/posts/DataStructure/">DataStructure（02142）</a></li>
       
         
         
         
-      <li><a href="/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/">Docker 理论知识</a></li>
+      <li><a href="/posts/appOffLinePush/">手机推送</a></li>
       
         
         
         
-      <li><a href="/posts/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">阿里云docker 镜像仓库</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/docker-install/">docker 安装实例</a></li>
+      <li><a href="/posts/Concurrent/">Day11（并发编程）</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1573,60 +1651,6 @@ import (
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1646,599 +1670,6 @@ import (
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2413,6 +1844,50 @@ import (
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2444,6 +1919,772 @@ import (
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2480,31 +2721,31 @@ import (
       <a class="post-tag" href="/tags/golang/">golang</a>
     
       
-      <a class="post-tag" href="/tags/gobase/">GoBase</a>
-    
-      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
-      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+      <a class="post-tag" href="/tags/gobase/">GoBase</a>
     
       
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
-      <a class="post-tag" href="/tags/network/">network</a>
-    
-      
-      <a class="post-tag" href="/tags/docker/">Docker</a>
-    
-      
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
-      <a class="post-tag" href="/tags/kubernetes/">Kubernetes</a>
+      <a class="post-tag" href="/tags/grpc/">gRPC</a>
     
       
-      <a class="post-tag" href="/tags/mysql/">Mysql</a>
+      <a class="post-tag" href="/tags/microservices/">Microservices</a>
+    
+      
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
+      <a class="post-tag" href="/tags/gointerview/">GoInterview</a>
+    
+      
+      <a class="post-tag" href="/tags/kratos/">kratos</a>
     
 
     </div>
@@ -2530,7 +2771,7 @@ import (
   <div class="d-flex justify-content-between align-items-center text-muted">
     <div class="footer-left">
       <p class="mb-0">
-        © 2022
+        © 2023
         <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
         
         <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span>
@@ -2656,60 +2897,6 @@ import (
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2729,599 +2916,6 @@ import (
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3496,6 +3090,50 @@ import (
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3527,6 +3165,772 @@ import (
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3563,31 +3967,31 @@ import (
       <a class="post-tag" href="/tags/golang/">golang</a>
     
       
-      <a class="post-tag" href="/tags/gobase/">GoBase</a>
-    
-      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
-      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+      <a class="post-tag" href="/tags/gobase/">GoBase</a>
     
       
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
-      <a class="post-tag" href="/tags/network/">network</a>
-    
-      
-      <a class="post-tag" href="/tags/docker/">Docker</a>
-    
-      
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
-      <a class="post-tag" href="/tags/kubernetes/">Kubernetes</a>
+      <a class="post-tag" href="/tags/grpc/">gRPC</a>
     
       
-      <a class="post-tag" href="/tags/mysql/">Mysql</a>
+      <a class="post-tag" href="/tags/microservices/">Microservices</a>
+    
+      
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
+      <a class="post-tag" href="/tags/gointerview/">GoInterview</a>
+    
+      
+      <a class="post-tag" href="/tags/kratos/">kratos</a>
     
 
     </div>

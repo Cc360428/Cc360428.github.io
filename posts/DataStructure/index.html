@@ -46,15 +46,15 @@
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="数据结构导论（02142）" />
 <meta property="og:description" content="数据结构导论（02142）" />
-<link rel="canonical" href="http://localhost:4000/posts/DataStructure/" />
-<meta property="og:url" content="http://localhost:4000/posts/DataStructure/" />
+<link rel="canonical" href="https://cc360428.github.io//posts/DataStructure/" />
+<meta property="og:url" content="https://cc360428.github.io//posts/DataStructure/" />
 <meta property="og:site_name" content="Cc" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-03-31T21:19:55+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="DataStructure（02142）" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-03-31T21:19:55+08:00","datePublished":"2022-03-31T21:19:55+08:00","description":"数据结构导论（02142）","headline":"DataStructure（02142）","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/DataStructure/"},"url":"http://localhost:4000/posts/DataStructure/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-24T20:11:44+08:00","datePublished":"2022-03-31T21:19:55+08:00","description":"数据结构导论（02142）","headline":"DataStructure（02142）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/DataStructure/"},"url":"https://cc360428.github.io//posts/DataStructure/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -272,7 +272,7 @@
       <a href="/" class="mx-auto">
         
         
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://cc360428.gitee.io/blog/assets/img/favicons/all.png" alt="avatar" onerror="this.style.display='none'">
         
       </a>
     </div>
@@ -1136,6 +1136,22 @@
       
 
     
+
+    
+
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -1150,11 +1166,6 @@
     
 
     
-
-  
-
-  
-  
 
   
 
@@ -1206,6 +1217,26 @@
 
     <!-- lastmod date -->
     
+    <span>
+      更新于
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1666613504"
+    data-df="YYYY-MM-DD"
+    data-toggle="tooltip" data-placement="bottom">
+  2022-10-24
+</em>
+
+    </span>
+    
 
   
 
@@ -1250,7 +1281,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="11189 字">
+  title="11195 字">
   <em>62 分钟</em>阅读</span>
 
     </div>
@@ -1297,7 +1328,7 @@
       <p>数据-&gt;数据元素-&gt;数据项</p>
     </blockquote>
   </li>
-  <li>逻辑结构：元素之间的结构关系（集合、线性、树形、图结构）
+  <li>逻辑结构：元素之间的结构关系（集合、线性、树形、图结构）<strong>线性和非线性</strong>
     <ul>
       <li>线性结构：除第一个和最后一个数据元素外，每个数据元素只有一个前驱和一个后继数据元素</li>
       <li>树结构：除根结点外，每个数据元素只有一个前驱数据元素，可有 0 个或若干个后继数据元素。</li>
@@ -1419,7 +1450,7 @@
     <ul>
       <li>每个结点类型相同、占用存储空间大小相同</li>
       <li>例如结点占用 L 个存储单元，其中第一个单元存储地址则是该结点的存储地址</li>
-      <li>设表开始结点 a1 的存储地址 d，结点 ai 的存储地址为<code class="language-plaintext highlighter-rouge">LOC(ai) </code> 公式：<code class="language-plaintext highlighter-rouge">LOC(ai) = d+(i−1)*L</code> <strong>（必考）</strong></li>
+      <li>设表开始结点 a1 的存储地址 d，结点 ai 的存储地址为<code class="language-plaintext highlighter-rouge">LOC(ai)</code> 公式：<code class="language-plaintext highlighter-rouge">LOC(ai) = d+(i−1)*L</code> <strong>（必考）</strong></li>
     </ul>
   </li>
   <li>
@@ -1529,14 +1560,20 @@
       <li>head 头指针变量，存放链表中第一个结点地址</li>
     </ul>
   </li>
-  <li>单链表：<code class="language-plaintext highlighter-rouge">(Head|exit)-&gt;(k|^)</code>
+  <li>
+    <p>单链表：<code class="language-plaintext highlighter-rouge">(Head|exit)-&gt;(k|^)</code></p>
+
     <ul>
-      <li>插入运算（ai-1~ai）
+      <li>
+        <p>插入运算（ai-1~ai）</p>
+
         <ul>
           <li>找到 ai-1（p） 存储 x</li>
           <li>生成 x</li>
           <li>p 指针域指向 x，然后插入 x</li>
-          <li>x 结点指针域指向 ai
+          <li>
+            <p>x 结点指针域指向 ai</p>
+
             <div class="language-c highlighter-rouge"><div class="code-header">
         <span data-label-text="C"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -1562,10 +1599,10 @@
   <span class="k">else</span> <span class="n">q</span> <span class="o">=</span> <span class="n">GetLinkList</span><span class="p">(</span> <span class="n">head</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>            <span class="cm">/* 找第i-1个数据元素结点 */</span>
   <span class="k">if</span> <span class="p">(</span> <span class="n">q</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="p">)</span>                                <span class="cm">/* 第i-1个结点不存在 */</span>
     <span class="n">exit</span><span class="p">(</span> <span class="s">" 找到 插入位置 "</span> <span class="p">);</span>
-  <span class="k">else</span><span class="p">{</span> <span class="n">p</span>		<span class="o">=</span> <span class="n">malloc</span><span class="p">(</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">)</span> <span class="p">);</span>       <span class="cm">/* 生成新结点 */</span>
-        <span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span>	<span class="o">=</span> <span class="n">x</span><span class="p">;</span>                            <span class="cm">/* 生成新结点指向X */</span>
-        <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span>	<span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>                      <span class="cm">/* 新结点链域指向*q的后继结点 */</span>  <span class="mi">1</span>
-        <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>                            <span class="cm">/* 修改*q的链域 */</span>              <span class="mi">2</span>
+  <span class="k">else</span><span class="p">{</span> <span class="n">p</span>  <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">)</span> <span class="p">);</span>       <span class="cm">/* 生成新结点 */</span>
+        <span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>                            <span class="cm">/* 生成新结点指向X */</span>
+        <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>                      <span class="cm">/* 新结点链域指向*q的后继结点 */</span>  <span class="mi">1</span>
+        <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>                            <span class="cm">/* 修改*q的链域 */</span>              <span class="mi">2</span>
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="c1">// 特别要注意：上面1和2二行代码不可颠倒顺序，否则*q链先断了会找不到。</span>
@@ -1573,10 +1610,14 @@
           </li>
         </ul>
       </li>
-      <li>删除运算
+      <li>
+        <p>删除运算</p>
+
         <ul>
           <li>找到 i-1 结点，存在继续，否则结束</li>
-          <li>删除 i 结点，释放对应的内存
+          <li>
+            <p>删除 i 结点，释放对应的内存</p>
+
             <div class="language-c highlighter-rouge"><div class="code-header">
         <span data-label-text="C"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -1600,7 +1641,7 @@
   <span class="k">else</span> <span class="n">p</span> <span class="o">=</span> <span class="n">GetLinkList</span><span class="p">(</span> <span class="n">head</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>    <span class="cm">/* 先找待删结点的直接前驱 */</span>
   <span class="k">if</span> <span class="p">(</span> <span class="n">p</span> <span class="err">！</span> <span class="o">=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="p">)</span>
   <span class="p">{</span>
-    <span class="n">q</span>	<span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>              <span class="cm">/* P指向待删结点 */</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>              <span class="cm">/* P指向待删结点 */</span>
     <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>              <span class="cm">/* 移出待删结点 */</span>
     <span class="n">free</span><span class="p">(</span> <span class="n">q</span> <span class="p">);</span>                      <span class="cm">/* 释放已移出结点P的空间 */</span>
   <span class="p">}</span>  <span class="k">else</span> <span class="n">printf</span><span class="p">(</span> <span class="s">" error "</span> <span class="p">);</span>
@@ -1623,35 +1664,41 @@
       <li><code class="language-plaintext highlighter-rouge">导致循环链表中结点只有一个指针</code></li>
     </ul>
   </li>
-  <li>双向循环链表
+  <li>
+    <p>双向循环链表</p>
+
     <ul>
       <li>链表中有两个指针域：一个指向后继结点、一个指向前驱结点（双向链表）</li>
       <li><code class="language-plaintext highlighter-rouge">Prior | date | next</code></li>
       <li>头 <code class="language-plaintext highlighter-rouge">prior</code> 指向<strong>最后一个结点</strong>，最后一个结点 <code class="language-plaintext highlighter-rouge">next</code> 指<strong>向头结点</strong></li>
-      <li>删除
+      <li>
+        <p>删除</p>
+
         <div class="language-c highlighter-rouge"><div class="code-header">
         <span data-label-text="C"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="n">q</span>		<span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span>		<span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre><span class="n">q</span>  <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span>  <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
 <span class="n">free</span><span class="p">(</span> <span class="n">q</span> <span class="p">);</span>
 </pre></td></tr></tbody></table></code></div>        </div>
       </li>
-      <li>插入
+      <li>
+        <p>插入</p>
+
         <div class="language-c highlighter-rouge"><div class="code-header">
         <span data-label-text="C"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="n">t</span><span class="o">-&gt;</span><span class="n">prior</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>
-<span class="n">t</span><span class="o">-&gt;</span><span class="n">next</span>		<span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span>	<span class="o">=</span> <span class="n">t</span><span class="p">;</span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span>		<span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+</pre></td><td class="rouge-code"><pre><span class="n">t</span><span class="o">-&gt;</span><span class="n">prior</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+<span class="n">t</span><span class="o">-&gt;</span><span class="n">next</span>  <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">prior</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span>  <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
 </pre></td></tr></tbody></table></code></div>        </div>
       </li>
     </ul>
@@ -1969,12 +2016,16 @@
       </tbody>
     </table></div>
   </li>
-  <li><strong>二叉树的性质</strong>
+  <li>
+    <p><strong>二叉树的性质</strong></p>
+
     <ul>
       <li>在二叉树的第 <code class="language-plaintext highlighter-rouge">i(i&gt;=1)</code>层上至多有 <code class="language-plaintext highlighter-rouge">2i-1</code> 个结点。<code class="language-plaintext highlighter-rouge">(i&gt;=1)</code>；至少 1 个</li>
       <li>深度为 <code class="language-plaintext highlighter-rouge">k(k&gt;=1)</code> 的二叉树至多有 2k－1 个结点；至少 K 个</li>
       <li>对任何一棵二叉树，如果其终端结点数为 n0，度为 2 的结点数为 n2，则 n0 ＝ n2 ＋ 1。即：<strong>叶结点数 n0=度为 2 的结点数 n2+1</strong></li>
-      <li>下图其中度为 2 的结点数共有 5 个，即 ABCEF（有 2 个孩子的，如 G 就不是），叶子共有 6 个，即 IJKLMH(没有结点，度为 0 的)，得出这二叉树终端结点数=度为 2 的结点数+1，即 6=5+1
+      <li>
+        <p>下图其中度为 2 的结点数共有 5 个，即 ABCEF（有 2 个孩子的，如 G 就不是），叶子共有 6 个，即 IJKLMH(没有结点，度为 0 的)，得出这二叉树终端结点数=度为 2 的结点数+1，即 6=5+1</p>
+
         <pre><code class="language-mermaid">graph TB;
 A((A))
 B((B))
@@ -2001,7 +2052,9 @@ F--&gt;L
 C--&gt;H
 </code></pre>
       </li>
-      <li>满二叉树:深度为 k(k&gt;=1)且有<code class="language-plaintext highlighter-rouge">2^k-1</code>个结点的二叉树；下图满二叉树结点 <code class="language-plaintext highlighter-rouge">2^3-1=7</code>
+      <li>
+        <p>满二叉树:深度为 k(k&gt;=1)且有<code class="language-plaintext highlighter-rouge">2^k-1</code>个结点的二叉树；下图满二叉树结点 <code class="language-plaintext highlighter-rouge">2^3-1=7</code></p>
+
         <pre><code class="language-mermaid">graph TB;
 1((1))
 2((2))
@@ -2256,14 +2309,20 @@ F--&gt;K
       </li>
     </ul>
   </li>
-  <li>树和森的遍历
+  <li>
+    <p>树和森的遍历</p>
+
     <ul>
-      <li>树
+      <li>
+        <p>树</p>
+
         <ul>
           <li>先序遍历：先序先访问根结点，然后一次先序遍历根的每<strong>A-&gt;B-&gt;C-&gt;D-&gt;E</strong></li>
           <li>后序遍历：先依次后续遍历每棵子树，最后访问根结点<strong>B-&gt;D-&gt;C-&gt;E-&gt;A</strong></li>
-          <li>层次遍历：遍历每个兄弟结点<strong>A-&gt;B-&gt;C-&gt;E-&gt;D</strong>
-            <pre><code class="language-mermaid">graph TB;
+          <li>层次遍历：遍历每个兄弟结点<strong>A-&gt;B-&gt;C-&gt;E-&gt;D</strong></li>
+        </ul>
+
+        <pre><code class="language-mermaid">graph TB;
 A((A))
 B((B))
 C((C))
@@ -2274,10 +2333,9 @@ A--&gt;C
 A--&gt;E
 C--&gt;D
 </code></pre>
-          </li>
-        </ul>
       </li>
-      <li>森林的遍历
+      <li>
+        <p>森林的遍历</p>
         <ul>
           <li>先序：访问森林中每棵树的根结点；先序遍历森林中第一棵树的根结点的子树组成的森林；先序遍历除去第一棵树之外其余的树组成的森林。</li>
           <li>中序：中序访问森林中第一棵树的根结点的子树组成的森林；访问第一棵树的根结点；中序遍历除去第一棵树之外其余的树组成的森林；</li>
@@ -2304,7 +2362,7 @@ C--&gt;D
   </li>
 </ul>
 
-<h3 id="7-小结-1"><span class="mr-2">7 小结</span><a href="#7-小结-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h4 id="7-小结-1"><span class="mr-2">7 小结</span><a href="#7-小结-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <h2 id="第五章-图重点"><span class="mr-2">第五章 图（重点）</span><a href="#第五章-图重点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -2770,12 +2828,12 @@ C--&gt;D
 <span class="p">{</span>                                               <span class="cm">/* 用直接插入排序法对r[1]…r[n]进行排序 */</span>
   <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>                    <span class="cm">/* n为表长，从第二个记录进行插入 */</span>
   <span class="p">{</span>
-    <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>                         <span class="cm">/* 第i个记录复制为岗哨 */</span>
-    <span class="n">j</span>	<span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>                         <span class="cm">/* 第i个记录复制为岗哨 */</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
     <span class="k">while</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>            <span class="cm">/* 与岗哨比较，直到健不大于岗哨键值 */</span>
     <span class="p">{</span>
-      <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>                 <span class="cm">/* 将第j个记录赋值给第j+1个记录 */</span>
-      <span class="n">j</span>		<span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>                 <span class="cm">/* 将第j个记录赋值给第j+1个记录 */</span>
+      <span class="n">j</span>  <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>                       <span class="cm">/* 将第i个记录插入到序列中 */</span>
   <span class="p">}</span>
@@ -2840,9 +2898,9 @@ C--&gt;D
     <span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
       <span class="k">if</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>
       <span class="p">{</span>
-        <span class="n">flag</span>		<span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="cm">/* 排序前先为0，若在一趟起泡中交换了记录，则置为1 */</span>
-        <span class="n">p</span>		<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-        <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>	<span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+        <span class="n">flag</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="cm">/* 排序前先为0，若在一趟起泡中交换了记录，则置为1 */</span>
+        <span class="n">p</span>  <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+        <span class="n">r</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span> <span class="n">flag</span> <span class="p">)</span>
       <span class="k">return</span><span class="p">;</span>
@@ -2892,8 +2950,8 @@ C--&gt;D
 </pre></td><td class="rouge-code"><pre><span class="kt">void</span>  <span class="nf">quickpass</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span> <span class="p">)</span>
 <span class="p">{</span>
   <span class="cm">/* 对顺序表r中的子序列r[h]至r[p]进行快速排序 */</span>
-  <span class="n">i</span>	<span class="o">=</span> <span class="n">h</span><span class="p">;</span>    <span class="n">j</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/* 左右指针置初值 */</span>
-  <span class="n">x</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">h</span><span class="p">];</span>         <span class="cm">/* 取处理元素（即作为枢轴记录） */</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">h</span><span class="p">;</span>    <span class="n">j</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>  <span class="cm">/* 左右指针置初值 */</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">h</span><span class="p">];</span>         <span class="cm">/* 取处理元素（即作为枢轴记录） */</span>
   <span class="k">while</span> <span class="p">(</span> <span class="n">i</span> <span class="err">＜</span> <span class="n">j</span>  <span class="p">)</span>       <span class="cm">/* 左右指针未碰头则反复做： */</span>
   <span class="p">{</span>
     <span class="k">while</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">key</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="p">)</span>
@@ -2939,13 +2997,19 @@ C--&gt;D
 <h3 id="4-选择排序"><span class="mr-2">4 选择排序</span><a href="#4-选择排序" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>直接选择：以重复选择的思想为基础进行排序
+  <li>
+    <p>直接选择：以重复选择的思想为基础进行排序</p>
+
     <ul>
-      <li>过程：设记录 R_1，R_2…，R_n，对 i=1，2，…，n-1，重复下列工作：
+      <li>
+        <p>过程：设记录 R_1，R_2…，R_n，对 i=1，2，…，n-1，重复下列工作：</p>
+
         <ul>
           <li>在 R_i，…，R_n 中选最小(或最大)关键字记录 R_j；</li>
-          <li>将 R_j 与第 i 个记录交换位置，即将选到的第 i 小的记录换到第 i 号位置上
-            <div class="language-c highlighter-rouge"><div class="code-header">
+          <li>将 R_j 与第 i 个记录交换位置，即将选到的第 i 小的记录换到第 i 号位置上</li>
+        </ul>
+
+        <div class="language-c highlighter-rouge"><div class="code-header">
         <span data-label-text="C"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2966,26 +3030,25 @@ C--&gt;D
 17
 </pre></td><td class="rouge-code"><pre><span class="kt">void</span>  <span class="nf">select</span><span class="p">(</span> <span class="n">list</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span>
 <span class="p">{</span>
-  <span class="cm">/*用选择排序法对r[1]….r[n]进行排序*/</span>
-  <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+ <span class="cm">/*用选择排序法对r[1]….r[n]进行排序*/</span>
+ <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+ <span class="p">{</span>
+  <span class="n">k</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>                                  <span class="cm">/*选择第i小的记录，并交换位*/</span>
+  <span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
+   <span class="k">if</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>      <span class="cm">/*在r.[i]…r.[n-1]中找最小者*/</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">i</span> <span class="p">)</span>                           <span class="cm">/*交换记录*/</span>
   <span class="p">{</span>
-      <span class="n">k</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>                                  <span class="cm">/*选择第i小的记录，并交换位*/</span>
-      <span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
-          <span class="k">if</span> <span class="p">(</span> <span class="n">r</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">].</span><span class="n">key</span> <span class="p">)</span>      <span class="cm">/*在r.[i]…r.[n-1]中找最小者*/</span>
-              <span class="n">k</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
-      <span class="k">if</span> <span class="p">(</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">i</span> <span class="p">)</span>                           <span class="cm">/*交换记录*/</span>
-      <span class="p">{</span>
-          <span class="n">temp</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-          <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>	<span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
-          <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>	<span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
-      <span class="p">}</span>
+   <span class="n">temp</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+   <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+   <span class="n">r</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
   <span class="p">}</span>
+ <span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table></code></div>            </div>
-          </li>
-        </ul>
+</pre></td></tr></tbody></table></code></div>        </div>
       </li>
-      <li>分析
+      <li>
+        <p>分析</p>
         <ul>
           <li>空间：n+1； （1 为附加空间）</li>
           <li>时间：C 总=∑ni=1(n-i)=(n2-1)/2≈O(n2)</li>
@@ -2994,7 +3057,8 @@ C--&gt;D
       </li>
     </ul>
   </li>
-  <li>堆排序
+  <li>
+    <p>堆排序</p>
     <ul>
       <li>需要解决问题
         <ul>
@@ -3189,27 +3253,27 @@ C--&gt;D
         
         
         
+      <li><a href="/posts/databases/">Databases（04735）</a></li>
+      
+        
+        
+        
       <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
       
         
         
         
-      <li><a href="/posts/day01/">MySQL 入门介绍</a></li>
+      <li><a href="/posts/DataStructure/">DataStructure（02142）</a></li>
       
         
         
         
-      <li><a href="/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8docker/">Docker 理论知识</a></li>
+      <li><a href="/posts/appOffLinePush/">手机推送</a></li>
       
         
         
         
-      <li><a href="/posts/%E9%98%BF%E9%87%8C%E4%BA%91docker-%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">阿里云docker 镜像仓库</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/docker-install/">docker 安装实例</a></li>
+      <li><a href="/posts/Concurrent/">Day11（并发编程）</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -3307,60 +3371,6 @@ C--&gt;D
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3380,599 +3390,6 @@ C--&gt;D
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4147,6 +3564,50 @@ C--&gt;D
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4178,6 +3639,772 @@ C--&gt;D
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -4214,31 +4441,31 @@ C--&gt;D
       <a class="post-tag" href="/tags/golang/">golang</a>
     
       
-      <a class="post-tag" href="/tags/gobase/">GoBase</a>
-    
-      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
-      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+      <a class="post-tag" href="/tags/gobase/">GoBase</a>
     
       
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
-      <a class="post-tag" href="/tags/network/">network</a>
-    
-      
-      <a class="post-tag" href="/tags/docker/">Docker</a>
-    
-      
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
-      <a class="post-tag" href="/tags/kubernetes/">Kubernetes</a>
+      <a class="post-tag" href="/tags/grpc/">gRPC</a>
     
       
-      <a class="post-tag" href="/tags/mysql/">Mysql</a>
+      <a class="post-tag" href="/tags/microservices/">Microservices</a>
+    
+      
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
+      <a class="post-tag" href="/tags/gointerview/">GoInterview</a>
+    
+      
+      <a class="post-tag" href="/tags/kratos/">kratos</a>
     
 
     </div>
@@ -4297,7 +4524,423 @@ C--&gt;D
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -5573,7 +6216,7 @@ C--&gt;D
       
       
       <div class="card">
-        <a href="/posts/%E4%BD%B3%E8%83%BD/">
+        <a href="/posts/NetworkEngineerBase/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -5585,13 +6228,13 @@ C--&gt;D
 
 
 <em class="small"
-    data-ts="1528260534"
+    data-ts="1566103734"
     data-df="YYYY-MM-DD"
     >
-  2018-06-06
+  2019-08-18
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>佳能入门</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>网络基础</h3>
             <div class="text-muted small">
               <p>
                 
@@ -5600,34 +6243,33 @@ C--&gt;D
 
 
 
-                安装镜头与卸载
+                计算机网络基础
 
-安装
+OSI 与 TCP/IP
 
+OSI
 
-  镜头上有个白色的正方快点
-  与机身上的白色点对应起来
-  向下旋转镜头
-  可以听到一声卡住的响声
+TCP/IP
 
-
-卸载
+物理层
 
 
-  按住镜头上的白色对应的半椭圆形的按键按钮
-  按住同时向上旋转镜头
+  网络接口
 
 
-镜头上 stabilizer 开关
-
-防抖开关，区别就是在快门速度较慢的情况下，辅助稳定画质
-
-AF 和 MF 区别
+网际层
 
 
-  AF：自动对焦
-  MF：手动对焦
-    ...
+  IP 协议：主要的网际层协议，用于网络互联
+  ICMP 协议：报文协议，用于报告差错，向路由器主机发送差错报文
+  ARP 协议：地址解析协议，用于将 IP 解析成物理地址
+  RARP 协议：逆地址协议，物理地址解析到 IP 地址
+
+
+运输层
+
+
+  TCP：传输控制协议...
               </p>
             </div>
           </div>
@@ -5653,10 +6295,10 @@ AF 和 MF 区别
   
 
   
-  <div class="btn btn-outline-primary disabled"
+  <a href="/posts/leetcode-readme/" class="btn btn-outline-primary"
     prompt="下一篇">
-    <p>-</p>
-  </div>
+    <p>Leetcode Day01（Readme）</p>
+  </a>
   
 
 </div>
@@ -5681,7 +6323,7 @@ AF 和 MF 区别
   <div class="d-flex justify-content-between align-items-center text-muted">
     <div class="footer-left">
       <p class="mb-0">
-        © 2022
+        © 2023
         <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
         
         <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span>
@@ -5807,60 +6449,6 @@ AF 和 MF 区别
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5880,599 +6468,6 @@ AF 和 MF 区别
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -6647,6 +6642,50 @@ AF 和 MF 区别
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -6678,6 +6717,772 @@ AF 和 MF 区别
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -6714,31 +7519,31 @@ AF 和 MF 区别
       <a class="post-tag" href="/tags/golang/">golang</a>
     
       
-      <a class="post-tag" href="/tags/gobase/">GoBase</a>
-    
-      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
-      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+      <a class="post-tag" href="/tags/gobase/">GoBase</a>
     
       
       <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
     
       
-      <a class="post-tag" href="/tags/network/">network</a>
-    
-      
-      <a class="post-tag" href="/tags/docker/">Docker</a>
-    
-      
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
-      <a class="post-tag" href="/tags/kubernetes/">Kubernetes</a>
+      <a class="post-tag" href="/tags/grpc/">gRPC</a>
     
       
-      <a class="post-tag" href="/tags/mysql/">Mysql</a>
+      <a class="post-tag" href="/tags/microservices/">Microservices</a>
+    
+      
+      <a class="post-tag" href="/tags/redhad/">RedHad</a>
+    
+      
+      <a class="post-tag" href="/tags/gointerview/">GoInterview</a>
+    
+      
+      <a class="post-tag" href="/tags/kratos/">kratos</a>
     
 
     </div>
