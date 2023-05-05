@@ -44,22 +44,22 @@
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Leetcode Day02（数组）" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="数组" />
-<meta property="og:description" content="数组" />
-<link rel="canonical" href="https://cc360428.github.io//posts/leetcode-array/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/leetcode-array/" />
-<meta property="og:site_name" content="Cc" />
+<meta name="description" content="删除有序数组中的重复项" />
+<meta property="og:description" content="删除有序数组中的重复项" />
+<link rel="canonical" href="https://cc360428.github.io//posts/leetcode-array02/" />
+<meta property="og:url" content="https://cc360428.github.io//posts/leetcode-array02/" />
+<meta property="og:site_name" content="I’m Cc" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-01-02T08:08:09+08:00" />
+<meta property="article:published_time" content="2022-01-02T09:08:09+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Leetcode Day02（数组）" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-02T08:08:09+08:00","datePublished":"2023-01-02T08:08:09+08:00","description":"数组","headline":"Leetcode Day02（数组）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/leetcode-array/"},"url":"https://cc360428.github.io//posts/leetcode-array/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-01-02T09:08:09+08:00","datePublished":"2022-01-02T09:08:09+08:00","description":"删除有序数组中的重复项","headline":"Leetcode Day02（数组）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/leetcode-array02/"},"url":"https://cc360428.github.io//posts/leetcode-array02/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Leetcode Day02（数组） | Cc
+  <title>Leetcode Day02（数组） | I'm Cc
   </title>
 
   <!--
@@ -74,8 +74,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="Cc">
-<meta name="application-name" content="Cc">
+<meta name="apple-mobile-web-app-title" content="I'm Cc">
+<meta name="application-name" content="I'm Cc">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
@@ -278,9 +278,9 @@
     </div>
 
     <div class="site-title mt-3">
-      <a href="/">Cc</a>
+      <a href="/">I'm Cc</a>
     </div>
-    <div class="site-subtitle font-italic">你好!</div>
+    <div class="site-subtitle font-italic">Hello!</div>
 
   </div><!-- .profile-wrapper -->
 
@@ -544,6 +544,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -560,6 +572,54 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -627,10 +687,10 @@
 
 
 <em class=""
-    data-ts="1672618089"
+    data-ts="1641085689"
     data-df="YYYY-MM-DD"
     data-toggle="tooltip" data-placement="bottom">
-  2023-01-02
+  2022-01-02
 </em>
 
     </span>
@@ -681,8 +741,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="399 字">
-  <em>2 分钟</em>阅读</span>
+  title="1167 字">
+  <em>6 分钟</em>阅读</span>
 
     </div>
 
@@ -691,71 +751,86 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h3 id="数组"><span class="mr-2">数组</span><a href="#数组" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<h4 id="两数之和"><span class="mr-2">两数之和</span><a href="#两数之和" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+  <h3 id="删除有序数组中的重复项"><span class="mr-2">删除有序数组中的重复项</span><a href="#删除有序数组中的重复项" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li><a href="https://leetcode.cn/problems/two-sum/">题目连接</a></li>
-  <li>
-    <p>题目解释</p>
+  <li><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">题目连接</a></li>
+</ul>
 
-    <ul>
-      <li>给定一个整数数组 nums<code class="language-plaintext highlighter-rouge">和一个整数目标值 target，请你在该数组中找出 和为目标值 target</code> 的那<code class="language-plaintext highlighter-rouge">两个</code>整数，并返回它们的数组下标。</li>
-      <li>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</li>
-      <li>你可以按任意顺序返回答案。</li>
-    </ul>
-  </li>
-  <li>
-    <p>示例 1</p>
+<h4 id="题目说明"><span class="mr-2">题目说明</span><a href="#题目说明" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-    <div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code small"></i></span>
+<p>给你一个 <strong>升序排列</strong> 的数组 <code class="language-plaintext highlighter-rouge">nums</code> ，请你<strong><a href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" title="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。元素的 <strong>相对顺序</strong> 应该保持 <strong>一致</strong> 。然后返回 <code class="language-plaintext highlighter-rouge">nums</code> 中唯一元素的个数。</p>
+
+<p>考虑 <code class="language-plaintext highlighter-rouge">nums</code> 的唯一元素的数量为 <code class="language-plaintext highlighter-rouge">k</code> ，你需要做以下事情确保你的题解可以被通过：</p>
+
+<ul>
+  <li>更改数组 <code class="language-plaintext highlighter-rouge">nums</code> ，使 <code class="language-plaintext highlighter-rouge">nums</code> 的前 <code class="language-plaintext highlighter-rouge">k</code> 个元素包含唯一元素，并按照它们最初在 <code class="language-plaintext highlighter-rouge">nums</code> 中出现的顺序排列。<code class="language-plaintext highlighter-rouge">nums</code> 的其余元素与 <code class="language-plaintext highlighter-rouge">nums</code> 的大小不重要。</li>
+  <li>返回 <code class="language-plaintext highlighter-rouge">k</code> 。</li>
+</ul>
+
+<p><strong>判题标准:</strong></p>
+
+<p>系统会用下面的代码来测试你的题解:</p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="n">输入</span><span class="err">：</span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">11</span><span class="p">,</span><span class="m">15</span><span class="p">],</span> <span class="n">target</span> <span class="o">=</span> <span class="m">9</span>
-<span class="n">输出</span><span class="err">：</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
-<span class="n">解释</span><span class="err">：</span><span class="n">因为</span> <span class="n">nums</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">==</span> <span class="m">9</span> <span class="err">，</span><span class="n">返回</span> <span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">]</span>
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>
-    <p>示例 2</p>
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>int[] nums <span class="o">=</span> <span class="o">[</span>...]<span class="p">;</span> // 输入数组
+int[] expectedNums <span class="o">=</span> <span class="o">[</span>...]<span class="p">;</span> // 长度正确的期望答案
 
-    <div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code small"></i></span>
+int k <span class="o">=</span> removeDuplicates<span class="o">(</span>nums<span class="o">)</span><span class="p">;</span> // 调用
+
+assert k <span class="o">==</span> expectedNums.length<span class="p">;</span>
+<span class="k">for</span> <span class="o">(</span>int i <span class="o">=</span> 0<span class="p">;</span> i &lt; k<span class="p">;</span> i++<span class="o">)</span> <span class="o">{</span>
+    assert nums[i] <span class="o">==</span> expectedNums[i]<span class="p">;</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>如果所有断言都通过，那么您的题解将被 <strong>通过</strong> 。</p>
+
+<p><strong>示例 1：</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="n">输入</span><span class="err">：</span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">],</span> <span class="n">target</span> <span class="o">=</span> <span class="m">6</span>
-<span class="n">输出</span><span class="err">：</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>
-    <p>示例 3</p>
+3
+</pre></td><td class="rouge-code"><pre>输入：nums <span class="o">=</span> <span class="o">[</span>1,1,2]
+输出：2, nums <span class="o">=</span> <span class="o">[</span>1,2,_]
+解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。
+</pre></td></tr></tbody></table></code></div></div>
 
-    <div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code small"></i></span>
+<p><strong>示例 2：</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="n">输入</span><span class="err">：</span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">],</span> <span class="n">target</span> <span class="o">=</span> <span class="m">6</span>
-<span class="n">输出</span><span class="err">：</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>
-    <p>PS</p>
+3
+</pre></td><td class="rouge-code"><pre>输入：nums <span class="o">=</span> <span class="o">[</span>0,0,1,1,1,2,2,3,3,4]
+输出：5, nums <span class="o">=</span> <span class="o">[</span>0,1,2,3,4]
+解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。
+</pre></td></tr></tbody></table></code></div></div>
 
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">2 &lt;= nums.length &lt;= 10^4</code></li>
-      <li><code class="language-plaintext highlighter-rouge">-10^9 &lt;= nums[i] &lt;= 10^9</code></li>
-      <li><code class="language-plaintext highlighter-rouge">-10^9 &lt;= target &lt;= 109^</code></li>
-      <li>只会存在一个有效答案</li>
-    </ul>
-  </li>
-  <li>进阶
-    <ul>
-      <li>想出一个时间复杂度小于 O(n2)</li>
-    </ul>
-  </li>
+<p><strong>提示：</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">1 &lt;= nums.length &lt;= 3 * 10^4</code></li>
+  <li><code class="language-plaintext highlighter-rouge">-10^4&lt;= nums[i] &lt;= 10^4</code></li>
+  <li><code class="language-plaintext highlighter-rouge">nums</code> 已按 <strong>升序</strong> 排列</li>
+</ul>
+
+<h4 id="code"><span class="mr-2">Code</span><a href="#code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
   <li>
     <p>题目</p>
 
@@ -763,24 +838,15 @@
         <span data-label-text="Go"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3
-</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="n">target</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
-
+</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">removeDuplicates</span><span class="p">(</span><span class="n">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
-  <li>
-    <p>解题</p>
+</ul>
 
-    <ul>
-      <li>
-        <p>暴力枚举</p>
+<h4 id="解题"><span class="mr-2">解题</span><a href="#解题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-        <blockquote>
-          <p>时间复杂度（On^2）；使用双层 <code class="language-plaintext highlighter-rouge">for</code> 循环</p>
-        </blockquote>
-
-        <div class="language-go highlighter-rouge"><div class="code-header">
+<div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -792,30 +858,122 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="n">target</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="o">:=</span> <span class="n">i</span> <span class="o">+</span> <span class="m">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span> <span class="n">j</span><span class="o">++</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">}</span>
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre>  <span class="k">func</span> <span class="n">removeDuplicates</span><span class="p">(</span><span class="n">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="m">0</span>
+    <span class="p">}</span>
+
+    <span class="n">slow</span> <span class="o">:=</span> <span class="m">1</span>
+    <span class="k">for</span> <span class="n">fast</span> <span class="o">:=</span> <span class="m">1</span><span class="p">;</span> <span class="n">fast</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span> <span class="n">fast</span><span class="o">++</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">fast</span><span class="p">]</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">[</span><span class="n">fast</span><span class="o">-</span><span class="m">1</span><span class="p">]</span> <span class="p">{</span>
+        <span class="n">nums</span><span class="p">[</span><span class="n">slow</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">fast</span><span class="p">]</span>
+        <span class="n">slow</span><span class="o">++</span>
       <span class="p">}</span>
     <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">slow</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="no">nil</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="移除元素"><span class="mr-2">移除元素</span><a href="#移除元素" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li><a href="https://leetcode.cn/problems/remove-element/">题目连接</a></li>
+  <li>题目解释</li>
+</ul>
+
+<h4 id="题目说明-1"><span class="mr-2">题目说明</span><a href="#题目说明-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>给你一个数组 <code class="language-plaintext highlighter-rouge">nums</code> 和一个值 <code class="language-plaintext highlighter-rouge">val</code>，你需要 <strong><a href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" title="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 移除所有数值等于 <code class="language-plaintext highlighter-rouge">val</code> 的元素，并返回移除后数组的新长度。</p>
+
+<p>不要使用额外的数组空间，你必须仅使用 <code class="language-plaintext highlighter-rouge">O(1)</code> 额外空间并 <strong><a href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95" title="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地 </a>修改输入数组</strong> 。</p>
+
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+
+<p><strong>说明:</strong></p>
+
+<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
+
+<p>请注意，输入数组是以 <strong>「引用」</strong> 方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+
+<p>你可以想象内部操作如下:</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c">// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span>
+<span class="kt">int</span> <span class="nb">len</span> <span class="o">=</span> <span class="n">removeElement</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+
+<span class="c">// 在函数里修改输入数组对于调用者是可见的。</span>
+<span class="c">// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table></code></div>        </div>
-      </li>
-      <li>
-        <p>查找表法（用其一哈希表）</p>
+</pre></td></tr></tbody></table></code></div></div>
 
-        <blockquote>
-          <ul>
-            <li>map 中保存 nums 值</li>
-            <li><code class="language-plaintext highlighter-rouge">target-nums中每个</code> 对比结果是否在 map 中</li>
-            <li>存在 map 中就返回</li>
-          </ul>
-        </blockquote>
+<p><strong>示例 1：</strong></p>
 
-        <div class="language-go highlighter-rouge"><div class="code-header">
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>输入：nums <span class="o">=</span> <span class="o">[</span>3,2,2,3], val <span class="o">=</span> 3
+输出：2, nums <span class="o">=</span> <span class="o">[</span>2,2]
+解释：函数应该返回新的长度 2, 并且 nums中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums <span class="o">=</span> <span class="o">[</span>2,2,3,3] 或 nums <span class="o">=</span> <span class="o">[</span>2,2,0,0]，也会被视作正确答案。
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><strong>示例 2：</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>输入：nums <span class="o">=</span> <span class="o">[</span>0,1,2,2,3,0,4,2], val <span class="o">=</span> 2
+输出：5, nums <span class="o">=</span> <span class="o">[</span>0,1,4,0,3]
+解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><strong>提示：</strong></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">0 &lt;= nums.length &lt;= 100</code></li>
+  <li><code class="language-plaintext highlighter-rouge">0 &lt;= nums[i] &lt;= 50</code></li>
+  <li><code class="language-plaintext highlighter-rouge">0 &lt;= val &lt;= 100</code></li>
+</ul>
+
+<h4 id="code-1"><span class="mr-2">Code</span><a href="#code-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">removeElement</span><span class="p">(</span><span class="n">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="n">val</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="题解"><span class="mr-2">题解</span><a href="#题解" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>
+    <p>方法一 自己写的</p>
+
+    <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -827,23 +985,62 @@
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>  <span class="k">func</span> <span class="n">twoSum</span><span class="p">(</span><span class="n">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="n">target</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
-    <span class="n">tmpMap</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">nums</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="n">value</span><span class="p">,</span> <span class="n">ok</span> <span class="o">:=</span> <span class="n">tmpMap</span><span class="p">[</span><span class="n">target</span><span class="o">-</span><span class="n">value</span><span class="p">];</span> <span class="n">ok</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">}</span>
-      <span class="p">}</span>
-      <span class="n">tmpMap</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre>  <span class="k">func</span> <span class="n">removeElement</span><span class="p">(</span><span class="n">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="n">val</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="m">0</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="no">nil</span>
+
+    <span class="c">// 暴力求解</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="o">:=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span> <span class="p">{</span>
+        <span class="n">nums</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="o">:</span><span class="n">i</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="m">1</span><span class="o">:</span><span class="p">]</span><span class="o">...</span><span class="p">)</span>
+        <span class="n">i</span><span class="o">--</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
   <span class="p">}</span>
-</pre></td></tr></tbody></table></code></div>        </div>
-      </li>
-    </ul>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>方法二(双指针)</p>
   </li>
 </ul>
 
-<h4 id="删除有序数组中的重复项"><span class="mr-2">删除有序数组中的重复项</span><a href="#删除有序数组中的重复项" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>  <span class="k">func</span> <span class="n">removeElement</span><span class="p">(</span><span class="n">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="n">val</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">:=</span> <span class="m">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span> <span class="p">{</span>
+        <span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="o">-</span><span class="m">1</span><span class="p">]</span>
+        <span class="n">right</span><span class="o">--</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">left</span><span class="o">++</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">left</span>
+  <span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
@@ -869,6 +1066,9 @@
       
       <a href="/tags/leetcode/"
           class="post-tag no-text-decoration" >leetcode</a>
+      
+      <a href="/tags/arrar/"
+          class="post-tag no-text-decoration" >Arrar</a>
       
   </div>
   
@@ -952,27 +1152,27 @@
         
         
         
-      <li><a href="/posts/databases/">Databases（04735）</a></li>
+      <li><a href="/posts/base-beego/">Beego Base</a></li>
       
         
         
         
-      <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
+      <li><a href="/posts/beego-error/">Beego Error</a></li>
       
         
         
         
-      <li><a href="/posts/DataStructure/">DataStructure（02142）</a></li>
+      <li><a href="/posts/beego-mvc/">Beego MVC</a></li>
       
         
         
         
-      <li><a href="/posts/appOffLinePush/">手机推送</a></li>
+      <li><a href="/posts/beego-pro/">beego 高级编程</a></li>
       
         
         
         
-      <li><a href="/posts/Concurrent/">Day11（并发编程）</a></li>
+      <li><a href="/posts/beego-router/">beego 路由设置</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1085,100 +1285,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1188,628 +1294,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1998,6 +1482,772 @@
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2218,6 +2468,32 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -3791,6 +4067,59 @@
       
       
       <div class="card">
+        <a href="/posts/leetcode-array01/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1640995689"
+    data-df="YYYY-MM-DD"
+    >
+  2022-01-01
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Leetcode Day01（数组）</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                数组
+
+两数之和
+
+
+  题目连接
+  
+    题目解释
+
+    
+      给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个整数，并返回它们的数组下标。
+      你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+      你可以按任意顺序返回答案。
+    
+  
+  
+    ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/leetcode-readme/">
           <div class="card-body">
             <!--
@@ -3803,13 +4132,13 @@
 
 
 <em class="small"
-    data-ts="1672531688"
+    data-ts="1640995688"
     data-df="YYYY-MM-DD"
     >
-  2023-01-01
+  2022-01-01
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Leetcode Day01（Readme）</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Leetcode Readme</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3828,7 +4157,7 @@
       建议在中国站做完之后，可以去看下国际站，国际上对题目的理解
     
   
-  解题语言全部使用Golang
+  解题语言全部使用 Golang
 
 
 解题顺序
@@ -3844,132 +4173,57 @@
   先思考、写出方法
   写出伪代码
   写出自己答案
-  运行查看结果维度
+  运行查看结果 维度
   复习
     
       第一遍：解题
-  ...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/OperatorCondition/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1554182025"
-    data-df="YYYY-MM-DD"
-    >
-  2019-04-02
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day03（运算符与条件语句）</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                运算符与条件语句
-
-
-  本章源码
-
-
-运算符
-
-算数运算符
-
-
-  假定 A 值为 10，B 值为 20
-
-
-
-  
-    
-      运算符
-      描述
-      实例
-    
-  
-  
-    
-      +
-      相加
-      A + B 输出结果 30
-    
-    
-      -
-      相减
-      A - B 输出结果 -10
-   ...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/LoopStatementFunc/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1554221400"
-    data-df="YYYY-MM-DD"
-    >
-  2019-04-03
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day04（循环语句）</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                循环语句
-
-源代码
-
-for
-
-package main
-
-import &quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
-
-func main() {
-	array := make([]int, 5)
-	logs.Info(array)
-	for i := 0; i &amp;lt; len(array); i++ {
-		array[i] = i
 ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/leetcode-okay/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1641006489"
+    data-df="YYYY-MM-DD"
+    >
+  2022-01-01
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Leetcode 解题方式</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                解题方式
+
+暴力枚举
+
+查找表
+
+哈希表
+
+双指针
+
               </p>
             </div>
           </div>
@@ -3988,17 +4242,17 @@ func main() {
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/leetcode-readme/" class="btn btn-outline-primary"
+  <a href="/posts/leetcode-okay/" class="btn btn-outline-primary"
     prompt="上一篇">
-    <p>Leetcode Day01（Readme）</p>
+    <p>Leetcode 解题方式</p>
   </a>
   
 
   
-  <div class="btn btn-outline-primary disabled"
+  <a href="/posts/InternetPrinciples/" class="btn btn-outline-primary"
     prompt="下一篇">
-    <p>-</p>
-  </div>
+    <p>InternetPrinciples（04735）</p>
+  </a>
   
 
 </div>
@@ -4164,100 +4418,6 @@ func main() {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4267,628 +4427,6 @@ func main() {
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5077,6 +4615,772 @@ func main() {
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     

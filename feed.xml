@@ -2,9 +2,9 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://cc360428.github.io//</id>
-  <title>Cc</title>
+  <title>I'm Cc</title>
   <subtitle>查看所有</subtitle>
-  <updated>2023-05-04T17:19:15+08:00</updated>
+  <updated>2023-05-05T18:18:43+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,171 +17,6 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
-
-  
-  <entry>
-    <title>Leetcode Day02（数组）</title>
-    <link href="https://cc360428.github.io//posts/leetcode-array/" rel="alternate" type="text/html" title="Leetcode Day02（数组）" />
-    <published>2023-01-02T08:08:09+08:00</published>
-  
-    <updated>2023-01-02T08:08:09+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/leetcode-array/</id>
-    <content src="https://cc360428.github.io//posts/leetcode-array/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Server" />
-    
-    <category term="Algorith" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      数组
-
-两数之和
-
-
-  题目连接
-  
-    题目解释
-
-    
-      给定一个整数数组 nums和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那两个整数，并返回它们的数组下标。
-      你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
-      你可以按任意顺序返回答案。
-    
-  
-  
-    示例 1
-
-    输入：nums = [2,7,11,15], target = 9
-输出：[0,1]
-解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1]
-    
-  
-  
-    示例 2
-
-    输入：nums = [3,2,4], target = 6
-输出：[1,2]
-    
-  
-  
-    示例 3
-
-    输入：nums = [3,3], tar...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Leetcode Day01（Readme）</title>
-    <link href="https://cc360428.github.io//posts/leetcode-readme/" rel="alternate" type="text/html" title="Leetcode Day01（Readme）" />
-    <published>2023-01-01T08:08:08+08:00</published>
-  
-    <updated>2023-01-01T08:08:08+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/leetcode-readme/</id>
-    <content src="https://cc360428.github.io//posts/leetcode-readme/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Server" />
-    
-    <category term="Algorith" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      LeetCode
-
-
-  中国站
-  国际站
-  PS
-    
-      建议在中国站做完之后，可以去看下国际站，国际上对题目的理解
-    
-  
-  解题语言全部使用Golang
-
-
-解题顺序
-
-
-  按照 Tag 分类
-  从简单到困难
-
-
-解题方法
-
-
-  先思考、写出方法
-  写出伪代码
-  写出自己答案
-  运行查看结果维度
-  复习
-    
-      第一遍：解题
-      第二遍：写出最优解题方案
-      第三遍：最快时间写出解题答案
-    
-  
-
-
-解题Tag顺序
-
-
-  数组
-  链表
-  哈希表
-  字符串
-  双指针罚
-  栈与队列
-  二叉树
-  回溯算法
-  贪心算法
-  动态规划
-  单调栈
-  Other
-
-
-算法性能分析
-
-
-  详细可以查看本站文章：DataStructure
-
-
-
-  时间复杂度：运行时需要的总步数，通常时问题规...
-    </summary>
-  
-
-  </entry>
 
   
   <entry>
@@ -346,14 +181,14 @@
 
   
   <entry>
-    <title>Go mod</title>
-    <link href="https://cc360428.github.io//posts/go.mod/" rel="alternate" type="text/html" title="Go mod" />
-    <published>2021-03-18T18:01:33+08:00</published>
+    <title>Leetcode Day02（数组）</title>
+    <link href="https://cc360428.github.io//posts/leetcode-array02/" rel="alternate" type="text/html" title="Leetcode Day02（数组）" />
+    <published>2022-01-02T09:08:09+08:00</published>
   
-    <updated>2021-03-18T18:01:33+08:00</updated>
+    <updated>2022-01-02T09:08:09+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/go.mod/</id>
-    <content src="https://cc360428.github.io//posts/go.mod/" />
+    <id>https://cc360428.github.io//posts/leetcode-array02/</id>
+    <content src="https://cc360428.github.io//posts/leetcode-array02/" />
     <author>
       <name>Cc</name>
     </author>
@@ -362,7 +197,7 @@
     
     <category term="Server" />
     
-    <category term="Golang" />
+    <category term="Algorith" />
     
   
 
@@ -374,37 +209,145 @@
 
 
 
-      Go mod
-
-基础
-
-使用 go mod 管理依赖是官方推荐的方式，可以方便地管理代码的版本和依赖。
-
-下面是一些常见的 go mod 使用方法：
-
-1. 初始化项目
-
-在项目的根目录下，执行以下命令初始化 go mod：
-
-go mod init &amp;lt;module-name&amp;gt;
+      删除有序数组中的重复项
 
 
-其中 &amp;lt;module-name&amp;gt; 是项目的模块名，通常是一个域名的反转加上项目名，例如 github.com/example-project。
-
-2. 添加依赖
-
-假设你要添加一个名为 example-dependency 的依赖，你可以执行以下命令：
-
-go get example-dependency
+  题目连接
 
 
-这会将 example-dependency 下载到本地，并自动更新 go.mod 文件中的依赖信息。
+题目说明
 
-3. 升级依赖
+给你一个 升序排列 的数组 nums ，请你原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。然后返回 nums 中唯一元素的个数。
 
-你可以使用以下命令来升级项目的依赖：
+考虑 nums 的唯一元素的数量为 k ，你需要做以下事情确保你的题解可以被通过：
 
-go ge...
+
+  更改数组 nums ，使 nums 的前 k 个元素包含唯一元素，并按照它们最初在 nums 中出现的顺序排列。nums 的其余元素与 nums 的大小不重要。
+  返回 k 。
+
+
+判题标准:
+
+系统会用下面的代码来测试你的题解:
+
+int[] nums = [...]; // 输入数组
+int[] expectedNums = [...]; // 长度正确的期望答案
+
+int k = removeDuplicates(nums); // ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Leetcode 解题方式</title>
+    <link href="https://cc360428.github.io//posts/leetcode-okay/" rel="alternate" type="text/html" title="Leetcode 解题方式" />
+    <published>2022-01-01T11:08:09+08:00</published>
+  
+    <updated>2022-01-01T11:08:09+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/leetcode-okay/</id>
+    <content src="https://cc360428.github.io//posts/leetcode-okay/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Server" />
+    
+    <category term="Algorith" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      解题方式
+
+暴力枚举
+
+查找表
+
+哈希表
+
+双指针
+
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Leetcode Day01（数组）</title>
+    <link href="https://cc360428.github.io//posts/leetcode-array01/" rel="alternate" type="text/html" title="Leetcode Day01（数组）" />
+    <published>2022-01-01T08:08:09+08:00</published>
+  
+    <updated>2022-01-01T08:08:09+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/leetcode-array01/</id>
+    <content src="https://cc360428.github.io//posts/leetcode-array01/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Server" />
+    
+    <category term="Algorith" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      数组
+
+两数之和
+
+
+  题目连接
+  
+    题目解释
+
+    
+      给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个整数，并返回它们的数组下标。
+      你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+      你可以按任意顺序返回答案。
+    
+  
+  
+    示例 1
+
+    输入：nums = [2,7,11,15], target = 9
+输出：[0,1]
+解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1]
+    
+  
+  
+    示例 2
+
+    输入：nums = [3,2,4], target = 6
+输出：[1,2]
+    
+  
+  
+    示例 3
+
+    输入：nums = [3,3], t...
     </summary>
   
 
