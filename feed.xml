@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>I'm Cc</title>
   <subtitle>查看所有</subtitle>
-  <updated>2023-05-07T15:07:12+08:00</updated>
+  <updated>2023-05-07T15:15:42+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>数据库基础</title>
+    <link href="https://cc360428.github.io//posts/DataInfo/" rel="alternate" type="text/html" title="数据库基础" />
+    <published>2023-05-07T13:48:54+08:00</published>
+  
+    <updated>2023-05-07T13:48:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/DataInfo/</id>
+    <content src="https://cc360428.github.io//posts/DataInfo/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="System" />
+    
+    <category term="Mysql" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      服务端开发需要了解哪些数据库
+
+数据库分类
+
+服务端开发需要了解多种数据库，以下是其中一些常见的数据库类型：
+
+
+  关系型数据库（SQL 数据库）：如 MySQL、Oracle、PostgreSQL 等。关系型数据库采用表格形式来存储数据，其中每个表都由多个行和列组成。数据表之间通过关联建立关系，使得数据之间可以进行查询、修改、删除等操作。
+  非关系型数据库（NoSQL 数据库）：如 MongoDB、Cassandra、Redis 等。非关系型数据库不采用传统的表格形式来存储数据，而是以文档、键值对、图形等方式来组织数据。非关系型数据库具有高度的扩展性和灵活性，适合存储半结构化或非结构化数据。
+  内存数据库（In-Memory 数据库）：如 Memcached、Redis、Hazelcast 等。内存数据库将数据存储在内存中，因此具有极高的读写性能。内存数据库适合存储需要快速访...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -305,66 +350,6 @@
 
 
 C...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Leetcode Day02（数组）</title>
-    <link href="https://cc360428.github.io//posts/leetcode-array02/" rel="alternate" type="text/html" title="Leetcode Day02（数组）" />
-    <published>2022-01-02T09:08:09+08:00</published>
-  
-    <updated>2023-05-06T15:14:40+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/leetcode-array02/</id>
-    <content src="https://cc360428.github.io//posts/leetcode-array02/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Server" />
-    
-    <category term="Algorith" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      删除有序数组中的重复项
-
-
-  题目连接
-
-
-题目说明
-
-给你一个 升序排列 的数组 nums ，请你原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。然后返回 nums 中唯一元素的个数。
-
-考虑 nums 的唯一元素的数量为 k ，你需要做以下事情确保你的题解可以被通过：
-
-
-  更改数组 nums ，使 nums 的前 k 个元素包含唯一元素，并按照它们最初在 nums 中出现的顺序排列。nums 的其余元素与 nums 的大小不重要。
-  返回 k 。
-
-
-判题标准:
-
-系统会用下面的代码来测试你的题解:
-
-int[] nums = [...]; // 输入数组
-int[] expectedNums = [...]; // 长度正确的期望答案
-
-int k = removeDuplicates(nums); // ...
     </summary>
   
 

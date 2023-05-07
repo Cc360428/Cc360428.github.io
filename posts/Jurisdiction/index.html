@@ -2286,6 +2286,11 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -2614,6 +2619,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -4239,7 +4257,7 @@
       
       
       <div class="card">
-        <a href="/posts/pprof/">
+        <a href="/posts/go.mod/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -4251,13 +4269,13 @@
 
 
 <em class="small"
-    data-ts="1615975293"
+    data-ts="1616061693"
     data-df="YYYY-MM-DD"
     >
-  2021-03-17
+  2021-03-18
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Pprof</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Go mod</h3>
             <div class="text-muted small">
               <p>
                 
@@ -4266,35 +4284,23 @@
 
 
 
-                Go pprof And Prometheus
+                Go mod
 
-在代码中使用
+基础
+
+使用 go mod 管理依赖是官方推荐的方式，可以方便地管理代码的版本和依赖。
+
+下面是一些常见的 go mod 使用方法：
+
+1. 初始化项目
+
+在项目的根目录下，执行以下命令初始化 go mod：
 
 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-import (
-  ...
-	_ &quot;net/http/pprof&quot;
-  &quot;github.com/prometheus/client_golang/prometheus/promhttp&quot;
-  ...
-)
+go mod init &amp;lt;module-name&amp;gt;
 
-func main() {
 
- 	go func...
+其中 &amp;lt;module-name&amp;gt; 是项目的模块名，通常是一个域名的反转加上项目名，...
               </p>
             </div>
           </div>
@@ -5281,6 +5287,11 @@ func main() {
         
         
 
+  
+    
+    
+    
+    
   
     
     

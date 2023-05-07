@@ -1883,6 +1883,11 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -2211,6 +2216,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -3892,78 +3910,6 @@ https://gitee.com/ClientC...
       
       
       <div class="card">
-        <a href="/posts/Day06-variableAndArray/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1554649116"
-    data-df="YYYY-MM-DD"
-    >
-  2019-04-07
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day06（作用域与数组）</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                作用域与数组
-
-源码
-
-变量作用域
-
-局部变量
-
-
-  函数内定义的变量
-
-
-package main
-
-import (
-	&quot;fmt&quot;
-)
-
-func main() {
-	var a, b, c = 1, 2, 3
-	fmt.Println(a, b, c)
-}
-
-
-全局变量
-
-
-  函数外定义的变量
-
-
-package main
-
-import &quot;fmt&quot;
-
-// 定义全局变量
-var ...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/Day07-PointerAndstruct/">
           <div class="card-body">
             <!--
@@ -4019,6 +3965,56 @@ package main
 
 import (
 	&quot;github...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/Day08-sliceAndRanger/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1556116638"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-24
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day08（切片 slice 和 range）</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                切片（slice） 和range 使用
+
+源码
+
+切片（slice）
+
+
+  Go 数组在一定情况下，不能满足开发业务需求（数组固定长度、有很多局限性），切片是可变长度序列，切片底层就是数组做了一层封装（也叫做动态数组）。切片可以自动扩容，切片是引用类型，包含地址、长度（len）、容量（cap）
+
+
+切片什么时候扩容
+
+
+  如果切片的容量小于 1024 个元素，那么扩容的时候slice的c...
               </p>
             </div>
           </div>
@@ -4923,6 +4919,11 @@ import (
         
         
 
+  
+    
+    
+    
+    
   
     
     
