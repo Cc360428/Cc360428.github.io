@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>I'm Cc</title>
   <subtitle>查看所有</subtitle>
-  <updated>2023-05-06T15:15:12+08:00</updated>
+  <updated>2023-05-07T15:07:12+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,62 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Math</title>
+    <link href="https://cc360428.github.io//posts/Math/" rel="alternate" type="text/html" title="Math" />
+    <published>2023-05-07T12:48:54+08:00</published>
+  
+    <updated>2023-05-07T12:48:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/Math/</id>
+    <content src="https://cc360428.github.io//posts/Math/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Cc" />
+    
+    <category term="Left" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      数学
+
+
+  学习
+
+
+数学规划
+
+
+  确定目标：首先确定您希望在数学方面取得什么样的成就。这个目标应该是明确和具体的，例如：想要通过一项考试、学好高中数学、在职场上需要掌握数学技能等等。
+  
+    制定计划：根据您的目标，制定一个具体的学习计划。您可以根据自己的时间和能力制定计划。可以考虑以下因素：
+
+    
+      学习时间：确定每周可用于学习的时间，并在此基础上规划每天的学习时间。
+      学习内容：根据目标和自己的水平，选择相应的数学领域进行学习。可以考虑从基础知识开始，逐步深入。
+      学习方法：选择适合自己的学习方法，例如：自学、听课、参加培训等等。可以尝试不同的方法，选择最适合自己的方法。
+    
+  
+  学习执行：按照学习计划执行。建议将学习内容分成小块，每天逐步完成。同时，可以适当地加入一些练习和实践，帮助自己加深理解和掌握知识。
+  监测...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -309,75 +365,6 @@ int[] nums = [...]; // 输入数组
 int[] expectedNums = [...]; // 长度正确的期望答案
 
 int k = removeDuplicates(nums); // ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Leetcode Day01（数组）</title>
-    <link href="https://cc360428.github.io//posts/leetcode-array01/" rel="alternate" type="text/html" title="Leetcode Day01（数组）" />
-    <published>2022-01-01T19:08:09+08:00</published>
-  
-    <updated>2023-05-05T18:26:29+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/leetcode-array01/</id>
-    <content src="https://cc360428.github.io//posts/leetcode-array01/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Server" />
-    
-    <category term="Algorith" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      数组
-
-两数之和
-
-
-  题目连接
-  
-    题目解释
-
-    
-      给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个整数，并返回它们的数组下标。
-      你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
-      你可以按任意顺序返回答案。
-    
-  
-  
-    示例 1
-
-    输入：nums = [2,7,11,15], target = 9
-输出：[0,1]
-解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1]
-    
-  
-  
-    示例 2
-
-    输入：nums = [3,2,4], target = 6
-输出：[1,2]
-    
-  
-  
-    示例 3
-
-    输入：nums = [3,3], t...
     </summary>
   
 
