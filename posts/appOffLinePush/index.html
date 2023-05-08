@@ -1102,6 +1102,9 @@
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
+      <a href="/tags/client/"
+          class="post-tag no-text-decoration" >Client</a>
+      
       <a href="/tags/apppush/"
           class="post-tag no-text-decoration" >AppPush</a>
       
@@ -4933,7 +4936,7 @@
       
       
       <div class="card">
-        <a href="/posts/Day09-mapAndContainer/">
+        <a href="/posts/createVue/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -4945,13 +4948,13 @@
 
 
 <em class="small"
-    data-ts="1556157624"
+    data-ts="1539269916"
     data-df="YYYY-MM-DD"
     >
-  2019-04-25
+  2018-10-11
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day09（MapAndContainer）</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Vue 创建项目</h3>
             <div class="text-muted small">
               <p>
                 
@@ -4960,190 +4963,136 @@
 
 
 
-                集合(map) 和容器(Container)
-
-源码
-
-Map
+                检查安装环境
 
 
-  Map 是一种无序键值对的集合，通过Key来检索数据，key 类似索引，指向数据值，可以使用for迭代，但是 map是无序的，无法决定他的返回值顺序，这是因为map 是使用hash 来实现的
-
-
-删除元素、判断是否存在
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
+  node
+node 下载
+  cnpm
     
-      
-      
-      <div class="card">
-        <a href="/posts/Day10-interfaceAndError/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1556182979"
-    data-df="YYYY-MM-DD"
-    >
-  2019-04-25
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day10（接口和错误处理）</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                interface And Panic、Error
-
-
-  源码
-
-
-interface
-
-接口创建使用
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
+      npm install cnpm -g –registry=https://registry.npm.taobao.org
     
-      
-      
-      <div class="card">
-        <a href="/posts/Day11-Concurrent/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class="small"
-    data-ts="1556327969"
-    data-df="YYYY-MM-DD"
-    >
-  2019-04-27
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day11（并发编程）</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                概念
-
-
-  并发：把任务在不同的时间点交给处理器进行处理明珠爱同一时间点，任务并不会同事进行
-  并行：把每一个任务分配给每一个处理器独立完成，在同一时间点任务一定是同时运行的
-
-
-简介使用
-
-
-  创建：使用 go 关键字创建一个 goroutine go functionName()
   
-    调整并发运行性能
+  npm
 
+
+    D:\file\vue\vue&amp;gt;node -v
+    v10.16.3
+
+    D:\file\vue\vue&amp;gt;npm 0v
+  ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
-        例子：
+      
+      <div class="card">
+        <a href="/posts/vue/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
-        1...
+
+
+
+
+<em class="small"
+    data-ts="1539356316"
+    data-df="YYYY-MM-DD"
+    >
+  2018-10-12
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Vue</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                vue
+
+学习网址
+
+https://developer.aliyun.com/mirror/NPM?from=tnpm
+
+脚手架
+
+#全局安装vue的命令行工具
+npm install -g @vue/cli
+
+#验证Vue是否安装成功
+vue -V
+
+#通过脚手架命令行方式创建vue项目
+vue create vue-demo
+
+#通过vue提供的界面来创建vue项目
+vue ui
+
+#...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/Error/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class="small"
+    data-ts="1549983516"
+    data-df="YYYY-MM-DD"
+    >
+  2019-02-12
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>手机推送</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Error
+
+获取包错误
+
+Waiting for another flutter command to release the startup lock...
+
+
+  解决办法
+
+
+1
+2
+cd /usr/local/dart/flutter/bin/cache
+rm -rf lockfile
+
+
+拉依赖包
+
+This is taking an unexpectedly long time...
               </p>
             </div>
           </div>
