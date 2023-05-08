@@ -44,8 +44,8 @@
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Golang 代码规范" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="查看所有" />
-<meta property="og:description" content="查看所有" />
+<meta name="description" content="代码规范" />
+<meta property="og:description" content="代码规范" />
 <link rel="canonical" href="https://cc360428.github.io//posts/other/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/other/" />
 <meta property="og:site_name" content="I’m Cc" />
@@ -54,7 +54,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Golang 代码规范" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-04-29T22:58:36+08:00","datePublished":"2019-04-29T22:58:36+08:00","description":"查看所有","headline":"Golang 代码规范","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/other/"},"url":"https://cc360428.github.io//posts/other/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-04-29T22:58:36+08:00","datePublished":"2019-04-29T22:58:36+08:00","description":"代码规范","headline":"Golang 代码规范","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/other/"},"url":"https://cc360428.github.io//posts/other/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -525,6 +525,41 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -623,8 +658,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="0 字">
-  <em>1 分钟</em>阅读</span>
+  title="1133 字">
+  <em>6 分钟</em>阅读</span>
 
     </div>
 
@@ -633,7 +668,194 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  
+  <h3 id="代码规范"><span class="mr-2">代码规范</span><a href="#代码规范" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Go 代码规范（或 Go 规范）旨在使代码更具可读性、可维护性和可重用性。以下是一些主要的规则：</p>
+
+<ol>
+  <li>格式化：使用 gofmt 工具来格式化代码以提高可读性。</li>
+  <li>命名：遵循有意义的命名方式，使用驼峰式命名法，在变量名和函数名中使用小写字母开头，公共函数和变量名应该首字母大写。</li>
+  <li>注释：对于每一个包、函数、类型、方法和变量都应该添加注释，尽可能用单行注释。</li>
+  <li>导入：将所有依赖项导入放在文件顶部。</li>
+  <li>错误处理：避免使用 panic 和 recover 函数，应该使用错误处理机制来处理错误。</li>
+  <li>测试：为每个函数编写测试代码，并确保测试覆盖率达到最大程度。</li>
+  <li>接口：尽可能使用接口类型而不是具体类型，因为接口类型灵活且易于扩展。</li>
+  <li>并发：使用 goroutine 和通道来实现并发操作，而不是使用共享内存。</li>
+  <li>包结构：将相关的函数和变量组织成包，同时避免循环依赖。</li>
+  <li>性能：尽可能使用指针和原始数据类型来提高性能，同时避免过度优化。</li>
+</ol>
+
+<h3 id="详细解释"><span class="mr-2">详细解释</span><a href="#详细解释" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>好的，以下是更详细的 Go 代码规范：</p>
+
+<ol>
+  <li>格式化：Go 官方推荐使用 gofmt 工具进行格式化。gofmt 是一个命令行工具，它会自动将代码格式化为 Go 规范。例如：</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>// 不符合 Go 规范的写法
+if (x==0) {
+    // ...
+}
+
+// 符合 Go 规范的写法
+if x == 0 {
+    // ...
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<ol>
+  <li>命名：在 Go 语言中，驼峰式命名法是首选。变量名和函数名应该以小写字母开头，公共函数和变量名（可以被其他包访问）应该首字母大写。另外，名称应该尽可能地表达其含义，避免缩写或不必要的简称。例如：</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>// 不符合 Go 规范的写法
+var num int
+func calc(x int, y int) int {}
+
+// 符合 Go 规范的写法
+var number int
+func Calculate(x int, y int) int {}
+</pre></td></tr></tbody></table></code></div></div>
+
+<ol>
+  <li>注释：在 Go 语言中，注释使用 // 或 /_ … _/ 来表示单行或多行注释。每个包、函数、类型、方法和变量都应该添加注释，以便其他人更容易理解你的代码。注释应该简短、精确，尽可能用单行注释。例如：</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>// 计算两个数字的和
+func Add(x int, y int) int {
+    return x + y
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<ol>
+  <li>导入：在 Go 语言中，应该将所有依赖项导入放在文件顶部，每个导入占一行，并按字母顺序排列。如果要使用包中的某些函数或变量，应该使用包名称作为前缀。例如：</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre>import (
+    "fmt"
+    "io/ioutil"
+    "net/http"
+)
+
+func main() {
+    resp, err := http.Get("http://example.com")
+    if err != nil {
+        // ...
+    }
+    defer resp.Body.Close()
+
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        // ...
+    }
+
+    fmt.Println(string(body))
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<ol>
+  <li>错误处理：在 Go 语言中，错误处理是一种重要的编程技术。通常情况下，函数返回值应该包括一个 error 类型的变量，用于指示函数执行是否成功。可以使用 errors 包来创建自定义错误。例如：</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>func DoSomething() error {
+    if err := doStep1(); err != nil {
+        return err
+    }
+    if err := doStep2(); err != nil {
+        return err
+    }
+    return nil
+}
+
+func doStep1() error {
+    // 如果发生错误，则返回自定义的错误
+    return errors.New("发生了一个错误")
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<ol>
+  <li>测试：为每个函数和方法编写测试代码是 Go 语言中的一条重要规则。测试代码应该覆盖每个函数的所有分支路径，以保证代码质量。同时，应该使用测试框架（如 Go 的内置测试框架）来自动运行测试代码。例如：</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>func TestAdd(t *testing.T) {
+    result := Add(2, 3)
+    if result != 5 {
+        t.Errorf("Add(2, 3) = %d; want 5", result)
+    }
+}
+</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
@@ -644,8 +866,8 @@
   <div class="post-meta mb-3">
     <i class="far fa-folder-open fa-fw mr-1"></i>
     
-      <a href='/categories/server/'>Server</a>,
-      <a href='/categories/golang/'>Golang</a>
+      <a href='/categories/language/'>Language</a>,
+      <a href='/categories/go/'>Go</a>
   </div>
   
 
@@ -654,14 +876,14 @@
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/golang/"
-          class="post-tag no-text-decoration" >golang</a>
+      <a href="/tags/server/"
+          class="post-tag no-text-decoration" >Server</a>
       
-      <a href="/tags/goadvanced/"
-          class="post-tag no-text-decoration" >GoAdvanced</a>
+      <a href="/tags/go/"
+          class="post-tag no-text-decoration" >Go</a>
       
-      <a href="/tags/goutils/"
-          class="post-tag no-text-decoration" >GoUtils</a>
+      <a href="/tags/goutil/"
+          class="post-tag no-text-decoration" >GoUtil</a>
       
   </div>
   
@@ -745,27 +967,17 @@
         
         
         
-      <li><a href="/posts/leetcode-array02/">Leetcode Day02（数组）</a></li>
+      <li><a href="/posts/databases/">Databases（04735）</a></li>
       
         
         
         
-      <li><a href="/posts/leetcode-readme/">Leetcode Readme</a></li>
+      <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
       
         
         
         
-      <li><a href="/posts/leetcode-array01/">Leetcode Day01（数组）</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/base-beego/">Beego Base</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/beego-error/">Beego Error</a></li>
+      <li><a href="/posts/DataStructure/">DataStructure（02142）</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -888,10 +1100,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -997,99 +1205,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -1254,301 +1369,6 @@
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1588,16 +1408,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1892,6 +1702,36 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1986,7 +1826,1051 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2045,34 +2929,34 @@
 
     
       
-      <a class="post-tag" href="/tags/golang/">golang</a>
+      <a class="post-tag" href="/tags/server/">Server</a>
     
       
-      <a class="post-tag" href="/tags/goutils/">GoUtils</a>
+      <a class="post-tag" href="/tags/go/">Go</a>
+    
+      
+      <a class="post-tag" href="/tags/linuxtool/">LinuxTool</a>
     
       
       <a class="post-tag" href="/tags/gobase/">GoBase</a>
     
       
-      <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
+      <a class="post-tag" href="/tags/microservices/">Microservices</a>
     
       
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
-      <a class="post-tag" href="/tags/grpc/">gRPC</a>
-    
-      
-      <a class="post-tag" href="/tags/microservices/">Microservices</a>
+      <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
       <a class="post-tag" href="/tags/redhad/">RedHad</a>
     
       
-      <a class="post-tag" href="/tags/gointerview/">GoInterview</a>
+      <a class="post-tag" href="/tags/system/">System</a>
     
       
-      <a class="post-tag" href="/tags/kratos/">kratos</a>
+      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>
@@ -2086,6 +2970,14 @@
       
 
 
+
+<!-- BS-toc.js will be loaded at medium priority -->
+<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+  <div class="panel-heading pl-3 pt-2 mb-2">文章内容</div>
+  <nav id="toc" data-toggle="toc"></nav>
+</div>
 
 
     
@@ -3254,7 +4146,72 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -3756,7 +4713,7 @@
       
       
       <div class="card">
-        <a href="/posts/go.mod/">
+        <a href="/posts/Day09-mapAndContainer/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3768,13 +4725,13 @@
 
 
 <em class="small"
-    data-ts="1616061693"
+    data-ts="1556157624"
     data-df="YYYY-MM-DD"
     >
-  2021-03-18
+  2019-04-25
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Go mod</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day09（MapAndContainer）</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3783,23 +4740,22 @@
 
 
 
-                Go mod
+                集合(map) 和容器(Container)
 
-基础
+源码
 
-使用 go mod 管理依赖是官方推荐的方式，可以方便地管理代码的版本和依赖。
-
-下面是一些常见的 go mod 使用方法：
-
-1. 初始化项目
-
-在项目的根目录下，执行以下命令初始化 go mod：
-
-1
-go mod init &amp;lt;module-name&amp;gt;
+Map
 
 
-其中 &amp;lt;module-name&amp;gt; 是项目的模块名，通常是一个域名的反转加上项目名，...
+  Map 是一种无序键值对的集合，通过Key来检索数据，key 类似索引，指向数据值，可以使用for迭代，但是 map是无序的，无法决定他的返回值顺序，这是因为map 是使用hash 来实现的
+
+
+删除元素、判断是否存在
+
+package main
+
+import (
+	&quot;github.com/Cc360428/HelpP...
               </p>
             </div>
           </div>
@@ -3809,7 +4765,7 @@ go mod init &amp;lt;module-name&amp;gt;
       
       
       <div class="card">
-        <a href="/posts/algorithm/">
+        <a href="/posts/Day10-interfaceAndError/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3821,13 +4777,13 @@ go mod init &amp;lt;module-name&amp;gt;
 
 
 <em class="small"
-    data-ts="1556549916"
+    data-ts="1556182979"
     data-df="YYYY-MM-DD"
     >
-  2019-04-29
+  2019-04-25
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Golang 算法</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day10（接口和错误处理）</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3836,14 +4792,25 @@ go mod init &amp;lt;module-name&amp;gt;
 
 
 
-                算法
+                interface And Panic、Error
 
 
-  常见的算法有
+  源码
 
 
+interface
 
+接口创建使用
 
+package main
+
+import (
+	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
+	&quot;github.com/pkg/errors&quot;
+)
+
+// UserInterface
+type UserInterface interf...
               </p>
             </div>
           </div>
@@ -3853,7 +4820,7 @@ go mod init &amp;lt;module-name&amp;gt;
       
       
       <div class="card">
-        <a href="/posts/go-1.12/">
+        <a href="/posts/Day11-Concurrent/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -3865,13 +4832,13 @@ go mod init &amp;lt;module-name&amp;gt;
 
 
 <em class="small"
-    data-ts="1575623482"
+    data-ts="1556327969"
     data-df="YYYY-MM-DD"
     >
-  2019-12-06
+  2019-04-27
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Go 1.12 版本更新 摘要</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Day11（并发编程）</h3>
             <div class="text-muted small">
               <p>
                 
@@ -3880,29 +4847,25 @@ go mod init &amp;lt;module-name&amp;gt;
 
 
 
-                go mod 1.12 学习
-
-go modules(check version)
-
-检查 golang 版本
-
-1
-2
-3
-4
-5
-如果没有生成 go.sum 或者报错请输入
-export GOPROXY=https://goproxy.io
-
-C:\Users\admin&amp;gt;go version
-go version go1.12.9 windows/amd64
+                概念
 
 
-1
-2
-3
-4
-...
+  并发：把任务在不同的时间点交给处理器进行处理明珠爱同一时间点，任务并不会同事进行
+  并行：把每一个任务分配给每一个处理器独立完成，在同一时间点任务一定是同时运行的
+
+
+简介使用
+
+
+  创建：使用 go 关键字创建一个 goroutine go functionName()
+  
+    调整并发运行性能
+
+    
+      
+        例子：
+
+        r...
               </p>
             </div>
           </div>
@@ -4107,10 +5070,6 @@ go version go1.12.9 windows/amd64
     
     
     
-      
-        
-        
-
   
     
     
@@ -4216,99 +5175,6 @@ go version go1.12.9 windows/amd64
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -4473,301 +5339,6 @@ go version go1.12.9 windows/amd64
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4807,16 +5378,6 @@ go version go1.12.9 windows/amd64
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5111,6 +5672,36 @@ go version go1.12.9 windows/amd64
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5205,7 +5796,1051 @@ go version go1.12.9 windows/amd64
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -5264,34 +6899,34 @@ go version go1.12.9 windows/amd64
 
     
       
-      <a class="post-tag" href="/tags/golang/">golang</a>
+      <a class="post-tag" href="/tags/server/">Server</a>
     
       
-      <a class="post-tag" href="/tags/goutils/">GoUtils</a>
+      <a class="post-tag" href="/tags/go/">Go</a>
+    
+      
+      <a class="post-tag" href="/tags/linuxtool/">LinuxTool</a>
     
       
       <a class="post-tag" href="/tags/gobase/">GoBase</a>
     
       
-      <a class="post-tag" href="/tags/goadvanced/">GoAdvanced</a>
+      <a class="post-tag" href="/tags/microservices/">Microservices</a>
     
       
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
-      <a class="post-tag" href="/tags/grpc/">gRPC</a>
-    
-      
-      <a class="post-tag" href="/tags/microservices/">Microservices</a>
+      <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
       <a class="post-tag" href="/tags/redhad/">RedHad</a>
     
       
-      <a class="post-tag" href="/tags/gointerview/">GoInterview</a>
+      <a class="post-tag" href="/tags/system/">System</a>
     
       
-      <a class="post-tag" href="/tags/kratos/">kratos</a>
+      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>
