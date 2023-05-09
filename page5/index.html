@@ -42,25 +42,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="I’m Cc" />
+<meta property="og:title" content="Cc Blog" />
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="查看所有" />
 <meta property="og:description" content="查看所有" />
-<link rel="canonical" href="https://cc360428.github.io//page5/" />
-<meta property="og:url" content="https://cc360428.github.io//page5/" />
-<meta property="og:site_name" content="I’m Cc" />
+<link rel="canonical" href="http://localhost:4000/page5/" />
+<meta property="og:url" content="http://localhost:4000/page5/" />
+<meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="https://cc360428.github.io//page4" />
-<link rel="next" href="https://cc360428.github.io//page6" />
+<link rel="prev" href="http://localhost:4000/page4" />
+<link rel="next" href="http://localhost:4000/page6" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="I’m Cc" />
+<meta property="twitter:title" content="Cc Blog" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"查看所有","headline":"I’m Cc","url":"https://cc360428.github.io//page5/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"查看所有","headline":"Cc Blog","url":"http://localhost:4000/page5/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>I'm Cc
+  <title>Cc Blog
   </title>
 
   <!--
@@ -75,8 +75,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="I'm Cc">
-<meta name="application-name" content="I'm Cc">
+<meta name="apple-mobile-web-app-title" content="Cc Blog">
+<meta name="application-name" content="Cc Blog">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
@@ -274,9 +274,9 @@
     </div>
 
     <div class="site-title mt-3">
-      <a href="/">I'm Cc</a>
+      <a href="/">Cc Blog</a>
     </div>
-    <div class="site-subtitle font-italic">Hello!</div>
+    <div class="site-subtitle font-italic">Hello, I'm Cc</div>
 
   </div><!-- .profile-wrapper -->
 
@@ -346,7 +346,7 @@
     
 
     
-    <a href="https://github.com/Cc360428" aria-label="github" target="_blank" rel="noopener" >
+    <a href="https://github.com/Cc360428-" aria-label="github" target="_blank" rel="noopener" >
       <i class="fab fa-github"></i>
     </a>
     
@@ -385,7 +385,6 @@
 
 </div><!-- #sidebar -->
 
-
     <!--
   The Top Bar
 -->
@@ -407,7 +406,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      I'm Cc
+      Cc Blog
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -469,6 +468,231 @@
    
 
   <div id="post-list">
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/bash_shell/">零散的脚本</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          开发 sh 脚本
+
+杀死进程
+
+kill.sh
+
+#!/bin/sh
+#根据进程名杀死进程
+if [ $# -lt 1 ]
+then
+  echo &quot;缺少参数：procedure_name&quot;
+  exit 1
+fi
+
+PROCESS=`ps -ef|grep $1|grep -v grep|grep -v PPID|awk &#39;{ print $2}&#39;`
+for i in $PROCESS
+d...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587391501"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-20
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Network,
+            Linux,
+            Sehll
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/shellother/">System Linux Error</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          ssh 工具
+
+
+  MobaXterm
+  Xshell
+
+
+记录
+
+开启 root 用户登录
+https://blog.csdn.net/wy_97/article/details/78294562
+
+yum install htop
+
+No package htop available.
+Error: Nothing to do
+
+解决办法
+解决办法，安装epel-release之后，...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587391501"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-20
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Network,
+            Linux,
+            Sehll
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/etcd_pro/">etcd Pro</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          etcd 的初步使用
+
+StormZhu · 2018-11-21 01:34:40 · 1305 次点击 · 预计阅读时间 4 分钟 · 不到 1 分钟之前 开始浏览
+
+这是一个创建于 2018-11-21 01:34:40 的文章，其中的信息可能已经有所发展或是发生改变。
+
+简介
+
+
+
+etcd 介绍.png
+
+etcd是一个golang编写的分布式、高可用的一致性键值存储系统，用于提供...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1587391501"
+    data-df="YYYY-MM-DD"
+    >
+  2020-04-20
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Database,
+            Etcd
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
 
     
 
@@ -982,255 +1206,6 @@ mysql    20039     1  0 12:39 ?     ...
 
     
 
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/10-RedHad-network/">linux(CentOS7) 网络管理</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          网络基础知识以及网络管理内容
-
-网络管理协议
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-TCP/IP 协议概述
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-OSI 参考模型
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-包（packet）
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-网络字节顺序
-
-
-  好多概念知识，会拿出时间来讲解这...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1585414152"
-    data-df="YYYY-MM-DD"
-    >
-  2020-03-29
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Network,
-            Linux,
-            RedHad
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/8-RedHad-appliction-manger/">linux(CentOS7) 应用程序管理</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          应用程序管理
-
-软件包基础
-
-常见安装工具包
-
-
-  RPM
-  DPKG
-
-
-RPM 使用
-
-安装软件 （rz 示例）
-
-
-  都和以下载
-
-  ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm
-
-  wget http://images...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1585383072"
-    data-df="YYYY-MM-DD"
-    >
-  2020-03-28
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Network,
-            Linux,
-            RedHad
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/7-RedHad-user-group/">linux(CentOS7) 用户和组</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          用户和组
-
-Linux 用户管理
-
-登录时发生了什么
-
-
-  不管是终端还是图像界面登录系统校验
-
-
-
-  检查这个用户是否 /etc/passwd 中
-  再校验 /etc/shadow 密码是否正确
-  密码输入次数大于默认值 3 次重新输入用户名再输入密码
-
-
-用户类型
-
-
-  
-    超级用户：超级用户 USER ID 为 0 root:x:0:0:root:/root:/bin/...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1585324992"
-    data-df="YYYY-MM-DD"
-    >
-  2020-03-28
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Network,
-            Linux,
-            RedHad
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
   </div> <!-- #post-list -->
 
   
@@ -1461,9 +1436,24 @@ Linux 用户管理
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page13">13</a>
+        <a class="page-link btn-box-shadow" href="/page14">14</a>
       </li>
     
 
@@ -1472,7 +1462,7 @@ Linux 用户管理
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>5</span>
-    <span class="text-muted">/ 13</span>
+    <span class="text-muted">/ 14</span>
   </li>
 
   <!-- right arrow -->
@@ -1522,17 +1512,17 @@ Linux 用户管理
         
         
         
-      <li><a href="/posts/databases/">Databases（04735）</a></li>
-      
-        
-        
-        
       <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
       
         
         
         
       <li><a href="/posts/DataStructure/">DataStructure（02142）</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/databases/">Databases（04735）</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1835,6 +1825,314 @@ Linux 用户管理
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2163,120 +2461,6 @@ Linux 用户管理
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2291,66 +2475,6 @@ Linux 用户管理
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2650,184 +2774,10 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -3239,11 +3189,6 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -3407,11 +3352,6 @@ Linux 用户管理
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -3868,6 +3808,314 @@ Linux 用户管理
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4196,120 +4444,6 @@ Linux 用户管理
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4324,66 +4458,6 @@ Linux 用户管理
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4683,184 +4757,10 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -5272,11 +5172,6 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -5440,11 +5335,6 @@ Linux 用户管理
         
         
 
-  
-    
-    
-    
-    
   
     
     

@@ -44,22 +44,22 @@
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Protocol Buffer 语法" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="Protocol Buffer" />
-<meta property="og:description" content="Protocol Buffer" />
-<link rel="canonical" href="https://cc360428.github.io//posts/Protocol-Buffer/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/Protocol-Buffer/" />
-<meta property="og:site_name" content="I’m Cc" />
+<meta name="description" content="Protocol Buffer语法" />
+<meta property="og:description" content="Protocol Buffer语法" />
+<link rel="canonical" href="http://localhost:4000/posts/Protocol-Buffer/" />
+<meta property="og:url" content="http://localhost:4000/posts/Protocol-Buffer/" />
+<meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-12-26T14:22:12+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Protocol Buffer 语法" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-12-26T14:22:12+08:00","datePublished":"2019-12-26T14:22:12+08:00","description":"Protocol Buffer","headline":"Protocol Buffer 语法","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/Protocol-Buffer/"},"url":"https://cc360428.github.io//posts/Protocol-Buffer/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-12-26T14:22:12+08:00","datePublished":"2019-12-26T14:22:12+08:00","description":"Protocol Buffer语法","headline":"Protocol Buffer 语法","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Protocol-Buffer/"},"url":"http://localhost:4000/posts/Protocol-Buffer/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Protocol Buffer 语法 | I'm Cc
+  <title>Protocol Buffer 语法 | Cc Blog
   </title>
 
   <!--
@@ -74,8 +74,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="I'm Cc">
-<meta name="application-name" content="I'm Cc">
+<meta name="apple-mobile-web-app-title" content="Cc Blog">
+<meta name="application-name" content="Cc Blog">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
@@ -278,9 +278,9 @@
     </div>
 
     <div class="site-title mt-3">
-      <a href="/">I'm Cc</a>
+      <a href="/">Cc Blog</a>
     </div>
-    <div class="site-subtitle font-italic">Hello!</div>
+    <div class="site-subtitle font-italic">Hello, I'm Cc</div>
 
   </div><!-- .profile-wrapper -->
 
@@ -350,7 +350,7 @@
     
 
     
-    <a href="https://github.com/Cc360428" aria-label="github" target="_blank" rel="noopener" >
+    <a href="https://github.com/Cc360428-" aria-label="github" target="_blank" rel="noopener" >
       <i class="fab fa-github"></i>
     </a>
     
@@ -388,7 +388,6 @@
   </div> <!-- .sidebar-bottom -->
 
 </div><!-- #sidebar -->
-
 
     <!--
   The Top Bar
@@ -525,6 +524,29 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
 
   
   
@@ -623,8 +645,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="4 字">
-  <em>1 分钟</em>阅读</span>
+  title="780 字">
+  <em>4 分钟</em>阅读</span>
 
     </div>
 
@@ -633,9 +655,146 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="protocol-buffer">Protocol Buffer</h1>
+  <h3 id="protocol-buffer语法"><span class="mr-2">Protocol Buffer语法</span><a href="#protocol-buffer语法" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>语法</p>
+<p>好的，下面我将更详细地说明 Protobuf 的语法。</p>
+
+<ol>
+  <li>Protobuf 版本</li>
+</ol>
+
+<p>Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版本，proto3 是新版本。proto3 做了很多改进，比如对标量类型的定义进行了优化，使其更加严格和一致；移除了一些不必要的特性；默认情况下启用了所有字段都是 required 约束（但现在 required 已经被标记为 deprecated）等等。</p>
+
+<p>在 Protobuf 文件开头需要指定使用的版本，例如：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>syntax = "proto3";
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>可以通过这个语句来告诉编译器使用 proto3 版本。</p>
+
+<ol>
+  <li>包名</li>
+</ol>
+
+<p>与许多编程语言类似，Protobuf 中也有包名的概念。一个 Protobuf 文件通常属于一个特定的包，并且由该包内的多个消息组成。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">package</code> 关键字来指定包名，例如：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>package example;
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>这里指定了文件所属的包为 <code class="language-plaintext highlighter-rouge">example</code>。</p>
+
+<ol>
+  <li>引入其他文件</li>
+</ol>
+
+<p>如果一个 Protobuf 文件依赖于另一个文件中定义的类型，那么可以使用 <code class="language-plaintext highlighter-rouge">import</code> 关键字来引入该文件。例如：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>import "google/protobuf/timestamp.proto";
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>这里引入了 Google 提供的 Protobuf 文件中的 timestamp.proto 文件，使得我们可以在该文件中使用 Timestamp 类型。</p>
+
+<ol>
+  <li>消息类型</li>
+</ol>
+
+<p>在 Protobuf 中，使用 <code class="language-plaintext highlighter-rouge">message</code> 关键字来定义消息类型。一个消息由一个或多个字段组成，每个字段有一个名称和一个类型。</p>
+
+<p>例如：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>message Person {
+  string name = 1;
+  int32 age = 2;
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>这里定义了一个名为 Person 的消息类型，它有两个字段：name 和 age。name 的类型是 string，age 的类型是 int32。</p>
+
+<ol>
+  <li>字段</li>
+</ol>
+
+<p>Protobuf 中的字段可以具有以下属性：</p>
+
+<ul>
+  <li>名称：用于标识该字段。</li>
+  <li>类型：定义了该字段所能包含的数据类型。</li>
+  <li>标识号：用于在二进制编码中标识该字段。</li>
+  <li>规则：指定该字段是否是必需的，可选的，重复的等。</li>
+</ul>
+
+<p>例如：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>message Person {
+  string name = 1;
+  int32 age = 2;
+  repeated string address = 3;
+  bool is_student = 4 [default = false];
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>这里定义了四个字段：</p>
+
+<ul>
+  <li>name：类型为 string，标识号为 1，必需的。</li>
+  <li>age：类型为 int32，标识号为 2，必需的。</li>
+  <li>address：类型为 string 数组，标识号为 3，可重复的。</li>
+  <li>is_student：类型为 bool，标识号为 4，可选的，默认值为 false。</li>
+</ul>
+
+<ol>
+  <li>枚举</li>
+</ol>
+
+<p>除了消息类型之外，Protobuf 还支持枚举类型。通过 <code class="language-plaintext highlighter-rouge">enum</code> 关键字定义一个枚举类型，例如：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>enum PhoneType {
+  MOBILE = 0;
+  HOME = 1;
+  WORK = 2;
+}
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>这里定义了一个名为 PhoneType 的枚举类型，它包含三个值：MOBILE、HOME 和 WORK，对应的值分别为 0、1 和 2。</p>
+
+<ol>
+  <li>其他特性</li>
+</ol>
+
+<p>除了上述基本语法之外，Protobuf 还支持许多其他特性，如注释、嵌套类型、扩展等。具体可以参考 Protobuf 官方文档。</p>
+
 
 </div>
 
@@ -750,17 +909,17 @@
         
         
         
-      <li><a href="/posts/databases/">Databases（04735）</a></li>
-      
-        
-        
-        
       <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
       
         
         
         
       <li><a href="/posts/DataStructure/">DataStructure（02142）</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/databases/">Databases（04735）</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1063,6 +1222,314 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1391,120 +1858,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1519,66 +1872,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1878,184 +2171,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2467,11 +2586,6 @@
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -2635,11 +2749,6 @@
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2754,6 +2863,14 @@
 
 
 
+<!-- BS-toc.js will be loaded at medium priority -->
+<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+  <div class="panel-heading pl-3 pt-2 mb-2">文章内容</div>
+  <nav id="toc" data-toggle="toc"></nav>
+</div>
+
 
     
   </div>
@@ -2785,6 +2902,45 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -5020,6 +5176,314 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -5348,120 +5812,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5476,66 +5826,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5835,184 +6125,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -6424,11 +6540,6 @@
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -6592,11 +6703,6 @@
         
         
 
-  
-    
-    
-    
-    
   
     
     

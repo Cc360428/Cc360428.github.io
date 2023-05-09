@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>https://cc360428.github.io//</id>
-  <title>I'm Cc</title>
+  <id>http://localhost:4000/</id>
+  <title>Cc Blog</title>
   <subtitle>查看所有</subtitle>
-  <updated>2023-05-08T18:15:03+08:00</updated>
+  <updated>2023-05-09T16:03:46+08:00</updated>
   <author>
     <name>Cc</name>
-    <uri>https://cc360428.github.io//</uri>
+    <uri>http://localhost:4000/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="https://cc360428.github.io//feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="zh-CN"
-    href="https://cc360428.github.io//"/>
+    href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
   <rights> © 2023 Cc </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -20,14 +20,248 @@
 
   
   <entry>
+    <title>Docker 基础命令</title>
+    <link href="http://localhost:4000/posts/cmd-docker/" rel="alternate" type="text/html" title="Docker 基础命令" />
+    <published>2023-05-09T12:09:01+08:00</published>
+  
+    <updated>2023-05-09T12:09:01+08:00</updated>
+  
+    <id>http://localhost:4000/posts/cmd-docker/</id>
+    <content src="http://localhost:4000/posts/cmd-docker/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Linux" />
+    
+    <category term="Command" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Docker
+
+Docker 基本使用
+
+
+  docker run: 运行一个容器
+
+
+这是启动 Docker 容器最基本的命令。它会从指定的镜像创建一个新的容器，并在其中运行指定的命令。例如：
+
+docker run ubuntu /bin/bash
+
+
+这将使用 ubuntu 镜像创建一个新的容器，并在其中启动 bash shell。
+
+
+  docker ps: 列出当前正在运行的容器
+
+
+此命令列出所有正在运行的 Docker 容器。例如：
+
+docker ps
+
+
+可以使用 -a 选项来列出所有容器，包括已停止的容器。
+
+
+  docker stop: 停止一个或多个正在运行的容器
+
+
+此命令用于停止一个或多个正在运行的容器。例如：
+
+docker stop &amp;lt;container-id&amp;gt;
+
+
+其中 &amp;lt;container-id&amp;gt; 是要停止的容器 ID...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>API测试工具</title>
+    <link href="http://localhost:4000/posts/testing-base/" rel="alternate" type="text/html" title="API测试工具" />
+    <published>2023-05-09T09:05:01+08:00</published>
+  
+    <updated>2023-05-09T09:05:01+08:00</updated>
+  
+    <id>http://localhost:4000/posts/testing-base/</id>
+    <content src="http://localhost:4000/posts/testing-base/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Testing" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      API 压力测试
+
+以下是常用的 API 压力测试工具：
+
+
+  
+    Apache JMeter：JMeter 是一个开源的 Java 应用程序，可以用于负载测试、性能测试和压力测试。它支持多种协议，包括 HTTP, FTP, JDBC 等。
+  
+  
+    Gatling：Gatling 是一个基于 Scala 的开源负载测试工具，可以用于 Web、WebSocket 和 JMS 测试。它提供了可扩展的 DSL 来编写测试脚本，并且可以生成详细的报告。
+  
+  
+    LoadRunner：LoadRunner 是一款商业软件，被广泛用于企业级应用的负载测试。它可以模拟高并发用户访问，并提供实时分析和监控功能。
+  
+  
+    Artillery：Artillery 是一个基于 Node.js 的开源负载测试工具，可以用于测试 WebSockets、HTTP、UD...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Vim</title>
+    <link href="http://localhost:4000/posts/vim/" rel="alternate" type="text/html" title="Vim" />
+    <published>2023-05-08T12:07:01+08:00</published>
+  
+    <updated>2023-05-08T12:07:01+08:00</updated>
+  
+    <id>http://localhost:4000/posts/vim/</id>
+    <content src="http://localhost:4000/posts/vim/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Linux" />
+    
+    <category term="Sehll" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      vim
+
+Vim(Vi IMproved) 是一个高级的文本编辑器，是 Unix 和类 Unix 系统中最受欢迎的编辑器之一。它可以处理多种文件类型，包括纯文本、代码等，并且支持多种操作模式和自定义配置，可以提高编辑效率。
+
+Vim 的一些基本概念和使用方法
+
+
+  操作模式：Vim 有三种操作模式，分别是命令模式（Command mode）、插入模式（Insert mode）和视觉模式（Visual mode）。命令模式用于执行命令、移动光标等操作；插入模式用于输入文本；视觉模式用于选择文本。
+  命令：在命令模式下，可以使用各种命令进行操作，如移动光标、删除文本、复制粘贴等。常用命令包括 h/j/k/l 分别表示左/下/上/右方向键；i/a/o 分别表示插入、在光标后插入、在行尾插入；dd 表示删除整行；yy 表示复制整行；p 表示将复制的内容粘贴到当前位置。
+  配置文件：Vi...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Linux awk</title>
+    <link href="http://localhost:4000/posts/linux_awk/" rel="alternate" type="text/html" title="Linux awk" />
+    <published>2023-05-08T12:06:01+08:00</published>
+  
+    <updated>2023-05-08T12:06:01+08:00</updated>
+  
+    <id>http://localhost:4000/posts/linux_awk/</id>
+    <content src="http://localhost:4000/posts/linux_awk/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Linux" />
+    
+    <category term="Command" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      awk
+
+awk 是一种用于处理文本数据的命令行工具，它可以用来从文件或者管道中读取数据，并对其进行格式化、转换、过滤和计算等操作。下面是一个简单的 awk 命令使用指南：
+
+1. 基础语法
+
+awk [options] 'pattern { action }' file(s)
+
+
+其中，pattern 表示匹配模式，action 表示要执行的动作。如果没有指定 pattern，则默认匹配所有行。file(s) 表示输入文件名，可以指定多个文件。
+
+2. 使用变量
+
+awk 中有一些内置变量，可以用于获取当前正在处理的行或者列的信息。例如：
+
+
+  $0 表示整个行内容；
+  $1 表示第一个字段（以空格分隔）；
+  $NF 表示最后一个字段；
+  NR 表示当前行号；
+  NF 表示当前行的字段数。
+
+
+在 awk 中，可以使用这些变量来进行行或者列的处理和计算。
+
+3. 常用操作...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Linux 基础命令</title>
-    <link href="https://cc360428.github.io//posts/base_cmd/" rel="alternate" type="text/html" title="Linux 基础命令" />
-    <published>2023-05-08T15:05:01+08:00</published>
+    <link href="http://localhost:4000/posts/base_cmd/" rel="alternate" type="text/html" title="Linux 基础命令" />
+    <published>2023-05-08T12:05:01+08:00</published>
   
-    <updated>2023-05-08T15:05:01+08:00</updated>
+    <updated>2023-05-08T12:05:01+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/base_cmd/</id>
-    <content src="https://cc360428.github.io//posts/base_cmd/" />
+    <id>http://localhost:4000/posts/base_cmd/</id>
+    <content src="http://localhost:4000/posts/base_cmd/" />
     <author>
       <name>Cc</name>
     </author>
@@ -80,209 +314,6 @@ ls 列出目录内容
 
 
   格式：ls [选项] ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Linux awk</title>
-    <link href="https://cc360428.github.io//posts/linux_awk/" rel="alternate" type="text/html" title="Linux awk" />
-    <published>2023-05-08T10:05:01+08:00</published>
-  
-    <updated>2023-05-08T10:05:01+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/linux_awk/</id>
-    <content src="https://cc360428.github.io//posts/linux_awk/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Network" />
-    
-    <category term="Linux" />
-    
-    <category term="Sehll" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      awk
-
-awk 是一种用于处理文本数据的命令行工具，它可以用来从文件或者管道中读取数据，并对其进行格式化、转换、过滤和计算等操作。下面是一个简单的 awk 命令使用指南：
-
-1. 基础语法
-
-awk [options] 'pattern { action }' file(s)
-
-
-其中，pattern 表示匹配模式，action 表示要执行的动作。如果没有指定 pattern，则默认匹配所有行。file(s) 表示输入文件名，可以指定多个文件。
-
-2. 使用变量
-
-awk 中有一些内置变量，可以用于获取当前正在处理的行或者列的信息。例如：
-
-
-  $0 表示整个行内容；
-  $1 表示第一个字段（以空格分隔）；
-  $NF 表示最后一个字段；
-  NR 表示当前行号；
-  NF 表示当前行的字段数。
-
-
-在 awk 中，可以使用这些变量来进行行或者列的处理和计算。
-
-3. 常用操作...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>数据库基础</title>
-    <link href="https://cc360428.github.io//posts/DataOther/" rel="alternate" type="text/html" title="数据库基础" />
-    <published>2023-05-07T13:48:54+08:00</published>
-  
-    <updated>2023-05-07T13:48:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/DataOther/</id>
-    <content src="https://cc360428.github.io//posts/DataOther/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Database" />
-    
-    <category term="Mysql" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      服务端开发需要了解哪些数据库
-
-数据库分类
-
-服务端开发需要了解多种数据库，以下是其中一些常见的数据库类型：
-
-
-  关系型数据库（SQL 数据库）：如 MySQL、Oracle、PostgreSQL 等。关系型数据库采用表格形式来存储数据，其中每个表都由多个行和列组成。数据表之间通过关联建立关系，使得数据之间可以进行查询、修改、删除等操作。
-  非关系型数据库（NoSQL 数据库）：如 MongoDB、Cassandra、Redis 等。非关系型数据库不采用传统的表格形式来存储数据，而是以文档、键值对、图形等方式来组织数据。非关系型数据库具有高度的扩展性和灵活性，适合存储半结构化或非结构化数据。
-  内存数据库（In-Memory 数据库）：如 Memcached、Redis、Hazelcast 等。内存数据库将数据存储在内存中，因此具有极高的读写性能。内存数据库适合存储需要快速访...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Math</title>
-    <link href="https://cc360428.github.io//posts/Math/" rel="alternate" type="text/html" title="Math" />
-    <published>2023-05-07T12:48:54+08:00</published>
-  
-    <updated>2023-05-07T12:48:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/Math/</id>
-    <content src="https://cc360428.github.io//posts/Math/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="Left" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      数学
-
-
-  学习
-
-
-数学规划
-
-
-  确定目标：首先确定您希望在数学方面取得什么样的成就。这个目标应该是明确和具体的，例如：想要通过一项考试、学好高中数学、在职场上需要掌握数学技能等等。
-  
-    制定计划：根据您的目标，制定一个具体的学习计划。您可以根据自己的时间和能力制定计划。可以考虑以下因素：
-
-    
-      学习时间：确定每周可用于学习的时间，并在此基础上规划每天的学习时间。
-      学习内容：根据目标和自己的水平，选择相应的数学领域进行学习。可以考虑从基础知识开始，逐步深入。
-      学习方法：选择适合自己的学习方法，例如：自学、听课、参加培训等等。可以尝试不同的方法，选择最适合自己的方法。
-    
-  
-  学习执行：按照学习计划执行。建议将学习内容分成小块，每天逐步完成。同时，可以适当地加入一些练习和实践，帮助自己加深理解和掌握知识。
-  监测...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Vim</title>
-    <link href="https://cc360428.github.io//posts/vim/" rel="alternate" type="text/html" title="Vim" />
-    <published>2023-05-05T16:05:01+08:00</published>
-  
-    <updated>2023-05-05T16:05:01+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/vim/</id>
-    <content src="https://cc360428.github.io//posts/vim/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Network" />
-    
-    <category term="Linux" />
-    
-    <category term="Sehll" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      vim
-
     </summary>
   
 

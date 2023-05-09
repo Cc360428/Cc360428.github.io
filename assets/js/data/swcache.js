@@ -49,7 +49,7 @@ const resource = [
 const allowedDomains = [
   
 
-  'cc360428.github.io/',
+  'localhost:4000',
 
   
     'cc360428.github.io',

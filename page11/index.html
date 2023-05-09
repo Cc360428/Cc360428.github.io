@@ -42,25 +42,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="I’m Cc" />
+<meta property="og:title" content="Cc Blog" />
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="查看所有" />
 <meta property="og:description" content="查看所有" />
-<link rel="canonical" href="https://cc360428.github.io//page11/" />
-<meta property="og:url" content="https://cc360428.github.io//page11/" />
-<meta property="og:site_name" content="I’m Cc" />
+<link rel="canonical" href="http://localhost:4000/page11/" />
+<meta property="og:url" content="http://localhost:4000/page11/" />
+<meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="https://cc360428.github.io//page10" />
-<link rel="next" href="https://cc360428.github.io//page12" />
+<link rel="prev" href="http://localhost:4000/page10" />
+<link rel="next" href="http://localhost:4000/page12" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="I’m Cc" />
+<meta property="twitter:title" content="Cc Blog" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"查看所有","headline":"I’m Cc","url":"https://cc360428.github.io//page11/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"查看所有","headline":"Cc Blog","url":"http://localhost:4000/page11/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>I'm Cc
+  <title>Cc Blog
   </title>
 
   <!--
@@ -75,8 +75,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="I'm Cc">
-<meta name="application-name" content="I'm Cc">
+<meta name="apple-mobile-web-app-title" content="Cc Blog">
+<meta name="application-name" content="Cc Blog">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
@@ -274,9 +274,9 @@
     </div>
 
     <div class="site-title mt-3">
-      <a href="/">I'm Cc</a>
+      <a href="/">Cc Blog</a>
     </div>
-    <div class="site-subtitle font-italic">Hello!</div>
+    <div class="site-subtitle font-italic">Hello, I'm Cc</div>
 
   </div><!-- .profile-wrapper -->
 
@@ -346,7 +346,7 @@
     
 
     
-    <a href="https://github.com/Cc360428" aria-label="github" target="_blank" rel="noopener" >
+    <a href="https://github.com/Cc360428-" aria-label="github" target="_blank" rel="noopener" >
       <i class="fab fa-github"></i>
     </a>
     
@@ -385,7 +385,6 @@
 
 </div><!-- #sidebar -->
 
-
     <!--
   The Top Bar
 -->
@@ -407,7 +406,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      I'm Cc
+      Cc Blog
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -469,6 +468,234 @@
    
 
   <div id="post-list">
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Day11-Concurrent/">Day11（并发编程）</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          概念
+
+
+  并发：把任务在不同的时间点交给处理器进行处理明珠爱同一时间点，任务并不会同事进行
+  并行：把每一个任务分配给每一个处理器独立完成，在同一时间点任务一定是同时运行的
+
+
+简介使用
+
+
+  创建：使用 go 关键字创建一个 goroutine go functionName()
+  
+    调整并发运行性能
+
+    
+      
+        例子：
+
+        r...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1556327969"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-27
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Language,
+            Go
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Day10-interfaceAndError/">Day10（接口和错误处理）</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          interface And Panic、Error
+
+
+  源码
+
+
+interface
+
+接口创建使用
+
+package main
+
+import (
+	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
+	&quot;github.com/pkg/errors&quot;
+)
+
+// UserInterface
+type UserInterface interf...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1556182979"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-25
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Language,
+            Go
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Day09-mapAndContainer/">Day09（MapAndContainer）</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          集合(map) 和容器(Container)
+
+源码
+
+Map
+
+
+  Map 是一种无序键值对的集合，通过Key来检索数据，key 类似索引，指向数据值，可以使用for迭代，但是 map是无序的，无法决定他的返回值顺序，这是因为map 是使用hash 来实现的
+
+
+删除元素、判断是否存在
+
+package main
+
+import (
+	&quot;github.com/Cc360428/HelpP...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1556157624"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-25
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Language,
+            Go
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
 
     
 
@@ -1032,242 +1259,6 @@ func main() {
 
     
 
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/Day03-OperatorCondition/">Day03（运算符与条件语句）</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          运算符与条件语句
-
-
-  本章源码
-
-
-运算符
-
-算数运算符
-
-
-  假定 A 值为 10，B 值为 20
-
-
-
-  
-    
-      运算符
-      描述
-      实例
-    
-  
-  
-    
-      +
-      相加
-      A + B 输出结果 30
-    
-    
-      -
-      相减
-      A - B 输出结果 -10
-   ...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1554182025"
-    data-df="YYYY-MM-DD"
-    >
-  2019-04-02
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Language,
-            Go
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/Day02-datatype/">Day02（入门基础）</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          数据类型、变量、常量
-
-本章源码
-
-数据类型
-
-
-  整型：在 Golang 中，整型分为有符号整型和无符号整型。有符号整型的取值范围为 -2^31 到 2^31-1，无符号整型的取值范围为 0 到 2^32-1。常见的整型类型
-    
-      int8: 有符号 8 位整数，取值范围为 -128 到 127
-      int16: 有符号 16 位整数，取值范围为 -32768 到...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1554038310"
-    data-df="YYYY-MM-DD"
-    >
-  2019-03-31
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Language,
-            Go
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/go_base/">Golang 入门介绍</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          Golang 基础
-
-本章源码
-
-初步认识 Golang
-
-
-  Go 跨平台（linux、windows、mac），只要编写完代码之后 交叉编译即可
-  Go 语言单一、简洁、天生高并发、CGO
-  Go 应用广（web 应用、区块链、运维、云计算、大数据）
-
-
-Go 环境
-
-Linux &amp;amp; MacOs
-
-
-  下载 Golang 安装包：在 Golang 官方网站上下载适合自己 ...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1553959919"
-    data-df="YYYY-MM-DD"
-    >
-  2019-03-30
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Language,
-            Go
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
   </div> <!-- #post-list -->
 
   
@@ -1493,9 +1484,29 @@ Linux &amp;amp; MacOs
     
 
     
+      <!-- hide number -->
+      
+        <li class="page-item disabled">
+          <span class="page-link btn-box-shadow">...</span>
+        </li>
+        
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page13">13</a>
+        <a class="page-link btn-box-shadow" href="/page14">14</a>
       </li>
     
 
@@ -1504,7 +1515,7 @@ Linux &amp;amp; MacOs
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>11</span>
-    <span class="text-muted">/ 13</span>
+    <span class="text-muted">/ 14</span>
   </li>
 
   <!-- right arrow -->
@@ -1554,17 +1565,17 @@ Linux &amp;amp; MacOs
         
         
         
-      <li><a href="/posts/databases/">Databases（04735）</a></li>
-      
-        
-        
-        
       <li><a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a></li>
       
         
         
         
       <li><a href="/posts/DataStructure/">DataStructure（02142）</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/databases/">Databases（04735）</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1867,6 +1878,314 @@ Linux &amp;amp; MacOs
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2195,120 +2514,6 @@ Linux &amp;amp; MacOs
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2323,66 +2528,6 @@ Linux &amp;amp; MacOs
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2682,184 +2827,10 @@ Linux &amp;amp; MacOs
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -3271,11 +3242,6 @@ Linux &amp;amp; MacOs
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -3439,11 +3405,6 @@ Linux &amp;amp; MacOs
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -3900,6 +3861,314 @@ Linux &amp;amp; MacOs
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4228,120 +4497,6 @@ Linux &amp;amp; MacOs
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4356,66 +4511,6 @@ Linux &amp;amp; MacOs
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4715,184 +4810,10 @@ Linux &amp;amp; MacOs
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -5304,11 +5225,6 @@ Linux &amp;amp; MacOs
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -5472,11 +5388,6 @@ Linux &amp;amp; MacOs
         
         
 
-  
-    
-    
-    
-    
   
     
     
