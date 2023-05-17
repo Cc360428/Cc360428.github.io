@@ -473,7 +473,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/bash_shell/">零散的脚本</a>
+        <a href="/posts/go-interview-Question-bank/">Golang Interview Question bank</a>
       </h1>
 
       <div class="post-content">
@@ -484,23 +484,22 @@
 
 
 
-          开发 sh 脚本
+          1~30
 
-杀死进程
+1. 下面这段代码输出的内容
 
-kill.sh
+package main
 
-#!/bin/sh
-#根据进程名杀死进程
-if [ $# -lt 1 ]
-then
-  echo &quot;缺少参数：procedure_name&quot;
-  exit 1
-fi
+import &quot;fmt&quot;
 
-PROCESS=`ps -ef|grep $1|grep -v grep|grep -v PPID|awk &#39;{ print $2}&#39;`
-for i in $PROCESS
-d...
+func main() {
+    defer_call()
+}
+
+func defer_call()  {
+    defer func() {fmt.Println(&quot;打印前&quot;)}()
+    defer func() {fmt.Println(&quot;打印中&quot;)}()
+    defer fu...
         </p>
       </div>
 
@@ -519,370 +518,10 @@ d...
 
 
 <em class=""
-    data-ts="1587391501"
+    data-ts="1593009438"
     data-df="YYYY-MM-DD"
     >
-  2020-04-20
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Network,
-            Linux,
-            Sehll
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/shellother/">System Linux Error</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          ssh 工具
-
-
-  MobaXterm
-  Xshell
-
-
-记录
-
-开启 root 用户登录
-https://blog.csdn.net/wy_97/article/details/78294562
-
-yum install htop
-
-No package htop available.
-Error: Nothing to do
-
-解决办法
-解决办法，安装epel-release之后，...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1587391501"
-    data-df="YYYY-MM-DD"
-    >
-  2020-04-20
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Network,
-            Linux,
-            Sehll
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/etcd_pro/">etcd Pro</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          etcd 的初步使用
-
-StormZhu · 2018-11-21 01:34:40 · 1305 次点击 · 预计阅读时间 4 分钟 · 不到 1 分钟之前 开始浏览
-
-这是一个创建于 2018-11-21 01:34:40 的文章，其中的信息可能已经有所发展或是发生改变。
-
-简介
-
-
-
-etcd 介绍.png
-
-etcd是一个golang编写的分布式、高可用的一致性键值存储系统，用于提供...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1587391501"
-    data-df="YYYY-MM-DD"
-    >
-  2020-04-20
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Database,
-            Etcd
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/etcd_base/">etcd Base</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          etcd 简介
-
-etcd 是 CoreOS 团队于 2013 年 6 月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd 内部采用raft协议作为一致性算法，etcd 基于 Go 语言实现。
-
-etcd 作为服务发现系统，有以下的特点：
-
-
-  简单：安装配置简单，而且提供了 HTTP API 进行交互，使用也很简单
-  安全：支持 SSL 证书验...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1587391501"
-    data-df="YYYY-MM-DD"
-    >
-  2020-04-20
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Database,
-            Etcd
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/consul_base/">Consul Base</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          安装
-
-https://www.consul.io/downloads.html
-
-docker 单机部署
-
- docker run -d -p 8500:8500 -v /data/consul:/consul/data -e CONSUL_BIND_INTERFACE=&#39;eth0&#39; --name=consul1 consul agent -server -bootstrap -ui -c...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1587391501"
-    data-df="YYYY-MM-DD"
-    >
-  2020-04-20
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Database,
-            Consul
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/Jurisdiction/">系统设计（自动化权限）</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          权限
-
-自动化权限
-
-
-  准备知识：swagger、递归、注解、过滤器
-
-
-设计
-
-
-  权限是每一个管理系统必备的一个功能，多租用户设计必备，虽然有很多集成框架工具包比如：“Casbin、GRABC”，但是其怎么判断其实原理都是一样的
-
-
-
-
-表结构说明
-
-
-  用户表和用户与角色中间表：无论是超级管理员添加的还是注册用户都会有一个角色初始权限。如果是超级管理员添加添加是可以指定那些角色...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1587308316"
-    data-df="YYYY-MM-DD"
-    >
-  2020-04-19
+  2020-06-24
 </em>
 
 
@@ -908,7 +547,7 @@ docker 单机部署
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/uci/">openWrt uci</a>
+        <a href="/posts/Day08-voice/">English Day06 语态</a>
       </h1>
 
       <div class="post-content">
@@ -919,14 +558,17 @@ docker 单机部署
 
 
 
-          
-  uci set
+          语态
+
+语态分类
 
 
-root@Accesshub:/etc/config# uci set qos.cc=interface
-root@Accesshub:/etc/config# uci set qos.cc.classgroup=default
-root@Accesshub:/etc/config# uci set qos.cc.enabled=1
-root@Accesshub:/...
+  
+    主动语态（Active Voice）：
+在主动语态中，句子的主语是动作的执行者。这种语态通常用于强调动作的主体或者要点。因此，在大多数情况下，主动语态的句子更直接、更简洁、更具有说服力。例如，“The dog chased the cat”（狗追逐着猫），其中主语“the dog”执行了动作“chased”。
+  
+  
+    被动语态（Passive ...
         </p>
       </div>
 
@@ -945,10 +587,10 @@ root@Accesshub:/...
 
 
 <em class=""
-    data-ts="1587191584"
+    data-ts="1589602381"
     data-df="YYYY-MM-DD"
     >
-  2020-04-18
+  2020-05-16
 </em>
 
 
@@ -957,9 +599,8 @@ root@Accesshub:/...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Network,
-            Linux,
-            OpenWrt
+            Cc,
+            English
           </span>
           
 
@@ -975,7 +616,7 @@ root@Accesshub:/...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/gitbase/">Git 基本命令 </a>
+        <a href="/posts/Day07-tense/">English Day05 时态</a>
       </h1>
 
       <div class="post-content">
@@ -986,30 +627,22 @@ root@Accesshub:/...
 
 
 
-          Git 工作用到的基本命令
+          时态
 
-模拟环境
-
-
-  自己搭建了gogs 开源Git仓库
+时态
 
 
-注册账号地址
+  一般现在时（Present Simple）
 
 
-  
-    lcc、google
-  
-  
-    创建仓库Study
-  
-  
-    把lcc 添加管理协作者(收到邮件)
-  
+
+  用于表示当前正在进行或经常性发生的动作或状态通常使用动词的原形（即第一人称单数形式）构成例如：
 
 
-You have been added as a collaborator of repository: google/Study
-View i...
+
+  I write an email to my boss every day.（我每天给我的老板写邮件）
+  She always drinks coffee in the morning.（她每天早上喝咖啡）
+ ...
         </p>
       </div>
 
@@ -1028,10 +661,10 @@ View i...
 
 
 <em class=""
-    data-ts="1587191584"
+    data-ts="1589602379"
     data-df="YYYY-MM-DD"
     >
-  2020-04-18
+  2020-05-16
 </em>
 
 
@@ -1040,8 +673,8 @@ View i...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Dev,
-            Git
+            Cc,
+            English
           </span>
           
 
@@ -1057,7 +690,7 @@ View i...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/passwrod/">MySQL 忘记密码</a>
+        <a href="/posts/Day05-sentence_structure/">English Day04 句型和句子结构</a>
       </h1>
 
       <div class="post-content">
@@ -1068,17 +701,16 @@ View i...
 
 
 
-          MySQL 忘记密码
+          句型和句子结构
+
+句子结构
+
+句子结构组成部分
 
 
-  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
-
-
-关闭服务
-
-[root@Cc ~]# ps -ef |grep mysql
-root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
-mysql    20039     1  0 12:39 ?     ...
+  主语：在句子中执行动作或被描述的人或物。例子：”She is reading a book.”，其中主语是”She”。
+  谓语：描述主语动作或状态的部分。例子：”He is running in the park.”，其中谓语是”is running”。
+  宾语：接受动作的人或物。例子：”I bought a new car.”，其...
         </p>
       </div>
 
@@ -1097,10 +729,10 @@ mysql    20039     1  0 12:39 ?     ...
 
 
 <em class=""
-    data-ts="1587183708"
+    data-ts="1589602378"
     data-df="YYYY-MM-DD"
     >
-  2020-04-18
+  2020-05-16
 </em>
 
 
@@ -1109,8 +741,8 @@ mysql    20039     1  0 12:39 ?     ...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Database,
-            Mysql
+            Cc,
+            English
           </span>
           
 
@@ -1126,7 +758,7 @@ mysql    20039     1  0 12:39 ?     ...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/9-RedHad-system-ps/">linux(CentOS7) 网络管理</a>
+        <a href="/posts/Day04-part_of_speech/">English Day04 词性</a>
       </h1>
 
       <div class="post-content">
@@ -1137,29 +769,17 @@ mysql    20039     1  0 12:39 ?     ...
 
 
 
-          系统启动控制、进程管理
-
-系统启动控制
+          词性
 
 
-  0—-停机
-  1—单用户模式
-  2—多用户模式（没有网络文件系统）
-  3—完全多用户模式
-  4—忽略
-  5—X11 一般图形界面
-  6— 重新启动（不推荐这操作，请谨慎操作）
-
-
-
-  如果你远程黑进了系统 可以试试这个 6 操作 应该会一直重启
-
-
-设置操作
-
-
-  runleve 查看当前系统启动状态，N 代表代表上次运行级别
-...
+  
+    名词（Noun）：表示人、事物、地点、想法等事物的名称它可以作为主语、宾语、表语或其他成分
+例句：The dog is barking loudly.（狗在大声叫喊）
+解释：dog 是一个名词，表示动物的一种
+  
+  
+    动词（Verb）：表示行动、状态、事件发生或存在的词汇它可以用来描述一个人或物体正在做什么，已经完成了什么或将会做什么
+例句：I am st...
         </p>
       </div>
 
@@ -1178,10 +798,10 @@ mysql    20039     1  0 12:39 ?     ...
 
 
 <em class=""
-    data-ts="1585414152"
+    data-ts="1589602377"
     data-df="YYYY-MM-DD"
     >
-  2020-03-29
+  2020-05-16
 </em>
 
 
@@ -1190,9 +810,360 @@ mysql    20039     1  0 12:39 ?     ...
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Network,
-            Linux,
-            RedHad
+            Cc,
+            English
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Day03-phonetic_transcription/">English Day03 音标</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          音标简介
+
+
+  
+    国际音标（IPA）：是用于表示任何语言的符号集合，包括 107 个符号，每个符号都代表一个特定的语音或发音。国际音标通常用于语言学和音韵学领域，并被广泛应用于英语教学中。
+  
+  
+    英式音标：也称为 RP 音标（Received Pronunciation），是一种英国标准英语的发音方式。英式音标通常使用字母和其他符号来表示单词的发音。这些符号简单易懂，...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1589602376"
+    data-df="YYYY-MM-DD"
+    >
+  2020-05-16
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Cc,
+            English
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Day02-basic/">English Day02 Base</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          英语知识点
+
+
+  音标
+  词性
+  句型和句子结构
+  时态
+
+
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1589602375"
+    data-df="YYYY-MM-DD"
+    >
+  2020-05-16
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Cc,
+            English
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Day01-english/">English</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          简介
+
+
+  
+    英语是由古代日耳曼人所说的一系列语言发展而来的。最初的英语语言可以追溯到中世纪时期的英格兰和苏格兰，当时的英语被称为“古英语”或“盎格鲁-撒克逊语”。这种古老的英语语言与现代英语相比有很大的差异，包括发音、语法和词汇等方面。
+  
+  
+    在接下来的几个世纪中，英语经历了许多变迁和演变。随着时间推移和政治经济背景的变化，英语逐渐从古老的形式发展成为现代英语。在英...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1589602374"
+    data-df="YYYY-MM-DD"
+    >
+  2020-05-16
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Cc,
+            English
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/vocabulary/">English 背单词技巧</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          背单词技巧
+
+
+  利用记忆法：将单词与形象的图像、故事或关联起来，可以更容易地记忆单词。例如，把“banana”（香蕉）和一个画着笑脸的香蕉联系起来。这种记忆方法被称为视觉记忆法，它能够帮助您将单词转化成可视的形象，使其更容易记忆。另外还有听觉记忆法和动作记忆法等。
+  分类记忆：将单词按主题分类，如食品、动物、家庭等。这样可以帮助您将单词组织在一起，方便记忆。此外，如果您正在学习某个特定...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1589598775"
+    data-df="YYYY-MM-DD"
+    >
+  2020-05-16
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Cc,
+            English
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/education/">English 国内教育</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          学校教学内容
+
+小学
+
+一年级：
+
+
+  英文字母表和发音
+  常用单词及其拼写、发音和意义
+  常见问候语
+  数字 1-100 的拼写
+  简单的日常生活用语
+
+
+二年级：
+
+
+  时间、星期和月份
+  季节和天气
+  家庭成员和身体部位
+  城市和交通工具
+  食物和饮料
+  常见动物和植物
+  简单的日常对话
+
+
+三年级：
+
+
+  介绍自己和他人
+  询问和回答有关个人信息的问题
+ ...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1589598774"
+    data-df="YYYY-MM-DD"
+    >
+  2020-05-16
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Cc,
+            English
           </span>
           
 
@@ -1451,9 +1422,24 @@ mysql    20039     1  0 12:39 ?     ...
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page14">14</a>
+        <a class="page-link btn-box-shadow" href="/page15">15</a>
       </li>
     
 
@@ -1462,7 +1448,7 @@ mysql    20039     1  0 12:39 ?     ...
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>5</span>
-    <span class="text-muted">/ 14</span>
+    <span class="text-muted">/ 15</span>
   </li>
 
   <!-- right arrow -->
@@ -1512,12 +1498,12 @@ mysql    20039     1  0 12:39 ?     ...
         
         
         
-      <li><a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a></li>
+      <li><a href="/posts/k8sBase/">Kubernetes概述</a></li>
       
         
         
         
-      <li><a href="/posts/gRPC/">gRPC 和 ui 操作</a></li>
+      <li><a href="/posts/k8s-base/">Kubernetes 部署</a></li>
       
         
         
@@ -1527,12 +1513,12 @@ mysql    20039     1  0 12:39 ?     ...
         
         
         
-      <li><a href="/posts/kratos-Error/">kratos Error</a></li>
+      <li><a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a></li>
       
         
         
         
-      <li><a href="/posts/kratos-discovery/">kratos discovery</a></li>
+      <li><a href="/posts/gRPC/">gRPC 和 ui 操作</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1835,110 +1821,6 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2073,209 +1955,10 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2610,36 +2293,6 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2738,197 +2391,6 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3199,108 +2661,6 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3327,6 +2687,58 @@ mysql    20039     1  0 12:39 ?     ...
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3391,6 +2803,696 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3452,6 +3554,9 @@ mysql    20039     1  0 12:39 ?     ...
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
+      <a class="post-tag" href="/tags/docker/">Docker</a>
+    
+      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
@@ -3459,9 +3564,6 @@ mysql    20039     1  0 12:39 ?     ...
     
       
       <a class="post-tag" href="/tags/system/">System</a>
-    
-      
-      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>
@@ -3818,110 +3920,6 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4056,209 +4054,10 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -4593,36 +4392,6 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4721,197 +4490,6 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -5182,108 +4760,6 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5310,6 +4786,58 @@ mysql    20039     1  0 12:39 ?     ...
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -5374,6 +4902,696 @@ mysql    20039     1  0 12:39 ?     ...
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -5435,6 +5653,9 @@ mysql    20039     1  0 12:39 ?     ...
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
+      <a class="post-tag" href="/tags/docker/">Docker</a>
+    
+      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
@@ -5442,9 +5663,6 @@ mysql    20039     1  0 12:39 ?     ...
     
       
       <a class="post-tag" href="/tags/system/">System</a>
-    
-      
-      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>

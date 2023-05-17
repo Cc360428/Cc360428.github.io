@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle>查看所有</subtitle>
-  <updated>2023-05-09T16:13:03+08:00</updated>
+  <updated>2023-05-17T12:07:08+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,112 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>kubectl 基础命令</title>
+    <link href="https://cc360428.github.io//posts/Kubernetes/" rel="alternate" type="text/html" title="kubectl 基础命令" />
+    <published>2023-05-10T14:43:01+08:00</published>
+  
+    <updated>2023-05-10T14:43:01+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/Kubernetes/</id>
+    <content src="https://cc360428.github.io//posts/Kubernetes/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Linux" />
+    
+    <category term="Command" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      kubectl
+简介
+
+  kubectl 是 Kubernetes 命令行工具，用于与 Kubernetes 集群进行交互和管理。
+  它可以用来部署应用程序，管理集群资源（例如 Pod、Service 和 ReplicaSet 等），
+  诊断和调试问题，以及执行其他与 Kubernetes 相关的任务。通过 kubectl，您可以在命令行界面中执行所有 Kubernetes API 操作，并对集群的状态进行操作。
+  kubectl 是使用 Go 语言编写的开源软件，在安装了 Kubernetes 的任何机器上均可使用。
+    基础命令
+    好的，为了更加详细地回答您的问题，以下是一些 kubectl 的基础命令及其用法：
+  
+
+
+
+  
+    获取集群信息：
+
+    # 查看 Kubernetes 集群信息
+kubectl cluster-info
+
+# 查看节点...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>docker-compose 基础命令</title>
+    <link href="https://cc360428.github.io//posts/docker-compose/" rel="alternate" type="text/html" title="docker-compose 基础命令" />
+    <published>2023-05-10T14:42:01+08:00</published>
+  
+    <updated>2023-05-10T14:42:01+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/docker-compose/</id>
+    <content src="https://cc360428.github.io//posts/docker-compose/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Linux" />
+    
+    <category term="Command" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      docker-compose
+
+说明
+
+Docker Compose 是 Docker 官方提供的一种用于管理容器化应用程序的工具，它可以通过编写一个 YAML 文件来定义和配置多个 Docker 容器的运行方式和相互关系，然后使用 docker-compose 命令来启动、停止、构建、重启、删除等操作。
+
+使用 Docker Compose 的主要优点是可以轻松地处理多个 Docker 容器之间的依赖关系，并在一个命令下启动全部或部分容器。同时，Docker Compose 还支持在不同的环境中运行相同的服务，比如本地测试和生产环境。
+
+Docker Compose 使用 YAML 文件来定义多个服务和相关的配置，这些服务可以在一个命令下启动或停止，也可以指定服务之间的依赖关系。下面是一个简单的 Docker Compose YAML 文件示例：
+
+version: "3"
+ser...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -144,8 +250,8 @@ docker stop &amp;lt;container-id&amp;gt;
 
   
   <entry>
-    <title>Vim</title>
-    <link href="https://cc360428.github.io//posts/vim/" rel="alternate" type="text/html" title="Vim" />
+    <title>Vim 使用说明</title>
+    <link href="https://cc360428.github.io//posts/vim/" rel="alternate" type="text/html" title="Vim 使用说明" />
     <published>2023-05-08T12:07:01+08:00</published>
   
     <updated>2023-05-08T12:07:01+08:00</updated>
@@ -184,136 +290,6 @@ Vim 的一些基本概念和使用方法
   操作模式：Vim 有三种操作模式，分别是命令模式（Command mode）、插入模式（Insert mode）和视觉模式（Visual mode）。命令模式用于执行命令、移动光标等操作；插入模式用于输入文本；视觉模式用于选择文本。
   命令：在命令模式下，可以使用各种命令进行操作，如移动光标、删除文本、复制粘贴等。常用命令包括 h/j/k/l 分别表示左/下/上/右方向键；i/a/o 分别表示插入、在光标后插入、在行尾插入；dd 表示删除整行；yy 表示复制整行；p 表示将复制的内容粘贴到当前位置。
   配置文件：Vi...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Linux awk</title>
-    <link href="https://cc360428.github.io//posts/linux_awk/" rel="alternate" type="text/html" title="Linux awk" />
-    <published>2023-05-08T12:06:01+08:00</published>
-  
-    <updated>2023-05-08T12:06:01+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/linux_awk/</id>
-    <content src="https://cc360428.github.io//posts/linux_awk/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Network" />
-    
-    <category term="Linux" />
-    
-    <category term="Command" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      awk
-
-awk 是一种用于处理文本数据的命令行工具，它可以用来从文件或者管道中读取数据，并对其进行格式化、转换、过滤和计算等操作。下面是一个简单的 awk 命令使用指南：
-
-1. 基础语法
-
-awk [options] 'pattern { action }' file(s)
-
-
-其中，pattern 表示匹配模式，action 表示要执行的动作。如果没有指定 pattern，则默认匹配所有行。file(s) 表示输入文件名，可以指定多个文件。
-
-2. 使用变量
-
-awk 中有一些内置变量，可以用于获取当前正在处理的行或者列的信息。例如：
-
-
-  $0 表示整个行内容；
-  $1 表示第一个字段（以空格分隔）；
-  $NF 表示最后一个字段；
-  NR 表示当前行号；
-  NF 表示当前行的字段数。
-
-
-在 awk 中，可以使用这些变量来进行行或者列的处理和计算。
-
-3. 常用操作...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Linux 基础命令</title>
-    <link href="https://cc360428.github.io//posts/base_cmd/" rel="alternate" type="text/html" title="Linux 基础命令" />
-    <published>2023-05-08T12:05:01+08:00</published>
-  
-    <updated>2023-05-08T12:05:01+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/base_cmd/</id>
-    <content src="https://cc360428.github.io//posts/base_cmd/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Network" />
-    
-    <category term="Linux" />
-    
-    <category term="Sehll" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Linux 基础命令
-
-Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下是一些常用的 Linux 基础命令：
-
-
-  ls：列出目录内容
-  cd：切换目录
-  mkdir：创建新目录
-  rm：删除文件或目录
-  cp：复制文件或目录
-  mv：移动文件或目录
-  touch：创建新文件
-  cat：连接、显示文件内容
-  grep：文本搜索工具
-  ping：测试网络连接
-  ifconfig：查看和配置网络接口状态
-  top：实时显示进程状态
-  ps：列出当前系统进程
-  kill：结束某个进程
-  tar：打包或解压缩文件
-
-
-以上只是常用命令的部分，还有很多其他的 Linux 命令可以使用。
-
-ls 列出目录内容
-
-“ls” 是一个常用的命令，用于显示当前工作目录中的文件和子目录列表。以下是 “ls” 命令的详细解释：
-
-
-  格式：ls [选项] ...
     </summary>
   
 

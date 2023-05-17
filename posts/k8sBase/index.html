@@ -44,8 +44,8 @@
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Kubernetes概述" />
 <meta property="og:locale" content="zh_CN" />
-<meta name="description" content="什么是 Kubernetes" />
-<meta property="og:description" content="什么是 Kubernetes" />
+<meta name="description" content="Kubernetes" />
+<meta property="og:description" content="Kubernetes" />
 <link rel="canonical" href="https://cc360428.github.io//posts/k8sBase/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/k8sBase/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -54,7 +54,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Kubernetes概述" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-03-22T22:00:00+08:00","datePublished":"2020-03-22T22:00:00+08:00","description":"什么是 Kubernetes","headline":"Kubernetes概述","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/k8sBase/"},"url":"https://cc360428.github.io//posts/k8sBase/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-15T18:33:21+08:00","datePublished":"2020-03-22T22:00:00+08:00","description":"Kubernetes","headline":"Kubernetes概述","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/k8sBase/"},"url":"https://cc360428.github.io//posts/k8sBase/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -519,29 +519,6 @@
   
 
   
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-
-    
-
-  
 
   
   
@@ -585,6 +562,41 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -636,6 +648,26 @@
 
     <!-- lastmod date -->
     
+    <span>
+      更新于
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1684146801"
+    data-df="YYYY-MM-DD"
+    data-toggle="tooltip" data-placement="bottom">
+  2023-05-15
+</em>
+
+    </span>
+    
 
   
 
@@ -680,8 +712,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="136 字">
-  <em>1 分钟</em>阅读</span>
+  title="1354 字">
+  <em>7 分钟</em>阅读</span>
 
     </div>
 
@@ -690,28 +722,120 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="什么是-kubernetes"><span class="mr-2">什么是 Kubernetes</span><a href="#什么是-kubernetes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h3 id="kubernetes"><span class="mr-2">Kubernetes</span><a href="#kubernetes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<blockquote>
-  <p>为什叫<code class="language-plaintext highlighter-rouge">k8s</code>K~s 中间有 8 个字符，8 代替了<code class="language-plaintext highlighter-rouge">ubernete</code> <a href="http://docs.kubernetes.org.cn/">参考文档</a></p>
-</blockquote>
+<h4 id="简介"><span class="mr-2">简介</span><a href="#简介" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<h3 id="kubernetes-你能做什么"><span class="mr-2">Kubernetes 你能做什么</span><a href="#kubernetes-你能做什么" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>Kubernetes 是用于自动化容器操作的开源平台。它允许开发者在多个主机上部署、运行和管理容器化应用程序，并提供了一致性、可扩展性和弹性等方面的保障。</p>
 
-<ul>
-  <li>快速部署应用</li>
-  <li>快速扩展应用</li>
-  <li>无缝对接新的应用功能</li>
-  <li>节省资源，优化硬件资源的使用</li>
-</ul>
+<p>Kubernetes 的设计目标是实现跨不同主机和云环境的容器编排。它可以运行在所有主流的云平台和数据中心中，包括 Amazon Web Services（AWS）、Microsoft Azure、Google Cloud Platform（GCP）等。Kubernetes 不仅支持 Docker 容器，还支持其他容器运行时，如 rkt、CRI-O 等。</p>
+
+<p>Kubernetes 可以帮助开发者简化容器应用程序的部署、扩展和管理。它提供了以下功能：</p>
+
+<ol>
+  <li>
+    <p>调度：Kubernetes 使用调度器将容器调度到适当的节点上运行，从而实现负载均衡和资源利用率最大化。</p>
+  </li>
+  <li>
+    <p>自动伸缩：Kubernetes 可以根据容器的 CPU 利用率、内存使用情况或自定义指标来自动缩放容器数量。</p>
+  </li>
+  <li>
+    <p>自我修复：Kubernetes 监控容器的运行状态，并自动恢复失败的容器或节点。</p>
+  </li>
+  <li>
+    <p>滚动更新：Kubernetes 支持滚动更新容器，可以逐步将新版本的容器推出并停止旧版本的容器，从而实现无缝更新。</p>
+  </li>
+  <li>
+    <p>服务发现：Kubernetes 提供了内置的服务发现机制，可以根据服务名称和端口号自动路由请求到正确的容器。</p>
+  </li>
+  <li>
+    <p>存储管理：Kubernetes 支持多种存储类型，包括本地存储、网络存储和云存储等。</p>
+  </li>
+  <li>
+    <p>配置管理：Kubernetes 可以管理应用程序的配置文件，例如环境变量、命令行参数和配置文件等。</p>
+  </li>
+  <li>
+    <p>安全：Kubernetes 提供了多种安全机制，如 RBAC（基于角色的访问控制）、证书管理和网络策略等，保障容器化应用程序的安全性。</p>
+  </li>
+</ol>
+
+<p>Kubernetes 的核心组件包括：</p>
+
+<ol>
+  <li>
+    <p>Kubernetes API Server：所有其他 Kubernetes 组件都与 API Server 交互，通过 API Server 操作集群状态。</p>
+  </li>
+  <li>
+    <p>etcd：分布式键值存储系统，用于存储 Kubernetes 集群的配置信息。</p>
+  </li>
+  <li>
+    <p>Kubernetes Controller Manager：监控集群的状态，并确保集群中的对象一直处于期望的状态。</p>
+  </li>
+  <li>
+    <p>Kubernetes Scheduler：根据容器的资源需求和可用性，将容器调度到可用的节点上运行。</p>
+  </li>
+  <li>
+    <p>kubelet：在每个节点上运行，负责管理该节点上的容器。</p>
+  </li>
+  <li>
+    <p>kube-proxy：在每个节点上运行，用于实现 Kubernetes 服务的负载均衡和网络代理。</p>
+  </li>
+</ol>
+
+<p>Kubernetes 还包括其他组件，如 Dashboard、Helm 等，用于管理和监控 Kubernetes 集群。</p>
+
+<h4 id="kubernetes-你能做什么"><span class="mr-2">Kubernetes 你能做什么</span><a href="#kubernetes-你能做什么" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>Kubernetes 可以在许多场景下使用，以下是一些常见的 Kubernetes 使用场景：</p>
+
+<ol>
+  <li>
+    <p>微服务架构：Kubernetes 提供了服务发现、自动负载均衡和容器编排等功能，可以帮助开发者构建和管理微服务架构，并实现微服务间的通信。</p>
+  </li>
+  <li>
+    <p>云原生应用程序：Kubernetes 是云原生应用程序开发的核心平台，它提供了可靠性、弹性和可扩展性等特性，有助于简化应用程序的部署和管理。</p>
+  </li>
+  <li>
+    <p>持续集成/持续交付（CI/CD）：Kubernetes 可以与 CI/CD 工具集成，从而实现自动化的应用程序构建、测试、部署和扩展等流程。</p>
+  </li>
+  <li>
+    <p>大数据处理：Kubernetes 可以帮助管理大量的计算任务，例如 Hadoop 和 Spark 等分布式计算框架。</p>
+  </li>
+  <li>
+    <p>IoT 应用程序：Kubernetes 可以帮助管理 IoT 设备和传感器产生的数据，例如通过容器化运行 MQTT 和 CoAP 流媒体协议。</p>
+  </li>
+  <li>
+    <p>边缘计算：Kubernetes 可以将应用程序部署到边缘节点上，从而实现对设备和传感器生成的数据的即时响应。</p>
+  </li>
+</ol>
 
 <h3 id="kubernetes-特点"><span class="mr-2">Kubernetes 特点</span><a href="#kubernetes-特点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<ul>
-  <li><em>可移植</em>: 支持公有云，私有云，混合云，多重云（multi-cloud）</li>
-  <li><em>可扩展</em>: 模块化, 插件化, 可挂载, 可组合</li>
-  <li><em>自动化</em>: 自动部署，自动重启，自动复制，自动伸缩/扩展</li>
-</ul>
+<p>Kubernetes 是一个强大的容器编排平台，具有以下特点：</p>
+
+<ol>
+  <li>
+    <p>可扩展性：Kubernetes 支持从单一节点到数千个节点的集群规模，并支持跨多个云供应商和数据中心的部署。</p>
+  </li>
+  <li>
+    <p>独立于基础设施：Kubernetes 可以运行在任何基础设施上，包括公共云、私有云和裸金属环境等。</p>
+  </li>
+  <li>
+    <p>自动化：Kubernetes 可以自动化部署、扩展、升级和恢复容器应用程序，从而降低了人工干预的需要。</p>
+  </li>
+  <li>
+    <p>服务发现和负载均衡：Kubernetes 可以帮助管理服务发现和负载均衡，从而实现容器应用程序的可靠性和弹性。</p>
+  </li>
+  <li>
+    <p>存储管理：Kubernetes 提供了多种存储类型，包括本地存储、网络存储和云存储等，可以轻松管理容器化应用程序的存储需求。</p>
+  </li>
+  <li>
+    <p>安全性：Kubernetes 提供了多种安全机制，如 RBAC（基于角色的访问控制）、证书管理和网络策略等，保障容器化应用程序的安全性。</p>
+  </li>
+  <li>
+    <p>多种工具和插件：Kubernetes 生态系统中有许多工具和插件，例如 Helm、Istio 和 Prometheus 等，可以帮助开发者更好地管理和监控容器化应用程序。</p>
+  </li>
+</ol>
 
 </div>
 
@@ -820,12 +944,12 @@
         
         
         
-      <li><a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a></li>
+      <li><a href="/posts/k8sBase/">Kubernetes概述</a></li>
       
         
         
         
-      <li><a href="/posts/gRPC/">gRPC 和 ui 操作</a></li>
+      <li><a href="/posts/k8s-base/">Kubernetes 部署</a></li>
       
         
         
@@ -835,12 +959,12 @@
         
         
         
-      <li><a href="/posts/kratos-Error/">kratos Error</a></li>
+      <li><a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a></li>
       
         
         
         
-      <li><a href="/posts/kratos-discovery/">kratos discovery</a></li>
+      <li><a href="/posts/gRPC/">gRPC 和 ui 操作</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1143,110 +1267,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1381,209 +1401,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1918,36 +1739,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2046,197 +1837,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2507,108 +2107,6 @@
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2635,6 +2133,58 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2699,6 +2249,696 @@
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2760,6 +3000,9 @@
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
+      <a class="post-tag" href="/tags/docker/">Docker</a>
+    
+      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
@@ -2767,9 +3010,6 @@
     
       
       <a class="post-tag" href="/tags/system/">System</a>
-    
-      
-      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>
@@ -2823,6 +3063,149 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -4594,37 +4977,15 @@
 
                 Kubernetes 搭建
 
+准备
+在搭建 Kubernetes 之前，您需要先准备一些必要的配置和工具，包括：
+
 
   
-    查看查询系统基本信息
-
-    1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-uname -a #  查看版本当前操作系统内核信息
-cat /proc/version # 查看当前系统版本信息
-cat /etc/issue # 查看版本当前操作系统发行版本信息
-cat /e...
+    至少三个节点：用于部署 Kubernetes 集群的主机。一般情况下，建议使用至少三个物理或虚拟机来搭建 Kubernetes 集群，以确保高可用性和容错性。
+  
+  
+    操作系统：Kubernetes 支持多种操作系统，例如 Ubuntu、CentOS...
               </p>
             </div>
           </div>
@@ -5146,110 +5507,6 @@ kubectl get ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5384,209 +5641,10 @@ kubectl get ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -5921,36 +5979,6 @@ kubectl get ...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -6049,197 +6077,6 @@ kubectl get ...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -6510,108 +6347,6 @@ kubectl get ...
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -6638,6 +6373,58 @@ kubectl get ...
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -6702,6 +6489,696 @@ kubectl get ...
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -6763,6 +7240,9 @@ kubectl get ...
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
+      <a class="post-tag" href="/tags/docker/">Docker</a>
+    
+      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
@@ -6770,9 +7250,6 @@ kubectl get ...
     
       
       <a class="post-tag" href="/tags/system/">System</a>
-    
-      
-      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>

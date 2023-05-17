@@ -473,7 +473,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day11-Concurrent/">Day11（并发编程）</a>
+        <a href="/posts/beego-error/">Beego Error</a>
       </h1>
 
       <div class="post-content">
@@ -484,25 +484,27 @@
 
 
 
-          概念
+          Beego 错误信息记载
+
+1.swagger 错误信息注解写错了
 
 
-  并发：把任务在不同的时间点交给处理器进行处理明珠爱同一时间点，任务并不会同事进行
-  并行：把每一个任务分配给每一个处理器独立完成，在同一时间点任务一定是同时运行的
+  可以用以下方式解决：
+检查那个地方出错，建议使用下面的第一种方法
 
 
-简介使用
+
+  bee generate docs
+  bee run watchall true
 
 
-  创建：使用 go 关键字创建一个 goroutine go functionName()
-  
-    调整并发运行性能
+2.MySQL 运行时突然停止了错误
 
-    
-      
-        例子：
+1、查看 mysql 版本
+方法一：status;
+方法二：select version();
 
-        r...
+2、Mysql ...
         </p>
       </div>
 
@@ -521,10 +523,10 @@
 
 
 <em class=""
-    data-ts="1556327969"
+    data-ts="1557127284"
     data-df="YYYY-MM-DD"
     >
-  2019-04-27
+  2019-05-06
 </em>
 
 
@@ -550,7 +552,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day10-interfaceAndError/">Day10（接口和错误处理）</a>
+        <a href="/posts/base-beego/">Beego Base</a>
       </h1>
 
       <div class="post-content">
@@ -561,25 +563,29 @@
 
 
 
-          interface And Panic、Error
+          Beego
+
+Github
+
+Create hello directory, cd hello directory
+
+mkdir hello
+cd hello
 
 
-  源码
+Init module
+
+go mod init
 
 
-interface
+Download and install
 
-接口创建使用
+go get github.com/beego/beego/v2@latest
 
-package main
 
-import (
-	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
-	&quot;github.com/pkg/errors&quot;
-)
+Create file hello.go
 
-// UserInterface
-type UserInterface interf...
+``...
         </p>
       </div>
 
@@ -598,10 +604,10 @@ type UserInterface interf...
 
 
 <em class=""
-    data-ts="1556182979"
+    data-ts="1557127284"
     data-df="YYYY-MM-DD"
     >
-  2019-04-25
+  2019-05-06
 </em>
 
 
@@ -627,7 +633,7 @@ type UserInterface interf...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day09-mapAndContainer/">Day09（MapAndContainer）</a>
+        <a href="/posts/Day14-testing/">Day14（testing）</a>
       </h1>
 
       <div class="post-content">
@@ -638,22 +644,16 @@ type UserInterface interf...
 
 
 
-          集合(map) 和容器(Container)
-
-源码
-
-Map
+          testing
 
 
-  Map 是一种无序键值对的集合，通过Key来检索数据，key 类似索引，指向数据值，可以使用for迭代，但是 map是无序的，无法决定他的返回值顺序，这是因为map 是使用hash 来实现的
+  Golang 自带了一个轻量级的测试框架，可以用来编写单元测试和基准测试。该测试框架主要包含了以下几个组件：
 
 
-删除元素、判断是否存在
 
-package main
-
-import (
-	&quot;github.com/Cc360428/HelpP...
+  testing.T 结构体：代表了一个单元测试，它包含了一系列断言函数，用于判断测试结果是否正确；
+  testing.B 结构体：代表了一个基准测试，它用于测试代码的性能；
+  testing.M 结构体：代表了一个测试 suite，可以用于对一组...
         </p>
       </div>
 
@@ -672,10 +672,10 @@ import (
 
 
 <em class=""
-    data-ts="1556157624"
+    data-ts="1556715843"
     data-df="YYYY-MM-DD"
     >
-  2019-04-25
+  2019-05-01
 </em>
 
 
@@ -701,7 +701,7 @@ import (
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/opencv-base/">openCV</a>
+        <a href="/posts/go-github-project/">Go Github Project</a>
       </h1>
 
       <div class="post-content">
@@ -712,29 +712,30 @@ import (
 
 
 
-          OpenCV
+          Github Golang Package
 
-地址
-
-goCv
-
-gocv
-
-参考网址
-
-csdn
-
-OpenCV: Open Source Computer Vision Library
-
-Resources
+读取配置文件包
 
 
-  Homepage: https://opencv.org
-    
-      Courses: https://opencv.org/courses
-    
-  
-  Docs: https://do...
+  https://github.com/spf13/viper
+  参考链接
+
+
+监听文件
+
+
+  https://github.com/fsnotify/fsnotify
+  参考链接
+
+
+交叉变异工具
+
+
+  github.com/mitchellh/gox
+  参考链接
+
+
+sgox -os=&quot;windows linu...
         </p>
       </div>
 
@@ -753,10 +754,10 @@ Resources
 
 
 <em class=""
-    data-ts="1556116638"
+    data-ts="1556549916"
     data-df="YYYY-MM-DD"
     >
-  2019-04-24
+  2019-04-29
 </em>
 
 
@@ -782,7 +783,7 @@ Resources
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/cgo-base/">CGOBase</a>
+        <a href="/posts/algorithm/">Golang 算法</a>
       </h1>
 
       <div class="post-content">
@@ -793,25 +794,14 @@ Resources
 
 
 
-          base
-
-环境搭建
+          算法
 
 
-  go get -u -d gocv.io/x/gocv
-  安装过(update)和第一次安装(install)
-    
-      brew update opencv
-      brew install opencv
-    
-  
-  brew install pkgconfig
+  常见的算法有
 
 
-测试环境是否安装 ok
 
 
-  运行(如果在 gomod 就在 pk...
         </p>
       </div>
 
@@ -830,10 +820,10 @@ Resources
 
 
 <em class=""
-    data-ts="1556116638"
+    data-ts="1556549916"
     data-df="YYYY-MM-DD"
     >
-  2019-04-24
+  2019-04-29
 </em>
 
 
@@ -859,7 +849,7 @@ Resources
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day08-sliceAndRanger/">Day08（切片 slice 和 range）</a>
+        <a href="/posts/other/">Golang 代码规范</a>
       </h1>
 
       <div class="post-content">
@@ -870,20 +860,15 @@ Resources
 
 
 
-          切片（slice） 和range 使用
+          代码规范
 
-源码
-
-切片（slice）
+Go 代码规范（或 Go 规范）旨在使代码更具可读性、可维护性和可重用性。以下是一些主要的规则：
 
 
-  Go 数组在一定情况下，不能满足开发业务需求（数组固定长度、有很多局限性），切片是可变长度序列，切片底层就是数组做了一层封装（也叫做动态数组）。切片可以自动扩容，切片是引用类型，包含地址、长度（len）、容量（cap）
-
-
-切片什么时候扩容
-
-
-  如果切片的容量小于 1024 个元素，那么扩容的时候slice的c...
+  格式化：使用 gofmt 工具来格式化代码以提高可读性。
+  命名：遵循有意义的命名方式，使用驼峰式命名法，在变量名和函数名中使用小写字母开头，公共函数和变量名应该首字母大写。
+  注释：对于每一个包、函数、类型、方法和变量都应该添加注释，尽可能用单行注释。
+  导入：将所有...
         </p>
       </div>
 
@@ -902,10 +887,10 @@ Resources
 
 
 <em class=""
-    data-ts="1556116638"
+    data-ts="1556549916"
     data-df="YYYY-MM-DD"
     >
-  2019-04-24
+  2019-04-29
 </em>
 
 
@@ -931,7 +916,7 @@ Resources
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day07-PointerAndstruct/">Day07（指针和结构体）</a>
+        <a href="/posts/iris-base/">Golang Iris</a>
       </h1>
 
       <div class="post-content">
@@ -942,34 +927,8 @@ Resources
 
 
 
-          指针和结构体
+          
 
-源码
-
-指针
-
-
-  Go 语言指针与 C 语言指针不一样理解,一个指针变量指向了一个值的内存地址。
-
-  类似于变量和常量，在使用指针前你需要声明指针
-
-
-示例
-
-
-  
-    示例一：
-
-    
-      func new(Type) *Type 说明 new()方法 返回值就是指针
-    
-  
-
-
-package main
-
-import (
-	&quot;github...
         </p>
       </div>
 
@@ -988,10 +947,10 @@ import (
 
 
 <em class=""
-    data-ts="1556028243"
+    data-ts="1556549916"
     data-df="YYYY-MM-DD"
     >
-  2019-04-23
+  2019-04-29
 </em>
 
 
@@ -1017,7 +976,7 @@ import (
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day06-variableAndArray/">Day06（作用域与数组）</a>
+        <a href="/posts/swagger/">web Swagger</a>
       </h1>
 
       <div class="post-content">
@@ -1028,42 +987,22 @@ import (
 
 
 
-          作用域与数组
-
-源码
-
-变量作用域
-
-局部变量
+          swag
 
 
-  函数内定义的变量
+  使用说明
 
 
-package main
+安装下载依赖
 
-import (
-	&quot;fmt&quot;
-)
-
-func main() {
-	var a, b, c = 1, 2, 3
-	fmt.Println(a, b, c)
-}
+go get github.com/swaggo/swag/cmd/swag
+go get -u github.com/swaggo/gin-swagger
+go get -u github.com/swaggo/gin-swagger/swaggerFiles
 
 
-全局变量
+使用参考
 
-
-  函数外定义的变量
-
-
-package main
-
-import &quot;fmt&quot;
-
-// 定义全局变量
-var ...
+https://gitee.com/ClientCodeFile/...
         </p>
       </div>
 
@@ -1082,10 +1021,10 @@ var ...
 
 
 <em class=""
-    data-ts="1554649116"
+    data-ts="1556549916"
     data-df="YYYY-MM-DD"
     >
-  2019-04-07
+  2019-04-29
 </em>
 
 
@@ -1111,7 +1050,7 @@ var ...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day05-func/">Day05（函数）</a>
+        <a href="/posts/restful/">web restful</a>
       </h1>
 
       <div class="post-content">
@@ -1122,24 +1061,22 @@ var ...
 
 
 
-          函数
+          restful
 
-源码
+理解
 
+要理解 RESTful 架构，需要理解 Representational State Transfer 这个词组到底是什么意思，它的每一个词都有些什么涵义。
 
-  go 至少一个函数 主函数
+下面我们结合 REST 原则，围绕资源展开讨论，从资源的定义、获取、表述、关联、状态变迁等角度，列举一些关键概念并加以解释
 
+资源与 URL
 
-package main
+统一资源接口
 
-import (
-	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
-)
+资源的表达
 
-func main() {
-	_, _, _, err := FuncName(&quot;&quot;, &quot;&quot;, false)
-	if err != nil {
-		logs.Error(err.Error...
+状态的转移
+
         </p>
       </div>
 
@@ -1158,10 +1095,10 @@ func main() {
 
 
 <em class=""
-    data-ts="1554559518"
+    data-ts="1556549916"
     data-df="YYYY-MM-DD"
     >
-  2019-04-06
+  2019-04-29
 </em>
 
 
@@ -1187,7 +1124,7 @@ func main() {
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day04-LoopStatementFunc/">Day04（循环语句）</a>
+        <a href="/posts/Day13-time/">Day13（Time）</a>
       </h1>
 
       <div class="post-content">
@@ -1198,22 +1135,27 @@ func main() {
 
 
 
-          循环语句
+          时间包
 
-源代码
 
-for
+  时间包 time 提供了日期和时间相关的函数和结构体。使用这个包可以完成时间格式化、时间比较、定时器等功能
 
-package main
 
-import &quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
+获取当前时间
 
-func main() {
-	array := make([]int, 5)
-	logs.Info(array)
-	for i := 0; i &amp;lt; len(array); i++ {
-		array[i] = i
-...
+now := time.Now()
+fmt.Println(now)
+
+
+时间格式化输出
+
+t := time.Now()
+fmt.Println(t.Format(&quot;2006-01-02 15:04:05&quot;))
+
+
+时间比较
+
+t1 := time...
         </p>
       </div>
 
@@ -1232,10 +1174,10 @@ func main() {
 
 
 <em class=""
-    data-ts="1554221400"
+    data-ts="1556518769"
     data-df="YYYY-MM-DD"
     >
-  2019-04-03
+  2019-04-29
 </em>
 
 
@@ -1504,9 +1446,24 @@ func main() {
     
 
     
+      <!-- hide number -->
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page14">14</a>
+        <a class="page-link btn-box-shadow" href="/page15">15</a>
       </li>
     
 
@@ -1515,7 +1472,7 @@ func main() {
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>11</span>
-    <span class="text-muted">/ 14</span>
+    <span class="text-muted">/ 15</span>
   </li>
 
   <!-- right arrow -->
@@ -1565,12 +1522,12 @@ func main() {
         
         
         
-      <li><a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a></li>
+      <li><a href="/posts/k8sBase/">Kubernetes概述</a></li>
       
         
         
         
-      <li><a href="/posts/gRPC/">gRPC 和 ui 操作</a></li>
+      <li><a href="/posts/k8s-base/">Kubernetes 部署</a></li>
       
         
         
@@ -1580,12 +1537,12 @@ func main() {
         
         
         
-      <li><a href="/posts/kratos-Error/">kratos Error</a></li>
+      <li><a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a></li>
       
         
         
         
-      <li><a href="/posts/kratos-discovery/">kratos discovery</a></li>
+      <li><a href="/posts/gRPC/">gRPC 和 ui 操作</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1888,110 +1845,6 @@ func main() {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2126,209 +1979,10 @@ func main() {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2663,36 +2317,6 @@ func main() {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2791,197 +2415,6 @@ func main() {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3252,108 +2685,6 @@ func main() {
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3380,6 +2711,58 @@ func main() {
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3444,6 +2827,696 @@ func main() {
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3505,6 +3578,9 @@ func main() {
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
+      <a class="post-tag" href="/tags/docker/">Docker</a>
+    
+      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
@@ -3512,9 +3588,6 @@ func main() {
     
       
       <a class="post-tag" href="/tags/system/">System</a>
-    
-      
-      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>
@@ -3871,110 +3944,6 @@ func main() {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4109,209 +4078,10 @@ func main() {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -4646,36 +4416,6 @@ func main() {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4774,197 +4514,6 @@ func main() {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -5235,108 +4784,6 @@ func main() {
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5363,6 +4810,58 @@ func main() {
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -5427,6 +4926,696 @@ func main() {
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -5488,6 +5677,9 @@ func main() {
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
+      <a class="post-tag" href="/tags/docker/">Docker</a>
+    
+      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
@@ -5495,9 +5687,6 @@ func main() {
     
       
       <a class="post-tag" href="/tags/system/">System</a>
-    
-      
-      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>

@@ -473,7 +473,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day03-OperatorCondition/">Day03（运算符与条件语句）</a>
+        <a href="/posts/Day12-reflect/">Day12（反射）</a>
       </h1>
 
       <div class="post-content">
@@ -484,39 +484,322 @@
 
 
 
-          运算符与条件语句
+          反射
+
+介绍
 
 
-  本章源码
+  反射是 Golang 中的一项重要特性，它提供了一种机制，可以在运行时动态地获取变量的类型信息、值信息、方法、字段等，并可以通过反射进行值的修改和调用方法。这使得 Golang 具备了更高的灵活性和通用性。
+  在 Golang 中，反射通过 reflect 包实现，该包提供了一些函数和类型，可以用于检查变量的类型、值、方法、字段等信息。例如，reflect.TypeO...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
 
-运算符
-
-算数运算符
-
-
-  假定 A 值为 10，B 值为 20
 
 
 
+<em class=""
+    data-ts="1556456643"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-28
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Language,
+            Go
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Day11-Concurrent/">Day11（并发编程）</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          概念
+
+
+  并发：把任务在不同的时间点交给处理器进行处理明珠爱同一时间点，任务并不会同事进行
+  并行：把每一个任务分配给每一个处理器独立完成，在同一时间点任务一定是同时运行的
+
+
+简介使用
+
+
+  创建：使用 go 关键字创建一个 goroutine go functionName()
   
+    调整并发运行性能
+
     
-      运算符
-      描述
-      实例
+      
+        例子：
+
+        r...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1556327969"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-27
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Language,
+            Go
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Day10-interfaceAndError/">Day10（接口和错误处理）</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          interface And Panic、Error
+
+
+  源码
+
+
+interface
+
+接口创建使用
+
+package main
+
+import (
+	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
+	&quot;github.com/pkg/errors&quot;
+)
+
+// UserInterface
+type UserInterface interf...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1556182979"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-25
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Language,
+            Go
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/Day09-mapAndContainer/">Day09（MapAndContainer）</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          集合(map) 和容器(Container)
+
+源码
+
+Map
+
+
+  Map 是一种无序键值对的集合，通过Key来检索数据，key 类似索引，指向数据值，可以使用for迭代，但是 map是无序的，无法决定他的返回值顺序，这是因为map 是使用hash 来实现的
+
+
+删除元素、判断是否存在
+
+package main
+
+import (
+	&quot;github.com/Cc360428/HelpP...
+        </p>
+      </div>
+
+      <div class="post-meta text-muted d-flex">
+        <div class="mr-auto">
+
+          <!-- posted date -->
+          <i class="far fa-calendar fa-fw"></i>
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em class=""
+    data-ts="1556157624"
+    data-df="YYYY-MM-DD"
+    >
+  2019-04-25
+</em>
+
+
+          <!-- categories -->
+          
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+            
+            Language,
+            Go
+          </span>
+          
+
+        </div>
+
+        
+
+      </div> <!-- .post-meta -->
+
+    </div> <!-- .post-review -->
+
+    
+
+    <div class="post-preview">
+      <h1>
+        <a href="/posts/opencv-base/">openCV</a>
+      </h1>
+
+      <div class="post-content">
+        <p>
+          
+
+
+
+
+
+          OpenCV
+
+地址
+
+goCv
+
+gocv
+
+参考网址
+
+csdn
+
+OpenCV: Open Source Computer Vision Library
+
+Resources
+
+
+  Homepage: https://opencv.org
+    
+      Courses: https://opencv.org/courses
     
   
-  
-    
-      +
-      相加
-      A + B 输出结果 30
-    
-    
-      -
-      相减
-      A - B 输出结果 -10
-   ...
+  Docs: https://do...
         </p>
       </div>
 
@@ -535,10 +818,10 @@
 
 
 <em class=""
-    data-ts="1554182025"
+    data-ts="1556116638"
     data-df="YYYY-MM-DD"
     >
-  2019-04-02
+  2019-04-24
 </em>
 
 
@@ -564,7 +847,7 @@
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Day02-datatype/">Day02（入门基础）</a>
+        <a href="/posts/cgo-base/">CGOBase</a>
       </h1>
 
       <div class="post-content">
@@ -575,326 +858,25 @@
 
 
 
-          数据类型、变量、常量
-
-本章源码
-
-数据类型
-
-
-  整型：在 Golang 中，整型分为有符号整型和无符号整型。有符号整型的取值范围为 -2^31 到 2^31-1，无符号整型的取值范围为 0 到 2^32-1。常见的整型类型
-    
-      int8: 有符号 8 位整数，取值范围为 -128 到 127
-      int16: 有符号 16 位整数，取值范围为 -32768 到...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1554038310"
-    data-df="YYYY-MM-DD"
-    >
-  2019-03-31
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Language,
-            Go
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/go_base/">Golang 入门介绍</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          Golang 基础
-
-本章源码
-
-初步认识 Golang
-
-
-  Go 跨平台（linux、windows、mac），只要编写完代码之后 交叉编译即可
-  Go 语言单一、简洁、天生高并发、CGO
-  Go 应用广（web 应用、区块链、运维、云计算、大数据）
-
-
-Go 环境
-
-Linux &amp;amp; MacOs
-
-
-  下载 Golang 安装包：在 Golang 官方网站上下载适合自己 ...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1553959919"
-    data-df="YYYY-MM-DD"
-    >
-  2019-03-30
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Language,
-            Go
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/baseAll/">Golang Base</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          GoLang
-
-GoLang
-
-https://go-zh.org/
-
-基础
-
-包、变量和函数、基本类型
-
-
-  包 package
-每个程序都是由包组成
-  导入 import
-圆括号可以组合导入
-  导出 在 Go 语言中首字母大写的名称是被导出的
-    
-      导入了一个包后，可以导出名称来调用他
-      Foo 和 FOO 都是被导出的名称。名称 foo 是不会被导出的
-...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1551921663"
-    data-df="YYYY-MM-DD"
-    >
-  2019-03-07
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Language,
-            Go
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/Flutter-HelloWorld/">Flutter HelloWorld</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          Android Studio 环境搭建
-
-查看 Android SDK
-
-
-  安装 Android Studio 查看安装 Android SDK 位置
-
-
-File-&amp;gt;other Settings -&amp;gt; Defaylt Project Structure
-
-
-
-  可以看到 Android SDK location
-
-
-Android Studio 中安装 Flutter 插...
-        </p>
-      </div>
-
-      <div class="post-meta text-muted d-flex">
-        <div class="mr-auto">
-
-          <!-- posted date -->
-          <i class="far fa-calendar fa-fw"></i>
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em class=""
-    data-ts="1549983516"
-    data-df="YYYY-MM-DD"
-    >
-  2019-02-12
-</em>
-
-
-          <!-- categories -->
-          
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-            
-            Language,
-            Flutter
-          </span>
-          
-
-        </div>
-
-        
-
-      </div> <!-- .post-meta -->
-
-    </div> <!-- .post-review -->
-
-    
-
-    <div class="post-preview">
-      <h1>
-        <a href="/posts/Flutter-Base/">环境搭建</a>
-      </h1>
-
-      <div class="post-content">
-        <p>
-          
-
-
-
-
-
-          Dart
-
-环境安装
-
-
-  下载 DartSDK
-  添加环境变量
-
-
-export DART_HOME=/usr/local/dart/dart-sdk/bin
-export PATH=&quot;${DART_HOME}:${PATH}&quot;
-
-
-Flutter
+          base
 
 环境搭建
 
 
-  获取 SDK
+  go get -u -d gocv.io/x/gocv
+  安装过(update)和第一次安装(install)
     
-      zip
-        
-          https://flutter.de...
+      brew update opencv
+      brew install opencv
+    
+  
+  brew install pkgconfig
+
+
+测试环境是否安装 ok
+
+
+  运行(如果在 gomod 就在 pk...
         </p>
       </div>
 
@@ -913,10 +895,10 @@ Flutter
 
 
 <em class=""
-    data-ts="1549983516"
+    data-ts="1556116638"
     data-df="YYYY-MM-DD"
     >
-  2019-02-12
+  2019-04-24
 </em>
 
 
@@ -926,7 +908,7 @@ Flutter
           <span>
             
             Language,
-            Flutter
+            Go
           </span>
           
 
@@ -942,7 +924,7 @@ Flutter
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/Error/">手机推送</a>
+        <a href="/posts/Day08-sliceAndRanger/">Day08（切片 slice 和 range）</a>
       </h1>
 
       <div class="post-content">
@@ -953,25 +935,20 @@ Flutter
 
 
 
-          Error
+          切片（slice） 和range 使用
 
-获取包错误
+源码
 
-Waiting for another flutter command to release the startup lock...
-
-
-  解决办法
+切片（slice）
 
 
-cd /usr/local/dart/flutter/bin/cache
-rm -rf lockfile
+  Go 数组在一定情况下，不能满足开发业务需求（数组固定长度、有很多局限性），切片是可变长度序列，切片底层就是数组做了一层封装（也叫做动态数组）。切片可以自动扩容，切片是引用类型，包含地址、长度（len）、容量（cap）
 
 
-拉依赖包
+切片什么时候扩容
 
-This is taking an unexpectedly long time.
 
-E...
+  如果切片的容量小于 1024 个元素，那么扩容的时候slice的c...
         </p>
       </div>
 
@@ -990,10 +967,10 @@ E...
 
 
 <em class=""
-    data-ts="1549983516"
+    data-ts="1556116638"
     data-df="YYYY-MM-DD"
     >
-  2019-02-12
+  2019-04-24
 </em>
 
 
@@ -1003,7 +980,7 @@ E...
           <span>
             
             Language,
-            Flutter
+            Go
           </span>
           
 
@@ -1019,7 +996,7 @@ E...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/appOffLinePush/">手机推送</a>
+        <a href="/posts/Day07-PointerAndstruct/">Day07（指针和结构体）</a>
       </h1>
 
       <div class="post-content">
@@ -1030,20 +1007,34 @@ E...
 
 
 
-          手机推送
+          指针和结构体
 
-IOS
+源码
 
-github 方法
+指针
 
-https://www.jianshu.com/p/c90204ef6e4a
-github Test1
 
-方法
+  Go 语言指针与 C 语言指针不一样理解,一个指针变量指向了一个值的内存地址。
 
-https://blog.csdn.net/jeffasd/article/details/69950979
-https://www.jb51.cc/go/188684.html
-http://docs-im.easemob.com/i...
+  类似于变量和常量，在使用指针前你需要声明指针
+
+
+示例
+
+
+  
+    示例一：
+
+    
+      func new(Type) *Type 说明 new()方法 返回值就是指针
+    
+  
+
+
+package main
+
+import (
+	&quot;github...
         </p>
       </div>
 
@@ -1062,10 +1053,10 @@ http://docs-im.easemob.com/i...
 
 
 <em class=""
-    data-ts="1549983516"
+    data-ts="1556028243"
     data-df="YYYY-MM-DD"
     >
-  2019-02-12
+  2019-04-23
 </em>
 
 
@@ -1075,7 +1066,7 @@ http://docs-im.easemob.com/i...
           <span>
             
             Language,
-            AppPush
+            Go
           </span>
           
 
@@ -1091,7 +1082,7 @@ http://docs-im.easemob.com/i...
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/docker%E5%AE%89%E8%A3%85/">Doker 安装</a>
+        <a href="/posts/Day06-variableAndArray/">Day06（作用域与数组）</a>
       </h1>
 
       <div class="post-content">
@@ -1102,12 +1093,42 @@ http://docs-im.easemob.com/i...
 
 
 
-          Doker 安装
+          作用域与数组
 
-卸载就版本
+源码
 
-sudo apt-get remove docker docker-engine docker.io containerd runc
+变量作用域
 
+局部变量
+
+
+  函数内定义的变量
+
+
+package main
+
+import (
+	&quot;fmt&quot;
+)
+
+func main() {
+	var a, b, c = 1, 2, 3
+	fmt.Println(a, b, c)
+}
+
+
+全局变量
+
+
+  函数外定义的变量
+
+
+package main
+
+import &quot;fmt&quot;
+
+// 定义全局变量
+var ...
         </p>
       </div>
 
@@ -1126,10 +1147,10 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 
 <em class=""
-    data-ts="1548478134"
+    data-ts="1554649116"
     data-df="YYYY-MM-DD"
     >
-  2019-01-26
+  2019-04-07
 </em>
 
 
@@ -1138,8 +1159,8 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Network,
-            Docker
+            Language,
+            Go
           </span>
           
 
@@ -1155,7 +1176,7 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 
     <div class="post-preview">
       <h1>
-        <a href="/posts/idea%E4%BD%BF%E7%94%A8/">Idea 快捷键</a>
+        <a href="/posts/Day05-func/">Day05（函数）</a>
       </h1>
 
       <div class="post-content">
@@ -1166,19 +1187,24 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 
 
-          Idea 快捷键
+          函数
 
-编辑：
+源码
 
 
-  Ctrl + X：剪切当前行或者选中的区域
-  Ctrl + C：复制当前行或者选中的区域
-  Ctrl + V：粘贴当前剪贴板中的内容
-  Ctrl + Z：撤销操作
-  Ctrl + Shift + Z：重做操作
-  Ctrl + D：复制当前行或者选中的区域到下一行
-  Ctrl + Delete：删除光标所在位置到单词结尾的文本
-  Ctrl + ...
+  go 至少一个函数 主函数
+
+
+package main
+
+import (
+	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
+)
+
+func main() {
+	_, _, _, err := FuncName(&quot;&quot;, &quot;&quot;, false)
+	if err != nil {
+		logs.Error(err.Error...
         </p>
       </div>
 
@@ -1197,10 +1223,10 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 
 <em class=""
-    data-ts="1548478134"
+    data-ts="1554559518"
     data-df="YYYY-MM-DD"
     >
-  2019-01-26
+  2019-04-06
 </em>
 
 
@@ -1209,8 +1235,8 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
           <i class="far fa-folder-open fa-fw"></i>
           <span>
             
-            Dev,
-            IDEA
+            Language,
+            Go
           </span>
           
 
@@ -1464,9 +1490,29 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
 
     
+      <!-- hide number -->
+      
+        <li class="page-item disabled">
+          <span class="page-link btn-box-shadow">...</span>
+        </li>
+        
+      
+    
+
+  
+
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
-        <a class="page-link btn-box-shadow" href="/page14">14</a>
+        <a class="page-link btn-box-shadow" href="/page15">15</a>
       </li>
     
 
@@ -1475,7 +1521,7 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>12</span>
-    <span class="text-muted">/ 14</span>
+    <span class="text-muted">/ 15</span>
   </li>
 
   <!-- right arrow -->
@@ -1525,12 +1571,12 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
         
         
         
-      <li><a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a></li>
+      <li><a href="/posts/k8sBase/">Kubernetes概述</a></li>
       
         
         
         
-      <li><a href="/posts/gRPC/">gRPC 和 ui 操作</a></li>
+      <li><a href="/posts/k8s-base/">Kubernetes 部署</a></li>
       
         
         
@@ -1540,12 +1586,12 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
         
         
         
-      <li><a href="/posts/kratos-Error/">kratos Error</a></li>
+      <li><a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a></li>
       
         
         
         
-      <li><a href="/posts/kratos-discovery/">kratos discovery</a></li>
+      <li><a href="/posts/gRPC/">gRPC 和 ui 操作</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1848,110 +1894,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2086,209 +2028,10 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2623,36 +2366,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2751,197 +2464,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3212,108 +2734,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3340,6 +2760,58 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3404,6 +2876,696 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -3465,6 +3627,9 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
+      <a class="post-tag" href="/tags/docker/">Docker</a>
+    
+      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
@@ -3472,9 +3637,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
       
       <a class="post-tag" href="/tags/system/">System</a>
-    
-      
-      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>
@@ -3831,110 +3993,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4069,209 +4127,10 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -4606,36 +4465,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4734,197 +4563,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -5195,108 +4833,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5323,6 +4859,58 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -5387,6 +4975,696 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
     
     
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -5448,6 +5726,9 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
       <a class="post-tag" href="/tags/goweb/">GoWeb</a>
     
       
+      <a class="post-tag" href="/tags/docker/">Docker</a>
+    
+      
       <a class="post-tag" href="/tags/goutils/">GoUtils</a>
     
       
@@ -5455,9 +5736,6 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
     
       
       <a class="post-tag" href="/tags/system/">System</a>
-    
-      
-      <a class="post-tag" href="/tags/database/">Database</a>
     
 
     </div>
