@@ -1,18 +1,18 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>https://cc360428.github.io//</id>
+  <id>http://127.0.0.1:8090/</id>
   <title>Cc Blog</title>
-  <subtitle>查看所有</subtitle>
-  <updated>2023-05-17T12:07:08+08:00</updated>
+  <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
+  <updated>2023-05-18T10:18:05+08:00</updated>
   <author>
     <name>Cc</name>
-    <uri>https://cc360428.github.io//</uri>
+    <uri>http://127.0.0.1:8090/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="https://cc360428.github.io//feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://127.0.0.1:8090/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="zh-CN"
-    href="https://cc360428.github.io//"/>
-  <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
+    href="http://127.0.0.1:8090/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
   <rights> © 2023 Cc </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>kubectl 基础命令</title>
-    <link href="https://cc360428.github.io//posts/Kubernetes/" rel="alternate" type="text/html" title="kubectl 基础命令" />
+    <link href="http://127.0.0.1:8090/posts/Kubernetes/" rel="alternate" type="text/html" title="kubectl 基础命令" />
     <published>2023-05-10T14:43:01+08:00</published>
   
     <updated>2023-05-10T14:43:01+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/Kubernetes/</id>
-    <content src="https://cc360428.github.io//posts/Kubernetes/" />
+    <id>http://127.0.0.1:8090/posts/Kubernetes/</id>
+    <content src="http://127.0.0.1:8090/posts/Kubernetes/" />
     <author>
       <name>Cc</name>
     </author>
@@ -78,13 +78,13 @@ kubectl cluster-info
   
   <entry>
     <title>docker-compose 基础命令</title>
-    <link href="https://cc360428.github.io//posts/docker-compose/" rel="alternate" type="text/html" title="docker-compose 基础命令" />
+    <link href="http://127.0.0.1:8090/posts/docker-compose/" rel="alternate" type="text/html" title="docker-compose 基础命令" />
     <published>2023-05-10T14:42:01+08:00</published>
   
     <updated>2023-05-10T14:42:01+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/docker-compose/</id>
-    <content src="https://cc360428.github.io//posts/docker-compose/" />
+    <id>http://127.0.0.1:8090/posts/docker-compose/</id>
+    <content src="http://127.0.0.1:8090/posts/docker-compose/" />
     <author>
       <name>Cc</name>
     </author>
@@ -127,13 +127,13 @@ ser...
   
   <entry>
     <title>Docker 基础命令</title>
-    <link href="https://cc360428.github.io//posts/cmd-docker/" rel="alternate" type="text/html" title="Docker 基础命令" />
+    <link href="http://127.0.0.1:8090/posts/cmd-docker/" rel="alternate" type="text/html" title="Docker 基础命令" />
     <published>2023-05-09T12:09:01+08:00</published>
   
     <updated>2023-05-09T12:09:01+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/cmd-docker/</id>
-    <content src="https://cc360428.github.io//posts/cmd-docker/" />
+    <id>http://127.0.0.1:8090/posts/cmd-docker/</id>
+    <content src="http://127.0.0.1:8090/posts/cmd-docker/" />
     <author>
       <name>Cc</name>
     </author>
@@ -200,13 +200,13 @@ docker stop &amp;lt;container-id&amp;gt;
   
   <entry>
     <title>API测试工具</title>
-    <link href="https://cc360428.github.io//posts/testing-base/" rel="alternate" type="text/html" title="API测试工具" />
+    <link href="http://127.0.0.1:8090/posts/testing-base/" rel="alternate" type="text/html" title="API测试工具" />
     <published>2023-05-09T09:05:01+08:00</published>
   
     <updated>2023-05-09T09:05:01+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/testing-base/</id>
-    <content src="https://cc360428.github.io//posts/testing-base/" />
+    <id>http://127.0.0.1:8090/posts/testing-base/</id>
+    <content src="http://127.0.0.1:8090/posts/testing-base/" />
     <author>
       <name>Cc</name>
     </author>
@@ -251,13 +251,13 @@ docker stop &amp;lt;container-id&amp;gt;
   
   <entry>
     <title>Vim 使用说明</title>
-    <link href="https://cc360428.github.io//posts/vim/" rel="alternate" type="text/html" title="Vim 使用说明" />
+    <link href="http://127.0.0.1:8090/posts/vim/" rel="alternate" type="text/html" title="Vim 使用说明" />
     <published>2023-05-08T12:07:01+08:00</published>
   
     <updated>2023-05-08T12:07:01+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/vim/</id>
-    <content src="https://cc360428.github.io//posts/vim/" />
+    <id>http://127.0.0.1:8090/posts/vim/</id>
+    <content src="http://127.0.0.1:8090/posts/vim/" />
     <author>
       <name>Cc</name>
     </author>

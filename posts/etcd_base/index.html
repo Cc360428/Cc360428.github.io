@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 
 
@@ -12,27 +12,28 @@
 
 
 
-<html lang="zh-CN"
+
+<!-- `site.alt_lang` can specify a language different from the UI -->
+<html lang="zh-CN" 
   
 >
-
-  <!--
-  The Head
--->
+  <!-- The Head -->
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+  >
 
-  <!-- Allow having a localized datetime different from the appearance language -->
   
-
-  
-
     
 
     
-
   
 
   
@@ -41,20 +42,21 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.2.2" />
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="etcd Base" />
 <meta property="og:locale" content="zh_CN" />
 <meta name="description" content="etcd 简介" />
 <meta property="og:description" content="etcd 简介" />
-<link rel="canonical" href="https://cc360428.github.io//posts/etcd_base/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/etcd_base/" />
+<link rel="canonical" href="http://127.0.0.1:8090/posts/etcd_base/" />
+<meta property="og:url" content="http://127.0.0.1:8090/posts/etcd_base/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-20T22:05:01+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="etcd Base" />
+<meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-20T22:05:01+08:00","datePublished":"2020-04-20T22:05:01+08:00","description":"etcd 简介","headline":"etcd Base","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/etcd_base/"},"url":"https://cc360428.github.io//posts/etcd_base/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-20T22:05:01+08:00","datePublished":"2020-04-20T22:05:01+08:00","description":"etcd 简介","headline":"etcd Base","mainEntityOfPage":{"@type":"WebPage","@id":"http://127.0.0.1:8090/posts/etcd_base/"},"url":"http://127.0.0.1:8090/posts/etcd_base/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -82,7 +84,6 @@
 
 
   
-
     
       <link rel="preconnect" href="https://fonts.googleapis.com" >
       <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
@@ -97,46 +98,51 @@
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;900&display=swap">
   
 
   <!-- GA -->
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/style.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.0/dist/tocbot.min.css">
   
 
   
     <!-- Manific Popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-
   
-    <!--
-  Switch the mode between dark and light.
--->
+    <!-- Switch the mode between dark and light. -->
 
 <script type="text/javascript">
   class ModeToggle {
-    static get MODE_KEY() { return "mode"; }
-    static get MODE_ATTR() { return "data-mode"; }
-    static get DARK_MODE() { return "dark"; }
-    static get LIGHT_MODE() { return "light"; }
-    static get ID() { return "mode-toggle"; }
+    static get MODE_KEY() {
+      return 'mode';
+    }
+    static get MODE_ATTR() {
+      return 'data-mode';
+    }
+    static get DARK_MODE() {
+      return 'dark';
+    }
+    static get LIGHT_MODE() {
+      return 'light';
+    }
+    static get ID() {
+      return 'mode-toggle';
+    }
 
     constructor() {
       if (this.hasMode) {
@@ -154,13 +160,12 @@
       let self = this;
 
       /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener("change", () => {
+      this.sysDarkPrefers.addEventListener('change', () => {
         if (self.hasMode) {
           if (self.isDarkMode) {
             if (!self.isSysDarkPrefer) {
               self.setDark();
             }
-
           } else {
             if (self.isSysDarkPrefer) {
               self.setLight();
@@ -171,27 +176,36 @@
         }
 
         self.notify();
-
       });
-
     } /* constructor() */
 
-    get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); }
+    get sysDarkPrefers() {
+      return window.matchMedia('(prefers-color-scheme: dark)');
+    }
 
-    get isSysDarkPrefer() { return this.sysDarkPrefers.matches; }
+    get isSysDarkPrefer() {
+      return this.sysDarkPrefers.matches;
+    }
 
-    get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; }
+    get isDarkMode() {
+      return this.mode === ModeToggle.DARK_MODE;
+    }
 
-    get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; }
+    get isLightMode() {
+      return this.mode === ModeToggle.LIGHT_MODE;
+    }
 
-    get hasMode() { return this.mode != null; }
+    get hasMode() {
+      return this.mode != null;
+    }
 
-    get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); }
+    get mode() {
+      return sessionStorage.getItem(ModeToggle.MODE_KEY);
+    }
 
     /* get the current mode on screen */
     get modeStatus() {
-      if (this.isDarkMode
-        || (!this.hasMode && this.isSysDarkPrefer)) {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
         return ModeToggle.DARK_MODE;
       } else {
         return ModeToggle.LIGHT_MODE;
@@ -199,238 +213,275 @@
     }
 
     setDark() {
-      $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
       sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
     }
 
     setLight() {
-      $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
       sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
     }
 
     clearMode() {
-      $('html').removeAttr(ModeToggle.MODE_ATTR);
+      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
       sessionStorage.removeItem(ModeToggle.MODE_KEY);
     }
 
     /* Notify another plugins that the theme mode has changed */
     notify() {
-      window.postMessage({
-        direction: ModeToggle.ID,
-        message: this.modeStatus
-      }, "*");
+      window.postMessage(
+        {
+          direction: ModeToggle.ID,
+          message: this.modeStatus
+        },
+        '*'
+      );
     }
 
+    flipMode() {
+      if (this.hasMode) {
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
+      } else {
+        if (this.isSysDarkPrefer) {
+          this.setLight();
+        } else {
+          this.setDark();
+        }
+      }
+
+      this.notify();
+    } /* flipMode() */
   } /* ModeToggle */
 
-  const toggle = new ModeToggle();
-
-  function flipMode() {
-    if (toggle.hasMode) {
-      if (toggle.isSysDarkPrefer) {
-        if (toggle.isLightMode) {
-          toggle.clearMode();
-        } else {
-          toggle.setLight();
-        }
-
-      } else {
-        if (toggle.isDarkMode) {
-          toggle.clearMode();
-        } else {
-          toggle.setDark();
-        }
-      }
-
-    } else {
-      if (toggle.isSysDarkPrefer) {
-        toggle.setLight();
-      } else {
-        toggle.setDark();
-      }
-    }
-
-    toggle.notify();
-
-  } /* flipMode() */
-
+  const modeToggle = new ModeToggle();
 </script>
 
   
+
+  <!-- A placeholder to allow defining custom metadata -->
+
 </head>
 
 
-  <body data-spy="scroll" data-target="#toc" data-topbar-visible="true">
-
-    <!--
-  The Side Bar
--->
+  <body>
+    <!-- The Side Bar -->
 
 <div id="sidebar" class="d-flex flex-column align-items-end">
-  <div class="profile-wrapper text-center">
-    <div id="avatar">
-      <a href="/" class="mx-auto">
+  <div class="profile-wrapper">
+    <a href="/" id="avatar" class="rounded-circle">
+      
         
-        
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" alt="avatar" onerror="this.style.display='none'">
-        
-      </a>
-    </div>
+        <img src="http://127.0.0.1:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
-    <div class="site-title mt-3">
+    <div class="site-title">
       <a href="/">Cc Blog</a>
     </div>
-    <div class="site-subtitle font-italic">Hello, I'm Cc</div>
+    <div class="site-subtitle fst-italic">My name is Cc and I come from China</div>
+  </div>
+  <!-- .profile-wrapper -->
 
-  </div><!-- .profile-wrapper -->
-
-  <ul class="w-100">
-
+  <ul class="nav flex-column flex-grow-1 w-100 ps-0">
     <!-- home -->
     <li class="nav-item">
       <a href="/" class="nav-link">
-        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+        <i class="fa-fw fas fa-home"></i>
         <span>首页</span>
       </a>
     </li>
     <!-- the real tabs -->
     
-    <li class="nav-item">
-      <a href="/categories/" class="nav-link">
-        <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
-        
+      <li class="nav-item">
+        <a href="/categories/" class="nav-link">
+          <i class="fa-fw fas fa-stream"></i>
+          
 
-        <span>分类</span>
-      </a>
-    </li> <!-- .nav-item -->
+          <span>分类</span>
+        </a>
+      </li>
+      <!-- .nav-item -->
     
-    <li class="nav-item">
-      <a href="/tags/" class="nav-link">
-        <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i>
-        
+      <li class="nav-item">
+        <a href="/tags/" class="nav-link">
+          <i class="fa-fw fas fa-tag"></i>
+          
 
-        <span>标签</span>
-      </a>
-    </li> <!-- .nav-item -->
+          <span>标签</span>
+        </a>
+      </li>
+      <!-- .nav-item -->
     
-    <li class="nav-item">
-      <a href="/archives/" class="nav-link">
-        <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i>
-        
+      <li class="nav-item">
+        <a href="/archives/" class="nav-link">
+          <i class="fa-fw fas fa-archive"></i>
+          
 
-        <span>归档</span>
-      </a>
-    </li> <!-- .nav-item -->
+          <span>归档</span>
+        </a>
+      </li>
+      <!-- .nav-item -->
     
-    <li class="nav-item">
-      <a href="/about/" class="nav-link">
-        <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i>
-        
+      <li class="nav-item">
+        <a href="/about/" class="nav-link">
+          <i class="fa-fw fas fa-info-circle"></i>
+          
 
-        <span>关于</span>
-      </a>
-    </li> <!-- .nav-item -->
+          <span>关于</span>
+        </a>
+      </li>
+      <!-- .nav-item -->
     
+  </ul>
+  <!-- ul.nav.flex-column -->
 
-  </ul> <!-- ul.nav.flex-column -->
+  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+    
+      <button class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
 
-  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
-
-    
-    <button class="mode-toggle btn" aria-label="Switch Mode">
-      <i class="fas fa-adjust"></i>
-    </button>
-
-    
-    <span class="icon-border"></span>
-    
-    
-
-    
-    
-
-    
-    <a href="https://github.com/Cc360428-" aria-label="github" target="_blank" rel="noopener" >
-      <i class="fab fa-github"></i>
-    </a>
+      
+        <span class="icon-border"></span>
+      
     
 
     
-    
+      
 
-    
-    <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener" >
-      <i class="fab fa-twitter"></i>
-    </a>
-    
+      
+        <a
+          href="https://github.com/Cc360428"
+          aria-label="github"
+          
 
-    
-    
+          
+            target="_blank"
+            
+          
 
-    
-    <a href="
-    javascript:location.href = 'mailto:' + ['li_chao_cheng','163.com'].join('@')" aria-label="email" >
-      <i class="fas fa-envelope"></i>
-    </a>
-    
+          
 
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      
     
+      
+
+      
+        <a
+          href="https://twitter.com/Cc63451336"
+          aria-label="twitter"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+      
     
+      
 
+      
+        <a
+          href="javascript:location.href = 'mailto:' + ['li_chao_cheng','163.com'].join('@')"
+          aria-label="email"
+          
+
+          
+
+          
+
+          
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
+      
     
-    <a href="/feed.xml" aria-label="rss" >
-      <i class="fas fa-rss"></i>
-    </a>
+      
+
+      
+        <a
+          href="/feed.xml"
+          aria-label="rss"
+          
+
+          
+
+          
+
+          
+        >
+          <i class="fas fa-rss"></i>
+        </a>
+      
     
+  </div>
+  <!-- .sidebar-bottom -->
+</div>
+<!-- #sidebar -->
 
-    
 
-  </div> <!-- .sidebar-bottom -->
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div id="main" class="container px-xxl-5">
+        <!-- The Top Bar -->
 
-</div><!-- #sidebar -->
-
-    <!--
-  The Top Bar
--->
-
-<div id="topbar-wrapper" class="row justify-content-center">
-  <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between">
+<div id="topbar-wrapper">
+  <div
+    id="topbar"
+    class="container d-flex align-items-center justify-content-between h-100"
+  >
     <span id="breadcrumb">
-
-    
-
-    
-
       
 
-        
-          <span>
-            <a href="/">
-              首页
-            </a>
-          </span>
-
-        
-
       
-
         
-
-      
-
-        
+          
+            <span>
+              <a href="/">
+                首页
+              </a>
+            </span>
 
           
-            <span>etcd Base</span>
-          
-
         
+          
+        
+          
+            
+              <span>etcd Base</span>
+            
 
+          
+        
       
-
-    
-
-    </span><!-- endof #breadcrumb -->
+    </span>
+    <!-- endof #breadcrumb -->
 
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
@@ -441,17 +492,18 @@
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
     <span id="search-wrapper" class="align-items-center">
       <i class="fas fa-search fa-fw"></i>
-      <input class="form-control" id="search-input" type="search"
-        aria-label="search" autocomplete="off" placeholder="搜索...">
+      <input
+        class="form-control"
+        id="search-input"
+        type="search"
+        aria-label="search"
+        autocomplete="off"
+        placeholder="搜索..."
+      >
     </span>
-    <span id="search-cancel" >取消</span>
+    <span id="search-cancel">取消</span>
   </div>
-
 </div>
-
-
-    <div id="main-wrapper">
-      <div id="main">
 
         
 
@@ -464,15 +516,15 @@
 
 
 <div class="row">
-
   <!-- core -->
-  <div id="core-wrapper" class="col-12 col-lg-11 col-xl-8">
-    <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
-
+  <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pe-xl-4">
     
 
-    
+    <div class="post px-1 px-md-2">
       
+
+      
+        
       
         <!--
   Refactor the HTML structure.
@@ -495,13 +547,10 @@
 
 
 
-<!-- Add attribute 'hide-bullet' to the checkbox list -->
-
+<!-- Change the icon of checkbox -->
 
 
 <!-- images -->
-
-
 
 
 
@@ -585,16 +634,7 @@
 
 
 
-<!-- Wrap prompt element of blockquote with the <div> tag -->
-
-
-
-
-
-
-
 <!-- return -->
-
 
 
 
@@ -614,11 +654,15 @@
 
 
 
-<em class=""
-    data-ts="1587391501"
-    data-df="YYYY-MM-DD"
-    data-toggle="tooltip" data-placement="bottom">
-  2020-04-20
+<em
+  class=""
+  data-ts="1587391501"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2020/04/20
 </em>
 
     </span>
@@ -629,19 +673,16 @@
   
 
   <div class="d-flex justify-content-between">
-    <!-- author -->
+    <!-- author(s) -->
     <span>
-      
-      
-
       
 
       作者
 
       <em>
-        
-          <a href="https://Cc360428.gitee.io/cc/">Cc</a>
-        
+      
+        <a href="https://twitter.com/Cc63451336">Cc</a>
+      
       </em>
     </span>
 
@@ -650,13 +691,11 @@
       
 
       <!-- read time -->
-      <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
+      <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
-<!-- words per minute  -->
+<!-- words per minute -->
 
 
 
@@ -668,8 +707,12 @@
 
 
 <!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="3724 字">
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="3724 字"
+>
   <em>20 分钟</em>阅读</span>
 
     </div>
@@ -679,7 +722,7 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h3 id="etcd-简介"><span class="mr-2">etcd 简介</span><a href="#etcd-简介" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+  <h3 id="etcd-简介"><span class="me-2">etcd 简介</span><a href="#etcd-简介" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>etcd 是 CoreOS 团队于 2013 年 6 月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd 内部采用<code class="language-plaintext highlighter-rouge">raft</code>协议作为一致性算法，etcd 基于 Go 语言实现。</p>
 
@@ -729,7 +772,7 @@
   </tbody>
 </table></div>
 
-<h3 id="etcd-安装"><span class="mr-2">etcd 安装</span><a href="#etcd-安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="etcd-安装"><span class="me-2">etcd 安装</span><a href="#etcd-安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>etcd 在生产环境中一般推荐集群方式部署。本文定位为入门，主要讲讲单节点安装和基本使用。</p>
 
@@ -740,7 +783,7 @@
 <p>下载软件包</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -752,7 +795,7 @@
 <p>解压后是一些文档和两个二进制文件 etcd 和 etcdctl。etcd 是 server 端，etcdctl 是客户端。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">ls</span>
@@ -762,7 +805,7 @@
 <p>如果在测试环境，启动一个单节点的 etcd 服务，只需要运行 etcd 命令就行。</p>
 
 <div class="language-csharp highlighter-rouge"><div class="code-header">
-        <span data-label-text="C#"><i class="fas fa-code small"></i></span>
+        <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -811,23 +854,23 @@
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.775967</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">name</span> <span class="p">=</span> <span class="k">default</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.775993</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">data</span> <span class="n">dir</span> <span class="p">=</span> <span class="k">default</span><span class="p">.</span><span class="n">etcd</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.776167</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">member</span> <span class="n">dir</span> <span class="p">=</span> <span class="k">default</span><span class="p">.</span><span class="n">etcd</span><span class="p">/</span><span class="n">member</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.776253</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">heartbeat</span> <span class="p">=</span> <span class="m">100</span><span class="n">ms</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.776264</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">election</span> <span class="p">=</span> <span class="m">1000</span><span class="n">ms</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.776253</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">heartbeat</span> <span class="p">=</span> <span class="m">100m</span><span class="n">s</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.776264</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">election</span> <span class="p">=</span> <span class="m">1000m</span><span class="n">s</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.776270</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">snapshot</span> <span class="n">count</span> <span class="p">=</span> <span class="m">10000</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.776285</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">advertise</span> <span class="n">client</span> <span class="n">URLs</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//localhost:2379</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.776293</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">initial</span> <span class="n">advertise</span> <span class="n">peer</span> <span class="n">URLs</span> <span class="p">=</span> <span class="n">http</span><span class="p">:</span><span class="c1">//localhost:2380</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.776306</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">initial</span> <span class="n">cluster</span> <span class="p">=</span> <span class="k">default</span><span class="p">=</span><span class="n">http</span><span class="p">:</span><span class="c1">//localhost:2380</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.781171</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">starting</span> <span class="n">member</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="k">in</span> <span class="n">cluster</span> <span class="n">cdf818194e3a8c32</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.781323</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="n">became</span> <span class="n">follower</span> <span class="n">at</span> <span class="n">term</span> <span class="m">0</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.781351</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="n">newRaft</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="p">[</span><span class="n">peers</span><span class="p">:</span> <span class="p">[],</span> <span class="n">term</span><span class="p">:</span> <span class="m">0</span><span class="p">,</span> <span class="n">commit</span><span class="p">:</span> <span class="m">0</span><span class="p">,</span> <span class="n">applied</span><span class="p">:</span> <span class="m">0</span><span class="p">,</span> <span class="n">lastindex</span><span class="p">:</span> <span class="m">0</span><span class="p">,</span> <span class="n">lastterm</span><span class="p">:</span> <span class="m">0</span><span class="p">]</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.781883</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="n">became</span> <span class="n">follower</span> <span class="n">at</span> <span class="n">term</span> <span class="m">1</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.781171</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">starting</span> <span class="n">member</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="k">in</span> <span class="n">cluster</span> <span class="n">cdf818194e3a8c32</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.781323</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="n">became</span> <span class="n">follower</span> <span class="n">at</span> <span class="n">term</span> <span class="m">0</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.781351</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="n">newRaft</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="p">[</span><span class="n">peers</span><span class="p">:</span> <span class="p">[],</span> <span class="n">term</span><span class="p">:</span> <span class="m">0</span><span class="p">,</span> <span class="n">commit</span><span class="p">:</span> <span class="m">0</span><span class="p">,</span> <span class="n">applied</span><span class="p">:</span> <span class="m">0</span><span class="p">,</span> <span class="n">lastindex</span><span class="p">:</span> <span class="m">0</span><span class="p">,</span> <span class="n">lastterm</span><span class="p">:</span> <span class="m">0</span><span class="p">]</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.781883</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="n">became</span> <span class="n">follower</span> <span class="n">at</span> <span class="n">term</span> <span class="m">1</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.795542</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">starting</span> <span class="n">server</span><span class="p">...</span> <span class="p">[</span><span class="n">version</span><span class="p">:</span> <span class="m">3.1</span><span class="p">.</span><span class="m">5</span><span class="p">,</span> <span class="n">cluster</span> <span class="n">version</span><span class="p">:</span> <span class="n">to_be_decided</span><span class="p">]</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.796453</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">/</span><span class="n">membership</span><span class="p">:</span> <span class="n">added</span> <span class="n">member</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="p">[</span><span class="n">http</span><span class="p">:</span><span class="c1">//localhost:2380] to cluster cdf818194e3a8c32</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083350</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="k">is</span> <span class="n">starting</span> <span class="n">a</span> <span class="k">new</span> <span class="n">election</span> <span class="n">at</span> <span class="n">term</span> <span class="m">1</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083494</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="n">became</span> <span class="n">candidate</span> <span class="n">at</span> <span class="n">term</span> <span class="m">2</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083520</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="n">received</span> <span class="n">MsgVoteResp</span> <span class="k">from</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="n">at</span> <span class="n">term</span> <span class="m">2</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083598</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="n">became</span> <span class="n">leader</span> <span class="n">at</span> <span class="n">term</span> <span class="m">2</span>
-<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083654</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="n">raft</span><span class="p">.</span><span class="n">node</span><span class="p">:</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="n">elected</span> <span class="n">leader</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="n">at</span> <span class="n">term</span> <span class="m">2</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">44.796453</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">/</span><span class="n">membership</span><span class="p">:</span> <span class="n">added</span> <span class="n">member</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="p">[</span><span class="n">http</span><span class="p">:</span><span class="c1">//localhost:2380] to cluster cdf818194e3a8c32</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083350</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="k">is</span> <span class="n">starting</span> <span class="n">a</span> <span class="k">new</span> <span class="n">election</span> <span class="n">at</span> <span class="n">term</span> <span class="m">1</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083494</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="n">became</span> <span class="n">candidate</span> <span class="n">at</span> <span class="n">term</span> <span class="m">2</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083520</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="n">received</span> <span class="n">MsgVoteResp</span> <span class="k">from</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="n">at</span> <span class="n">term</span> <span class="m">2</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083598</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="n">became</span> <span class="n">leader</span> <span class="n">at</span> <span class="n">term</span> <span class="m">2</span>
+<span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.083654</span> <span class="n">I</span> <span class="p">|</span> <span class="n">raft</span><span class="p">:</span> <span class="n">raft</span><span class="p">.</span><span class="n">node</span><span class="p">:</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="n">elected</span> <span class="n">leader</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="n">at</span> <span class="n">term</span> <span class="m">2</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.084544</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">published</span> <span class="p">{</span><span class="n">Name</span><span class="p">:</span><span class="k">default</span> <span class="n">ClientURLs</span><span class="p">:[</span><span class="n">http</span><span class="p">:</span><span class="c1">//localhost:2379]} to cluster cdf818194e3a8c32</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.084638</span> <span class="n">I</span> <span class="p">|</span> <span class="n">etcdserver</span><span class="p">:</span> <span class="n">setting</span> <span class="n">up</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">cluster</span> <span class="n">version</span> <span class="n">to</span> <span class="m">3.1</span>
 <span class="m">2017</span><span class="p">-</span><span class="m">04</span><span class="p">-</span><span class="m">10</span> <span class="m">11</span><span class="p">:</span><span class="m">46</span><span class="p">:</span><span class="m">45.084857</span> <span class="n">I</span> <span class="p">|</span> <span class="n">embed</span><span class="p">:</span> <span class="n">ready</span> <span class="n">to</span> <span class="n">serve</span> <span class="n">client</span> <span class="n">requests</span>
@@ -862,7 +905,7 @@
 <p>建立相关目录</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">mkdir</span> <span class="o">-</span><span class="nb">p</span> <span class="sr">/var/</span><span class="n">lib</span><span class="o">/</span><span class="n">etcd</span><span class="o">/</span>
@@ -874,7 +917,7 @@
 </ul>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -894,7 +937,7 @@ ETCD_DATA_DIR=/var/lib/etcd
 </ul>
 
 <div class="language-csharp highlighter-rouge"><div class="code-header">
-        <span data-label-text="C#"><i class="fas fa-code small"></i></span>
+        <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -940,19 +983,19 @@ ETCD_DATA_DIR=/var/lib/etcd
 </ul>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nv">$ </span>systemctl daemon-reload <span class="o">&amp;&amp;</span> systemctl <span class="nb">enable </span>etcd <span class="o">&amp;&amp;</span> systemctl start etcd
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="etcd-基本使用"><span class="mr-2">etcd 基本使用</span><a href="#etcd-基本使用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="etcd-基本使用"><span class="me-2">etcd 基本使用</span><a href="#etcd-基本使用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>etcdctl 是一个命令行客户端，它能提供一些简洁的命令，供用户直接跟 etcd 服务打交道，而无需基于 HTTP API 方式。可以方便我们在对服务进行测试或者手动修改数据库内容。建议刚刚接触 etcd 时通过 etdctl 来熟悉相关操作。这些操作跟 HTTP API 基本上是对应的。</p>
 
 <p>etcd 项目二进制发行包中已经包含了 etcdctl 工具，etcdctl 支持的命令大体上分为数据库操作和非数据库操作两类。</p>
 
 <div class="language-cpp highlighter-rouge"><div class="code-header">
-        <span data-label-text="Cpp"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Cpp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1066,7 +1109,7 @@ ETCD_DATA_DIR=/var/lib/etcd
 <p>常用命令选项:</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1104,7 +1147,7 @@ ETCD_DATA_DIR=/var/lib/etcd
 <p>指定某个键的值。例如:</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="nv">$ </span>etcdctl <span class="nb">set</span> /testdir/testkey <span class="s2">"Hello world"</span>
@@ -1114,13 +1157,13 @@ Hello world
 <p>支持的选项包括：</p>
 
 <div class="language-csharp highlighter-rouge"><div class="code-header">
-        <span data-label-text="C#"><i class="fas fa-code small"></i></span>
+        <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="p">--</span><span class="n">ttl</span> <span class="sc">'0'</span> <span class="err">该键值的超时时间</span><span class="p">(</span><span class="err">单位为秒</span><span class="p">)</span><span class="err">，不配置</span><span class="p">(</span><span class="err">默认为</span><span class="m">0</span><span class="p">)</span><span class="err">则永不超时</span>
-<span class="p">--</span><span class="n">swap</span><span class="p">-</span><span class="n">with</span><span class="p">-</span><span class="k">value</span> <span class="k">value</span> <span class="err">若该键现在的值是</span><span class="k">value</span><span class="err">，则进行设置操作</span>
-<span class="p">--</span><span class="n">swap</span><span class="p">-</span><span class="n">with</span><span class="p">-</span><span class="n">index</span> <span class="sc">'0'</span>   <span class="err">若该键现在的索引值是指定索引，则进行设置操作</span>
+<span class="p">--</span><span class="n">swap</span><span class="p">-</span><span class="k">with</span><span class="p">-</span><span class="k">value</span> <span class="k">value</span> <span class="err">若该键现在的值是</span><span class="k">value</span><span class="err">，则进行设置操作</span>
+<span class="p">--</span><span class="n">swap</span><span class="p">-</span><span class="k">with</span><span class="p">-</span><span class="n">index</span> <span class="sc">'0'</span>   <span class="err">若该键现在的索引值是指定索引，则进行设置操作</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1130,7 +1173,7 @@ Hello world
 <p>获取指定键的值。例如：</p>
 
 <div class="language-csharp highlighter-rouge"><div class="code-header">
-        <span data-label-text="C#"><i class="fas fa-code small"></i></span>
+        <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="k">get</span> <span class="p">/</span><span class="n">testdir</span><span class="p">/</span><span class="n">testkey</span>
@@ -1140,17 +1183,17 @@ Hello world
 <p>当键不存在时，则会报错。例如：</p>
 
 <div class="language-tsx highlighter-rouge"><div class="code-header">
-        <span data-label-text="Tsx"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Tsx"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="nx">$</span> <span class="nx">etcdctl</span> <span class="kd">get</span> <span class="sr">/testdir/</span><span class="nx">testkey2</span>
-<span class="nb">Error</span><span class="p">:</span>  <span class="mi">100</span><span class="p">:</span> <span class="nx">Key</span> <span class="nx">not</span> <span class="nx">found</span> <span class="p">(</span><span class="sr">/testdir/</span><span class="nx">testkey2</span><span class="p">)</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="nb">Error</span><span class="p">:</span>  <span class="mi">100</span><span class="p">:</span> <span class="nx">Key</span> <span class="nx">not</span> <span class="nf">found </span><span class="p">(</span><span class="sr">/testdir/</span><span class="nx">testkey2</span><span class="p">)</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>支持的选项为:</p>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
-        <span data-label-text="Swift"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="o">--</span><span class="n">sort</span> <span class="n">对结果进行排序</span>
@@ -1164,7 +1207,7 @@ Hello world
 <p>当键存在时，更新值内容。例如：</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">update</span> <span class="sr">/testdir/</span><span class="n">testkey</span> <span class="s2">"Hello"</span>
@@ -1174,17 +1217,17 @@ Hello world
 <p>当键不存在时，则会报错。例如:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">update</span> <span class="sr">/testdir/</span><span class="n">testkey2</span> <span class="s2">"Hello"</span>
-<span class="no">Error</span><span class="p">:</span>  <span class="mi">100</span><span class="p">:</span> <span class="no">Key</span> <span class="n">not</span> <span class="n">found</span> <span class="p">(</span><span class="sr">/testdir/</span><span class="n">testkey2</span><span class="p">)</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="no">Error</span><span class="p">:</span>  <span class="mi">100</span><span class="p">:</span> <span class="no">Key</span> <span class="ow">not</span> <span class="n">found</span> <span class="p">(</span><span class="sr">/testdir/</span><span class="n">testkey2</span><span class="p">)</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>支持的选项为:</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nt">--ttl</span> <span class="s1">'0'</span> 超时时间<span class="o">(</span>单位为秒<span class="o">)</span>，不配置<span class="o">(</span>默认为 0<span class="o">)</span>则永不超时。
 </pre></td></tr></tbody></table></code></div></div>
@@ -1196,7 +1239,7 @@ Hello world
 <p>删除某个键值。例如:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">rm</span> <span class="sr">/testdir/</span><span class="n">testkey</span>
@@ -1206,17 +1249,17 @@ Hello world
 <p>当键不存在时，则会报错。例如:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">rm</span> <span class="sr">/testdir/</span><span class="n">testkey</span>
-<span class="no">Error</span><span class="p">:</span>  <span class="mi">100</span><span class="p">:</span> <span class="no">Key</span> <span class="n">not</span> <span class="n">found</span> <span class="p">(</span><span class="sr">/testdir/</span><span class="n">testkey</span><span class="p">)</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+<span class="no">Error</span><span class="p">:</span>  <span class="mi">100</span><span class="p">:</span> <span class="no">Key</span> <span class="ow">not</span> <span class="n">found</span> <span class="p">(</span><span class="sr">/testdir/</span><span class="n">testkey</span><span class="p">)</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>支持的选项为：</p>
 
 <div class="language-dart highlighter-rouge"><div class="code-header">
-        <span data-label-text="Dart"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Dart"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1234,7 +1277,7 @@ Hello world
 <p>如果给定的键不存在，则创建一个新的键值。例如:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">mk</span> <span class="sr">/testdir/</span><span class="n">testkey</span> <span class="s2">"Hello world"</span>
@@ -1244,7 +1287,7 @@ Hello world
 <p>当键存在的时候，执行该命令会报错，例如:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">mk</span> <span class="sr">/testdir/</span><span class="n">testkey</span> <span class="s2">"Hello world"</span>
@@ -1254,7 +1297,7 @@ Hello world
 <p>支持的选项为:</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nt">--ttl</span> <span class="s1">'0'</span>  超时时间<span class="o">(</span>单位为秒），不配置<span class="o">(</span>默认为 0<span class="o">)</span>。则永不超时
 </pre></td></tr></tbody></table></code></div></div>
@@ -1266,7 +1309,7 @@ Hello world
 <p>如果给定的键目录不存在，则创建一个新的键目录。例如：</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">mkdir</span> <span class="n">testdir2</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -1280,7 +1323,7 @@ Error:  105: Key already exists (/testdir2) [9]
 <p>支持的选项为：</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nt">--ttl</span> <span class="s1">'0'</span> 超时时间<span class="o">(</span>单位为秒<span class="o">)</span>，不配置<span class="o">(</span>默认为0<span class="o">)</span>则永不超时。
 </pre></td></tr></tbody></table></code></div></div>
@@ -1292,7 +1335,7 @@ Error:  105: Key already exists (/testdir2) [9]
 <p>创建一个键目录。如果目录不存在就创建，如果目录存在更新目录 TTL。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">setdir</span> <span class="n">testdir3</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -1300,7 +1343,7 @@ Error:  105: Key already exists (/testdir2) [9]
 <p>支持的选项为:</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nt">--ttl</span> <span class="s1">'0'</span> 超时时间<span class="o">(</span>单位为秒<span class="o">)</span>，不配置<span class="o">(</span>默认为0<span class="o">)</span>则永不超时。
 </pre></td></tr></tbody></table></code></div></div>
@@ -1312,7 +1355,7 @@ Error:  105: Key already exists (/testdir2) [9]
 <p>更新一个已经存在的目录。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">updatedir</span> <span class="n">testdir2</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -1320,7 +1363,7 @@ Error:  105: Key already exists (/testdir2) [9]
 <p>支持的选项为:</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nt">--ttl</span> <span class="s1">'0'</span> 超时时间<span class="o">(</span>单位为秒<span class="o">)</span>，不配置<span class="o">(</span>默认为0<span class="o">)</span>则永不超时。
 </pre></td></tr></tbody></table></code></div></div>
@@ -1332,7 +1375,7 @@ Error:  105: Key already exists (/testdir2) [9]
 <p>删除一个空目录，或者键值对。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">setdir</span> <span class="n">dir1</span>
@@ -1342,7 +1385,7 @@ Error:  105: Key already exists (/testdir2) [9]
 <p>若目录不空，会报错:</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1362,7 +1405,7 @@ Error:  108: Directory not empty <span class="o">(</span>/dir<span class="o">)</
 <p>例如：</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1382,7 +1425,7 @@ $ etcdctl ls dir
 <p>支持的选项包括:</p>
 
 <div class="language-swift highlighter-rouge"><div class="code-header">
-        <span data-label-text="Swift"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Swift"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1400,7 +1443,7 @@ $ etcdctl ls dir
 <p>备份 etcd 的数据。</p>
 
 <div class="language-kotlin highlighter-rouge"><div class="code-header">
-        <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Kotlin"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">backup</span> <span class="p">--</span><span class="n">data-dir</span> <span class="p">/</span><span class="k">var</span><span class="p">/</span><span class="n">lib</span><span class="p">/</span><span class="n">etcd</span>  <span class="p">--</span><span class="n">backup-dir</span> <span class="p">/</span><span class="n">home</span><span class="p">/</span><span class="n">etcd_backup</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -1408,7 +1451,7 @@ $ etcdctl ls dir
 <p>支持的选项包括:</p>
 
 <div class="language-kotlin highlighter-rouge"><div class="code-header">
-        <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Kotlin"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="p">--</span><span class="n">data-dir</span>  <span class="n">etcd</span><span class="err">的数据目录</span>
@@ -1424,7 +1467,7 @@ $ etcdctl ls dir
 <p>例如:用户更新 testkey 键值为 Hello watch。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="code-header">
-        <span data-label-text="Ruby"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Ruby"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1442,7 +1485,7 @@ $ etcdctl ls dir
 <p>支持的选项包括:</p>
 
 <div class="language-objectivec highlighter-rouge"><div class="code-header">
-        <span data-label-text="Objective-C"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Objective-C"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1460,7 +1503,7 @@ $ etcdctl ls dir
 <p>例如：用户更新 testkey 键值。</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="nv">$ </span>etcdctl exec-watch testdir/testkey <span class="nt">--</span> sh <span class="nt">-c</span> <span class="s1">'ls'</span>
@@ -1470,7 +1513,7 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 <p>支持的选项包括:</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="nt">--after-index</span> <span class="s1">'0'</span> 在指定 index 之前一直监测
@@ -1486,7 +1529,7 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 <p>查看集群中存在的节点</p>
 
 <div class="language-cpp highlighter-rouge"><div class="code-header">
-        <span data-label-text="Cpp"><i class="fas fa-code small"></i></span>
+        <span data-label-text="Cpp"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">member</span> <span class="n">list</span>
@@ -1496,21 +1539,21 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 <p>删除集群中存在的节点</p>
 
 <div class="language-csharp highlighter-rouge"><div class="code-header">
-        <span data-label-text="C#"><i class="fas fa-code small"></i></span>
+        <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">member</span> <span class="k">remove</span> <span class="m">8</span><span class="n">e9e05c52164694d</span>
-<span class="n">Removed</span> <span class="n">member</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="k">from</span> <span class="n">cluster</span>
+</pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">member</span> <span class="k">remove</span> <span class="m">8e9</span><span class="n">e05c52164694d</span>
+<span class="n">Removed</span> <span class="n">member</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="k">from</span> <span class="n">cluster</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>向集群中新加节点</p>
 
 <div class="language-csharp highlighter-rouge"><div class="code-header">
-        <span data-label-text="C#"><i class="fas fa-code small"></i></span>
+        <span data-label-text="C#"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="err">$</span> <span class="n">etcdctl</span> <span class="n">member</span> <span class="k">add</span> <span class="n">etcd3</span> <span class="n">http</span><span class="p">:</span><span class="c1">//192.168.1.100:2380</span>
-<span class="n">Added</span> <span class="n">member</span> <span class="n">named</span> <span class="n">etcd3</span> <span class="n">with</span> <span class="n">ID</span> <span class="m">8</span><span class="n">e9e05c52164694d</span> <span class="n">to</span> <span class="n">cluster</span>
+<span class="n">Added</span> <span class="n">member</span> <span class="n">named</span> <span class="n">etcd3</span> <span class="k">with</span> <span class="n">ID</span> <span class="m">8e9</span><span class="n">e05c52164694d</span> <span class="n">to</span> <span class="n">cluster</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 </div>
@@ -1520,7 +1563,7 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   <!-- categories -->
   
   <div class="post-meta mb-3">
-    <i class="far fa-folder-open fa-fw mr-1"></i>
+    <i class="far fa-folder-open fa-fw me-1"></i>
     
       <a href='/categories/database/'>Database</a>,
       <a href='/categories/etcd/'>Etcd</a>
@@ -1530,7 +1573,7 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   <!-- tags -->
   
   <div class="post-tags">
-    <i class="fa fa-tags fa-fw mr-1"></i>
+    <i class="fa fa-tags fa-fw me-1"></i>
       
       <a href="/tags/database/"
           class="post-tag no-text-decoration" >Database</a>
@@ -1558,25 +1601,65 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
       
     </div>
 
-    <!--
- Post sharing snippet
--->
+    <!-- Post sharing snippet -->
 
 <div class="share-wrapper">
-  <span class="share-label text-muted mr-1">分享</span>
+  <span class="share-label text-muted me-1">分享</span>
   <span class="share-icons">
     
     
     
 
     
+      
+      <a
+        href="https://twitter.com/intent/tweet?text=etcd%20Base%20-%20Cc%20Blog&url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2Fetcd_base%2F"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Twitter"
+        target="_blank"
+        rel="noopener"
+        aria-label="Twitter"
+      >
+        <i class="fa-fw fab fa-twitter"></i>
+      </a>
+    
+      
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?title=etcd%20Base%20-%20Cc%20Blog&u=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2Fetcd_base%2F"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Facebook"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook"
+      >
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
+    
+      
+      <a
+        href="https://t.me/share/url?url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2Fetcd_base%2F&text=etcd%20Base%20-%20Cc%20Blog"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Telegram"
+        target="_blank"
+        rel="noopener"
+        aria-label="Telegram"
+      >
+        <i class="fa-fw fab fa-telegram"></i>
+      </a>
+    
 
-    <i id="copy-link" class="fa-fw fas fa-link small"
-        data-toggle="tooltip" data-placement="top"
-        title="分享链接"
-        data-title-succeed="链接已复制！">
+    <i
+      id="copy-link"
+      class="fa-fw fas fa-link small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="分享链接"
+      data-title-succeed="链接已复制！"
+    >
     </i>
-
   </span>
 </div>
 
@@ -1588,14 +1671,13 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
       
     
-    
-
+      
     </div>
-  </div> <!-- #core-wrapper -->
+  </div>
+  <!-- #core-wrapper -->
 
-  <!-- pannel -->
-  <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
-
+  <!-- panel -->
+  <div id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
     <div class="access">
       
 
@@ -1612,46 +1694,51 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
 
 
-
   <div id="access-lastmod" class="post">
     <div class="panel-heading">最近更新</div>
-    <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+    <ul class="post-content ps-0 pb-1 ms-1 mt-2">
       
         
         
         
-      <li><a href="/posts/k8sBase/">Kubernetes概述</a></li>
+        <li>
+          <a href="/posts/k8sBase/">Kubernetes概述</a>
+        </li>
       
         
         
         
-      <li><a href="/posts/k8s-base/">Kubernetes 部署</a></li>
+        <li>
+          <a href="/posts/k8s-base/">Kubernetes 部署</a>
+        </li>
       
         
         
         
-      <li><a href="/posts/auto_shell/">自动化脚本</a></li>
+        <li>
+          <a href="/posts/auto_shell/">自动化脚本</a>
+        </li>
       
         
         
         
-      <li><a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a></li>
+        <li>
+          <a href="/posts/Protocol-Buffer/">Protocol Buffer 语法</a>
+        </li>
       
         
         
         
-      <li><a href="/posts/gRPC/">gRPC 和 ui 操作</a></li>
+        <li>
+          <a href="/posts/gRPC/">gRPC 和 ui 操作</a>
+        </li>
       
     </ul>
-  </div> <!-- #access-lastmod -->
+  </div>
+  <!-- #access-lastmod -->
 
 
-
-      
-
-
-
-
+      <!-- The trending tags list -->
 
 
 
@@ -1663,299 +1750,9 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
 
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
+
+
+
 
   
     
@@ -2047,40 +1844,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -2629,6 +2392,130 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2808,186 +2695,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3132,6 +2839,435 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -3335,6 +3471,11 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -3654,40 +3795,38 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   <div id="access-tags">
     <div class="panel-heading">热门标签</div>
-    <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-
-    
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
-      <a class="post-tag" href="/tags/server/">Server</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/server/">Server</a>
       
-      <a class="post-tag" href="/tags/go/">Go</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
-      <a class="post-tag" href="/tags/linuxtool/">LinuxTool</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
-      <a class="post-tag" href="/tags/gobase/">GoBase</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
-      <a class="post-tag" href="/tags/microservices/">Microservices</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
-      <a class="post-tag" href="/tags/goweb/">GoWeb</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
-      <a class="post-tag" href="/tags/docker/">Docker</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/docker/">Docker</a>
       
-      <a class="post-tag" href="/tags/goutils/">GoUtils</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/goutils/">GoUtils</a>
       
-      <a class="post-tag" href="/tags/redhad/">RedHad</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
-      <a class="post-tag" href="/tags/system/">System</a>
-    
-
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/system/">System</a>
+      
     </div>
   </div>
 
@@ -3700,39 +3839,34 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
 
 
-<!-- BS-toc.js will be loaded at medium priority -->
-<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
-
-<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
-  <div class="panel-heading pl-3 pt-2 mb-2">文章内容</div>
-  <nav id="toc" data-toggle="toc"></nav>
-</div>
+  <div id="toc-wrapper" class="ps-0 pe-4 mb-5">
+    <div class="panel-heading ps-3 pt-2 mb-2">文章内容</div>
+    <nav id="toc"></nav>
+  </div>
 
 
     
   </div>
-
 </div>
 
 <!-- tail -->
 
-<div class="row">
-  <div class="col-12 col-lg-11 col-xl-8">
-    <div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+  <div class="row">
+    <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-3 pe-xl-4 mt-5">
       
         
         <!--
- Recommend the other 3 posts according to the tags and categories of the current post,
- if the number is not enough, use the other latest posts to supplement.
+  Recommend the other 3 posts according to the tags and categories of the current post,
+  if the number is not enough, use the other latest posts to supplement.
 -->
 
-<!-- The total size of related posts  -->
+<!-- The total size of related posts -->
 
 
-<!-- An random integer that bigger than 0  -->
+<!-- An random integer that bigger than 0 -->
 
 
-<!-- Equals to TAG_SCORE / {max_categories_hierarchy}  -->
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
 
 
 
@@ -3753,7 +3887,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3766,7 +3899,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3778,7 +3910,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -3792,7 +3923,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3805,7 +3935,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3817,7 +3946,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -3831,7 +3959,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3844,7 +3971,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3856,7 +3982,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -3870,7 +3995,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3882,7 +4006,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -3896,7 +4019,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3908,7 +4030,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -3922,7 +4043,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3935,7 +4055,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3947,7 +4066,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -3961,7 +4079,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3973,7 +4090,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -3987,7 +4103,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -3999,7 +4114,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4013,7 +4127,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4026,7 +4139,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4038,7 +4150,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4052,7 +4163,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4064,7 +4174,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4078,7 +4187,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4090,7 +4198,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4104,7 +4211,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4117,7 +4223,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4129,7 +4234,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4143,7 +4247,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4156,7 +4259,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4168,7 +4270,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4182,7 +4283,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4195,7 +4295,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4207,7 +4306,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4221,7 +4319,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4233,7 +4330,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4247,7 +4343,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4259,7 +4354,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4273,7 +4367,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4286,7 +4379,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4298,7 +4390,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4312,7 +4403,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4324,7 +4414,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4338,7 +4427,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4350,7 +4438,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4364,7 +4451,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4377,7 +4463,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4389,7 +4474,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4403,7 +4487,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4415,7 +4498,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4429,7 +4511,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4441,7 +4522,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4459,7 +4539,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4471,7 +4550,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4485,7 +4563,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4498,7 +4575,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4510,7 +4586,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4524,7 +4599,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4537,7 +4611,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4549,7 +4622,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4563,7 +4635,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4576,7 +4647,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4588,7 +4658,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4602,7 +4671,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4614,7 +4682,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4628,7 +4695,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4641,7 +4707,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4653,7 +4718,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4667,7 +4731,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4680,7 +4743,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4692,7 +4754,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4706,7 +4767,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4719,7 +4779,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4731,7 +4790,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4745,7 +4803,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4757,7 +4814,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4771,7 +4827,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4784,7 +4839,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4796,7 +4850,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4810,7 +4863,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4823,7 +4875,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4835,7 +4886,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4849,7 +4899,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4862,7 +4911,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4874,7 +4922,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4888,7 +4935,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4901,7 +4947,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4913,7 +4958,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4927,7 +4971,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4940,7 +4983,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4952,7 +4994,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -4966,7 +5007,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4979,7 +5019,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -4991,7 +5030,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5005,7 +5043,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5018,7 +5055,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5030,7 +5066,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5044,7 +5079,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5056,7 +5090,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5070,7 +5103,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5083,7 +5115,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5095,7 +5126,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5109,7 +5139,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5122,7 +5151,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5134,7 +5162,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5148,7 +5175,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5161,7 +5187,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5173,7 +5198,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5187,7 +5211,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5199,7 +5222,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5213,7 +5235,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5226,7 +5247,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5238,7 +5258,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5252,7 +5271,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5265,7 +5283,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5277,7 +5294,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5291,7 +5307,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5304,7 +5319,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5316,7 +5330,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5330,7 +5343,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5342,7 +5354,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5356,7 +5367,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5369,7 +5379,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5381,7 +5390,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5395,7 +5403,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5408,7 +5415,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5420,7 +5426,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5434,7 +5439,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5447,7 +5451,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5459,7 +5462,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5473,7 +5475,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5486,7 +5487,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5498,7 +5498,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5512,7 +5511,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5525,7 +5523,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
-
   
 
   
@@ -5537,7 +5534,6 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
   
 
   
-
 
   
 
@@ -5551,6 +5547,7 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
+  
 
   
 
@@ -5564,6 +5561,7 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
+  
 
   
 
@@ -5577,6 +5575,7 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
+  
 
   
 
@@ -5590,6 +5589,7 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
+  
 
   
 
@@ -5603,30 +5603,33 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
   
 
+  
 
+  
 
 
 
 
 
 
-<!-- Fill with the other newlest posts  -->
+<!-- Fill with the other newlest posts -->
 
 
 
 
 
-  <div id="related-posts" class="mt-5 mb-2 mb-sm-4">
-    <h3 class="pt-2 mt-1 mb-4 ml-1"
-      data-toc-skip>相关文章</h3>
-    <div class="card-deck mb-4">
-    
+  <div id="related-posts" class="mb-2 mb-sm-4">
+    <h3 class="pt-2 mb-4 ms-1" data-toc-skip>
+      相关文章
+    </h3>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
-      
-      <div class="card">
-        <a href="/posts/etcd_pro/">
-          <div class="card-body">
-            <!--
+        
+        
+        <div class="col">
+          <a href="/posts/etcd_pro/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -5635,23 +5638,25 @@ config  Documentation  etcd  etcdctl  README-etcdctl.md  README.md  READMEv2-etc
 
 
 
-<em class="small"
-    data-ts="1587391501"
-    data-df="YYYY-MM-DD"
-    >
-  2020-04-20
+<em
+  class="small"
+  data-ts="1587391501"
+  data-df="YYYY/MM/DD"
+  
+>
+  2020/04/20
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>etcd Pro</h3>
-            <div class="text-muted small">
-              <p>
-                
+              <h4 class="pt-0 my-2" data-toc-skip>etcd Pro</h4>
+              <div class="text-muted small">
+                <p>
+                  
 
 
 
 
 
-                etcd 的初步使用
+                  etcd 的初步使用
 
 StormZhu · 2018-11-21 01:34:40 · 1305 次点击 · 预计阅读时间 4 分钟 · 不到 1 分钟之前 开始浏览
 
@@ -5664,18 +5669,18 @@ StormZhu · 2018-11-21 01:34:40 · 1305 次点击 · 预计阅读时间 4 分钟
 etcd 介绍.png
 
 etcd是一个golang编写的分布式、高可用的一致性键值存储系统，用于提供...
-              </p>
+                </p>
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-    
+          </a>
+        </div>
       
-      
-      <div class="card">
-        <a href="/posts/MySQL-lock/">
-          <div class="card-body">
-            <!--
+        
+        
+        <div class="col">
+          <a href="/posts/MySQL-lock/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -5684,23 +5689,25 @@ etcd是一个golang编写的分布式、高可用的一致性键值存储系统�
 
 
 
-<em class="small"
-    data-ts="1568780508"
-    data-df="YYYY-MM-DD"
-    >
-  2019-09-18
+<em
+  class="small"
+  data-ts="1568780508"
+  data-df="YYYY/MM/DD"
+  
+>
+  2019/09/18
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>MySQL 锁</h3>
-            <div class="text-muted small">
-              <p>
-                
+              <h4 class="pt-0 my-2" data-toc-skip>MySQL 锁</h4>
+              <div class="text-muted small">
+                <p>
+                  
 
 
 
 
 
-                MySQL 锁
+                  MySQL 锁
 
 
   表级锁 和 行级锁
@@ -5722,18 +5729,18 @@ mysql&amp;gt; show tables;
 
 
   ...
-              </p>
+                </p>
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-    
+          </a>
+        </div>
       
-      
-      <div class="card">
-        <a href="/posts/DataOther/">
-          <div class="card-body">
-            <!--
+        
+        
+        <div class="col">
+          <a href="/posts/DataOther/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -5742,23 +5749,25 @@ mysql&amp;gt; show tables;
 
 
 
-<em class="small"
-    data-ts="1683438534"
-    data-df="YYYY-MM-DD"
-    >
-  2023-05-07
+<em
+  class="small"
+  data-ts="1683438534"
+  data-df="YYYY/MM/DD"
+  
+>
+  2023/05/07
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>数据库基础</h3>
-            <div class="text-muted small">
-              <p>
-                
+              <h4 class="pt-0 my-2" data-toc-skip>数据库基础</h4>
+              <div class="text-muted small">
+                <p>
+                  
 
 
 
 
 
-                服务端开发需要了解哪些数据库
+                  服务端开发需要了解哪些数据库
 
 数据库分类
 
@@ -5767,37 +5776,42 @@ mysql&amp;gt; show tables;
 
   关系型数据库（SQL 数据库）：如 MySQL、Oracle、PostgreSQL 等。关系型数据库采用表格形式来存储数据，其中每个表都由多个行和列组成。数据表之间通过关联建立关系，使得数据之间可以进行查询、修改、删除等操作。
   非关系型数据库（NoSQL 数据库）：如 M...
-              </p>
+                </p>
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-    
-    </div> <!-- .card-deck -->
-  </div> <!-- #related-posts -->
+          </a>
+        </div>
+      
+    </div>
+    <!-- .card-deck -->
+  </div>
+  <!-- #related-posts -->
 
 
       
         
-        <!--
-  Navigation buttons at the bottom of the post.
--->
+        <!-- Navigation buttons at the bottom of the post. -->
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/consul_base/" class="btn btn-outline-primary"
-    prompt="上一篇">
-    <p>Consul Base</p>
-  </a>
+    <a
+      href="/posts/consul_base/"
+      class="btn btn-outline-primary"
+      prompt="上一篇"
+    >
+      <p>Consul Base</p>
+    </a>
   
 
   
-  <a href="/posts/etcd_pro/" class="btn btn-outline-primary"
-    prompt="下一篇">
-    <p>etcd Pro</p>
-  </a>
+    <a
+      href="/posts/etcd_pro/"
+      class="btn btn-outline-primary"
+      prompt="下一篇"
+    >
+      <p>etcd Pro</p>
+    </a>
   
-
 </div>
 
       
@@ -5808,54 +5822,14 @@ mysql&amp;gt; show tables;
       
     </div>
   </div>
-</div> <!-- .row -->
 
 
+        <!-- The Search results -->
 
-        <!--
-  The Footer
--->
-
-<footer class="d-flex w-100 justify-content-center">
-  <div class="d-flex justify-content-between align-items-center text-muted">
-    <div class="footer-left">
-      <p class="mb-0">
-        © 2023
-        <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
-        
-        <span data-toggle="tooltip" data-placement="top" title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。">保留部分权利。</span>
-        
-      </p>
-    </div>
-
-    <div class="footer-right">
-      <!-- <p class="mb-0">
-        
-
-        
-
-        本站由 
-        <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
-         生成，采用 
-        <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
-         主题。
-
-      </p> -->
-    </div>
-
-  </div> <!-- div.d-flex -->
-</footer>
-
-
-      </div>
-
-      <!--
-  The Search results
--->
 <div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
-  <div class="col-12 col-sm-11 post-content">
+  <div class="col-11 post-content">
     <div id="search-hints">
-      
+      <!-- The trending tags list -->
 
 
 
@@ -5961,334 +5935,6 @@ mysql&amp;gt; show tables;
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -6837,6 +6483,130 @@ mysql&amp;gt; show tables;
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -7016,186 +6786,6 @@ mysql&amp;gt; show tables;
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -7340,6 +6930,435 @@ mysql&amp;gt; show tables;
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -7543,6 +7562,11 @@ mysql&amp;gt; show tables;
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -7862,40 +7886,38 @@ mysql&amp;gt; show tables;
 
   <div id="access-tags">
     <div class="panel-heading">热门标签</div>
-    <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
-
-    
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
-      <a class="post-tag" href="/tags/server/">Server</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/server/">Server</a>
       
-      <a class="post-tag" href="/tags/go/">Go</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
-      <a class="post-tag" href="/tags/linuxtool/">LinuxTool</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
-      <a class="post-tag" href="/tags/gobase/">GoBase</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
-      <a class="post-tag" href="/tags/microservices/">Microservices</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
-      <a class="post-tag" href="/tags/goweb/">GoWeb</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
-      <a class="post-tag" href="/tags/docker/">Docker</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/docker/">Docker</a>
       
-      <a class="post-tag" href="/tags/goutils/">GoUtils</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/goutils/">GoUtils</a>
       
-      <a class="post-tag" href="/tags/redhad/">RedHad</a>
-    
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
-      <a class="post-tag" href="/tags/system/">System</a>
-    
-
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/system/">System</a>
+      
     </div>
   </div>
 
@@ -7905,10 +7927,32 @@ mysql&amp;gt; show tables;
   </div>
 </div>
 
+      </div>
+    </div>
 
-    </div> <!-- #main-wrapper -->
+    <!-- The Footer -->
 
-    
+<footer>
+  <div class="container px-lg-4">
+    <div class="d-flex justify-content-center align-items-center text-muted mx-md-3">
+      <p>本站采用 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 主题 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+      </p>
+
+      <p>©
+        2023
+        <a href="https://twitter.com/Cc63451336">Cc</a>.
+        
+          <span
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。"
+          >保留部分权利。</span>
+        
+      </p>
+    </div>
+  </div>
+</footer>
+
 
     <div id="mask"></div>
 
@@ -7916,48 +7960,38 @@ mysql&amp;gt; show tables;
       <i class="fas fa-angle-up"></i>
     </a>
 
-    <!--
-  Jekyll Simple Search loader
-  See: <https://github.com/christian-fei/Simple-Jekyll-Search>
--->
+    
+      <div
+        id="notification"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-animation="true"
+        data-bs-autohide="false"
+      >
+        <div class="toast-header">
+          <button
+            type="button"
+            class="btn-close ms-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body text-center pt-0">
+          <p class="px-2 mb-3">发现新版本的内容。</p>
+          <button type="button" class="btn btn-primary" aria-label="Update">
+            更新
+          </button>
+        </div>
+      </div>
+    
+
+    <!-- JS selector for site. -->
+
+<!-- commons -->
 
 
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
-
-<script>
-SimpleJekyllSearch({
-  searchInput: document.getElementById('search-input'),
-  resultsContainer: document.getElementById('search-results'),
-  json: '/assets/js/data/search.json',
-  searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0">  <a href="{url}">{title}</a>  <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">    {categories}    {tags}  </div>  <p>{snippet}</p></div>',
-  noResultsText: '<p class="mt-5">搜索结果为空</p>',
-  templateMiddleware: function(prop, value, template) {
-    if (prop === 'categories') {
-      if (value === '') {
-        return `${value}`;
-      } else {
-        return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
-      }
-    }
-
-    if (prop === 'tags') {
-      if (value === '') {
-        return `${value}`;
-      } else {
-        return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
-      }
-    }
-  }
-});
-</script>
-
-
-    <!--
-  JS selector for site.
--->
 
 <!-- layout specified -->
 
@@ -7966,10 +8000,20 @@ SimpleJekyllSearch({
 
 
 
-  <!-- image lazy-loading & popup & clipboard -->
   
 
   
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -7984,7 +8028,68 @@ SimpleJekyllSearch({
 
   
 
+  
+    
 
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
   
     
@@ -7995,76 +8100,7 @@ SimpleJekyllSearch({
 
 
 
-  
-    
-
-    
-
-  
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script>
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-
-
-
-
-
-
-  
-    
-
-    
-
-  
-
-
-
-  
-    
-
-    
-
-  
-
-
-
-  
-    
-
-    
-
-  
-
-
-
-  
-    
-
-    
-
-  
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/zh.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/zh.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
 
 
 
@@ -8075,14 +8111,48 @@ SimpleJekyllSearch({
 
 
 
-<!-- commons -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
+    
+
+    <!--
+  Jekyll Simple Search loader
+  See: <https://github.com/christian-fei/Simple-Jekyll-Search>
+-->
+
+
+
+
+
+<script>
+  /* Note: dependent library will be loaded in `js-selector.html` */
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('search-results'),
+    json: '/assets/js/data/search.json',
+    searchResultTemplate: '<div class="px-1 px-sm-2 px-lg-4 px-xl-0">  <a href="{url}">{title}</a>  <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">    {categories}    {tags}  </div>  <p>{snippet}</p></div>',
+    noResultsText: '<p class="mt-5"></p>',
+    templateMiddleware: function(prop, value, template) {
+      if (prop === 'categories') {
+        if (value === '') {
+          return `${value}`;
+        } else {
+          return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+        }
+      }
+
+      if (prop === 'tags') {
+        if (value === '') {
+          return `${value}`;
+        } else {
+          return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+        }
+      }
+    }
+  });
+</script>
 
   </body>
-
 </html>
 
