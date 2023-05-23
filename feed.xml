@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-05-23T11:48:52+08:00</updated>
+  <updated>2023-05-23T12:11:13+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,63 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>进制 &amp; 转换</title>
+    <link href="https://cc360428.github.io//posts/binary/" rel="alternate" type="text/html" title="进制 &amp;amp; 转换" />
+    <published>2023-05-23T10:00:00+08:00</published>
+  
+    <updated>2023-05-23T10:00:00+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/binary/</id>
+    <content src="https://cc360428.github.io//posts/binary/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Language" />
+    
+    <category term="C" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      简介
+
+
+  
+    进制（或称数制）是一种数学表示方法，用来描述数字在计算机和其他数字系统中的表示和处理方式。在计算机科学中，常见的进制有二进制、八进制和十六进制。
+  
+  
+    不同的进制有不同的作用和优缺点。例如，二进制非常适合计算机内部的数字处理，因为它只有两个基本数字 0 和 1，可以通过硬件电路实现高效的加法和乘法运算。而十六进制则更容易阅读和书写，因为它包含了数字和字母，可以更方便地表示较大的数字，同时也更直观地表示二进制数据。
+  
+  
+    在计算机编程中，不同进制的转换也经常使用到，例如将一个二进制数转换成十进制数，或者将一个十进制数转换成十六进制数等等。总之，进制在计算机科学中扮演着重要的角色，是理解和掌握计算机科学基础知识的重要组成部分。
+  
+
+
+分类
+
+
+  
+    二进制（基数为2）：由0和1组成的数字系统。
+  
+  
+    八进制（基...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -250,63 +307,6 @@
 
   数字的认识和比较，包括整数、分数和小数
   加减法...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>kubectl 基础命令</title>
-    <link href="https://cc360428.github.io//posts/Kubernetes/" rel="alternate" type="text/html" title="kubectl 基础命令" />
-    <published>2023-05-10T14:43:01+08:00</published>
-  
-    <updated>2023-05-10T14:43:01+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/Kubernetes/</id>
-    <content src="https://cc360428.github.io//posts/Kubernetes/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Network" />
-    
-    <category term="Linux" />
-    
-    <category term="Command" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      kubectl
-简介
-
-  kubectl 是 Kubernetes 命令行工具，用于与 Kubernetes 集群进行交互和管理。
-  它可以用来部署应用程序，管理集群资源（例如 Pod、Service 和 ReplicaSet 等），
-  诊断和调试问题，以及执行其他与 Kubernetes 相关的任务。通过 kubectl，您可以在命令行界面中执行所有 Kubernetes API 操作，并对集群的状态进行操作。
-  kubectl 是使用 Go 语言编写的开源软件，在安装了 Kubernetes 的任何机器上均可使用。
-    基础命令
-    好的，为了更加详细地回答您的问题，以下是一些 kubectl 的基础命令及其用法：
-  
-
-
-
-  
-    获取集群信息：
-
-    # 查看 Kubernetes 集群信息
-kubectl cluster-info
-
-# 查看节点...
     </summary>
   
 
