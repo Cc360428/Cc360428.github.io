@@ -4921,19 +4921,103 @@ config <span class="nb">set </span>requirepass root
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -5144,66 +5228,6 @@ config <span class="nb">set </span>requirepass root
         
         
         <div class="col">
-          <a href="/posts/MySQL-lock/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1568780508"
-  data-df="YYYY/MM/DD"
-  
->
-  2019/09/18
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>MySQL 锁</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  MySQL 锁
-
-
-  表级锁 和 行级锁
-
-
-
-
-mysql&amp;gt; show tables;
-+----------------+
-| Tables_in_test |
-+----------------+
-| mylock         |
-| test           |
-+----------------+
-2 rows in set (0.03 sec)
-
-
-表锁
-
-
-  ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
           <a href="/posts/passwrod/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -5250,6 +5274,52 @@ mysql&amp;gt; show tables;
 [root@Cc ~]# ps -ef |grep mysql
 root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
 mysql    20039     1  0 ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
+          <a href="/posts/consul_base/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1587391501"
+  data-df="YYYY/MM/DD"
+  
+>
+  2020/04/20
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Consul Base</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  安装
+
+https://www.consul.io/downloads.html
+
+docker 单机部署
+
+1
+ docker run -d -p 8500:8500 -v /data/consul:/consul/data -e CONSUL_BIND_INTERFACE=&#39;eth0&#39; --name=consul1 consul agent -server -bootstrap -ui ...
                 </p>
               </div>
             </div>

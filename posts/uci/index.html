@@ -4030,19 +4030,103 @@ config class <span class="s1">'Cc'</span>
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -5095,7 +5179,7 @@ config class <span class="s1">'Cc'</span>
         
         
         <div class="col">
-          <a href="/posts/NetworkEngineerBase/" class="card post-preview h-100">
+          <a href="/posts/vim/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -5108,14 +5192,14 @@ config class <span class="s1">'Cc'</span>
 
 <em
   class="small"
-  data-ts="1566103734"
+  data-ts="1683518821"
   data-df="YYYY/MM/DD"
   
 >
-  2019/08/18
+  2023/05/08
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>网络基础</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Vim 使用说明</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -5124,33 +5208,14 @@ config class <span class="s1">'Cc'</span>
 
 
 
-                  计算机网络基础
+                  vim
 
-OSI 与 TCP/IP
+Vim(Vi IMproved) 是一个高级的文本编辑器，是 Unix 和类 Unix 系统中最受欢迎的编辑器之一。它可以处理多种文件类型，包括纯文本、代码等，并且支持多种操作模式和自定义配置，可以提高编辑效率。
 
-OSI
-
-TCP/IP
-
-物理层
+Vim 的一些基本概念和使用方法
 
 
-  网络接口
-
-
-网际层
-
-
-  IP 协议：主要的网际层协议，用于网络互联
-  ICMP 协议：报文协议，用于报告差错，向路由器主机发送差错报文
-  ARP 协议：地址解析协议，用于将 IP 解析成物理地址
-  RARP 协议：逆地址协议，物理地址解析到 IP 地址
-
-
-运输层
-
-
-  TCP：传输控制协议...
+  操作模式：Vim 有三种操作模式，分别是命令模式（Command mode）、插入模式（Insert mode）和视觉模式（V...
                 </p>
               </div>
             </div>
@@ -5160,7 +5225,7 @@ TCP/IP
         
         
         <div class="col">
-          <a href="/posts/bit/" class="card post-preview h-100">
+          <a href="/posts/Nginx%E5%AE%89%E8%A3%85/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -5173,14 +5238,14 @@ TCP/IP
 
 <em
   class="small"
-  data-ts="1566190134"
+  data-ts="1583936584"
   data-df="YYYY/MM/DD"
   
 >
-  2019/08/19
+  2020/03/11
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>物理层</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Nginx 安装</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -5189,8 +5254,14 @@ TCP/IP
 
 
 
-                  物理层
+                  linux 命令安装
 
+1.添加Nginx到YUM源
+添加CentOS 7 Nginx yum资源库,打开终端,使用以下命令:
+
+sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+2.安装Nginx
+在你的CentOS 7 服务器中使...
                 </p>
               </div>
             </div>
@@ -5200,7 +5271,7 @@ TCP/IP
         
         
         <div class="col">
-          <a href="/posts/http/" class="card post-preview h-100">
+          <a href="/posts/Nginx%E9%85%8D%E7%BD%AE/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -5213,14 +5284,14 @@ TCP/IP
 
 <em
   class="small"
-  data-ts="1566276534"
+  data-ts="1583936584"
   data-df="YYYY/MM/DD"
   
 >
-  2019/08/20
+  2020/03/11
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>HTTP协议</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Nginx配置</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -5229,35 +5300,13 @@ TCP/IP
 
 
 
-                  HTTP 协议
+                  配置 https
 
-
-  Hyper Text Transfer Protocol 超文本传输协议
-
-
-
-  http 消息结构体、请求方法、响应头信息、状态码、content-type
-  http 版本：HTTP/0.9、HTTP/1.0、HTTP/1.1、HTTP/2.0
-
-
-消息结构体
-
-
-  
-    客户端
-
-    
-  
-  
-    服务端
-
-    
-  
-
-
-请求方法
-
-...
+server {
+    listen 443 ssl;  # 1.1版本后这样写
+    server_name lichaocheng.top; #填写绑定证书的域名
+    ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem;  # 指定证书的位置，绝对路径
+  ...
                 </p>
               </div>
             </div>

@@ -5900,19 +5900,103 @@ LINES TERMINATED BY '?';
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -6753,7 +6837,7 @@ LINES TERMINATED BY '?';
         
         
         <div class="col">
-          <a href="/posts/MySQL-lock/" class="card post-preview h-100">
+          <a href="/posts/passwrod/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6766,14 +6850,14 @@ LINES TERMINATED BY '?';
 
 <em
   class="small"
-  data-ts="1568780508"
+  data-ts="1587183708"
   data-df="YYYY/MM/DD"
   
 >
-  2019/09/18
+  2020/04/18
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>MySQL 锁</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>MySQL 忘记密码</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -6782,28 +6866,23 @@ LINES TERMINATED BY '?';
 
 
 
-                  MySQL 锁
+                  MySQL 忘记密码
 
 
-  表级锁 和 行级锁
+  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
 
 
+关闭服务
 
-
-mysql&amp;gt; show tables;
-+----------------+
-| Tables_in_test |
-+----------------+
-| mylock         |
-| test           |
-+----------------+
-2 rows in set (0.03 sec)
-
-
-表锁
-
-
-  ...
+1
+2
+3
+4
+5
+6
+[root@Cc ~]# ps -ef |grep mysql
+root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
+mysql    20039     1  0 ...
                 </p>
               </div>
             </div>

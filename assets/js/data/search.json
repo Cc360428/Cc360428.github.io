@@ -239,6 +239,142 @@
   },
   
   {
+    "title": "Python Function",
+    "url": "/posts/8-function/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:13 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "简介Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。在Python中，定义一个函数需要使用def关键字，后面跟着函数名、参数列表和一个冒号。函数体内的代码必须缩进。以下是一个简单的Python函数示例：def greet(name):    print(\"Hello,...",
+    "content": "简介Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。在Python中，定义一个函数需要使用def关键字，后面跟着函数名、参数列表和一个冒号。函数体内的代码必须缩进。以下是一个简单的Python函数示例：def greet(name):    print(\"Hello, \" + name + \"!\")greet(\"John\")该代码定义了一个名为greet的函数，该函数接受一个参数name，将其与字符串\"Hello, \"和\"!\"连接起来并打印出来。最后一行代码调用这个函数并传递一个名为John的参数。当你运行这段代码时，它会输出：Hello, John!除了上面这种简单的函数，Python还支持很多不同类型的函数，包括没有参数的函数、返回值的函数、匿名函数和高阶函数等。定义函数在 Python 中，可以使用 def 关键字定义函数。函数定义语法如下：def function_name(parameters):    \"\"\"函数文档字符串\"\"\"    # 函数体代码    return [expression]  # 可选的返回值其中，function_name 是函数名，parameters 是可选的参数列表，用括号包含，多个参数之间用逗号分隔；函数体代码是函数要执行的操作，可以包含任意数量的语句；return 语句可选，用于指定函数的返回值。例如，下面是一个简单的函数，将两个数相加并返回结果：def add_numbers(a, b):    \"\"\"    将两个数字相加并返回结果    \"\"\"    result = a + b    return result在这个例子中，add_numbers 是函数名，它接受两个参数 a 和 b。函数体代码将它们相加，并将结果存储在变量 result 中。最后，通过 return 语句将结果返回给调用方。函数定义详解  函数名  参数列表  函数体。函数名Python 中的函数名必须遵循标识符命名规则，即由字母、数字和下划线组成，不能以数字开头。建议给函数选用有意义的名字，便于代码的阅读和理解。参数列表函数可以接受零个或多个参数，这些参数传递给函数后，可以在函数内部使用。在 Python 中，参数列表放在括号中，多个参数之间用逗号隔开。例如：def my_func(arg1, arg2, arg3):    # 函数体代码上面的函数定义接受三个参数 arg1、arg2 和 arg3。在 Python 中，参数可以有默认值，这样调用函数时就可以省略对应的参数。例如：def my_func(arg1, arg2=0, arg3='default'):    # 函数体代码在上面的例子中，arg2 有一个默认值为 0，arg3 有一个默认值为 'default'。因此，在调用 my_func 时，可以省略这两个参数。如果不指定 arg2，则它将被设置为 0。如果不指定 arg3，则它将被设置为 'default'。函数体函数体是包含在函数定义中的代码块。函数体通常包含一些操作，用于处理输入参数并生成输出结果。在 Python 中，函数体由缩进的语句组成，这些语句会在函数被调用时执行。def my_func(arg1, arg2):    # 函数体代码    print(f\"arg1={arg1}, arg2={arg2}\")    result = arg1 + arg2    return result在上面的例子中，my_func 接受两个参数 arg1 和 arg2。函数体包含两行代码，第一行使用 print 函数打印参数的值，第二行将 arg1 和 arg2 相加，并将结果返回给调用方。"
+  },
+  
+  {
+    "title": "Python Controlflow",
+    "url": "/posts/7-controlflow/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:12 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "流程控制  if  for  whileifPython 中的判断控制结构主要有 if-elif-else 和 ternary operator。  if-elif-else 结构：if condition1:    # 当条件 1 满足时执行的代码elif condition2:    # 当条件 1 不满足且条件 2 满足时执行的代码else:    # 当条件 1 和条件 2 都不满足...",
+    "content": "流程控制  if  for  whileifPython 中的判断控制结构主要有 if-elif-else 和 ternary operator。  if-elif-else 结构：if condition1:    # 当条件 1 满足时执行的代码elif condition2:    # 当条件 1 不满足且条件 2 满足时执行的代码else:    # 当条件 1 和条件 2 都不满足时执行的代码其中，condition1、condition2 等都是需要判断的条件表达式，可以使用比较运算符、逻辑运算符等来组合成复杂的判断条件。当条件 condition1 满足时，执行对应的代码块；否则继续判断下一个条件 condition2，以此类推，直到找到一个满足条件的代码块或者所有条件都不满足时，执行最后的 else 块。  ternary operator 结构：result = value1 if condition else value2其中，condition 是需要判断的条件表达式，当条件成立时，返回 value1，否则返回 value2。这种语法结构也称为三目运算符，简单明了，通常用于在一行代码中完成简单的条件判断。for  for 循环通常用于遍历序列类型（如字符串、列表、元组等）中的元素，语法结构如下：for 变量 in 序列:    # 循环体其中，变量 表示接收到的序列元素，序列 是需要遍历的序列，循环会按顺序依次将序列中的元素赋值给 变量，然后执行循环体中的语句。例如：fruits = [\"apple\", \"banana\", \"cherry\"]for fruit in fruits:    print(fruit)上述代码会输出 apple、banana 和 cherry 三个字符串，分别对应 fruits 列表中的三个元素。while  while 循环会在满足条件时重复执行循环体，直到条件不再成立为止。语法结构如下：while 条件:    # 循环体其中，条件 是判断条件，如果成立则进入循环体执行；否则结束循环。例如：i = 1while i &lt;= 5:    print(i)    i += 1上述代码会输出数字 1 到 5，因为当 i 的值小于等于 5 时，满足条件，会不断地执行循环体中的代码，每次输出 i 的值，并将 i 加 1。当 i 大于 5 时，不再满足条件，循环结束。循环中语句  break语句：break语句可以在循环内部立即终止循环，并跳出循环体。for i in range(10):    if i == 5:        break    print(i)  continue语句：continue语句在循环中用于跳过当前迭代，并进入下一次迭代。for i in range(10):    if i % 2 == 0:        continue    print(i)  pass语句：pass语句在Python中是一个空语句，用于表示占位符，不做任何操作。for i in range(10):    if i == 5:        pass    else:        print(i)range() 函数range() 函数是 Python 内置函数之一，它用于创建一个整数列表，常用于 for 循环中。 range() 函数有三个参数：起始值、终止值和步长。语法如下：range(start, stop[, step])其中：  start：表示数列的起始值，默认为 0。  stop：表示数列的终止值（不包括），必须指定。  step：表示数列的公差，默认为 1。返回的结果是一个可迭代对象，可以使用 list() 函数将其转换为列表。例如：# 打印 0 到 4 的整数for i in range(5):    print(i)# 打印 2 到 8 的偶数for i in range(2, 9, 2):    print(i)输出：012342468需要注意的是， range() 函数返回的是一个不可变序列，在 Python 2.x 中叫做 xrange()。如果需要修改序列中的元素，可以使用其他数据类型，如列表或数组。match 语法match 是 Python 3.10 新增的一种模式匹配语法，也被称为结构化匹配。它提供了更加简洁和易于理解的方式来匹配和分解复杂数据结构，例如元组、列表、字典等。match 的语法如下：match expression:    case pattern_1:        # 处理 pattern_1 的情况    case pattern_2 if condition:        # 处理 pattern_2 和条件成立的情况    case _:        # 处理其他情况其中 expression 表示要进行匹配的表达式，可以是任意类型的值，如数字、字符串、元组、列表等。 pattern 是一种匹配模式，用于匹配 expression 中的值。case 子句用来指定不同的匹配情况，可以指定多个 case 子句，每个子句包含一个 pattern 和对应的处理逻辑。多个子句按照出现顺序进行匹配，匹配成功后执行对应的处理逻辑。如果所有的 case 都没有匹配成功，则会执行 _ 子句中的代码块，类似于 switch-case 语句中的 default 分支。以下是一个使用 match 进行模式匹配的例子：def match_example(x):    match x:        case 0:            print(\"x is zero\")        case 1:            print(\"x is one\")        case _ if x &gt; 1:            print(\"x is greater than one\")        case _:            print(\"x is a negative number\")match_example(0)    # 输出 \"x is zero\"match_example(1)    # 输出 \"x is one\"match_example(2)    # 输出 \"x is greater than one\"match_example(-1)   # 输出 \"x is a negative number\"需要注意的是，match 语法仅在 Python 3.10 及以上版本中可用，如果使用较早的 Python 版本，则无法使用。"
+  },
+  
+  {
+    "title": "Python Introduction",
+    "url": "/posts/6-introduction/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:11 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "基础语法Python 是一种解释型、面向对象、动态数据类型的高级程序设计语言，其语法简洁清晰，易于学习和使用。下面是 Python 的基础语法：注释在 Python 中，注释用 # 开头，可以单独占据一行或跟在代码后面。# 这是一条注释print(\"hello, world\")  # 这也是一条注释变量x = 5  # 定义一个整型变量y = \"hello\"  # 定义一个字符串变量a, b...",
+    "content": "基础语法Python 是一种解释型、面向对象、动态数据类型的高级程序设计语言，其语法简洁清晰，易于学习和使用。下面是 Python 的基础语法：注释在 Python 中，注释用 # 开头，可以单独占据一行或跟在代码后面。# 这是一条注释print(\"hello, world\")  # 这也是一条注释变量x = 5  # 定义一个整型变量y = \"hello\"  # 定义一个字符串变量a, b, c = 1, 2, 3  # 多重赋值基础数据类型  整数(int)：表示整数值，例如：10、20、-30 等  浮点数(float)：表示小数，例如：3.14、-0.5 等  字符串(str)：表示文本，例如：”Hello, World!”、’Python’ 等  布尔值(bool)：表示逻辑值，即 True 或 False  列表(list)：表示一组有序的元素，可以包含不同类型的数据  元组(tuple)：与列表类似，但是不可变，即创建之后不能再改变  集合(set)：表示一组互不相同的元素，无序  字典(dict)：表示一个键值对的集合，其中每个键都是唯一的示例以下是一个包含全部基本数据类型的 Python 代码示例，同时也包含了一些注释：# 定义整数my_int = 10# 定义浮点数my_float = 3.14# 定义字符串my_string = \"Hello, World!\"# 定义布尔值my_bool = True# 定义列表my_list = [1, \"two\", 3.0, True]# 定义元组my_tuple = (4, \"five\", 6.0, False)# 定义集合my_set = {7, \"eight\", 9.0, True}# 定义字典my_dict = {\"name\": \"Tom\", \"age\": 25, \"gender\": \"male\"}# 打印各个变量的类型和值print(type(my_int), my_int)print(type(my_float), my_float)print(type(my_string), my_string)print(type(my_bool), my_bool)print(type(my_list), my_list)print(type(my_tuple), my_tuple)print(type(my_set), my_set)print(type(my_dict), my_dict)该代码定义了一个整数、一个浮点数、一个字符串、一个布尔值、一个列表、一个元组、一个集合和一个字典，并使用 type() 函数打印了它们的类型和值。切片在Python中，切片是指从一个序列中获取其中一部分的操作。切片可以应用于字符串、列表、元组等序列类型。切片的语法如下：sequence[start:stop:step]其中，sequence 是要切片的序列，start、stop 和 step 分别表示起始位置、终止位置和步长。举个例子，如果我们有一个字符串 s = 'hello world'，那么取出前 5 个字符的切片代码如下：s[:5]  # 输出 'hello'再比如，如果我们有一个列表 lst = [1, 2, 3, 4, 5, 6]，那么取出第 2 到第 5 个元素的切片代码如下：lst[1:5]  # 输出 [2, 3, 4, 5]需要注意的是，起始位置默认为 0，终止位置默认为序列长度。如果步长未指定，默认为 1。如果我们要使用步长为负数的切片，需要将起始位置和终止位置颠倒，并且将步长变成正数。"
+  },
+  
+  {
+    "title": "Python SyntacticSugar",
+    "url": "/posts/5-syntactic_sugar/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:11 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "语法糖  列表推导式列表推导式可以使用一行简洁的代码生成列表，格式为：[expression for item in iterable]其中，expression 是需要生成的元素表达式，item 是可迭代对象中的元素，iterable 是可迭代对象。例如，要生成一个包含 1 到 10 的平方的列表，可以使用以下代码：squares = [x**2 for x in range(1, 11)...",
+    "content": "语法糖  列表推导式列表推导式可以使用一行简洁的代码生成列表，格式为：[expression for item in iterable]其中，expression 是需要生成的元素表达式，item 是可迭代对象中的元素，iterable 是可迭代对象。例如，要生成一个包含 1 到 10 的平方的列表，可以使用以下代码：squares = [x**2 for x in range(1, 11)]print(squares)# 输出：[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]  字典推导式字典推导式与列表推导式类似，可以使用一行代码生成字典，格式为：{key_expression: value_expression for item in iterable}其中，key_expression 和 value_expression 分别是键和值的表达式，item 是可迭代对象中的元素，iterable 是可迭代对象。例如，要生成一个字典，键为从 1 到 5，值为键的平方的字典，可以使用以下代码：my_dict = {x: x**2 for x in range(1, 6)}print(my_dict)# 输出：{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}  装饰器（Decorator）装饰器是一种用于装饰函数的语法糖，可以在函数定义前使用 @ 符号，将一个或多个函数“装饰”起来。装饰器本身是一个函数，接受一个函数作为参数并返回一个新的函数。例如，假设有一个计算函数执行时间的装饰器：import timedef time_it(func):    def wrapper(*args, **kwargs):        start = time.time()        result = func(*args, **kwargs)        end = time.time()        print(f\"{func.__name__} took {end - start:.6f} seconds\")        return result    return wrapper这样，在需要计算函数执行时间的函数前加上 @time_it 即可：@time_itdef my_function():   # some code here  with 语句使用 with 语句可以让代码更加简洁，同时也可以自动关闭资源。with 语句的格式为：with expression [as variable]:    with-block其中，expression 是需要打开的资源对象，with-block 是需要执行的代码块，variable 是可选的变量名，用于存储 expression 返回的对象。例如，要打开一个文件并读取其中的内容，可以使用以下代码：with open(\"myfile.txt\", \"r\") as f:    contents = f.read()print(contents)不需要手动调用 f.close() 关闭文件，使用 with 语句后，当代码块执行完毕时，自动关闭文件。  Lambda 表达式Lambda 表达式是一种匿名函数，可以在一行代码中定义一个函数。格式为：lambda arguments: expression其中，arguments 是函数的参数，expression 是函数的返回值表达式。例如，要定义一个将传入的数字加倍的函数，可以使用以下代码：double = lambda x: x * 2print(double(4)) # 输出：8  map 函数map 函数可以对一个可迭代对象中的所有元素应用一个函数，并返回一个新的可迭代对象，其中每个元素都是原可迭代对象中的元素经过该函数处理的结果。格式为：map(function, iterable)其中，function 是应用于每个元素的函数，iterable 是可迭代对象。例如，要将一个列表中的所有元素平方并返回一个新的列表，可以使用以下代码：my_list = [1, 2, 3, 4, 5]squares = list(map(lambda x: x**2, my_list))print(squares) # 输出：[1, 4, 9, 16, 25]  filter 函数filter 函数可以对一个可迭代对象中的所有元素应用一个布尔函数，并返回一个新的可迭代对象，其中仅包含原可迭代对象中满足该布尔函数的元素。格式为：filter(function, iterable)其中，function 是应用于每个元素的布尔函数，iterable 是可迭代对象。例如，要从一个列表中筛选出所有的偶数，可以使用以下代码：my_list = [1, 2, 3, 4, 5]evens = list(filter(lambda x: x % 2 == 0, my_list))print(evens) # 输出：[2, 4]"
+  },
+  
+  {
+    "title": "Python Interpreter",
+    "url": "/posts/4-interpreter/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:11 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "调用解释器  Python解释器是执行Python代码的程序。它读取源代码，并将其转换为字节码形式，然后在运行时逐行解释和执行这些字节码指令。Python解释器还提供了一个交互式环境，称为Python shell，它允许用户在命令行界面中输入Python代码并立即查看其输出结果。  在Python中，有多个不同的解释器可供选择。其中最常用的是CPython，它是官方的Python解释器实现，...",
+    "content": "调用解释器  Python解释器是执行Python代码的程序。它读取源代码，并将其转换为字节码形式，然后在运行时逐行解释和执行这些字节码指令。Python解释器还提供了一个交互式环境，称为Python shell，它允许用户在命令行界面中输入Python代码并立即查看其输出结果。  在Python中，有多个不同的解释器可供选择。其中最常用的是CPython，它是官方的Python解释器实现，由C语言编写。CPython解释器支持大多数标准库和第三方库，并且可以在各种操作系统上运行。  除了CPython外，还有其他的Python解释器可供使用。例如，Jython是另一个Python解释器，它使用Java编写，可以运行在Java虚拟机上。这使得Jython能够与Java平台进行无缝交互。IronPython是另一个Python解释器，它使用.NET Framework编写，可以在 .NET平台上运行。PyPy是另一个Python解释器，它使用JIT编译技术提高Python代码的性能。  Python解释器还可以与集成开发环境（IDE）配合使用，以提供更强大的开发体验。例如，PyCharm是一款流行的Python IDE，它支持多种Python解释器，并提供了许多功能，例如代码自动补全、调试工具和版本控制集成等。例子      打开Python解释器          要打开Python解释器，请在命令行中输入 python 命令，并按下回车键。这将启动Python解释器，并显示一个交互式提示符（通常是 &gt;&gt;&gt;），表示您可以开始输入Python代码了。            运行脚本文件          如果您已经编写了一个Python脚本文件，可以使用以下命令在Python解释器中运行它：        python your_script.py                    这将调用Python解释器，并执行指定的脚本文件。            导入模块          Python解释器还允许您导入其他Python模块并使用它们。要导入模块，请使用以下语法：        import module_name              例如，要导入Python标准库中的 math 模块，请使用以下代码：        import math              然后，您就可以使用 math 模块提供的函数和常量。例如，要计算圆的面积，请使用以下代码：        radius = 2.5area = math.pi * radius ** 2            查看帮助文档          Python解释器还提供了一个内置的帮助系统，以便您查找函数和模块的文档。要查看帮助，请在Python解释器中使用以下语法：        help(function_or_module)              例如，要查看 math 模块中的 sqrt() 函数的帮助文档，请使用以下代码：        help(math.sqrt)        这将显示包含函数说明、参数列表和示例用法的文档。    这些技巧可以帮助您更好地打开和使用Python解释器。无论是在学习Python编程还是开发Python应用程序时，都会非常有用。  "
+  },
+  
+  {
+    "title": "Python UtilCmd",
+    "url": "/posts/3-utilscmd/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:10 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "常用的工具命令      pip：Python 包管理器，可用于安装、升级和卸载 Python 模块。        virtualenv：虚拟环境管理器，可用于创建和管理 Python 虚拟环境，使不同项目的依赖包互不干扰。        pytest：用于编写和运行 Python 单元测试的工具，支持测试自动发现和参数化测试等功能。        pylint：Python 代码静态分析...",
+    "content": "常用的工具命令      pip：Python 包管理器，可用于安装、升级和卸载 Python 模块。        virtualenv：虚拟环境管理器，可用于创建和管理 Python 虚拟环境，使不同项目的依赖包互不干扰。        pytest：用于编写和运行 Python 单元测试的工具，支持测试自动发现和参数化测试等功能。        pylint：Python 代码静态分析工具，可用于检查代码风格、格式、错误和一致性等问题。        autopep8：Python 代码格式化工具，可用于自动调整代码缩进、空格、引号和换行符等格式问题。        coverage：代码覆盖率工具，可用于确定代码中哪些部分被测试覆盖了，以及哪些部分需要更多测试。        Flask/Django/Pyramid：Python 网络应用框架，可用于快速构建 Web 应用程序。  使用示例  pip          安装模块：        pip install &lt;module_name&gt;                    升级模块：        pip install --upgrade &lt;module_name&gt;                    卸载模块：        pip uninstall &lt;module_name&gt;                    查看已安装的模块列表：        pip list                          virtualenv          创建虚拟环境：        python -m venv &lt;venv_name&gt;                    进入虚拟环境：        source &lt;venv_name&gt;/bin/activate                    退出虚拟环境：        deactivate                          pytest          运行单元测试：        pytest &lt;test_file_or_dir&gt;                    测试自动发现：        pytest --collect-only                    参数化测试：        import pytest   @pytest.mark.parametrize(\"test_input, expected_output\",                         [(3, 6), ('hello', 'hellohello'), (2.5, 5)])def test_multiply_by_two(test_input, expected_output):    assert test_input * 2 == expected_output                          pylint          检查代码文件：        pylint &lt;file_name&gt;                    生成 HTML 报告：        pylint --output-format=html &lt;file_name&gt; &gt; report.html                    禁用特定错误或警告：        pylint --disable=&lt;error_code&gt; &lt;file_name&gt;                          autopep8          格式化 Python 文件：        autopep8 --in-place &lt;file_name&gt;                    格式化整个目录下所有 Python 文件：        autopep8 --in-place --recursive &lt;directory_name&gt;                          coverage          运行测试并生成覆盖率报告：        coverage run -m pytest &lt;test_file_or_dir&gt;coverage html                          Flask/Django/Pyramid          创建新项目：        django-admin startproject &lt;project_name&gt;flask init &lt;project_name&gt;pcreate --scaffold=alchemy &lt;project_name&gt;                    启动开发服务器：        python manage.py runserverflask runpserve development.ini                    "
+  },
+  
+  {
+    "title": "Python Install",
+    "url": "/posts/2-install/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:09 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "python install  Mac  Linux  WindowsMac os方法一      打开 Python 官方网站（https://www.python.org/downloads/mac-osx/）。        在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常，您应该选择最新的稳定版本。   ...",
+    "content": "python install  Mac  Linux  WindowsMac os方法一      打开 Python 官方网站（https://www.python.org/downloads/mac-osx/）。        在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常，您应该选择最新的稳定版本。        下载所选版本的 Python 安装程序。        双击下载的 .pkg 文件以开始安装过程。按照屏幕上的提示完成安装即可。        验证 Python 是否已成功安装。在终端中输入以下命令：  python3 --version如果您看到类似于 Python 3.x.x 的输出，则表示 Python 已成功安装。  可选：使用虚拟环境。如果您想要使用虚拟环境，请按照上面提到的步骤创建和激活虚拟环境。注意事项：  如果您已经通过 Homebrew 安装了 Python，则不建议使用二进制安装程序安装 Python，因为这可能会导致系统中存在多个 Python 版本，并且它们可能会相互干扰。  在使用虚拟环境时，请确保激活正确的虚拟环境，否则可能会出现意外结果。方法二      打开终端（Terminal）应用程序。您可以在“应用程序”文件夹中找到它。        安装 Homebrew。Homebrew 是一个包管理器，可帮助您轻松地安装和更新软件包。在终端中输入以下命令：    /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"  使用 Homebrew 安装 Python。在终端中输入以下命令：  brew install python  验证 Python 是否已成功安装。在终端中输入以下命令：  python3 --version如果您看到类似于 Python 3.x.x 的输出，则表示 Python 已成功安装。  可选：安装虚拟环境。虚拟环境可让您在同一台计算机上运行多个 Python 项目，而不会相互干扰。在终端中输入以下命令来安装 virtualenv：  pip3 install virtualenv  可选：创建一个新的虚拟环境。在终端中输入以下命令来创建一个名为 myenv 的新虚拟环境：  virtualenv myenv  可选：激活虚拟环境。在终端中输入以下命令来激活刚才创建的虚拟环境：source myenv/bin/activate此时，您应该看到终端的命令提示符前面出现了 (myenv) 字样，表示虚拟环境已激活。Linux方式一：使用包管理器安装大多数 Linux 发行版都提供了 Python 的预编译包，您可以使用包管理器直接从官方仓库中安装。以下是常见发行版的命令：Debian/Ubuntu：sudo apt-get updatesudo apt-get install python3CentOS/Fedora/RHEL：sudo yum install python3方式二：使用源代码编译安装如果您需要定制 Python 的一些编译选项，或者需要使用最新版本的 Python，可以考虑从源代码编译安装。      下载 Python 源码。您可以从 Python 官方网站（https://www.python.org/downloads/）下载最新版本的 Python 源代码。        解压源代码包。在终端中进入下载目录，并输入以下命令：  tar xf Python-3.x.x.tgz其中，Python-3.x.x.tgz 是您下载的 Python 源代码包的文件名。  进入解压后的源代码目录。在终端中进入解压后的目录：cd Python-3.x.x  配置编译选项。在终端中输入以下命令来配置编译选项：./configure --enable-optimizations --with-ensurepip=install这条命令将启用一些优化选项，并安装 pip 工具。  编译源代码。在终端中输入以下命令以开始编译源代码：make -j 2这会使用 2 个 CPU 核心进行编译，以加快编译速度。如果您希望更快地编译代码，请将数字 2 更改为您计算机上可用的 CPU 核心数。  安装 Python。在终端中输入以下命令以将 Python 安装到默认位置：sudo make altinstall如果您希望将 Python 安装到不同的位置，请使用以下命令：sudo make altinstall prefix=/path/to/install其中，/path/to/install 是您希望安装 Python 的路径。  验证 Python 是否已成功安装。在终端中输入以下命令：python3 --version如果您看到类似于 Python 3.x.x 的输出，则表示 Python 已成功安装。Windows方式一：使用官方安装程序      访问 Python 官方网站（https://www.python.org/downloads/windows/）。        在“Stable Releases”栏目中，选择最新版本的 Python 安装程序。通常，您应该选择和您的操作系统位数相同的版本（例如，32 位或 64 位）。        下载所选版本的 Python 安装程序。        双击下载的 .exe 文件以开始安装过程。按照屏幕上的提示完成安装即可。        验证 Python 是否已成功安装。在命令提示符窗口中输入以下命令：  python --version如果您看到类似于 Python 3.x.x 的输出，则表示 Python 已成功安装。方式二：使用包管理器进行安装  安装 Chocolatey 包管理器。Chocolatey 是一个 Windows 平台的包管理器，可帮助您轻松地安装和更新软件包。在管理员权限的 Powershell 窗口中输入以下命令：Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))  使用 Chocolatey 安装 Python。在管理员权限的 Powershell 窗口中输入以下命令：choco install python  验证 Python 是否已成功安装。在命令提示符窗口中输入以下命令：python --version如果您看到类似于 Python 3.x.x 的输出，则表示 Python 已成功安装。"
+  },
+  
+  {
+    "title": "Python Base",
+    "url": "/posts/1-base/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:08 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "简介  Python是一种高级编程语言，于1991年由Guido van Rossum创建。它的设计理念是强调可读性、代码简洁、易于维护和扩展，这使得Python在许多领域得到了广泛应用。  作为一种解释型语言，Python不需要像C或Java这样的编译程序来将代码转换为机器语言，而是直接在运行时解释代码。这使得Python具有一些显著的优点，例如快速开发原型、交互式编程和动态类型。  Py...",
+    "content": "简介  Python是一种高级编程语言，于1991年由Guido van Rossum创建。它的设计理念是强调可读性、代码简洁、易于维护和扩展，这使得Python在许多领域得到了广泛应用。  作为一种解释型语言，Python不需要像C或Java这样的编译程序来将代码转换为机器语言，而是直接在运行时解释代码。这使得Python具有一些显著的优点，例如快速开发原型、交互式编程和动态类型。  Python支持多种编程范式，包括面向对象、函数式、过程式编程等。同时，它也具有一些独特的特性，比如自带垃圾回收、动态内存管理、异常处理等。  Python的标准库非常丰富，涵盖了各种领域，包括文件I/O、网络编程、数据库连接、图形用户界面开发等。此外，还有许多流行的第三方库和框架，如NumPy、SciPy、Pandas、Django、Flask等，使得Python成为数据科学、Web开发、人工智能等领域最受欢迎的语言之一。官方地址  Python 教程  语言参考手册  标准库学习版本选择  如果您要学习 Python，首先需要确定使用的 Python 版本。目前，Python 有两个主要版本：Python 2 和 Python 3，但是 Python 2 已于 2020 年停止支持，因此建议选择 Python 3。  在 Python 3 中，有许多不同的版本可供选择。最新的版本是 Python 3.10，它包含了很多新特性和改进。然而，在某些情况下，您可能需要使用旧版 Python，因为某些库或框架可能不支持最新版本的 Python。这就是为什么很多人仍然在使用 Python 3.7 或 Python 3.8。  由于 Python 的版本升级较频繁，不同版本之间也存在一些差异。因此，您需要根据自己的需求来选择适合自己的 Python 版本。  当您确定了要使用的 Python 版本后，可以从 Python 官方网站上下载相应版本的 Python 安装程序。安装过程非常简单，只需按照提示进行即可。学习路线      入门阶段：了解 Python 的基础语法、数据类型、流程控制语句和函数等，建议通过阅读教材、视频教程或参加培训班进行学习。        进阶阶段：深入学习 Python 的标准库和第三方库，掌握常用的数据结构和算法，熟悉 Python 编程中的常见问题和技巧。建议通过实际编程练习、阅读优秀代码和参与开源项目等方式提高自己的编程能力。        实践阶段：应用 Python 解决实际问题，例如爬虫、数据分析、机器学习、Web 开发、游戏开发等领域，建议尝试挑战一些小型项目或参与开源项目，获取更多实践经验。  在学习 Python 的过程中，可以使用一些工具和资源来辅助学习，例如：      Python 解释器和 IDE：可以选择官方的 CPython 解释器和 PyCharm、VS Code 等集成开发环境。        在线资源：可以使用 Python 官网、Stack Overflow、GitHub、博客等在线资源获取学习资料和交流经验。        社区活动：可以参加本地 Python 用户组、线上技术分享、编程比赛等社区活动，与其他 Python 开发者互动和交流。  方法      入门教程: 开始学习 Python 最好的地方是通过入门教程。Python 官网提供了一个非常好的入门教程，名为 “Python 教程”。您可以在此处：https://docs.python.org/3/tutorial/index.html 找到它。        练习题: 在您了解基础知识后，可以尝试做一些练习题来巩固所学内容。例如，LeetCode、HackerRank 和 Codewars 等编程挑战网站都有 Python 相关的练习。        系统学习: 除了入门教程外，还有很多优秀的 Python 学习资源。例如，在 Codecademy 上，你可以找到一个完整的 Python 学习路径。 Udacity 和 Coursera 等在线课程平台也有很多 Python 学习资源。        实践项目: 学习语言最好的方法就是使用它创建实际项目。这将帮助你深入了解 Python 并提高你的编程技能。您可以从构建简单的 Web 应用程序或计算机游戏开始，并逐步增加您的项目难度。  学习推荐（书籍….）  书籍：          《Python编程：从入门到实践》（Eric Matthes 著）      《流畅的Python》（Luciano Ramalho 著）      《Python核心编程》（Wesley Chun 著）      《Python Cookbook》（David Beazley 和 Brian K. Jones 著）        网址：          Python 官方文档      Codecademy Python 课程      w3schools Python 教程      Python 中文社区      "
+  },
+  
+  {
     "title": "DataStructure（02142）",
     "url": "/posts/DataStructure/",
     "categories": "Cc, SelfStudy, ComputerBasics",
@@ -2463,23 +2599,6 @@
     
     "snippet": "安装镜头与卸载安装  镜头上有个白色的正方快点  与机身上的白色点对应起来  向下旋转镜头  可以听到一声卡住的响声卸载  按住镜头上的白色对应的半椭圆形的按键按钮  按住同时向上旋转镜头镜头上 stabilizer 开关防抖开关，区别就是在快门速度较慢的情况下，辅助稳定画质AF 和 MF 区别  AF：自动对焦  MF：手动对焦          主要是在拍照的时候，摄影者是习惯手动对焦还...",
     "content": "安装镜头与卸载安装  镜头上有个白色的正方快点  与机身上的白色点对应起来  向下旋转镜头  可以听到一声卡住的响声卸载  按住镜头上的白色对应的半椭圆形的按键按钮  按住同时向上旋转镜头镜头上 stabilizer 开关防抖开关，区别就是在快门速度较慢的情况下，辅助稳定画质AF 和 MF 区别  AF：自动对焦  MF：手动对焦          主要是在拍照的时候，摄影者是习惯手动对焦还是自动对焦。      AF 代表自动对焦，由相机自动控制镜头进行对焦。      "
-  },
-  
-  {
-    "title": "Python base",
-    "url": "/posts/hugo/",
-    "categories": "Language, Python",
-    "tags": "Server, Python, Python Base",
-    "date": "2018-01-26 12:48:54 +0800",
-    
-
-
-
-
-
-    
-    "snippet": "Python 基础Python3.9标准库https://docs.python.org/zh-cn/3.9/library/index.html#library-index语言参考手册https://docs.python.org/zh-cn/3.9/reference/index.html#reference-index数据类型  交互模式下，上次输出的表达式会赋给变量 _  数字pri...",
-    "content": "Python 基础Python3.9标准库https://docs.python.org/zh-cn/3.9/library/index.html#library-index语言参考手册https://docs.python.org/zh-cn/3.9/reference/index.html#reference-index数据类型  交互模式下，上次输出的表达式会赋给变量 _  数字print(2 * 2) # 4print(2 * 3) # 2^3 8  字符串如果不希望前置 \\ 的字符转义成特殊字符，可以使用 原始字符串，在引号前添加 r 即可：3 * 'Cc' + 'cC' # 'CcCcCccC'- 字符串支持 索引 （下标访问），第一个字符的索引是 0。单字符没有专用的类型，就是长度为一的字符串：- 索引还支持负数，用负数索引时，从右边开始计数- -0 和 0 一样，因此，负数索引从 -1 开始- 支持切片（切片与Go一样，含头不含尾，支持-1 以上规则一样），越界会自动处理"
   },
   
   {

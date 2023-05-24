@@ -597,6 +597,622 @@
 
 <div id="post-list">
   
+    <a href="/posts/go.mod/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Go mod
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              Go mod
+
+基础
+
+使用 go mod 管理依赖是官方推荐的方式，可以方便地管理代码的版本和依赖。
+
+下面是一些常见的 go mod 使用方法：
+
+1. 初始化项目
+
+在项目的根目录下，执行以下命令初始化 go mod：
+
+go mod init &amp;lt;module-name&amp;gt;
+
+
+其中 &amp;lt;module-name&amp;gt; 是项目的模块名，通常是一个域名的反转加上项目名，例如...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1616061693"
+  data-df="YYYY/MM/DD"
+  
+>
+  2021/03/18
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Go
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/pprof/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Pprof
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              Go pprof And Prometheus
+
+在代码中使用
+
+import (
+  ...
+	_ &quot;net/http/pprof&quot;
+  &quot;github.com/prometheus/client_golang/prometheus/promhttp&quot;
+  ...
+)
+
+func main() {
+
+ 	go func() {
+		http.Handle(&quot;/metrics&quot;, promh...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1615975293"
+  data-df="YYYY/MM/DD"
+  
+>
+  2021/03/17
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Go
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/pprof-pro/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Pprof 监听
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              获取 60 秒数据
+
+go tool pprof http://localhost:9999/debug/pprof/profile\?seconds=60
+
+http://localhost:9999/ui/
+
+1.开发一个能够并发且正常游戏的模拟客户端
+
+（我这边有一套比较简陋的代码，支持批量创建玩家、登陆玩家、修改玩家道具，只需要实现跟业务相关的逻辑即可）
+
+2. 在游戏服务器代码中启...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1615975293"
+  data-df="YYYY/MM/DD"
+  
+>
+  2021/03/17
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Go
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/cron/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            定时任务
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              测试
+
+package main
+
+import (
+	&quot;fmt&quot;
+	&quot;github.com/robfig/cron/v3&quot;
+	&quot;time&quot;
+)
+func main() {
+	// 开启秒字段支持
+	c := cron.New(cron.WithSeconds())
+	// 传统表达式写法: 每秒执行一次
+	_, _ = c.AddFunc(&quot;0/1 * * * * *&quot;, func() {...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1615975293"
+  data-df="YYYY/MM/DD"
+  
+>
+  2021/03/17
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Go
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/kubectl/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Kubectl
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              大厅 kubernetes 服务
+
+准备工作
+
+
+  
+    安装 kubectl
+  
+  
+    登录到 Kubernetes 集群中
+
+    
+      获取 cat /root/kuber/config
+      放入到目标机器的 ~/.kube/config
+    
+  
+  
+    查看版本
+
+    kubectl version
+kubectl get node...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1615974518"
+  data-df="YYYY/MM/DD"
+  
+>
+  2021/03/17
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Network,
+                    Kubernetes
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/kubernetesUI/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Kubernetes UI
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              kubernetes UI
+
+kubectl apply -f kuboard-v3.yaml
+
+
+访问
+
+http://172.13.8.15:30080/kuboard/settings/ui
+
+kuboard-v3.yaml
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: kuboard
+
+---
+apiVersion: v1...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1615974354"
+  data-df="YYYY/MM/DD"
+  
+>
+  2021/03/17
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Network,
+                    Kubernetes
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/k8s-base/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Kubernetes 部署
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              Kubernetes 搭建
+
+准备
+在搭建 Kubernetes 之前，您需要先准备一些必要的配置和工具，包括：
+
+
+  
+    至少三个节点：用于部署 Kubernetes 集群的主机。一般情况下，建议使用至少三个物理或虚拟机来搭建 Kubernetes 集群，以确保高可用性和容错性。
+  
+  
+    操作系统：Kubernetes 支持多种操作系统，例如 Ubuntu、CentOS...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1615970613"
+  data-df="YYYY/MM/DD"
+  
+>
+  2021/03/17
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Network,
+                    Kubernetes
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/go-1.13/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Go 1.13 版本更新 摘要
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              Go 1.13
+
+
+  工具链、运行时、标准库
+
+
+工具链
+
+
+  环境变量 Go111MODOULE 默认值 auto
+  增加了环境变量 GOPIVATE 私有变量
+
+
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1608887482"
+  data-df="YYYY/MM/DD"
+  
+>
+  2020/12/25
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Go
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
     <a href="/posts/Go-Microother/" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
         
@@ -732,610 +1348,6 @@
   
 >
   2020/06/26
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Go
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/Go-Micro-1.2-api/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Micro API
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              micro API
-
-Go API 是基于服务发现驱动开发的可插拔 API 框架，旨在帮助构建强大的 API 网关。
-
-指令
-
-
-  micro api 参数
-
-
-$ micro api -h
-NAME:
-   micro.exe api - Run the api gateway
-
-USAGE:
-   micro.exe api [command options] [arguments.....
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1593152532"
-  data-df="YYYY/MM/DD"
-  
->
-  2020/06/26
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Go
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/kratos-kratos-utils/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            kratos utils
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              安装所有 kraots 工具集
-
-
-  通过 kratos 安装
-
-
-执行命令:kratos tool install all
-
-$ kratos tool install all
-go get -u github.com/go-kratos/kratos/tool/kratos@v0.5.0
-...
-kratos: 安装成功!
-...
-protoc: 安装成功!
-...
-genbts: 安...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1593152532"
-  data-df="YYYY/MM/DD"
-  
->
-  2020/06/26
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Go
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/kratos-kratos-other/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            kratos 依赖注入
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              依赖注入
-Kratos 是一款基于 Go 语言的微服务开发框架，它内置了依赖注入功能。在 Kratos 中，我们可以使用构造函数注入或者字段注入的方式来实现依赖注入。
-
-构造函数注入是指将依赖通过构造函数参数的方式传递给要注入的对象。例如：
-
-type FooService struct {
-    barService *BarService
-}
-
-func NewFooService(b...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1593152532"
-  data-df="YYYY/MM/DD"
-  
->
-  2020/06/26
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Go
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/kratos-kratos-interface/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            kratos interface
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              kratos 微服务
-
-常见的 url
-
-
-  查看所有 discovery 表：http://172.12.15.81:7171/discovery/fetch/all
-  查看服务的所有 http 对外接口：http://127.0.0.1:36001/metadata
-
-
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1593152532"
-  data-df="YYYY/MM/DD"
-  
->
-  2020/06/26
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Go
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/kratos-kratos-base/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            kratos base
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              kratos 环境搭建
-
-
-  安装 kratos
-go get -u github.com/go-kratos/kratos/tool/kratos
-
-
-使用 kratos 脚手架创建项目
-
-$ kratos new kratos_7
-go get -u github.com/go-kratos/kratos/tool/kratos-gen-project@v0.5.0
-go: found...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1593152532"
-  data-df="YYYY/MM/DD"
-  
->
-  2020/06/26
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Go
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/kratos-discovery/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            kratos discovery
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              常见的微服务注册中心
-
-
-  consul
-  etcd
-  zookeeper
-  Eureka
-  kratos(discovery)
-
-
-discovery
-
-安装
-
-源码安装
-
-
-  github
-  下载生成可执行文件
-
-
-git clone https://github.com/bilibili/discovery.git
-cd discovery/cmd/discovery
-g...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1593152532"
-  data-df="YYYY/MM/DD"
-  
->
-  2020/06/26
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Go
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/kratos-Error/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            kratos Error
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              ERROR
-
-version 0.3.3
-
-
-  错误演示
-
-
-go: finding module for package github.com/bilibili/kratos/pkg/time
-go: found github.com/bilibili/kratos/pkg/log in github.com/bilibili/kratos v0.5.0
-go: found github...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1593152532"
-  data-df="YYYY/MM/DD"
-  
->
-  2020/06/26
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Go
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/go-interview-why/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Golang Interview why
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              Golang 基础问题
-
-
-  切片实现原理，切片中的指针是存储在堆上还是栈上？切片的使用有哪些坑？
-  map 的实现原理？详细说一下拉链法？map 是协程安全的吗？
-  sync.Map 的实现原理？
-  写一个 golang 的单例实现？
-  golang IO 是同步的吗？如果 CPU 只有一核会不会阻塞？
-  golang 的内存管理机制？详细描述 GC 过程？
-  defer 的...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1593009438"
-  data-df="YYYY/MM/DD"
-  
->
-  2020/06/24
 </em>
 
 
@@ -1600,12 +1612,25 @@ go: found github...
     
 
     
+      <!-- hide number -->
+      
+    
+  
+    
+    
+    
+    
+    
+
+    
+
+    
       <!-- show number -->
       <li class="page-item ">
         <a
           class="page-link btn-box-shadow"
-          href="/page15"
-        >15</a>
+          href="/page16"
+        >16</a>
       </li>
     
   
@@ -1613,7 +1638,7 @@ go: found github...
   <!-- mobile pagination -->
   <li class="page-index align-middle">
     <span>4</span>
-    <span class="text-muted">/ 15</span>
+    <span class="text-muted">/ 16</span>
   </li>
 
   <!-- right arrow -->
