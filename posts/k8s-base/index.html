@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh-CN" 
+<html lang="en" 
   
 >
   <!-- The Head -->
@@ -44,7 +44,7 @@
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Kubernetes 部署" />
-<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale" content="en" />
 <meta name="description" content="kubernets 前期准备" />
 <meta property="og:description" content="kubernets 前期准备" />
 <link rel="canonical" href="https://cc360428.github.io//posts/k8s-base/" />
@@ -299,7 +299,7 @@
     <li class="nav-item">
       <a href="/" class="nav-link">
         <i class="fa-fw fas fa-home"></i>
-        <span>首页</span>
+        <span>HOME</span>
       </a>
     </li>
     <!-- the real tabs -->
@@ -309,7 +309,7 @@
           <i class="fa-fw fas fa-stream"></i>
           
 
-          <span>分类</span>
+          <span>CATEGORIES</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -319,7 +319,7 @@
           <i class="fa-fw fas fa-tag"></i>
           
 
-          <span>标签</span>
+          <span>TAGS</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -329,7 +329,7 @@
           <i class="fa-fw fas fa-archive"></i>
           
 
-          <span>归档</span>
+          <span>ARCHIVES</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -339,7 +339,7 @@
           <i class="fa-fw fas fa-info-circle"></i>
           
 
-          <span>关于</span>
+          <span>ABOUT</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -464,7 +464,7 @@
           
             <span>
               <a href="/">
-                首页
+                Home
               </a>
             </span>
 
@@ -486,7 +486,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      文章
+      Post
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -498,10 +498,10 @@
         type="search"
         aria-label="search"
         autocomplete="off"
-        placeholder="搜索..."
+        placeholder="Search..."
       >
     </span>
-    <span id="search-cancel">取消</span>
+    <span id="search-cancel">Cancel</span>
   </div>
 </div>
 
@@ -834,7 +834,7 @@
 <div class="post-meta text-muted">
     <!-- published date -->
     <span>
-      发表于
+      Posted
       <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -847,12 +847,12 @@
 <em
   class=""
   data-ts="1615970613"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2021/03/17
+  Mar 17, 2021
 </em>
 
     </span>
@@ -860,7 +860,7 @@
     <!-- lastmod date -->
     
     <span>
-      更新于
+      Updated
       <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -873,12 +873,12 @@
 <em
   class=""
   data-ts="1684146801"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2023/05/15
+  May 15, 2023
 </em>
 
     </span>
@@ -891,7 +891,7 @@
     <span>
       
 
-      作者
+      By
 
       <em>
       
@@ -925,9 +925,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2303 字"
+  title="2303 words"
 >
-  <em>12 分钟</em>阅读</span>
+  <em>12 min</em> read</span>
 
     </div>
 
@@ -1015,7 +1015,7 @@
 
     <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1034,7 +1034,7 @@ ufw disable
 
     <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>swapoff <span class="nt">-a</span>
 <span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'/ swap / s/^/#/'</span> /etc/fstab
@@ -1045,7 +1045,7 @@ ufw disable
 
     <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>setenforce 0
 <span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/^SELINUX=enforcing$/SELINUX=permissive/'</span> /etc/selinux/config
@@ -1056,7 +1056,7 @@ ufw disable
 
     <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>hostnamectl set-hostname &lt;NEW_HOSTNAME&gt;
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
@@ -1068,7 +1068,7 @@ ufw disable
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1126,7 +1126,7 @@ last <span class="c"># 查看用户登录信息</span>
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre>systemctl stop firewalld
@@ -1139,7 +1139,7 @@ systemctl status firewalld <span class="c"># 查看下状态</span>
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre>vim /etc/fstab
@@ -1152,7 +1152,7 @@ swapoff <span class="nt">-a</span>
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'s/SELINUX=enforcing/SELINUX=disabled/g'</span> /etc/selinux/config <span class="c"># 永久关闭</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
@@ -1161,7 +1161,7 @@ swapoff <span class="nt">-a</span>
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1176,7 +1176,7 @@ reboot <span class="c"># 重启</span>
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>vim /etc/hosts
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
@@ -1186,7 +1186,7 @@ reboot <span class="c"># 重启</span>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1254,7 +1254,7 @@ yum <span class="nb">install </span>docker-ce docker-ce-cli <span class="nt">-y<
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1274,7 +1274,7 @@ baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre> yum <span class="nb">install</span> <span class="nt">-y</span> kubelet-1.19.2 kubectl-1.19.2 kubeadm-1.19.2
  systemctl <span class="nb">enable </span>kubelet
@@ -1284,7 +1284,7 @@ baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1304,7 +1304,7 @@ baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1354,7 +1354,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1374,7 +1374,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre>kubectl apply <span class="nt">-f</span> https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml <span class="c"># 会提示报错，修改hosts</span>
@@ -1386,7 +1386,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="c"># 在成功init 成功之后输出的内容</span>
@@ -1402,7 +1402,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1417,7 +1417,7 @@ kubeadm token list
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1432,7 +1432,7 @@ kubeadm <span class="nb">join  </span>xx.....
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>systemctl daemon-reload
 systemctl restart kubelet
@@ -1448,7 +1448,7 @@ systemctl restart kubelet
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>kubectl label node nodeone node-role.kubernetes.io/worker<span class="o">=</span>worker
 kubectl label node nodetwo node-role.kubernetes.io/worker<span class="o">=</span>worker
@@ -1464,7 +1464,7 @@ kubectl label node nodetwo node-role.kubernetes.io/worker<span class="o">=</span
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="s2">"1"</span> <span class="o">&gt;</span>/proc/sys/net/bridge/bridge-nf-call-iptables <span class="c"># 解决方法</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
@@ -1478,7 +1478,7 @@ kubectl label node nodetwo node-role.kubernetes.io/worker<span class="o">=</span
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1992,11 +1992,11 @@ spec:
 
         
 
-        本文由作者按照 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
-         进行授权
+         by the author.
 
       
     </div>
@@ -2004,7 +2004,7 @@ spec:
     <!-- Post sharing snippet -->
 
 <div class="share-wrapper">
-  <span class="share-label text-muted me-1">分享</span>
+  <span class="share-label text-muted me-1">Share</span>
   <span class="share-icons">
     
     
@@ -2056,8 +2056,8 @@ spec:
       class="fa-fw fas fa-link small"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="分享链接"
-      data-title-succeed="链接已复制！"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
     >
     </i>
   </span>
@@ -2095,7 +2095,7 @@ spec:
 
 
   <div id="access-lastmod" class="post">
-    <div class="panel-heading">最近更新</div>
+    <div class="panel-heading">Recently Updated</div>
     <ul class="post-content ps-0 pb-1 ms-1 mt-2">
       
         
@@ -4214,7 +4214,7 @@ spec:
 
 
   <div id="access-tags">
-    <div class="panel-heading">热门标签</div>
+    <div class="panel-heading">Trending Tags</div>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -4260,7 +4260,7 @@ spec:
 
 
   <div id="toc-wrapper" class="ps-0 pe-4 mb-5">
-    <div class="panel-heading ps-3 pt-2 mb-2">文章内容</div>
+    <div class="panel-heading ps-3 pt-2 mb-2">Contents</div>
     <nav id="toc"></nav>
   </div>
 
@@ -6172,7 +6172,7 @@ spec:
 
   <div id="related-posts" class="mb-2 mb-sm-4">
     <h3 class="pt-2 mb-4 ms-1" data-toc-skip>
-      相关文章
+      Further Reading
     </h3>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
@@ -6193,10 +6193,10 @@ spec:
 <em
   class="small"
   data-ts="1584885600"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
 >
-  2020/03/22
+  Mar 22, 2020
 </em>
 
               <h4 class="pt-0 my-2" data-toc-skip>Kubernetes概述</h4>
@@ -6238,10 +6238,10 @@ Kubernetes 的设计目标是实现跨不同主机和云环境的容器编排。
 <em
   class="small"
   data-ts="1615974354"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
 >
-  2021/03/17
+  Mar 17, 2021
 </em>
 
               <h4 class="pt-0 my-2" data-toc-skip>Kubernetes UI</h4>
@@ -6318,10 +6318,10 @@ kuboard-v3.yaml
 <em
   class="small"
   data-ts="1615974518"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
 >
-  2021/03/17
+  Mar 17, 2021
 </em>
 
               <h4 class="pt-0 my-2" data-toc-skip>Kubectl</h4>
@@ -6377,7 +6377,7 @@ kubectl get ...
     <a
       href="/posts/go-1.13/"
       class="btn btn-outline-primary"
-      prompt="上一篇"
+      prompt="Older"
     >
       <p>Go 1.13 版本更新 摘要</p>
     </a>
@@ -6387,7 +6387,7 @@ kubectl get ...
     <a
       href="/posts/kubernetesUI/"
       class="btn btn-outline-primary"
-      prompt="下一篇"
+      prompt="Newer"
     >
       <p>Kubernetes UI</p>
     </a>
@@ -8485,7 +8485,7 @@ kubectl get ...
 
 
   <div id="access-tags">
-    <div class="panel-heading">热门标签</div>
+    <div class="panel-heading">Trending Tags</div>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -8535,7 +8535,7 @@ kubectl get ...
 <footer>
   <div class="container px-lg-4">
     <div class="d-flex justify-content-center align-items-center text-muted mx-md-3">
-      <p>本站采用 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 主题 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+      <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
       </p>
 
       <p>©
@@ -8545,8 +8545,8 @@ kubectl get ...
           <span
             data-bs-toggle="tooltip"
             data-bs-placement="top"
-            title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。"
-          >保留部分权利。</span>
+            title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+          >Some rights reserved.</span>
         
       </p>
     </div>
@@ -8579,9 +8579,9 @@ kubectl get ...
           ></button>
         </div>
         <div class="toast-body text-center pt-0">
-          <p class="px-2 mb-3">发现新版本的内容。</p>
+          <p class="px-2 mb-3">A new version of content is available.</p>
           <button type="button" class="btn btn-primary" aria-label="Update">
-            更新
+            Update
           </button>
         </div>
       </div>
@@ -8700,7 +8700,7 @@ kubectl get ...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/zh.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/en.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
 
 
 

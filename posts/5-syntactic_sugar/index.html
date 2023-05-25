@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh-CN" 
+<html lang="en" 
   
 >
   <!-- The Head -->
@@ -44,7 +44,7 @@
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Python SyntacticSugar" />
-<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale" content="en" />
 <meta name="description" content="语法糖" />
 <meta property="og:description" content="语法糖" />
 <link rel="canonical" href="https://cc360428.github.io//posts/5-syntactic_sugar/" />
@@ -299,7 +299,7 @@
     <li class="nav-item">
       <a href="/" class="nav-link">
         <i class="fa-fw fas fa-home"></i>
-        <span>首页</span>
+        <span>HOME</span>
       </a>
     </li>
     <!-- the real tabs -->
@@ -309,7 +309,7 @@
           <i class="fa-fw fas fa-stream"></i>
           
 
-          <span>分类</span>
+          <span>CATEGORIES</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -319,7 +319,7 @@
           <i class="fa-fw fas fa-tag"></i>
           
 
-          <span>标签</span>
+          <span>TAGS</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -329,7 +329,7 @@
           <i class="fa-fw fas fa-archive"></i>
           
 
-          <span>归档</span>
+          <span>ARCHIVES</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -339,7 +339,7 @@
           <i class="fa-fw fas fa-info-circle"></i>
           
 
-          <span>关于</span>
+          <span>ABOUT</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -464,7 +464,7 @@
           
             <span>
               <a href="/">
-                首页
+                Home
               </a>
             </span>
 
@@ -486,7 +486,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      文章
+      Post
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -498,10 +498,10 @@
         type="search"
         aria-label="search"
         autocomplete="off"
-        placeholder="搜索..."
+        placeholder="Search..."
       >
     </span>
-    <span id="search-cancel">取消</span>
+    <span id="search-cancel">Cancel</span>
   </div>
 </div>
 
@@ -620,7 +620,7 @@
 <div class="post-meta text-muted">
     <!-- published date -->
     <span>
-      发表于
+      Posted
       <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -633,12 +633,12 @@
 <em
   class=""
   data-ts="1653357611"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2022/05/24
+  May 24, 2022
 </em>
 
     </span>
@@ -653,7 +653,7 @@
     <span>
       
 
-      作者
+      By
 
       <em>
       
@@ -687,9 +687,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1018 字"
+  title="1018 words"
 >
-  <em>5 分钟</em>阅读</span>
+  <em>5 min</em> read</span>
 
     </div>
 
@@ -701,64 +701,62 @@
   <h3 id="语法糖"><span class="me-2">语法糖</span><a href="#语法糖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>列表推导式</li>
-</ul>
+  <li>
+    <p>列表推导式</p>
 
-<p>列表推导式可以使用一行简洁的代码生成列表，格式为：</p>
+    <p>列表推导式可以使用一行简洁的代码生成列表，格式为：</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
+    <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>[expression for item in iterable]
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<p>其中，expression 是需要生成的元素表达式，item 是可迭代对象中的元素，iterable 是可迭代对象。例如，要生成一个包含 1 到 10 的平方的列表，可以使用以下代码：</p>
+    <p>其中，expression 是需要生成的元素表达式，item 是可迭代对象中的元素，iterable 是可迭代对象。例如，要生成一个包含 1 到 10 的平方的列表，可以使用以下代码：</p>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
 <span class="c1"># 输出：[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-</span></pre></td></tr></tbody></table></code></div></div>
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>字典推导式</p>
 
-<ul>
-  <li>字典推导式</li>
-</ul>
+    <p>字典推导式与列表推导式类似，可以使用一行代码生成字典，格式为：</p>
 
-<p>字典推导式与列表推导式类似，可以使用一行代码生成字典，格式为：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
+    <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>{key_expression: value_expression for item in iterable}
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<p>其中，key_expression 和 value_expression 分别是键和值的表达式，item 是可迭代对象中的元素，iterable 是可迭代对象。例如，要生成一个字典，键为从 1 到 5，值为键的平方的字典，可以使用以下代码：</p>
+    <p>其中，key_expression 和 value_expression 分别是键和值的表达式，item 是可迭代对象中的元素，iterable 是可迭代对象。例如，要生成一个字典，键为从 1 到 5，值为键的平方的字典，可以使用以下代码：</p>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)}</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
 <span class="c1"># 输出：{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-</span></pre></td></tr></tbody></table></code></div></div>
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>装饰器（Decorator）</p>
 
-<ul>
-  <li>装饰器（Decorator）</li>
-</ul>
+    <p>装饰器是一种用于装饰函数的语法糖，可以在函数定义前使用 @ 符号，将一个或多个函数“装饰”起来。装饰器本身是一个函数，接受一个函数作为参数并返回一个新的函数。</p>
 
-<p>装饰器是一种用于装饰函数的语法糖，可以在函数定义前使用 @ 符号，将一个或多个函数“装饰”起来。装饰器本身是一个函数，接受一个函数作为参数并返回一个新的函数。</p>
+    <p>例如，假设有一个计算函数执行时间的装饰器：</p>
 
-<p>例如，假设有一个计算函数执行时间的装饰器：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -769,7 +767,7 @@
 9
 10
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">time</span>
-
+  
 <span class="k">def</span> <span class="nf">time_it</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
@@ -778,117 +776,115 @@
         <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">func</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="s"> took </span><span class="si">{</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="si">:</span><span class="p">.</span><span class="mi">6</span><span class="n">f</span><span class="si">}</span><span class="s"> seconds</span><span class="sh">"</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span>
     <span class="k">return</span> <span class="n">wrapper</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<p>这样，在需要计算函数执行时间的函数前加上 <code class="language-plaintext highlighter-rouge">@time_it</code> 即可：</p>
+    <p>这样，在需要计算函数执行时间的函数前加上 <code class="language-plaintext highlighter-rouge">@time_it</code> 即可：</p>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="nd">@time_it</span>
 <span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
    <span class="c1"># some code here
-</span></pre></td></tr></tbody></table></code></div></div>
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>with 语句</p>
 
-<ul>
-  <li>with 语句</li>
-</ul>
+    <p>使用 with 语句可以让代码更加简洁，同时也可以自动关闭资源。with 语句的格式为：</p>
 
-<p>使用 with 语句可以让代码更加简洁，同时也可以自动关闭资源。with 语句的格式为：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="k">with</span> <span class="n">expression</span> <span class="p">[</span><span class="k">as</span> <span class="n">variable</span><span class="p">]:</span>
     <span class="k">with</span><span class="o">-</span><span class="n">block</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<p>其中，expression 是需要打开的资源对象，with-block 是需要执行的代码块，variable 是可选的变量名，用于存储 expression 返回的对象。例如，要打开一个文件并读取其中的内容，可以使用以下代码：</p>
+    <p>其中，expression 是需要打开的资源对象，with-block 是需要执行的代码块，variable 是可选的变量名，用于存储 expression 返回的对象。例如，要打开一个文件并读取其中的内容，可以使用以下代码：</p>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">myfile.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<p>不需要手动调用 f.close() 关闭文件，使用 with 语句后，当代码块执行完毕时，自动关闭文件。</p>
+    <p>不需要手动调用 f.close() 关闭文件，使用 with 语句后，当代码块执行完毕时，自动关闭文件。</p>
+  </li>
+  <li>
+    <p>Lambda 表达式</p>
 
-<ul>
-  <li>Lambda 表达式</li>
-</ul>
+    <p>Lambda 表达式是一种匿名函数，可以在一行代码中定义一个函数。格式为：</p>
 
-<p>Lambda 表达式是一种匿名函数，可以在一行代码中定义一个函数。格式为：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
+    <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>lambda arguments: expression
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<p>其中，arguments 是函数的参数，expression 是函数的返回值表达式。例如，要定义一个将传入的数字加倍的函数，可以使用以下代码：</p>
+    <p>其中，arguments 是函数的参数，expression 是函数的返回值表达式。例如，要定义一个将传入的数字加倍的函数，可以使用以下代码：</p>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre><span class="n">double</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">double</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># 输出：8
-</span></pre></td></tr></tbody></table></code></div></div>
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>map 函数</p>
 
-<ul>
-  <li>map 函数</li>
-</ul>
+    <p>map 函数可以对一个可迭代对象中的所有元素应用一个函数，并返回一个新的可迭代对象，其中每个元素都是原可迭代对象中的元素经过该函数处理的结果。格式为：</p>
 
-<p>map 函数可以对一个可迭代对象中的所有元素应用一个函数，并返回一个新的可迭代对象，其中每个元素都是原可迭代对象中的元素经过该函数处理的结果。格式为：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nf">map</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<p>其中，function 是应用于每个元素的函数，iterable 是可迭代对象。例如，要将一个列表中的所有元素平方并返回一个新的列表，可以使用以下代码：</p>
+    <p>其中，function 是应用于每个元素的函数，iterable 是可迭代对象。例如，要将一个列表中的所有元素平方并返回一个新的列表，可以使用以下代码：</p>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">squares</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">my_list</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span> <span class="c1"># 输出：[1, 4, 9, 16, 25]
-</span></pre></td></tr></tbody></table></code></div></div>
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>filter 函数</p>
 
-<ul>
-  <li>filter 函数</li>
-</ul>
+    <p>filter 函数可以对一个可迭代对象中的所有元素应用一个布尔函数，并返回一个新的可迭代对象，其中仅包含原可迭代对象中满足该布尔函数的元素。格式为：</p>
 
-<p>filter 函数可以对一个可迭代对象中的所有元素应用一个布尔函数，并返回一个新的可迭代对象，其中仅包含原可迭代对象中满足该布尔函数的元素。格式为：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nf">filter</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<p>其中，function 是应用于每个元素的布尔函数，iterable 是可迭代对象。例如，要从一个列表中筛选出所有的偶数，可以使用以下代码：</p>
+    <p>其中，function 是应用于每个元素的布尔函数，iterable 是可迭代对象。例如，要从一个列表中筛选出所有的偶数，可以使用以下代码：</p>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">evens</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">my_list</span><span class="p">))</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">evens</span><span class="p">)</span> <span class="c1"># 输出：[2, 4]
-</span></pre></td></tr></tbody></table></code></div></div>
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
 
 </div>
 
@@ -929,11 +925,11 @@
 
         
 
-        本文由作者按照 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
-         进行授权
+         by the author.
 
       
     </div>
@@ -941,7 +937,7 @@
     <!-- Post sharing snippet -->
 
 <div class="share-wrapper">
-  <span class="share-label text-muted me-1">分享</span>
+  <span class="share-label text-muted me-1">Share</span>
   <span class="share-icons">
     
     
@@ -993,8 +989,8 @@
       class="fa-fw fas fa-link small"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="分享链接"
-      data-title-succeed="链接已复制！"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
     >
     </i>
   </span>
@@ -1032,7 +1028,7 @@
 
 
   <div id="access-lastmod" class="post">
-    <div class="panel-heading">最近更新</div>
+    <div class="panel-heading">Recently Updated</div>
     <ul class="post-content ps-0 pb-1 ms-1 mt-2">
       
         
@@ -3151,7 +3147,7 @@
 
 
   <div id="access-tags">
-    <div class="panel-heading">热门标签</div>
+    <div class="panel-heading">Trending Tags</div>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -3197,7 +3193,7 @@
 
 
   <div id="toc-wrapper" class="ps-0 pe-4 mb-5">
-    <div class="panel-heading ps-3 pt-2 mb-2">文章内容</div>
+    <div class="panel-heading ps-3 pt-2 mb-2">Contents</div>
     <nav id="toc"></nav>
   </div>
 
@@ -5109,7 +5105,7 @@
 
   <div id="related-posts" class="mb-2 mb-sm-4">
     <h3 class="pt-2 mb-4 ms-1" data-toc-skip>
-      相关文章
+      Further Reading
     </h3>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
@@ -5130,10 +5126,10 @@
 <em
   class="small"
   data-ts="1653357608"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
 >
-  2022/05/24
+  May 24, 2022
 </em>
 
               <h4 class="pt-0 my-2" data-toc-skip>Python Base</h4>
@@ -5173,10 +5169,10 @@
 <em
   class="small"
   data-ts="1653357609"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
 >
-  2022/05/24
+  May 24, 2022
 </em>
 
               <h4 class="pt-0 my-2" data-toc-skip>Python Install</h4>
@@ -5228,10 +5224,10 @@ Mac os
 <em
   class="small"
   data-ts="1653357610"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
 >
-  2022/05/24
+  May 24, 2022
 </em>
 
               <h4 class="pt-0 my-2" data-toc-skip>Python UtilCmd</h4>
@@ -5278,7 +5274,7 @@ Mac os
     <a
       href="/posts/4-interpreter/"
       class="btn btn-outline-primary"
-      prompt="上一篇"
+      prompt="Older"
     >
       <p>Python Interpreter</p>
     </a>
@@ -5288,7 +5284,7 @@ Mac os
     <a
       href="/posts/6-introduction/"
       class="btn btn-outline-primary"
-      prompt="下一篇"
+      prompt="Newer"
     >
       <p>Python Introduction</p>
     </a>
@@ -7386,7 +7382,7 @@ Mac os
 
 
   <div id="access-tags">
-    <div class="panel-heading">热门标签</div>
+    <div class="panel-heading">Trending Tags</div>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -7436,7 +7432,7 @@ Mac os
 <footer>
   <div class="container px-lg-4">
     <div class="d-flex justify-content-center align-items-center text-muted mx-md-3">
-      <p>本站采用 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 主题 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+      <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
       </p>
 
       <p>©
@@ -7446,8 +7442,8 @@ Mac os
           <span
             data-bs-toggle="tooltip"
             data-bs-placement="top"
-            title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。"
-          >保留部分权利。</span>
+            title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+          >Some rights reserved.</span>
         
       </p>
     </div>
@@ -7480,9 +7476,9 @@ Mac os
           ></button>
         </div>
         <div class="toast-body text-center pt-0">
-          <p class="px-2 mb-3">发现新版本的内容。</p>
+          <p class="px-2 mb-3">A new version of content is available.</p>
           <button type="button" class="btn btn-primary" aria-label="Update">
-            更新
+            Update
           </button>
         </div>
       </div>
@@ -7601,7 +7597,7 @@ Mac os
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/zh.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/en.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
 
 
 

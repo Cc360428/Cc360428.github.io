@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh-CN" 
+<html lang="en" 
   
 >
   <!-- The Head -->
@@ -44,7 +44,7 @@
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Python Controlflow" />
-<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale" content="en" />
 <meta name="description" content="流程控制" />
 <meta property="og:description" content="流程控制" />
 <link rel="canonical" href="https://cc360428.github.io//posts/7-controlflow/" />
@@ -299,7 +299,7 @@
     <li class="nav-item">
       <a href="/" class="nav-link">
         <i class="fa-fw fas fa-home"></i>
-        <span>首页</span>
+        <span>HOME</span>
       </a>
     </li>
     <!-- the real tabs -->
@@ -309,7 +309,7 @@
           <i class="fa-fw fas fa-stream"></i>
           
 
-          <span>分类</span>
+          <span>CATEGORIES</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -319,7 +319,7 @@
           <i class="fa-fw fas fa-tag"></i>
           
 
-          <span>标签</span>
+          <span>TAGS</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -329,7 +329,7 @@
           <i class="fa-fw fas fa-archive"></i>
           
 
-          <span>归档</span>
+          <span>ARCHIVES</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -339,7 +339,7 @@
           <i class="fa-fw fas fa-info-circle"></i>
           
 
-          <span>关于</span>
+          <span>ABOUT</span>
         </a>
       </li>
       <!-- .nav-item -->
@@ -464,7 +464,7 @@
           
             <span>
               <a href="/">
-                首页
+                Home
               </a>
             </span>
 
@@ -486,7 +486,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      文章
+      Post
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -498,10 +498,10 @@
         type="search"
         aria-label="search"
         autocomplete="off"
-        placeholder="搜索..."
+        placeholder="Search..."
       >
     </span>
-    <span id="search-cancel">取消</span>
+    <span id="search-cancel">Cancel</span>
   </div>
 </div>
 
@@ -652,6 +652,94 @@
       
 
     
+
+    
+
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -666,11 +754,6 @@
     
 
     
-
-  
-
-  
-  
 
   
 
@@ -692,7 +775,7 @@
 <div class="post-meta text-muted">
     <!-- published date -->
     <span>
-      发表于
+      Posted
       <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -705,12 +788,12 @@
 <em
   class=""
   data-ts="1653357612"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2022/05/24
+  May 24, 2022
 </em>
 
     </span>
@@ -725,7 +808,7 @@
     <span>
       
 
-      作者
+      By
 
       <em>
       
@@ -759,9 +842,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1443 字"
+  title="1429 words"
 >
-  <em>8 分钟</em>阅读</span>
+  <em>7 min</em> read</span>
 
     </div>
 
@@ -778,16 +861,17 @@
   <li>while</li>
 </ul>
 
-<h3 id="if"><span class="me-2">if</span><a href="#if" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>Python 中的判断控制结构主要有 <code class="language-plaintext highlighter-rouge">if-elif-else</code> 和 <code class="language-plaintext highlighter-rouge">ternary operator</code>。</p>
+<h3 id="判断控制结构"><span class="me-2">判断控制结构</span><a href="#判断控制结构" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<ul>
-  <li>if-elif-else 结构：</li>
-</ul>
+<blockquote>
+  <p>Python 中的判断控制结构主要有 <code class="language-plaintext highlighter-rouge">if-elif-else</code> 和 <code class="language-plaintext highlighter-rouge">ternary operator</code>。</p>
+</blockquote>
+
+<h4 id="if-elif-else"><span class="me-2">if-elif-else</span><a href="#if-elif-else" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -801,21 +885,25 @@ else:
     # 当条件 1 和条件 2 都不满足时执行的代码
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>其中，<code class="language-plaintext highlighter-rouge">condition1</code>、<code class="language-plaintext highlighter-rouge">condition2</code> 等都是需要判断的条件表达式，可以使用比较运算符、逻辑运算符等来组合成复杂的判断条件。当条件 <code class="language-plaintext highlighter-rouge">condition1</code> 满足时，执行对应的代码块；否则继续判断下一个条件 <code class="language-plaintext highlighter-rouge">condition2</code>，以此类推，直到找到一个满足条件的代码块或者所有条件都不满足时，执行最后的 <code class="language-plaintext highlighter-rouge">else</code> 块。</p>
+<blockquote>
+  <p>其中，<code class="language-plaintext highlighter-rouge">condition1</code>、<code class="language-plaintext highlighter-rouge">condition2</code> 等都是需要判断的条件表达式，可以使用比较运算符、逻辑运算符等来组合成复杂的判断条件。当条件 <code class="language-plaintext highlighter-rouge">condition1</code> 满足时，执行对应的代码块；否则继续判断下一个条件 <code class="language-plaintext highlighter-rouge">condition2</code>，以此类推，直到找到一个满足条件的代码块或者所有条件都不满足时，执行最后的 <code class="language-plaintext highlighter-rouge">else</code> 块。</p>
+</blockquote>
 
-<ul>
-  <li>ternary operator 结构：</li>
-</ul>
+<h4 id="ternary-operator"><span class="me-2">ternary operator</span><a href="#ternary-operator" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>result = value1 if condition else value2
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>其中，<code class="language-plaintext highlighter-rouge">condition</code> 是需要判断的条件表达式，当条件成立时，返回 <code class="language-plaintext highlighter-rouge">value1</code>，否则返回 <code class="language-plaintext highlighter-rouge">value2</code>。这种语法结构也称为三目运算符，简单明了，通常用于在一行代码中完成简单的条件判断。</p>
+<blockquote>
+  <p>其中，<code class="language-plaintext highlighter-rouge">condition</code> 是需要判断的条件表达式，当条件成立时，返回 <code class="language-plaintext highlighter-rouge">value1</code>，否则返回 <code class="language-plaintext highlighter-rouge">value2</code>。这种语法结构也称为三目运算符，简单明了，通常用于在一行代码中完成简单的条件判断。</p>
+</blockquote>
 
-<h3 id="for"><span class="me-2">for</span><a href="#for" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="循环结构"><span class="me-2">循环结构</span><a href="#循环结构" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h4 id="for"><span class="me-2">for</span><a href="#for" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <blockquote>
   <p><code class="language-plaintext highlighter-rouge">for</code> 循环通常用于遍历序列类型（如字符串、列表、元组等）中的元素，语法结构如下：</p>
@@ -823,7 +911,7 @@ else:
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>for 变量 in 序列:
     # 循环体
@@ -833,7 +921,7 @@ else:
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
@@ -843,7 +931,7 @@ else:
 
 <p>上述代码会输出 <code class="language-plaintext highlighter-rouge">apple</code>、<code class="language-plaintext highlighter-rouge">banana</code> 和 <code class="language-plaintext highlighter-rouge">cherry</code> 三个字符串，分别对应 <code class="language-plaintext highlighter-rouge">fruits</code> 列表中的三个元素。</p>
 
-<h3 id="while"><span class="me-2">while</span><a href="#while" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h4 id="while"><span class="me-2">while</span><a href="#while" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <blockquote>
   <p><code class="language-plaintext highlighter-rouge">while</code> 循环会在满足条件时重复执行循环体，直到条件不再成立为止。语法结构如下：</p>
@@ -851,17 +939,19 @@ else:
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>while 条件:
     # 循环体
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>其中，<code class="language-plaintext highlighter-rouge">条件</code> 是判断条件，如果成立则进入循环体执行；否则结束循环。例如：</p>
+<blockquote>
+  <p>其中，<code class="language-plaintext highlighter-rouge">条件</code> 是判断条件，如果成立则进入循环体执行；否则结束循环。例如：</p>
+</blockquote>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -871,17 +961,21 @@ else:
     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>上述代码会输出数字 1 到 5，因为当 <code class="language-plaintext highlighter-rouge">i</code> 的值小于等于 5 时，满足条件，会不断地执行循环体中的代码，每次输出 <code class="language-plaintext highlighter-rouge">i</code> 的值，并将 <code class="language-plaintext highlighter-rouge">i</code> 加 1。当 <code class="language-plaintext highlighter-rouge">i</code> 大于 5 时，不再满足条件，循环结束。</p>
+<blockquote>
+  <p>上述代码会输出数字 1 到 5，因为当 <code class="language-plaintext highlighter-rouge">i</code> 的值小于等于 5 时，满足条件，会不断地执行循环体中的代码，每次输出 <code class="language-plaintext highlighter-rouge">i</code> 的值，并将 <code class="language-plaintext highlighter-rouge">i</code> 加 1。当 <code class="language-plaintext highlighter-rouge">i</code> 大于 5 时，不再满足条件，循环结束。</p>
+</blockquote>
 
 <h3 id="循环中语句"><span class="me-2">循环中语句</span><a href="#循环中语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<ul>
-  <li>break语句：break语句可以在循环内部立即终止循环，并跳出循环体。</li>
-</ul>
+<h4 id="break"><span class="me-2">break</span><a href="#break" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<blockquote>
+  <p>break语句可以在循环内部立即终止循环，并跳出循环体。</p>
+</blockquote>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -891,13 +985,15 @@ else:
     <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<ul>
-  <li>continue语句：continue语句在循环中用于跳过当前迭代，并进入下一次迭代。</li>
-</ul>
+<h4 id="continue"><span class="me-2">continue</span><a href="#continue" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<blockquote>
+  <p>continue语句在循环中用于跳过当前迭代，并进入下一次迭代。</p>
+</blockquote>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -907,13 +1003,15 @@ else:
     <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<ul>
-  <li>pass语句：pass语句在Python中是一个空语句，用于表示占位符，不做任何操作。</li>
-</ul>
+<h4 id="pass"><span class="me-2">pass</span><a href="#pass" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<blockquote>
+  <p>pass语句在Python中是一个空语句，用于表示占位符，不做任何操作。</p>
+</blockquote>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -929,27 +1027,37 @@ else:
 
 <p><code class="language-plaintext highlighter-rouge">range()</code> 函数是 Python 内置函数之一，它用于创建一个整数列表，常用于 for 循环中。 <code class="language-plaintext highlighter-rouge">range()</code> 函数有三个参数：起始值、终止值和步长。</p>
 
-<p>语法如下：</p>
-
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nf">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">[,</span> <span class="n">step</span><span class="p">])</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>其中：</p>
-
 <ul>
-  <li>start：表示数列的起始值，默认为 0。</li>
-  <li>stop：表示数列的终止值（不包括），必须指定。</li>
-  <li>step：表示数列的公差，默认为 1。</li>
+  <li>
+    <p>语法如下</p>
+
+    <div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nf">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">[,</span> <span class="n">step</span><span class="p">])</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>说明</p>
+    <ul>
+      <li>start：表示数列的起始值，默认为 0。</li>
+      <li>stop：表示数列的终止值（不包括），必须指定。</li>
+      <li>step：表示数列的公差，默认为 1。</li>
+    </ul>
+  </li>
 </ul>
 
-<p>返回的结果是一个可迭代对象，可以使用 list() 函数将其转换为列表。例如：</p>
+<blockquote>
+  <p>返回的结果是一个可迭代对象，可以使用 list() 函数将其转换为列表</p>
+</blockquote>
 
-<div class="language-python highlighter-rouge"><div class="code-header">
+<ul>
+  <li>
+    <p>例子</p>
+
+    <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -959,17 +1067,18 @@ else:
 </pre></td><td class="rouge-code"><pre><span class="c1"># 打印 0 到 4 的整数
 </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
+  
 <span class="c1"># 打印 2 到 8 的偶数
 </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p>输出：</p>
 
-<p>输出：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
+    <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -978,28 +1087,34 @@ else:
 7
 8
 9
-</pre></td><td class="rouge-code"><pre>0
-1
-2
-3
-4
-2
-4
-6
-8
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre>  0
+  1
+  2
+  3
+  4
+  2
+  4
+  6
+  8
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
 
 <p>需要注意的是， <code class="language-plaintext highlighter-rouge">range()</code> 函数返回的是一个不可变序列，在 Python 2.x 中叫做 <code class="language-plaintext highlighter-rouge">xrange()</code>。如果需要修改序列中的元素，可以使用其他数据类型，如列表或数组。</p>
 
 <h3 id="match-语法"><span class="me-2">match 语法</span><a href="#match-语法" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><code class="language-plaintext highlighter-rouge">match</code> 是 Python 3.10 新增的一种模式匹配语法，也被称为结构化匹配。它提供了更加简洁和易于理解的方式来匹配和分解复杂数据结构，例如元组、列表、字典等。</p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">match</code> 是 Python 3.10 新增的一种模式匹配语法，也被称为结构化匹配。它提供了更加简洁和易于理解的方式来匹配和分解复杂数据结构，例如元组、列表、字典等。</p>
+</blockquote>
 
-<p><code class="language-plaintext highlighter-rouge">match</code> 的语法如下：</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">match</code> 的语法如下：</li>
+</ul>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1021,11 +1136,13 @@ else:
 
 <p>如果所有的 <code class="language-plaintext highlighter-rouge">case</code> 都没有匹配成功，则会执行 <code class="language-plaintext highlighter-rouge">_</code> 子句中的代码块，类似于 <code class="language-plaintext highlighter-rouge">switch-case</code> 语句中的 <code class="language-plaintext highlighter-rouge">default</code> 分支。</p>
 
-<p>以下是一个使用 <code class="language-plaintext highlighter-rouge">match</code> 进行模式匹配的例子：</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">match</code> 进行模式匹配的例子：</li>
+</ul>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1057,7 +1174,9 @@ else:
 </span><span class="nf">match_example</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># 输出 "x is a negative number"
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<p>需要注意的是，<code class="language-plaintext highlighter-rouge">match</code> 语法仅在 Python 3.10 及以上版本中可用，如果使用较早的 Python 版本，则无法使用。</p>
+<blockquote>
+  <p>需要注意的是，<code class="language-plaintext highlighter-rouge">match</code> 语法仅在 Python 3.10 及以上版本中可用，如果使用较早的 Python 版本，则无法使用。</p>
+</blockquote>
 
 </div>
 
@@ -1098,11 +1217,11 @@ else:
 
         
 
-        本文由作者按照 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
-         进行授权
+         by the author.
 
       
     </div>
@@ -1110,7 +1229,7 @@ else:
     <!-- Post sharing snippet -->
 
 <div class="share-wrapper">
-  <span class="share-label text-muted me-1">分享</span>
+  <span class="share-label text-muted me-1">Share</span>
   <span class="share-icons">
     
     
@@ -1162,8 +1281,8 @@ else:
       class="fa-fw fas fa-link small"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="分享链接"
-      data-title-succeed="链接已复制！"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
     >
     </i>
   </span>
@@ -1201,7 +1320,7 @@ else:
 
 
   <div id="access-lastmod" class="post">
-    <div class="panel-heading">最近更新</div>
+    <div class="panel-heading">Recently Updated</div>
     <ul class="post-content ps-0 pb-1 ms-1 mt-2">
       
         
@@ -3320,7 +3439,7 @@ else:
 
 
   <div id="access-tags">
-    <div class="panel-heading">热门标签</div>
+    <div class="panel-heading">Trending Tags</div>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -3366,7 +3485,7 @@ else:
 
 
   <div id="toc-wrapper" class="ps-0 pe-4 mb-5">
-    <div class="panel-heading ps-3 pt-2 mb-2">文章内容</div>
+    <div class="panel-heading ps-3 pt-2 mb-2">Contents</div>
     <nav id="toc"></nav>
   </div>
 
@@ -5278,7 +5397,7 @@ else:
 
   <div id="related-posts" class="mb-2 mb-sm-4">
     <h3 class="pt-2 mb-4 ms-1" data-toc-skip>
-      相关文章
+      Further Reading
     </h3>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
@@ -5299,10 +5418,10 @@ else:
 <em
   class="small"
   data-ts="1653357608"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
 >
-  2022/05/24
+  May 24, 2022
 </em>
 
               <h4 class="pt-0 my-2" data-toc-skip>Python Base</h4>
@@ -5342,10 +5461,10 @@ else:
 <em
   class="small"
   data-ts="1653357609"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
 >
-  2022/05/24
+  May 24, 2022
 </em>
 
               <h4 class="pt-0 my-2" data-toc-skip>Python Install</h4>
@@ -5397,10 +5516,10 @@ Mac os
 <em
   class="small"
   data-ts="1653357610"
-  data-df="YYYY/MM/DD"
+  data-df="ll"
   
 >
-  2022/05/24
+  May 24, 2022
 </em>
 
               <h4 class="pt-0 my-2" data-toc-skip>Python UtilCmd</h4>
@@ -5447,7 +5566,7 @@ Mac os
     <a
       href="/posts/6-introduction/"
       class="btn btn-outline-primary"
-      prompt="上一篇"
+      prompt="Older"
     >
       <p>Python Introduction</p>
     </a>
@@ -5457,7 +5576,7 @@ Mac os
     <a
       href="/posts/8-function/"
       class="btn btn-outline-primary"
-      prompt="下一篇"
+      prompt="Newer"
     >
       <p>Python Function</p>
     </a>
@@ -7555,7 +7674,7 @@ Mac os
 
 
   <div id="access-tags">
-    <div class="panel-heading">热门标签</div>
+    <div class="panel-heading">Trending Tags</div>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -7605,7 +7724,7 @@ Mac os
 <footer>
   <div class="container px-lg-4">
     <div class="d-flex justify-content-center align-items-center text-muted mx-md-3">
-      <p>本站采用 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 主题 <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+      <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
       </p>
 
       <p>©
@@ -7615,8 +7734,8 @@ Mac os
           <span
             data-bs-toggle="tooltip"
             data-bs-placement="top"
-            title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。"
-          >保留部分权利。</span>
+            title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+          >Some rights reserved.</span>
         
       </p>
     </div>
@@ -7649,9 +7768,9 @@ Mac os
           ></button>
         </div>
         <div class="toast-body text-center pt-0">
-          <p class="px-2 mb-3">发现新版本的内容。</p>
+          <p class="px-2 mb-3">A new version of content is available.</p>
           <button type="button" class="btn btn-primary" aria-label="Update">
-            更新
+            Update
           </button>
         </div>
       </div>
@@ -7770,7 +7889,7 @@ Mac os
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/zh.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/en.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
 
 
 
