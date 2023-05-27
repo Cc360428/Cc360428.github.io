@@ -45,8 +45,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Python Function" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="简介 Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。 在Python中，定义一个函数需要使用def关键字，后面跟着函数名、参数列表和一个冒号。函数体内的代码必须缩进。 以下是一个简单的Python函数示例：" />
-<meta property="og:description" content="简介 Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。 在Python中，定义一个函数需要使用def关键字，后面跟着函数名、参数列表和一个冒号。函数体内的代码必须缩进。 以下是一个简单的Python函数示例：" />
+<meta name="description" content="简介" />
+<meta property="og:description" content="简介" />
 <link rel="canonical" href="https://cc360428.github.io//posts/8-function/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/8-function/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -56,7 +56,7 @@
 <meta property="twitter:title" content="Python Function" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-24T10:00:13+08:00","datePublished":"2022-05-24T10:00:13+08:00","description":"简介 Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。 在Python中，定义一个函数需要使用def关键字，后面跟着函数名、参数列表和一个冒号。函数体内的代码必须缩进。 以下是一个简单的Python函数示例：","headline":"Python Function","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/8-function/"},"url":"https://cc360428.github.io//posts/8-function/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-24T10:00:13+08:00","datePublished":"2022-05-24T10:00:13+08:00","description":"简介","headline":"Python Function","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/8-function/"},"url":"https://cc360428.github.io//posts/8-function/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -794,6 +794,7 @@
 
 <div class="post-content">
   <h3 id="简介"><span class="me-2">简介</span><a href="#简介" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <ul>
   <li>Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。</li>
   <li>在Python中，定义一个函数需要使用<code class="language-plaintext highlighter-rouge">def</code>关键字，后面跟着函数名、参数列表和一个冒号。函数体内的代码必须缩进。</li>
@@ -812,7 +813,8 @@
 <span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">John</span><span class="sh">"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
-  <li>该代码定义了一个名为<code class="language-plaintext highlighter-rouge">greet</code>的函数，该函数接受一个参数<code class="language-plaintext highlighter-rouge">name</code>，将其与字符串<code class="language-plaintext highlighter-rouge">"Hello, "</code>和<code class="language-plaintext highlighter-rouge">"!"</code>连接起来并打印出来。最后一行代码调用这个函数并传递一个名为<code class="language-plaintext highlighter-rouge">John</code>的参数。</li>
+  <li>该代码定义了一个名为<code class="language-plaintext highlighter-rouge">greet</code>的函数，该函数接受一个参数<code class="language-plaintext highlighter-rouge">name</code>，将其与字符串<code class="language-plaintext highlighter-rouge">"Hello, "</code>和<code class="language-plaintext highlighter-rouge">"!"</code>
+连接起来并打印出来。最后一行代码调用这个函数并传递一个名为<code class="language-plaintext highlighter-rouge">John</code>的参数。</li>
   <li>当你运行这段代码时，它会输出：<code class="language-plaintext highlighter-rouge">Hello, John!</code></li>
   <li>除了上面这种简单的函数，Python还支持很多不同类型的函数，包括没有参数的函数、返回值的函数、匿名函数和高阶函数等。</li>
 </ul>
@@ -833,7 +835,9 @@
 </span>    <span class="k">return</span> <span class="p">[</span><span class="n">expression</span><span class="p">]</span>  <span class="c1"># 可选的返回值
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<p>其中，<code class="language-plaintext highlighter-rouge">function_name</code> 是函数名，<code class="language-plaintext highlighter-rouge">parameters</code> 是可选的参数列表，用括号包含，多个参数之间用逗号分隔；函数体代码是函数要执行的操作，可以包含任意数量的语句；<code class="language-plaintext highlighter-rouge">return</code> 语句可选，用于指定函数的返回值。</p>
+<p>其中，<code class="language-plaintext highlighter-rouge">function_name</code> 是函数名，<code class="language-plaintext highlighter-rouge">parameters</code>
+是可选的参数列表，用括号包含，多个参数之间用逗号分隔；函数体代码是函数要执行的操作，可以包含任意数量的语句；<code class="language-plaintext highlighter-rouge">return</code>
+语句可选，用于指定函数的返回值。</p>
 
 <p>例如，下面是一个简单的函数，将两个数相加并返回结果：</p>
 
@@ -853,7 +857,8 @@
     <span class="k">return</span> <span class="n">result</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>在这个例子中，<code class="language-plaintext highlighter-rouge">add_numbers</code> 是函数名，它接受两个参数 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code>。函数体代码将它们相加，并将结果存储在变量 <code class="language-plaintext highlighter-rouge">result</code> 中。最后，通过 <code class="language-plaintext highlighter-rouge">return</code> 语句将结果返回给调用方。</p>
+<p>在这个例子中，<code class="language-plaintext highlighter-rouge">add_numbers</code> 是函数名，它接受两个参数 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code>。函数体代码将它们相加，并将结果存储在变量 <code class="language-plaintext highlighter-rouge">result</code>
+中。最后，通过 <code class="language-plaintext highlighter-rouge">return</code> 语句将结果返回给调用方。</p>
 
 <h3 id="函数定义详解"><span class="me-2">函数定义详解</span><a href="#函数定义详解" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -891,11 +896,13 @@
     <span class="c1"># 函数体代码
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<p>在上面的例子中，<code class="language-plaintext highlighter-rouge">arg2</code> 有一个默认值为 <code class="language-plaintext highlighter-rouge">0</code>，<code class="language-plaintext highlighter-rouge">arg3</code> 有一个默认值为 <code class="language-plaintext highlighter-rouge">'default'</code>。因此，在调用 <code class="language-plaintext highlighter-rouge">my_func</code> 时，可以省略这两个参数。如果不指定 <code class="language-plaintext highlighter-rouge">arg2</code>，则它将被设置为 <code class="language-plaintext highlighter-rouge">0</code>。如果不指定 <code class="language-plaintext highlighter-rouge">arg3</code>，则它将被设置为 <code class="language-plaintext highlighter-rouge">'default'</code>。</p>
+<p>在上面的例子中，<code class="language-plaintext highlighter-rouge">arg2</code> 有一个默认值为 <code class="language-plaintext highlighter-rouge">0</code>，<code class="language-plaintext highlighter-rouge">arg3</code> 有一个默认值为 <code class="language-plaintext highlighter-rouge">'default'</code>。因此，在调用 <code class="language-plaintext highlighter-rouge">my_func</code>
+时，可以省略这两个参数。如果不指定 <code class="language-plaintext highlighter-rouge">arg2</code>，则它将被设置为 <code class="language-plaintext highlighter-rouge">0</code>。如果不指定 <code class="language-plaintext highlighter-rouge">arg3</code>，则它将被设置为 <code class="language-plaintext highlighter-rouge">'default'</code>。</p>
 
 <h4 id="函数体"><span class="me-2">函数体</span><a href="#函数体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>函数体是包含在函数定义中的代码块。函数体通常包含一些操作，用于处理输入参数并生成输出结果。在 Python 中，函数体由缩进的语句组成，这些语句会在函数被调用时执行。</p>
+<p>函数体是包含在函数定义中的代码块。函数体通常包含一些操作，用于处理输入参数并生成输出结果。在 Python
+中，函数体由缩进的语句组成，这些语句会在函数被调用时执行。</p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -911,9 +918,11 @@
     <span class="k">return</span> <span class="n">result</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>在上面的例子中，<code class="language-plaintext highlighter-rouge">my_func</code> 接受两个参数 <code class="language-plaintext highlighter-rouge">arg1</code> 和 <code class="language-plaintext highlighter-rouge">arg2</code>。函数体包含两行代码，第一行使用 <code class="language-plaintext highlighter-rouge">print</code> 函数打印参数的值，第二行将 <code class="language-plaintext highlighter-rouge">arg1</code> 和 <code class="language-plaintext highlighter-rouge">arg2</code> 相加，并将结果返回给调用方。</p>
+<p>在上面的例子中，<code class="language-plaintext highlighter-rouge">my_func</code> 接受两个参数 <code class="language-plaintext highlighter-rouge">arg1</code> 和 <code class="language-plaintext highlighter-rouge">arg2</code>。函数体包含两行代码，第一行使用 <code class="language-plaintext highlighter-rouge">print</code>
+函数打印参数的值，第二行将 <code class="language-plaintext highlighter-rouge">arg1</code> 和 <code class="language-plaintext highlighter-rouge">arg2</code> 相加，并将结果返回给调用方。</p>
 
 <h3 id="模块"><span class="me-2">模块</span><a href="#模块" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <ul>
   <li>
     <p>Python 标准库中有很多内置的模块可供使用，例如：</p>
@@ -963,10 +972,12 @@ print(sqrt(25))  # 输出 5.0
 </ul>
 
 <blockquote>
-  <p>需要注意的是，当导入模块时，Python 会在指定的路径中查找模块文件。如果模块不存在或不能被找到，则会引发<code class="language-plaintext highlighter-rouge">ModuleNotFoundError</code>异常。</p>
+  <p>需要注意的是，当导入模块时，Python 会在指定的路径中查找模块文件。如果模块不存在或不能被找到，则会引发<code class="language-plaintext highlighter-rouge">ModuleNotFoundError</code>
+异常。</p>
 </blockquote>
 
 <h3 id="包"><span class="me-2">包</span><a href="#包" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <blockquote>
   <p>在 Python 中，包是一个目录，其中包含了一组模块和子包。包的主要作用是将相关的模块组织在一起，使得程序设计更加模块化和易于管理。</p>
 </blockquote>
@@ -1017,7 +1028,8 @@ print(sqrt(25))  # 输出 5.0
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
   <li>
-    <p>其中，<code class="language-plaintext highlighter-rouge">mypackage</code>是一个包，包含了<code class="language-plaintext highlighter-rouge">module1.py</code>、<code class="language-plaintext highlighter-rouge">module2.py</code>和<code class="language-plaintext highlighter-rouge">submodule</code>子包。<code class="language-plaintext highlighter-rouge">submodule</code>子包中有一个名为<code class="language-plaintext highlighter-rouge">submodule1.py</code>的模块。</p>
+    <p>其中，<code class="language-plaintext highlighter-rouge">mypackage</code>是一个包，包含了<code class="language-plaintext highlighter-rouge">module1.py</code>、<code class="language-plaintext highlighter-rouge">module2.py</code>和<code class="language-plaintext highlighter-rouge">submodule</code>子包。<code class="language-plaintext highlighter-rouge">submodule</code>子包中有一个名为<code class="language-plaintext highlighter-rouge">submodule1.py</code>
+的模块。</p>
 
     <blockquote>
       <p>如果要使用该包中的模块，可以使用<code class="language-plaintext highlighter-rouge">import</code>语句，例如：</p>
@@ -1046,7 +1058,8 @@ print(sqrt(25))  # 输出 5.0
 </ul>
 
 <blockquote>
-  <p>需要注意的是，当导入包或模块时，Python 会在指定的路径中查找包或模块所在的目录，并将其添加到<code class="language-plaintext highlighter-rouge">sys.path</code>中。如果包或模块不存在或不能被找到，则会引发<code class="language-plaintext highlighter-rouge">ModuleNotFoundError</code>异常。</p>
+  <p>需要注意的是，当导入包或模块时，Python 会在指定的路径中查找包或模块所在的目录，并将其添加到<code class="language-plaintext highlighter-rouge">sys.path</code>
+中。如果包或模块不存在或不能被找到，则会引发<code class="language-plaintext highlighter-rouge">ModuleNotFoundError</code>异常。</p>
 </blockquote>
 
 </div>
@@ -1555,130 +1568,6 @@ print(sqrt(25))  # 输出 5.0
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1688,230 +1577,6 @@ print(sqrt(25))  # 输出 5.0
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2256,26 +1921,6 @@ print(sqrt(25))  # 输出 5.0
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2325,6 +1970,95 @@ print(sqrt(25))  # 输出 5.0
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2799,6 +2533,18 @@ print(sqrt(25))  # 输出 5.0
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2845,6 +2591,283 @@ print(sqrt(25))  # 输出 5.0
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3209,10 +3232,10 @@ print(sqrt(25))  # 输出 5.0
         <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
@@ -3270,6 +3293,18 @@ print(sqrt(25))  # 输出 5.0
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -5320,6 +5355,7 @@ print(sqrt(25))  # 输出 5.0
 
 
 Mac os
+
 方法一
 
 
@@ -5327,7 +5363,7 @@ Mac os
     打开 Python 官方网站（https://www.python.org/downloads/mac-osx/）。
   
   
-    在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常，...
+    在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常...
                 </p>
               </div>
             </div>
@@ -5754,130 +5790,6 @@ Mac os
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5887,230 +5799,6 @@ Mac os
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -6455,26 +6143,6 @@ Mac os
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -6524,6 +6192,95 @@ Mac os
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -6998,6 +6755,18 @@ Mac os
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -7044,6 +6813,283 @@ Mac os
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -7408,10 +7454,10 @@ Mac os
         <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>

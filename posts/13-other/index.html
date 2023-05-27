@@ -45,8 +45,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Python Other" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Other 多线程 Python多线程是一种并发编程的技术，在同一时间内执行多个线程，从而提高程序的效率和响应速度。在Python中，可以使用threading模块来创建和管理线程。" />
-<meta property="og:description" content="Other 多线程 Python多线程是一种并发编程的技术，在同一时间内执行多个线程，从而提高程序的效率和响应速度。在Python中，可以使用threading模块来创建和管理线程。" />
+<meta name="description" content="Other" />
+<meta property="og:description" content="Other" />
 <link rel="canonical" href="https://cc360428.github.io//posts/13-other/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/13-other/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -56,7 +56,7 @@
 <meta property="twitter:title" content="Python Other" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-24T10:00:18+08:00","datePublished":"2022-05-24T10:00:18+08:00","description":"Other 多线程 Python多线程是一种并发编程的技术，在同一时间内执行多个线程，从而提高程序的效率和响应速度。在Python中，可以使用threading模块来创建和管理线程。","headline":"Python Other","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/13-other/"},"url":"https://cc360428.github.io//posts/13-other/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-24T10:00:18+08:00","datePublished":"2022-05-24T10:00:18+08:00","description":"Other","headline":"Python Other","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/13-other/"},"url":"https://cc360428.github.io//posts/13-other/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -734,9 +734,12 @@
 
 <div class="post-content">
   <h2 id="other"><span class="me-2">Other</span><a href="#other" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <h3 id="多线程"><span class="me-2">多线程</span><a href="#多线程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <blockquote>
-  <p>Python多线程是一种并发编程的技术，在同一时间内执行多个线程，从而提高程序的效率和响应速度。在Python中，可以使用<code class="language-plaintext highlighter-rouge">threading</code>模块来创建和管理线程。</p>
+  <p>Python多线程是一种并发编程的技术，在同一时间内执行多个线程，从而提高程序的效率和响应速度。在Python中，可以使用<code class="language-plaintext highlighter-rouge">threading</code>
+模块来创建和管理线程。</p>
 </blockquote>
 
 <ul>
@@ -784,7 +787,8 @@
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
   <li>
-    <p>该程序创建了两个线程<code class="language-plaintext highlighter-rouge">t1</code>和<code class="language-plaintext highlighter-rouge">t2</code>，分别执行<code class="language-plaintext highlighter-rouge">print_numbers</code>函数和<code class="language-plaintext highlighter-rouge">print_letters</code>函数。通过调用<code class="language-plaintext highlighter-rouge">start()</code>方法启动线程，<code class="language-plaintext highlighter-rouge">join()</code>方法等待线程结束。在上述例子中，<code class="language-plaintext highlighter-rouge">t1</code>和<code class="language-plaintext highlighter-rouge">t2</code>会同时执行，因此输出结果可能是交替出现的数字和字母。</p>
+    <p>该程序创建了两个线程<code class="language-plaintext highlighter-rouge">t1</code>和<code class="language-plaintext highlighter-rouge">t2</code>，分别执行<code class="language-plaintext highlighter-rouge">print_numbers</code>函数和<code class="language-plaintext highlighter-rouge">print_letters</code>函数。通过调用<code class="language-plaintext highlighter-rouge">start()</code>方法启动线程，<code class="language-plaintext highlighter-rouge">join()</code>
+方法等待线程结束。在上述例子中，<code class="language-plaintext highlighter-rouge">t1</code>和<code class="language-plaintext highlighter-rouge">t2</code>会同时执行，因此输出结果可能是交替出现的数字和字母。</p>
   </li>
   <li>
     <p>需要注意的是，在多线程编程中，由于多个线程共享相同的资源（如全局变量或文件），因此可能会出现竞争条件和死锁等问题。因此，在编写多线程程序时，需要特别小心，确保线程安全。</p>
@@ -847,7 +851,8 @@
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
   <li>
-    <p>这个示例定义了三个协程函数 <code class="language-plaintext highlighter-rouge">foo</code>、<code class="language-plaintext highlighter-rouge">bar</code> 和 <code class="language-plaintext highlighter-rouge">main</code>，其中 <code class="language-plaintext highlighter-rouge">foo</code> 和 <code class="language-plaintext highlighter-rouge">bar</code> 分别打印一些信息并等待一段时间，<code class="language-plaintext highlighter-rouge">main</code> 函数则同时调用 <code class="language-plaintext highlighter-rouge">foo</code> 和 <code class="language-plaintext highlighter-rouge">bar</code> 协程，并使用 <code class="language-plaintext highlighter-rouge">asyncio.gather()</code> 方法并发运行这两个协程。最终输出结果为：</p>
+    <p>这个示例定义了三个协程函数 <code class="language-plaintext highlighter-rouge">foo</code>、<code class="language-plaintext highlighter-rouge">bar</code> 和 <code class="language-plaintext highlighter-rouge">main</code>，其中 <code class="language-plaintext highlighter-rouge">foo</code> 和 <code class="language-plaintext highlighter-rouge">bar</code> 分别打印一些信息并等待一段时间，<code class="language-plaintext highlighter-rouge">main</code>
+函数则同时调用 <code class="language-plaintext highlighter-rouge">foo</code> 和 <code class="language-plaintext highlighter-rouge">bar</code> 协程，并使用 <code class="language-plaintext highlighter-rouge">asyncio.gather()</code> 方法并发运行这两个协程。最终输出结果为：</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1373,130 +1378,6 @@ Finish bar
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1506,230 +1387,6 @@ Finish bar
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2074,26 +1731,6 @@ Finish bar
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2143,6 +1780,95 @@ Finish bar
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2617,6 +2343,18 @@ Finish bar
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2663,6 +2401,283 @@ Finish bar
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3027,10 +3042,10 @@ Finish bar
         <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
@@ -3088,6 +3103,18 @@ Finish bar
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -5138,6 +5165,7 @@ Finish bar
 
 
 Mac os
+
 方法一
 
 
@@ -5145,7 +5173,7 @@ Mac os
     打开 Python 官方网站（https://www.python.org/downloads/mac-osx/）。
   
   
-    在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常，...
+    在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常...
                 </p>
               </div>
             </div>
@@ -5227,11 +5255,11 @@ Mac os
 
   
     <a
-      href="/posts/auto_shell/"
+      href="/posts/1-django-base/"
       class="btn btn-outline-primary"
       prompt="Newer"
     >
-      <p>自动化脚本</p>
+      <p>Django Base</p>
     </a>
   
 </div>
@@ -5572,130 +5600,6 @@ Mac os
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5705,230 +5609,6 @@ Mac os
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -6273,26 +5953,6 @@ Mac os
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -6342,6 +6002,95 @@ Mac os
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -6816,6 +6565,18 @@ Mac os
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -6862,6 +6623,283 @@ Mac os
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -7226,10 +7264,10 @@ Mac os
         <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>

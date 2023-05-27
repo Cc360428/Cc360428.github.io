@@ -711,7 +711,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1673 words"
+  title="1677 words"
 >
   <em>9 min</em> read</span>
 
@@ -725,7 +725,9 @@
   <h3 id="list"><span class="me-2">list</span><a href="#list" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>列表（List）是 Python 中最常用的数据结构之一，它可以存储多个元素，并且允许对其中的元素进行添加、删除、修改和排序等操作。列表用方括号 <code class="language-plaintext highlighter-rouge">[]</code> 表示，每个元素用逗号 <code class="language-plaintext highlighter-rouge">,</code> 分隔。</p>
+  <p>列表（List）是 Python
+中最常用的数据结构之一，它可以存储多个元素，并且允许对其中的元素进行添加、删除、修改和排序等操作。列表用方括号 <code class="language-plaintext highlighter-rouge">[]</code>
+表示，每个元素用逗号 <code class="language-plaintext highlighter-rouge">,</code> 分隔。</p>
 </blockquote>
 
 <ul>
@@ -739,7 +741,8 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>可以通过索引值来访问列表中的元素。索引值从0开始，表示第一个元素，依次类推。例如，要访问上面列表中的第三个元素（即数字 <code class="language-plaintext highlighter-rouge">3</code>），可以使用以下代码：</li>
+  <li>可以通过索引值来访问列表中的元素。索引值从0开始，表示第一个元素，依次类推。例如，要访问上面列表中的第三个元素（即数字 <code class="language-plaintext highlighter-rouge">3</code>
+），可以使用以下代码：</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
@@ -749,7 +752,8 @@
 </span></pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>还可以使用切片（slice）来访问列表中的一部分元素。切片可以理解为提取列表中的一个子集，其语法为 <code class="language-plaintext highlighter-rouge">[start:stop:step]</code>，其中 <code class="language-plaintext highlighter-rouge">start</code> 表示起始位置，<code class="language-plaintext highlighter-rouge">stop</code> 表示结束位置（不包含该位置的元素），<code class="language-plaintext highlighter-rouge">step</code> 表示步长（默认为1）。例如，要提取上面列表中的前三个元素，可以使用以下代码：</li>
+  <li>还可以使用切片（slice）来访问列表中的一部分元素。切片可以理解为提取列表中的一个子集，其语法为 <code class="language-plaintext highlighter-rouge">[start:stop:step]</code>
+，其中 <code class="language-plaintext highlighter-rouge">start</code> 表示起始位置，<code class="language-plaintext highlighter-rouge">stop</code> 表示结束位置（不包含该位置的元素），<code class="language-plaintext highlighter-rouge">step</code> 表示步长（默认为1）。例如，要提取上面列表中的前三个元素，可以使用以下代码：</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
@@ -797,11 +801,13 @@
 <h3 id="stack"><span class="me-2">stack</span><a href="#stack" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>堆栈是一种常见的数据结构，它可以用来存储一组元素，其中最后加入的元素最先被取出。也就是说，堆栈遵循“后进先出”的原则（Last In First Out, LIFO）。在堆栈中，只允许在顶部进行插入和删除操作，因此堆栈也被称为“栈”（Stack）。</p>
+  <p>堆栈是一种常见的数据结构，它可以用来存储一组元素，其中最后加入的元素最先被取出。也就是说，堆栈遵循“后进先出”的原则（Last In
+First Out, LIFO）。在堆栈中，只允许在顶部进行插入和删除操作，因此堆栈也被称为“栈”（Stack）。</p>
 </blockquote>
 
 <ul>
-  <li>Python 中可以使用列表来实现堆栈。具体来说，可以使用 <code class="language-plaintext highlighter-rouge">append()</code> 方法向列表末尾添加一个元素，使用 <code class="language-plaintext highlighter-rouge">pop()</code> 方法从列表末尾移除一个元素。例如，以下代码演示了如何使用列表实现一个简单的堆栈：</li>
+  <li>Python 中可以使用列表来实现堆栈。具体来说，可以使用 <code class="language-plaintext highlighter-rouge">append()</code> 方法向列表末尾添加一个元素，使用 <code class="language-plaintext highlighter-rouge">pop()</code>
+方法从列表末尾移除一个元素。例如，以下代码演示了如何使用列表实现一个简单的堆栈：</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
@@ -831,7 +837,9 @@
 </span></pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
-  <p>在上面的代码中，我们首先创建了一个空列表 <code class="language-plaintext highlighter-rouge">stack</code>，然后使用 <code class="language-plaintext highlighter-rouge">append()</code> 方法向栈中依次添加元素 <code class="language-plaintext highlighter-rouge">1</code>、<code class="language-plaintext highlighter-rouge">2</code> 和 <code class="language-plaintext highlighter-rouge">3</code>。接着，我们使用 <code class="language-plaintext highlighter-rouge">pop()</code> 方法从栈中依次取出元素，并分别输出它们的值。由于堆栈遵循“后进先出”的原则，因此最后加入的元素 <code class="language-plaintext highlighter-rouge">3</code> 最先被取出，其次是 <code class="language-plaintext highlighter-rouge">2</code> 和 <code class="language-plaintext highlighter-rouge">1</code>。</p>
+  <p>在上面的代码中，我们首先创建了一个空列表 <code class="language-plaintext highlighter-rouge">stack</code>，然后使用 <code class="language-plaintext highlighter-rouge">append()</code> 方法向栈中依次添加元素 <code class="language-plaintext highlighter-rouge">1</code>、<code class="language-plaintext highlighter-rouge">2</code> 和 <code class="language-plaintext highlighter-rouge">3</code>
+。接着，我们使用 <code class="language-plaintext highlighter-rouge">pop()</code> 方法从栈中依次取出元素，并分别输出它们的值。由于堆栈遵循“后进先出”的原则，因此最后加入的元素 <code class="language-plaintext highlighter-rouge">3</code>
+最先被取出，其次是 <code class="language-plaintext highlighter-rouge">2</code> 和 <code class="language-plaintext highlighter-rouge">1</code>。</p>
 </blockquote>
 
 <ul>
@@ -867,17 +875,22 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
-  <p>在上面的代码中，我们首先创建了一个空列表 <code class="language-plaintext highlighter-rouge">stack</code>，然后使用 <code class="language-plaintext highlighter-rouge">if not stack</code> 判断栈是否为空。由于栈为空，因此输出一条提示信息。接着，我们使用 <code class="language-plaintext highlighter-rouge">try...except...else...</code> 结构来尝试从空栈中弹出元素。由于栈已经为空，因此将会引发 <code class="language-plaintext highlighter-rouge">IndexError</code> 异常，并输出一条提示信息。</p>
+  <p>在上面的代码中，我们首先创建了一个空列表 <code class="language-plaintext highlighter-rouge">stack</code>，然后使用 <code class="language-plaintext highlighter-rouge">if not stack</code>
+判断栈是否为空。由于栈为空，因此输出一条提示信息。接着，我们使用 <code class="language-plaintext highlighter-rouge">try...except...else...</code>
+结构来尝试从空栈中弹出元素。由于栈已经为空，因此将会引发 <code class="language-plaintext highlighter-rouge">IndexError</code> 异常，并输出一条提示信息。</p>
 </blockquote>
 
 <h3 id="队列"><span class="me-2">队列</span><a href="#队列" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>队列是一种常见的数据结构，它可以用来存储一组元素，并且保证最先加入的元素最先被取出。也就是说，队列遵循“先进先出”的原则（First In First Out, FIFO）。在队列中，只允许在队尾进行插入操作，在队头进行删除操作，因此队列也被称为“先进先出队列”（First-In-First-Out Queue，FIFO Queue）。</p>
+  <p>队列是一种常见的数据结构，它可以用来存储一组元素，并且保证最先加入的元素最先被取出。也就是说，队列遵循“先进先出”的原则（First
+In First Out, FIFO）。在队列中，只允许在队尾进行插入操作，在队头进行删除操作，因此队列也被称为“先进先出队列”（First-In-First-Out
+Queue，FIFO Queue）。</p>
 </blockquote>
 
 <ul>
-  <li>Python 中可以使用列表来实现队列。具体来说，可以使用 <code class="language-plaintext highlighter-rouge">append()</code> 方法向列表末尾添加一个元素，使用 <code class="language-plaintext highlighter-rouge">pop()</code> 方法从列表头部移除一个元素。例如，以下代码演示了如何使用列表实现一个简单的队列：</li>
+  <li>Python 中可以使用列表来实现队列。具体来说，可以使用 <code class="language-plaintext highlighter-rouge">append()</code> 方法向列表末尾添加一个元素，使用 <code class="language-plaintext highlighter-rouge">pop()</code>
+方法从列表头部移除一个元素。例如，以下代码演示了如何使用列表实现一个简单的队列：</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
@@ -907,7 +920,10 @@
 </span></pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
-  <p>在上面的代码中，我们首先创建了一个空列表 <code class="language-plaintext highlighter-rouge">queue</code>，然后使用 <code class="language-plaintext highlighter-rouge">append()</code> 方法向队列中依次添加元素 <code class="language-plaintext highlighter-rouge">1</code>、<code class="language-plaintext highlighter-rouge">2</code> 和 <code class="language-plaintext highlighter-rouge">3</code>。接着，我们使用 <code class="language-plaintext highlighter-rouge">pop(0)</code> 方法从队列中依次取出元素，并分别输出它们的值。由于队列遵循“先进先出”的原则，因此最先加入的元素 <code class="language-plaintext highlighter-rouge">1</code> 最先被取出，其次是 <code class="language-plaintext highlighter-rouge">2</code> 和 <code class="language-plaintext highlighter-rouge">3</code>。</p>
+  <p>在上面的代码中，我们首先创建了一个空列表 <code class="language-plaintext highlighter-rouge">queue</code>，然后使用 <code class="language-plaintext highlighter-rouge">append()</code> 方法向队列中依次添加元素 <code class="language-plaintext highlighter-rouge">1</code>、<code class="language-plaintext highlighter-rouge">2</code> 和 <code class="language-plaintext highlighter-rouge">3</code>
+。接着，我们使用 <code class="language-plaintext highlighter-rouge">pop(0)</code>
+方法从队列中依次取出元素，并分别输出它们的值。由于队列遵循“先进先出”的原则，因此最先加入的元素 <code class="language-plaintext highlighter-rouge">1</code>
+最先被取出，其次是 <code class="language-plaintext highlighter-rouge">2</code> 和 <code class="language-plaintext highlighter-rouge">3</code>。</p>
 </blockquote>
 
 <ul>
@@ -943,7 +959,9 @@
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
-  <p>在上面的代码中，我们首先创建了一个空列表 <code class="language-plaintext highlighter-rouge">queue</code>，然后使用 <code class="language-plaintext highlighter-rouge">if not queue</code> 判断队列是否为空。由于队列为空，因此输出一条提示信息。接着，我们使用 <code class="language-plaintext highlighter-rouge">try...except...else...</code> 结构来尝试从空队列中弹出元素。由于队列已经为空，因此将会引发 <code class="language-plaintext highlighter-rouge">IndexError</code> 异常，并输出一条提示信息。</p>
+  <p>在上面的代码中，我们首先创建了一个空列表 <code class="language-plaintext highlighter-rouge">queue</code>，然后使用 <code class="language-plaintext highlighter-rouge">if not queue</code>
+判断队列是否为空。由于队列为空，因此输出一条提示信息。接着，我们使用 <code class="language-plaintext highlighter-rouge">try...except...else...</code>
+结构来尝试从空队列中弹出元素。由于队列已经为空，因此将会引发 <code class="language-plaintext highlighter-rouge">IndexError</code> 异常，并输出一条提示信息。</p>
 </blockquote>
 
 </div>
@@ -1452,130 +1470,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1585,230 +1479,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2153,26 +1823,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2222,6 +1872,95 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2696,6 +2435,18 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2742,6 +2493,283 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3106,10 +3134,10 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
@@ -3167,6 +3195,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -5217,6 +5257,7 @@
 
 
 Mac os
+
 方法一
 
 
@@ -5224,7 +5265,7 @@ Mac os
     打开 Python 官方网站（https://www.python.org/downloads/mac-osx/）。
   
   
-    在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常，...
+    在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常...
                 </p>
               </div>
             </div>
@@ -5651,130 +5692,6 @@ Mac os
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5784,230 +5701,6 @@ Mac os
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -6352,26 +6045,6 @@ Mac os
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -6421,6 +6094,95 @@ Mac os
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -6895,6 +6657,18 @@ Mac os
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -6941,6 +6715,283 @@ Mac os
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -7305,10 +7356,10 @@ Mac os
         <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>

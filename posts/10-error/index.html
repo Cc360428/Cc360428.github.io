@@ -45,8 +45,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Python Error" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="常见错误 语法错误（SyntaxError）：指代码中存在语法问题，如缺少冒号、括号不匹配等。" />
-<meta property="og:description" content="常见错误 语法错误（SyntaxError）：指代码中存在语法问题，如缺少冒号、括号不匹配等。" />
+<meta name="description" content="常见错误" />
+<meta property="og:description" content="常见错误" />
 <link rel="canonical" href="https://cc360428.github.io//posts/10-error/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/10-error/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -56,7 +56,7 @@
 <meta property="twitter:title" content="Python Error" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-24T10:00:15+08:00","datePublished":"2022-05-24T10:00:15+08:00","description":"常见错误 语法错误（SyntaxError）：指代码中存在语法问题，如缺少冒号、括号不匹配等。","headline":"Python Error","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/10-error/"},"url":"https://cc360428.github.io//posts/10-error/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-24T10:00:15+08:00","datePublished":"2022-05-24T10:00:15+08:00","description":"常见错误","headline":"Python Error","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/10-error/"},"url":"https://cc360428.github.io//posts/10-error/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -699,6 +699,7 @@
 
 <div class="post-content">
   <h3 id="常见错误"><span class="me-2"><a href="https://docs.python.org/zh-cn/3/tutorial/errors.html#">常见错误</a></span><a href="#常见错误" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <ol>
   <li>
     <p>语法错误（SyntaxError）：指代码中存在语法问题，如缺少冒号、括号不匹配等。</p>
@@ -726,7 +727,8 @@
 
 <ul>
   <li>
-    <p>在 Python 中，异常处理机制使用<code class="language-plaintext highlighter-rouge">try-except</code>语句来实现。<code class="language-plaintext highlighter-rouge">try</code>块中包含可能会引发异常的代码，<code class="language-plaintext highlighter-rouge">except</code>块中处理相应的异常，并在需要时执行一些操作。例如：</p>
+    <p>在 Python 中，异常处理机制使用<code class="language-plaintext highlighter-rouge">try-except</code>语句来实现。<code class="language-plaintext highlighter-rouge">try</code>块中包含可能会引发异常的代码，<code class="language-plaintext highlighter-rouge">except</code>
+块中处理相应的异常，并在需要时执行一些操作。例如：</p>
 
     <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -763,11 +765,15 @@
 </ul>
 
 <blockquote>
-  <p>在上述代码中，我们使用<code class="language-plaintext highlighter-rouge">try</code>语句尝试从用户输入中获取一个整数，然后计算 10 除以该整数。如果用户输入的不是整数或者除数为零，则会引发相应的异常并被<code class="language-plaintext highlighter-rouge">except</code>语句捕获。如果没有发生任何异常，则会执行<code class="language-plaintext highlighter-rouge">else</code>语句中的代码。无论是否发生了异常，<code class="language-plaintext highlighter-rouge">finally</code>语句中的代码都会被执行。</p>
+  <p>在上述代码中，我们使用<code class="language-plaintext highlighter-rouge">try</code>语句尝试从用户输入中获取一个整数，然后计算 10
+除以该整数。如果用户输入的不是整数或者除数为零，则会引发相应的异常并被<code class="language-plaintext highlighter-rouge">except</code>
+语句捕获。如果没有发生任何异常，则会执行<code class="language-plaintext highlighter-rouge">else</code>
+语句中的代码。无论是否发生了异常，<code class="language-plaintext highlighter-rouge">finally</code>语句中的代码都会被执行。</p>
 </blockquote>
 
 <blockquote>
-  <p>需要注意的是，在处理异常时，可以使用<code class="language-plaintext highlighter-rouge">as</code>关键字将异常对象赋值给一个变量，这样可以方便地访问异常的相关信息。同时，还可以使用<code class="language-plaintext highlighter-rouge">raise</code>语句手动引发异常，以便更好地控制程序的流程。</p>
+  <p>需要注意的是，在处理异常时，可以使用<code class="language-plaintext highlighter-rouge">as</code>
+关键字将异常对象赋值给一个变量，这样可以方便地访问异常的相关信息。同时，还可以使用<code class="language-plaintext highlighter-rouge">raise</code>语句手动引发异常，以便更好地控制程序的流程。</p>
 </blockquote>
 
 </div>
@@ -1276,130 +1282,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1409,230 +1291,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -1977,26 +1635,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2046,6 +1684,95 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2520,6 +2247,18 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2566,6 +2305,283 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2930,10 +2946,10 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
@@ -2991,6 +3007,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -5041,6 +5069,7 @@
 
 
 Mac os
+
 方法一
 
 
@@ -5048,7 +5077,7 @@ Mac os
     打开 Python 官方网站（https://www.python.org/downloads/mac-osx/）。
   
   
-    在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常，...
+    在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常...
                 </p>
               </div>
             </div>
@@ -5475,130 +5504,6 @@ Mac os
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5608,230 +5513,6 @@ Mac os
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -6176,26 +5857,6 @@ Mac os
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -6245,6 +5906,95 @@ Mac os
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -6719,6 +6469,18 @@ Mac os
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -6765,6 +6527,283 @@ Mac os
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -7129,10 +7168,10 @@ Mac os
         <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
