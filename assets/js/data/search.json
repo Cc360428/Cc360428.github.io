@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Server",
+    "url": "/posts/server/",
+    "categories": "Dev, Utils",
+    "tags": "Dev, Servers",
+    "date": "2023-05-27 11:32:25 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "程序员必备  服务端必备技术和工具编程语言      Java：Java 是应用最为广泛的服务端编程语言之一，它在企业级应用开发领域有广泛的应用。        Python：Python 具有简单易学、高效性和可扩展性等优点，在数据处理、机器学习等领域也非常流行。        Golang：Golang 是谷歌公司开发的现代编程语言，具有高并发性、高效性、易于编写和维护等优点，适合构建大...",
+    "content": "程序员必备  服务端必备技术和工具编程语言      Java：Java 是应用最为广泛的服务端编程语言之一，它在企业级应用开发领域有广泛的应用。        Python：Python 具有简单易学、高效性和可扩展性等优点，在数据处理、机器学习等领域也非常流行。        Golang：Golang 是谷歌公司开发的现代编程语言，具有高并发性、高效性、易于编写和维护等优点，适合构建大型分布式系统。        JavaScript：JavaScript 是 Web 前端开发中不可缺少的语言，同时也可以用于编写服务端应用程序。Node.js 提供了一个服务器环境，使得 JavaScript 也可以被用来开发服务端程序。        C++：C++ 是一门强类型的编程语言，被广泛应用于高性能计算、游戏开发、操作系统、数据库等领域。        Rust：Rust 是一门安全而生的语言  Web框架      Java：Java 开发中最常用的 Web 框架是 Spring。其他常用的框架还包括 Struts、Hibernate、MyBatis 等。        Python：Python 中常用的 Web 框架有 Django、Flask、Tornado、Pyramid 等。        Golang：Golang 中的 Web 框架也很多，常用的有 Gin、Echo、Beego、Martini 等。        JavaScript：JavaScript 作为一门跨平台的语言，被广泛应用于 Web 前后端开发。Node.js 支持的 Web 框架主要有 Express、Koa、Hapi 等。        Ruby：Ruby 开发中最常用的 Web 框架是 Ruby on Rails，它提供了一套完整的 MVC 架构，非常适合快速开发 Web 应用程序。  数据库      关系型数据库：关系型数据库是最常见的存储数据的方式，常用的关系型数据库包括 MySQL、Oracle、PostgreSQL、Microsoft SQL Server 等。        NoSQL 数据库：NoSQL 数据库适合存储非结构化数据和大规模数据。常用的 NoSQL 数据库包括 MongoDB、Cassandra、Redis、Elasticsearch 等。        NewSQL 数据库：NewSQL 数据库是传统关系型数据库和分布式 NoSQL 数据库的混合体，旨在提供更好的可扩展性和高可用性。常用的 NewSQL 数据库有 CockroachDB、TiDB 等。        图形数据库：图形数据库适用于处理复杂的关系网络数据，通常使用基于图论的算法进行查询和存储。常用的图形数据库包括 Neo4j、ArangoDB 等。        时间序列数据库：时间序列数据库适用于存储时间相关的数据，如物联网设备数据、日志数据等。常用的时间序列数据库包括 InfluxDB、OpenTSDB 等。  缓存      Redis：Redis 是一个基于内存的数据存储系统，可以用作缓存、消息队列和持久化存储等。它支持多种数据结构，如字符串、列表、哈希表等，并提供了丰富的操作命令。        Memcached：Memcached 是一个高性能的分布式内存缓存系统，适用于高并发读取、低并发写入的场景。它将数据存储在内存中，支持多线程操作，可以快速地存储和获取数据。        Guava Cache：Guava Cache 是 Google 的一个开源缓存库，提供了本地内存缓存功能，适用于小规模的应用程序。它支持自定义过期策略、最大缓存数量等参数配置。        Ehcache：Ehcache 是一个广泛使用的 Java 缓存框架，可以用于本地缓存或者分布式缓存，支持多种缓存策略，如 LRU、FIFO 等。        Caffeine：Caffeine 是一个 Java 缓存库，具有高性能、低延迟、简单易用等特点。它支持异步加载、过期时间设置、容量限制等功能。  消息队列      RabbitMQ：RabbitMQ 是一个开源的 AMQP（高级消息队列协议）实现，支持多种消息传输模式，如点对点、发布/订阅和请求/响应等。它具有高可靠性、高可扩展性和丰富的插件机制。        Apache Kafka：Apache Kafka 是一个高吞吐量、分布式的消息系统，适合处理大规模的日志数据和流数据。它具有低延迟、高可靠性、可伸缩性和多语言支持等特点。        ActiveMQ：ActiveMQ 是一个基于 JMS（Java 消息服务）协议的开源消息中间件。它支持多种传输协议，如 TCP、UDP、HTTP 和 WebSockets 等，并提供了多种语言客户端库。        RocketMQ：RocketMQ 是阿里巴巴公司自主研发的开源分布式消息中间件，具有高可用、高性能、高可扩展性等特点，支持多种消息协议和消息存储方式。        NSQ：NSQ 是由 Bitly 公司开发的分布式实时消息平台，具有高可靠性、易于部署和维护等特点，适合处理实时数据流。    除此之外，还有许多其他的消息队列方案，如 ZeroMQ、Redis 消息队列等服务器      Apache HTTP Server：Apache HTTP Server 是一个常用的开源 Web 服务器软件，可运行于多个操作系统平台上，如 Windows、Linux、Unix 等。它支持多种语言和通信协议，并提供了丰富的插件和模块。        Nginx：Nginx 是一个轻量级的高性能 Web 服务器和反向代理服务器，适用于处理静态文件、负载均衡、反向代理等任务。它具有低内存消耗、高并发连接等优点。        Tomcat：Tomcat 是一个常用的 Java Web 应用服务器，可以托管 Java Servlet 和 JSP 应用程序。它简单易用、开源免费，并且与 Spring 等框架集成良好。        Jetty：Jetty 是一个轻量级的 Java Web 服务器，具有高效、灵活、易于嵌入的特点。它支持多种 Web 标准和协议，并提供了多种 API 和插件。        Node.js：Node.js 不仅是一种编程语言，也是一种 Web 服务器环境，用于运行 JavaScript 代码。它具有高性能、异步 I/O、事件驱动等优点，适合构建高并发的网络应用程序。    此外，还有许多其他的服务器软件，如 IIS、Caddy、Lighttpd 等容器化技术      Docker：Docker 是一种轻量级的容器化技术，可以将应用程序和依赖项打包成一个独立的容器，实现跨平台的部署。它具有快速启动、高效利用系统资源等优点，支持自动化构建、发布和运行应用程序。        Kubernetes：Kubernetes 是一种开源的容器编排引擎，用于管理容器化的应用程序和服务。它提供了多种功能，如自动负载均衡、自动扩缩容、滚动升级和回滚等。        Apache Mesos：Apache Mesos 是一种分布式系统内核，用于在集群中管理资源和调度任务。它支持多种框架和任务类型，如 Hadoop、Spark、Docker 等，并提供了多种 API 和工具。        LXD：LXD 是一个轻量级的系统容器技术，适用于高性能计算、虚拟化、云计算等领域。它提供了全系统虚拟化和模拟功能，可实现完整的操作系统镜像和容器的创建和管理。        OpenShift：OpenShift 是一种基于 Kubernetes 的企业级容器化平台，提供了一整套应用程序、服务和解决方案。它支持多语言和多框架的应用程序开发、测试和部署，并提供了丰富的自动化工具。    除此之外，还有许多其他的容器化技术，如 Docker Compose、Docker Swarm、Mesosphere DC/OS 等自动化部署工具      Ansible：Ansible 是一种轻量级的自动化配置管理工具，可以用于配置服务器、应用程序和网络设备等。它支持多种操作系统和云平台，并使用 YAML 格式描述配置信息。        Jenkins：Jenkins 是一个开源的自动化构建和测试工具，可实现自动化编译、测试和部署等任务。它支持多种插件和扩展，如 Git、Docker、Kubernetes 等。        Puppet：Puppet 是一个流行的自动化配置管理工具，可用于管理多个服务器并保持一致性。它支持多种操作系统和云平台，并提供了丰富的模块和资源。        Chef：Chef 是另一种广泛使用的自动化配置管理工具，可用于自动化部署应用程序和管理基础架构。它支持多种操作系统和云平台，并提供了丰富的模块和资源。        SaltStack：SaltStack 是一种快速、灵活和可扩展的自动化配置管理工具，可用于远程执行命令、配置服务器和管理基础架构。它支持多种操作系统和云平台，并提供了分布式部署和多种通信协议。  日志收集工具      ELK Stack：ELK Stack 是一个由 Elastic 公司开发的日志管理平台，包括 Elasticsearch、Logstash 和 Kibana 三个组件。它可以采集、存储和分析各种类型的日志数据，并提供了丰富的查询和可视化功能。        Graylog：Graylog 是一种开源的日志管理平台，类似于 ELK Stack，但更加易于安装和配置。它支持多种输入来源、多种输出方式，以及强大的搜索和过滤功能。        Fluentd：Fluentd 是一种轻量级的日志收集和转发工具，支持多种日志格式和多种输出方式。它可以与 ELK Stack 或其他分布式系统集成，并提供了丰富的插件和扩展。        Splunk：Splunk 是一种商业化的日志管理和分析软件，可用于监控、搜索和分析各种类型的数据。它支持多种数据源和数据格式，并提供了丰富的查询和可视化功能。        Papertrail：Papertrail 是一种云端日志管理服务，可用于实时日志查看、搜索和过滤等任务。它支持多种日志来源和多种输出方式，并提供了通知和警报功能。  监控系统      Nagios：Nagios 是一种开源的系统和网络监控工具，可以用于监控主机、服务、网络设备等。它支持多种通信协议和插件，并提供了丰富的报警和通知功能。        Zabbix：Zabbix 是一种流行的企业级监控系统，可用于监控服务器性能、网络流量、应用程序状态等。它支持多种数据源和数据格式，并提供了图形化的界面和可定制的仪表板。        Prometheus：Prometheus 是一个开源的时序数据库和监控系统，适用于容器化环境和云原生应用程序。它使用 HTTP 协议采集指标数据，并提供了丰富的查询和告警规则。        Grafana：Grafana 是一种流行的开源数据可视化平台，可以与其他监控系统集成。它支持多种数据源和数据格式，并提供了可定制的仪表板和报表。        Sensu：Sensu 是一种轻量级的分布式监控和告警系统，可用于检测服务和基础设施故障。它提供了多种插件和扩展，可用于监控不同类型的应用程序和服务。  "
+  },
+  
+  {
     "title": "进制 & 转换",
     "url": "/posts/binary/",
     "categories": "Language, C",
@@ -239,8 +256,59 @@
   },
   
   {
+    "title": "Python Other",
+    "url": "/posts/13-other/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:18 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Other多线程  Python多线程是一种并发编程的技术，在同一时间内执行多个线程，从而提高程序的效率和响应速度。在Python中，可以使用threading模块来创建和管理线程。      下面是一个简单的例子：    import threading  def print_numbers():    for i in range(1, 11):        print(i)  def...",
+    "content": "Other多线程  Python多线程是一种并发编程的技术，在同一时间内执行多个线程，从而提高程序的效率和响应速度。在Python中，可以使用threading模块来创建和管理线程。      下面是一个简单的例子：    import threading  def print_numbers():    for i in range(1, 11):        print(i)  def print_letters():    for i in range(ord('a'), ord('k')):        print(chr(i))  t1 = threading.Thread(target=print_numbers)t2 = threading.Thread(target=print_letters)  t1.start()t2.start()  t1.join()t2.join()            该程序创建了两个线程t1和t2，分别执行print_numbers函数和print_letters函数。通过调用start()方法启动线程，join()方法等待线程结束。在上述例子中，t1和t2会同时执行，因此输出结果可能是交替出现的数字和字母。        需要注意的是，在多线程编程中，由于多个线程共享相同的资源（如全局变量或文件），因此可能会出现竞争条件和死锁等问题。因此，在编写多线程程序时，需要特别小心，确保线程安全。        另外，Python还提供了multiprocessing模块，可以将任务分配给多个进程并行处理，更适合CPU密集型任务。与多线程不同，每个进程拥有独立的内存空间，不会共享资源。  协程  Python 协程是一种轻量级的并发编程方式，可以通过使用 async 和 await 关键字来实现。协程是可以暂停和恢复执行的函数，可以让我们更方便地进行异步编程。      下面是一个简单的 Python 协程示例：    import asyncio  async def foo():    print('Start foo')    await asyncio.sleep(1)    print('Finish foo')  async def bar():    print('Start bar')    await asyncio.sleep(2)    print('Finish bar')  async def main():    # 并发执行 foo 和 bar 协程    tasks = [asyncio.create_task(foo()), asyncio.create_task(bar())]    await asyncio.gather(*tasks)  if __name__ == '__main__':    asyncio.run(main())            这个示例定义了三个协程函数 foo、bar 和 main，其中 foo 和 bar 分别打印一些信息并等待一段时间，main 函数则同时调用 foo 和 bar 协程，并使用 asyncio.gather() 方法并发运行这两个协程。最终输出结果为：    Start fooStart barFinish fooFinish bar        这说明在 3 秒钟内，同时执行了 foo 和 bar 协程，并且在各自的等待时间结束后，按顺序输出了相应的结果。"
+  },
+  
+  {
+    "title": "Python Stdlib",
+    "url": "/posts/12-stdlib/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:17 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "标准库  os：提供了与操作系统交互的函数，例如文件和目录操作。  sys：提供了访问Python解释器及其环境的变量和函数。  math：提供了数学计算函数，例如三角函数、指数函数等。  random：提供了生成随机数的函数。  datetime：提供了处理日期和时间的函数和类。  re：提供了正则表达式功能，用于字符串匹配和处理。  json：提供了处理JSON数据的函数和类。  csv...",
+    "content": "标准库  os：提供了与操作系统交互的函数，例如文件和目录操作。  sys：提供了访问Python解释器及其环境的变量和函数。  math：提供了数学计算函数，例如三角函数、指数函数等。  random：提供了生成随机数的函数。  datetime：提供了处理日期和时间的函数和类。  re：提供了正则表达式功能，用于字符串匹配和处理。  json：提供了处理JSON数据的函数和类。  csv：提供了读写CSV格式文件的函数和类。  urllib：提供了与HTTP协议相关的函数和类，用于发送HTTP请求和接收响应。  socket：提供了网络编程所需的基本功能，例如创建套接字、发送和接收数据等。  除此之外，还有许多其他模块，例如collections、itertools、functools、logging等，它们提供了各种实用功能和工具。使用Python标准库可以大幅度提高编程效率，并且在大多数情况下，它们提供的功能已经足够满足常见需求。1. os模块  import os    # 获取当前工作目录  cur_dir = os.getcwd()  print(cur_dir)    # 创建目录  new_dir = os.path.join(cur_dir, 'new_folder')  os.mkdir(new_dir)    # 列出目录内容  content = os.listdir(cur_dir)  print(content)  这个例子演示了如何使用os模块进行文件和目录操作。通过getcwd()函数可以获取当前工作目录，使用join()函数可以拼接路径，使用mkdir()函数可以创建新目录，使用listdir()函数可以列出目录内容。2. sys模块  import sys    # 打印命令行参数  args = sys.argv  for arg in args:      print(arg)    # 获取Python解释器信息  info = sys.version_info  print(info)  这个例子演示了如何使用sys模块访问Python解释器及其环境的变量和函数。通过argv变量可以获取命令行参数，通过version_info变量可以获取Python解释器版本信息。3. math模块  import math    # 计算正弦值  sin_val = math.sin(math.pi/4)  print(sin_val)    # 计算自然指数  exp_val = math.exp(2)  print(exp_val)    # 向上取整  ceil_val = math.ceil(4.3)  print(ceil_val)  这个例子演示了如何使用math模块进行数学计算。通过sin()函数可以计算给定角度的正弦值，使用exp()函数可以计算自然指数，使用ceil()函数可以将浮点数向上取整。4. random模块import random# 生成随机整数rand_int = random.randint(1, 10)print(rand_int)# 从列表中选择随机元素my_list = ['apple', 'banana', 'orange']rand_item = random.choice(my_list)print(rand_item)  这个例子演示了如何使用random模块生成随机数。通过randint()函数可以生成指定范围内的随机整数，使用choice()函数可以从列表中随机选择一个元素。5. datetime模块import datetime# 获取当前日期和时间now = datetime.datetime.now()print(now)# 格式化时间字符串str_time = now.strftime(\"%Y-%m-%d %H:%M:%S\")print(str_time)  这个例子演示了如何使用datetime模块处理日期和时间。通过now()函数可以获取当前日期和时间，使用strftime()函数可以将日期和时间格式化为指定的字符串格式。6. re模块import re# 查找匹配的字符串pattern = r'hello\\s(\\w+)'text = 'hello world'match_obj = re.search(pattern, text)if match_obj:    print(match_obj.group(1))  这个例子演示了如何使用re模块进行正则表达式匹配。通过search()函数可以在文本中查找与指定模式匹配的字符串，并返回一个匹配对象，使用group()方法可以获取匹配到的字符串。7. json模块import json# 将Python对象转换为JSON字符串data = {'name': 'Alice', 'age': 25}json_str = json.dumps(data)print(json_str)# 将JSON字符串转换为Python对象json_data = '{\"name\": \"Bob\", \"age\": 30}'py_obj = json.loads(json_data)print(py_obj)  这个例子演示了如何使用json模块处理JSON数据。通过dumps()函数可以将Python对象转换为JSON字符串，使用loads()函数可以将JSON字符串转换为Python对象。8. csv模块import csv# 写入CSV文件data = [['Name', 'Age'], ['Alice', 25], ['Bob', 30]]with open('people.csv', 'w', newline='') as file:    writer = csv.writer(file)    writer.writerows(data)# 读取CSV文件with open('people.csv', 'r') as file:    reader = csv.reader(file)    for row in reader:        print(row)  这个例子演示了如何使用csv模块进行CSV文件的读写。通过writerows()函数可以将数据写入CSV文件，使用reader()函数可以读取CSV文件，并且返回以每一行作为元素的列表。9. urllib模块import urllib.request# 发送GET请求并获取响应response = urllib.request.urlopen('http://www.baidu.com')html = response.read()print(html)  这个例子演示了如何使用urllib模块发送HTTP请求，并接收响应。使用urlopen()函数可以发送GET请求并获取响应。响应内容是字节类型的数据，可以使用decode()方法将其转换为文本类型的数据。10. socket模块import socket# 创建套接字sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)# 连接服务器server_address = ('localhost', 8888)sock.connect(server_address)# 发送和接收数据message = b'Hello, server!'sock.sendall(message)data = sock.recv(1024)print(data)# 关闭套接字sock.close()  这个例子演示了如何使用socket模块进行网络编程。通过socket()函数可以创建套接字对象，使用connect()函数可以连接到指定地址和端口的服务器，使用sendall()函数可以发送数据，使用recv()函数可以接收数据，最后使用close()函数关闭套接字。完整例子以下是一个包含以上标准库的Python代码片段：import osimport sysimport mathimport randomimport datetimeimport reimport jsonimport csvimport urllib.requestimport socket# 使用标准库函数和方法print(os.listdir('.'))print(sys.version_info)print(math.pi)print(random.randint(1, 10))print(datetime.datetime.now())print(re.findall(r'\\b\\w+\\b', 'Hello, World!'))print(json.dumps({'name': 'Alice', 'age': 25}))data = [['Name', 'Age'], ['Alice', 25], ['Bob', 30]]with open('people.csv', 'w', newline='') as file:    writer = csv.writer(file)    writer.writerows(data)response = urllib.request.urlopen('http://www.baidu.com')html = response.read()print(html)sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)server_address = ('localhost', 8888)sock.connect(server_address)message = b'Hello, server!'sock.sendall(message)data = sock.recv(1024)print(data)sock.close()      这个代码片段演示了如何使用以上标准库。具体地：          os模块：使用listdir()函数列出当前目录下的文件和子目录。      sys模块：使用version_info属性获取Python解释器版本信息。      math模块：使用pi常量获取圆周率。      random模块：使用randint()函数生成指定范围内的随机整数。      datetime模块：使用datetime.now()函数获取当前日期和时间。      re模块：使用findall()函数查找字符串中的单词。      json模块：使用dumps()函数将Python对象转换为JSON格式的字符串。      csv模块：使用writerows()函数将数据写入CSV文件。      urllib.request模块：使用urlopen()函数发送HTTP请求并获取响应。      socket模块：使用套接字对象创建网络连接，发送和接收数据。        最后，这个代码片段的运行结果可以根据具体环境而定。例如，输出当前目录下的文件列表、Python解释器版本信息、圆周率等是固定的；而生成的随机整数、当前日期和时间、从网站获取的HTML内容、服务器返回的数据等则会因为不同的运行环境而不同。"
+  },
+  
+  {
     "title": "Python Class",
-    "url": "/posts/10-class/",
+    "url": "/posts/11-class/",
+    "categories": "Language, Python",
+    "tags": "Server, Python, Python Base",
+    "date": "2022-05-24 10:00:16 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "类在Python中，类是一个用于创建对象的蓝图或模板。它定义了一组属性和方法，这些属性和方法都是由在该类实例化时创建的对象共享的。类可以看作是一种自定义的数据类型，用于封装并组织相关的数据和操作。在Python中，定义一个类需要使用class关键字，其基本语法如下：class ClassName:    # 类变量    class_variable = 0    def __init__(...",
+    "content": "类在Python中，类是一个用于创建对象的蓝图或模板。它定义了一组属性和方法，这些属性和方法都是由在该类实例化时创建的对象共享的。类可以看作是一种自定义的数据类型，用于封装并组织相关的数据和操作。在Python中，定义一个类需要使用class关键字，其基本语法如下：class ClassName:    # 类变量    class_variable = 0    def __init__(self, arg1, arg2):        # 实例变量        self.instance_variable1 = arg1        self.instance_variable2 = arg2    def method1(self):        # 实例方法        pass    @classmethod    def method2(cls):        # 类方法        pass    @staticmethod    def method3():        # 静态方法        pass其中，ClassName是类名，可以按照标识符的规则进行命名。类变量是与类相关联的变量，它被所有该类的实例所共享。实例变量是每个类实例特有的变量，只能由该类实例访问。方法是在类中定义的函数，用于执行某些操作。有三种不同类型的方法：实例方法、类方法和静态方法。  实例方法：这些方法是最常见的方法类型，它们将self作为第一个参数，表示对类实例进行操作。通过实例调用这些方法时，Python会自动传递实例作为第一个参数。  类方法：这些方法使用@classmethod装饰器定义，在方法中第一个参数表示类而不是实例，通常被用来创建工厂函数或在整个类中共享某些属性或方法。  静态方法：这些方法使用@staticmethod装饰器定义，它们与类无关，并且不接收任何特殊的实参。静态方法通常用于执行与类相关但独立于具体类实例的操作。除此之外，Python还支持继承和多态性等面向对象编程的概念，使得类可以更加灵活地组合和复用代码。"
+  },
+  
+  {
+    "title": "Python Error",
+    "url": "/posts/10-error/",
     "categories": "Language, Python",
     "tags": "Server, Python, Python Base",
     "date": "2022-05-24 10:00:15 +0800",
@@ -251,13 +319,13 @@
 
 
     
-    "snippet": "",
-    "content": ""
+    "snippet": "常见错误      语法错误（SyntaxError）：指代码中存在语法问题，如缺少冒号、括号不匹配等。        执行时错误（RuntimeError）：指程序在执行过程中出现了无法预料的问题，如调用未定义的变量或函数、访问不存在的列表元素等。        类型错误（TypeError）：指数据类型不匹配，如将字符串传递给需要数字类型的函数、将列表传递给需要字典类型的函数等。    ...",
+    "content": "常见错误      语法错误（SyntaxError）：指代码中存在语法问题，如缺少冒号、括号不匹配等。        执行时错误（RuntimeError）：指程序在执行过程中出现了无法预料的问题，如调用未定义的变量或函数、访问不存在的列表元素等。        类型错误（TypeError）：指数据类型不匹配，如将字符串传递给需要数字类型的函数、将列表传递给需要字典类型的函数等。        名称错误（NameError）：指尝试访问未定义的变量或函数。        数学错误（ZeroDivisionError）：指除数为零的情况。        文件错误（FileNotFoundError）：指要打开的文件不存在或无法访问。    当程序出现错误或异常时，Python 会在控制台输出相应的错误信息，并且可能会终止程序的执行。为了使程序更加健壮和可靠，我们可以使用异常处理机制来捕获并处理这些错误和异常。      在 Python 中，异常处理机制使用try-except语句来实现。try块中包含可能会引发异常的代码，except块中处理相应的异常，并在需要时执行一些操作。例如：    try:    x = int(input(\"请输入一个整数：\"))    y = 10 / x    print(\"y =\", y)except ValueError:    print(\"您输入的不是整数\")except ZeroDivisionError:    print(\"除数不能为零\")except Exception as e:    print(\"其他错误：\", e)else:    print(\"程序运行成功\")finally:    print(\"程序结束\")        在上述代码中，我们使用try语句尝试从用户输入中获取一个整数，然后计算 10 除以该整数。如果用户输入的不是整数或者除数为零，则会引发相应的异常并被except语句捕获。如果没有发生任何异常，则会执行else语句中的代码。无论是否发生了异常，finally语句中的代码都会被执行。  需要注意的是，在处理异常时，可以使用as关键字将异常对象赋值给一个变量，这样可以方便地访问异常的相关信息。同时，还可以使用raise语句手动引发异常，以便更好地控制程序的流程。"
   },
   
   {
-    "title": "Python Class",
-    "url": "/posts/9-date-strcut/",
+    "title": "Python DataStruct",
+    "url": "/posts/9-data-strcut/",
     "categories": "Language, Python",
     "tags": "Server, Python, Python Base",
     "date": "2022-05-24 10:00:14 +0800",
@@ -286,7 +354,7 @@
 
     
     "snippet": "简介  Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。  在Python中，定义一个函数需要使用def关键字，后面跟着函数名、参数列表和一个冒号。函数体内的代码必须缩进。      以下是一个简单的Python函数示例：    def greet(name):   ...",
-    "content": "简介  Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。  在Python中，定义一个函数需要使用def关键字，后面跟着函数名、参数列表和一个冒号。函数体内的代码必须缩进。      以下是一个简单的Python函数示例：    def greet(name):    print(\"Hello, \" + name + \"!\")  greet(\"John\")        该代码定义了一个名为greet的函数，该函数接受一个参数name，将其与字符串\"Hello, \"和\"!\"连接起来并打印出来。最后一行代码调用这个函数并传递一个名为John的参数。  当你运行这段代码时，它会输出：Hello, John!  除了上面这种简单的函数，Python还支持很多不同类型的函数，包括没有参数的函数、返回值的函数、匿名函数和高阶函数等。定义函数在 Python 中，可以使用 def 关键字定义函数。函数定义语法如下：def function_name(parameters):    \"\"\"函数文档字符串\"\"\"    # 函数体代码    return [expression]  # 可选的返回值其中，function_name 是函数名，parameters 是可选的参数列表，用括号包含，多个参数之间用逗号分隔；函数体代码是函数要执行的操作，可以包含任意数量的语句；return 语句可选，用于指定函数的返回值。例如，下面是一个简单的函数，将两个数相加并返回结果：def add_numbers(a, b):    \"\"\"    将两个数字相加并返回结果    \"\"\"    result = a + b    return result在这个例子中，add_numbers 是函数名，它接受两个参数 a 和 b。函数体代码将它们相加，并将结果存储在变量 result 中。最后，通过 return 语句将结果返回给调用方。函数定义详解  函数名  参数列表  函数体。函数名Python 中的函数名必须遵循标识符命名规则，即由字母、数字和下划线组成，不能以数字开头。建议给函数选用有意义的名字，便于代码的阅读和理解。参数列表函数可以接受零个或多个参数，这些参数传递给函数后，可以在函数内部使用。在 Python 中，参数列表放在括号中，多个参数之间用逗号隔开。例如：def my_func(arg1, arg2, arg3):    # 函数体代码上面的函数定义接受三个参数 arg1、arg2 和 arg3。在 Python 中，参数可以有默认值，这样调用函数时就可以省略对应的参数。例如：def my_func(arg1, arg2=0, arg3='default'):    # 函数体代码在上面的例子中，arg2 有一个默认值为 0，arg3 有一个默认值为 'default'。因此，在调用 my_func 时，可以省略这两个参数。如果不指定 arg2，则它将被设置为 0。如果不指定 arg3，则它将被设置为 'default'。函数体函数体是包含在函数定义中的代码块。函数体通常包含一些操作，用于处理输入参数并生成输出结果。在 Python 中，函数体由缩进的语句组成，这些语句会在函数被调用时执行。def my_func(arg1, arg2):    # 函数体代码    print(f\"arg1={arg1}, arg2={arg2}\")    result = arg1 + arg2    return result在上面的例子中，my_func 接受两个参数 arg1 和 arg2。函数体包含两行代码，第一行使用 print 函数打印参数的值，第二行将 arg1 和 arg2 相加，并将结果返回给调用方。"
+    "content": "简介  Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。  在Python中，定义一个函数需要使用def关键字，后面跟着函数名、参数列表和一个冒号。函数体内的代码必须缩进。      以下是一个简单的Python函数示例：    def greet(name):    print(\"Hello, \" + name + \"!\")  greet(\"John\")        该代码定义了一个名为greet的函数，该函数接受一个参数name，将其与字符串\"Hello, \"和\"!\"连接起来并打印出来。最后一行代码调用这个函数并传递一个名为John的参数。  当你运行这段代码时，它会输出：Hello, John!  除了上面这种简单的函数，Python还支持很多不同类型的函数，包括没有参数的函数、返回值的函数、匿名函数和高阶函数等。定义函数在 Python 中，可以使用 def 关键字定义函数。函数定义语法如下：def function_name(parameters):    \"\"\"函数文档字符串\"\"\"    # 函数体代码    return [expression]  # 可选的返回值其中，function_name 是函数名，parameters 是可选的参数列表，用括号包含，多个参数之间用逗号分隔；函数体代码是函数要执行的操作，可以包含任意数量的语句；return 语句可选，用于指定函数的返回值。例如，下面是一个简单的函数，将两个数相加并返回结果：def add_numbers(a, b):    \"\"\"    将两个数字相加并返回结果    \"\"\"    result = a + b    return result在这个例子中，add_numbers 是函数名，它接受两个参数 a 和 b。函数体代码将它们相加，并将结果存储在变量 result 中。最后，通过 return 语句将结果返回给调用方。函数定义详解  函数名  参数列表  函数体。函数名Python 中的函数名必须遵循标识符命名规则，即由字母、数字和下划线组成，不能以数字开头。建议给函数选用有意义的名字，便于代码的阅读和理解。参数列表函数可以接受零个或多个参数，这些参数传递给函数后，可以在函数内部使用。在 Python 中，参数列表放在括号中，多个参数之间用逗号隔开。例如：def my_func(arg1, arg2, arg3):    # 函数体代码上面的函数定义接受三个参数 arg1、arg2 和 arg3。在 Python 中，参数可以有默认值，这样调用函数时就可以省略对应的参数。例如：def my_func(arg1, arg2=0, arg3='default'):    # 函数体代码在上面的例子中，arg2 有一个默认值为 0，arg3 有一个默认值为 'default'。因此，在调用 my_func 时，可以省略这两个参数。如果不指定 arg2，则它将被设置为 0。如果不指定 arg3，则它将被设置为 'default'。函数体函数体是包含在函数定义中的代码块。函数体通常包含一些操作，用于处理输入参数并生成输出结果。在 Python 中，函数体由缩进的语句组成，这些语句会在函数被调用时执行。def my_func(arg1, arg2):    # 函数体代码    print(f\"arg1={arg1}, arg2={arg2}\")    result = arg1 + arg2    return result在上面的例子中，my_func 接受两个参数 arg1 和 arg2。函数体包含两行代码，第一行使用 print 函数打印参数的值，第二行将 arg1 和 arg2 相加，并将结果返回给调用方。模块      Python 标准库中有很多内置的模块可供使用，例如：          os：提供了访问操作系统功能的接口，如文件操作、进程管理等。      sys：提供了与 Python 解释器及其环境交互的功能，如获取命令行参数、退出程序等。      math：提供了数学运算的函数，如三角函数、指数函数等。      datetime：提供了日期和时间相关的函数操作，如获取当前时间、计算时间差等。            除了标准库外，我们还可以使用第三方库或自己编写的模块来扩展 Python 的功能。导入模块可以使用import语句，例如：    import mathprint(math.sqrt(25))  # 输出 5.0            也可以使用from ... import语句导入模块中的指定函数或变量，例如：    from datetime import datetoday = date.today()print(today)  # 输出格式为 YYYY-MM-DD 的今天的日期            如果想要导入整个模块的所有成员，可以使用from ... import *语句，例如：    from math import *print(sqrt(25))  # 输出 5.0        需要注意的是，当导入模块时，Python 会在指定的路径中查找模块文件。如果模块不存在或不能被找到，则会引发ModuleNotFoundError异常。包  在 Python 中，包是一个目录，其中包含了一组模块和子包。包的主要作用是将相关的模块组织在一起，使得程序设计更加模块化和易于管理。      Python 的标准库中有很多包可供使用，例如：          os：提供了访问操作系统功能的接口，如文件操作、进程管理等。      sys：提供了与 Python 解释器及其环境交互的功能，如获取命令行参数、退出程序等。      math：提供了数学运算的函数，如三角函数、指数函数等。      datetime：提供了日期和时间相关的函数操作，如获取当前时间、计算时间差等。            除了标准库外，我们也可以自己编写包来组织自己的代码。在 Python 中，一个目录要想成为一个包，需要满足以下条件：                  包目录下必须包含一个名为__init__.py的文件，该文件可以为空或者包含一些初始化代码；                    包目录下可以包含若干个模块（.py 文件），这些模块可以相互导入。                    举例来说，假设我们编写了一个名为mypackage的包，其目录结构如下所示：        mypackage/    __init__.py    module1.py    module2.py    submodule/        __init__.py        submodule1.py            其中，mypackage是一个包，包含了module1.py、module2.py和submodule子包。submodule子包中有一个名为submodule1.py的模块。          如果要使用该包中的模块，可以使用import语句，例如：        import mypackage.module1mypackage.module1.foo()  from mypackage.module2 import barbar()  from mypackage.submodule.submodule1 import bazbaz()        需要注意的是，当导入包或模块时，Python 会在指定的路径中查找包或模块所在的目录，并将其添加到sys.path中。如果包或模块不存在或不能被找到，则会引发ModuleNotFoundError异常。"
   },
   
   {
@@ -303,7 +371,7 @@
 
     
     "snippet": "流程控制  if  for  while判断控制结构  Python 中的判断控制结构主要有 if-elif-else 和 ternary operator。if-elif-elseif condition1:    # 当条件 1 满足时执行的代码elif condition2:    # 当条件 1 不满足且条件 2 满足时执行的代码else:    # 当条件 1 和条件 2 都不满足...",
-    "content": "流程控制  if  for  while判断控制结构  Python 中的判断控制结构主要有 if-elif-else 和 ternary operator。if-elif-elseif condition1:    # 当条件 1 满足时执行的代码elif condition2:    # 当条件 1 不满足且条件 2 满足时执行的代码else:    # 当条件 1 和条件 2 都不满足时执行的代码  其中，condition1、condition2 等都是需要判断的条件表达式，可以使用比较运算符、逻辑运算符等来组合成复杂的判断条件。当条件 condition1 满足时，执行对应的代码块；否则继续判断下一个条件 condition2，以此类推，直到找到一个满足条件的代码块或者所有条件都不满足时，执行最后的 else 块。ternary operatorresult = value1 if condition else value2  其中，condition 是需要判断的条件表达式，当条件成立时，返回 value1，否则返回 value2。这种语法结构也称为三目运算符，简单明了，通常用于在一行代码中完成简单的条件判断。循环结构for  for 循环通常用于遍历序列类型（如字符串、列表、元组等）中的元素，语法结构如下：for 变量 in 序列:    # 循环体其中，变量 表示接收到的序列元素，序列 是需要遍历的序列，循环会按顺序依次将序列中的元素赋值给 变量，然后执行循环体中的语句。例如：fruits = [\"apple\", \"banana\", \"cherry\"]for fruit in fruits:    print(fruit)上述代码会输出 apple、banana 和 cherry 三个字符串，分别对应 fruits 列表中的三个元素。while  while 循环会在满足条件时重复执行循环体，直到条件不再成立为止。语法结构如下：while 条件:    # 循环体  其中，条件 是判断条件，如果成立则进入循环体执行；否则结束循环。例如：i = 1while i &lt;= 5:    print(i)    i += 1  上述代码会输出数字 1 到 5，因为当 i 的值小于等于 5 时，满足条件，会不断地执行循环体中的代码，每次输出 i 的值，并将 i 加 1。当 i 大于 5 时，不再满足条件，循环结束。循环中语句break  break语句可以在循环内部立即终止循环，并跳出循环体。for i in range(10):    if i == 5:        break    print(i)continue  continue语句在循环中用于跳过当前迭代，并进入下一次迭代。for i in range(10):    if i % 2 == 0:        continue    print(i)pass  pass语句在Python中是一个空语句，用于表示占位符，不做任何操作。for i in range(10):    if i == 5:        pass    else:        print(i)range() 函数range() 函数是 Python 内置函数之一，它用于创建一个整数列表，常用于 for 循环中。 range() 函数有三个参数：起始值、终止值和步长。      语法如下    range(start, stop[, step])            说明          start：表示数列的起始值，默认为 0。      stop：表示数列的终止值（不包括），必须指定。      step：表示数列的公差，默认为 1。        返回的结果是一个可迭代对象，可以使用 list() 函数将其转换为列表      例子    # 打印 0 到 4 的整数for i in range(5):    print(i)  # 打印 2 到 8 的偶数for i in range(2, 9, 2):    print(i)            输出：      0  1  2  3  4  2  4  6  8      需要注意的是， range() 函数返回的是一个不可变序列，在 Python 2.x 中叫做 xrange()。如果需要修改序列中的元素，可以使用其他数据类型，如列表或数组。match 语法  match 是 Python 3.10 新增的一种模式匹配语法，也被称为结构化匹配。它提供了更加简洁和易于理解的方式来匹配和分解复杂数据结构，例如元组、列表、字典等。  match 的语法如下：match expression:    case pattern_1:        # 处理 pattern_1 的情况    case pattern_2 if condition:        # 处理 pattern_2 和条件成立的情况    case _:        # 处理其他情况其中 expression 表示要进行匹配的表达式，可以是任意类型的值，如数字、字符串、元组、列表等。 pattern 是一种匹配模式，用于匹配 expression 中的值。case 子句用来指定不同的匹配情况，可以指定多个 case 子句，每个子句包含一个 pattern 和对应的处理逻辑。多个子句按照出现顺序进行匹配，匹配成功后执行对应的处理逻辑。如果所有的 case 都没有匹配成功，则会执行 _ 子句中的代码块，类似于 switch-case 语句中的 default 分支。  match 进行模式匹配的例子：def match_example(x):    match x:        case 0:            print(\"x is zero\")        case 1:            print(\"x is one\")        case _ if x &gt; 1:            print(\"x is greater than one\")        case _:            print(\"x is a negative number\")match_example(0)    # 输出 \"x is zero\"match_example(1)    # 输出 \"x is one\"match_example(2)    # 输出 \"x is greater than one\"match_example(-1)   # 输出 \"x is a negative number\"  需要注意的是，match 语法仅在 Python 3.10 及以上版本中可用，如果使用较早的 Python 版本，则无法使用。"
+    "content": "流程控制  if  for  while判断控制结构  Python 中的判断控制结构主要有 if-elif-else 和 ternary operator。if-elif-elseif condition1:    # 当条件 1 满足时执行的代码elif condition2:    # 当条件 1 不满足且条件 2 满足时执行的代码else:    # 当条件 1 和条件 2 都不满足时执行的代码  其中，condition1、condition2 等都是需要判断的条件表达式，可以使用比较运算符、逻辑运算符等来组合成复杂的判断条件。当条件 condition1 满足时，执行对应的代码块；否则继续判断下一个条件 condition2，以此类推，直到找到一个满足条件的代码块或者所有条件都不满足时，执行最后的 else 块。ternary operatorresult = value1 if condition else value2  其中，condition 是需要判断的条件表达式，当条件成立时，返回 value1，否则返回 value2。这种语法结构也称为三目运算符，简单明了，通常用于在一行代码中完成简单的条件判断。循环结构for  for 循环通常用于遍历序列类型（如字符串、列表、元组等）中的元素，语法结构如下：for 变量 in 序列:    # 循环体其中，变量 表示接收到的序列元素，序列 是需要遍历的序列，循环会按顺序依次将序列中的元素赋值给 变量，然后执行循环体中的语句。例如：fruits = [\"apple\", \"banana\", \"cherry\"]for fruit in fruits:    print(fruit)上述代码会输出 apple、banana 和 cherry 三个字符串，分别对应 fruits 列表中的三个元素。while  while 循环会在满足条件时重复执行循环体，直到条件不再成立为止。语法结构如下：while 条件:    # 循环体  其中，条件 是判断条件，如果成立则进入循环体执行；否则结束循环。例如：i = 1while i &lt;= 5:    print(i)    i += 1  上述代码会输出数字 1 到 5，因为当 i 的值小于等于 5 时，满足条件，会不断地执行循环体中的代码，每次输出 i 的值，并将 i 加 1。当 i 大于 5 时，不再满足条件，循环结束。循环中语句break  break语句可以在循环内部立即终止循环，并跳出循环体。for i in range(10):    if i == 5:        break    print(i)continue  continue语句在循环中用于跳过当前迭代，并进入下一次迭代。for i in range(10):    if i % 2 == 0:        continue    print(i)pass  pass语句在Python中是一个空语句，用于表示占位符，不做任何操作。for i in range(10):    if i == 5:        pass    else:        print(i)range() 函数range() 函数是 Python 内置函数之一，它用于创建一个整数列表，常用于 for 循环中。 range() 函数有三个参数：起始值、终止值和步长。      语法如下    range(start, stop[, step])            说明          start：表示数列的起始值，默认为 0。      stop：表示数列的终止值（不包括），必须指定。      step：表示数列的公差，默认为 1。        返回的结果是一个可迭代对象，可以使用 list() 函数将其转换为列表      例子    # 打印 0 到 4 的整数for i in range(5):    print(i)  # 打印 2 到 8 的偶数for i in range(2, 9, 2):    print(i)            输出：      0  1  2  3  4  2  4  6  8      需要注意的是， range() 函数返回的是一个不可变序列，在 Python 2.x 中叫做 xrange()。如果需要修改序列中的元素，可以使用其他数据类型，如列表或数组。match 语法  match 是 Python 3.10 新增的一种模式匹配语法，也被称为结构化匹配。它提供了更加简洁和易于理解的方式来匹配和分解复杂数据结构，例如元组、列表、字典等。  match 的语法如下：match expression:    case pattern_1:        # 处理 pattern_1 的情况    case pattern_2 if condition:        # 处理 pattern_2 和条件成立的情况    case _:        # 处理其他情况其中 expression 表示要进行匹配的表达式，可以是任意类型的值，如数字、字符串、元组、列表等。 pattern 是一种匹配模式，用于匹配 expression 中的值。case 子句用来指定不同的匹配情况，可以指定多个 case 子句，每个子句包含一个 pattern 和对应的处理逻辑。多个子句按照出现顺序进行匹配，匹配成功后执行对应的处理逻辑。如果所有的 case 都没有匹配成功，则会执行 _ 子句中的代码块，类似于 switch-case 语句中的 default 分支。  match 进行模式匹配的例子：def match_example(x):    match x:        case 0:            print(\"x is zero\")        case 1:            print(\"x is one\")        case _ if x &gt; 1:            print(\"x is greater than one\")        case _:            print(\"x is a negative number\")match_example(0)    # 输出 \"x is zero\"match_example(1)    # 输出 \"x is one\"match_example(2)    # 输出 \"x is greater than one\"match_example(-1)   # 输出 \"x is a negative number\"  需要注意的是，match 语法仅在 Python 3.10 及以上版本中可用，如果使用较早的 Python 版本，则无法使用。循环技巧  使用 range() 函数来生成一个数列，可以用于循环：     for i in range(10):     print(i)            使用 enumerate() 函数来同时遍历序列的下标和值：     fruits = ['apple', 'banana', 'cherry'] for i, fruit in enumerate(fruits):     print(i, fruit)            使用 zip() 函数来同时遍历多个序列：     fruits = ['apple', 'banana', 'cherry'] prices = [0.5, 0.25, 0.3] for fruit, price in zip(fruits, prices):     print(fruit, price)            使用列表解析式来快速生成一个新的列表：     numbers = [1, 2, 3, 4, 5] squares = [x**2 for x in numbers] print(squares)            使用条件表达式（三元运算符）来简化 if-else 语句：     x = 10 y = 'yes' if x &gt; 5 else 'no' print(y)      "
   },
   
   {
@@ -444,9 +512,9 @@
   
   {
     "title": "项目架构图",
-    "url": "/posts/server/",
+    "url": "/posts/work/",
     "categories": "Dev, Utils",
-    "tags": "Dev, Server",
+    "tags": "Dev, Work",
     "date": "2022-01-23 13:32:25 +0800",
     
 
@@ -954,7 +1022,7 @@
   
   {
     "title": "English 语态",
-    "url": "/posts/Day08-voice/",
+    "url": "/posts/7-voice/",
     "categories": "Cc, English",
     "tags": "English, EnglishBase",
     "date": "2020-05-16 12:13:01 +0800",
@@ -971,7 +1039,7 @@
   
   {
     "title": "English 时态",
-    "url": "/posts/Day07-tense/",
+    "url": "/posts/6-tense/",
     "categories": "Cc, English",
     "tags": "English, EnglishBase",
     "date": "2020-05-16 12:12:59 +0800",
@@ -988,7 +1056,7 @@
   
   {
     "title": "English 句型和句子结构",
-    "url": "/posts/Day05-sentence_structure/",
+    "url": "/posts/5-sentence_structure/",
     "categories": "Cc, English",
     "tags": "English, EnglishBase",
     "date": "2020-05-16 12:12:58 +0800",
@@ -1005,7 +1073,7 @@
   
   {
     "title": "English 词性",
-    "url": "/posts/Day04-part_of_speech/",
+    "url": "/posts/4-part_of_speech/",
     "categories": "Cc, English",
     "tags": "English, EnglishBase",
     "date": "2020-05-16 12:12:57 +0800",
@@ -1022,7 +1090,7 @@
   
   {
     "title": "English 音标",
-    "url": "/posts/Day03-phonetic_transcription/",
+    "url": "/posts/3-phonetic_transcription/",
     "categories": "Cc, English",
     "tags": "English, EnglishBase",
     "date": "2020-05-16 12:12:56 +0800",
@@ -1039,7 +1107,7 @@
   
   {
     "title": "English Base",
-    "url": "/posts/Day02-basic/",
+    "url": "/posts/2-basic/",
     "categories": "Cc, English",
     "tags": "English, EnglishBase",
     "date": "2020-05-16 12:12:55 +0800",
@@ -1056,7 +1124,7 @@
   
   {
     "title": "English 简介",
-    "url": "/posts/Day01-english/",
+    "url": "/posts/1-english/",
     "categories": "Cc, English",
     "tags": "English, EnglishBase",
     "date": "2020-05-16 12:12:54 +0800",
@@ -1991,7 +2059,7 @@
   
   {
     "title": "Day14（testing）",
-    "url": "/posts/Day14-testing/",
+    "url": "/posts/14-testing/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-05-01 21:04:03 +0800",
@@ -2110,7 +2178,7 @@
   
   {
     "title": "Day13（Time）",
-    "url": "/posts/Day13-time/",
+    "url": "/posts/13-time/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-29 14:19:29 +0800",
@@ -2127,7 +2195,7 @@
   
   {
     "title": "Day12（反射）",
-    "url": "/posts/Day12-reflect/",
+    "url": "/posts/12-reflect/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-28 21:04:03 +0800",
@@ -2144,7 +2212,7 @@
   
   {
     "title": "Day11（并发编程）",
-    "url": "/posts/Day11-Concurrent/",
+    "url": "/posts/11-Concurrent/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-27 09:19:29 +0800",
@@ -2161,7 +2229,7 @@
   
   {
     "title": "Day10（接口和错误处理）",
-    "url": "/posts/Day10-interfaceAndError/",
+    "url": "/posts/10-interfaceAndError/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-25 17:02:59 +0800",
@@ -2178,7 +2246,7 @@
   
   {
     "title": "Day09（MapAndContainer）",
-    "url": "/posts/Day09-mapAndContainer/",
+    "url": "/posts/9-mapAndContainer/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-25 10:00:24 +0800",
@@ -2229,7 +2297,7 @@
   
   {
     "title": "Day08（切片 slice 和 range）",
-    "url": "/posts/Day08-sliceAndRanger/",
+    "url": "/posts/8-sliceAndRanger/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-24 22:37:18 +0800",
@@ -2246,7 +2314,7 @@
   
   {
     "title": "Day07（指针和结构体）",
-    "url": "/posts/Day07-PointerAndstruct/",
+    "url": "/posts/7-PointerAndstruct/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-23 22:04:03 +0800",
@@ -2263,7 +2331,7 @@
   
   {
     "title": "Day06（作用域与数组）",
-    "url": "/posts/Day06-variableAndArray/",
+    "url": "/posts/6-variableAndArray/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-07 22:58:36 +0800",
@@ -2280,7 +2348,7 @@
   
   {
     "title": "Day05（函数）",
-    "url": "/posts/Day05-func/",
+    "url": "/posts/5-func/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-06 22:05:18 +0800",
@@ -2297,7 +2365,7 @@
   
   {
     "title": "Day04（循环语句）",
-    "url": "/posts/Day04-LoopStatementFunc/",
+    "url": "/posts/4-LoopStatementFunc/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-03 00:10:00 +0800",
@@ -2314,7 +2382,7 @@
   
   {
     "title": "Day03（运算符与条件语句）",
-    "url": "/posts/Day03-OperatorCondition/",
+    "url": "/posts/3-OperatorCondition/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-04-02 13:13:45 +0800",
@@ -2331,7 +2399,7 @@
   
   {
     "title": "Day02（入门基础）",
-    "url": "/posts/Day02-datatype/",
+    "url": "/posts/2-datatype/",
     "categories": "Language, Go",
     "tags": "Server, Go, GoBase",
     "date": "2019-03-31 21:18:30 +0800",
@@ -2434,8 +2502,8 @@
   {
     "title": "手机推送",
     "url": "/posts/appOffLinePush/",
-    "categories": "Language, AppPush",
-    "tags": "Client, AppPush",
+    "categories": "Dev, Utils",
+    "tags": "Dev, Client, AppPush",
     "date": "2019-02-12 22:58:36 +0800",
     
 
@@ -2631,8 +2699,8 @@
 
 
     
-    "snippet": "博客笔记---title: 标题date: 2018-08-08 14:10:00 +0800 # 时间draft: false # 是不是草稿tags: [Cc] # 分类categories: [Cc , Left] # 类别toc: falsecomments: false # 评论math: true # 数学mermaid: true # 图标pin: false # 顶置desc...",
-    "content": "博客笔记---title: 标题date: 2018-08-08 14:10:00 +0800 # 时间draft: false # 是不是草稿tags: [Cc] # 分类categories: [Cc , Left] # 类别toc: falsecomments: false # 评论math: true # 数学mermaid: true # 图标pin: false # 顶置description: 解释image:  path: /assets/img/c/c.jpeg---"
+    "snippet": "博客笔记目录结构  在根目录下一般有以下文件夹和文件: (要是github想禁用jekyll,建一个 .nojekyll )  _config.yml 配置文件,配置jekyll的一切以及变量  index.md/html 主页文件,必须的  .gitignore 被忽略上传到github的文件(夹)列表  .jekyll-metadata 用来记录追踪文件修改情况,以便更新.  _layo...",
+    "content": "博客笔记目录结构  在根目录下一般有以下文件夹和文件: (要是github想禁用jekyll,建一个 .nojekyll )  _config.yml 配置文件,配置jekyll的一切以及变量  index.md/html 主页文件,必须的  .gitignore 被忽略上传到github的文件(夹)列表  .jekyll-metadata 用来记录追踪文件修改情况,以便更新.  _layout 模板文件夹,用来生成相应子页面的模板,在子页面中 layout: page 指定  _post 相应子页面(博客)所在位置,文件名规则:2015-07-24-name.md/html  _includes 用来包含一些常用需要的结构块文件,例如comment.使用 {\\% include file.ext \\%} 来包含(\\去掉).非必须.  _site 如果使用jekyll本地版生成页面就会有该文件夹.一般会被判断为不上传到github.非必须.  _drafts 草稿文件,不会被生成到网页中.非必须.  _data 格式化好的网站数据应放在这里。jekyll 的引擎会自动加载在该目录下所有的 yaml 文件（后缀是 .yml 或者 .yaml).作用不明..非必须    文章标头    ---title: 标题date: 2018-08-08 14:10:00 +0800 # 时间draft: false # 是不是草稿tags: [Cc] # 分类categories: [Cc , Left] # 类别toc: falsecomments: false # 评论math: true # 数学mermaid: true # 图标pin: false # 顶置description: 解释image:path: /assets/img/c/c.jpeg---      "
   },
   
   {
@@ -2684,23 +2752,6 @@
     
     "snippet": "C 基础#include &lt;stdio.h&gt;int main(void){ printf(\"Hello World!\\n\");}",
     "content": "C 基础#include &lt;stdio.h&gt;int main(void){ printf(\"Hello World!\\n\");}"
-  },
-  
-  {
-    "title": "C++",
-    "url": "/posts/base/",
-    "categories": "Language, C++",
-    "tags": "Server, C++",
-    "date": "2015-10-12 22:58:36 +0800",
-    
-
-
-
-
-
-    
-    "snippet": "",
-    "content": ""
   },
   
   {

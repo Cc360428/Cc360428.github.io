@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-05-26T16:24:24+08:00</updated>
+  <updated>2023-05-27T15:25:27+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,65 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Server</title>
+    <link href="https://cc360428.github.io//posts/server/" rel="alternate" type="text/html" title="Server" />
+    <published>2023-05-27T11:32:25+08:00</published>
+  
+    <updated>2023-05-27T11:32:25+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/server/</id>
+    <content src="https://cc360428.github.io//posts/server/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Dev" />
+    
+    <category term="Utils" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      程序员必备
+
+  服务端
+
+
+必备技术和工具
+
+编程语言
+
+
+  
+    Java：Java 是应用最为广泛的服务端编程语言之一，它在企业级应用开发领域有广泛的应用。
+  
+  
+    Python：Python 具有简单易学、高效性和可扩展性等优点，在数据处理、机器学习等领域也非常流行。
+  
+  
+    Golang：Golang 是谷歌公司开发的现代编程语言，具有高并发性、高效性、易于编写和维护等优点，适合构建大型分布式系统。
+  
+  
+    JavaScript：JavaScript 是 Web 前端开发中不可缺少的语言，同时也可以用于编写服务端应用程序。Node.js 提供了一个服务器环境，使得 JavaScript 也可以被用来开发服务端程序。
+  
+  
+    C++：C++ 是一门强类型的编程语言，被广泛应用于高性能计算、游戏开发、操作系统、数据库等领域。...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -227,86 +286,6 @@
   
   
     制定计划和时间表：制定一个详细的学习计划和时间表，并按时执行它。让自己保持每天或每周固定的学习时间，这样可以...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Math 国内教育</title>
-    <link href="https://cc360428.github.io//posts/education/" rel="alternate" type="text/html" title="Math 国内教育" />
-    <published>2023-05-18T12:00:54+08:00</published>
-  
-    <updated>2023-05-18T12:00:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/education/</id>
-    <content src="https://cc360428.github.io//posts/education/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="Math" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      小学
-
-一年级数学：
-
-
-  数字 0-10 的认识和比较
-  简单的加减法
-  几何形状的认识，如正方形、三角形、圆形等
-  时间和日历的基本概念
-
-
-二年级数学：
-
-
-  数字 0-100 的认识和比较
-  简单的加减法，进一步学习加减法口诀
-  二维图形的认识，如长方形、正方形、三角形、圆形等
-  一些简单的度量单位，如长度、重量、容积等
-
-
-三年级数学：
-
-
-  数字 0-1000 的认识和比较
-  加减法的巩固和进一步学习乘法和除法
-  掌握一些简单的分数和小数的概念
-  手表的读取和日历的计算
-  面积和周长的概念
-
-
-四年级数学：
-
-
-  大数的认识和比较
-  加减法、乘法和除法的深入学习
-  掌握一些基本的几何知识，如平移、旋转、镜像等
-  了解一些简单的代数概念和符号
-  体积和容积的概念
-
-
-五年级数学：
-
-
-  数字的认识和比较，包括整数、分数和小数
-  加减法...
     </summary>
   
 
