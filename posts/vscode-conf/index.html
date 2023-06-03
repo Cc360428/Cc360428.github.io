@@ -45,8 +45,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="VSCode conf" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="vscode 配置 { &quot;version&quot;: &quot;该配置文件的版本，由 VSCode 自动生成&quot;, &quot;configurations&quot;: [ { &quot;name&quot;: &quot;名字，好听就行&quot;, &quot;type&quot;: &quot;语言类型，装了插件后填 go 就会调用 dlv 命令&quot;, &quot;request&quot;: &quot;launch 是启动新进程，append 是附加到现有的进程&quot;, &quot;mode&quot;: &quot;dlv 的一些选项，支持 debug、exec、test、remote&quot;, &quot;host&quot;: &quot;dlv 监听的地址&quot;, &quot;port&quot;: &quot;dlv 监听的端口（此处应该是数字）&quot;, &quot;program&quot;: &quot;本地的程序路径&quot;, &quot;cwd&quot;: &quot;当前工作路径&quot;, &quot;env&quot;: { &quot;环境变量名&quot;: &quot;环境变量值&quot; }, &quot;args&quot;: [&quot;程序启动参数&quot;], &quot;showLog&quot;: &quot;是否输出 dlv 的日志（此处应该是 true/false）&quot; } ] } 演示 { &quot;version&quot;: &quot;0.2.0&quot;, &quot;configurations&quot;: [ { &quot;name&quot;: &quot;Debug with dlv&quot;, &quot;type&quot;: &quot;go&quot;, &quot;request&quot;: &quot;launch&quot;, &quot;mode&quot;: &quot;debug&quot;, &quot;host&quot;: &quot;127.0.0.1&quot;, &quot;port&quot;: 2345, &quot;program&quot;: &quot;${workspaceFolder}/path/to/main.go&quot;, &quot;cwd&quot;: &quot;${workspaceFolder}&quot;, &quot;env&quot;: {}, &quot;args&quot;: [], &quot;showLog&quot;: true } ] } 断点 打一个断点，按下 F5，会发现项目已经启动起来了，访问一个 API，发现触发了断点：" />
-<meta property="og:description" content="vscode 配置 { &quot;version&quot;: &quot;该配置文件的版本，由 VSCode 自动生成&quot;, &quot;configurations&quot;: [ { &quot;name&quot;: &quot;名字，好听就行&quot;, &quot;type&quot;: &quot;语言类型，装了插件后填 go 就会调用 dlv 命令&quot;, &quot;request&quot;: &quot;launch 是启动新进程，append 是附加到现有的进程&quot;, &quot;mode&quot;: &quot;dlv 的一些选项，支持 debug、exec、test、remote&quot;, &quot;host&quot;: &quot;dlv 监听的地址&quot;, &quot;port&quot;: &quot;dlv 监听的端口（此处应该是数字）&quot;, &quot;program&quot;: &quot;本地的程序路径&quot;, &quot;cwd&quot;: &quot;当前工作路径&quot;, &quot;env&quot;: { &quot;环境变量名&quot;: &quot;环境变量值&quot; }, &quot;args&quot;: [&quot;程序启动参数&quot;], &quot;showLog&quot;: &quot;是否输出 dlv 的日志（此处应该是 true/false）&quot; } ] } 演示 { &quot;version&quot;: &quot;0.2.0&quot;, &quot;configurations&quot;: [ { &quot;name&quot;: &quot;Debug with dlv&quot;, &quot;type&quot;: &quot;go&quot;, &quot;request&quot;: &quot;launch&quot;, &quot;mode&quot;: &quot;debug&quot;, &quot;host&quot;: &quot;127.0.0.1&quot;, &quot;port&quot;: 2345, &quot;program&quot;: &quot;${workspaceFolder}/path/to/main.go&quot;, &quot;cwd&quot;: &quot;${workspaceFolder}&quot;, &quot;env&quot;: {}, &quot;args&quot;: [], &quot;showLog&quot;: true } ] } 断点 打一个断点，按下 F5，会发现项目已经启动起来了，访问一个 API，发现触发了断点：" />
+<meta name="description" content="vscode 配置" />
+<meta property="og:description" content="vscode 配置" />
 <link rel="canonical" href="https://cc360428.github.io//posts/vscode-conf/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/vscode-conf/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -56,7 +56,7 @@
 <meta property="twitter:title" content="VSCode conf" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-27T11:32:25+08:00","datePublished":"2023-05-27T11:32:25+08:00","description":"vscode 配置 { &quot;version&quot;: &quot;该配置文件的版本，由 VSCode 自动生成&quot;, &quot;configurations&quot;: [ { &quot;name&quot;: &quot;名字，好听就行&quot;, &quot;type&quot;: &quot;语言类型，装了插件后填 go 就会调用 dlv 命令&quot;, &quot;request&quot;: &quot;launch 是启动新进程，append 是附加到现有的进程&quot;, &quot;mode&quot;: &quot;dlv 的一些选项，支持 debug、exec、test、remote&quot;, &quot;host&quot;: &quot;dlv 监听的地址&quot;, &quot;port&quot;: &quot;dlv 监听的端口（此处应该是数字）&quot;, &quot;program&quot;: &quot;本地的程序路径&quot;, &quot;cwd&quot;: &quot;当前工作路径&quot;, &quot;env&quot;: { &quot;环境变量名&quot;: &quot;环境变量值&quot; }, &quot;args&quot;: [&quot;程序启动参数&quot;], &quot;showLog&quot;: &quot;是否输出 dlv 的日志（此处应该是 true/false）&quot; } ] } 演示 { &quot;version&quot;: &quot;0.2.0&quot;, &quot;configurations&quot;: [ { &quot;name&quot;: &quot;Debug with dlv&quot;, &quot;type&quot;: &quot;go&quot;, &quot;request&quot;: &quot;launch&quot;, &quot;mode&quot;: &quot;debug&quot;, &quot;host&quot;: &quot;127.0.0.1&quot;, &quot;port&quot;: 2345, &quot;program&quot;: &quot;${workspaceFolder}/path/to/main.go&quot;, &quot;cwd&quot;: &quot;${workspaceFolder}&quot;, &quot;env&quot;: {}, &quot;args&quot;: [], &quot;showLog&quot;: true } ] } 断点 打一个断点，按下 F5，会发现项目已经启动起来了，访问一个 API，发现触发了断点：","headline":"VSCode conf","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/vscode-conf/"},"url":"https://cc360428.github.io//posts/vscode-conf/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-03T15:06:55+08:00","datePublished":"2023-05-27T11:32:25+08:00","description":"vscode 配置","headline":"VSCode conf","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/vscode-conf/"},"url":"https://cc360428.github.io//posts/vscode-conf/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -680,6 +680,30 @@
 
     <!-- lastmod date -->
     
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1685776015"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jun  3, 2023
+</em>
+
+    </span>
+    
 
   
 
@@ -734,6 +758,7 @@
 
 <div class="post-content">
   <h2 id="vscode-配置"><span class="me-2">vscode 配置</span><a href="#vscode-配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
 <pre><code class="language-vscode">{
     "version": "该配置文件的版本，由 VSCode 自动生成",
     "configurations": [
@@ -755,7 +780,9 @@
     ]
 }
 </code></pre>
+
 <h3 id="演示"><span class="me-2">演示</span><a href="#演示" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <pre><code class="language-vscode">{
     "version": "0.2.0",
     "configurations": [
@@ -775,7 +802,9 @@
     ]
 }
 </code></pre>
+
 <h3 id="断点"><span class="me-2">断点</span><a href="#断点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p>打一个断点，按下 F5，会发现项目已经启动起来了，访问一个 API，发现触发了断点：</p>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
@@ -848,7 +877,7 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/fatih/go
 go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/haya14busa/goplay/cmd/goplay
 go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/josharian/impl
 go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/davidrjenni/reftools/cmd/fillstruct
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/rogpeppe/godef	
+go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/rogpeppe/godef
 go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/godoc
 go get <span class="nt">-u</span> <span class="nt">-v</span> sourcegraph.com/sqs/goreturns
 go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/golang/lint/golint
@@ -897,7 +926,6 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/davidrje
 go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthomas/gometalinter
 
 </pre></td></tr></tbody></table></code></div></div>
-
 
 </div>
 
@@ -1045,35 +1073,35 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
         
         
         <li>
-          <a href="/posts/1-3-RedHad-base/">linux(CentOS7)基础知识</a>
+          <a href="/posts/frp/">frp 内网穿透</a>
         </li>
       
         
         
         
         <li>
-          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
+          <a href="/posts/leetcode-okay/">Leetcode 解题方式</a>
         </li>
       
         
         
         
         <li>
-          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
+          <a href="/posts/leetcode-array01/">Leetcode Day01（数组）</a>
         </li>
       
         
         
         
         <li>
-          <a href="/posts/cmd-docker/">Docker 基础命令</a>
+          <a href="/posts/leetcode-array02/">Leetcode Day02（数组）</a>
         </li>
       
         
         
         
         <li>
-          <a href="/posts/4.5-RedHad-system/">linux(CentOS7) 目录管理、系统管理</a>
+          <a href="/posts/leetcode-array03/">Leetcode Day03（数组）</a>
         </li>
       
     </ul>
@@ -1859,6 +1887,85 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2553,87 +2660,6 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2888,15 +2914,6 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -2928,112 +2945,9 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
     
     
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+        
+        
+
   
     
     
@@ -3089,6 +3003,9 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
         <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -3098,16 +3015,13 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </div>
@@ -3161,6 +3075,102 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -5374,7 +5384,7 @@ git remote add origin http://git.lichaocheng.top/google/Study.git
         
         
         <div class="col">
-          <a href="/posts/work/" class="card post-preview h-100">
+          <a href="/posts/Git-Error/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -5387,14 +5397,14 @@ git remote add origin http://git.lichaocheng.top/google/Study.git
 
 <em
   class="small"
-  data-ts="1642915945"
+  data-ts="1587191584"
   data-df="ll"
   
 >
-  Jan 23, 2022
+  Apr 18, 2020
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>项目架构图</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Git Error </h4>
               <div class="text-muted small">
                 <p>
                   
@@ -5403,41 +5413,21 @@ git remote add origin http://git.lichaocheng.top/google/Study.git
 
 
 
-                  本地组项目架构图
+                  Git Error
 
-层次结构
+Failed to connect to 127.0.0.1 port 1080: Connection refused
 
-1 表示层
-
-
-  移动端 websocket 客户端消息通讯
+- 尝试了各种办法都没有解决，一直报这个端口代理的问题，看到网上有一个解决办法
+- 我个人是方法一解决了
 
 
-2 应用程序层
-
-3 服务层
+方法一
 
 
-  网络服务
-    
-      ws
-      http
-    
-  
-
-
-4 数据访问层：redis
-
-
-  redis mp
-  redis save
-
-
-5 基础设施层
-
-
-  docker-compose
-  Prometheus+Grafan...
+  第一步 (查询是否使用了代理)
+ git config –global http.proxy
+  第二步(取消代理)
+ g...
                 </p>
               </div>
             </div>
@@ -6268,6 +6258,85 @@ git remote add origin http://git.lichaocheng.top/google/Study.git
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -6962,87 +7031,6 @@ git remote add origin http://git.lichaocheng.top/google/Study.git
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -7297,15 +7285,6 @@ git remote add origin http://git.lichaocheng.top/google/Study.git
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
   
     
     
@@ -7337,112 +7316,9 @@ git remote add origin http://git.lichaocheng.top/google/Study.git
     
     
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+        
+        
+
   
     
     
@@ -7498,6 +7374,9 @@ git remote add origin http://git.lichaocheng.top/google/Study.git
         <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -7507,16 +7386,13 @@ git remote add origin http://git.lichaocheng.top/google/Study.git
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </div>

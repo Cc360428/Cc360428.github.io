@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-03T14:24:54+08:00</updated>
+  <updated>2023-06-03T15:07:29+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -24,7 +24,7 @@
     <link href="https://cc360428.github.io//posts/vscode-conf/" rel="alternate" type="text/html" title="VSCode conf" />
     <published>2023-05-27T11:32:25+08:00</published>
   
-    <updated>2023-05-27T11:32:25+08:00</updated>
+    <updated>2023-06-03T15:06:55+08:00</updated>
   
     <id>https://cc360428.github.io//posts/vscode-conf/</id>
     <content src="https://cc360428.github.io//posts/vscode-conf/" />
@@ -49,6 +49,7 @@
 
 
       vscode 配置
+
 {
     "version": "该配置文件的版本，由 VSCode 自动生成",
     "configurations": [
@@ -60,7 +61,7 @@
             "host": "dlv 监听的地址",
             "port": "dlv 监听的端口（此处应该是数字）",
             "program": "本地的程序路径",
-    ...
+   ...
     </summary>
   
 
@@ -72,7 +73,7 @@
     <link href="https://cc360428.github.io//posts/server/" rel="alternate" type="text/html" title="Server" />
     <published>2023-05-27T11:32:25+08:00</published>
   
-    <updated>2023-05-27T11:32:25+08:00</updated>
+    <updated>2023-06-03T15:06:55+08:00</updated>
   
     <id>https://cc360428.github.io//posts/server/</id>
     <content src="https://cc360428.github.io//posts/server/" />
@@ -98,6 +99,7 @@
 
       程序员必备
 
+
   服务端
 
 
@@ -119,7 +121,7 @@
     JavaScript：JavaScript 是 Web 前端开发中不可缺少的语言，同时也可以用于编写服务端应用程序。Node.js 提供了一个服务器环境，使得 JavaScript 也可以被用来开发服务端程序。
   
   
-    C++：C++ 是一门强类型的编程语言，被广泛应用于高性能计算、游戏开发、操作系统、数据库等领域。...
+    C++：C++ 是一门强类型的编程语言，被广泛应用于高性能计算、游戏开发、操作系统、数据库等领域...
     </summary>
   
 
