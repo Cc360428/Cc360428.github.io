@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-14T19:17:55+08:00</updated>
+  <updated>2023-06-14T19:18:42+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -20,8 +20,8 @@
 
   
   <entry>
-    <title>Redis Monitor</title>
-    <link href="https://cc360428.github.io//posts/mysql-monitor/" rel="alternate" type="text/html" title="Redis Monitor" />
+    <title>Mysql Monitor</title>
+    <link href="https://cc360428.github.io//posts/mysql-monitor/" rel="alternate" type="text/html" title="Mysql Monitor" />
     <published>2023-06-14T13:48:54+08:00</published>
   
     <updated>2023-06-14T13:48:54+08:00</updated>
