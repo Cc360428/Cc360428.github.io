@@ -835,7 +835,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="222 words"
+  title="231 words"
 >
   <em>1 min</em> read</span>
 
@@ -875,18 +875,29 @@
     <ul>
       <li>mkdir -p /home/save/mysqld_exporter/conf</li>
       <li>
-        <p>touch mysql_conf.cnf</p>
+        <p>touch config.my-cnf</p>
 
-        <pre><code class="language-cnf">[client]
-host=mysql-address
-port=3306
-# socket=/var/run/mysqld/mysqld.sock
-user=root
-password=password-you
-[client.server1]
-user = bar
-password = bar123
-</code></pre>
+        <div class="language-toml highlighter-rouge"><div class="code-header">
+        <span data-label-text="TOML"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nn">[client]</span>
+<span class="py">host</span><span class="p">=</span><span class="err">mysql-address</span>
+<span class="py">port</span><span class="p">=</span><span class="mi">3306</span>
+<span class="c"># socket=/var/run/mysqld/mysqld.sock</span>
+<span class="py">user</span><span class="p">=</span><span class="err">root</span>
+<span class="py">password</span><span class="p">=</span><span class="err">password-you</span>
+<span class="nn">[client.server1]</span>
+<span class="py">user</span> <span class="p">=</span> <span class="err">bar</span>
+<span class="py">password</span> <span class="p">=</span> <span class="err">bar</span><span class="mi">123</span>
+</pre></td></tr></tbody></table></code></div>        </div>
       </li>
     </ul>
   </li>
