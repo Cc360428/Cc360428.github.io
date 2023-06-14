@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-03T15:07:29+08:00</updated>
+  <updated>2023-06-14T19:16:10+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,140 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Redis Monitor</title>
+    <link href="https://cc360428.github.io//posts/mysql-monitor/" rel="alternate" type="text/html" title="Redis Monitor" />
+    <published>2023-06-14T13:48:54+08:00</published>
+  
+    <updated>2023-06-14T13:48:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/mysql-monitor/</id>
+    <content src="https://cc360428.github.io//posts/mysql-monitor/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Database" />
+    
+    <category term="Redis" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      操作步骤如下
+
+
+  mysql 设置
+
+
+  CREATE USER 'exporter'@'localhost' IDENTIFIED BY 'XXXXXXXX' WITH MAX_USER_CONNECTIONS 3;
+  GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'exporter'@'localhost'; 
+
+
+
+  mysqld_exporter
+  prometheus
+  grafana
+
+
+mysqld_exporter 启动
+
+GitHub
+
+
+  在机器对应目录下创建目录和文件
+    
+      mkdir -p /home/save/mysqld_exporter/conf
+      
+        touch mysql_conf.cnf
+
+        [client]
+host=m...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Redis Monitor</title>
+    <link href="https://cc360428.github.io//posts/redis-monitor/" rel="alternate" type="text/html" title="Redis Monitor" />
+    <published>2023-06-14T12:48:54+08:00</published>
+  
+    <updated>2023-06-14T12:48:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/redis-monitor/</id>
+    <content src="https://cc360428.github.io//posts/redis-monitor/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Database" />
+    
+    <category term="Redis" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      操作步骤如下
+
+
+  redis-exporter
+  prometheus
+  grafana
+
+
+redis-exporter 启动
+
+GitHub
+
+
+  在机器对应目录下创建目录和文件
+    
+      mkdir -p /home/save/redis-exporter/conf
+      
+        touch redis_conf.json
+
+        {
+"redis://redis-address-1:6379":"",
+"redis://redis-address-2:6379":"",
+"redis://redis-address-3:6379":"****"
+}
+        
+      
+    
+  
+  
+    docker-compose
+
+    version: '3'
+services:
+  redis-monitor:
+...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -179,112 +313,6 @@
   
   
     八进制（基...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Math Other</title>
-    <link href="https://cc360428.github.io//posts/3-Math/" rel="alternate" type="text/html" title="Math Other" />
-    <published>2023-05-18T12:02:56+08:00</published>
-  
-    <updated>2023-05-18T12:02:56+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/3-Math/</id>
-    <content src="https://cc360428.github.io//posts/3-Math/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="Math" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      高等数学课程
-
-1.微积分
-微积分是高等数学中最基础和最重要的一部分，它包括单变量微积分和多变量微积分。单变量微积分包括极限、导数和积分，多变量微积分包括偏导数、多元函数的极值和多重积分等。
-
-2.线性代数
-线性代数是一门研究向量空间和线性映射的数学学科，它包括矩阵的基本运算和性质、行列式、向量空间、线性变换、特征值和特征向量等。
-
-3.常微分方程
-常微分方程是研究描述自然现象中的变化过程的数学工具，它包括一阶和高阶常微分方程、线性和非线性常微分方程等。
-
-4.多元函数微积分
-多元函数微积分是对多元函数的微积分进行深入研究，它包括偏导数、梯度、多元函数的积分和曲线、曲面积分等。
-
-5.实变函数和复变函数
-实变函数和复变函数是研究实数和复数域上的函数的性质和理论的数学分支，包括实变函数的连续性、一致连续性、极限理论和函数列、复变函数的解析性和亚纯函数等。
-
-6.傅里叶分析
-傅里叶分析是...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Math Formula</title>
-    <link href="https://cc360428.github.io//posts/2-formula/" rel="alternate" type="text/html" title="Math Formula" />
-    <published>2023-05-18T12:02:54+08:00</published>
-  
-    <updated>2023-05-18T12:02:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/2-formula/</id>
-    <content src="https://cc360428.github.io//posts/2-formula/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="Math" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      初中公式
-
-
-  
-    求和公式：$\sum_{i=1}^n i$ 表示将 $1$ 到 $n$ 之间的所有自然数相加。
-  
-  
-    平方根公式：$\sqrt{2} + \sqrt{3}$ 表示求 $\sqrt{2}$ 和 $\sqrt{3}$ 的和。
-  
-  
-    二次方程求根公式：$x = \frac{-b + \sqrt{b^2 - 4ac}}{2a}$ 是解二次方程 $ax^2 + bx + c =0 $ 的公式，其中 $a=2, b=-5, c=3$。
-  
-  
-    三角函数：$\sin\frac{\pi}{6}, \cos\frac{\pi}{3}, \tan\frac{\pi}{4}$ 分别表示 $30^\circ$ 角的正弦、$60^\circ$ 角的余弦和 $45^\circ$ 角的正切值。
-  
-  
-    相似三角形：已知两个相似三角形，...
     </summary>
   
 
