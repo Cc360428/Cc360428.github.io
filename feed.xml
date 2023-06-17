@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-15T18:05:57+08:00</updated>
+  <updated>2023-06-17T14:54:42+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -154,6 +154,68 @@ services:
 
   
   <entry>
+    <title>狼人杀</title>
+    <link href="https://cc360428.github.io//posts/Werewolf-killing/" rel="alternate" type="text/html" title="狼人杀" />
+    <published>2023-06-13T12:48:54+08:00</published>
+  
+    <updated>2023-06-13T12:48:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/Werewolf-killing/</id>
+    <content src="https://cc360428.github.io//posts/Werewolf-killing/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Cc" />
+    
+    <category term="Left" />
+    
+    <category term="Werewolf killing" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      狼人杀
+
+推荐网址
+
+
+  简介
+    
+      狼人杀是一种常见的桌游，它需要多人参与，每个玩家都有一个特定的角色身份
+      在游戏中，玩家必须通过讨论和推理来找出谁是狼人，并将其赶出村庄，从而获得胜利
+      游戏攻略1
+      游戏攻略2
+      手势
+      
+    
+  
+
+
+基本规则
+
+
+  游戏开始前，所有玩家从中央随机抽取一张角色牌，可以看到自己的身份但不能让其他人看到
+  游戏分为白天和黑夜两个阶段，轮流进行。在白天，玩家通过讨论和投票来确定要执行哪个玩家（认为他是狼人）的身份。在黑夜，各角色依次行动，狼人可以选择击杀某个玩家，其他角色可以使用技能来帮助找出狼人。
+  每个白天，所有玩家都应发言，分享他们的想法和怀疑目标。如果有足够的证据在场上，任何玩家可以建议第一轮投票并选择要处决的玩家
+（即“狼人”），最终以最多票数的玩家被处决。
+...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>第七号嫌疑人</title>
     <link href="https://cc360428.github.io//posts/Suspect-number-seven/" rel="alternate" type="text/html" title="第七号嫌疑人" />
     <published>2023-06-13T12:48:54+08:00</published>
@@ -288,66 +350,6 @@ services:
             "port": "dlv 监听的端口（此处应该是数字）",
             "program": "本地的程序路径",
    ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Server</title>
-    <link href="https://cc360428.github.io//posts/server/" rel="alternate" type="text/html" title="Server" />
-    <published>2023-05-27T11:32:25+08:00</published>
-  
-    <updated>2023-06-03T15:06:55+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/server/</id>
-    <content src="https://cc360428.github.io//posts/server/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Dev" />
-    
-    <category term="Utils" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      程序员必备
-
-
-  服务端
-
-
-必备技术和工具
-
-编程语言
-
-
-  
-    Java：Java 是应用最为广泛的服务端编程语言之一，它在企业级应用开发领域有广泛的应用。
-  
-  
-    Python：Python 具有简单易学、高效性和可扩展性等优点，在数据处理、机器学习等领域也非常流行。
-  
-  
-    Golang：Golang 是谷歌公司开发的现代编程语言，具有高并发性、高效性、易于编写和维护等优点，适合构建大型分布式系统。
-  
-  
-    JavaScript：JavaScript 是 Web 前端开发中不可缺少的语言，同时也可以用于编写服务端应用程序。Node.js 提供了一个服务器环境，使得 JavaScript 也可以被用来开发服务端程序。
-  
-  
-    C++：C++ 是一门强类型的编程语言，被广泛应用于高性能计算、游戏开发、操作系统、数据库等领域...
     </summary>
   
 

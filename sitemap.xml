@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://cc360428.github.io//posts/resume/</loc>
-<lastmod>2023-06-03T14:24:12+08:00</lastmod>
+<lastmod>2023-06-16T09:36:41+08:00</lastmod>
 </url>
 <url>
 <loc>https://cc360428.github.io//posts/c-base-ok/</loc>
@@ -270,7 +270,7 @@
 </url>
 <url>
 <loc>https://cc360428.github.io//posts/databases/</loc>
-<lastmod>2023-05-27T19:09:55+08:00</lastmod>
+<lastmod>2023-06-16T09:36:41+08:00</lastmod>
 </url>
 <url>
 <loc>https://cc360428.github.io//posts/Consul/</loc>
@@ -606,7 +606,7 @@
 </url>
 <url>
 <loc>https://cc360428.github.io//posts/DataStructure/</loc>
-<lastmod>2023-05-27T19:09:55+08:00</lastmod>
+<lastmod>2023-06-16T09:36:41+08:00</lastmod>
 </url>
 <url>
 <loc>https://cc360428.github.io//posts/1-base/</loc>
@@ -733,6 +733,10 @@
 <lastmod>2023-06-13T12:48:54+08:00</lastmod>
 </url>
 <url>
+<loc>https://cc360428.github.io//posts/Werewolf-killing/</loc>
+<lastmod>2023-06-13T12:48:54+08:00</lastmod>
+</url>
+<url>
 <loc>https://cc360428.github.io//posts/redis-monitor/</loc>
 <lastmod>2023-06-14T12:48:54+08:00</lastmod>
 </url>
@@ -742,15 +746,15 @@
 </url>
 <url>
 <loc>https://cc360428.github.io//categories/</loc>
-<lastmod>2023-06-15T18:05:57+08:00</lastmod>
+<lastmod>2023-06-17T14:54:42+08:00</lastmod>
 </url>
 <url>
 <loc>https://cc360428.github.io//tags/</loc>
-<lastmod>2023-06-15T18:05:57+08:00</lastmod>
+<lastmod>2023-06-17T14:54:42+08:00</lastmod>
 </url>
 <url>
 <loc>https://cc360428.github.io//archives/</loc>
-<lastmod>2023-06-15T18:05:57+08:00</lastmod>
+<lastmod>2023-06-17T14:54:42+08:00</lastmod>
 </url>
 <url>
 <loc>https://cc360428.github.io//about/</loc>
@@ -988,6 +992,9 @@
 <loc>https://cc360428.github.io//tags/script-killing/</loc>
 </url>
 <url>
+<loc>https://cc360428.github.io//tags/werewolf-killing/</loc>
+</url>
+<url>
 <loc>https://cc360428.github.io//categories/cc/</loc>
 </url>
 <url>
@@ -1085,6 +1092,9 @@
 </url>
 <url>
 <loc>https://cc360428.github.io//categories/script-killing/</loc>
+</url>
+<url>
+<loc>https://cc360428.github.io//categories/werewolf-killing/</loc>
 </url>
 <url>
 <loc>https://cc360428.github.io//page2/</loc>
