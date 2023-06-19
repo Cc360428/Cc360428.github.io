@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-17T14:54:42+08:00</updated>
+  <updated>2023-06-19T17:17:10+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,59 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>半程马拉松</title>
+    <link href="https://cc360428.github.io//posts/half-marathon/" rel="alternate" type="text/html" title="半程马拉松" />
+    <published>2023-06-19T12:48:54+08:00</published>
+  
+    <updated>2023-06-19T12:48:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/half-marathon/</id>
+    <content src="https://cc360428.github.io//posts/half-marathon/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Cc" />
+    
+    <category term="Left" />
+    
+    <category term="half marathon" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      半程马拉松
+
+简介
+
+半程马拉松是一项长跑运动项目，全称为半程马拉松路跑比赛（Half Marathon）。它的路线长度约为21.0975公里，是一项具有挑战性和观赏性的中长距离长跑比赛。
+
+半程马拉松比赛通常在早上开始，选手需要在规定时间内完成整个赛程，并且按照规定的路线进行奔跑。这项比赛的路线通常是在城市内或郊区，有时甚至穿越了名胜古迹、山脉或海滨等美丽的自然风景线。
+
+参加半程马拉松比赛需要进行长期的训练和准备，以确保身体能够承受比赛的挑战。参赛者需要具备良好的耐力和体能，并且需要遵循正确的饮食和休息习惯，以提高体能和减轻疲劳。
+
+半程马拉松比赛除了具有挑战性外，也是一个社交和健康益处的活动。参与者可以结识新朋友，享受跑步带来的愉悦感，同时也能改善心肺功能、增强免疫力、减轻压力等。因此，半程马拉松比赛成为越来越多人钟情的一项户外运动。
+
+规则
+
+
+  半程马拉松是一项长跑比赛，...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -301,55 +354,6 @@ services:
 
   去教堂说秘密（阅读）
   讨论结...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>VSCode conf</title>
-    <link href="https://cc360428.github.io//posts/vscode-conf/" rel="alternate" type="text/html" title="VSCode conf" />
-    <published>2023-05-27T11:32:25+08:00</published>
-  
-    <updated>2023-06-03T15:06:55+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/vscode-conf/</id>
-    <content src="https://cc360428.github.io//posts/vscode-conf/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Dev" />
-    
-    <category term="Utils" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      vscode 配置
-
-{
-    "version": "该配置文件的版本，由 VSCode 自动生成",
-    "configurations": [
-        {
-            "name": "名字，好听就行",
-            "type": "语言类型，装了插件后填 go 就会调用 dlv 命令",
-            "request": "launch 是启动新进程，append 是附加到现有的进程",
-            "mode": "dlv 的一些选项，支持 debug、exec、test、remote",
-            "host": "dlv 监听的地址",
-            "port": "dlv 监听的端口（此处应该是数字）",
-            "program": "本地的程序路径",
-   ...
     </summary>
   
 
