@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-06-19T17:17:10+08:00</updated>
+  <updated>2023-07-19T11:33:08+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,195 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>v2fly-core</title>
+    <link href="https://cc360428.github.io//posts/linux-vpn-v2fly-core/" rel="alternate" type="text/html" title="v2fly-core" />
+    <published>2023-07-19T08:06:01+08:00</published>
+  
+    <updated>2023-07-19T08:06:01+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/linux-vpn-v2fly-core/</id>
+    <content src="https://cc360428.github.io//posts/linux-vpn-v2fly-core/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Linux" />
+    
+    <category term="Software" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      docker-compose
+
+version: '3'
+services:
+  v2fly-core:
+    container_name: v2fly-core
+    image: v2fly/v2fly-core
+    ports:
+      - '10808:10808'
+      - '10809:10809'
+    volumes:
+      - /home/save/vpn/v2fly-core/config:/etc/v2ray
+      - /etc/hosts:/etc/hosts
+    command: "run -c /etc/v2ray/config.json"
+    restart: 'always'
+
+
+配置文件
+
+
+.
+├── config
+│   └── config.json
+└── docker-compose.yaml
+
+1...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>curl</title>
+    <link href="https://cc360428.github.io//posts/curl/" rel="alternate" type="text/html" title="curl" />
+    <published>2023-07-17T11:43:01+08:00</published>
+  
+    <updated>2023-07-17T11:43:01+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/curl/</id>
+    <content src="https://cc360428.github.io//posts/curl/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Linux" />
+    
+    <category term="Command" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Other
+
+  下载文件
+    
+      curl -O http://example.com/file.zip
+    
+  
+  使用代理
+    
+      curl -x proxy.example.com:8080 http://example.com/api
+    
+  
+  跟踪重定向
+    
+      curl -L http://example.com
+    
+  
+  限速下载
+    
+      curl –limit-rate 100K http://example.com/file.zip
+    
+  
+  Cookie
+    
+      curl -b “cookie1=value1; cookie2=value2” http://example.com/api
+    
+  
+
+
+http 请求
+
+设置请求头
+
+curl -H ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Redis Utils</title>
+    <link href="https://cc360428.github.io//posts/redis-utils-cmd/" rel="alternate" type="text/html" title="Redis Utils" />
+    <published>2023-06-27T10:48:54+08:00</published>
+  
+    <updated>2023-06-27T10:48:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/redis-utils-cmd/</id>
+    <content src="https://cc360428.github.io//posts/redis-utils-cmd/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Database" />
+    
+    <category term="Redis" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      redis 工具
+
+查询多少key
+
+
+  inf：所有库key数量
+  dbsize：当前库key 数量
+  keys 线上不推荐
+
+
+172.13.5.17:6000[5]&amp;gt; info 
+172.13.5.17:6000[5]&amp;gt; info keyspace
+# Keyspace
+db0:keys=1,expires=0,avg_ttl=0
+db5:keys=1,expires=0,avg_ttl=0
+db7:keys=725,expires=0,avg_ttl=0
+db10:keys=2,expires=0,avg_ttl=0
+db12:keys=4,expires=1,avg_ttl=13487003600
+db13:keys=24208,expires=18422,avg_ttl=18561084473
+172.13.5.17:6000[5]&amp;gt; dbsize...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -130,230 +319,6 @@ GitHub
 
         [client]
 host=my...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Redis Monitor</title>
-    <link href="https://cc360428.github.io//posts/redis-monitor/" rel="alternate" type="text/html" title="Redis Monitor" />
-    <published>2023-06-14T12:48:54+08:00</published>
-  
-    <updated>2023-06-14T12:48:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/redis-monitor/</id>
-    <content src="https://cc360428.github.io//posts/redis-monitor/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Database" />
-    
-    <category term="Redis" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      操作步骤如下
-
-
-  redis-exporter
-  prometheus
-  grafana
-
-
-redis-exporter 启动
-
-GitHub
-
-
-  在机器对应目录下创建目录和文件
-    
-      mkdir -p /home/save/redis-exporter/conf
-      
-        touch redis_conf.json
-
-        {
-"redis://redis-address-1:6379":"",
-"redis://redis-address-2:6379":"",
-"redis://redis-address-3:6379":"****"
-}
-        
-      
-    
-  
-  
-    docker-compose
-
-    version: '3'
-services:
-  redis-monitor:
-...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>狼人杀</title>
-    <link href="https://cc360428.github.io//posts/Werewolf-killing/" rel="alternate" type="text/html" title="狼人杀" />
-    <published>2023-06-13T12:48:54+08:00</published>
-  
-    <updated>2023-06-13T12:48:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/Werewolf-killing/</id>
-    <content src="https://cc360428.github.io//posts/Werewolf-killing/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="Left" />
-    
-    <category term="Werewolf killing" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      狼人杀
-
-推荐网址
-
-
-  简介
-    
-      狼人杀是一种常见的桌游，它需要多人参与，每个玩家都有一个特定的角色身份
-      在游戏中，玩家必须通过讨论和推理来找出谁是狼人，并将其赶出村庄，从而获得胜利
-      游戏攻略1
-      游戏攻略2
-      手势
-      
-    
-  
-
-
-基本规则
-
-
-  游戏开始前，所有玩家从中央随机抽取一张角色牌，可以看到自己的身份但不能让其他人看到
-  游戏分为白天和黑夜两个阶段，轮流进行。在白天，玩家通过讨论和投票来确定要执行哪个玩家（认为他是狼人）的身份。在黑夜，各角色依次行动，狼人可以选择击杀某个玩家，其他角色可以使用技能来帮助找出狼人。
-  每个白天，所有玩家都应发言，分享他们的想法和怀疑目标。如果有足够的证据在场上，任何玩家可以建议第一轮投票并选择要处决的玩家
-（即“狼人”），最终以最多票数的玩家被处决。
-...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>第七号嫌疑人</title>
-    <link href="https://cc360428.github.io//posts/Suspect-number-seven/" rel="alternate" type="text/html" title="第七号嫌疑人" />
-    <published>2023-06-13T12:48:54+08:00</published>
-  
-    <updated>2023-06-13T12:48:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/Suspect-number-seven/</id>
-    <content src="https://cc360428.github.io//posts/Suspect-number-seven/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="Left" />
-    
-    <category term="Script killing" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      游戏步骤
-
-前奏
-
-
-  讲述剧本类型
-  讲述内容背景
-  选角色
-
-
-游戏流程
-
-
-  发放对应角色剧本，并阅读阅读到“请勿翻开下一页”
-  主持人提示：自己任务
-
-
-第一阶段
-
-第一幕（10-15）
-
-
-  发放线索卡和地图
-    
-      给角色发放对应角色名字线索卡 * 6
-      地图 * 4
-        
-          一楼平面图
-          二楼平面图
-          三楼平面图
-          四楼阁楼
-        
-      
-    
-  
-  讨论时间
-    
-      自我介绍
-      分享自己唯一线索
-    
-  
-  讨论结束
-    
-      可以阅读下个阶段
-      给播放视频-01
-      第二幕开始
-    
-  
-
-
-第二幕 (45-60)
-
-
-  去教堂说秘密（阅读）
-  讨论结...
     </summary>
   
 

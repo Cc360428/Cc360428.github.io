@@ -1,6 +1,57 @@
 [
   
   {
+    "title": "v2fly-core",
+    "url": "/posts/linux-vpn-v2fly-core/",
+    "categories": "Network, Linux, Software",
+    "tags": "LinuxTool, Software",
+    "date": "2023-07-19 08:06:01 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "docker-composeversion: '3'services:  v2fly-core:    container_name: v2fly-core    image: v2fly/v2fly-core    ports:      - '10808:10808'      - '10809:10809'    volumes:      - /home/save/vpn/v2fly...",
+    "content": "docker-composeversion: '3'services:  v2fly-core:    container_name: v2fly-core    image: v2fly/v2fly-core    ports:      - '10808:10808'      - '10809:10809'    volumes:      - /home/save/vpn/v2fly-core/config:/etc/v2ray      - /etc/hosts:/etc/hosts    command: \"run -c /etc/v2ray/config.json\"    restart: 'always'配置文件.├── config│   └── config.json└── docker-compose.yaml1 directory, 2 files"
+  },
+  
+  {
+    "title": "curl",
+    "url": "/posts/curl/",
+    "categories": "Network, Linux, Command",
+    "tags": "LinuxTool, curl",
+    "date": "2023-07-17 11:43:01 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Other  下载文件          curl -O http://example.com/file.zip        使用代理          curl -x proxy.example.com:8080 http://example.com/api        跟踪重定向          curl -L http://example.com        限速下载     ...",
+    "content": "Other  下载文件          curl -O http://example.com/file.zip        使用代理          curl -x proxy.example.com:8080 http://example.com/api        跟踪重定向          curl -L http://example.com        限速下载          curl –limit-rate 100K http://example.com/file.zip        Cookie          curl -b “cookie1=value1; cookie2=value2” http://example.com/api      http 请求设置请求头curl -H \"Authorization: Bearer token\" http://example.com/api发送文件curl -X POST -H \"Content-Type: application/json\" -d '{\"key1\":\"value1\",\"key2\":\"value2\"}' http://example.com/apiGet要使用curl发送GET请求并带参数，您可以在URL中附加查询字符串参数。以下是一个示例命令：curl -X GET \"https://example.com/api?param1=value1&amp;param2=value2\"在上面的例中，您需要https://example.com/api 替换实际的API端URL，并将param1=value1&amp;param2=value2替换您要发送的参数。如果您的参数值包含特殊字符或空格，您可能需要对其进行URL编码。您可以使用urlencode命令行工或在线URL编码工具来执行此操作。请注意，些特殊字符（如&amp;、?等）在命令行中具有特含义，因此您可能需要使用引号将整个参数部分括起来，以避免解析错误。另外，请保您已经安装了curl命令行工具，并且可以从端或命令提示符中运行它。post  curl -X POST -H \"Content-Type: application/json\" -d '{\"key1 \"value1\", \"key2\": \"value2\"}' https://example.com/api/endpoint  格式化输出  curl -X POST -H \"Content-Type: application/json\" -d '{\"key1 \"value1\", \"key2\": \"value2\"}' https://example.com/api/endpoint | jq      from要使用cURL进行POST请求发送表单数据，可以使用-d或--data选项，后跟以key=value格式表示的表数据。以下是一个示：    curl -X POST -d \"username=johndoe&amp;password=secretpassword\" https://example.com/login        在这个示例，我们向https://example.com/login 发送一个带有两个表单字段username和password的POST请求。    如果有多个单字段，可以使用与号（&amp;）分隔们。如果需要，确保正确地对值进行URL编码。    此外，可以使用-H--header选项定请求的内容类型。例如，如果要使用application/x-www-form-urlencoded内容类型发送请求，可以添加以下标头：    curl -X POST -H \"Content-Type: application/x-www-form-urlencoded\" -d \"username=johndoe&amp;password=secretpassword\" https://example.com/login        请记得将https://example.com/login 替换为实际发送请求的URL  "
+  },
+  
+  {
+    "title": "Redis Utils",
+    "url": "/posts/redis-utils-cmd/",
+    "categories": "Database, Redis",
+    "tags": "Database, NoSql, Redis",
+    "date": "2023-06-27 10:48:54 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "redis 工具查询多少key  inf：所有库key数量  dbsize：当前库key 数量  keys 线上不推荐172.13.5.17:6000[5]&gt; info 172.13.5.17:6000[5]&gt; info keyspace# Keyspacedb0:keys=1,expires=0,avg_ttl=0db5:keys=1,expires=0,avg_ttl=0db...",
+    "content": "redis 工具查询多少key  inf：所有库key数量  dbsize：当前库key 数量  keys 线上不推荐172.13.5.17:6000[5]&gt; info 172.13.5.17:6000[5]&gt; info keyspace# Keyspacedb0:keys=1,expires=0,avg_ttl=0db5:keys=1,expires=0,avg_ttl=0db7:keys=725,expires=0,avg_ttl=0db10:keys=2,expires=0,avg_ttl=0db12:keys=4,expires=1,avg_ttl=13487003600db13:keys=24208,expires=18422,avg_ttl=18561084473172.13.5.17:6000[5]&gt; dbsize(integer) 1172.13.5.17:6000[5]&gt; keys *1) \"2005:Task\"172.13.5.17:6000[5]&gt; "
+  },
+  
+  {
     "title": "半程马拉松",
     "url": "/posts/half-marathon/",
     "categories": "Cc, Left, half marathon",
