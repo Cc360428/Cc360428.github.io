@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Postman",
+    "url": "/posts/postman/",
+    "categories": "Dev, Utils",
+    "tags": "Dev, Postman",
+    "date": "2023-07-26 09:32:25 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "PostmanWorkspacesnewHTTPGRPCWebSocketenvironmentspm.test(\"Reuest Status \",function() {    pm.response.to.have.status(200);});var requestJson = pm.response.json();// console.log(\"获取参数\",requestJson);...",
+    "content": "PostmanWorkspacesnewHTTPGRPCWebSocketenvironmentspm.test(\"Reuest Status \",function() {    pm.response.to.have.status(200);});var requestJson = pm.response.json();// console.log(\"获取参数\",requestJson);if (requestJson.En == 0){    var UserInfo = JSON.parse(CryptoJS.enc.Base64.parse(requestJson.Data).toString(CryptoJS.enc.Utf8))    console.log(\"userInfo ：\",UserInfo)    pm.environment.set(\"UserId\", UserInfo.UserId);    pm.environment.set(\"Token\", UserInfo.Token);    tests[\"Login\"] = true}else{      tests[\"Login\"] = \"登录失败\"+requestJson.En}"
+  },
+  
+  {
     "title": "v2fly-core",
     "url": "/posts/linux-vpn-v2fly-core/",
     "categories": "Network, Linux, Software",

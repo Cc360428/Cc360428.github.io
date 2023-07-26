@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-07-19T11:33:08+08:00</updated>
+  <updated>2023-07-26T16:09:27+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,99 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Postman</title>
+    <link href="https://cc360428.github.io//posts/postman/" rel="alternate" type="text/html" title="Postman" />
+    <published>2023-07-26T09:32:25+08:00</published>
+  
+    <updated>2023-07-26T09:32:25+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/postman/</id>
+    <content src="https://cc360428.github.io//posts/postman/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Dev" />
+    
+    <category term="Utils" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Postman
+
+Workspaces
+
+
+
+
+
+
+
+new
+
+
+
+
+HTTP
+
+
+
+
+
+
+
+
+
+
+GRPC
+
+
+
+
+
+
+
+
+
+
+
+
+WebSocket
+
+
+
+environments
+
+
+pm.test("Reuest Status ",function() {
+    pm.response.to.have.status(200);
+});
+
+var requestJson = pm.response.json();
+
+// console.log("获取参数",requestJson);
+
+if (requestJson.En == 0){
+
+    var UserInfo = JSON.parse(CryptoJS.enc.Base64.parse(requestJson.Data).toString(CryptoJS.enc.Utf8))
+    console.log(...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -255,70 +348,6 @@ db13:keys=24208,expires=18422,avg_ttl=18561084473
 
 
   半程马拉松是一项长跑比赛，...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Mysql Monitor</title>
-    <link href="https://cc360428.github.io//posts/mysql-monitor/" rel="alternate" type="text/html" title="Mysql Monitor" />
-    <published>2023-06-14T13:48:54+08:00</published>
-  
-    <updated>2023-06-14T13:48:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/mysql-monitor/</id>
-    <content src="https://cc360428.github.io//posts/mysql-monitor/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Database" />
-    
-    <category term="Redis" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      操作步骤如下
-
-
-  mysql 设置
-
-
-  CREATE USER 'exporter'@'localhost' IDENTIFIED BY 'XXXXXXXX' WITH MAX_USER_CONNECTIONS 3;
-  GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'exporter'@'localhost'; 
-
-
-
-  mysqld_exporter
-  prometheus
-  grafana
-
-
-mysqld_exporter 启动
-
-GitHub
-
-
-  在机器对应目录下创建目录和文件
-    
-      mkdir -p /home/save/mysqld_exporter/conf
-      
-        touch config.my-cnf
-
-        [client]
-host=my...
     </summary>
   
 

@@ -53,7 +53,7 @@ const allowedDomains = [
     'cc360428.github.io/',
 
     
-        'cc360428.github.io',
+        '127.0.0.1:8090',
     
 
     'fonts.gstatic.com',
