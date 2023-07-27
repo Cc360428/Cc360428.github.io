@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-07-26T16:13:18+08:00</updated>
+  <updated>2023-07-27T11:01:55+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,90 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Hyper-V</title>
+    <link href="https://cc360428.github.io//posts/hyper-v/" rel="alternate" type="text/html" title="Hyper-V" />
+    <published>2023-07-27T09:32:25+08:00</published>
+  
+    <updated>2023-07-27T09:32:25+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/hyper-v/</id>
+    <content src="https://cc360428.github.io//posts/hyper-v/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Dev" />
+    
+    <category term="Utils" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Windows Hyper-V
+
+
+  需要先下载好 Centos 7 镜像
+  阿里云地址
+
+
+创建Linux启动
+
+
+
+
+
+
+
+
+
+
+
+
+
+网络管理
+
+
+
+
+基础设置
+
+
+
+
+CentosEnter
+
+
+
+
+
+
+
+  网络设置
+
+
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+
+TYPE=Ethernet                             # 网卡类型：为以太网
+PROXY_METHOD=none                         # 代理方式：关闭状态
+BROWSER_ONLY=no                           # 只是浏览器：否
+BOOTPROTO=dhcp                            # 设置网卡获得ip地址的方式，可能的选项为static(静...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -295,59 +379,6 @@ db10:keys=2,expires=0,avg_ttl=0
 db12:keys=4,expires=1,avg_ttl=13487003600
 db13:keys=24208,expires=18422,avg_ttl=18561084473
 172.13.5.17:6000[5]&amp;gt; dbsize...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>半程马拉松</title>
-    <link href="https://cc360428.github.io//posts/half-marathon/" rel="alternate" type="text/html" title="半程马拉松" />
-    <published>2023-06-19T12:48:54+08:00</published>
-  
-    <updated>2023-06-19T12:48:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/half-marathon/</id>
-    <content src="https://cc360428.github.io//posts/half-marathon/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="Left" />
-    
-    <category term="half marathon" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      半程马拉松
-
-简介
-
-半程马拉松是一项长跑运动项目，全称为半程马拉松路跑比赛（Half Marathon）。它的路线长度约为21.0975公里，是一项具有挑战性和观赏性的中长距离长跑比赛。
-
-半程马拉松比赛通常在早上开始，选手需要在规定时间内完成整个赛程，并且按照规定的路线进行奔跑。这项比赛的路线通常是在城市内或郊区，有时甚至穿越了名胜古迹、山脉或海滨等美丽的自然风景线。
-
-参加半程马拉松比赛需要进行长期的训练和准备，以确保身体能够承受比赛的挑战。参赛者需要具备良好的耐力和体能，并且需要遵循正确的饮食和休息习惯，以提高体能和减轻疲劳。
-
-半程马拉松比赛除了具有挑战性外，也是一个社交和健康益处的活动。参与者可以结识新朋友，享受跑步带来的愉悦感，同时也能改善心肺功能、增强免疫力、减轻压力等。因此，半程马拉松比赛成为越来越多人钟情的一项户外运动。
-
-规则
-
-
-  半程马拉松是一项长跑比赛，...
     </summary>
   
 
