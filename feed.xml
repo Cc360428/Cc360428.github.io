@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-07-27T11:01:55+08:00</updated>
+  <updated>2023-08-08T16:16:56+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -97,6 +97,63 @@ TYPE=Ethernet                             # 网卡类型：为以太网
 PROXY_METHOD=none                         # 代理方式：关闭状态
 BROWSER_ONLY=no                           # 只是浏览器：否
 BOOTPROTO=dhcp                            # 设置网卡获得ip地址的方式，可能的选项为static(静...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Postman env</title>
+    <link href="https://cc360428.github.io//posts/postman-env/" rel="alternate" type="text/html" title="Postman env" />
+    <published>2023-07-26T09:33:25+08:00</published>
+  
+    <updated>2023-07-26T09:33:25+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/postman-env/</id>
+    <content src="https://cc360428.github.io//posts/postman-env/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Dev" />
+    
+    <category term="Utils" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      管理环境
+
+为什么要环境管理
+
+一个典型的使用环境可能工作如下:
+
+
+  你有生产 API 和开发 API,在不同的位置。
+  你用两个环境,一个用于开发和生产。
+  每个环境包含一个变量来存储基础 URL。
+  指的是变量集合中的每个请求的 URL 字段。
+  你之间切换环境运行时要求测试它们对开发或生产环境。
+  在您的组织中,您可能有一个团队,只有进入开发环境,并与编辑个体的团队成员和只读存取特定环境。
+
+
+创建一个环境
+
+
+  在 Environment quick look (eye) and Manage environments (gear) buttons. 可以查看、创建、修改
+  点击 Manage environments -&amp;gt; Add
+  给此环境赋予名字 Environment Name
+  输入一个名称为您的变量,并指定 最初的 和 当前的 值——默...
     </summary>
   
 
@@ -324,61 +381,6 @@ http 请求
 设置请求头
 
 curl -H ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Redis Utils</title>
-    <link href="https://cc360428.github.io//posts/redis-utils-cmd/" rel="alternate" type="text/html" title="Redis Utils" />
-    <published>2023-06-27T10:48:54+08:00</published>
-  
-    <updated>2023-06-27T10:48:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/redis-utils-cmd/</id>
-    <content src="https://cc360428.github.io//posts/redis-utils-cmd/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Database" />
-    
-    <category term="Redis" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      redis 工具
-
-查询多少key
-
-
-  inf：所有库key数量
-  dbsize：当前库key 数量
-  keys 线上不推荐
-
-
-172.13.5.17:6000[5]&amp;gt; info 
-172.13.5.17:6000[5]&amp;gt; info keyspace
-# Keyspace
-db0:keys=1,expires=0,avg_ttl=0
-db5:keys=1,expires=0,avg_ttl=0
-db7:keys=725,expires=0,avg_ttl=0
-db10:keys=2,expires=0,avg_ttl=0
-db12:keys=4,expires=1,avg_ttl=13487003600
-db13:keys=24208,expires=18422,avg_ttl=18561084473
-172.13.5.17:6000[5]&amp;gt; dbsize...
     </summary>
   
 

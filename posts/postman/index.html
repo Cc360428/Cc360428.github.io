@@ -3148,21 +3148,7 @@
         
         
         <li>
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
-        </li>
-      
-        
-        
-        
-        <li>
           <a href="/posts/resume/">Resume</a>
-        </li>
-      
-        
-        
-        
-        <li>
-          <a href="/posts/databases/">Databases（04735）</a>
         </li>
       
         
@@ -3177,6 +3163,20 @@
         
         <li>
           <a href="/posts/ErrorAndUse/">Redis Error</a>
+        </li>
+      
+        
+        
+        
+        <li>
+          <a href="/posts/redis-config/">Redis 配置</a>
+        </li>
+      
+        
+        
+        
+        <li>
+          <a href="/posts/leetcode-okay/">Leetcode 解题方式</a>
         </li>
       
     </ul>
@@ -5278,19 +5278,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -7579,7 +7579,7 @@
         
         
         <div class="col">
-          <a href="/posts/gitbase/" class="card post-preview h-100">
+          <a href="/posts/postman-env/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -7592,14 +7592,14 @@
 
 <em
   class="small"
-  data-ts="1587191584"
+  data-ts="1690335205"
   data-df="ll"
   
 >
-  Apr 18, 2020
+  Jul 26, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Git 基本命令 </h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Postman env</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -7608,22 +7608,19 @@
 
 
 
-                  Git 工作用到的基本命令
+                  管理环境
 
-拉取仓库代码
+为什么要环境管理
 
-git clone 
-
-git clone http://git.lichaocheng.top/google/Study.git
+一个典型的使用环境可能工作如下:
 
 
-git pull
-
-mkdir Study
-cd Study
-git init
-git remote add origin http://git.lichaocheng.top/google/Study.git
-...
+  你有生产 API 和开发 API,在不同的位置。
+  你用两个环境,一个用于开发和生产。
+  每个环境包含一个变量来存储基础 URL。
+  指的是变量集合中的每个请求的 URL 字段。
+  你之间切换环境运行时要求测试它们对开发或生产环境。
+  在您的组织中,您可能有一个团队,只有进入开发环境,并与编辑个体的团队成员和...
                 </p>
               </div>
             </div>
@@ -7706,7 +7703,7 @@ Failed to connect to 127.0.0.1 port 1080: Connection refused
   Apr 18, 2020
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Git Base Other </h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Git Base Other</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -7765,11 +7762,11 @@ $ git config -e ...
 
   
     <a
-      href="/posts/hyper-v/"
+      href="/posts/postman-env/"
       class="btn btn-outline-primary"
       prompt="Newer"
     >
-      <p>Hyper-V</p>
+      <p>Postman env</p>
     </a>
   
 </div>
