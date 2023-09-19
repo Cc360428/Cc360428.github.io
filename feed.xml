@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-09-19T19:52:36+08:00</updated>
+  <updated>2023-09-19T21:09:44+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -57,8 +57,8 @@
     
       求和
         
-          公式：\(\displaystyle \sum ^n _{i=1}\) 简化 \(\sum\)
-          例子：\(\displaystyle \sum ^5 _{i=1} = 1+2+3+4+6 = 15\)
+          公式：$\displaystyle \sum ^n _{i=1}$ 简化 $\sum$
+          例子：$\displaystyle \sum ^5 _{i=1} = 1+2+3+4+5 = 15$
         
       
     
@@ -75,7 +75,7 @@
   运筹学
     
       运筹学是一门研究如何有效地组织和管理人机系统的科学
-      运筹学利用计划方法和有关多学科的要求...
+      运筹学利用计划方法和有关多学科的要求，把复杂功能...
     </summary>
   
 

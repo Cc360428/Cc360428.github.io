@@ -277,7 +277,7 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="http://127.0.0.1:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
@@ -548,6 +548,91 @@
 
 
 
+  
+  
+
+  <!-- CDN URL -->
+  
+
+  <!-- Add image path -->
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+      
+    
+
+    <!-- combine -->
+    
+
+  
+
+  
+
+
 
 <!-- Add header for code snippets -->
 
@@ -770,6 +855,42 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -857,9 +978,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="716 words"
+  title="1160 words"
 >
-  <em>3 min</em> read</span>
+  <em>6 min</em> read</span>
 
     </div>
 
@@ -877,8 +998,8 @@
     <ul>
       <li>求和
         <ul>
-          <li>公式：\(\displaystyle \sum ^n _{i=1}\) 简化 \(\sum\)</li>
-          <li>例子：\(\displaystyle \sum ^5 _{i=1} = 1+2+3+4+6 = 15\)</li>
+          <li>公式：$\displaystyle \sum ^n _{i=1}$ 简化 $\sum$</li>
+          <li>例子：$\displaystyle \sum ^5 _{i=1} = 1+2+3+4+5 = 15$</li>
         </ul>
       </li>
     </ul>
@@ -902,7 +1023,7 @@
 
 <h3 id="第二章"><span class="me-2">第二章</span><a href="#第二章" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="理论"><span class="me-2">理论</span><a href="#理论" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="概论-2"><span class="me-2">概论 2</span><a href="#概论-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li>
@@ -913,7 +1034,9 @@
       <li><strong>预测是决策的基础</strong>，企业预测的目的就是为企业决策提供适当的数据或资料</li>
     </ul>
   </li>
-  <li>预测方法的分类
+  <li>
+    <p>预测方法的分类</p>
+
     <ul>
       <li><strong>经济</strong>预测：分为宏观经济预测（国民经济范围）和微观经济预测（单个实体经济、市场分析等）
         <ul>
@@ -935,7 +1058,9 @@
       <li><strong>军事</strong>预测：研究与战争、军事有关的问题</li>
     </ul>
   </li>
-  <li>专家群
+  <li>
+    <p>专家群</p>
+
     <blockquote>
       <p>在社会环境和经济环境越来越复杂的情况下，管理者进行决策时，
 为了掌握社会环境和经济环境的各方面的变化和预测资料；
@@ -943,7 +1068,9 @@
 并希望在”专家群”中取得比较一致的意见而采取的定性预测方法</p>
     </blockquote>
   </li>
-  <li>特尔斐法和专家小组法的区别
+  <li>
+    <p>特尔斐法和专家小组法的区别</p>
+
     <ul>
       <li>特尔斐 -&gt; 专家群、背对背，适用于<strong>长期或中期</strong>预测</li>
       <li>专家小组 -&gt; 面对面，过程紧凑，适用于短期预测</li>
@@ -951,7 +1078,7 @@
   </li>
 </ul>
 
-<h4 id="计算公式"><span class="me-2">计算公式</span><a href="#计算公式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="计算公式-2"><span class="me-2">计算公式 2</span><a href="#计算公式-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li>
@@ -988,11 +1115,133 @@
       </li>
     </ul>
   </li>
+  <li>
+    <p>回归模型预测法</p>
+
+    <ul>
+      <li>
+        <p>回归方程：$ y=a+bx $</p>
+
+\[b = \frac{n\sum xy - \sum x \sum y} {n\sum x^2 - (\sum x)^2}\]
+
+\[a = \frac{\sum y - b\sum x } {n}\]
+      </li>
+      <li>
+        <p>相关系数:</p>
+
+\[R=\sqrt{\frac{\sum(\hat{y_i}-\overline y)^2}{\sum(y_i-\overline y)^2}}\]
+      </li>
+      <li>
+        <p>回归偏差平方和</p>
+
+\[R=\sum(\hat{y_i}-\overline y)^2\]
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="第三章"><span class="me-2">第三章</span><a href="#第三章" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<h4 id="概论-3"><span class="me-2">概论 3</span><a href="#概论-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>
+    <p>决策的分类</p>
+
+    <ul>
+      <li>按决策方法不同而分类：常规性和特殊性决策</li>
+      <li>按计划与控制的关系分类：计划性和控制性决策</li>
+    </ul>
+  </li>
+  <li>
+    <p>三种决策类型的区别</p>
+
+    <ul>
+      <li>一种自然状态、概率已知——确定条件下的决策</li>
+      <li>一个以上自然状态、概率未知——不确定条件下的决策</li>
+      <li>一个以上自然状态、概率已知——风险条件下的决策</li>
+    </ul>
+  </li>
+  <li>
+    <p>在不同环境下的决策</p>
+
+    <ul>
+      <li>确定条件下的决策
+        <ul>
+          <li>只有一种自然状态</li>
+        </ul>
+      </li>
+      <li>不确定条件下的决策
+        <ul>
+          <li>最大最大决策标准</li>
+          <li>最大最小决策标准</li>
+          <li>最小最大遗憾值决策标准</li>
+          <li>现实主义决策标准</li>
+        </ul>
+      </li>
+      <li>风险条件下的决策
+        <ul>
+          <li>最大期望收益值标准</li>
+          <li>最小期望损失值标准</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>决策树的结构
+<a href="http://127.0.0.1:8090/assets/img/cc/sekf-study/3.1.png" class="popup img-link "><img data-src="http://127.0.0.1:8090/assets/img/cc/sekf-study/3.1.png" alt="Success" class="lazyload" data-proofer-ignore></a></p>
+  </li>
+</ul>
+
+<h4 id="计算公式-3"><span class="me-2">计算公式 3</span><a href="#计算公式-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
 <h3 id="第四章"><span class="me-2">第四章</span><a href="#第四章" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h4 id="计算公-4"><span class="me-2">计算公 4</span><a href="#计算公-4" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>
+    <p>库存费用分析</p>
+
+    <ul>
+      <li>
+        <p>库存费用模型结构</p>
+
+        <ul>
+          <li>
+            <p>原材料费用模型库存费用
+\(库存费用=订货费+保管费\)
+\(TC=P+C\)</p>
+          </li>
+          <li>
+            <p>半成品和成品库存费用
+\(库存费用(TC)=工装调整费+保管费\)
+\(TC=S+C\)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>库存费用</p>
+
+        <ul>
+          <li>订货费用
+\(订货费= \frac{年需要量}{订货量}*一次订货费\)
+\(P=\frac{D}{N}*P_0\)</li>
+          <li>工装调整费
+\(工装调整费= \frac{年计划产量}{生成批量}*一次工装调整费\)
+\(S=\frac{R}{N}*P_s\)</li>
+          <li>
+            <p>保管费
+\(保管费= 平均库存量 * 单位物质保管费\)</p>
+
+            <pre><code class="language-math">  S = \frac{1}{2}2*C_0
+</code></pre>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <h3 id="第五章"><span class="me-2">第五章</span><a href="#第五章" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
