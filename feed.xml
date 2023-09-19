@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-09-19T10:25:01+08:00</updated>
+  <updated>2023-09-19T10:33:44+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -22,9 +22,9 @@
   <entry>
     <title>vim Plug Manager</title>
     <link href="https://cc360428.github.io//posts/vim-plug/" rel="alternate" type="text/html" title="vim Plug Manager" />
-    <published>2023-09-19T10:01:25+08:00</published>
+    <published>2023-09-18T11:32:25+08:00</published>
   
-    <updated>2023-09-19T10:24:51+08:00</updated>
+    <updated>2023-09-19T10:32:48+08:00</updated>
   
     <id>https://cc360428.github.io//posts/vim-plug/</id>
     <content src="https://cc360428.github.io//posts/vim-plug/" />
