@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "vim Plug Manager",
+    "url": "/posts/vim-plug/",
+    "categories": "Dev, Utils",
+    "tags": "Dev, vim",
+    "date": "2023-09-18 11:32:25 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "安装curl -fLo ~/.vim/autoload/plug.vim --create-dirs \\  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim修改配置~/.vimrccall plug#begin('~/.vim/plugged')Plug 'vim-airline/vim-airline'P...",
+    "content": "安装curl -fLo ~/.vim/autoload/plug.vim --create-dirs \\  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim修改配置~/.vimrccall plug#begin('~/.vim/plugged')Plug 'vim-airline/vim-airline'Plug 'vim-airline/vim-airline-themes'Plug 'itchyny/lightline.vim'Plug 'preservim/nerdtree'Plug 'tpope/vim-fugitive'Plug 'ryanoasis/vim-devicons'Plug 'tiagofumo/vim-nerdtree-syntax-highlight'Plug 'dense-analysis/ale'Plug 'fatih/vim-go'call plug#end()syntax enableset ts=4set showcmdset smartindentset clipboard=unnamedplusset undodir=/home/save/lcc/vim/undodirset expandtabset autoindentset numberset hlsearchset nocompatibleset backspace=indent,eol,start安装列表插件  打开终端  vim      进入命令行模式      :PlugInstall      插件其他操作  更新插件：:PlugUpdate  更新指定插件：:PlugUpdate NERDTree  恢复插件：:PlugSnapshot ~/vim-plug.list"
+  },
+  
+  {
     "title": "C++Programming（04737）",
     "url": "/posts/C++/",
     "categories": "Cc, SelfStudy, C++",
@@ -13,8 +30,8 @@
 
 
     
-    "snippet": "C++Programming第一章 C++语言简介1 C++语言的发展简史  C++ 98 版 （2019 年课本改版）  程序语言分为三类：低级语言、中级语言、高级语言          低级语言：机器语言和汇编语言      高级语言：高级语言是面向用户的语言，通用性强，C++属于高级语言        简介          是一种编译式的、通用式、大小写敏感的编程语言      C+...",
-    "content": "C++Programming第一章 C++语言简介1 C++语言的发展简史  C++ 98 版 （2019 年课本改版）  程序语言分为三类：低级语言、中级语言、高级语言          低级语言：机器语言和汇编语言      高级语言：高级语言是面向用户的语言，通用性强，C++属于高级语言        简介          是一种编译式的、通用式、大小写敏感的编程语言      C++ 与 C 对比，在求解问题方法上进行的最大改进是面向对象，C++完全支持面向对象的开发模式      编译.cpp 源文件为.obj 目标文件成功后，要将所有的 obj 文件连接成为.exe 文件      2 C++语言的特性输入/输出与命名空间  输入输出          输入 cin                  C++将数据从一个对象流向另一个对象的流动的抽象称为 流          从流中获取数据的操作称为提取操作          向流中添加数据的操作称为插 入操作,cin用来处理标准输入          连续从键盘读取想要的数据时，以空格、制表符 Tab 或 Enter 键作为分隔符，如果要输入这三种字符给变量          可以使用 getchar()函数                    输出 cin                  cout 用来处理标准输出，即屏幕输出          需要在程序中包含头文件#include&lt;iostream&gt;          &lt;iostream&gt;为标准输入输出流                      常用的头文件                  为标准输入输出流                    为标准文件流                    为标准字符串处理函数                    为标准数学函数              命名空间          所谓命名空间（namespace）是一种将程序库名称封装起来的方法,它提高了程序的性能和可靠性              可消除同名引起的冲突      标准程序库的命名空间 using namespace std;                  引入其他命名空间标识符为：命名空间名::标识符名                    类型转换  强制类型转换          static_cast  表达式 , static_cast 可以省略                  ontInt2 = int(oneDouble); //新形式          ontInt2 = (int)oneDouble; //旧形式                      自动类型转换：小的类型自动转换为大的类型 double&gt;float&gt;int&gt;char  去常量性          const_cast表达式用于去除指针与引用的常量性，但不能去除变量的常量性      3 C++语言的程序结构第二章 面向对象的基础概念1 结构化程序设计2 面向对象程序设计的概念和特点3 类的初步认识4 类的示例程序剖析5 访问对象的成员6 类成员的可访问范围7 标识符的作用域与可见性第三章 类和对象的进阶重点1 构造函数2 析构函数3 类的静态成员（重点）4 变量及对象的生存期和作用域5 常量成员与常引用成员6 成员对象和封闭类7 友元8 this 执政（难点）第四章 运算符重载重点1 运算符重载概念2 重载复制运算符3 重载流插入运算符和流提取运算符4 重载强制类型转换运算符5 重载自增、自减运算符第五章 类的继承与派生重点1 类的继承与派生2 访问控制3 派生类的构造函数和析构函数4 类之间关系5 多层次派生6 基类与派生类指针的互相转换第六章 多态与虚函数重点1 多态的基本概念2 多态实例3 多态的使用4 虚析构函数5 纯虚函数和抽象类第七章输入/输出流1 流类简介2 标准流对象3 控制 I/O 格式4 调用 cout 的成员函数5 调用 cin 的成员函数第七章文件操作1 文件基本概念和文件流类2 打开和关闭文件3 文件读写操作4 随机访问文件第七章函数模版与类模版1 函数模版2 类模版"
+    "snippet": "C++Programming课本代码第一章 C++语言简介1 C++语言的发展简史  C++ 98 版 （2019 年课本改版）  程序语言分为三类：低级语言、中级语言、高级语言          低级语言：机器语言和汇编语言      高级语言：高级语言是面向用户的语言，通用性强，C++属于高级语言        简介          是一种编译式的、通用式、大小写敏感的编程语言    ...",
+    "content": "C++Programming课本代码第一章 C++语言简介1 C++语言的发展简史  C++ 98 版 （2019 年课本改版）  程序语言分为三类：低级语言、中级语言、高级语言          低级语言：机器语言和汇编语言      高级语言：高级语言是面向用户的语言，通用性强，C++属于高级语言        简介          是一种编译式的、通用式、大小写敏感的编程语言      C++ 与 C 对比，在求解问题方法上进行的最大改进是面向对象，C++完全支持面向对象的开发模式      编译.cpp 源文件为.obj 目标文件成功后，要将所有的 obj 文件连接成为.exe 文件      2 C++语言的特性输入/输出与命名空间  输入输出          输入 cin                  C++将数据从一个对象流向另一个对象的流动的抽象称为 流          从流中获取数据的操作称为提取操作          向流中添加数据的操作称为插 入操作,cin用来处理标准输入          连续从键盘读取想要的数据时，以空格、制表符 Tab 或 Enter 键作为分隔符，如果要输入这三种字符给变量          可以使用 getchar()函数                    输出 cin                  cout 用来处理标准输出，即屏幕输出          需要在程序中包含头文件#include&lt;iostream&gt;          &lt;iostream&gt;为标准输入输出流                      常用的头文件                  为标准输入输出流                    为标准文件流                    为标准字符串处理函数                    为标准数学函数              命名空间          所谓命名空间（namespace）是一种将程序库名称封装起来的方法,它提高了程序的性能和可靠性              可消除同名引起的冲突      标准程序库的命名空间 using namespace std;                  引入其他命名空间标识符为：命名空间名::标识符名                    类型转换  强制类型转换          static_cast  表达式 , static_cast 可以省略                  ontInt2 = int(oneDouble); //新形式          ontInt2 = (int)oneDouble; //旧形式                      自动类型转换：小的类型自动转换为大的类型 double&gt;float&gt;int&gt;char  去常量性          const_cast表达式用于去除指针与引用的常量性，但不能去除变量的常量性      3 C++语言的程序结构第二章 面向对象的基础概念1 结构化程序设计2 面向对象程序设计的概念和特点3 类的初步认识4 类的示例程序剖析5 访问对象的成员6 类成员的可访问范围7 标识符的作用域与可见性第三章 类和对象的进阶重点1 构造函数2 析构函数3 类的静态成员（重点）4 变量及对象的生存期和作用域5 常量成员与常引用成员6 成员对象和封闭类7 友元8 this 执政（难点）第四章 运算符重载重点1 运算符重载概念2 重载复制运算符3 重载流插入运算符和流提取运算符4 重载强制类型转换运算符5 重载自增、自减运算符第五章 类的继承与派生重点1 类的继承与派生2 访问控制3 派生类的构造函数和析构函数4 类之间关系5 多层次派生6 基类与派生类指针的互相转换第六章 多态与虚函数重点1 多态的基本概念2 多态实例3 多态的使用4 虚析构函数5 纯虚函数和抽象类第七章输入/输出流1 流类简介2 标准流对象3 控制 I/O 格式4 调用 cout 的成员函数5 调用 cin 的成员函数第七章文件操作1 文件基本概念和文件流类2 打开和关闭文件3 文件读写操作4 随机访问文件第七章函数模版与类模版1 函数模版2 类模版"
   },
   
   {

@@ -1074,6 +1074,20 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/vim-plug/">vim Plug Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/C++/">C++Programming（04737）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
         </li>
       
@@ -1089,20 +1103,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/postman/">Postman</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/redis-all/">Redis 汇总</a>
         </li>
       
     </ul>
@@ -4669,6 +4669,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -5956,55 +5968,6 @@ https://gitee.com/ClientCodeFile/...
         
         
         <div class="col">
-          <a href="/posts/passwrod/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1587183708"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>MySQL 忘记密码</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  MySQL 忘记密码
-
-
-  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
-
-
-关闭服务
-
-[root@Cc ~]# ps -ef |grep mysql
-root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
-mysql    20039     1  0 12:39 ?     ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
           <a href="/posts/Mysql-Version-info/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -6042,6 +6005,53 @@ mysql    20039     1  0 12:39 ?     ...
   通过 innodb_page_size 指定，默认是 16KB，对于工作负载和存储设备（尤其是具有小块大小的 SSD 设备）的某些组合，较小的页面大小可以帮助避免冗余或低效的 I / O
   InnoDB redolog 总大小的限制从之前的 4G 扩展至 512G
   InnoDB 现在可以限制大量表打...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
+          <a href="/posts/etcd_base/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1587391501"
+  data-df="ll"
+  
+>
+  Apr 20, 2020
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>etcd Base</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  etcd 简介
+
+etcd 是 CoreOS 团队于 2013 年 6 月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd 内部采用raft协议作为一致性算法，etcd 基于 Go 语言实现。
+
+etcd 作为服务发现系统，有以下的特点：
+
+
+  简单：安装配置简单，而且提供了 HTTP API 进行交互，使用也很简单
+  安全：支持 SSL 证书验...
                 </p>
               </div>
             </div>

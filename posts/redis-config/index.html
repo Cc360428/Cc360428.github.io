@@ -2818,6 +2818,20 @@ jemalloc-bg-thread yes
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/vim-plug/">vim Plug Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/C++/">C++Programming（04737）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
         </li>
       
@@ -2833,20 +2847,6 @@ jemalloc-bg-thread yes
         
         <li class="text-truncate lh-lg">
           <a href="/posts/postman/">Postman</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/redis-all/">Redis 汇总</a>
         </li>
       
     </ul>
@@ -7385,6 +7385,18 @@ jemalloc-bg-thread yes
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -7646,56 +7658,6 @@ jemalloc-bg-thread yes
         
         
         <div class="col">
-          <a href="/posts/mysql-monitor/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1686721734"
-  data-df="ll"
-  
->
-  Jun 14, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Mysql Monitor</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  操作步骤如下
-
-
-  mysql 设置
-
-
-1
-2
-  CREATE USER &#39;exporter&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;XXXXXXXX&#39; WITH MAX_USER_CONNECTIONS 3;
-  GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO &#39;exporter&#39;@&#39;localhost&#39;; 
-
-...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
           <a href="/posts/redis-utils-cmd/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -7799,6 +7761,57 @@ db0:keys=1,expir...
   是一个使用 C 语言编写的，开源的（BSD 许可）高性能非关系型（NoSQL）的键值对数据库。
   Redis 可以存储键和五种不同类型的值之间的映射。键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。
   与传统数据库不同的是 Redis 的数据是存在内存中的，所以读...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
+          <a href="/posts/redis-centos-7/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1548478134"
+  data-df="ll"
+  
+>
+  Jan 26, 2019
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Redis 安装</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  方法一：源文件安装（推荐安装）
+
+在CentOS和Red Hat系统中，首先添加EPEL仓库，然后更新yum源：
+
+sudo yum install epel-release
+sudo yum update
+然后安装Redis数据库：
+
+sudo yum -y install redis
+安装好后启动Redis服务即可：
+
+sudo systemctl start redis
+这里同样可以使...
                 </p>
               </div>
             </div>

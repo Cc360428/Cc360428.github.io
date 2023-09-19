@@ -592,6 +592,80 @@
 
 <div id="post-list">
   
+    <a href="/posts/mysql-monitor/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Mysql Monitor
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              操作步骤如下
+
+
+  mysql 设置
+
+
+  CREATE USER &#39;exporter&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;XXXXXXXX&#39; WITH MAX_USER_CONNECTIONS 3;
+  GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO &#39;exporter&#39;@&#39;localhost&#39;; 
+
+
+
+  ...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1686721734"
+  data-df="ll"
+  
+>
+  Jun 14, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Database,
+                    Redis
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
     <a href="/posts/redis-monitor/" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
         
@@ -1287,92 +1361,6 @@ GitHub
       </div>
     </a>
   
-    <a href="/posts/education/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Math 国内教育
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              小学
-
-一年级数学：
-
-
-  数字 0-10 的认识和比较
-  简单的加减法
-  几何形状的认识，如正方形、三角形、圆形等
-  时间和日历的基本概念
-
-
-二年级数学：
-
-
-  数字 0-100 的认识和比较
-  简单的加减法，进一步学习加减法口诀
-  二维图形的认识，如长方形、正方形、三角形、圆形等
-  一些简单的度量单位，如长度、重量、容积等
-
-
-三年级数学：
-
-
-  数字 0-1000 ...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1684382454"
-  data-df="ll"
-  
->
-  May 18, 2023
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Cc,
-                    Math
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
 </div>
 <!-- #post-list -->
 
@@ -1733,6 +1721,20 @@ GitHub
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/vim-plug/">vim Plug Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/C++/">C++Programming（04737）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
         </li>
       
@@ -1748,20 +1750,6 @@ GitHub
         
         <li class="text-truncate lh-lg">
           <a href="/posts/postman/">Postman</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/redis-all/">Redis 汇总</a>
         </li>
       
     </ul>
