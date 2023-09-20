@@ -823,6 +823,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -915,9 +927,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1572 words"
+  title="1623 words"
 >
-  <em>8 min</em> read</span>
+  <em>9 min</em> read</span>
 
     </div>
 
@@ -931,9 +943,7 @@
 <h2 id="准备工作"><span class="me-2">准备工作</span><a href="#准备工作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>
-    <p>安装 kubectl</p>
-  </li>
+  <li>安装 kubectl</li>
   <li>
     <p>登录到 Kubernetes 集群中</p>
 
@@ -953,7 +963,170 @@
 kubectl get nodes
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
+  <li>
+    <p>设置环境</p>
+
+    <div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  <span class="nb">export </span><span class="nv">KUBECONFIG</span><span class="o">=</span><span class="s2">"/etc/kubernetes/admin.conf"</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
 </ul>
+
+<h3 id="基本命令"><span class="me-2">基本命令</span><a href="#基本命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="c"># 查看所有nodes</span>
+kubectl get node
+kubectl delete node node-name <span class="c"># 删除node</span>
+kubectl replace <span class="nt">-f</span> node-name.yaml <span class="c"># 指定node 脱离调度范围</span>
+kubectl patch node node-name <span class="nt">-p</span> <span class="s1">'{"spec":"{"unschedulable":"true"}"}'</span>
+<span class="c"># 恢复</span>
+kubectl cordon node-name <span class="c"># 将 node-name 节点设置为不可调度模式</span>
+kubectl drain node-name <span class="c"># 将当前运行的 node-name 节点上容器驱离</span>
+kubectl uncordon node-name <span class="c"># 执行完维护后，将节点重新加入调度</span>
+
+<span class="c"># label 可以将pod调度指定到 node（project=name）</span>
+kubectl label node node-name <span class="nv">rele</span><span class="o">=</span>backend <span class="c"># 添加 label</span>
+kubectl label node node-name rele- <span class="c"># 删除label</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="pod"><span class="me-2">Pod</span><a href="#pod" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+</pre></td><td class="rouge-code"><pre><span class="c"># -n 指定 namespaces</span>
+kubectl run .... <span class="c"># 创建</span>
+<span class="c"># 查询pod资源 尾部加上 `-w` 可以查看到创建pod</span>
+kubectl get pods <span class="nt">--all-namespaces</span> <span class="c"># or kubectl get pods -A</span>
+kubectl get pods <span class="nt">-n</span> common <span class="c"># 指定 namespaces</span>
+kubectl get pods,deployment,replicaset <span class="c"># deployment-控制器，replicaset-副本集</span>
+
+kubectl expose <span class="nt">-f</span> ..<span class="k">*</span>...yaml <span class="nt">--port</span><span class="o">=</span>8080 <span class="nt">--target-port</span><span class="o">=</span>8081 <span class="c"># 为资源暴露为新的Kubernetes service</span>
+kubectl get service ferry <span class="nt">-n</span> common <span class="c"># 查询服务暴露的端口 ;service 可以写成 svc</span>
+kubectl get pod,svc <span class="nt">-n</span> common <span class="c"># 查询pod 和 service 端口和运行状态</span>
+get pods <span class="nt">-o</span> wide <span class="nt">-n</span> common <span class="c"># 查询网络状态</span>
+kubectl get pods  ferry-6cb8d5697c-tdbzc <span class="nt">-o</span> wide  <span class="nt">-n</span> common <span class="c"># 指定pod 查询</span>
+
+kubectl get endpoints <span class="c"># 查询关联后的节点</span>
+
+kubectl logs ferry-6cb8d5697c-tdbzc <span class="nt">-n</span> common | more <span class="c"># 查询日志 more-&gt; 可以分也查找</span>
+kubectl logs <span class="nt">-f</span> ferry-6cb8d5697c-tdbzc <span class="nt">--tail</span><span class="o">=</span>10 <span class="nt">-n</span> common <span class="c"># 查看最后10条日志，-f 实时日志</span>
+kubectl describe pod ferry-6cb8d5697c-tdbzc <span class="nt">-n</span> common <span class="c"># 查看服务状态</span>
+kubectl get service bonus-texas <span class="nt">-n</span> games <span class="c"># 查看服务service</span>
+kubectl top pod <span class="nt">-n</span> games <span class="c"># 查看资源使用状况</span>
+
+<span class="c"># 更新资源</span>
+kubectl rollout <span class="nb">history </span>deployment/ferry <span class="nt">-n</span> common <span class="c"># 查看历史记录</span>
+kubectl rollout undo deployment/ferry <span class="nt">-n</span> common  <span class="c"># 回滚到上次部署</span>
+kubectl rollout undo deployment/ferry <span class="nt">--to-revision</span><span class="o">=</span>2 <span class="nt">-n</span> common <span class="c"># 回滚到指定版本</span>
+kubectl rollout status <span class="nt">-w</span> deployment/ferry <span class="nt">-n</span> common <span class="c"># 查看是否会滚成功</span>
+kubectl rollout restart deployment/ferry <span class="nt">-n</span> common <span class="c"># 轮替重启</span>
+
+kubectl edit deployment/ferry <span class="nt">-n</span> common <span class="c"># 修改配置</span>
+kubectl <span class="nb">set </span>image deployment/ferry <span class="nt">-n</span> common <span class="nv">ferry</span><span class="o">=</span>repo.qianz.com/indonesia/game/chess/ferry:master <span class="c">#</span>
+
+<span class="c"># 伸缩</span>
+kubectl scale <span class="nt">--replicas</span><span class="o">=</span>2 deployment/ferry <span class="nt">-n</span> common <span class="c"># 伸缩到几个副本</span>
+kubectl scale <span class="nt">--current-replicas</span><span class="o">=</span>2 <span class="nt">--replicas</span><span class="o">=</span>1 deployment/ferry <span class="nt">-n</span> common <span class="c"># 当前的一个副本修改成1个副本</span>
+kubectl scale <span class="nt">--replicas</span><span class="o">=</span>3 <span class="nt">-f</span> ferry.yaml <span class="c"># 文件修改</span>
+kubectl scale <span class="nt">--replicas</span><span class="o">=</span>5 rc/a rc/b rc/c <span class="c"># 多个控制</span>
+
+<span class="c"># 删除</span>
+
+kubectl delete <span class="nt">-f</span> ./pod.json                                              <span class="c"># 删除在 pod.json 中指定的类型和名称的 Pod</span>
+kubectl delete pod,service baz foo                                        <span class="c"># 删除名称为 "baz" 和 "foo" 的 Pod 和服务</span>
+kubectl delete pods,services <span class="nt">-l</span> <span class="nv">name</span><span class="o">=</span>myLabel                              <span class="c"># 删除包含 name=myLabel 标签的 pods 和服务</span>
+kubectl <span class="nt">-n</span> my-ns delete pod,svc <span class="nt">--all</span>                                     <span class="c"># 删除在 my-ns 名字空间中全部的 Pods 和服务</span>
+<span class="c"># 删除所有与 pattern1 或 pattern2 awk 模式匹配的 Pods</span>
+kubectl get pods  <span class="nt">-n</span> mynamespace <span class="nt">--no-headers</span><span class="o">=</span><span class="nb">true</span> | <span class="nb">awk</span> <span class="s1">'/pattern1|pattern2/{print $1}'</span> | xargs  kubectl delete <span class="nt">-n</span> mynamespace pod
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="configmap"><span class="me-2">configmap</span><a href="#configmap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>kubectl get configmap <span class="nt">-n</span> huoys <span class="c"># 指定namespaces</span>
+kubectl get configmap <span class="nt">-A</span> <span class="c"># 全部</span>
+kubectl get cm <span class="nt">-n</span> huoys <span class="c"># 缩写</span>
+
+kubectl create configmap cc-cm <span class="nt">-n</span> common <span class="nt">--from-literal</span><span class="o">=</span>user.name<span class="o">=</span>lcc <span class="nt">--from-literal</span><span class="o">=</span>user.id<span class="o">=</span>1 <span class="c"># 使用from-literal创建 指定namespaces</span>
+kubectl create configmap configmap-name <span class="nt">--from-file</span><span class="o">=</span>configmap<span class="k">*</span>.yaml <span class="c"># 使用 from-file 创建 可以是文件和目录</span>
+kubectl describe configmap hall-customize <span class="nt">-n</span> huoys | more <span class="c"># 查看配置</span>
+kubectl delete configmap cc-cm <span class="nt">-n</span> common
+
+
+</pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="kubernetes-工作原理"><span class="me-2">Kubernetes 工作原理</span><a href="#kubernetes-工作原理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1117,156 +1290,6 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
 </blockquote>
 
 <p><a href="https://cc360428.github.io/assets/img/system/kubernetes/image-20211124155829434.png" class="popup img-link "><img data-src="https://cc360428.github.io/assets/img/system/kubernetes/image-20211124155829434.png" alt="image-20211124155829434" class="lazyload" data-proofer-ignore></a></p>
-
-<div class="language-shell highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="c"># 查看所有nodes</span>
-kubectl get node
-kubectl delete node node-name <span class="c"># 删除node</span>
-kubectl replace <span class="nt">-f</span> node-name.yaml <span class="c"># 指定node 脱离调度范围</span>
-kubectl patch node node-name <span class="nt">-p</span> <span class="s1">'{"spec":"{"unschedulable":"true"}"}'</span>
-<span class="c"># 恢复</span>
-kubectl cordon node-name <span class="c"># 将 node-name 节点设置为不可调度模式</span>
-kubectl drain node-name <span class="c"># 将当前运行的 node-name 节点上容器驱离</span>
-kubectl uncordon node-name <span class="c"># 执行完维护后，将节点重新加入调度</span>
-
-<span class="c"># label 可以将pod调度指定到 node（project=name）</span>
-kubectl label node node-name <span class="nv">rele</span><span class="o">=</span>backend <span class="c"># 添加 label</span>
-kubectl label node node-name rele- <span class="c"># 删除label</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h3 id="pod"><span class="me-2">Pod</span><a href="#pod" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<div class="language-shell highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-</pre></td><td class="rouge-code"><pre><span class="c"># -n 指定 namespaces</span>
-kubectl run .... <span class="c"># 创建</span>
-<span class="c"># 查询pod资源 尾部加上 `-w` 可以查看到创建pod</span>
-kubectl get pods <span class="nt">--all-namespaces</span> <span class="c"># or kubectl get pods -A</span>
-kubectl get pods <span class="nt">-n</span> common <span class="c"># 指定 namespaces</span>
-kubectl get pods,deployment,replicaset <span class="c"># deployment-控制器，replicaset-副本集</span>
-
-kubectl expose <span class="nt">-f</span> ..<span class="k">*</span>...yaml <span class="nt">--port</span><span class="o">=</span>8080 <span class="nt">--target-port</span><span class="o">=</span>8081 <span class="c"># 为资源暴露为新的Kubernetes service</span>
-kubectl get service ferry <span class="nt">-n</span> common <span class="c"># 查询服务暴露的端口 ;service 可以写成 svc</span>
-kubectl get pod,svc <span class="nt">-n</span> common <span class="c"># 查询pod 和 service 端口和运行状态</span>
-get pods <span class="nt">-o</span> wide <span class="nt">-n</span> common <span class="c"># 查询网络状态</span>
-kubectl get pods  ferry-6cb8d5697c-tdbzc <span class="nt">-o</span> wide  <span class="nt">-n</span> common <span class="c"># 指定pod 查询</span>
-
-kubectl get endpoints <span class="c"># 查询关联后的节点</span>
-
-kubectl logs ferry-6cb8d5697c-tdbzc <span class="nt">-n</span> common | more <span class="c"># 查询日志 more-&gt; 可以分也查找</span>
-kubectl logs <span class="nt">-f</span> ferry-6cb8d5697c-tdbzc <span class="nt">--tail</span><span class="o">=</span>10 <span class="nt">-n</span> common <span class="c"># 查看最后10条日志，-f 实时日志</span>
-
-
-
-<span class="c"># 更新资源</span>
-kubectl rollout <span class="nb">history </span>deployment/ferry <span class="nt">-n</span> common <span class="c"># 查看历史记录</span>
-kubectl rollout undo deployment/ferry <span class="nt">-n</span> common  <span class="c"># 回滚到上次部署</span>
-kubectl rollout undo deployment/ferry <span class="nt">--to-revision</span><span class="o">=</span>2 <span class="nt">-n</span> common <span class="c"># 回滚到指定版本</span>
-kubectl rollout status <span class="nt">-w</span> deployment/ferry <span class="nt">-n</span> common <span class="c"># 查看是否会滚成功</span>
-kubectl rollout restart deployment/ferry <span class="nt">-n</span> common <span class="c"># 轮替重启</span>
-
-kubectl edit deployment/ferry <span class="nt">-n</span> common <span class="c"># 修改配置</span>
-kubectl <span class="nb">set </span>image deployment/ferry <span class="nt">-n</span> common <span class="nv">ferry</span><span class="o">=</span>repo.qianz.com/indonesia/game/chess/ferry:master <span class="c">#</span>
-
-<span class="c"># 伸缩</span>
-kubectl scale <span class="nt">--replicas</span><span class="o">=</span>2 deployment/ferry <span class="nt">-n</span> common <span class="c"># 伸缩到几个副本</span>
-kubectl scale <span class="nt">--current-replicas</span><span class="o">=</span>2 <span class="nt">--replicas</span><span class="o">=</span>1 deployment/ferry <span class="nt">-n</span> common <span class="c"># 当前的一个副本修改成1个副本</span>
-kubectl scale <span class="nt">--replicas</span><span class="o">=</span>3 <span class="nt">-f</span> ferry.yaml <span class="c"># 文件修改</span>
-kubectl scale <span class="nt">--replicas</span><span class="o">=</span>5 rc/a rc/b rc/c <span class="c"># 多个控制</span>
-
-<span class="c"># 删除</span>
-
-kubectl delete <span class="nt">-f</span> ./pod.json                                              <span class="c"># 删除在 pod.json 中指定的类型和名称的 Pod</span>
-kubectl delete pod,service baz foo                                        <span class="c"># 删除名称为 "baz" 和 "foo" 的 Pod 和服务</span>
-kubectl delete pods,services <span class="nt">-l</span> <span class="nv">name</span><span class="o">=</span>myLabel                              <span class="c"># 删除包含 name=myLabel 标签的 pods 和服务</span>
-kubectl <span class="nt">-n</span> my-ns delete pod,svc <span class="nt">--all</span>                                     <span class="c"># 删除在 my-ns 名字空间中全部的 Pods 和服务</span>
-<span class="c"># 删除所有与 pattern1 或 pattern2 awk 模式匹配的 Pods</span>
-kubectl get pods  <span class="nt">-n</span> mynamespace <span class="nt">--no-headers</span><span class="o">=</span><span class="nb">true</span> | <span class="nb">awk</span> <span class="s1">'/pattern1|pattern2/{print $1}'</span> | xargs  kubectl delete <span class="nt">-n</span> mynamespace pod
-</pre></td></tr></tbody></table></code></div></div>
-
-<h3 id="configmap"><span class="me-2">configmap</span><a href="#configmap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<div class="language-shell highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre>kubectl get configmap <span class="nt">-n</span> huoys <span class="c"># 指定namespaces</span>
-kubectl get configmap <span class="nt">-A</span> <span class="c"># 全部</span>
-kubectl get cm <span class="nt">-n</span> huoys <span class="c"># 缩写</span>
-
-kubectl create configmap cc-cm <span class="nt">-n</span> common <span class="nt">--from-literal</span><span class="o">=</span>user.name<span class="o">=</span>lcc <span class="nt">--from-literal</span><span class="o">=</span>user.id<span class="o">=</span>1 <span class="c"># 使用from-literal创建 指定namespaces</span>
-kubectl create configmap configmap-name <span class="nt">--from-file</span><span class="o">=</span>configmap<span class="k">*</span>.yaml <span class="c"># 使用 from-file 创建 可以是文件和目录</span>
-kubectl describe configmap hall-customize <span class="nt">-n</span> huoys | more <span class="c"># 查看配置</span>
-kubectl delete configmap cc-cm <span class="nt">-n</span> common
-
-
-</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
