@@ -1480,6 +1480,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -1502,13 +1509,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Op/">Git Base Other</a>
         </li>
       
     </ul>
@@ -6403,64 +6403,6 @@
         
         
         <div class="col">
-          <a href="/posts/kubectl/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1615974518"
-  data-df="ll"
-  
->
-  Mar 17, 2021
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Kubectl</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  大厅 kubernetes 服务
-
-准备工作
-
-
-  
-    关键字说明
-
-    
-      resource-type
-        
-          pod
-          deployment
-          service
-        
-      
-      service-type
-        
-          ClusterIP
-       ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
           <a href="/posts/k8sBase/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -6503,6 +6445,62 @@ Kubernetes 的设计目标是实现跨不同主机和云环境的容器编排。
           </a>
         </div>
       
+        
+        
+        <div class="col">
+          <a href="/posts/kubectl/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1695278918"
+  data-df="ll"
+  
+>
+  Sep 21, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Kubernetes Manager</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  helm
+
+repo
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+helm repo add ind-games --username username --password password url # 添加库
+helm repo list # 查看repo列表
+helm repo update # 更新全部
+helm repo update ind-games # 更新指定 (推荐)
+helm...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
     </div>
     <!-- .card-deck -->
   </div>
@@ -6526,11 +6524,11 @@ Kubernetes 的设计目标是实现跨不同主机和云环境的容器编排。
 
   
     <a
-      href="/posts/kubectl/"
+      href="/posts/cron/"
       class="btn btn-outline-primary"
       prompt="Newer"
     >
-      <p>Kubectl</p>
+      <p>定时任务</p>
     </a>
   
 </div>

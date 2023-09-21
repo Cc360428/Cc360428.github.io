@@ -985,6 +985,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -1007,13 +1014,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Op/">Git Base Other</a>
         </li>
       
     </ul>
@@ -3594,19 +3594,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -5962,7 +5962,7 @@ Error: Nothing to do
         
         
         <div class="col">
-          <a href="/posts/bash_shell/" class="card post-preview h-100">
+          <a href="/posts/curl/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -5975,14 +5975,14 @@ Error: Nothing to do
 
 <em
   class="small"
-  data-ts="1587391501"
+  data-ts="1689565381"
   data-df="ll"
   
 >
-  Apr 20, 2020
+  Jul 17, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>零散的脚本</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>curl</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -5991,23 +5991,22 @@ Error: Nothing to do
 
 
 
-                  开发 sh 脚本
+                  Other
 
-杀死进程
-
-kill.sh
-
-#!/bin/sh
-#根据进程名杀死进程
-if [ $# -lt 1 ]
-then
-  echo &quot;缺少参数：procedure_name&quot;
-  exit 1
-fi
-
-PROCESS=`ps -ef|grep $1|grep -v grep|grep -v PPID|awk &#39;{ print $2}&#39;`
-for i in $PROCESS
-d...
+  下载文件
+    
+      curl -O http://example.com/file.zip
+    
+  
+  使用代理
+    
+      curl -x proxy.example.com:8080 http://example.com/api
+    
+  
+  跟踪重定向
+    
+      curl -L http://example.com
+  ...
                 </p>
               </div>
             </div>

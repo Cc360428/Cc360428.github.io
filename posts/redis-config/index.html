@@ -2818,6 +2818,13 @@ jemalloc-bg-thread yes
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -2840,13 +2847,6 @@ jemalloc-bg-thread yes
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Op/">Git Base Other</a>
         </li>
       
     </ul>
@@ -7692,72 +7692,6 @@ jemalloc-bg-thread yes
         
         
         <div class="col">
-          <a href="/posts/redis-utils-cmd/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1687834134"
-  data-df="ll"
-  
->
-  Jun 27, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Redis Utils</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  redis 工具
-
-查询多少key
-
-
-  inf：所有库key数量
-  dbsize：当前库key 数量
-  keys 线上不推荐
-
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-172.13.5.17:6000[5]&amp;gt; info 
-172.13.5.17:6000[5]&amp;gt; info keyspace
-# Keyspace
-db0:keys=1,expir...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
           <a href="/posts/redis-all/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -7846,6 +7780,65 @@ sudo yum -y install redis
 
 sudo systemctl start redis
 这里同样可以使...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
+          <a href="/posts/ErrorAndUse/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1548478134"
+  data-df="ll"
+  
+>
+  Jan 26, 2019
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Redis Error</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  持久化
+
+
+  快照
+save 设置
+  aof
+    
+      受到写入就立马写到磁盘中，
+    
+  
+
+
+Redis 中错误
+
+程序链接持久化问题
+
+
+  问题描述
+
+
+MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Comma...
                 </p>
               </div>
             </div>

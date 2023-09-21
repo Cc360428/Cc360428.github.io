@@ -37,25 +37,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Kubectl" />
+<meta property="og:title" content="Kubernetes Manager" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Kubernetes 操作" />
-<meta property="og:description" content="Kubernetes 操作" />
+<meta name="description" content="Kubernetes Manager" />
+<meta property="og:description" content="Kubernetes Manager" />
 <link rel="canonical" href="https://cc360428.github.io//posts/kubectl/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/kubectl/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-03-17T17:48:38+08:00" />
+<meta property="article:published_time" content="2023-09-21T14:48:38+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Kubectl" />
+<meta property="twitter:title" content="Kubernetes Manager" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-03-17T17:48:38+08:00","datePublished":"2021-03-17T17:48:38+08:00","description":"Kubernetes 操作","headline":"Kubectl","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/kubectl/"},"url":"https://cc360428.github.io//posts/kubectl/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-09-21T16:04:47+08:00","datePublished":"2023-09-21T14:48:38+08:00","description":"Kubernetes Manager","headline":"Kubernetes Manager","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/kubectl/"},"url":"https://cc360428.github.io//posts/kubectl/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Kubectl | Cc Blog
+  <title>Kubernetes Manager | Cc Blog
   </title>
 
   <!--
@@ -468,7 +468,7 @@
         
           
             
-              <span>Kubectl</span>
+              <span>Kubernetes Manager</span>
             
 
           
@@ -1003,6 +1003,54 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1049,7 +1097,7 @@
 
 
 
-<h1 data-toc-skip>Kubectl</h1>
+<h1 data-toc-skip>Kubernetes Manager</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -1066,18 +1114,42 @@
 
 <em
   class=""
-  data-ts="1615974518"
+  data-ts="1695278918"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Mar 17, 2021
+  Sep 21, 2023
 </em>
 
     </span>
 
     <!-- lastmod date -->
+    
+    <span>
+      Updated
+      <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1695283487"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Sep 21, 2023
+</em>
+
+    </span>
     
 
   
@@ -1118,9 +1190,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1914 words"
+  title="2167 words"
 >
-  <em>10 min</em> read</span>
+  <em>12 min</em> read</span>
 
     </div>
 
@@ -1129,9 +1201,83 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="大厅-kubernetes-服务"><span class="me-2">大厅 kubernetes 服务</span><a href="#大厅-kubernetes-服务" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h2 id="helm"><span class="me-2">helm</span><a href="#helm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h2 id="准备工作"><span class="me-2">准备工作</span><a href="#准备工作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h3 id="repo"><span class="me-2">repo</span><a href="#repo" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>helm repo add ind-games <span class="nt">--username</span> username <span class="nt">--password</span> password url <span class="c"># 添加库</span>
+helm repo list <span class="c"># 查看repo列表</span>
+helm repo update <span class="c"># 更新全部</span>
+helm repo update ind-games <span class="c"># 更新指定 (推荐)</span>
+helm search repo ind-games <span class="c"># 搜索全部</span>
+helm search repo ind-games | <span class="nb">grep </span>bonus-texas <span class="c"># 搜索筛选指定</span>
+helm cm-push bonus-texas-0.0.21.tgz ind-games <span class="c"># 推送压缩包</span>
+helm cm-push &lt;<span class="nb">dir</span><span class="o">&gt;</span> ind-games <span class="c"># 推送文件</span>
+helm cm-push <span class="nb">.</span> ind-games <span class="c"># 推送当前文件</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="plugin-插件管理"><span class="me-2">plugin (插件管理)</span><a href="#plugin-插件管理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>helm plugin <span class="nb">install </span>https://github.com/chartmuseum/helm-push
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="chart"><span class="me-2">Chart</span><a href="#chart" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>helm lint <span class="c"># 查看chart语法是否正确</span>
+helm template <span class="nt">--debug</span> <span class="c"># 本地渲染</span>
+helm <span class="nb">install </span>bonus-texas <span class="nb">.</span> <span class="nt">--dry-run</span> <span class="nt">--debug</span> <span class="c"># 服务器渲染模板的好方法，然后返回生成的清单文件</span>
+helm list <span class="nt">-n</span> games <span class="c"># 已部署的list</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="applistion-manger"><span class="me-2">Applistion Manger</span><a href="#applistion-manger" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>
+helm pull ind-games/bonus-texas <span class="c"># pull 压缩包</span>
+helm pull ind-games/bonus-texas <span class="nt">--untar</span> <span class="c"># pull 并且解压</span>
+
+helm <span class="nb">install</span> &lt;<span class="nb">dir</span><span class="o">&gt;</span> <span class="nt">-n</span> games <span class="c"># install</span>
+helm uninstall bonus-texas <span class="nt">-n</span> game <span class="c"># uninstall</span>
+
+<span class="c"># 更新应用</span>
+helm upgrade <span class="nt">-i</span> bonus-texas ind-games/bonus-texas <span class="nt">-f</span> games.yaml <span class="nt">-n</span> games
+helm upgrade <span class="nt">-i</span> bonus-texas &lt;<span class="nb">dir</span><span class="o">&gt;</span> <span class="nt">-f</span> games.yaml <span class="nt">-n</span> games
+helm upgrade <span class="nt">-i</span> bonus-texas <span class="nb">.</span> <span class="nt">-f</span> games.yaml <span class="nt">-n</span> games
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="kubeclt"><span class="me-2">kubeclt</span><a href="#kubeclt" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>
@@ -1175,15 +1321,16 @@
 kubectl get nodes
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
-  <li>
-    <p>设置环境</p>
+  <li>设置环境</li>
+</ul>
 
-    <div class="language-shell highlighter-rouge"><div class="code-header">
+<div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>  <span class="nb">export </span><span class="nv">KUBECONFIG</span><span class="o">=</span><span class="s2">"/etc/kubernetes/admin.conf"</span>
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
   <li>
     <p>多环境设置</p>
 
@@ -1221,7 +1368,7 @@ kubectl get nodes
   <span class="na">user</span><span class="pi">:</span>
 </pre></td></tr></tbody></table></code></div>        </div>
       </li>
-      <li>KUBECONFIG=indonesia_dev:indonesia_dev_local_test kubectl config view –flatten &gt; config</li>
+      <li><code class="language-plaintext highlighter-rouge">KUBECONFIG=indonesia_dev:indonesia_dev_local_test kubectl config view --flatten &gt; config</code></li>
       <li>把生成文件替换 <code class="language-plaintext highlighter-rouge">~/.kube/config</code></li>
     </ul>
   </li>
@@ -1903,7 +2050,7 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
     
       
       <a
-        href="https://twitter.com/intent/tweet?text=Kubectl%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fkubectl%2F"
+        href="https://twitter.com/intent/tweet?text=Kubernetes%20Manager%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fkubectl%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -1916,7 +2063,7 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
     
       
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Kubectl%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fkubectl%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Kubernetes%20Manager%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fkubectl%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -1929,7 +2076,7 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
     
       
       <a
-        href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fkubectl%2F&text=Kubectl%20-%20Cc%20Blog"
+        href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fkubectl%2F&text=Kubernetes%20Manager%20-%20Cc%20Blog"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -1992,6 +2139,13 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -2014,13 +2168,6 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Op/">Git Base Other</a>
         </li>
       
     </ul>
@@ -4517,715 +4664,715 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -7027,22 +7174,21 @@ Kubernetes 的设计目标是实现跨不同主机和云环境的容器编排。
 <div class="post-navigation d-flex justify-content-between">
   
     <a
-      href="/posts/kubernetesUI/"
+      href="/posts/OperationsResearch/"
       class="btn btn-outline-primary"
       prompt="Older"
     >
-      <p>Kubernetes UI</p>
+      <p>运筹学基础（02375）</p>
     </a>
   
 
   
-    <a
-      href="/posts/cron/"
-      class="btn btn-outline-primary"
+    <div
+      class="btn btn-outline-primary disabled"
       prompt="Newer"
     >
-      <p>定时任务</p>
-    </a>
+      <p>-</p>
+    </div>
   
 </div>
 

@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-09-21T15:37:23+08:00</updated>
+  <updated>2023-09-21T16:04:56+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,57 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Kubernetes Manager</title>
+    <link href="https://cc360428.github.io//posts/kubectl/" rel="alternate" type="text/html" title="Kubernetes Manager" />
+    <published>2023-09-21T14:48:38+08:00</published>
+  
+    <updated>2023-09-21T16:04:47+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/kubectl/</id>
+    <content src="https://cc360428.github.io//posts/kubectl/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Kubernetes" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      helm
+
+repo
+
+helm repo add ind-games --username username --password password url # 添加库
+helm repo list # 查看repo列表
+helm repo update # 更新全部
+helm repo update ind-games # 更新指定 (推荐)
+helm search repo ind-games # 搜索全部
+helm search repo ind-games | grep bonus-texas # 搜索筛选指定
+helm cm-push bonus-texas-0.0.21.tgz ind-games # 推送压缩包
+helm cm-push &amp;lt;dir&amp;gt; ind-games # 推送文件
+helm cm-push . ind-games # 推送当前文件
+
+
+p...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -277,90 +328,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-hig...
         
           CPU 分配（调度）
           提高利用率...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Hyper-V</title>
-    <link href="https://cc360428.github.io//posts/hyper-v/" rel="alternate" type="text/html" title="Hyper-V" />
-    <published>2023-07-27T09:32:25+08:00</published>
-  
-    <updated>2023-07-27T09:32:25+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/hyper-v/</id>
-    <content src="https://cc360428.github.io//posts/hyper-v/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Dev" />
-    
-    <category term="Utils" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Windows Hyper-V
-
-
-  需要先下载好 Centos 7 镜像
-  阿里云地址
-
-
-创建Linux启动
-
-
-
-
-
-
-
-
-
-
-
-
-
-网络管理
-
-
-
-
-基础设置
-
-
-
-
-CentosEnter
-
-
-
-
-
-
-
-  网络设置
-
-
-vi /etc/sysconfig/network-scripts/ifcfg-eth0
-
-
-TYPE=Ethernet                             # 网卡类型：为以太网
-PROXY_METHOD=none                         # 代理方式：关闭状态
-BROWSER_ONLY=no                           # 只是浏览器：否
-BOOTPROTO=dhcp                            # 设置网卡获得ip地址的方式，可能的选项为static(静...
     </summary>
   
 

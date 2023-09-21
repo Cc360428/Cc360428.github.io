@@ -1022,6 +1022,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -1044,13 +1051,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Op/">Git Base Other</a>
         </li>
       
     </ul>
@@ -6038,14 +6038,14 @@ kuboard-v3.yaml
 
 <em
   class="small"
-  data-ts="1615974518"
+  data-ts="1695278918"
   data-df="ll"
   
 >
-  Mar 17, 2021
+  Sep 21, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Kubectl</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Kubernetes Manager</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -6054,26 +6054,24 @@ kuboard-v3.yaml
 
 
 
-                  大厅 kubernetes 服务
+                  helm
 
-准备工作
+repo
 
-
-  
-    关键字说明
-
-    
-      resource-type
-        
-          pod
-          deployment
-          service
-        
-      
-      service-type
-        
-          ClusterIP
-       ...
+1
+2
+3
+4
+5
+6
+7
+8
+9
+helm repo add ind-games --username username --password password url # 添加库
+helm repo list # 查看repo列表
+helm repo update # 更新全部
+helm repo update ind-games # 更新指定 (推荐)
+helm...
                 </p>
               </div>
             </div>
