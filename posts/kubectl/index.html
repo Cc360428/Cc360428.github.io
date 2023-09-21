@@ -835,6 +835,174 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -842,6 +1010,29 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -927,9 +1118,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1623 words"
+  title="1914 words"
 >
-  <em>9 min</em> read</span>
+  <em>10 min</em> read</span>
 
     </div>
 
@@ -943,6 +1134,27 @@
 <h2 id="准备工作"><span class="me-2">准备工作</span><a href="#准备工作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
+  <li>
+    <p>关键字说明</p>
+
+    <ul>
+      <li>resource-type
+        <ul>
+          <li>pod</li>
+          <li>deployment</li>
+          <li>service</li>
+        </ul>
+      </li>
+      <li>service-type
+        <ul>
+          <li>ClusterIP</li>
+          <li>NodePort</li>
+          <li>LoadBalancer</li>
+          <li>ExternalName</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
   <li>安装 kubectl</li>
   <li>
     <p>登录到 Kubernetes 集群中</p>
@@ -972,12 +1184,15 @@ kubectl get nodes
 </pre></td><td class="rouge-code"><pre>  <span class="nb">export </span><span class="nv">KUBECONFIG</span><span class="o">=</span><span class="s2">"/etc/kubernetes/admin.conf"</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
-</ul>
+  <li>
+    <p>多环境设置</p>
 
-<h3 id="基本命令"><span class="me-2">基本命令</span><a href="#基本命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <ul>
+      <li>
+        <p>注意配置(考虑到每个都会是 kubernetes.admin，需要做修改)</p>
 
-<div class="language-shell highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+        <div class="language-yaml highlighter-rouge"><div class="code-header">
+        <span data-label-text="YAML"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -991,24 +1206,109 @@ kubectl get nodes
 11
 12
 13
-</pre></td><td class="rouge-code"><pre><span class="c"># 查看所有nodes</span>
-kubectl get node
-kubectl delete node node-name <span class="c"># 删除node</span>
-kubectl replace <span class="nt">-f</span> node-name.yaml <span class="c"># 指定node 脱离调度范围</span>
-kubectl patch node node-name <span class="nt">-p</span> <span class="s1">'{"spec":"{"unschedulable":"true"}"}'</span>
-<span class="c"># 恢复</span>
-kubectl cordon node-name <span class="c"># 将 node-name 节点设置为不可调度模式</span>
-kubectl drain node-name <span class="c"># 将当前运行的 node-name 节点上容器驱离</span>
-kubectl uncordon node-name <span class="c"># 执行完维护后，将节点重新加入调度</span>
+</pre></td><td class="rouge-code"><pre>    <span class="na">server</span><span class="pi">:</span> <span class="s">https://172.13.5.11:6443</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">ind-dev</span>
+<span class="na">contexts</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">context</span><span class="pi">:</span>
+    <span class="na">cluster</span><span class="pi">:</span> <span class="s">ind-dev</span>
+    <span class="na">user</span><span class="pi">:</span> <span class="s">ind-dev</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">ind-dev</span>
+<span class="na">current-context</span><span class="pi">:</span> <span class="s">ind-dev</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Config</span>
+<span class="na">preferences</span><span class="pi">:</span> <span class="pi">{}</span>
+<span class="na">users</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">ind-dev</span>
+  <span class="na">user</span><span class="pi">:</span>
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>KUBECONFIG=indonesia_dev:indonesia_dev_local_test kubectl config view –flatten &gt; config</li>
+      <li>把生成文件替换 <code class="language-plaintext highlighter-rouge">~/.kube/config</code></li>
+    </ul>
+  </li>
+</ul>
 
-<span class="c"># label 可以将pod调度指定到 node（project=name）</span>
-kubectl label node node-name <span class="nv">rele</span><span class="o">=</span>backend <span class="c"># 添加 label</span>
-kubectl label node node-name rele- <span class="c"># 删除label</span>
+<h3 id="基本命令"><span class="me-2">基本命令</span><a href="#基本命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h4 id="配置切换"><span class="me-2">配置切换</span><a href="#配置切换" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>
+    <p>配置多个上下文（Context）</p>
+
+    <ul>
+      <li>
+        <p>列出所有上下文</p>
+
+        <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  kubectl config get-contexts
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p>切换上下文</p>
+
+        <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  kubectl config use-context &lt;context-name&gt;
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p>创建新的上下文</p>
+
+        <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  kubectl config set-context &lt;context-name&gt; <span class="nt">--cluster</span><span class="o">=</span>&lt;cluster-name&gt; <span class="nt">--user</span><span class="o">=</span>&lt;user-name&gt; <span class="nt">--namespace</span><span class="o">=</span>&lt;namespace&gt;
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>配置集群</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  kubectl config set-cluster &lt;cluster-name&gt; <span class="nt">--server</span><span class="o">=</span>&lt;api-server-url&gt; <span class="nt">--certificate-authority</span><span class="o">=</span>&lt;ca-file&gt;
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="pod"><span class="me-2">Pod</span><a href="#pod" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>配置用户</li>
+</ul>
 
-<div class="language-shell highlighter-rouge"><div class="code-header">
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  kubectl config set-credentials &lt;user-name&gt; <span class="nt">--client-certificate</span><span class="o">=</span>&lt;cert-file&gt; <span class="nt">--client-key</span><span class="o">=</span>&lt;key-file&gt;
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>验证配置</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  kubectl config view
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>配置集群</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  kubectl config set-cluster &lt;cluster-name&gt; <span class="nt">--server</span><span class="o">=</span>&lt;api-server-url&gt; <span class="nt">--certificate-authority</span><span class="o">=</span>&lt;ca-file&gt;
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-get"><span class="me-2">kubectl get</span><a href="#kubectl-get" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1043,68 +1343,126 @@ kubectl label node node-name rele- <span class="c"># 删除label</span>
 31
 32
 33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-</pre></td><td class="rouge-code"><pre><span class="c"># -n 指定 namespaces</span>
-kubectl run .... <span class="c"># 创建</span>
-<span class="c"># 查询pod资源 尾部加上 `-w` 可以查看到创建pod</span>
-kubectl get pods <span class="nt">--all-namespaces</span> <span class="c"># or kubectl get pods -A</span>
-kubectl get pods <span class="nt">-n</span> common <span class="c"># 指定 namespaces</span>
-kubectl get pods,deployment,replicaset <span class="c"># deployment-控制器，replicaset-副本集</span>
+</pre></td><td class="rouge-code"><pre>
+<span class="c"># pod</span>
+kubectl get pods <span class="nt">-A</span>
+kubectl get pods <span class="nt">-n</span> &lt;namespace&gt;
+kubectl get pods <span class="nt">-n</span> &lt;namespace&gt; <span class="nt">-o</span> wide &lt;pod&gt;
+<span class="c"># services</span>
+kubectl get services
+kubectl get service <span class="nt">-n</span> &lt;namespace&gt;
+kubectl get service bonus-texas <span class="nt">-n</span> games
 
-kubectl expose <span class="nt">-f</span> ..<span class="k">*</span>...yaml <span class="nt">--port</span><span class="o">=</span>8080 <span class="nt">--target-port</span><span class="o">=</span>8081 <span class="c"># 为资源暴露为新的Kubernetes service</span>
-kubectl get service ferry <span class="nt">-n</span> common <span class="c"># 查询服务暴露的端口 ;service 可以写成 svc</span>
-kubectl get pod,svc <span class="nt">-n</span> common <span class="c"># 查询pod 和 service 端口和运行状态</span>
-get pods <span class="nt">-o</span> wide <span class="nt">-n</span> common <span class="c"># 查询网络状态</span>
-kubectl get pods  ferry-6cb8d5697c-tdbzc <span class="nt">-o</span> wide  <span class="nt">-n</span> common <span class="c"># 指定pod 查询</span>
+<span class="c"># deployments</span>
+kubectl get deployments
+kubectl get deployments <span class="nt">-n</span> &lt;namespace&gt;
 
-kubectl get endpoints <span class="c"># 查询关联后的节点</span>
+<span class="c"># node</span>
+kubectl get nodes
 
-kubectl logs ferry-6cb8d5697c-tdbzc <span class="nt">-n</span> common | more <span class="c"># 查询日志 more-&gt; 可以分也查找</span>
-kubectl logs <span class="nt">-f</span> ferry-6cb8d5697c-tdbzc <span class="nt">--tail</span><span class="o">=</span>10 <span class="nt">-n</span> common <span class="c"># 查看最后10条日志，-f 实时日志</span>
-kubectl describe pod ferry-6cb8d5697c-tdbzc <span class="nt">-n</span> common <span class="c"># 查看服务状态</span>
-kubectl get service bonus-texas <span class="nt">-n</span> games <span class="c"># 查看服务service</span>
-kubectl top pod <span class="nt">-n</span> games <span class="c"># 查看资源使用状况</span>
+<span class="c"># configmaps</span>
+kubectl get configmaps
+kubectl get configmaps <span class="nt">-n</span> &lt;namespace&gt;
 
-<span class="c"># 更新资源</span>
-kubectl rollout <span class="nb">history </span>deployment/ferry <span class="nt">-n</span> common <span class="c"># 查看历史记录</span>
+<span class="c"># Secrets</span>
+kubectl get secrets
+kubectl get secrets  <span class="nt">-n</span> &lt;namespace&gt;
+
+<span class="c"># Persistent Volumes (pv)</span>
+kubectl get pv
+
+<span class="c"># other</span>
+kubectl get pods,deployment,replicaset
+
+<span class="c"># 查询关联后的节点</span>
+kubectl get endpoints
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-log"><span class="me-2">kubectl log</span><a href="#kubectl-log" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>kubectl logs ferry-6cb8d5697c-tdbzc <span class="nt">-n</span> games
+kubectl logs <span class="nt">-f</span> ferry-6cb8d5697c-tdbzc <span class="nt">-n</span> games
+kubectl logs <span class="nt">-f</span> ferry-6cb8d5697c-tdbzc <span class="nt">--tail</span><span class="o">=</span> 10 <span class="nt">-n</span> games
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-rollout"><span class="me-2">kubectl rollout</span><a href="#kubectl-rollout" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>kubectl rollout <span class="nb">history </span>deployment/ferry <span class="nt">-n</span> common <span class="c"># 查看历史记录</span>
 kubectl rollout undo deployment/ferry <span class="nt">-n</span> common  <span class="c"># 回滚到上次部署</span>
 kubectl rollout undo deployment/ferry <span class="nt">--to-revision</span><span class="o">=</span>2 <span class="nt">-n</span> common <span class="c"># 回滚到指定版本</span>
 kubectl rollout status <span class="nt">-w</span> deployment/ferry <span class="nt">-n</span> common <span class="c"># 查看是否会滚成功</span>
 kubectl rollout restart deployment/ferry <span class="nt">-n</span> common <span class="c"># 轮替重启</span>
-
-kubectl edit deployment/ferry <span class="nt">-n</span> common <span class="c"># 修改配置</span>
-kubectl <span class="nb">set </span>image deployment/ferry <span class="nt">-n</span> common <span class="nv">ferry</span><span class="o">=</span>repo.qianz.com/indonesia/game/chess/ferry:master <span class="c">#</span>
-
-<span class="c"># 伸缩</span>
-kubectl scale <span class="nt">--replicas</span><span class="o">=</span>2 deployment/ferry <span class="nt">-n</span> common <span class="c"># 伸缩到几个副本</span>
-kubectl scale <span class="nt">--current-replicas</span><span class="o">=</span>2 <span class="nt">--replicas</span><span class="o">=</span>1 deployment/ferry <span class="nt">-n</span> common <span class="c"># 当前的一个副本修改成1个副本</span>
-kubectl scale <span class="nt">--replicas</span><span class="o">=</span>3 <span class="nt">-f</span> ferry.yaml <span class="c"># 文件修改</span>
-kubectl scale <span class="nt">--replicas</span><span class="o">=</span>5 rc/a rc/b rc/c <span class="c"># 多个控制</span>
-
-<span class="c"># 删除</span>
-
-kubectl delete <span class="nt">-f</span> ./pod.json                                              <span class="c"># 删除在 pod.json 中指定的类型和名称的 Pod</span>
-kubectl delete pod,service baz foo                                        <span class="c"># 删除名称为 "baz" 和 "foo" 的 Pod 和服务</span>
-kubectl delete pods,services <span class="nt">-l</span> <span class="nv">name</span><span class="o">=</span>myLabel                              <span class="c"># 删除包含 name=myLabel 标签的 pods 和服务</span>
-kubectl <span class="nt">-n</span> my-ns delete pod,svc <span class="nt">--all</span>                                     <span class="c"># 删除在 my-ns 名字空间中全部的 Pods 和服务</span>
-<span class="c"># 删除所有与 pattern1 或 pattern2 awk 模式匹配的 Pods</span>
-kubectl get pods  <span class="nt">-n</span> mynamespace <span class="nt">--no-headers</span><span class="o">=</span><span class="nb">true</span> | <span class="nb">awk</span> <span class="s1">'/pattern1|pattern2/{print $1}'</span> | xargs  kubectl delete <span class="nt">-n</span> mynamespace pod
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="configmap"><span class="me-2">configmap</span><a href="#configmap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="kubectl-scale-伸缩"><span class="me-2">kubectl scale （伸缩）</span><a href="#kubectl-scale-伸缩" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-shell highlighter-rouge"><div class="code-header">
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>kubectl scale <span class="nt">--replicas</span><span class="o">=</span>2 deployment/ferry <span class="nt">-n</span> common <span class="c"># 伸缩到几个副本</span>
+<span class="c"># 当前的一个副本修改成1个副本</span>
+kubectl scale <span class="nt">--current-replicas</span><span class="o">=</span>2 <span class="nt">--replicas</span><span class="o">=</span>1 deployment/ferry <span class="nt">-n</span> common
+kubectl scale <span class="nt">--replicas</span><span class="o">=</span>3 <span class="nt">-f</span> ferry.yaml <span class="c"># 文件修改</span>
+kubectl scale <span class="nt">--replicas</span><span class="o">=</span>5 rc/a rc/b rc/c <span class="c"># 多个控制</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-top"><span class="me-2">kubectl top</span><a href="#kubectl-top" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kubectl top pod <span class="nt">-n</span> games <span class="c"># 查看资源使用状况</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-describe"><span class="me-2">kubectl describe</span><a href="#kubectl-describe" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>kubectl describe pod ferry-6cb8d5697c-tdbzc <span class="nt">-n</span> common <span class="c"># 查看pods详情</span>
+kubectl describe configmap hall-customize <span class="nt">-n</span> huoys | more <span class="c"># 查看配置</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-exec"><span class="me-2">kubectl exec</span><a href="#kubectl-exec" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">kubectl exec -it &lt;pod-name&gt; -- &lt;command&gt; [flags]</code></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>kubectl <span class="nb">exec</span> <span class="nt">-it</span> my-pod <span class="nt">--</span> /bin/bash
+kubectl <span class="nb">exec</span> <span class="nt">-it</span> my-pod <span class="nt">--</span> <span class="nb">cat</span> /var/log/my-log.log
+kubectl <span class="nb">exec</span> <span class="nt">-it</span> my-pod <span class="nt">--container</span><span class="o">=</span>my-container <span class="nt">--</span> /bin/bash
+<span class="c"># 在特定命名空间中执行命令</span>
+kubectl <span class="nb">exec</span> <span class="nt">-it</span> my-pod <span class="nt">-n</span> my-namespace <span class="nt">--</span> /bin/bash
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-set"><span class="me-2">kubectl set</span><a href="#kubectl-set" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1116,16 +1474,213 @@ kubectl get pods  <span class="nt">-n</span> mynamespace <span class="nt">--no-h
 8
 9
 10
-</pre></td><td class="rouge-code"><pre>kubectl get configmap <span class="nt">-n</span> huoys <span class="c"># 指定namespaces</span>
-kubectl get configmap <span class="nt">-A</span> <span class="c"># 全部</span>
-kubectl get cm <span class="nt">-n</span> huoys <span class="c"># 缩写</span>
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c"># 设置镜像</span>
+kubectl <span class="nb">set </span>image deployment/my-deployment my-container<span class="o">=</span>my-image:v2
+<span class="c"># 设置环境变量</span>
+kubectl <span class="nb">set env </span>deployment/my-deployment <span class="nv">ENV_VARIABLE</span><span class="o">=</span>value
+<span class="c"># 设置标签</span>
+kubectl <span class="nb">set </span>labels pod/my-pod new-label<span class="o">=</span>value
+<span class="c"># 设置资源限制</span>
+kubectl <span class="nb">set </span>resources deployment/my-deployment <span class="nt">--limits</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span>1,memory<span class="o">=</span>512Mi
+<span class="c"># 设置镜像仓库凭证</span>
+kubectl <span class="nb">set </span>image-credentials secret/my-secret <span class="nv">registry</span><span class="o">=</span>https://registry.example.com
+<span class="c"># 设置部署策略</span>
+kubectl <span class="nb">set </span>strategy deployment/my-deployment rolling
+</pre></td></tr></tbody></table></code></div></div>
 
-kubectl create configmap cc-cm <span class="nt">-n</span> common <span class="nt">--from-literal</span><span class="o">=</span>user.name<span class="o">=</span>lcc <span class="nt">--from-literal</span><span class="o">=</span>user.id<span class="o">=</span>1 <span class="c"># 使用from-literal创建 指定namespaces</span>
-kubectl create configmap configmap-name <span class="nt">--from-file</span><span class="o">=</span>configmap<span class="k">*</span>.yaml <span class="c"># 使用 from-file 创建 可以是文件和目录</span>
-kubectl describe configmap hall-customize <span class="nt">-n</span> huoys | more <span class="c"># 查看配置</span>
-kubectl delete configmap cc-cm <span class="nt">-n</span> common
+<h3 id="kubeclt-expose"><span class="me-2">kubeclt expose</span><a href="#kubeclt-expose" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--name=&lt;service-name&gt;</code>：服务名字</li>
+  <li><code class="language-plaintext highlighter-rouge">--port=&lt;port&gt;</code>：服务的端口</li>
+  <li><code class="language-plaintext highlighter-rouge">--target-port=&lt;target-port&gt;</code>:要映射到后端 Pod 的目标端口</li>
+</ul>
 
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>kubectl expose &lt;resource-type&gt; &lt;resource-name&gt; <span class="nt">--type</span><span class="o">=</span>&lt;service-type&gt; <span class="nt">--name</span><span class="o">=</span>&lt;service-name&gt; <span class="nt">--port</span><span class="o">=</span>&lt;port&gt; <span class="nt">--target-port</span><span class="o">=</span>&lt;target-port&gt;
+kubectl expose deployment my-nginx <span class="nt">--type</span><span class="o">=</span>ClusterIP <span class="nt">--name</span><span class="o">=</span>my-nginx-service <span class="nt">--port</span><span class="o">=</span>80 <span class="nt">--target-port</span><span class="o">=</span>80
+kubectl expose pod my-app <span class="nt">--type</span><span class="o">=</span>NodePort <span class="nt">--name</span><span class="o">=</span>my-app-service <span class="nt">--port</span><span class="o">=</span>8080 <span class="nt">--target-port</span><span class="o">=</span>80
+kubectl expose deployment my-nginx <span class="nt">--type</span><span class="o">=</span>LoadBalancer <span class="nt">--name</span><span class="o">=</span>my-nginx-service <span class="nt">--port</span><span class="o">=</span>80 <span class="nt">--target-port</span><span class="o">=</span>80
+kubectl expose pod my-pod <span class="nt">--type</span><span class="o">=</span>ClusterIP <span class="nt">--name</span><span class="o">=</span>my-headless-service <span class="nt">--cluster-ip</span><span class="o">=</span>None
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-edit"><span class="me-2">kubectl edit</span><a href="#kubectl-edit" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p><strong>编辑前先备份好</strong></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>kubectl edit &lt;resource-type&gt; &lt;resource-name&gt;
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-craete"><span class="me-2">kubectl craete</span><a href="#kubectl-craete" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>
+    <p>my-pod.yaml</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="code-header">
+        <span data-label-text="YAML"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
+<span class="na">metadata</span><span class="pi">:</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">my-pod</span>
+<span class="na">spec</span><span class="pi">:</span>
+<span class="na">containers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">nginx</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>  kubectl create &lt;resource-type&gt; &lt;resource-name&gt; <span class="o">[</span>flags]
+  kubectl create pod my-pod <span class="nt">--image</span><span class="o">=</span>nginx
+  kubectl create service clusterip my-service <span class="nt">--tcp</span><span class="o">=</span>80:80 <span class="nt">--pod</span><span class="o">=</span>my-pod
+  kubectl create configmap my-config <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">key1</span><span class="o">=</span>value1 <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">key2</span><span class="o">=</span>value2
+  kubectl create namespace my-namespace
+  kubectl create deployment my-deployment <span class="nt">--image</span><span class="o">=</span>nginx <span class="nt">--replicas</span><span class="o">=</span>3
+  <span class="c"># 使用 from-file 创建 可以是文件和目录</span>
+  kubectl create configmap configmap-name <span class="nt">--from-file</span><span class="o">=</span>configmap<span class="k">*</span>.yaml
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-label"><span class="me-2">kubectl label</span><a href="#kubectl-label" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">kubectl label &lt;resource-type&gt; &lt;resource-name&gt; &lt;label-key&gt;=&lt;label-value&gt; [flags]</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c"># 添加</span>
+kubectl label pod my-pod <span class="nv">environment</span><span class="o">=</span>development
+kubectl label node my-node <span class="nv">zone</span><span class="o">=</span>us-west-1
+kubectl label service my-service <span class="nv">app</span><span class="o">=</span>my-app
+<span class="c"># 覆盖</span>
+kubectl label pod my-pod <span class="nv">environment</span><span class="o">=</span>production <span class="nt">--overwrite</span>
+<span class="c"># 删除</span>
+kubectl label pod my-pod environment-
+<span class="c"># 查看</span>
+kubectl get pods <span class="nt">--show-labels</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-replace"><span class="me-2">kubectl replace</span><a href="#kubectl-replace" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">kubectl replace -f &lt;configuration-file&gt;</code></p>
+</blockquote>
+
+<ul>
+  <li>可能中断服务</li>
+  <li>会删除现有的创建新的</li>
+  <li>
+    <p>my-pod.yaml</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="code-header">
+        <span data-label-text="YAML"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">my-pod</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">containers</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">nginx</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">nginx:1.18</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  kubectl replace <span class="nt">-f</span> my-pod.yaml
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="kubectl-patch"><span class="me-2">kubectl patch</span><a href="#kubectl-patch" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>对 Kubernetes 资源进行部分更新
+<code class="language-plaintext highlighter-rouge">kubectl patch &lt;resource-type&gt; &lt;resource-name&gt; [flags]</code></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>kubectl patch pod my-pod <span class="nt">-p</span> <span class="s1">'{"metadata":{"labels":{"app":"my-app"}}}'</span>
+kubectl patch deployment my-deployment <span class="nt">-p</span> <span class="s1">'{"spec":{"replicas":3}}'</span>
+kubectl patch service my-service <span class="nt">-p</span> <span class="s1">'{"spec":{"ports":[{"port":8080}]}}'</span>
+kubectl patch configmap my-configmap <span class="nt">-p</span> <span class="s1">'{"data":{"key3":"value3"}}'</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="调度"><span class="me-2">调度</span><a href="#调度" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>kubectl cordon node-name <span class="c"># 将 node-name 节点设置为不可调度模式</span>
+kubectl drain node-name <span class="c"># 将当前运行的 node-name 节点上容器驱离</span>
+kubectl uncordon node-name <span class="c"># 执行完维护后，将节点重新加入调度</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="创建删除运行"><span class="me-2">创建、删除、运行</span><a href="#创建删除运行" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>kubectl run &lt;name&gt; <span class="nt">--image</span><span class="o">=</span>&lt;container-image&gt;
+kubectl apply <span class="nt">-f</span> &lt;configuration-file&gt;
+kubectl delete &lt;resource-type&gt; &lt;resource-name&gt;
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="kubernetes-工作原理"><span class="me-2">Kubernetes 工作原理</span><a href="#kubernetes-工作原理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
