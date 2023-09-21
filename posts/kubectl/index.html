@@ -50,7 +50,7 @@
 <meta property="twitter:title" content="Kubernetes Manager" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-09-21T16:04:47+08:00","datePublished":"2023-09-21T14:48:38+08:00","description":"Kubernetes Manager","headline":"Kubernetes Manager","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/kubectl/"},"url":"https://cc360428.github.io//posts/kubectl/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-09-21T16:11:37+08:00","datePublished":"2023-09-21T14:48:38+08:00","description":"Kubernetes Manager","headline":"Kubernetes Manager","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/kubectl/"},"url":"https://cc360428.github.io//posts/kubectl/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1051,6 +1051,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1058,29 +1070,6 @@
 
   
   
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-
-    
 
   
 
@@ -1140,7 +1129,7 @@
 
 <em
   class=""
-  data-ts="1695283487"
+  data-ts="1695283897"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -1190,9 +1179,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2167 words"
+  title="2142 words"
 >
-  <em>12 min</em> read</span>
+  <em>11 min</em> read</span>
 
     </div>
 
@@ -1376,81 +1365,24 @@ kubectl get nodes
 
 <h3 id="基本命令"><span class="me-2">基本命令</span><a href="#基本命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="配置切换"><span class="me-2">配置切换</span><a href="#配置切换" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<ul>
-  <li>
-    <p>配置多个上下文（Context）</p>
-
-    <ul>
-      <li>
-        <p>列出所有上下文</p>
-
-        <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>  kubectl config get-contexts
-</pre></td></tr></tbody></table></code></div>        </div>
-      </li>
-      <li>
-        <p>切换上下文</p>
-
-        <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>  kubectl config use-context &lt;context-name&gt;
-</pre></td></tr></tbody></table></code></div>        </div>
-      </li>
-      <li>
-        <p>创建新的上下文</p>
-
-        <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>  kubectl config set-context &lt;context-name&gt; <span class="nt">--cluster</span><span class="o">=</span>&lt;cluster-name&gt; <span class="nt">--user</span><span class="o">=</span>&lt;user-name&gt; <span class="nt">--namespace</span><span class="o">=</span>&lt;namespace&gt;
-</pre></td></tr></tbody></table></code></div>        </div>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>配置集群</p>
-  </li>
-</ul>
+<h3 id="kubectl-config"><span class="me-2">kubectl config</span><a href="#kubectl-config" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>  kubectl config set-cluster &lt;cluster-name&gt; <span class="nt">--server</span><span class="o">=</span>&lt;api-server-url&gt; <span class="nt">--certificate-authority</span><span class="o">=</span>&lt;ca-file&gt;
-</pre></td></tr></tbody></table></code></div></div>
-
-<ul>
-  <li>配置用户</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>  kubectl config set-credentials &lt;user-name&gt; <span class="nt">--client-certificate</span><span class="o">=</span>&lt;cert-file&gt; <span class="nt">--client-key</span><span class="o">=</span>&lt;key-file&gt;
-</pre></td></tr></tbody></table></code></div></div>
-
-<ul>
-  <li>验证配置</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>  kubectl config view
-</pre></td></tr></tbody></table></code></div></div>
-
-<ul>
-  <li>配置集群</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>  kubectl config set-cluster &lt;cluster-name&gt; <span class="nt">--server</span><span class="o">=</span>&lt;api-server-url&gt; <span class="nt">--certificate-authority</span><span class="o">=</span>&lt;ca-file&gt;
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>kubectl config get-contexts <span class="c"># 列出所有上下文</span>
+kubectl config use-context &lt;context-name&gt; <span class="c"># 切换上下文</span>
+kubectl config view <span class="c"># 验证配置</span>
+ <span class="c"># 创建新的上下文</span>
+kubectl config set-context &lt;context-name&gt; <span class="nt">--cluster</span><span class="o">=</span>&lt;cluster-name&gt; <span class="nt">--user</span><span class="o">=</span>&lt;user-name&gt; <span class="nt">--namespace</span><span class="o">=</span>&lt;namespace&gt;
+<span class="c"># 配置集群</span>
+kubectl config set-cluster &lt;cluster-name&gt; <span class="nt">--server</span><span class="o">=</span>&lt;api-server-url&gt; <span class="nt">--certificate-authority</span><span class="o">=</span>&lt;ca-file&gt;
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="kubectl-get"><span class="me-2">kubectl get</span><a href="#kubectl-get" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
