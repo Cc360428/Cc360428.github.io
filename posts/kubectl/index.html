@@ -1063,6 +1063,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1179,9 +1191,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2142 words"
+  title="2182 words"
 >
-  <em>11 min</em> read</span>
+  <em>12 min</em> read</span>
 
     </div>
 
@@ -1191,6 +1203,30 @@
 
 <div class="post-content">
   <h2 id="helm"><span class="me-2">helm</span><a href="#helm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="命令警告"><span class="me-2">命令警告</span><a href="#命令警告" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /Users/cc/.kube/config
+WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /Users/cc/.kube/config
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>
+    <p>处理方法</p>
+
+    <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>  <span class="nb">chmod </span>g-rw ~/.kube/config
+  <span class="nb">chmod </span>o-r ~/.kube/config
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
 
 <h3 id="repo"><span class="me-2">repo</span><a href="#repo" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -2071,7 +2107,7 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/kubectl/">Kubernetes Manager</a>
+          <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
         
@@ -2085,14 +2121,14 @@ Use <span class="s2">"kubectl options"</span> <span class="k">for </span>a list 
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/vim-plug/">vim Plug Manager</a>
+          <a href="/posts/kubectl/">Kubernetes Manager</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C++/">C++Programming（04737）</a>
+          <a href="/posts/vim-plug/">vim Plug Manager</a>
         </li>
       
         
