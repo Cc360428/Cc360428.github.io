@@ -985,13 +985,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C++/">C++Programming（04737）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -1000,6 +993,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
         
@@ -3606,7 +3606,31 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -5859,6 +5883,67 @@
         
         
         <div class="col">
+          <a href="/posts/linux-vpn-clash/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1696896361"
+  data-df="ll"
+  
+>
+  Oct 10, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>clash</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  docker-compose
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+version: &quot;3&quot;
+services:
+  clash:
+    container_name: clash
+    image: dreamacro/clash
+    restart: always
+    volumes:
+      - ./config/:/root/.config/c...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
           <a href="/posts/uci/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -5953,60 +6038,6 @@ Error: Nothing to do
 
 解决办法
 解决办法，安装epel-release之后，...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/curl/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1689565381"
-  data-df="ll"
-  
->
-  Jul 17, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>curl</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  Other
-
-  下载文件
-    
-      curl -O http://example.com/file.zip
-    
-  
-  使用代理
-    
-      curl -x proxy.example.com:8080 http://example.com/api
-    
-  
-  跟踪重定向
-    
-      curl -L http://example.com
-  ...
                 </p>
               </div>
             </div>

@@ -592,6 +592,163 @@
 
 <div id="post-list">
   
+    <a href="/posts/cgo-base/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            CGOBase
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              base
+
+环境搭建
+
+
+  go get -u -d gocv.io/x/gocv
+  安装过(update)和第一次安装(install)
+    
+      brew update opencv
+      brew install opencv
+    
+  
+  brew install pkgconfig
+
+
+测试环境是否安装 ok
+
+
+  运行(如果在 gomod 就在 pk...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1556116638"
+  data-df="ll"
+  
+>
+  Apr 24, 2019
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Go
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/8-sliceAndRanger/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Day08（切片 slice 和 range）
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              切片（slice） 和range 使用
+
+源码
+
+切片（slice）
+
+
+  Go 数组在一定情况下，不能满足开发业务需求（数组固定长度、有很多局限性），切片是可变长度序列，切片底层就是数组做了一层封装（也叫做动态数组）。切片可以自动扩容，切片是引用类型，包含地址、长度（len）、容量（cap）
+
+
+切片什么时候扩容
+
+
+  如果切片的容量小于 1024 个元素，那么扩容的时候slice的c...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1556116638"
+  data-df="ll"
+  
+>
+  Apr 24, 2019
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Go
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
     <a href="/posts/7-PointerAndstruct/" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
         
@@ -1268,169 +1425,6 @@ https://go-zh.org/
       </div>
     </a>
   
-    <a href="/posts/Flutter-HelloWorld/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Flutter HelloWorld
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              Android Studio 环境搭建
-
-查看 Android SDK
-
-
-  安装 Android Studio 查看安装 Android SDK 位置
-
-
-File-&amp;gt;other Settings -&amp;gt; Defaylt Project Structure
-
-
-
-  可以看到 Android SDK location
-
-
-Android Studio 中安装 Flutter 插...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1549983516"
-  data-df="ll"
-  
->
-  Feb 12, 2019
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Dart
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/Flutter-Base/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            环境搭建
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              Dart
-
-环境安装
-
-
-  下载 DartSDK
-  添加环境变量
-
-
-export DART_HOME=/usr/local/dart/dart-sdk/bin
-export PATH=&quot;${DART_HOME}:${PATH}&quot;
-
-
-Flutter
-
-环境搭建
-
-
-  获取 SDK
-    
-      zip
-        
-          https://flutter.de...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1549983516"
-  data-df="ll"
-  
->
-  Feb 12, 2019
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Dart
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
 </div>
 <!-- #post-list -->
 
@@ -1801,13 +1795,6 @@ Flutter
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C++/">C++Programming（04737）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -1816,6 +1803,13 @@ Flutter
         
         <li class="text-truncate lh-lg">
           <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
         

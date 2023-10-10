@@ -592,6 +592,173 @@
 
 <div id="post-list">
   
+    <a href="/posts/Lock/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Golang 锁
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              锁
+
+
+  sync 包中 Locker 提供互斥锁（Mutex）和读写锁（RWMutex）
+
+
+
+  为什么要锁
+
+
+
+  
+    
+      
+        ` go run test1.go
+        sort
+        uniq
+        wc -l 会发现下面代码明明是递增 但是结果会出现最后可能不是999`
+      
+    
+  
+
+
+package...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1576162716"
+  data-df="ll"
+  
+>
+  Dec 12, 2019
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Go
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/Interview/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Golang 2019
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              20191211
+
+redis
+
+
+  redis 数据类型
+    
+      string
+      hash
+      list
+      set
+    
+  
+  数据类型一般应用场景
+  redis 持久化
+  redis 与 mongoDB 区别
+    
+      redis 支持事务（），mongoDB 不支持
+      redis 适合做缓存读写速度忧，mon...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1576076316"
+  data-df="ll"
+  
+>
+  Dec 11, 2019
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Go
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
     <a href="/posts/go-1.12/" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
         
@@ -1217,167 +1384,6 @@ TCP/IP
       </div>
     </a>
   
-    <a href="/posts/Gin-bast/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Golang Gin
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              Gin Base
-
-Gin-Dics
-
-Getting Gin
-
-With Go module support, simply add the following import
-
-import &quot;github.com/gin-gonic/gin&quot;
-
-
-to your code, and then go [build|run|test] will automatically fetch the...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1562476863"
-  data-df="ll"
-  
->
-  Jul  7, 2019
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Go
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/SSM+Redis_base/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Eclipse中Maven项目创建
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              Eclipse中Maven项目创建
-
-Maven项目创建
-
-
-
-
-
-
-
-项目创建之后，要到javax.servlet下的包资源会报错解决方法
-
-
-
-
-搭建SSM
-
-
-
-
-配置web.xml
-
-
-
-  配置DispatcherServlet，是SpringMVC的核心组件，用于接收所有请求，然后分发到各控制器，在配置时，必须确定初始化时加载的Spring配置文件是哪些！配置CharacterE...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1559542200"
-  data-df="ll"
-  
->
-  Jun  3, 2019
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Java
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
 </div>
 <!-- #post-list -->
 
@@ -1748,13 +1754,6 @@ Maven项目创建
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C++/">C++Programming（04737）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -1763,6 +1762,13 @@ Maven项目创建
         
         <li class="text-truncate lh-lg">
           <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
         

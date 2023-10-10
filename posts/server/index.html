@@ -1226,13 +1226,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C++/">C++Programming（04737）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -1241,6 +1234,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
         
@@ -3955,7 +3955,31 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -6100,118 +6124,6 @@
         
         
         <div class="col">
-          <a href="/posts/Git-Error/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1587191584"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Git Error </h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  Git Error
-
-Failed to connect to 127.0.0.1 port 1080: Connection refused
-
-- 尝试了各种办法都没有解决，一直报这个端口代理的问题，看到网上有一个解决办法
-- 我个人是方法一解决了
-
-
-方法一
-
-
-  第一步 (查询是否使用了代理)
- git config –global http.proxy
-  第二步(取消代理)
- g...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/Git-Op/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1587191584"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Git Base Other</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  Git 常用命令
-
-仓库
-
-# 在当前目录新建一个Git代码库
-$ git init
-
-# 新建一个目录，将其初始化为Git代码库
-$ git init [project-name]
-
-# 下载一个项目和它的整个代码历史
-$ git clone [url]
-
-
-配置
-
-# 显示当前的Git配置
-$ git config --list
-
-# 编辑Git配置文件
-$ git config -e ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
           <a href="/posts/Git-Ope-Other/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -6256,6 +6168,167 @@ git shortlog --numbered --summary
 指定用户提交代码情况
 
 git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += $1; subs += $2; loc +...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
+          <a href="/posts/git-base/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1587191584"
+  data-df="ll"
+  
+>
+  Apr 18, 2020
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Git Base</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  Git default
+
+Git 全局设置:
+
+
+  git config –global user.name “Cc”
+  git config –global user.email “li_chao_cheng@163.com”
+
+
+创建 git 仓库:
+
+
+  mkdir client_user_server
+  cd client_user_server
+  git init
+  t...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
+          <a href="/posts/postman/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1690335145"
+  data-df="ll"
+  
+>
+  Jul 26, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Postman</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  Postman
+
+Workspaces
+
+
+
+
+
+
+
+new
+
+
+
+
+HTTP
+
+
+
+
+
+
+
+
+
+
+GRPC
+
+
+
+
+
+
+
+
+
+
+
+
+WebSocket
+
+
+
+environments
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+
+pm.test(&quot;Reuest Status &quot;,function() {
+    pm.res...
                 </p>
               </div>
             </div>

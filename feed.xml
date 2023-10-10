@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-09-22T20:28:17+08:00</updated>
+  <updated>2023-10-10T18:22:04+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -20,11 +20,78 @@
 
   
   <entry>
+    <title>clash</title>
+    <link href="https://cc360428.github.io//posts/linux-vpn-clash/" rel="alternate" type="text/html" title="clash" />
+    <published>2023-10-10T08:06:01+08:00</published>
+  
+    <updated>2023-10-10T08:06:01+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/linux-vpn-clash/</id>
+    <content src="https://cc360428.github.io//posts/linux-vpn-clash/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Linux" />
+    
+    <category term="Software" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      docker-compose
+
+version: "3"
+services:
+  clash:
+    container_name: clash
+    image: dreamacro/clash
+    restart: always
+    volumes:
+      - ./config/:/root/.config/clash
+      - ./ui:/ui:ro # 仪表盘 Volume 映射
+    ports:
+      - "7890:7890" # HTTP
+      - "7891:7891" # Socket
+      - "9090:9090" # ui
+
+
+配置文件
+
+
+  config/config.yaml
+
+
+# HTTP 代理监听端口
+port: 7890
+
+# SOCKS5 代理监听端口
+socks-port: 7891
+
+# 允许本...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>Kubernetes Manager</title>
     <link href="https://cc360428.github.io//posts/kubectl/" rel="alternate" type="text/html" title="Kubernetes Manager" />
     <published>2023-09-21T14:48:38+08:00</published>
   
-    <updated>2023-09-21T16:11:37+08:00</updated>
+    <updated>2023-10-10T14:18:53+08:00</updated>
   
     <id>https://cc360428.github.io//posts/kubectl/</id>
     <content src="https://cc360428.github.io//posts/kubectl/" />
@@ -81,7 +148,7 @@ he...
     <link href="https://cc360428.github.io//posts/OperationsResearch/" rel="alternate" type="text/html" title="运筹学基础（02375）" />
     <published>2023-09-19T13:57:01+08:00</published>
   
-    <updated>2023-09-22T09:25:53+08:00</updated>
+    <updated>2023-10-10T14:18:53+08:00</updated>
   
     <id>https://cc360428.github.io//posts/OperationsResearch/</id>
     <content src="https://cc360428.github.io//posts/OperationsResearch/" />
@@ -198,7 +265,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-hig...
     <link href="https://cc360428.github.io//posts/C++/" rel="alternate" type="text/html" title="C++Programming（04737）" />
     <published>2023-08-21T13:57:01+08:00</published>
   
-    <updated>2023-09-22T09:25:53+08:00</updated>
+    <updated>2023-09-22T20:35:04+08:00</updated>
   
     <id>https://cc360428.github.io//posts/C++/</id>
     <content src="https://cc360428.github.io//posts/C++/" />
@@ -248,78 +315,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-hig...
       C++语言可运行于多种平台上， 如 Windows 、MAC 操作系统及 UNIX 的多种版本
       C++语言中加入了面向对象的概念， C++的程序结构与 C 语言的程序结构存在很大差别
  ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>OperatingSystems（02323）</title>
-    <link href="https://cc360428.github.io//posts/OperatingSystems/" rel="alternate" type="text/html" title="OperatingSystems（02323）" />
-    <published>2023-08-21T13:57:01+08:00</published>
-  
-    <updated>2023-08-21T20:04:00+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/OperatingSystems/</id>
-    <content src="https://cc360428.github.io//posts/OperatingSystems/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="SelfStudy" />
-    
-    <category term="ComputerBasics" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      操作系统概论
-
-
-  操作系统控制、内核、同步、通讯
-  操作系统调度、算法、死锁
-  存储、管理方式、分段存储
-  操作系统文件
-  操作系统设备管理
-
-
-第一章操作系统简介
-
-1、什么是操作系统
-
-
-  操作系统（Operating System OS），是一种复杂的软件系统，是不同代码、数据结构、输出初始化文件的集合，可执行
-
-
-
-  
-    用户与硬件之间的接口
-
-    
-      计算机硬件：处理器、内存储器、输入/输出模块
-      计算机软件：系统软件、应用软件
-      在裸机上加载的第一层软件
-      把操作系统定义为：操作系统是控制和管理计算机硬件的软件资源、是计算机用户与计算机硬件之间的接口
-    
-  
-  资源的管理者
-    
-      处理机管理
-        
-          CPU 分配（调度）
-          提高利用率...
     </summary>
   
 

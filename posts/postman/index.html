@@ -3073,13 +3073,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C++/">C++Programming（04737）</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
@@ -3088,6 +3081,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/kubectl/">Kubernetes Manager</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
         
@@ -5682,7 +5682,31 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -7998,7 +8022,7 @@
         
         
         <div class="col">
-          <a href="/posts/Git-Error/" class="card post-preview h-100">
+          <a href="/posts/Git-Ope-Other/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -8018,7 +8042,7 @@
   Apr 18, 2020
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Git Error </h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Git Open Other </h4>
               <div class="text-muted small">
                 <p>
                   
@@ -8027,21 +8051,21 @@
 
 
 
-                  Git Error
+                  冷门操作
 
-Failed to connect to 127.0.0.1 port 1080: Connection refused
+查看 commit 总数
 
-- 尝试了各种办法都没有解决，一直报这个端口代理的问题，看到网上有一个解决办法
-- 我个人是方法一解决了
-
-
-方法一
+git log --oneline | wc -l
 
 
-  第一步 (查询是否使用了代理)
- git config –global http.proxy
-  第二步(取消代理)
- g...
+查看所有提交人和提交次数
+
+git shortlog --numbered --summary
+
+
+指定用户提交代码情况
+
+git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += $1; subs += $2; loc +...
                 </p>
               </div>
             </div>
@@ -8051,7 +8075,7 @@ Failed to connect to 127.0.0.1 port 1080: Connection refused
         
         
         <div class="col">
-          <a href="/posts/Git-Op/" class="card post-preview h-100">
+          <a href="/posts/git-base/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -8071,7 +8095,7 @@ Failed to connect to 127.0.0.1 port 1080: Connection refused
   Apr 18, 2020
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Git Base Other</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Git Base</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -8080,27 +8104,22 @@ Failed to connect to 127.0.0.1 port 1080: Connection refused
 
 
 
-                  Git 常用命令
+                  Git default
 
-仓库
-
-# 在当前目录新建一个Git代码库
-$ git init
-
-# 新建一个目录，将其初始化为Git代码库
-$ git init [project-name]
-
-# 下载一个项目和它的整个代码历史
-$ git clone [url]
+Git 全局设置:
 
 
-配置
+  git config –global user.name “Cc”
+  git config –global user.email “li_chao_cheng@163.com”
 
-# 显示当前的Git配置
-$ git config --list
 
-# 编辑Git配置文件
-$ git config -e ...
+创建 git 仓库:
+
+
+  mkdir client_user_server
+  cd client_user_server
+  git init
+  t...
                 </p>
               </div>
             </div>
