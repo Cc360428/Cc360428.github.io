@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-10-10T18:22:04+08:00</updated>
+  <updated>2023-10-11T21:14:47+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -144,6 +144,76 @@ he...
 
   
   <entry>
+    <title>OperatingSystemsError</title>
+    <link href="https://cc360428.github.io//posts/OperatingSystemsError/" rel="alternate" type="text/html" title="OperatingSystemsError" />
+    <published>2023-09-21T13:57:01+08:00</published>
+  
+    <updated>2023-09-21T13:57:01+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/OperatingSystemsError/</id>
+    <content src="https://cc360428.github.io//posts/OperatingSystemsError/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Cc" />
+    
+    <category term="SelfStudy" />
+    
+    <category term="ComputerBasics" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      操作系统概论复习
+
+选择题
+
+
+  
+    文件的类型
+
+    
+      正规文件：包含用户信息一般分为 ASCII 文件和二进制文件
+      目录文件：管理文件的系统文件
+      字符设备文件：和输入/输出有关用于串行 IO 类设备，如终端、打印机和网络等
+      块设备文件：磁盘类设备
+    
+  
+  
+    死锁
+
+    
+      处理死锁的基本方法有
+        
+          预防死锁
+          避免死锁
+          检测并解除死锁忽略死锁问题（即假定死锁不可能在系统内发生而忽略死锁）
+        
+      
+    
+  
+  
+    Linux 的伙伴系统
+
+    
+      Linux 的伙伴系统算法把所有的空闲页框分组为 11 个块链表，每个块链表分别包含大小为 1、2、4、8、16、32、6...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>运筹学基础（02375）</title>
     <link href="https://cc360428.github.io//posts/OperationsResearch/" rel="alternate" type="text/html" title="运筹学基础（02375）" />
     <published>2023-09-19T13:57:01+08:00</published>
@@ -254,67 +324,6 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-hig...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>C++Programming（04737）</title>
-    <link href="https://cc360428.github.io//posts/C++/" rel="alternate" type="text/html" title="C++Programming（04737）" />
-    <published>2023-08-21T13:57:01+08:00</published>
-  
-    <updated>2023-09-22T20:35:04+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/C++/</id>
-    <content src="https://cc360428.github.io//posts/C++/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="SelfStudy" />
-    
-    <category term="C++" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      C++Programming
-
-课本代码
-
-第一章 C++语言简介
-
-
-  
-    C++语言的发展简史
-
-    
-      C 语言是 C++ 语言的前身， 在进一步扩充和完善 C 语言的基础上得到了 C++语言。
-      用 C++语言写成的程序称为源程序， 源程序必须经过 C++编译程序翻译成机器语言才能执行
-      一般需要经过编辑 、编译 、连接 、运行
-    
-  
-  
-    C++语言的特点(与 C 语言相比， C++语言的优点)
-
-    
-      从程序运行的稳定性来说， C++语言更安全， 它支持过程化编程 、面向对象编程和泛型编程
-      C++语言可运行于多种平台上， 如 Windows 、MAC 操作系统及 UNIX 的多种版本
-      C++语言中加入了面向对象的概念， C++的程序结构与 C 语言的程序结构存在很大差别
- ...
     </summary>
   
 
