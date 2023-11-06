@@ -1,10 +1,27 @@
 [
   
   {
+    "title": "Rust Tools",
+    "url": "/posts/rust-tools/",
+    "categories": "Language, Rust",
+    "tags": "Server, Rust",
+    "date": "2023-11-06 11:58:36 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Cargo  Cargo 是 Rust 的构建工具和包管理器。它用于创建、构建、测试和发布 Rust 项目，以及管理项目的依赖关系。      示例：创建一个新的 Rust 项目并构建它。    cargo new my_projectcd my_projectcargo build      Cargo Clippy  Cargo Clippy 是一个 Rust 静态分析工具，用于检测和纠...",
+    "content": "Cargo  Cargo 是 Rust 的构建工具和包管理器。它用于创建、构建、测试和发布 Rust 项目，以及管理项目的依赖关系。      示例：创建一个新的 Rust 项目并构建它。    cargo new my_projectcd my_projectcargo build      Cargo Clippy  Cargo Clippy 是一个 Rust 静态分析工具，用于检测和纠正潜在的代码问题和风格建议。      示例：运行 Clippy 来检查代码。    cargo clippy      Cargo Fmt  Cargo Fmt 是 Rust 的代码格式化工具，用于自动格式化 Rust 代码，以确保代码风格的一致性。      示例：使用 Cargo Fmt 格式化 Rust 代码。    cargo fmt      Cargo Miri  Cargo Miri 是 Rust 的直译器，用于执行 Rust 代码并检测潜在的内存安全问题。      示例：使用 Miri 运行 Rust 代码来检查内存安全性。    cargo miri run      Clippy Driver  Clippy Driver 是 Clippy 静态分析工具的驱动程序，用于运行 Cargo Clippy 并提供代码建议和检测。      示例：使用 Clippy Driver 运行 Clippy 来检查代码。    clippy-driver      RLS (Rust Language Server)  RLS 是 Rust 的语言服务器，为 Rust 编辑器提供了代码补全、导航、重构和文档功能，以增强 Rust 开发体验。  示例：在支持 RLS 的 Rust 编辑器中使用 RLS 功能。Rust GDB (GNU Debugger)  Rust GDB 是 Rust 的 GDB 调试器，用于调试 Rust 程序。      示例：使用 GDB 调试 Rust 程序。    rust-gdb your_program      Rust GDBGUI  Rust GDBGUI 是 Rust 的图形用户界面 (GUI) 调试器，用于通过图形界面进行 Rust 程序的调试。  示例：使用 Rust GDBGUI 来调试 Rust 程序。Rust LLDB (LLVM Debugger)  Rust LLDB 是 Rust 的 LLDB 调试器，类似于 GDB，用于调试 Rust 代码。      示例：使用 LLDB 调试 Rust 程序。    rust-lldb your_program      Rustc  Rustc 是 Rust 的编译器，用于将 Rust 源代码编译成可执行文件或库。      示例：使用 rustc 编译 Rust 程序。    rustc your_program.rs      Rustdoc  Rustdoc 是 Rust 的文档生成工具，用于生成 Rust 代码的文档，包括标准库和用户编写的文档。      示例：生成 Rust 代码的文档。    rustdoc your_program.rs      Rustfmt  Rustfmt 是 Rust 的代码格式化工具，用于自动格式化 Rust 代码，以确保代码风格的一致性。      示例：使用 rustfmt 格式化 Rust 代码。    rustfmt your_program.rs      Rustup  Rustup 是 Rust 工具链的安装和管理工具，用于安装、升级和管理 Rust 的不同版本，以及管理工具链组件。      示例：使用 rustup 安装 Rust 工具链或切换 Rust 版本。    rustup install stable      "
+  },
+  
+  {
     "title": "Rust",
     "url": "/posts/rust/",
-    "categories": "Language, Dart",
-    "tags": "Client, Dart",
+    "categories": "Language, Rust",
+    "tags": "Server, Rust",
     "date": "2023-11-06 10:58:36 +0800",
     
 

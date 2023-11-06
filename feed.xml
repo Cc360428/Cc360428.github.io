@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-11-06T17:47:50+08:00</updated>
+  <updated>2023-11-06T18:06:13+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,75 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Rust Tools</title>
+    <link href="https://cc360428.github.io//posts/rust-tools/" rel="alternate" type="text/html" title="Rust Tools" />
+    <published>2023-11-06T11:58:36+08:00</published>
+  
+    <updated>2023-11-06T11:58:36+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/rust-tools/</id>
+    <content src="https://cc360428.github.io//posts/rust-tools/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Language" />
+    
+    <category term="Rust" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Cargo
+
+
+  Cargo 是 Rust 的构建工具和包管理器。它用于创建、构建、测试和发布 Rust 项目，以及管理项目的依赖关系。
+  
+    示例：创建一个新的 Rust 项目并构建它。
+
+    cargo new my_project
+cd my_project
+cargo build
+    
+  
+
+
+Cargo Clippy
+
+
+  Cargo Clippy 是一个 Rust 静态分析工具，用于检测和纠正潜在的代码问题和风格建议。
+  
+    示例：运行 Clippy 来检查代码。
+
+    cargo clippy
+    
+  
+
+
+Cargo Fmt
+
+
+  Cargo Fmt 是 Rust 的代码格式化工具，用于自动格式化 Rust 代码，以确保代码风格的一致性。
+  
+    示例：使用 Cargo Fmt 格式化 Rust 代码。
+
+    car...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -36,7 +105,7 @@
     
     <category term="Language" />
     
-    <category term="Dart" />
+    <category term="Rust" />
     
   
 
@@ -266,69 +335,6 @@ he...
 
     
       Linux 的伙伴系统算法把所有的空闲页框分组为 11 个块链表，每个块链表分别包含大小为 1、2、4、8、16、32、6...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>运筹学基础（02375）</title>
-    <link href="https://cc360428.github.io//posts/OperationsResearch/" rel="alternate" type="text/html" title="运筹学基础（02375）" />
-    <published>2023-09-19T13:57:01+08:00</published>
-  
-    <updated>2023-10-10T14:18:53+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/OperationsResearch/</id>
-    <content src="https://cc360428.github.io//posts/OperationsResearch/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="SelfStudy" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      运筹学基础
-
-
-  
-    公式概念
-
-    
-      求和
-        
-          公式：$\displaystyle \sum ^n _{i=1}$ 简化 $\sum$
-          例子：$\displaystyle \sum ^5 _{i=1} = 1+2+3+4+5 = 15$
-        
-      
-    
-  
-
-
-第一章
-
-
-  定性决策：基本上根据决策人员的主观经验或感受到的感觉或知识而制定的决策
-  定量决策：借助于某些正规的计量方法而做出的决策
-  混合性决策：必须运用定性和定量两种方法才能制定的决策
-  运筹学与管理决策：对于管理领域，运筹学也是对管理决策工作进行决策的计量方法
-  运筹学
-    
-      运筹学是一门研究如何有效地组织和管理人机系统的科学
-      运筹学利用计划方法和有关多学科的要求，把复杂功能...
     </summary>
   
 
