@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-10-11T21:14:47+08:00</updated>
+  <updated>2023-11-06T17:47:50+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,65 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Rust</title>
+    <link href="https://cc360428.github.io//posts/rust/" rel="alternate" type="text/html" title="Rust" />
+    <published>2023-11-06T10:58:36+08:00</published>
+  
+    <updated>2023-11-06T10:58:36+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/rust/</id>
+    <content src="https://cc360428.github.io//posts/rust/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Language" />
+    
+    <category term="Dart" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      系统环境配置
+
+
+  vim /etc/profile 追加
+
+
+export CARGO_HOME=$HOME/.cargo
+export RUSTUP_HOME=$HOME/.rustup
+export RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
+配置源
+
+
+  cd ～.cargo
+  touch config
+  
+    vim config
+
+    [source.crates-io]
+replace-with = 'rsproxy-sparse'
+[source.rsproxy]...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -270,60 +329,6 @@ he...
     
       运筹学是一门研究如何有效地组织和管理人机系统的科学
       运筹学利用计划方法和有关多学科的要求，把复杂功能...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>vim Plug Manager</title>
-    <link href="https://cc360428.github.io//posts/vim-plug/" rel="alternate" type="text/html" title="vim Plug Manager" />
-    <published>2023-09-18T11:32:25+08:00</published>
-  
-    <updated>2023-09-19T10:32:48+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/vim-plug/</id>
-    <content src="https://cc360428.github.io//posts/vim-plug/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Dev" />
-    
-    <category term="Utils" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      安装
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-
-修改配置
-
-~/.vimrc
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-hig...
     </summary>
   
 
