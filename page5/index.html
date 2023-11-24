@@ -592,6 +592,240 @@
 
 <div id="post-list">
   
+    <a href="/posts/auto_shell/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            自动化脚本
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              自动化脚本
+
+备份文件
+
+#!/bin/bash
+
+# 定义变量
+backup_dir=&quot;/path/to/backup&quot;
+file_to_backup=&quot;/path/to/file.txt&quot;
+
+# 创建备份目录
+mkdir -p &quot;$backup_dir&quot;
+
+# 备份文件
+backup_file=&quot;$backup_dir/$(date +%Y-%m-%d_%H-%M-%S)_file.tx...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1683270301"
+  data-df="ll"
+  
+>
+  May  5, 2023
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Network,
+                    Linux,
+                    Sehll
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/1-django-base/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Django Base
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              简介
+
+
+  Python Django 是一个流行的 Web 开发框架，它提供了一种快速构建高质量 Web 应用程序的方式。Django 是由 Python
+编程语言编写的，它采用了“模型-视图-控制器”（MVC）设计模式，以及“全栈框架”思想，使得开发者可以轻松地实现数据模型、业务逻辑和用户界面的交互。
+
+
+
+  Django 的特点：
+
+
+
+  
+    自带管理后台：Django 自...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1653616800"
+  data-df="ll"
+  
+>
+  May 27, 2022
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Python
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
+    <a href="/posts/13-other/" class="card-wrapper">
+      <div class="card post-preview flex-md-row-reverse">
+        
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">
+            Python Other
+          </h1>
+
+          <div class="card-text post-content mt-0 mb-2">
+            <p>
+              
+
+
+
+
+
+              Other
+
+多线程
+
+
+  Python多线程是一种并发编程的技术，在同一时间内执行多个线程，从而提高程序的效率和响应速度。在Python中，可以使用threading
+模块来创建和管理线程。
+
+
+
+  
+    下面是一个简单的例子：
+
+    import threading
+  
+def print_numbers():
+    for i in range(1, 11):
+    ...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class=""
+  data-ts="1653357618"
+  data-df="ll"
+  
+>
+  May 24, 2022
+</em>
+
+
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Language,
+                    Python
+                </span>
+              
+            </div>
+
+            
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </div>
+    </a>
+  
     <a href="/posts/12-stdlib/" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
         
@@ -1127,226 +1361,6 @@ a, b,...
       </div>
     </a>
   
-    <a href="/posts/5-syntactic_sugar/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Python SyntacticSugar
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              语法糖
-
-
-  
-    列表推导式
-
-    列表推导式可以使用一行简洁的代码生成列表，格式为：
-
-    [expression for item in iterable]
-    
-
-    其中，expression 是需要生成的元素表达式，item 是可迭代对象中的元素，iterable 是可迭代对象。例如，要生成一个包含 1 到 10 的平方的列表，可以使用以下代码：
-
-    ...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1653357611"
-  data-df="ll"
-  
->
-  May 24, 2022
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Python
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/4-interpreter/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Python Interpreter
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              调用解释器
-
-
-  Python解释器是执行Python代码的程序。它读取源代码，并将其转换为字节码形式，然后在运行时逐行解释和执行这些字节码指令。Python解释器还提供了一个交互式环境，称为Python
-shell，它允许用户在命令行界面中输入Python代码并立即查看其输出结果。
-  在Python中，有多个不同的解释器可供选择。其中最常用的是CPython，它是官方的Python解释...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1653357611"
-  data-df="ll"
-  
->
-  May 24, 2022
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Python
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
-    <a href="/posts/3-utilscmd/" class="card-wrapper">
-      <div class="card post-preview flex-md-row-reverse">
-        
-
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">
-            Python UtilCmd
-          </h1>
-
-          <div class="card-text post-content mt-0 mb-2">
-            <p>
-              
-
-
-
-
-
-              常用的工具命令
-
-
-  
-    pip：Python 包管理器，可用于安装、升级和卸载 Python 模块。
-  
-  
-    virtualenv：虚拟环境管理器，可用于创建和管理 Python 虚拟环境，使不同项目的依赖包互不干扰。
-  
-  
-    pytest：用于编写和运行 Python 单元测试的工具，支持测试自动发现和参数化测试等功能。
-  
-  
-    pylint：...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1653357610"
-  data-df="ll"
-  
->
-  May 24, 2022
-</em>
-
-
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Language,
-                    Python
-                </span>
-              
-            </div>
-
-            
-          </div>
-          <!-- .post-meta -->
-        </div>
-        <!-- .card-body -->
-      </div>
-    </a>
-  
 </div>
 <!-- #post-list -->
 
@@ -1737,13 +1751,6 @@ shell，它允许用户在命令行界面中输入Python代码并立即查看其
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/kubectl/">Kubernetes Manager</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
@@ -1759,6 +1766,13 @@ shell，它允许用户在命令行界面中输入Python代码并立即查看其
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/postman/">Postman</a>
         </li>
       
     </ul>

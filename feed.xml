@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-11-08T18:36:15+08:00</updated>
+  <updated>2023-11-24T17:50:46+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,157 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Kubernetes Services</title>
+    <link href="https://cc360428.github.io//posts/services/" rel="alternate" type="text/html" title="Kubernetes Services" />
+    <published>2023-11-24T10:47:54+08:00</published>
+  
+    <updated>2023-11-24T10:47:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/services/</id>
+    <content src="https://cc360428.github.io//posts/services/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Kubernetes" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Base
+
+
+  
+    服务类型：
+
+    
+      
+        ClusterIP：
+
+        
+          类型：内部服务
+          集群内部可访问的虚拟 IP。
+          仅在集群内部可路由。
+          默认服务类型。
+          使用选择器将流量路由到匹配的 Pod。
+          适用于在集群内部进行内部通信的服务。
+        
+      
+      
+        NodePort
+
+        
+          类型：外部服务
+          在每个节点上公开一个固定的端口。
+          外部流量可以通过节点的 IP 地址和 NodePort 访问服务。
+          使用选择器将流量路由到匹配的 Pod。
+          适用于需要从集群外部访问服务的...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Kubernetes Pod</title>
+    <link href="https://cc360428.github.io//posts/pod/" rel="alternate" type="text/html" title="Kubernetes Pod" />
+    <published>2023-11-24T10:46:54+08:00</published>
+  
+    <updated>2023-11-24T10:46:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/pod/</id>
+    <content src="https://cc360428.github.io//posts/pod/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Kubernetes" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Base
+
+
+  容器组合：Pod 是一个逻辑上的容器组合，可以包含一个或多个容器。这些容器在 Pod 内部共享相同的命名空间和网络，可以通过 localhost 相互通信。Pod 内的容器通常协同工作，处理应用程序的不同部分或服务。
+  网络和 IP 地址：每个 Pod 都有一个唯一的 IP 地址，用于在集群内部或集群外部进行访问。Pod 内的所有容器共享相同的网络命名空间，它们可以使用相同的 IP 地址和端口空间进行通信。这使得容器之间的通信更加简单，可以使用本地主机地址（localhost）进行通信。
+  存储和卷：Pod 可以使用存储卷（Volume）来共享和持久化数据。存储卷可以附加到 Pod 中的一个或多个容器，并提供持久化的文件系统或数据卷。这使得多个容器可以通过共享卷进行文件共享或数据交换。
+  生命周期管理：Pod 有一个生命周期，它从创建状态开始，经过运行状态，最...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Kubernetes Deploymen</title>
+    <link href="https://cc360428.github.io//posts/deployment/" rel="alternate" type="text/html" title="Kubernetes Deploymen" />
+    <published>2023-11-24T10:46:54+08:00</published>
+  
+    <updated>2023-11-24T10:46:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/deployment/</id>
+    <content src="https://cc360428.github.io//posts/deployment/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Network" />
+    
+    <category term="Kubernetes" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Base
+
+
+  
+    副本集（ReplicaSet）: Deployment 使用副本集来确保指定数量的 Pod 副本在集群中运行。副本集定义了 Pod 的模板和副本数量，并负责监控 Pod 的运行状态。如果 Pod 发生故障或被删除，副本集将自动创建新的 Pod 来替换它。
+  
+  
+    声明式配置: Deployment 使用声明式的方式来定义应用程序的部署状态。您可以编写一个 Deployment 配置文件，描述应用程序的期望状态，包括副本数量、容器镜像、环境变量、资源限制等。Kubernetes 将根据配置文件的定义来创建和管理 Pod 副本。
+  
+  
+    滚动更新: Deployment 支持滚动更新应用程序的新版本。您可以更新 Deployment 的配置文件，例如更新容器镜像的版本，然后 Kubernetes 会逐步创建新的 Pod 副本并停止旧的 ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -141,200 +292,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
     [source.crates-io]
 replace-with = 'rsproxy-sparse'
 [source.rsproxy]...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>clash</title>
-    <link href="https://cc360428.github.io//posts/linux-vpn-clash/" rel="alternate" type="text/html" title="clash" />
-    <published>2023-10-10T08:06:01+08:00</published>
-  
-    <updated>2023-10-10T08:06:01+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/linux-vpn-clash/</id>
-    <content src="https://cc360428.github.io//posts/linux-vpn-clash/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Network" />
-    
-    <category term="Linux" />
-    
-    <category term="Software" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      docker-compose
-
-version: "3"
-services:
-  clash:
-    container_name: clash
-    image: dreamacro/clash
-    restart: always
-    volumes:
-      - ./config/:/root/.config/clash
-      - ./ui:/ui:ro # 仪表盘 Volume 映射
-    ports:
-      - "7890:7890" # HTTP
-      - "7891:7891" # Socket
-      - "9090:9090" # ui
-
-
-配置文件
-
-
-  config/config.yaml
-
-
-# HTTP 代理监听端口
-port: 7890
-
-# SOCKS5 代理监听端口
-socks-port: 7891
-
-# 允许本...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Kubernetes Manager</title>
-    <link href="https://cc360428.github.io//posts/kubectl/" rel="alternate" type="text/html" title="Kubernetes Manager" />
-    <published>2023-09-21T14:48:38+08:00</published>
-  
-    <updated>2023-10-10T14:18:53+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/kubectl/</id>
-    <content src="https://cc360428.github.io//posts/kubectl/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Network" />
-    
-    <category term="Kubernetes" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      helm
-
-命令警告
-
-WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /Users/cc/.kube/config
-WARNING: Kubernetes configuration file is world-readable. This is insecure. Location: /Users/cc/.kube/config
-
-
-
-  
-    处理方法
-
-      chmod g-rw ~/.kube/config
-  chmod o-r ~/.kube/config
-    
-  
-
-
-repo
-
-helm repo add ind-games --username username --password password url # 添加库
-he...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>OperatingSystemsError</title>
-    <link href="https://cc360428.github.io//posts/OperatingSystemsError/" rel="alternate" type="text/html" title="OperatingSystemsError" />
-    <published>2023-09-21T13:57:01+08:00</published>
-  
-    <updated>2023-09-21T13:57:01+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/OperatingSystemsError/</id>
-    <content src="https://cc360428.github.io//posts/OperatingSystemsError/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Cc" />
-    
-    <category term="SelfStudy" />
-    
-    <category term="ComputerBasics" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      操作系统概论复习
-
-选择题
-
-
-  
-    文件的类型
-
-    
-      正规文件：包含用户信息一般分为 ASCII 文件和二进制文件
-      目录文件：管理文件的系统文件
-      字符设备文件：和输入/输出有关用于串行 IO 类设备，如终端、打印机和网络等
-      块设备文件：磁盘类设备
-    
-  
-  
-    死锁
-
-    
-      处理死锁的基本方法有
-        
-          预防死锁
-          避免死锁
-          检测并解除死锁忽略死锁问题（即假定死锁不可能在系统内发生而忽略死锁）
-        
-      
-    
-  
-  
-    Linux 的伙伴系统
-
-    
-      Linux 的伙伴系统算法把所有的空闲页框分组为 11 个块链表，每个块链表分别包含大小为 1、2、4、8、16、32、6...
     </summary>
   
 

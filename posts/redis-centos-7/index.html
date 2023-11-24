@@ -1128,13 +1128,6 @@ config <span class="nb">set </span>requirepass root
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/kubectl/">Kubernetes Manager</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
@@ -1150,6 +1143,13 @@ config <span class="nb">set </span>requirepass root
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/postman/">Postman</a>
         </li>
       
     </ul>
@@ -5882,6 +5882,42 @@ config <span class="nb">set </span>requirepass root
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -6119,6 +6155,115 @@ config <span class="nb">set </span>requirepass root
         
         
         <div class="col">
+          <a href="/posts/redis-monitor/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1686718134"
+  data-df="ll"
+  
+>
+  Jun 14, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Redis Monitor</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  操作步骤如下
+
+
+  redis-exporter
+  prometheus
+  grafana
+
+
+redis-exporter 启动
+
+GitHub
+
+
+  在机器对应目录下创建目录和文件
+    
+      mkdir -p /home/save/redis-exporter/conf
+      
+        touch redis_conf.json
+
+        1
+2...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
+          <a href="/posts/mysql-monitor/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1686721734"
+  data-df="ll"
+  
+>
+  Jun 14, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Mysql Monitor</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  操作步骤如下
+
+
+  mysql 设置
+
+
+1
+2
+  CREATE USER &#39;exporter&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;XXXXXXXX&#39; WITH MAX_USER_CONNECTIONS 3;
+  GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO &#39;exporter&#39;@&#39;localhost&#39;; 
+
+...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
           <a href="/posts/redis-all/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -6156,127 +6301,6 @@ config <span class="nb">set </span>requirepass root
   是一个使用 C 语言编写的，开源的（BSD 许可）高性能非关系型（NoSQL）的键值对数据库。
   Redis 可以存储键和五种不同类型的值之间的映射。键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。
   与传统数据库不同的是 Redis 的数据是存在内存中的，所以读...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/ErrorAndUse/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1548478134"
-  data-df="ll"
-  
->
-  Jan 26, 2019
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Redis Error</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  持久化
-
-
-  快照
-save 设置
-  aof
-    
-      受到写入就立马写到磁盘中，
-    
-  
-
-
-Redis 中错误
-
-程序链接持久化问题
-
-
-  问题描述
-
-
-MISCONF Redis is configured to save RDB snapshots, but it is currently not able to persist on disk. Comma...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/redis-config/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1548478134"
-  data-df="ll"
-  
->
-  Jan 26, 2019
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Redis 配置</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  redis config
-
-config get *
-config get save
-config sets setting_name setting_value
-
-
-
-  
-    
-      配置项
-      说明
-    
-  
-  
-    
-      port
-      redis 监听端口
-    
-    
-      buid
-      绑定的主机端口
-    
- ...
                 </p>
               </div>
             </div>

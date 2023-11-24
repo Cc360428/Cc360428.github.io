@@ -1487,13 +1487,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/kubectl/">Kubernetes Manager</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
@@ -1509,6 +1502,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/postman/">Postman</a>
         </li>
       
     </ul>
@@ -4849,6 +4849,42 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -6510,6 +6546,7 @@
                   Kubernetes 搭建
 
 准备
+
 在搭建 Kubernetes 之前，您需要先准备一些必要的配置和工具，包括：
 
 
@@ -6517,7 +6554,7 @@
     至少三个节点：用于部署 Kubernetes 集群的主机。一般情况下，建议使用至少三个物理或虚拟机来搭建 Kubernetes 集群，以确保高可用性和容错性。
   
   
-    操作系统：Kubernetes 支持多种操作系统，例如 Ubuntu、CentOS...
+    操作系统：Kubernetes 支持多种操作系统，例如 Ubuntu、CentO...
                 </p>
               </div>
             </div>
@@ -6573,7 +6610,7 @@ WARNING: Kubernetes configuration file is world-readable. This is insecu...
         
         
         <div class="col">
-          <a href="/posts/k8sBase/" class="card post-preview h-100">
+          <a href="/posts/deployment/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6586,14 +6623,14 @@ WARNING: Kubernetes configuration file is world-readable. This is insecu...
 
 <em
   class="small"
-  data-ts="1584885600"
+  data-ts="1700794014"
   data-df="ll"
   
 >
-  Mar 22, 2020
+  Nov 24, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Kubernetes概述</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Kubernetes Deploymen</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -6602,13 +6639,14 @@ WARNING: Kubernetes configuration file is world-readable. This is insecu...
 
 
 
-                  Kubernetes
+                  Base
 
-简介
 
-Kubernetes 是用于自动化容器操作的开源平台。它允许开发者在多个主机上部署、运行和管理容器化应用程序，并提供了一致性、可扩展性和弹性等方面的保障。
-
-Kubernetes 的设计目标是实现跨不同主机和云环境的容器编排。它可以运行在所有主流的云平台和数据中心中，包括 Amazon Web Services（AWS）、Microsoft Azure、Goo...
+  
+    副本集（ReplicaSet）: Deployment 使用副本集来确保指定数量的 Pod 副本在集群中运行。副本集定义了 Pod 的模板和副本数量，并负责监控 Pod 的运行状态。如果 Pod 发生故障或被删除，副本集将自动创建新的 Pod 来替换它。
+  
+  
+    声明式配置: Deployment 使用声明式的方式来定义应用程序的部署状态。您可以编写一...
                 </p>
               </div>
             </div>

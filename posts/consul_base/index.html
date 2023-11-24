@@ -1081,13 +1081,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/kubectl/">Kubernetes Manager</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
@@ -1103,6 +1096,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/postman/">Postman</a>
         </li>
       
     </ul>
@@ -4839,6 +4839,42 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -6126,7 +6162,7 @@ https://gitee.com/ClientCodeFile/...
         
         
         <div class="col">
-          <a href="/posts/etcd_base/" class="card post-preview h-100">
+          <a href="/posts/DataOther/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6139,14 +6175,14 @@ https://gitee.com/ClientCodeFile/...
 
 <em
   class="small"
-  data-ts="1587391501"
+  data-ts="1683438534"
   data-df="ll"
   
 >
-  Apr 20, 2020
+  May  7, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>etcd Base</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>数据库基础</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -6155,15 +6191,15 @@ https://gitee.com/ClientCodeFile/...
 
 
 
-                  etcd 简介
+                  服务端开发需要了解哪些数据库
 
-etcd 是 CoreOS 团队于 2013 年 6 月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd 内部采用raft协议作为一致性算法，etcd 基于 Go 语言实现。
+数据库分类
 
-etcd 作为服务发现系统，有以下的特点：
+服务端开发需要了解多种数据库，以下是其中一些常见的数据库类型：
 
 
-  简单：安装配置简单，而且提供了 HTTP API 进行交互，使用也很简单
-  安全：支持 SSL 证书验...
+  关系型数据库（SQL 数据库）：如 MySQL、Oracle、PostgreSQL 等。关系型数据库采用表格形式来存储数据，其中每个表都由多个行和列组成。数据表之间通过关联建立关系，使得数据之间可以进行查询、修改、删除等操作。
+  非关系型数据库（NoSQL 数据库）：如 M...
                 </p>
               </div>
             </div>
@@ -6173,7 +6209,7 @@ etcd 作为服务发现系统，有以下的特点：
         
         
         <div class="col">
-          <a href="/posts/etcd_pro/" class="card post-preview h-100">
+          <a href="/posts/redis-monitor/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6186,14 +6222,14 @@ etcd 作为服务发现系统，有以下的特点：
 
 <em
   class="small"
-  data-ts="1587391501"
+  data-ts="1686718134"
   data-df="ll"
   
 >
-  Apr 20, 2020
+  Jun 14, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>etcd Pro</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Redis Monitor</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -6202,19 +6238,27 @@ etcd 作为服务发现系统，有以下的特点：
 
 
 
-                  etcd 的初步使用
-
-StormZhu · 2018-11-21 01:34:40 · 1305 次点击 · 预计阅读时间 4 分钟 · 不到 1 分钟之前 开始浏览
-
-这是一个创建于 2018-11-21 01:34:40 的文章，其中的信息可能已经有所发展或是发生改变。
-
-简介
+                  操作步骤如下
 
 
+  redis-exporter
+  prometheus
+  grafana
 
-etcd 介绍.png
 
-etcd是一个golang编写的分布式、高可用的一致性键值存储系统，用于提供...
+redis-exporter 启动
+
+GitHub
+
+
+  在机器对应目录下创建目录和文件
+    
+      mkdir -p /home/save/redis-exporter/conf
+      
+        touch redis_conf.json
+
+        1
+2...
                 </p>
               </div>
             </div>

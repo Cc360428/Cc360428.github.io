@@ -1668,13 +1668,6 @@ lease 694d673115905e4f keepalived with TTL(20)
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/kubectl/">Kubernetes Manager</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
@@ -1690,6 +1683,13 @@ lease 694d673115905e4f keepalived with TTL(20)
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/postman/">Postman</a>
         </li>
       
     </ul>
@@ -5402,6 +5402,42 @@ lease 694d673115905e4f keepalived with TTL(20)
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -6706,51 +6742,6 @@ etcd 作为服务发现系统，有以下的特点：
         
         
         <div class="col">
-          <a href="/posts/consul_base/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1587391501"
-  data-df="ll"
-  
->
-  Apr 20, 2020
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>Consul Base</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  安装
-
-https://www.consul.io/downloads.html
-
-docker 单机部署
-
- docker run -d -p 8500:8500 -v /data/consul:/consul/data -e CONSUL_BIND_INTERFACE=&#39;eth0&#39; --name=consul1 consul agent -server -bootstrap -ui -c...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
           <a href="/posts/DataOther/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -6789,6 +6780,65 @@ docker 单机部署
 
   关系型数据库（SQL 数据库）：如 MySQL、Oracle、PostgreSQL 等。关系型数据库采用表格形式来存储数据，其中每个表都由多个行和列组成。数据表之间通过关联建立关系，使得数据之间可以进行查询、修改、删除等操作。
   非关系型数据库（NoSQL 数据库）：如 M...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
+          <a href="/posts/redis-monitor/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1686718134"
+  data-df="ll"
+  
+>
+  Jun 14, 2023
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Redis Monitor</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  操作步骤如下
+
+
+  redis-exporter
+  prometheus
+  grafana
+
+
+redis-exporter 启动
+
+GitHub
+
+
+  在机器对应目录下创建目录和文件
+    
+      mkdir -p /home/save/redis-exporter/conf
+      
+        touch redis_conf.json
+
+        1
+2...
                 </p>
               </div>
             </div>

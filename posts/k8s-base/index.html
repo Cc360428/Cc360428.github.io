@@ -50,7 +50,7 @@
 <meta property="twitter:title" content="Kubernetes 部署" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-15T18:33:21+08:00","datePublished":"2021-03-17T16:43:33+08:00","description":"kubernets 前期准备","headline":"Kubernetes 部署","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/k8s-base/"},"url":"https://cc360428.github.io//posts/k8s-base/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-03-17T16:43:33+08:00","datePublished":"2021-03-17T16:43:33+08:00","description":"kubernets 前期准备","headline":"Kubernetes 部署","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/k8s-base/"},"url":"https://cc360428.github.io//posts/k8s-base/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -742,6 +742,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -758,18 +770,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
       
 
       
@@ -854,30 +854,6 @@
 
     <!-- lastmod date -->
     
-    <span>
-      Updated
-      <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class=""
-  data-ts="1684146801"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  May 15, 2023
-</em>
-
-    </span>
-    
 
   
 
@@ -930,7 +906,8 @@
 <div class="post-content">
   <h3 id="kubernetes-搭建"><span class="me-2">Kubernetes 搭建</span><a href="#kubernetes-搭建" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="准备"><span class="me-2">准备</span><a href="#准备" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="准备"><span class="me-2">准备</span><a href="#准备" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p>在搭建 Kubernetes 之前，您需要先准备一些必要的配置和工具，包括：</p>
 
 <ol>
@@ -968,9 +945,10 @@
   </li>
   <li>
     <p>部署应用程序和服务到 Kubernetes 集群中，并通过 kubectl 命令进行管理和监控。</p>
-    <h4 id="最低配置"><span class="me-2">最低配置</span><a href="#最低配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
   </li>
 </ol>
+
+<h4 id="最低配置"><span class="me-2">最低配置</span><a href="#最低配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>Kubernetes 的硬件要求主要由 Master 节点和 Node 节点的配置决定。以下是 Kubernetes 推荐的最低硬件配置：</p>
 
@@ -997,7 +975,7 @@
 
 <p>需要注意的是，以上硬件配置只是 Kubernetes 的最低要求，如果您希望集群具有更好的性能和可靠性，可以考虑增加 CPU、内存和磁盘空间等资源。</p>
 
-<h4 id="搭建前masternode"><span class="me-2">搭建前master/node</span><a href="#搭建前masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="搭建前-masternode"><span class="me-2">搭建前 master/node</span><a href="#搭建前-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>在部署 Kubernetes 集群之前，您需要进行一些节点的预配置工作。下面是一些常见的命令，用于关闭防火墙、Swap 分区、SELinux，并修改主机名：</p>
 
@@ -1017,7 +995,7 @@
 systemctl stop firewalld
 systemctl disable firewalld
 
-<span class="c"># Ubuntu 16.04/18.04/20.04 </span>
+<span class="c"># Ubuntu 16.04/18.04/20.04</span>
 ufw disable
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
@@ -1353,8 +1331,8 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
 5
 6
 7
-</pre></td><td class="rouge-code"><pre>	scp admin.conf root@172.13.8.17:/etc/kubernetes
-	scp admin.conf root@172.13.8.16:/etc/kubernetes
+</pre></td><td class="rouge-code"><pre>  scp admin.conf root@172.13.8.17:/etc/kubernetes
+  scp admin.conf root@172.13.8.16:/etc/kubernetes
   <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$HOME</span>/.kube
   <span class="nb">sudo cp</span> <span class="nt">-i</span> /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
   <span class="nb">sudo chown</span> <span class="si">$(</span><span class="nb">id</span> <span class="nt">-u</span><span class="si">)</span>:<span class="si">$(</span><span class="nb">id</span> <span class="nt">-g</span><span class="si">)</span> <span class="nv">$HOME</span>/.kube/config
@@ -2101,13 +2079,6 @@ spec:
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/kubectl/">Kubernetes Manager</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
@@ -2123,6 +2094,13 @@ spec:
         
         <li class="text-truncate lh-lg">
           <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/postman/">Postman</a>
         </li>
       
     </ul>
@@ -5475,6 +5453,42 @@ spec:
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -7218,7 +7232,7 @@ WARNING: Kubernetes configuration file is world-readable. This is insecu...
         
         
         <div class="col">
-          <a href="/posts/k8sBase/" class="card post-preview h-100">
+          <a href="/posts/deployment/" class="card post-preview h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -7231,14 +7245,14 @@ WARNING: Kubernetes configuration file is world-readable. This is insecu...
 
 <em
   class="small"
-  data-ts="1584885600"
+  data-ts="1700794014"
   data-df="ll"
   
 >
-  Mar 22, 2020
+  Nov 24, 2023
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Kubernetes概述</h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Kubernetes Deploymen</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -7247,13 +7261,14 @@ WARNING: Kubernetes configuration file is world-readable. This is insecu...
 
 
 
-                  Kubernetes
+                  Base
 
-简介
 
-Kubernetes 是用于自动化容器操作的开源平台。它允许开发者在多个主机上部署、运行和管理容器化应用程序，并提供了一致性、可扩展性和弹性等方面的保障。
-
-Kubernetes 的设计目标是实现跨不同主机和云环境的容器编排。它可以运行在所有主流的云平台和数据中心中，包括 Amazon Web Services（AWS）、Microsoft Azure、Goo...
+  
+    副本集（ReplicaSet）: Deployment 使用副本集来确保指定数量的 Pod 副本在集群中运行。副本集定义了 Pod 的模板和副本数量，并负责监控 Pod 的运行状态。如果 Pod 发生故障或被删除，副本集将自动创建新的 Pod 来替换它。
+  
+  
+    声明式配置: Deployment 使用声明式的方式来定义应用程序的部署状态。您可以编写一...
                 </p>
               </div>
             </div>
