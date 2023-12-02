@@ -826,6 +826,54 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -842,6 +890,42 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -1061,9 +1145,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4860 words"
+  title="5955 words"
 >
-  <em>27 min</em> read</span>
+  <em>33 min</em> read</span>
 
     </div>
 
@@ -2534,6 +2618,338 @@
         <span class="nb">None</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"Result 2: Division by zero!"</span><span class="p">),</span> <span class="c1">// 如果除法失败，打印错误消息。</span>
     <span class="p">}</span>
 <span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="packagecratemodule"><span class="me-2">Package/Crate/Module</span><a href="#packagecratemodule" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="package"><span class="me-2">package</span><a href="#package" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>可以自定义包</p>
+</blockquote>
+
+<ul>
+  <li>Cargo.toml</li>
+</ul>
+
+<div class="language-toml highlighter-rouge"><div class="code-header">
+        <span data-label-text="TOML"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nn">[package]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">"rust_cc"</span>
+<span class="py">version</span> <span class="p">=</span> <span class="s">"0.1.0"</span>
+<span class="py">edition</span> <span class="p">=</span> <span class="s">"2021"</span>
+
+<span class="c"># See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html</span>
+<span class="nn">[lib]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">"mylib"</span>
+<span class="py">path</span> <span class="p">=</span> <span class="s">"src/mylib.rs"</span>
+
+<span class="nn">[[bin]]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">"myapp"</span>
+<span class="py">path</span> <span class="p">=</span> <span class="s">"src/main.rs"</span>
+
+<span class="nn">[dependencies]</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>mylib.rs</li>
+</ul>
+
+<div class="language-rust highlighter-rouge"><div class="code-header">
+        <span data-label-text="Rust"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">pub</span> <span class="k">fn</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">i32</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span> <span class="p">{</span>
+    <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>main.rs</li>
+</ul>
+
+<div class="language-rust highlighter-rouge"><div class="code-header">
+        <span data-label-text="Rust"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="n">result</span> <span class="o">=</span> <span class="nn">mylib</span><span class="p">::</span><span class="nf">add_numbers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Result: {}"</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="lib-使用"><span class="me-2">lib 使用</span><a href="#lib-使用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>test_lib.rs</li>
+</ul>
+
+<div class="language-rust highlighter-rouge"><div class="code-header">
+        <span data-label-text="Rust"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="c1">// 定义一个函数，将两个数字相加</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">i32</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span> <span class="p">{</span>
+    <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="p">}</span>
+
+<span class="c1">// 定义一个结构体</span>
+<span class="k">pub</span> <span class="k">struct</span> <span class="n">Person</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="k">pub</span> <span class="n">age</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1">// 实现结构体的方法</span>
+<span class="k">impl</span> <span class="n">Person</span> <span class="p">{</span>
+    <span class="c1">// 打印个人信息</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">print_info</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nd">println!</span><span class="p">(</span><span class="s">"姓名: {}"</span><span class="p">,</span> <span class="k">self</span><span class="py">.name</span><span class="p">);</span>
+        <span class="nd">println!</span><span class="p">(</span><span class="s">"年龄: {}"</span><span class="p">,</span> <span class="k">self</span><span class="py">.age</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>main.rs</li>
+</ul>
+
+<div class="language-rust highlighter-rouge"><div class="code-header">
+        <span data-label-text="Rust"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="k">mod</span> <span class="n">test_lib</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nn">test_lib</span><span class="p">::{</span><span class="n">add_numbers</span><span class="p">,</span> <span class="n">Person</span><span class="p">};</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 使用自定义库中的函数</span>
+    <span class="k">let</span> <span class="n">result</span> <span class="o">=</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"相加结果: {}"</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+
+    <span class="c1">// 使用自定义库中的结构体和方法</span>
+    <span class="k">let</span> <span class="n">person</span> <span class="o">=</span> <span class="n">Person</span> <span class="p">{</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"Alice"</span><span class="p">),</span>
+        <span class="n">age</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="p">};</span>
+    <span class="n">person</span><span class="nf">.print_info</span><span class="p">();</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="crate"><span class="me-2">Crate</span><a href="#crate" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h3 id="module"><span class="me-2">Module</span><a href="#module" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>模块（Module）是 Rust 中用于组织和管理代码的一种机制。通过模块，可以将相关的函数、结构体、枚举以及其他项组织在一起，形成一个逻辑上的单元。模块有助于提高代码的可读性、可维护性和重用性。</p>
+
+<p>在 Rust 中，模块可以嵌套，形成层级结构。模块可以包含其他模块，从而创建一个模块树。这种层级结构提供了命名空间的概念，防止命名冲突，并允许在不同的模块中定义同名的项。</p>
+
+<p>模块的定义使用 mod 关键字，后跟模块名称，例如 mod my_module。模块定义通常放在单独的文件中，文件名与模块名称相匹配，并使用 .rs 扩展名</p>
+
+<h4 id="super"><span class="me-2">super</span><a href="#super" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p><code class="language-plaintext highlighter-rouge">super</code> 关键字在 Rust 中用于访问父模块中的项。它主要用于以下两个方面：</p>
+
+<ol>
+  <li>
+    <p>访问父模块中的函数、结构体、常量等：当在子模块中需要访问父模块中定义的项时，可以使用 <code class="language-plaintext highlighter-rouge">super</code> 关键字。通过 <code class="language-plaintext highlighter-rouge">super</code> 关键字，我们可以在子模块中引用父模块的项，并使用它们的功能。</p>
+  </li>
+  <li>
+    <p>解决命名冲突：在 Rust 中，模块可以嵌套，并形成层次结构。在这种情况下，可能会发生命名冲突，即在不同层级的模块中存在相同名称的项。使用 <code class="language-plaintext highlighter-rouge">super</code> 关键字可以明确指定要访问的是父模块中的项，而不是当前模块或子模块中的同名项。</p>
+  </li>
+</ol>
+
+<p>在使用 <code class="language-plaintext highlighter-rouge">super</code> 关键字时，需要注意以下几点：</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">super</code> 关键字只能在模块内部使用，用于指代父模块。</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">super</code> 关键字后面需要紧跟两个冒号 <code class="language-plaintext highlighter-rouge">::</code>，用于指定要访问的父模块中的项。</p>
+  </li>
+  <li>
+    <p>可以多次使用 <code class="language-plaintext highlighter-rouge">super</code> 关键字来访问更高层级的父模块中的项。例如，<code class="language-plaintext highlighter-rouge">super::super::module1::function()</code> 可以用于访问父模块的父模块中的函数。</p>
+  </li>
+  <li>
+    <p>父模块中的项必须是公共的（使用 <code class="language-plaintext highlighter-rouge">pub</code> 关键字修饰），以便在子模块中能够访问。</p>
+  </li>
+</ul>
+
+<p>通过使用 <code class="language-plaintext highlighter-rouge">super</code> 关键字，我们可以在模块层次结构中导航，并在需要时访问父模块中的项。这有助于代码的组织和重用，并解决命名冲突的问题。</p>
+
+<h4 id="例子"><span class="me-2">例子</span><a href="#例子" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>main.rs</li>
+</ul>
+
+<div class="language-rust highlighter-rouge"><div class="code-header">
+        <span data-label-text="Rust"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="k">mod</span> <span class="n">module1</span><span class="p">;</span>
+<span class="k">mod</span> <span class="n">module2</span><span class="p">;</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nn">module1</span><span class="p">::</span><span class="nn">module1</span><span class="p">::</span><span class="nf">hello_module1</span><span class="p">();</span>
+    <span class="nn">module2</span><span class="p">::</span><span class="nn">module2</span><span class="p">::</span><span class="nf">hello_module2</span><span class="p">();</span>
+    <span class="k">let</span> <span class="n">person</span> <span class="o">=</span> <span class="nn">module2</span><span class="p">::</span><span class="nn">module2</span><span class="p">::</span><span class="nn">Person</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="s">"John"</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Name: {}"</span><span class="p">,</span> <span class="n">person</span><span class="py">.name</span><span class="p">);</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Age: {}"</span><span class="p">,</span> <span class="n">person</span><span class="py">.age</span><span class="p">);</span>
+    <span class="nn">module2</span><span class="p">::</span><span class="nn">module2</span><span class="p">::</span><span class="nf">print_parent_message</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>module1.rs</li>
+</ul>
+
+<div class="language-rust highlighter-rouge"><div class="code-header">
+        <span data-label-text="Rust"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">pub</span> <span class="k">mod</span> <span class="n">module1</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">hello_module1</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello from module1!"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>module1.rs</li>
+</ul>
+
+<div class="language-rust highlighter-rouge"><div class="code-header">
+        <span data-label-text="Rust"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre><span class="k">pub</span> <span class="k">mod</span> <span class="n">module2</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">hello_module2</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello from module2!"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 声明公共结构体</span>
+    <span class="k">pub</span> <span class="k">struct</span> <span class="n">Person</span> <span class="p">{</span>
+        <span class="k">pub</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+        <span class="k">pub</span> <span class="n">age</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">pub</span> <span class="k">mod</span> <span class="n">super_test</span> <span class="p">{</span>
+        <span class="k">pub</span> <span class="k">const</span> <span class="n">MESSAGE</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span> <span class="o">=</span> <span class="s">"Hello from parent module!"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">print_parent_message</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nd">print!</span><span class="p">(</span>
+            <span class="s">"Message from parent module: {}"</span><span class="p">,</span>
+            <span class="k">super</span><span class="p">::</span><span class="nn">module2</span><span class="p">::</span><span class="nn">super_test</span><span class="p">::</span><span class="n">MESSAGE</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">impl</span> <span class="n">Person</span> <span class="p">{</span>
+        <span class="k">pub</span> <span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">str</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">u32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">Person</span> <span class="p">{</span>
+            <span class="n">Person</span> <span class="p">{</span>
+                <span class="n">name</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="n">name</span><span class="p">),</span>
+                <span class="n">age</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
 </pre></td></tr></tbody></table></code></div></div>
 
 </div>
@@ -4839,6 +5255,11 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -5255,6 +5676,18 @@
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -9996,6 +10429,11 @@ func (m *MyTree) Add(p int) {
     
     
       
+    
+  
+    
+    
+    
     
   
     

@@ -39,8 +39,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="VSCode conf" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="vscode 配置" />
-<meta property="og:description" content="vscode 配置" />
+<meta name="description" content="快捷键" />
+<meta property="og:description" content="快捷键" />
 <link rel="canonical" href="https://cc360428.github.io//posts/vscode-conf/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/vscode-conf/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -50,7 +50,7 @@
 <meta property="twitter:title" content="VSCode conf" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-03T15:06:55+08:00","datePublished":"2023-05-27T11:32:25+08:00","description":"vscode 配置","headline":"VSCode conf","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/vscode-conf/"},"url":"https://cc360428.github.io//posts/vscode-conf/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-03T15:06:55+08:00","datePublished":"2023-05-27T11:32:25+08:00","description":"快捷键","headline":"VSCode conf","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/vscode-conf/"},"url":"https://cc360428.github.io//posts/vscode-conf/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -582,6 +582,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -738,7 +750,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="565 words"
+  title="599 words"
 >
   <em>3 min</em> read</span>
 
@@ -749,7 +761,19 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="vscode-配置"><span class="me-2">vscode 配置</span><a href="#vscode-配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h2 id="快捷键"><span class="me-2">快捷键</span><a href="#快捷键" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>修改同名引用 <code class="language-plaintext highlighter-rouge">F2</code></li>
+  <li>折叠光标处的代码方法
+    <ul>
+      <li>折叠所有 <code class="language-plaintext highlighter-rouge">Ctrl+K+0</code></li>
+      <li>展开所有 <code class="language-plaintext highlighter-rouge">Ctrl+K+J</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="vscode-配置"><span class="me-2">vscode 配置</span><a href="#vscode-配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <pre><code class="language-vscode">{
     "version": "该配置文件的版本，由 VSCode 自动生成",
@@ -775,7 +799,11 @@
 
 <h3 id="演示"><span class="me-2">演示</span><a href="#演示" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-vscode">{
+<ul>
+  <li>
+    <p>单个</p>
+
+    <pre><code class="language-vscode">{
     "version": "0.2.0",
     "configurations": [
         {
@@ -794,6 +822,75 @@
     ]
 }
 </code></pre>
+  </li>
+  <li>
+    <p>多个</p>
+
+    <pre><code class="language-vscode">  {
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "run_normal",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceRoot}/main.go",
+      "output": "run_normal",
+      "envFile": "${workspaceRoot}/script/server.env",
+      "env": {
+        "RunType": "1",
+        "ServerId": "yxx_a_1",
+        "GameListen": "0.0.0.0:8000",
+        "GameHttp": "0.0.0.0:8080",
+      },
+    },
+    {
+      "name": "run_manager",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceRoot}/main.go",
+      "output": "run_manager",
+      "envFile": "${workspaceRoot}/script/server.env",
+      "env": {
+        "RunType": "2",
+        "MGrpc": "0.0.0.0:8022",
+        "MHttp": "0.0.0.0:8021",
+      },
+    },
+    {
+      "name": "run_ai",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceRoot}/main.go",
+      "output": "run_testing",
+      "envFile": "${workspaceRoot}/script/server.env",
+      "env": {
+        "RunType": "3",
+        "GameListen": "ws://0.0.0.0:8000"
+      },
+    },
+    {
+      "name": "run_robot",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceRoot}/main.go",
+      "output": "run_testing",
+      "envFile": "${workspaceRoot}/script/server.env",
+      "env": {
+        "RunType": "99",
+        "name": "bt-1-2309189",
+        "gameAddress": "172.12.12.189:19014",
+        "RobotNumber": "2",
+      },
+    },
+  ]
+  }
+</code></pre>
+  </li>
+</ul>
 
 <h3 id="断点"><span class="me-2">断点</span><a href="#断点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -853,70 +950,58 @@
 50
 51
 52
-53
-54
-55
-56
-57
-58
-</pre></td><td class="rouge-code"><pre>go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/nsf/gocode
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/uudashr/gopkgs/cmd/gopkgs
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/ramya-rao-a/go-outline
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/acroca/go-symbols
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/guru
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/gorename
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/fatih/gomodifytags
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/haya14busa/goplay/cmd/goplay
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/josharian/impl
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/davidrjenni/reftools/cmd/fillstruct
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/rogpeppe/godef
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/godoc
-go get <span class="nt">-u</span> <span class="nt">-v</span> sourcegraph.com/sqs/goreturns
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/golang/lint/golint
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/cweill/gotests/...
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/derekparker/delve/cmd/dlv
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/zmb3/gogetdoc
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/goimports
-go get <span class="nt">-v</span> github.com/ramya-rao-a/go-outline
-
-
-
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/mdempsky/gocode
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/rogpeppe/godef
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/guru
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/gorename
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/goimports
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/uudashr/gopkgs/cmd/gopkgs
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/golangci/golangci-lint/cmd/golangci-lint
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/ramya-rao-a/go-outline
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/acroca/go-symbols
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/zmb3/gogetdoc
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/fatih/gomodifytags
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/cweill/gotests/...
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/josharian/impl
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/uudashr/gopkgs/cmd/gopkgs
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/davidrjenni/reftools/cmd/fillstruct
-
-
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/ramya-rao-a/go-outline
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/acroca/go-symbols
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/mdempsky/gocode
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/rogpeppe/godef
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/godoc
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/zmb3/gogetdoc
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/lint/golint
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/fatih/gomodifytags
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/gorename
-go get <span class="nt">-u</span> <span class="nt">-v</span> sourcegraph.com/sqs/goreturns
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/goimports
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/cweill/gotests/...
-go get <span class="nt">-u</span> <span class="nt">-v</span> golang.org/x/tools/cmd/guru
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/josharian/impl
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/haya14busa/goplay/cmd/goplay
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/uudashr/gopkgs/cmd/gopkgs
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/davidrjenni/reftools/cmd/fillstruct
-go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthomas/gometalinter
-
+</pre></td><td class="rouge-code"><pre>go <span class="nb">install </span>github.com/nsf/gocode@latest
+go <span class="nb">install </span>github.com/uudashr/gopkgs/cmd/gopkgs@latest
+go <span class="nb">install </span>github.com/ramya-rao-a/go-outline@latest
+go <span class="nb">install </span>github.com/acroca/go-symbols@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/guru@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/gorename@latest
+go <span class="nb">install </span>github.com/fatih/gomodifytags@latest
+go <span class="nb">install </span>github.com/haya14busa/goplay/cmd/goplay@latest
+go <span class="nb">install </span>github.com/josharian/impl@latest
+go <span class="nb">install </span>github.com/davidrjenni/reftools/cmd/fillstruct@latest
+go <span class="nb">install </span>github.com/rogpeppe/godef@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/godoc@latest
+go <span class="nb">install </span>sourcegraph.com/sqs/goreturns@latest
+go <span class="nb">install </span>github.com/golang/lint/golint@latest
+go <span class="nb">install </span>github.com/cweill/gotests/...@latest
+go <span class="nb">install </span>github.com/derekparker/delve/cmd/dlv@latest
+go <span class="nb">install </span>github.com/zmb3/gogetdoc@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/goimports@latest
+go <span class="nb">install </span>github.com/ramya-rao-a/go-outline@latest
+go <span class="nb">install </span>github.com/mdempsky/gocode@latest
+go <span class="nb">install </span>github.com/rogpeppe/godef@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/guru@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/gorename@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/goimports@latest
+go <span class="nb">install </span>github.com/uudashr/gopkgs/cmd/gopkgs@latest
+go <span class="nb">install </span>github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+go <span class="nb">install </span>github.com/ramya-rao-a/go-outline@latest
+go <span class="nb">install </span>github.com/acroca/go-symbols@latest
+go <span class="nb">install </span>github.com/zmb3/gogetdoc@latest
+go <span class="nb">install </span>github.com/fatih/gomodifytags@latest
+go <span class="nb">install </span>github.com/cweill/gotests/...@latest
+go <span class="nb">install </span>github.com/josharian/impl@latest
+go <span class="nb">install </span>github.com/uudashr/gopkgs/cmd/gopkgs@latest
+go <span class="nb">install </span>github.com/davidrjenni/reftools/cmd/fillstruct@latest
+go <span class="nb">install </span>github.com/ramya-rao-a/go-outline@latest
+go <span class="nb">install </span>github.com/acroca/go-symbols@latest
+go <span class="nb">install </span>github.com/mdempsky/gocode@latest
+go <span class="nb">install </span>github.com/rogpeppe/godef@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/godoc@latest
+go <span class="nb">install </span>github.com/zmb3/gogetdoc@latest
+go <span class="nb">install </span>golang.org/x/lint/golint@latest
+go <span class="nb">install </span>github.com/fatih/gomodifytags@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/gorename@latest
+go <span class="nb">install </span>sourcegraph.com/sqs/goreturns@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/goimports@latest
+go <span class="nb">install </span>github.com/cweill/gotests/...@latest
+go <span class="nb">install </span>golang.org/x/tools/cmd/guru@latest
+go <span class="nb">install </span>github.com/josharian/impl@latest
+go <span class="nb">install </span>github.com/haya14busa/goplay/cmd/goplay@latest
+go <span class="nb">install </span>github.com/uudashr/gopkgs/cmd/gopkgs@latest
+go <span class="nb">install </span>github.com/davidrjenni/reftools/cmd/fillstruct@latest
+go <span class="nb">install </span>github.com/alecthomas/gometalinter@latest
 </pre></td></tr></tbody></table></code></div></div>
 
 </div>
@@ -3222,6 +3307,11 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -3638,6 +3728,18 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -6099,76 +6201,6 @@ go get <span class="nt">-u</span> <span class="nt">-v</span> github.com/alecthom
         
         
         <div class="col">
-          <a href="/posts/vim-plug/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1695007945"
-  data-df="ll"
-  
->
-  Sep 18, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>vim Plug Manager</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  安装
-
-1
-2
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-
-修改配置
-
-~/.vimrc
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
           <a href="/posts/work/" class="card post-preview h-100">
             <div class="card-body">
               <!--
@@ -6290,6 +6322,57 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   
   
     Golang：Golang 是谷歌公司开发的现代编程语言，具有高并发性、高效...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      
+        
+        
+        <div class="col">
+          <a href="/posts/idea-use/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1548478134"
+  data-df="ll"
+  
+>
+  Jan 26, 2019
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>Idea 快捷键</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  Idea 快捷键
+
+编辑
+
+
+  Ctrl + X：剪切当前行或者选中的区域
+  Ctrl + C：复制当前行或者选中的区域
+  Ctrl + V：粘贴当前剪贴板中的内容
+  Ctrl + Z：撤销操作
+  Ctrl + Shift + Z：重做操作
+  Ctrl + D：复制当前行或者选中的区域到下一行
+  Ctrl + Delete：删除光标所在位置到单词结尾的文本
+  Ctrl + B...
                 </p>
               </div>
             </div>
@@ -8408,6 +8491,11 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     
     
       
+    
+  
+    
+    
+    
     
   
     

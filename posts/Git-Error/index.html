@@ -39,8 +39,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Git Error" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Git Error" />
-<meta property="og:description" content="Git Error" />
+<meta name="description" content="Failed to connect to 127.0.0.1 port 1080: Connection refused" />
+<meta property="og:description" content="Failed to connect to 127.0.0.1 port 1080: Connection refused" />
 <link rel="canonical" href="https://cc360428.github.io//posts/Git-Error/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/Git-Error/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -50,7 +50,7 @@
 <meta property="twitter:title" content="Git Error" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-18T14:33:04+08:00","datePublished":"2020-04-18T14:33:04+08:00","description":"Git Error","headline":"Git Error","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/Git-Error/"},"url":"https://cc360428.github.io//posts/Git-Error/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-18T14:33:04+08:00","datePublished":"2020-04-18T14:33:04+08:00","description":"Failed to connect to 127.0.0.1 port 1080: Connection refused","headline":"Git Error","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/Git-Error/"},"url":"https://cc360428.github.io//posts/Git-Error/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -630,6 +630,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -846,7 +858,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="928 words"
+  title="944 words"
 >
   <em>5 min</em> read</span>
 
@@ -857,9 +869,7 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="git-error">Git Error</h1>
-
-<h2 id="failed-to-connect-to-127001-port-1080-connection-refused"><span class="me-2">Failed to connect to 127.0.0.1 port 1080: Connection refused</span><a href="#failed-to-connect-to-127001-port-1080-connection-refused" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <h2 id="failed-to-connect-to-127001-port-1080-connection-refused"><span class="me-2">Failed to connect to 127.0.0.1 port 1080: Connection refused</span><a href="#failed-to-connect-to-127001-port-1080-connection-refused" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -889,10 +899,17 @@
  回到终端，再次执行 pod setup，这个时候你就会神奇的发现，问题解决了，希望对同样有这种问题的人有所帮助</li>
 </ul>
 
+<h2 id="出现目录一直是跳过"><span class="me-2">出现目录一直是跳过</span><a href="#出现目录一直是跳过" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>git config –global –get core.excludesFile</li>
+  <li>修改即可 <code class="language-plaintext highlighter-rouge">/Users/cc/.gitignore_global</code></li>
+</ul>
+
 <h2 id="推送失败为重新拉去"><span class="me-2">推送失败（为重新拉去）</span><a href="#推送失败为重新拉去" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -910,25 +927,23 @@
 15
 16
 17
-18
 </pre></td><td class="rouge-code"><pre>To http://192.168.1.18:3001/smtface/distinguish_server.git
- ! [rejected]        master -&gt; master (fetch first)
-error: failed to push some refs to 'http://192.168.1.18:3001/smtface/distinguish_server.git'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
+<span class="o">!</span> <span class="o">[</span>rejected] master -&gt; master <span class="o">(</span>fetch first<span class="o">)</span>
+error: failed to push some refs to <span class="s1">'http://192.168.1.18:3001/smtface/distinguish_server.git'</span>
+hint: Updates were rejected because the remote contains work that you <span class="k">do
+</span>hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+hint: <span class="o">(</span>e.g., <span class="s1">'git pull ...'</span><span class="o">)</span> before pushing again.
+hint: See the <span class="s1">'Note about fast-forwards'</span> <span class="k">in</span> <span class="s1">'git push --help'</span> <span class="k">for </span>details.
 
 访问http://192.168.1.18:3001/smtface/distinguish_server.git
 啊！[拒绝]主-&gt;主（首先获取）
 错误：无法将某些引用推送到“http://192.168.1.18:3001/smtface/distinguish_server.git”
 提示：更新被拒绝，因为远程包含您所做的工作
 注意：本地没有。这通常是由另一个存储库推送引起的
-提示：到同一个ref。您可能希望首先集成远程更改
+提示：到同一个 ref。您可能希望首先集成远程更改
 提示：（例如，git pull…’）然后再推。
 提示：有关详细信息，请参阅“git push--help”中的“关于快速转发的说明”。
-
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -987,8 +1002,8 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 <h3 id="遇到的问题如下"><span class="me-2">遇到的问题如下</span><a href="#遇到的问题如下" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1006,10 +1021,10 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 15
 16
 17
-</pre></td><td class="rouge-code"><pre>remote: Gogs: Branch 'master' is protected from force push
+</pre></td><td class="rouge-code"><pre>remote: Gogs: Branch <span class="s1">'master'</span> is protected from force push
 To http://192.168.1.18:3001/smtface/api_server.git
- ! [remote rejected] master -&gt; master (pre-receive hook declined)
-error: failed to push some refs to 'http://192.168.1.18:3001/smtface/api_server.git'
+ <span class="o">!</span> <span class="o">[</span>remote rejected] master -&gt; master <span class="o">(</span>pre-receive hook declined<span class="o">)</span>
+error: failed to push some refs to <span class="s1">'http://192.168.1.18:3001/smtface/api_server.git'</span>
 
 遥控器：护目镜：分支“主”受力推送保护
 发送至http://192.168.1.18:3001/smtface/api_server.git
@@ -1017,12 +1032,12 @@ error: failed to push some refs to 'http://192.168.1.18:3001/smtface/api_server.
 错误：无法将某些引用推送到“http://192.168.1.18:3001/smtface/api_server.git”
 
 直接复制
-git checkout --orphan latest_branch
-git add -A
-git commit -am "del all history"
-git branch -D master
-git branch -m master
-git push -f origin master
+git checkout <span class="nt">--orphan</span> latest_branch
+git add <span class="nt">-A</span>
+git commit <span class="nt">-am</span> <span class="s2">"del all history"</span>
+git branch <span class="nt">-D</span> master
+git branch <span class="nt">-m</span> master
+git push <span class="nt">-f</span> origin master
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="git-储存损坏"><span class="me-2">Git 储存损坏</span><a href="#git-储存损坏" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -1047,12 +1062,12 @@ git push -f origin master
 
 <h2 id="error-添加"><span class="me-2">Error 添加</span><a href="#error-添加" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>git submodule add root@git.lichaocheng.top:Cc360428/kratos_demo_api.git api</p>
+<p><code class="language-plaintext highlighter-rouge">git submodule add root@git.lichaocheng.top:Cc360428/kratos_demo_api.git api</code></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>'api' already exists in the index
+</pre></td><td class="rouge-code"><pre><span class="s1">'api'</span> already exists <span class="k">in </span>the index
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>git rm -r –cached api</p>
@@ -3371,6 +3386,11 @@ git push -f origin master
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -3787,6 +3807,18 @@ git push -f origin master
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -6281,6 +6313,14 @@ git push -f origin master
 
 仓库
 
+1
+2
+3
+4
+5
+6
+7
+8
 # 在当前目录新建一个Git代码库
 $ git init
 
@@ -6293,11 +6333,17 @@ $ git clone [url]
 
 配置
 
+1
+2
+3
+4
+5
+6
+7
+8
+9
 # 显示当前的Git配置
-$ git config --list
-
-# 编辑Git配置文件
-$ git config -e ...
+$ git config --...
                 </p>
               </div>
             </div>
@@ -6327,7 +6373,7 @@ $ git config -e ...
   Apr 18, 2020
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Git Open Other </h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Git Open Other</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -6340,17 +6386,20 @@ $ git config -e ...
 
 查看 commit 总数
 
+1
 git log --oneline | wc -l
 
 
 查看所有提交人和提交次数
 
+1
 git shortlog --numbered --summary
 
 
 指定用户提交代码情况
 
-git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += $1; subs += $2; loc +...
+1
+git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += $1; subs += $2;...
                 </p>
               </div>
             </div>
@@ -8523,6 +8572,11 @@ Git 全局设置:
     
     
       
+    
+  
+    
+    
+    
     
   
     

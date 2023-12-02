@@ -774,7 +774,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="528 words"
+  title="523 words"
 >
   <em>2 min</em> read</span>
 
@@ -787,7 +787,7 @@
 <div class="post-content">
   <h2 id="idea-快捷键"><span class="me-2">Idea 快捷键</span><a href="#idea-快捷键" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="编辑"><span class="me-2">编辑：</span><a href="#编辑" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="编辑"><span class="me-2">编辑</span><a href="#编辑" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>Ctrl + X：剪切当前行或者选中的区域</li>
@@ -801,7 +801,7 @@
   <li>Ctrl + Shift + Up/Down：上下移动当前行</li>
 </ul>
 
-<h3 id="导航"><span class="me-2">导航：</span><a href="#导航" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="导航"><span class="me-2">导航</span><a href="#导航" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>Ctrl + N：根据类名查找并打开文件</li>
@@ -813,7 +813,7 @@
   <li>Ctrl + Shift + Alt + T：弹出 Refactor This 菜单</li>
 </ul>
 
-<h3 id="搜索"><span class="me-2">搜索：</span><a href="#搜索" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="搜索"><span class="me-2">搜索</span><a href="#搜索" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>Ctrl + F：查找当前文件中的指定文本</li>
@@ -822,7 +822,7 @@
   <li>Ctrl + Shift + R：全局替换指定文本</li>
 </ul>
 
-<h3 id="代码"><span class="me-2">代码：</span><a href="#代码" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="代码"><span class="me-2">代码</span><a href="#代码" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>Ctrl + Space：自动完成代码</li>
@@ -835,7 +835,7 @@
   <li>Ctrl + Shift + F6：重命名当前变量、方法或者类</li>
 </ul>
 
-<h3 id="调试"><span class="me-2">调试：</span><a href="#调试" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="调试"><span class="me-2">调试</span><a href="#调试" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>F8：单步执行（不进入函数）</li>
@@ -3097,6 +3097,11 @@
     
     
       
+    
+  
+    
+    
+    
     
   
     
@@ -5757,6 +5762,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -6059,9 +6076,7 @@
 
 
 
-                  Git Error
-
-Failed to connect to 127.0.0.1 port 1080: Connection refused
+                  Failed to connect to 127.0.0.1 port 1080: Connection refused
 
 1
 2
@@ -6074,7 +6089,8 @@ Failed to connect to 127.0.0.1 port 1080: Connection refused
 
   第一步 (查询是否使用了代理)
  git config –global http.proxy
-  第二步(取消代理...
+  第二步(取消代理)
+ git conf...
                 </p>
               </div>
             </div>
@@ -6117,6 +6133,14 @@ Failed to connect to 127.0.0.1 port 1080: Connection refused
 
 仓库
 
+1
+2
+3
+4
+5
+6
+7
+8
 # 在当前目录新建一个Git代码库
 $ git init
 
@@ -6129,11 +6153,17 @@ $ git clone [url]
 
 配置
 
+1
+2
+3
+4
+5
+6
+7
+8
+9
 # 显示当前的Git配置
-$ git config --list
-
-# 编辑Git配置文件
-$ git config -e ...
+$ git config --...
                 </p>
               </div>
             </div>
@@ -6163,7 +6193,7 @@ $ git config -e ...
   Apr 18, 2020
 </em>
 
-              <h4 class="pt-0 my-2" data-toc-skip>Git Open Other </h4>
+              <h4 class="pt-0 my-2" data-toc-skip>Git Open Other</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -6176,17 +6206,20 @@ $ git config -e ...
 
 查看 commit 总数
 
+1
 git log --oneline | wc -l
 
 
 查看所有提交人和提交次数
 
+1
 git shortlog --numbered --summary
 
 
 指定用户提交代码情况
 
-git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += $1; subs += $2; loc +...
+1
+git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += $1; subs += $2;...
                 </p>
               </div>
             </div>
@@ -8305,6 +8338,11 @@ git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += 
     
     
       
+    
+  
+    
+    
+    
     
   
     

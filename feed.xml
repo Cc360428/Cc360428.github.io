@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-11-24T17:50:46+08:00</updated>
+  <updated>2023-12-02T17:10:28+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,62 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>开发脚本</title>
+    <link href="https://cc360428.github.io//posts/redis-py-utils/" rel="alternate" type="text/html" title="开发脚本" />
+    <published>2023-12-01T11:32:25+08:00</published>
+  
+    <updated>2023-12-01T11:32:25+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/redis-py-utils/</id>
+    <content src="https://cc360428.github.io//posts/redis-py-utils/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Dev" />
+    
+    <category term="Utils" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      redis 获取所有 key
+
+import redis
+
+def scan_keys(redis_client, pattern, count=1000):
+    cursor = 0
+    keys = []
+
+    while True:
+        cursor, partial_keys = redis_client.scan(cursor=cursor, count=count, match=pattern)
+        keys.extend(partial_keys)
+        if cursor == 0:
+            break
+
+    return keys
+
+# 设置 Redis 连接参数
+host = '172.12.12.189'
+port = 6000
+password = ''
+db = 12  # 指定要扫描的数据库...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -233,65 +289,6 @@ Cargo Fmt
     示例：使用 Cargo Fmt 格式化 Rust 代码。
 
     car...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Rust</title>
-    <link href="https://cc360428.github.io//posts/rust/" rel="alternate" type="text/html" title="Rust" />
-    <published>2023-11-06T10:58:36+08:00</published>
-  
-    <updated>2023-11-06T10:58:36+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/rust/</id>
-    <content src="https://cc360428.github.io//posts/rust/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Language" />
-    
-    <category term="Rust" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      系统环境配置
-
-
-  vim /etc/profile 追加
-
-
-export CARGO_HOME=$HOME/.cargo
-export RUSTUP_HOME=$HOME/.rustup
-export RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup
-export PATH="$HOME/.cargo/bin:$PATH"
-
-
-配置源
-
-
-  cd ～.cargo
-  touch config
-  
-    vim config
-
-    [source.crates-io]
-replace-with = 'rsproxy-sparse'
-[source.rsproxy]...
     </summary>
   
 

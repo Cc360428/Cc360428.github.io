@@ -55,7 +55,7 @@
 
   
 
-  <title>Git Open Other  | Cc Blog
+  <title>Git Open Other | Cc Blog
   </title>
 
   <!--
@@ -468,7 +468,7 @@
         
           
             
-              <span>Git Open Other </span>
+              <span>Git Open Other</span>
             
 
           
@@ -717,7 +717,7 @@
 
 
 
-<h1 data-toc-skip>Git Open Other </h1>
+<h1 data-toc-skip>Git Open Other</h1>
 
 <div class="post-meta text-muted">
     <!-- published date -->
@@ -786,7 +786,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="834 words"
+  title="841 words"
 >
   <em>4 min</em> read</span>
 
@@ -801,18 +801,27 @@
 
 <h3 id="查看-commit-总数"><span class="me-2">查看 commit 总数</span><a href="#查看-commit-总数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-git">git log --oneline | wc -l
-</code></pre>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git log <span class="nt">--oneline</span> | <span class="nb">wc</span> <span class="nt">-l</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="查看所有提交人和提交次数"><span class="me-2">查看所有提交人和提交次数</span><a href="#查看所有提交人和提交次数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-git">git shortlog --numbered --summary
-</code></pre>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git shortlog <span class="nt">--numbered</span> <span class="nt">--summary</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="指定用户提交代码情况"><span class="me-2">指定用户提交代码情况</span><a href="#指定用户提交代码情况" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-git">git log --author="Cc" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "增加的行: %s,删除线: %s, 总行: %s\n", add, subs, loc }' -
-</code></pre>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git log <span class="nt">--author</span><span class="o">=</span><span class="s2">"Cc"</span> <span class="nt">--pretty</span><span class="o">=</span>tformat: <span class="nt">--numstat</span> | <span class="nb">awk</span> <span class="s1">'{ add += $1; subs += $2; loc += $1 - $2 } END { printf "增加的行: %s,删除线: %s, 总行: %s\n", add, subs, loc }'</span> -
+</pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -822,8 +831,11 @@
 
 <h3 id="统计每个人提交次数"><span class="me-2">统计每个人提交次数</span><a href="#统计每个人提交次数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-git">git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "增加的行: %s,删除线: %s, 总行: %s\n", add, subs, loc }' -; done
-</code></pre>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git log <span class="nt">--format</span><span class="o">=</span><span class="s1">'%aN'</span> | <span class="nb">sort</span> <span class="nt">-u</span> | <span class="k">while </span><span class="nb">read </span>name<span class="p">;</span> <span class="k">do </span><span class="nb">echo</span> <span class="nt">-en</span> <span class="s2">"</span><span class="nv">$name</span><span class="se">\t</span><span class="s2">"</span><span class="p">;</span> git log <span class="nt">--author</span><span class="o">=</span><span class="s2">"</span><span class="nv">$name</span><span class="s2">"</span> <span class="nt">--pretty</span><span class="o">=</span>tformat: <span class="nt">--numstat</span> | <span class="nb">awk</span> <span class="s1">'{ add += $1; subs += $2; loc += $1 - $2 } END { printf "增加的行: %s,删除线: %s, 总行: %s\n", add, subs, loc }'</span> -<span class="p">;</span> <span class="k">done</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -835,18 +847,27 @@ Hyper-Li        added lines: 1, removed lines: 1, total lines: 0
 
 <h3 id="统计某人提交代码次数"><span class="me-2">统计某人提交代码次数</span><a href="#统计某人提交代码次数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-git">git log --author="Cc" --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "增加的行数:%s 删除的行数:%s 总行数: %s\n",add,subs,loc }'
-</code></pre>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git log <span class="nt">--author</span><span class="o">=</span><span class="s2">"Cc"</span> <span class="nt">--pretty</span><span class="o">=</span>tformat: <span class="nt">--numstat</span> | gawk <span class="s1">'{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "增加的行数:%s 删除的行数:%s 总行数: %s\n",add,subs,loc }'</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="统计某人提交代码次数加晒元条件"><span class="me-2">统计某人提交代码次数加晒元条件</span><a href="#统计某人提交代码次数加晒元条件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-git">git log --author="Cc" --since='2020-07-01' --until='2020-08-01' --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "增加的行数:%s 删除的行数:%s 总行数: %s\n",add,subs,loc }'
-</code></pre>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git log <span class="nt">--author</span><span class="o">=</span><span class="s2">"Cc"</span> <span class="nt">--since</span><span class="o">=</span><span class="s1">'2020-07-01'</span> <span class="nt">--until</span><span class="o">=</span><span class="s1">'2020-08-01'</span> <span class="nt">--pretty</span><span class="o">=</span>tformat: <span class="nt">--numstat</span> | gawk <span class="s1">'{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "增加的行数:%s 删除的行数:%s 总行数: %s\n",add,subs,loc }'</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="统计每个人增删行数"><span class="me-2">统计每个人增删行数</span><a href="#统计每个人增删行数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<pre><code class="language-git">git log --format='%aN' | sort -u | while read name; do echo -en "$name\t"; git log --author="$name" --pretty=tformat: --numstat | awk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "增加的行数:%s 删除的行数:%s 总行数: %s\n",add,subs,loc }' -; done
-</code></pre>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git log <span class="nt">--format</span><span class="o">=</span><span class="s1">'%aN'</span> | <span class="nb">sort</span> <span class="nt">-u</span> | <span class="k">while </span><span class="nb">read </span>name<span class="p">;</span> <span class="k">do </span><span class="nb">echo</span> <span class="nt">-en</span> <span class="s2">"</span><span class="nv">$name</span><span class="se">\t</span><span class="s2">"</span><span class="p">;</span> git log <span class="nt">--author</span><span class="o">=</span><span class="s2">"</span><span class="nv">$name</span><span class="s2">"</span> <span class="nt">--pretty</span><span class="o">=</span>tformat: <span class="nt">--numstat</span> | <span class="nb">awk</span> <span class="s1">'{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "增加的行数:%s 删除的行数:%s 总行数: %s\n",add,subs,loc }'</span> -<span class="p">;</span> <span class="k">done</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="版本控制"><span class="me-2">版本控制</span><a href="#版本控制" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -928,7 +949,7 @@ Hyper-Li        added lines: 1, removed lines: 1, total lines: 0
     
       
       <a
-        href="https://twitter.com/intent/tweet?text=Git%20Open%20Other%20%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2FGit-Ope-Other%2F"
+        href="https://twitter.com/intent/tweet?text=Git%20Open%20Other%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2FGit-Ope-Other%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Twitter"
@@ -941,7 +962,7 @@ Hyper-Li        added lines: 1, removed lines: 1, total lines: 0
     
       
       <a
-        href="https://www.facebook.com/sharer/sharer.php?title=Git%20Open%20Other%20%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2FGit-Ope-Other%2F"
+        href="https://www.facebook.com/sharer/sharer.php?title=Git%20Open%20Other%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2FGit-Ope-Other%2F"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Facebook"
@@ -954,7 +975,7 @@ Hyper-Li        added lines: 1, removed lines: 1, total lines: 0
     
       
       <a
-        href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2FGit-Ope-Other%2F&text=Git%20Open%20Other%20%20-%20Cc%20Blog"
+        href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2FGit-Ope-Other%2F&text=Git%20Open%20Other%20-%20Cc%20Blog"
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="Telegram"
@@ -3174,6 +3195,11 @@ Hyper-Li        added lines: 1, removed lines: 1, total lines: 0
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -3590,6 +3616,18 @@ Hyper-Li        added lines: 1, removed lines: 1, total lines: 0
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -6080,9 +6118,7 @@ Hyper-Li        added lines: 1, removed lines: 1, total lines: 0
 
 
 
-                  Git Error
-
-Failed to connect to 127.0.0.1 port 1080: Connection refused
+                  Failed to connect to 127.0.0.1 port 1080: Connection refused
 
 - 尝试了各种办法都没有解决，一直报这个端口代理的问题，看到网上有一个解决办法
 - 我个人是方法一解决了
@@ -6094,7 +6130,7 @@ Failed to connect to 127.0.0.1 port 1080: Connection refused
   第一步 (查询是否使用了代理)
  git config –global http.proxy
   第二步(取消代理)
- g...
+ git config –...
                 </p>
               </div>
             </div>
@@ -8326,6 +8362,11 @@ Git 全局设置:
     
     
       
+    
+  
+    
+    
+    
     
   
     
