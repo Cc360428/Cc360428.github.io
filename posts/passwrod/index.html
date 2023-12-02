@@ -14,9 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" 
-  
->
+<html lang="en" >
   <!-- The Head -->
 
 <head>
@@ -99,15 +97,19 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.0/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.3/dist/tocbot.min.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -272,8 +274,8 @@
   <body>
     <!-- The Side Bar -->
 
-<div id="sidebar" class="d-flex flex-column align-items-end">
-  <div class="profile-wrapper">
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
     <a href="/" id="avatar" class="rounded-circle">
       
         
@@ -281,69 +283,70 @@
       
     </a>
 
-    <div class="site-title">
+    <h1 class="site-title">
       <a href="/">Cc Blog</a>
-    </div>
-    <div class="site-subtitle fst-italic">My name is Cc and I come from China</div>
-  </div>
+    </h1>
+    <p class="site-subtitle fst-italic mb-0">My name is Cc and I come from China</p>
+  </header>
   <!-- .profile-wrapper -->
 
-  <ul class="nav flex-column flex-grow-1 w-100 ps-0">
-    <!-- home -->
-    <li class="nav-item">
-      <a href="/" class="nav-link">
-        <i class="fa-fw fas fa-home"></i>
-        <span>HOME</span>
-      </a>
-    </li>
-    <!-- the real tabs -->
-    
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <!-- home -->
       <li class="nav-item">
-        <a href="/categories/" class="nav-link">
-          <i class="fa-fw fas fa-stream"></i>
-          
-
-          <span>CATEGORIES</span>
+        <a href="/" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>HOME</span>
         </a>
       </li>
-      <!-- .nav-item -->
-    
-      <li class="nav-item">
-        <a href="/tags/" class="nav-link">
-          <i class="fa-fw fas fa-tag"></i>
-          
+      <!-- the real tabs -->
+      
+        <li class="nav-item">
+          <a href="/categories/" class="nav-link">
+            <i class="fa-fw fas fa-stream"></i>
+            
 
-          <span>TAGS</span>
-        </a>
-      </li>
-      <!-- .nav-item -->
-    
-      <li class="nav-item">
-        <a href="/archives/" class="nav-link">
-          <i class="fa-fw fas fa-archive"></i>
-          
+            <span>CATEGORIES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/tags/" class="nav-link">
+            <i class="fa-fw fas fa-tags"></i>
+            
 
-          <span>ARCHIVES</span>
-        </a>
-      </li>
-      <!-- .nav-item -->
-    
-      <li class="nav-item">
-        <a href="/about/" class="nav-link">
-          <i class="fa-fw fas fa-info-circle"></i>
-          
+            <span>TAGS</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/archives/" class="nav-link">
+            <i class="fa-fw fas fa-archive"></i>
+            
 
-          <span>ABOUT</span>
-        </a>
-      </li>
-      <!-- .nav-item -->
-    
-  </ul>
-  <!-- ul.nav.flex-column -->
+            <span>ARCHIVES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/about/" class="nav-link">
+            <i class="fa-fw fas fa-info-circle"></i>
+            
+
+            <span>ABOUT</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+    </ul>
+  </nav>
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button class="mode-toggle btn" aria-label="Switch Mode">
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
         <i class="fas fa-adjust"></i>
       </button>
 
@@ -395,7 +398,7 @@
             rel="noopener noreferrer"
           
         >
-          <i class="fab fa-twitter"></i>
+          <i class="fa-brands fa-x-twitter"></i>
         </a>
       
     
@@ -437,20 +440,20 @@
     
   </div>
   <!-- .sidebar-bottom -->
-</div>
+</aside>
 <!-- #sidebar -->
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div id="main" class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
-<div id="topbar-wrapper">
+<header id="topbar-wrapper" aria-label="Top Bar">
   <div
     id="topbar"
-    class="container d-flex align-items-center justify-content-between h-100"
+    class="d-flex align-items-center justify-content-between px-lg-3 h-100"
   >
-    <span id="breadcrumb">
+    <nav id="breadcrumb" aria-label="Breadcrumb">
       
 
       
@@ -474,17 +477,22 @@
           
         
       
-    </span>
+    </nav>
     <!-- endof #breadcrumb -->
 
-    <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
+    <button type="button" id="sidebar-trigger" class="btn btn-link">
+      <i class="fas fa-bars fa-fw"></i>
+    </button>
 
     <div id="topbar-title">
       Post
     </div>
 
-    <i id="search-trigger" class="fas fa-search fa-fw"></i>
-    <span id="search-wrapper" class="align-items-center">
+    <button type="button" id="search-trigger" class="btn btn-link">
+      <i class="fas fa-search fa-fw"></i>
+    </button>
+
+    <search class="align-items-center ms-3 ms-lg-0">
       <i class="fas fa-search fa-fw"></i>
       <input
         class="form-control"
@@ -494,35 +502,16 @@
         autocomplete="off"
         placeholder="Search..."
       >
-    </span>
-    <span id="search-cancel">Cancel</span>
+    </search>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
   </div>
-</div>
-
-        
+</header>
 
 
-
-
-
-
-
-
-
-
-
-<div class="row">
-  <!-- core -->
-  <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pe-xl-4">
-    
-
-    <div class="post px-1 px-md-2">
-      
-
-      
-        
-      
-        <!-- Refactor the HTML structure -->
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -544,7 +533,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -580,11 +571,9 @@
       
 
       
-
     
 
     
-
   
 
   
@@ -608,7 +597,6 @@
       
 
       
-
     
       
 
@@ -620,7 +608,6 @@
       
 
       
-
     
       
 
@@ -632,7 +619,6 @@
       
 
       
-
     
       
 
@@ -644,7 +630,6 @@
       
 
       
-
     
       
 
@@ -656,7 +641,6 @@
       
 
       
-
     
       
 
@@ -668,7 +652,6 @@
       
 
       
-
     
       
 
@@ -680,7 +663,6 @@
       
 
       
-
     
       
 
@@ -692,7 +674,6 @@
       
 
       
-
     
       
 
@@ -704,11 +685,9 @@
       
 
       
-
     
 
     
-
   
 
   
@@ -732,7 +711,6 @@
       
 
       
-
     
       
 
@@ -744,11 +722,9 @@
       
 
       
-
     
 
     
-
   
 
   
@@ -772,11 +748,9 @@
       
 
       
-
     
 
     
-
   
 
 
@@ -787,13 +761,15 @@
 
 
 
-<h1 data-toc-skip>MySQL 忘记密码</h1>
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>MySQL 忘记密码</h1>
 
-<div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      Posted
-      <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -801,9 +777,8 @@
 
 
 
-
-<em
-  class=""
+<time
+  
   data-ts="1587183708"
   data-df="ll"
   
@@ -811,32 +786,31 @@
   
 >
   Apr 18, 2020
-</em>
+</time>
 
-    </span>
+      </span>
 
-    <!-- lastmod date -->
-    
-
-  
-
-  <div class="d-flex justify-content-between">
-    <!-- author(s) -->
-    <span>
+      <!-- lastmod date -->
       
 
-      By
-
-      <em>
       
-        <a href="https://Cc360428.gitee.io/cc/">Cc</a>
-      
-      </em>
-    </span>
 
-    <div>
-      <!-- read time -->
-      <!-- Calculate the post's reading time, and display the word count in tooltip -->
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              <a href="https://Cc360428.gitee.io/cc/">Cc</a>
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -860,14 +834,14 @@
 >
   <em>3 min</em> read</span>
 
+      </div>
+      <!-- .d-flex -->
     </div>
+    <!-- .post-meta -->
+  </header>
 
-  </div> <!-- .d-flex -->
-
-</div> <!-- .post-meta -->
-
-<div class="post-content">
-  <h2 id="mysql-忘记密码"><span class="me-2">MySQL 忘记密码</span><a href="#mysql-忘记密码" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+  <div class="content">
+    <h2 id="mysql-忘记密码"><span class="me-2">MySQL 忘记密码</span><a href="#mysql-忘记密码" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
   <p>注：<strong>vim</strong> 修改文件 <code class="language-plaintext highlighter-rouge">i</code> 保存退出 <code class="language-plaintext highlighter-rouge">:wq</code> ， 不修改退出 <code class="language-plaintext highlighter-rouge">:q!</code></p>
@@ -1106,140 +1080,120 @@ mysql&gt;
   <p>也可以使用其他方式更改密码</p>
 </blockquote>
 
-</div>
+  </div>
 
-<div class="post-tail-wrapper text-muted">
-
-  <!-- categories -->
-  
-  <div class="post-meta mb-3">
-    <i class="far fa-folder-open fa-fw me-1"></i>
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
     
-      <a href='/categories/database/'>Database</a>,
-      <a href='/categories/mysql/'>Mysql</a>
-  </div>
-  
-
-  <!-- tags -->
-  
-  <div class="post-tags">
-    <i class="fa fa-tags fa-fw me-1"></i>
-      
-      <a href="/tags/database/"
-          class="post-tag no-text-decoration" >Database</a>
-      
-      <a href="/tags/sql/"
-          class="post-tag no-text-decoration" >SQL</a>
-      
-      <a href="/tags/mysql/"
-          class="post-tag no-text-decoration" >Mysql</a>
-      
-  </div>
-  
-
-  <div class="post-tail-bottom
-    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
-    <div class="license-wrapper">
-
-      
-
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
         
+          <a href="/categories/database/">Database</a>,
+          <a href="/categories/mysql/">Mysql</a>
+      </div>
+    
 
-        This post is licensed under 
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/database/"
+            class="post-tag no-text-decoration"
+          >Database</a>
+        
+          <a
+            href="/tags/sql/"
+            class="post-tag no-text-decoration"
+          >SQL</a>
+        
+          <a
+            href="/tags/mysql/"
+            class="post-tag no-text-decoration"
+          >Mysql</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
          by the author.
+        
+      </div>
 
-      
-    </div>
+      <!-- Post sharing snippet -->
 
-    <!-- Post sharing snippet -->
-
-<div class="share-wrapper">
-  <span class="share-label text-muted me-1">Share</span>
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
   <span class="share-icons">
     
     
     
 
     
+
       
-      <a
-        href="https://twitter.com/intent/tweet?text=MySQL%20%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fpasswrod%2F"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Twitter"
-        target="_blank"
-        rel="noopener"
-        aria-label="Twitter"
-      >
-        <i class="fa-fw fab fa-twitter"></i>
+
+      <a href="https://twitter.com/intent/tweet?text=MySQL%20%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fpasswrod%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
+
       
-      <a
-        href="https://www.facebook.com/sharer/sharer.php?title=MySQL%20%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fpasswrod%2F"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Facebook"
-        target="_blank"
-        rel="noopener"
-        aria-label="Facebook"
-      >
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=MySQL%20%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fpasswrod%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
+
       
-      <a
-        href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fpasswrod%2F&text=MySQL%20%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%20-%20Cc%20Blog"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Telegram"
-        target="_blank"
-        rel="noopener"
-        aria-label="Telegram"
-      >
+
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fpasswrod%2F&text=MySQL%20%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
-    <i
+    <button
       id="copy-link"
-      class="fa-fw fas fa-link small"
+      aria-label="Copy link"
+      class="btn small"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
       title="Copy link"
       data-title-succeed="Link copied successfully!"
     >
-    </i>
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
   </span>
 </div>
 
-
-  </div><!-- .post-tail-bottom -->
-
-</div><!-- div.post-tail-wrapper -->
-
-
-      
-    
-      
     </div>
+    <!-- .post-tail-bottom -->
   </div>
-  <!-- #core-wrapper -->
-
-  <!-- panel -->
-  <div id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
-    <div class="access">
-      <!-- Get the last 5 posts from lastmod list. -->
+  <!-- div.post-tail-wrapper -->
+</article>
 
 
+            
+          </main>
 
-
-
-
-
+          <!-- panel -->
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+            <div class="access">
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -1247,51 +1201,58 @@ mysql&gt;
 
 
 
-  <div id="access-lastmod" class="post">
-    <div class="panel-heading">Recently Updated</div>
-    <ul class="post-content list-unstyled ps-0 pb-1 ms-1 mt-2">
+
+
+
+
+
+
+
+  <section id="access-lastmod">
+    <h2 class="panel-heading">Recently Updated</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
+          <a href="/posts/rust/">Rust</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C++/">C++Programming（04737）</a>
+          <a href="/posts/vscode-conf/">VSCode conf</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/vim-plug/">vim Plug Manager</a>
+          <a href="/posts/idea-use/">Idea 快捷键</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
+          <a href="/posts/Git-Error/">Git Error </a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/postman/">Postman</a>
+          <a href="/posts/Git-Op/">Git Base Other</a>
         </li>
       
     </ul>
-  </div>
+  </section>
   <!-- #access-lastmod -->
 
 
-      <!-- The trending tags list -->
+              <!-- The trending tags list -->
 
 
 
@@ -3752,8 +3713,8 @@ mysql&gt;
 
 
 
-  <div id="access-tags">
-    <div class="panel-heading">Trending Tags</div>
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -3787,37 +3748,33 @@ mysql&gt;
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
     </div>
-  </div>
+  </section>
 
 
-    </div>
+            </div>
 
-    
-      
-      
+            
+              
+              
 
 
 
-  <div id="toc-wrapper" class="ps-0 pe-4 mb-5">
-    <div class="panel-heading ps-3 pt-2 mb-2">Contents</div>
+  <section id="toc-wrapper" class="ps-0 pe-4">
+    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
     <nav id="toc"></nav>
-  </div>
+  </section>
 
 
-    
-  </div>
-</div>
+            
+          </aside>
+        </div>
 
-<!-- tail -->
-
-  <div class="row">
-    <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-3 pe-xl-4 mt-5">
-      
-        
-        <!--
-  Recommend the other 3 posts according to the tags and categories of the current post,
-  if the number is not enough, use the other latest posts to supplement.
--->
+        <div class="row">
+          <!-- tail -->
+          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -3834,1241 +3791,11 @@ mysql&gt;
 
 
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -5254,1059 +3981,22 @@ mysql&gt;
 
   
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-
-<!-- Fill with the other newlest posts -->
-
-
-
-
-
-  <div id="related-posts" class="mb-2 mb-sm-4">
-    <h3 class="pt-2 mb-4 ms-1" data-toc-skip>
-      Further Reading
-    </h3>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
-        
-        
-        <div class="col">
-          <a href="/posts/DataOther/" class="card post-preview h-100">
+        <article class="col">
+          <a href="/posts/MySQL-lock/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -6316,125 +4006,17 @@ mysql&gt;
 
 
 
-
-<em
-  class="small"
-  data-ts="1683438534"
-  data-df="ll"
+<time
   
->
-  May  7, 2023
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>数据库基础</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  服务端开发需要了解哪些数据库
-
-数据库分类
-
-服务端开发需要了解多种数据库，以下是其中一些常见的数据库类型：
-
-
-  关系型数据库（SQL 数据库）：如 MySQL、Oracle、PostgreSQL 等。关系型数据库采用表格形式来存储数据，其中每个表都由多个行和列组成。数据表之间通过关联建立关系，使得数据之间可以进行查询、修改、删除等操作。
-  非关系型数据库（NoSQL 数据库）：如 M...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/day01/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1544278908"
-  data-df="ll"
-  
->
-  Dec  8, 2018
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>MySQL 入门介绍</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  mysql 
-
-环境搭建
-
-
-  
-    安装mysql
-
-    mysql&amp;gt; select version();
-+------------+
-| version()  |
-+------------+
-| 5.7.17-log |
-+------------+
-1 row in set (0.03 sec)
-
-  
-  
-    创建数据库，与查看
-
-    
-      CR...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/MySQL-lock/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
   data-ts="1568780508"
   data-df="ll"
   
 >
   Sep 18, 2019
-</em>
+</time>
 
-              <h4 class="pt-0 my-2" data-toc-skip>MySQL 锁</h4>
-              <div class="text-muted small">
+              <h4 class="pt-0 my-2">MySQL 锁</h4>
+              <div class="text-muted">
                 <p>
                   
 
@@ -6468,24 +4050,113 @@ mysql&amp;gt; show tables;
               </div>
             </div>
           </a>
-        </div>
+        </article>
       
-    </div>
-    <!-- .card-deck -->
-  </div>
+        <article class="col">
+          <a href="/posts/Mysql-Version-info/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1587183708"
+  data-df="ll"
+  
+>
+  Apr 18, 2020
+</time>
+
+              <h4 class="pt-0 my-2">MySQL MysqlVersionInfo</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  5.6
+
+
+  InnoDb 开始支持全文索引
+  InnoDb 支持设置页面大小
+  通过 innodb_page_size 指定，默认是 16KB，对于工作负载和存储设备（尤其是具有小块大小的 SSD 设备）的某些组合，较小的页面大小可以帮助避免冗余或低效的 I / O
+  InnoDB redolog 总大小的限制从之前的 4G 扩展至 512G
+  InnoDB 现在可以限制大量表打...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/DataOther/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1683438534"
+  data-df="ll"
+  
+>
+  May  7, 2023
+</time>
+
+              <h4 class="pt-0 my-2">数据库基础</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  服务端开发需要了解哪些数据库
+
+数据库分类
+
+服务端开发需要了解多种数据库，以下是其中一些常见的数据库类型：
+
+
+  关系型数据库（SQL 数据库）：如 MySQL、Oracle、PostgreSQL 等。关系型数据库采用表格形式来存储数据，其中每个表都由多个行和列组成。数据表之间通过关联建立关系，使得数据之间可以进行查询、修改、删除等操作。
+  非关系型数据库（NoSQL 数据库）：如 M...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
   <!-- #related-posts -->
 
 
-      
-        
-        <!-- Navigation buttons at the bottom of the post. -->
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
 
-<div class="post-navigation d-flex justify-content-between">
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
   
     <a
       href="/posts/9-RedHad-system-ps/"
       class="btn btn-outline-primary"
-      prompt="Older"
+      aria-label="Older"
     >
       <p>linux(CentOS7) 网络管理</p>
     </a>
@@ -6495,27 +4166,53 @@ mysql&amp;gt; show tables;
     <a
       href="/posts/Mysql-Version-info/"
       class="btn btn-outline-primary"
-      prompt="Newer"
+      aria-label="Newer"
     >
       <p>MySQL MysqlVersionInfo</p>
     </a>
   
-</div>
+</nav>
 
-      
-        
-        <!--  The comments switcher -->
+            
+              
+              <!--  The comments switcher -->
 
 
-      
-    </div>
-  </div>
+            
 
+            <!-- The Footer -->
+
+<footer
+  aria-label="Site Info"
+  class="
+    d-flex flex-column justify-content-center text-muted
+    flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
+  "
+>
+  <p>
+    ©
+    <time>2023</time>
+    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+    
+      <span
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+      >Some rights reserved.</span>
+    
+  </p>
+
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  </p>
+</footer>
+
+          </div>
+        </div>
 
         <!-- The Search results -->
 
 <div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
-  <div class="col-11 post-content">
+  <div class="col-11 content">
     <div id="search-hints">
       <!-- The trending tags list -->
 
@@ -8978,8 +6675,8 @@ mysql&amp;gt; show tables;
 
 
 
-  <div id="access-tags">
-    <div class="panel-heading">Trending Tags</div>
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -9013,7 +6710,7 @@ mysql&amp;gt; show tables;
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
     </div>
-  </div>
+  </section>
 
 
     </div>
@@ -9022,64 +6719,45 @@ mysql&amp;gt; show tables;
 </div>
 
       </div>
+
+      <aside aria-label="Scroll to Top">
+        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-angle-up"></i>
+        </button>
+      </aside>
     </div>
-
-    <!-- The Footer -->
-
-<footer>
-  <div class="container px-lg-4">
-    <div class="d-flex justify-content-center align-items-center text-muted mx-md-3">
-      <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
-      </p>
-
-      <p>©
-        2023
-        <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
-        
-          <span
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
-          >Some rights reserved.</span>
-        
-      </p>
-    </div>
-  </div>
-</footer>
-
 
     <div id="mask"></div>
 
-    <button id="back-to-top" aria-label="back-to-top" class="btn btn-lg btn-box-shadow">
-      <i class="fas fa-angle-up"></i>
+    
+      <aside
+  id="notification"
+  class="toast"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true"
+  data-bs-animation="true"
+  data-bs-autohide="false"
+>
+  <div class="toast-header">
+    <button
+      type="button"
+      class="btn-close ms-auto"
+      data-bs-dismiss="toast"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="toast-body text-center pt-0">
+    <p class="px-2 mb-3">A new version of content is available.</p>
+    <button type="button" class="btn btn-primary" aria-label="Update">
+      Update
     </button>
+  </div>
+</aside>
 
     
-      <div
-        id="notification"
-        class="toast"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-        data-bs-animation="true"
-        data-bs-autohide="false"
-      >
-        <div class="toast-header">
-          <button
-            type="button"
-            class="btn-close ms-auto"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="toast-body text-center pt-0">
-          <p class="px-2 mb-3">A new version of content is available.</p>
-          <button type="button" class="btn btn-primary" aria-label="Update">
-            Update
-          </button>
-        </div>
-      </div>
-    
+
+    <!-- JavaScripts -->
 
     <!-- JS selector for site. -->
 
@@ -9190,7 +6868,7 @@ mysql&amp;gt; show tables;
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.0/dist/jquery.min.js,npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.7/dayjs.min.js,npm/dayjs@1.11.7/locale/en.min.js,npm/dayjs@1.11.7/plugin/relativeTime.min.js,npm/dayjs@1.11.7/plugin/localizedFormat.min.js,npm/tocbot@4.21.0/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
 
 
 
@@ -9221,7 +6899,7 @@ mysql&amp;gt; show tables;
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('search-results'),
     json: '/assets/js/data/search.json',
-    searchResultTemplate: '<div class="px-1 px-sm-2 px-lg-4 px-xl-0">  <a href="{url}">{title}</a>  <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">    {categories}    {tags}  </div>  <p>{snippet}</p></div>',
+    searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
     noResultsText: '<p class="mt-5"></p>',
     templateMiddleware: function(prop, value, template) {
       if (prop === 'categories') {
