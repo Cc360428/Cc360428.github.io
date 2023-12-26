@@ -37,8 +37,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="kubectl 基础命令" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="kubectl 简介 kubectl 是 Kubernetes 命令行工具，用于与 Kubernetes 集群进行交互和管理。 它可以用来部署应用程序，管理集群资源（例如 Pod、Service 和 ReplicaSet 等）， 诊断和调试问题，以及执行其他与 Kubernetes 相关的任务。通过 kubectl，您可以在命令行界面中执行所有 Kubernetes API 操作，并对集群的状态进行操作。 kubectl 是使用 Go 语言编写的开源软件，在安装了 Kubernetes 的任何机器上均可使用。 基础命令 好的，为了更加详细地回答您的问题，以下是一些 kubectl 的基础命令及其用法：" />
-<meta property="og:description" content="kubectl 简介 kubectl 是 Kubernetes 命令行工具，用于与 Kubernetes 集群进行交互和管理。 它可以用来部署应用程序，管理集群资源（例如 Pod、Service 和 ReplicaSet 等）， 诊断和调试问题，以及执行其他与 Kubernetes 相关的任务。通过 kubectl，您可以在命令行界面中执行所有 Kubernetes API 操作，并对集群的状态进行操作。 kubectl 是使用 Go 语言编写的开源软件，在安装了 Kubernetes 的任何机器上均可使用。 基础命令 好的，为了更加详细地回答您的问题，以下是一些 kubectl 的基础命令及其用法：" />
+<meta name="description" content="kubectl" />
+<meta property="og:description" content="kubectl" />
 <link rel="canonical" href="https://cc360428.github.io//posts/Kubernetes/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/Kubernetes/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="kubectl 基础命令" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-03T14:24:12+08:00","datePublished":"2023-05-10T14:43:01+08:00","description":"kubectl 简介 kubectl 是 Kubernetes 命令行工具，用于与 Kubernetes 集群进行交互和管理。 它可以用来部署应用程序，管理集群资源（例如 Pod、Service 和 ReplicaSet 等）， 诊断和调试问题，以及执行其他与 Kubernetes 相关的任务。通过 kubectl，您可以在命令行界面中执行所有 Kubernetes API 操作，并对集群的状态进行操作。 kubectl 是使用 Go 语言编写的开源软件，在安装了 Kubernetes 的任何机器上均可使用。 基础命令 好的，为了更加详细地回答您的问题，以下是一些 kubectl 的基础命令及其用法：","headline":"kubectl 基础命令","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/Kubernetes/"},"url":"https://cc360428.github.io//posts/Kubernetes/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-10T14:43:01+08:00","datePublished":"2023-05-10T14:43:01+08:00","description":"kubectl","headline":"kubectl 基础命令","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/Kubernetes/"},"url":"https://cc360428.github.io//posts/Kubernetes/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -673,29 +673,6 @@
 
       <!-- lastmod date -->
       
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1685773452"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Jun  3, 2023
-</time>
-
-        </span>
-      
 
       
 
@@ -746,16 +723,20 @@
 
   <div class="content">
     <h3 id="kubectl"><span class="me-2">kubectl</span><a href="#kubectl" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <h4 id="简介"><span class="me-2">简介</span><a href="#简介" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
 <ul>
   <li>kubectl 是 Kubernetes 命令行工具，用于与 Kubernetes 集群进行交互和管理。</li>
   <li>它可以用来部署应用程序，管理集群资源（例如 Pod、Service 和 ReplicaSet 等），</li>
-  <li>诊断和调试问题，以及执行其他与 Kubernetes 相关的任务。通过 kubectl，您可以在命令行界面中执行所有 Kubernetes API 操作，并对集群的状态进行操作。</li>
-  <li>kubectl 是使用 Go 语言编写的开源软件，在安装了 Kubernetes 的任何机器上均可使用。
-    <h4 id="基础命令"><span class="me-2">基础命令</span><a href="#基础命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-    <p>好的，为了更加详细地回答您的问题，以下是一些 kubectl 的基础命令及其用法：</p>
-  </li>
+  <li>诊断和调试问题，以及执行其他与 Kubernetes 相关的任务。通过 kubectl，您可以在命令行界面中执行所有 Kubernetes API
+操作，并对集群的状态进行操作。</li>
+  <li>kubectl 是使用 Go 语言编写的开源软件，在安装了 Kubernetes 的任何机器上均可使用。</li>
 </ul>
+
+<h4 id="基础命令"><span class="me-2">基础命令</span><a href="#基础命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>好的，为了更加详细地回答您的问题，以下是一些 kubectl 的基础命令及其用法：</p>
 
 <ol>
   <li>
@@ -930,7 +911,8 @@ kubectl rollout undo deployment/&lt;DEPLOYMENT_NAME&gt;
 </pre></td><td class="rouge-code"><pre>kubectl port-forward &lt;POD_NAME&gt; &lt;LOCAL_PORT&gt;:&lt;REMOTE_PORT&gt;
 </pre></td></tr></tbody></table></code></div>    </div>
 
-    <p>该命令会将本地端口 <code class="language-plaintext highlighter-rouge">&lt;LOCAL_PORT&gt;</code> 绑定到远程 Pod 的端口 <code class="language-plaintext highlighter-rouge">&lt;REMOTE_PORT&gt;</code>。例如，要将本地端口 8080 绑定到名为 <code class="language-plaintext highlighter-rouge">my-pod</code> 的 Pod 中的端口 80，可以使用以下命令：</p>
+    <p>该命令会将本地端口 <code class="language-plaintext highlighter-rouge">&lt;LOCAL_PORT&gt;</code> 绑定到远程 Pod 的端口 <code class="language-plaintext highlighter-rouge">&lt;REMOTE_PORT&gt;</code>。例如，要将本地端口 8080 绑定到名为 <code class="language-plaintext highlighter-rouge">my-pod</code> 的
+Pod 中的端口 80，可以使用以下命令：</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -949,7 +931,8 @@ kubectl rollout undo deployment/&lt;DEPLOYMENT_NAME&gt;
 kubectl cp &lt;LOCAL_PATH&gt; &lt;POD_NAME&gt;:&lt;CONTAINER_PATH&gt;
 </pre></td></tr></tbody></table></code></div>    </div>
 
-    <p>该命令可以将文件从本地文件系统复制到运行中的容器中，或者将文件从容器中复制到本地文件系统中。例如，要将名为 <code class="language-plaintext highlighter-rouge">my-pod</code> 的容器中的 <code class="language-plaintext highlighter-rouge">/app/logs</code> 目录复制到本地文件系统中的 <code class="language-plaintext highlighter-rouge">/tmp</code> 目录，可以使用以下命令：</p>
+    <p>该命令可以将文件从本地文件系统复制到运行中的容器中，或者将文件从容器中复制到本地文件系统中。例如，要将名为 <code class="language-plaintext highlighter-rouge">my-pod</code>
+的容器中的 <code class="language-plaintext highlighter-rouge">/app/logs</code> 目录复制到本地文件系统中的 <code class="language-plaintext highlighter-rouge">/tmp</code> 目录，可以使用以下命令：</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -983,7 +966,8 @@ kubectl top pod
 </pre></td><td class="rouge-code"><pre>kubectl proxy
 </pre></td></tr></tbody></table></code></div>    </div>
 
-    <p>该命令会在本地启动一个代理，将 Kubernetes API 服务器和本地连接起来。通过访问 <code class="language-plaintext highlighter-rouge">http://localhost:8001</code>，您可以访问 Kubernetes API，并查看集群状态、部署资源等。</p>
+    <p>该命令会在本地启动一个代理，将 Kubernetes API 服务器和本地连接起来。通过访问 <code class="language-plaintext highlighter-rouge">http://localhost:8001</code>，您可以访问
+Kubernetes API，并查看集群状态、部署资源等。</p>
   </li>
 </ol>
 
@@ -996,8 +980,7 @@ kubectl top pod
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/network/">Network</a>,
-          <a href="/categories/linux/">Linux</a>,
+          <a href="/categories/devops/">DevOps</a>,
           <a href="/categories/command/">Command</a>
       </div>
     
@@ -1132,28 +1115,28 @@ kubectl top pod
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/vscode-conf/">VSCode conf</a>
+          <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/idea-use/">Idea 快捷键</a>
+          <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Error/">Git Error </a>
+          <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Op/">Git Base Other</a>
+          <a href="/posts/resume/">Resume</a>
         </li>
       
     </ul>
@@ -1502,56 +1485,6 @@ kubectl top pod
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1686,55 +1619,10 @@ kubectl top pod
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2044,21 +1932,6 @@ kubectl top pod
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2143,112 +2016,6 @@ kubectl top pod
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2308,36 +2075,6 @@ kubectl top pod
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2832,470 +2569,7 @@ kubectl top pod
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -3636,11 +2910,189 @@ kubectl top pod
     
     
     
+      
+        
+        
+
   
     
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -3704,9 +3156,6 @@ kubectl top pod
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -3716,10 +3165,13 @@ kubectl top pod
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/system/">System</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -4872,56 +4324,6 @@ awk [options] &#39;pattern { action }&#39; file(s)
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -5056,55 +4458,10 @@ awk [options] &#39;pattern { action }&#39; file(s)
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5414,21 +4771,6 @@ awk [options] &#39;pattern { action }&#39; file(s)
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -5513,112 +4855,6 @@ awk [options] &#39;pattern { action }&#39; file(s)
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5678,36 +4914,6 @@ awk [options] &#39;pattern { action }&#39; file(s)
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -6202,470 +5408,7 @@ awk [options] &#39;pattern { action }&#39; file(s)
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -7006,11 +5749,189 @@ awk [options] &#39;pattern { action }&#39; file(s)
     
     
     
+      
+        
+        
+
   
     
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -7074,9 +5995,6 @@ awk [options] &#39;pattern { action }&#39; file(s)
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -7086,10 +6004,13 @@ awk [options] &#39;pattern { action }&#39; file(s)
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/system/">System</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>

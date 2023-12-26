@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2023-12-04T18:02:29+08:00</updated>
+  <updated>2023-12-26T16:13:02+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -48,27 +48,27 @@
 
 
 
-      redis 获取所有 key
+      redis 获取所有 key 并且打印输出
 
 import redis
-
-def scan_keys(redis_client, pattern, count=1000):
-    cursor = 0
-    keys = []
-
-    while True:
-        cursor, partial_keys = redis_client.scan(cursor=cursor, count=count, match=pattern)
-        keys.extend(partial_keys)
-        if cursor == 0:
-            break
-
-    return keys
+import datetime
 
 # 设置 Redis 连接参数
 host = '172.12.12.189'
 port = 6000
 password = ''
-db = 12  # 指定要扫描的数据库...
+db = 12  # 指定要扫描的数据库编号
+pattern = '2016:hide:*'  # 匹配以 '2016:' 开头的键
+
+# 创建 Redis 客户端
+redis_client = redis.Redis(host=host, port=port, password=password, db=db)
+
+# 切换到指定的数据库
+redis_client.select(db)
+
+def get_hide(redis_client, keys, output_file):
+    # 打开文件以追加写入
+    with open(output...
     </summary>
   
 
@@ -90,7 +90,7 @@ db = 12  # 指定要扫描的数据库...
 
   
     
-    <category term="Network" />
+    <category term="DevOps" />
     
     <category term="Kubernetes" />
     
@@ -153,7 +153,7 @@ db = 12  # 指定要扫描的数据库...
 
   
     
-    <category term="Network" />
+    <category term="DevOps" />
     
     <category term="Kubernetes" />
     
@@ -195,7 +195,7 @@ db = 12  # 指定要扫描的数据库...
 
   
     
-    <category term="Network" />
+    <category term="DevOps" />
     
     <category term="Kubernetes" />
     

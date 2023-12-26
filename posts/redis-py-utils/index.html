@@ -37,8 +37,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="开发脚本" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="redis 获取所有 key" />
-<meta property="og:description" content="redis 获取所有 key" />
+<meta name="description" content="redis 获取所有 key 并且打印输出" />
+<meta property="og:description" content="redis 获取所有 key 并且打印输出" />
 <link rel="canonical" href="https://cc360428.github.io//posts/redis-py-utils/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/redis-py-utils/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="开发脚本" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-01T11:32:25+08:00","datePublished":"2023-12-01T11:32:25+08:00","description":"redis 获取所有 key","headline":"开发脚本","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/redis-py-utils/"},"url":"https://cc360428.github.io//posts/redis-py-utils/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-01T11:32:25+08:00","datePublished":"2023-12-01T11:32:25+08:00","description":"redis 获取所有 key 并且打印输出","headline":"开发脚本","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/redis-py-utils/"},"url":"https://cc360428.github.io//posts/redis-py-utils/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -701,9 +701,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1036 words"
+  title="1141 words"
 >
-  <em>5 min</em> read</span>
+  <em>6 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -712,7 +712,7 @@
   </header>
 
   <div class="content">
-    <h3 id="redis-获取所有-key"><span class="me-2">redis 获取所有 key</span><a href="#redis-获取所有-key" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h3 id="redis-获取所有-key-并且打印输出"><span class="me-2">redis 获取所有 key 并且打印输出</span><a href="#redis-获取所有-key-并且打印输出" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -748,19 +748,15 @@
 30
 31
 32
+33
+34
+35
+36
+37
+38
+39
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">redis</span>
-
-<span class="k">def</span> <span class="nf">scan_keys</span><span class="p">(</span><span class="n">redis_client</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">keys</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-        <span class="n">cursor</span><span class="p">,</span> <span class="n">partial_keys</span> <span class="o">=</span> <span class="n">redis_client</span><span class="p">.</span><span class="nf">scan</span><span class="p">(</span><span class="n">cursor</span><span class="o">=</span><span class="n">cursor</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="n">pattern</span><span class="p">)</span>
-        <span class="n">keys</span><span class="p">.</span><span class="nf">extend</span><span class="p">(</span><span class="n">partial_keys</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">cursor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">break</span>
-
-    <span class="k">return</span> <span class="n">keys</span>
+<span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="c1"># 设置 Redis 连接参数
 </span><span class="n">host</span> <span class="o">=</span> <span class="sh">'</span><span class="s">172.12.12.189</span><span class="sh">'</span>
@@ -775,11 +771,29 @@
 <span class="c1"># 切换到指定的数据库
 </span><span class="n">redis_client</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
 
+<span class="k">def</span> <span class="nf">get_hide</span><span class="p">(</span><span class="n">redis_client</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">output_file</span><span class="p">):</span>
+    <span class="c1"># 打开文件以追加写入
+</span>    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">redis_client</span><span class="p">.</span><span class="nf">hmget</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="sh">"</span><span class="s">W</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">L</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">w</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="bp">None</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="k">else</span> <span class="bp">None</span>
+            <span class="n">split_value</span> <span class="o">=</span> <span class="n">key</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">:</span><span class="sh">"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">w</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">l</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">w</span> <span class="o">/</span> <span class="n">l</span>
+                <span class="nb">file</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">playerId: </span><span class="si">{</span><span class="n">split_value</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s"> groupId: </span><span class="si">{</span><span class="n">split_value</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s"> win: </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s"> lose: </span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s"> r: </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">playerId: </span><span class="si">{</span><span class="n">split_value</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s"> groupId: </span><span class="si">{</span><span class="n">split_value</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s"> win: </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s"> lose: </span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s"> r: </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
 <span class="c1"># 扫描并打印以 '2016:' 开头的键
-</span><span class="n">matching_keys</span> <span class="o">=</span> <span class="nf">scan_keys</span><span class="p">(</span><span class="n">redis_client</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">matching_keys</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">matching_keys</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="nf">decode</span><span class="p">())</span>
+</span><span class="n">matching_keys</span> <span class="o">=</span> <span class="n">redis_client</span><span class="p">.</span><span class="nf">scan_iter</span><span class="p">(</span><span class="n">match</span><span class="o">=</span><span class="n">pattern</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">matching_keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span><span class="p">.</span><span class="nf">decode</span><span class="p">()</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">matching_keys</span><span class="p">]</span>
+
+<span class="c1"># 获取当前时间
+</span><span class="n">current_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+<span class="c1"># 将当前时间格式化为字符串
+</span><span class="n">formatted_time</span> <span class="o">=</span> <span class="n">current_time</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="sh">"</span><span class="s">%Y%m%d%H%M%S</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="nf">get_hide</span><span class="p">(</span><span class="n">redis_client</span><span class="p">,</span> <span class="n">matching_keys</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="s">hide_</span><span class="si">{</span><span class="n">formatted_time</span><span class="si">}</span><span class="s">.txt</span><span class="sh">"</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="日志分析"><span class="me-2">日志分析</span><a href="#日志分析" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1320,28 +1334,28 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/vscode-conf/">VSCode conf</a>
+          <a href="/posts/OperationsResearch/">运筹学基础（02375）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/idea-use/">Idea 快捷键</a>
+          <a href="/posts/C++/">C++Programming（04737）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Error/">Git Error </a>
+          <a href="/posts/OperatingSystems/">OperatingSystems（02323）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Op/">Git Base Other</a>
+          <a href="/posts/resume/">Resume</a>
         </li>
       
     </ul>
@@ -1690,56 +1704,6 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1874,55 +1838,10 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2232,21 +2151,6 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2331,112 +2235,6 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2496,36 +2294,6 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3020,470 +2788,7 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -3824,11 +3129,189 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
     
     
     
+      
+        
+        
+
   
     
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -3892,9 +3375,6 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -3904,10 +3384,13 @@ check_and_pull_git_repositories <span class="s2">"</span><span class="nv">$direc
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/system/">System</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -4831,56 +4314,6 @@ vscode 配置
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -5015,55 +4448,10 @@ vscode 配置
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5373,21 +4761,6 @@ vscode 配置
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -5472,112 +4845,6 @@ vscode 配置
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5637,36 +4904,6 @@ vscode 配置
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -6161,470 +5398,7 @@ vscode 配置
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -6965,11 +5739,189 @@ vscode 配置
     
     
     
+      
+        
+        
+
   
     
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -7033,9 +5985,6 @@ vscode 配置
         <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -7045,10 +5994,13 @@ vscode 配置
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/system/">System</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
