@@ -37,8 +37,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="kratos 依赖注入" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="依赖注入 Kratos 是一款基于 Go 语言的微服务开发框架，它内置了依赖注入功能。在 Kratos 中，我们可以使用构造函数注入或者字段注入的方式来实现依赖注入。" />
-<meta property="og:description" content="依赖注入 Kratos 是一款基于 Go 语言的微服务开发框架，它内置了依赖注入功能。在 Kratos 中，我们可以使用构造函数注入或者字段注入的方式来实现依赖注入。" />
+<meta name="description" content="依赖注入" />
+<meta property="og:description" content="依赖注入" />
 <link rel="canonical" href="https://cc360428.github.io//posts/kratos-kratos-other/" />
 <meta property="og:url" content="https://cc360428.github.io//posts/kratos-kratos-other/" />
 <meta property="og:site_name" content="Cc Blog" />
@@ -48,7 +48,7 @@
 <meta property="twitter:title" content="kratos 依赖注入" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-09T16:11:57+08:00","datePublished":"2020-06-26T14:22:12+08:00","description":"依赖注入 Kratos 是一款基于 Go 语言的微服务开发框架，它内置了依赖注入功能。在 Kratos 中，我们可以使用构造函数注入或者字段注入的方式来实现依赖注入。","headline":"kratos 依赖注入","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/kratos-kratos-other/"},"url":"https://cc360428.github.io//posts/kratos-kratos-other/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-27T09:57:59+08:00","datePublished":"2020-06-26T14:22:12+08:00","description":"依赖注入","headline":"kratos 依赖注入","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/kratos-kratos-other/"},"url":"https://cc360428.github.io//posts/kratos-kratos-other/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -642,13 +642,13 @@
 
 <time
   
-  data-ts="1683619917"
+  data-ts="1703642279"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  May  9, 2023
+  Dec 27, 2023
 </time>
 
         </span>
@@ -691,7 +691,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="420 words"
+  title="421 words"
 >
   <em>2 min</em> read</span>
 
@@ -703,6 +703,7 @@
 
   <div class="content">
     <h3 id="依赖注入"><span class="me-2">依赖注入</span><a href="#依赖注入" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
 <p>Kratos 是一款基于 Go 语言的微服务开发框架，它内置了依赖注入功能。在 Kratos 中，我们可以使用构造函数注入或者字段注入的方式来实现依赖注入。</p>
 
 <p>构造函数注入是指将依赖通过构造函数参数的方式传递给要注入的对象。例如：</p>
@@ -777,9 +778,12 @@ func main() {
 }
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>在上面的示例中，我们使用 <code class="language-plaintext highlighter-rouge">dig</code> 包来实现依赖注入。通过在结构体字段中添加 <code class="language-plaintext highlighter-rouge">inject:""</code> 标签，我们告诉 <code class="language-plaintext highlighter-rouge">dig</code> 包需要注入这个字段的依赖。然后在 <code class="language-plaintext highlighter-rouge">main</code> 函数中，我们使用 <code class="language-plaintext highlighter-rouge">dig</code> 包提供的 <code class="language-plaintext highlighter-rouge">Provide</code> 方法来注册 <code class="language-plaintext highlighter-rouge">BarService</code>，然后使用 <code class="language-plaintext highlighter-rouge">Invoke</code> 方法初始化 <code class="language-plaintext highlighter-rouge">FooService</code>，最后调用 <code class="language-plaintext highlighter-rouge">Init</code> 方法对 <code class="language-plaintext highlighter-rouge">FooService</code> 进行初始化操作。</p>
-
-<p>总之，在 Kratos 中，我们可以方便地实现依赖注入，从而更加轻松地构建高质量的微服务应用程序。</p>
+<blockquote>
+  <p>在上面的示例中，我们使用 <code class="language-plaintext highlighter-rouge">dig</code> 包来实现依赖注入。通过在结构体字段中添加 <code class="language-plaintext highlighter-rouge">inject:""</code> 标签，我们告诉 <code class="language-plaintext highlighter-rouge">dig</code>
+包需要注入这个字段的依赖。然后在 <code class="language-plaintext highlighter-rouge">main</code> 函数中，我们使用 <code class="language-plaintext highlighter-rouge">dig</code> 包提供的 <code class="language-plaintext highlighter-rouge">Provide</code> 方法来注册 <code class="language-plaintext highlighter-rouge">BarService</code>
+，然后使用 <code class="language-plaintext highlighter-rouge">Invoke</code> 方法初始化 <code class="language-plaintext highlighter-rouge">FooService</code>，最后调用 <code class="language-plaintext highlighter-rouge">Init</code> 方法对 <code class="language-plaintext highlighter-rouge">FooService</code> 进行初始化操作。
+总之，在 Kratos 中，我们可以方便地实现依赖注入，从而更加轻松地构建高质量的微服务应用程序。</p>
+</blockquote>
 
   </div>
 
@@ -800,19 +804,14 @@ func main() {
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/server/"
-            class="post-tag no-text-decoration"
-          >Server</a>
-        
-          <a
             href="/tags/go/"
             class="post-tag no-text-decoration"
           >Go</a>
         
           <a
-            href="/tags/microservices/"
+            href="/tags/goweb/"
             class="post-tag no-text-decoration"
-          >Microservices</a>
+          >GoWeb</a>
         
           <a
             href="/tags/kratos/"
@@ -922,35 +921,35 @@ func main() {
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/education/">English 国内教育</a>
+          <a href="/posts/shellother/">System Linux Error</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/vocabulary/">English 背单词技巧</a>
+          <a href="/posts/bash_shell/">零散的脚本</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/1-english/">English 简介</a>
+          <a href="/posts/system-shell-base/">linux Shell Base</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/2-basic/">English Base</a>
+          <a href="/posts/go-interview-Question-bank/">Golang Interview Question bank</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/3-phonetic_transcription/">English 音标</a>
+          <a href="/posts/go-interview-algorithm/">Golang Interview algorithm</a>
         </li>
       
     </ul>
@@ -1174,6 +1173,144 @@ func main() {
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1482,205 +1619,6 @@ func main() {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1770,124 +1708,7 @@ func main() {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -2038,377 +1859,6 @@ func main() {
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2748,6 +2198,11 @@ func main() {
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -2757,6 +2212,45 @@ func main() {
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2807,13 +2301,13 @@ func main() {
         <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -2822,7 +2316,7 @@ func main() {
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
@@ -4490,6 +3984,144 @@ go: found...
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4798,205 +4430,6 @@ go: found...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -5086,124 +4519,7 @@ go: found...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -5354,377 +4670,6 @@ go: found...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -6064,6 +5009,11 @@ go: found...
     
     
     
+  
+    
+    
+    
+    
       
         
         
@@ -6073,6 +5023,45 @@ go: found...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -6123,13 +5112,13 @@ go: found...
         <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/microservices/">Microservices</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -6138,7 +5127,7 @@ go: found...
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>

@@ -4,7 +4,7 @@
     "title": "开发脚本",
     "url": "/posts/redis-py-utils/",
     "categories": "Dev, Utils",
-    "tags": "Dev, ShellUtils",
+    "tags": "Tools",
     "date": "2023-12-01 11:32:25 +0800",
     
 
@@ -225,7 +225,7 @@
     "title": "vim Plug Manager",
     "url": "/posts/vim-plug/",
     "categories": "Dev, Utils",
-    "tags": "Dev, vim",
+    "tags": "Tools",
     "date": "2023-09-18 11:32:25 +0800",
     
 
@@ -276,7 +276,7 @@
     "title": "Hyper-V",
     "url": "/posts/hyper-v/",
     "categories": "Dev, Utils",
-    "tags": "Dev, Hyper-v",
+    "tags": "Tools",
     "date": "2023-07-27 09:32:25 +0800",
     
 
@@ -293,7 +293,7 @@
     "title": "Postman env",
     "url": "/posts/postman-env/",
     "categories": "Dev, Utils",
-    "tags": "Dev, Postman",
+    "tags": "Tools",
     "date": "2023-07-26 09:33:25 +0800",
     
 
@@ -310,7 +310,7 @@
     "title": "Postman",
     "url": "/posts/postman/",
     "categories": "Dev, Utils",
-    "tags": "Dev, Postman",
+    "tags": "Tools",
     "date": "2023-07-26 09:32:25 +0800",
     
 
@@ -344,7 +344,7 @@
     "title": "curl",
     "url": "/posts/curl/",
     "categories": "DevOps, Command",
-    "tags": "LinuxTool, curl",
+    "tags": "Tools",
     "date": "2023-07-17 11:43:01 +0800",
     
 
@@ -429,7 +429,7 @@
     "title": "VSCode conf",
     "url": "/posts/vscode-conf/",
     "categories": "Dev, Utils",
-    "tags": "Dev, VSCode",
+    "tags": "Tools",
     "date": "2023-05-27 11:32:25 +0800",
     
 
@@ -616,7 +616,7 @@
     "title": "API测试工具",
     "url": "/posts/testing-base/",
     "categories": "Dev, Utils",
-    "tags": "Web, Testing",
+    "tags": "Tools",
     "date": "2023-05-09 09:05:01 +0800",
     
 
@@ -632,7 +632,7 @@
   {
     "title": "Vim 使用说明",
     "url": "/posts/vim/",
-    "categories": "DevOps, Sehll",
+    "categories": "DevOps, Shell",
     "tags": "LinuxTool, Shell",
     "date": "2023-05-08 12:07:01 +0800",
     
@@ -650,7 +650,7 @@
     "title": "Linux awk 基础命令",
     "url": "/posts/linux_awk/",
     "categories": "DevOps, Command",
-    "tags": "LinuxTool, Shell, Command",
+    "tags": "Tools",
     "date": "2023-05-08 12:06:01 +0800",
     
 
@@ -666,7 +666,7 @@
   {
     "title": "Linux 基础命令",
     "url": "/posts/base_cmd/",
-    "categories": "DevOps, Sehll",
+    "categories": "DevOps, Shell",
     "tags": "LinuxTool, Shell",
     "date": "2023-05-08 12:05:01 +0800",
     
@@ -683,7 +683,7 @@
   {
     "title": "自动化脚本",
     "url": "/posts/auto_shell/",
-    "categories": "DevOps, Sehll",
+    "categories": "DevOps, Shell",
     "tags": "LinuxTool, Shell",
     "date": "2023-05-05 15:05:01 +0800",
     
@@ -990,7 +990,7 @@
     "title": "项目架构图",
     "url": "/posts/work/",
     "categories": "Dev, Utils",
-    "tags": "Dev, Work",
+    "tags": "Left",
     "date": "2022-01-23 13:32:25 +0800",
     
 
@@ -1160,7 +1160,7 @@
     "title": "定时任务",
     "url": "/posts/cron/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoUtils, Cron",
+    "tags": "Go",
     "date": "2021-03-17 18:01:33 +0800",
     
 
@@ -1245,7 +1245,7 @@
     "title": "Micro hello Index",
     "url": "/posts/Go-Microother/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, Go Micro",
+    "tags": "GoWeb",
     "date": "2020-06-26 14:22:12 +0800",
     
 
@@ -1262,7 +1262,7 @@
     "title": "Micro hello world",
     "url": "/posts/Go-Micro1.1-hello-world/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, Go Micro, gRPC",
+    "tags": "GoWeb",
     "date": "2020-06-26 14:22:12 +0800",
     
 
@@ -1279,7 +1279,7 @@
     "title": "Micro API",
     "url": "/posts/Go-Micro-1.2-api/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, Go Micro",
+    "tags": "GoWeb",
     "date": "2020-06-26 14:22:12 +0800",
     
 
@@ -1296,7 +1296,7 @@
     "title": "kratos utils",
     "url": "/posts/kratos-kratos-utils/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, kratos",
+    "tags": "Go, GoWeb, kratos",
     "date": "2020-06-26 14:22:12 +0800",
     
 
@@ -1313,7 +1313,7 @@
     "title": "kratos 依赖注入",
     "url": "/posts/kratos-kratos-other/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, kratos",
+    "tags": "Go, GoWeb, kratos",
     "date": "2020-06-26 14:22:12 +0800",
     
 
@@ -1323,14 +1323,14 @@
 
     
     "snippet": "依赖注入Kratos 是一款基于 Go 语言的微服务开发框架，它内置了依赖注入功能。在 Kratos 中，我们可以使用构造函数注入或者字段注入的方式来实现依赖注入。构造函数注入是指将依赖通过构造函数参数的方式传递给要注入的对象。例如：type FooService struct {    barService *BarService}func NewFooService(barService...",
-    "content": "依赖注入Kratos 是一款基于 Go 语言的微服务开发框架，它内置了依赖注入功能。在 Kratos 中，我们可以使用构造函数注入或者字段注入的方式来实现依赖注入。构造函数注入是指将依赖通过构造函数参数的方式传递给要注入的对象。例如：type FooService struct {    barService *BarService}func NewFooService(barService *BarService) *FooService {    return &amp;FooService{        barService: barService,    }}在上面的示例中，FooService 依赖于 BarService，并且通过 NewFooService 方法将 BarService 作为参数传递进去。字段注入则是将依赖通过结构体字段的方式注入。例如：type FooService struct {    barService *BarService `inject:\"\"`}func (f *FooService) Init() error {    // 对 f.barService 进行初始化操作}// 在 main 函数中使用依赖注入初始化 FooServicefunc main() {    var fooService FooService    container := dig.New()    container.Provide(NewBarService)    err := container.Invoke(func(f *FooService) error {        return f.Init()    })    if err != nil {        panic(err)    }}在上面的示例中，我们使用 dig 包来实现依赖注入。通过在结构体字段中添加 inject:\"\" 标签，我们告诉 dig 包需要注入这个字段的依赖。然后在 main 函数中，我们使用 dig 包提供的 Provide 方法来注册 BarService，然后使用 Invoke 方法初始化 FooService，最后调用 Init 方法对 FooService 进行初始化操作。总之，在 Kratos 中，我们可以方便地实现依赖注入，从而更加轻松地构建高质量的微服务应用程序。"
+    "content": "依赖注入Kratos 是一款基于 Go 语言的微服务开发框架，它内置了依赖注入功能。在 Kratos 中，我们可以使用构造函数注入或者字段注入的方式来实现依赖注入。构造函数注入是指将依赖通过构造函数参数的方式传递给要注入的对象。例如：type FooService struct {    barService *BarService}func NewFooService(barService *BarService) *FooService {    return &amp;FooService{        barService: barService,    }}在上面的示例中，FooService 依赖于 BarService，并且通过 NewFooService 方法将 BarService 作为参数传递进去。字段注入则是将依赖通过结构体字段的方式注入。例如：type FooService struct {    barService *BarService `inject:\"\"`}func (f *FooService) Init() error {    // 对 f.barService 进行初始化操作}// 在 main 函数中使用依赖注入初始化 FooServicefunc main() {    var fooService FooService    container := dig.New()    container.Provide(NewBarService)    err := container.Invoke(func(f *FooService) error {        return f.Init()    })    if err != nil {        panic(err)    }}  在上面的示例中，我们使用 dig 包来实现依赖注入。通过在结构体字段中添加 inject:\"\" 标签，我们告诉 dig包需要注入这个字段的依赖。然后在 main 函数中，我们使用 dig 包提供的 Provide 方法来注册 BarService，然后使用 Invoke 方法初始化 FooService，最后调用 Init 方法对 FooService 进行初始化操作。总之，在 Kratos 中，我们可以方便地实现依赖注入，从而更加轻松地构建高质量的微服务应用程序。"
   },
   
   {
     "title": "kratos interface",
     "url": "/posts/kratos-kratos-interface/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, kratos",
+    "tags": "Go, GoWeb, kratos",
     "date": "2020-06-26 14:22:12 +0800",
     
 
@@ -1347,7 +1347,7 @@
     "title": "kratos base",
     "url": "/posts/kratos-kratos-base/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, kratos",
+    "tags": "Go, GoWeb, kratos",
     "date": "2020-06-26 14:22:12 +0800",
     
 
@@ -1364,7 +1364,7 @@
     "title": "kratos discovery",
     "url": "/posts/kratos-discovery/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, kratos",
+    "tags": "Go, GoWeb, kratos",
     "date": "2020-06-26 14:22:12 +0800",
     
 
@@ -1381,7 +1381,7 @@
     "title": "kratos Error",
     "url": "/posts/kratos-Error/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, kratos",
+    "tags": "Go, GoWeb, kratos",
     "date": "2020-06-26 14:22:12 +0800",
     
 
@@ -1398,7 +1398,7 @@
     "title": "Golang Interview why",
     "url": "/posts/go-interview-why/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoInterview",
+    "tags": "GoInterview",
     "date": "2020-06-24 22:37:18 +0800",
     
 
@@ -1415,7 +1415,7 @@
     "title": "Golang Interview Mysql",
     "url": "/posts/go-interview-mysql/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoInterview, MySQL",
+    "tags": "GoInterview",
     "date": "2020-06-24 22:37:18 +0800",
     
 
@@ -1432,7 +1432,7 @@
     "title": "Golang Interview Mysql",
     "url": "/posts/go-interview-middleware/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoInterview",
+    "tags": "GoInterview",
     "date": "2020-06-24 22:37:18 +0800",
     
 
@@ -1449,7 +1449,7 @@
     "title": "Golang Interview Base",
     "url": "/posts/go-interview-base/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoInterview",
+    "tags": "GoInterview",
     "date": "2020-06-24 22:37:18 +0800",
     
 
@@ -1466,7 +1466,7 @@
     "title": "Golang Interview algorithm",
     "url": "/posts/go-interview-algorithm/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoInterview",
+    "tags": "GoInterview",
     "date": "2020-06-24 22:37:18 +0800",
     
 
@@ -1483,7 +1483,7 @@
     "title": "Golang Interview Question bank",
     "url": "/posts/go-interview-Question-bank/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoInterview",
+    "tags": "GoInterview",
     "date": "2020-06-24 22:37:18 +0800",
     
 
@@ -1652,7 +1652,7 @@
   {
     "title": "linux Shell Base",
     "url": "/posts/system-shell-base/",
-    "categories": "DevOps, Sehll",
+    "categories": "DevOps, Shell",
     "tags": "LinuxTool, Shell",
     "date": "2020-04-20 22:05:01 +0800",
     
@@ -1669,7 +1669,7 @@
   {
     "title": "零散的脚本",
     "url": "/posts/bash_shell/",
-    "categories": "DevOps, Sehll",
+    "categories": "DevOps, Shell",
     "tags": "LinuxTool, Shell",
     "date": "2020-04-20 22:05:01 +0800",
     
@@ -1686,8 +1686,8 @@
   {
     "title": "System Linux Error",
     "url": "/posts/shellother/",
-    "categories": "DevOps, Sehll",
-    "tags": "LinuxTool, SystemError",
+    "categories": "DevOps, Shell",
+    "tags": "Tools",
     "date": "2020-04-20 22:05:01 +0800",
     
 
@@ -1721,7 +1721,7 @@
     "title": "openWrt uci",
     "url": "/posts/uci/",
     "categories": "DevOps, OpenWrt",
-    "tags": "LinuxTool, OpenWrt",
+    "tags": "Tools",
     "date": "2020-04-18 14:33:04 +0800",
     
 
@@ -1976,7 +1976,7 @@
     "title": "frp 内网穿透",
     "url": "/posts/frp/",
     "categories": "Dev, Utils",
-    "tags": "Dev, Frp, network",
+    "tags": "Tools",
     "date": "2020-03-23 13:32:25 +0800",
     
 
@@ -2044,7 +2044,7 @@
     "title": "Nginx 安装",
     "url": "/posts/Nginx-install/",
     "categories": "DevOps, Nginx",
-    "tags": "LinuxTool, Nginx",
+    "tags": "Tools",
     "date": "2020-03-11 22:23:04 +0800",
     
 
@@ -2061,7 +2061,7 @@
     "title": "Nginx配置",
     "url": "/posts/Nginx-conf/",
     "categories": "DevOps, Nginx",
-    "tags": "LinuxTool, Nginx",
+    "tags": "Tools",
     "date": "2020-03-11 22:23:04 +0800",
     
 
@@ -2095,7 +2095,7 @@
     "title": "Golang Mysql Gorm",
     "url": "/posts/gorm/",
     "categories": "Language, Go",
-    "tags": "Server, Go, ORM, MySQL",
+    "tags": "Go, GoWeb",
     "date": "2020-03-05 16:02:24 +0800",
     
 
@@ -2146,7 +2146,7 @@
     "title": "proto error ",
     "url": "/posts/proto-error/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices",
+    "tags": "Go, GoWeb",
     "date": "2019-12-26 14:22:12 +0800",
     
 
@@ -2163,7 +2163,7 @@
     "title": "protoc 工具",
     "url": "/posts/grpc-utils/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, gRPC",
+    "tags": "Go, GoWeb",
     "date": "2019-12-26 14:22:12 +0800",
     
 
@@ -2180,7 +2180,7 @@
     "title": "gRPC 和 ui 操作",
     "url": "/posts/gRPC/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, gRPC",
+    "tags": "Go, GoWeb",
     "date": "2019-12-26 14:22:12 +0800",
     
 
@@ -2197,7 +2197,7 @@
     "title": "Protocol Buffer 语法",
     "url": "/posts/Protocol-Buffer/",
     "categories": "Language, Go",
-    "tags": "gRPC, golang, GoWeb, Microservices",
+    "tags": "Go, GoWeb",
     "date": "2019-12-26 14:22:12 +0800",
     
 
@@ -2214,7 +2214,7 @@
     "title": "Constl",
     "url": "/posts/Consul/",
     "categories": "Language, Go",
-    "tags": "Server, Go, Microservices, Constl",
+    "tags": "Go, GoWeb",
     "date": "2019-12-26 14:22:12 +0800",
     
 
@@ -2571,7 +2571,7 @@
     "title": "Golang 代码规范",
     "url": "/posts/other/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoUtil",
+    "tags": "Go",
     "date": "2019-04-29 22:58:36 +0800",
     
 
@@ -2581,14 +2581,14 @@
 
     
     "snippet": "代码规范Go 代码规范（或 Go 规范）旨在使代码更具可读性、可维护性和可重用性。以下是一些主要的规则：  格式化：使用 gofmt 工具来格式化代码以提高可读性。  命名：遵循有意义的命名方式，使用驼峰式命名法，在变量名和函数名中使用小写字母开头，公共函数和变量名应该首字母大写。  注释：对于每一个包、函数、类型、方法和变量都应该添加注释，尽可能用单行注释。  导入：将所有依赖项导入放在文...",
-    "content": "代码规范Go 代码规范（或 Go 规范）旨在使代码更具可读性、可维护性和可重用性。以下是一些主要的规则：  格式化：使用 gofmt 工具来格式化代码以提高可读性。  命名：遵循有意义的命名方式，使用驼峰式命名法，在变量名和函数名中使用小写字母开头，公共函数和变量名应该首字母大写。  注释：对于每一个包、函数、类型、方法和变量都应该添加注释，尽可能用单行注释。  导入：将所有依赖项导入放在文件顶部。  错误处理：避免使用 panic 和 recover 函数，应该使用错误处理机制来处理错误。  测试：为每个函数编写测试代码，并确保测试覆盖率达到最大程度。  接口：尽可能使用接口类型而不是具体类型，因为接口类型灵活且易于扩展。  并发：使用 goroutine 和通道来实现并发操作，而不是使用共享内存。  包结构：将相关的函数和变量组织成包，同时避免循环依赖。  性能：尽可能使用指针和原始数据类型来提高性能，同时避免过度优化。详细解释好的，以下是更详细的 Go 代码规范：  格式化：Go 官方推荐使用 gofmt 工具进行格式化。gofmt 是一个命令行工具，它会自动将代码格式化为 Go 规范。例如：// 不符合 Go 规范的写法if (x==0) {    // ...}// 符合 Go 规范的写法if x == 0 {    // ...}  命名：在 Go 语言中，驼峰式命名法是首选。变量名和函数名应该以小写字母开头，公共函数和变量名（可以被其他包访问）应该首字母大写。另外，名称应该尽可能地表达其含义，避免缩写或不必要的简称。例如：// 不符合 Go 规范的写法var num intfunc calc(x int, y int) int {}// 符合 Go 规范的写法var number intfunc Calculate(x int, y int) int {}  注释：在 Go 语言中，注释使用 // 或 /_ … _/ 来表示单行或多行注释。每个包、函数、类型、方法和变量都应该添加注释，以便其他人更容易理解你的代码。注释应该简短、精确，尽可能用单行注释。例如：// 计算两个数字的和func Add(x int, y int) int {    return x + y}  导入：在 Go 语言中，应该将所有依赖项导入放在文件顶部，每个导入占一行，并按字母顺序排列。如果要使用包中的某些函数或变量，应该使用包名称作为前缀。例如：import (    \"fmt\"    \"io/ioutil\"    \"net/http\")func main() {    resp, err := http.Get(\"http://example.com\")    if err != nil {        // ...    }    defer resp.Body.Close()    body, err := ioutil.ReadAll(resp.Body)    if err != nil {        // ...    }    fmt.Println(string(body))}  错误处理：在 Go 语言中，错误处理是一种重要的编程技术。通常情况下，函数返回值应该包括一个 error 类型的变量，用于指示函数执行是否成功。可以使用 errors 包来创建自定义错误。例如：func DoSomething() error {    if err := doStep1(); err != nil {        return err    }    if err := doStep2(); err != nil {        return err    }    return nil}func doStep1() error {    // 如果发生错误，则返回自定义的错误    return errors.New(\"发生了一个错误\")}  测试：为每个函数和方法编写测试代码是 Go 语言中的一条重要规则。测试代码应该覆盖每个函数的所有分支路径，以保证代码质量。同时，应该使用测试框架（如 Go 的内置测试框架）来自动运行测试代码。例如：func TestAdd(t *testing.T) {    result := Add(2, 3)    if result != 5 {        t.Errorf(\"Add(2, 3) = %d; want 5\", result)    }}"
+    "content": "代码规范Go 代码规范（或 Go 规范）旨在使代码更具可读性、可维护性和可重用性。以下是一些主要的规则：  格式化：使用 gofmt 工具来格式化代码以提高可读性。  命名：遵循有意义的命名方式，使用驼峰式命名法，在变量名和函数名中使用小写字母开头，公共函数和变量名应该首字母大写。  注释：对于每一个包、函数、类型、方法和变量都应该添加注释，尽可能用单行注释。  导入：将所有依赖项导入放在文件顶部。  错误处理：避免使用 panic 和 recover 函数，应该使用错误处理机制来处理错误。  测试：为每个函数编写测试代码，并确保测试覆盖率达到最大程度。  接口：尽可能使用接口类型而不是具体类型，因为接口类型灵活且易于扩展。  并发：使用 goroutine 和通道来实现并发操作，而不是使用共享内存。  包结构：将相关的函数和变量组织成包，同时避免循环依赖。  性能：尽可能使用指针和原始数据类型来提高性能，同时避免过度优化。详细解释好的，以下是更详细的 Go 代码规范：  格式化：Go 官方推荐使用 gofmt 工具进行格式化。gofmt 是一个命令行工具，它会自动将代码格式化为 Go 规范。例如：// 不符合 Go 规范的写法if (x==0) {    // ...}// 符合 Go 规范的写法if x == 0 {    // ...}  命名：在 Go 语言中，驼峰式命名法是首选。变量名和函数名应该以小写字母开头，公共函数和变量名（可以被其他包访问）应该首字母大写。另外，名称应该尽可能地表达其含义，避免缩写或不必要的简称。例如：// 不符合 Go 规范的写法var num intfunc calc(x int, y int) int {}// 符合 Go 规范的写法var number intfunc Calculate(x int, y int) int {}  注释：在 Go 语言中，注释使用 // 或 /_ … _/ 来表示单行或多行注释。每个包、函数、类型、方法和变量都应该添加注释，以便其他人更容易理解你的代码。注释应该简短、精确，尽可能用单行注释。例如：// 计算两个数字的和func Add(x int, y int) int {    return x + y}  导入：在 Go 语言中，应该将所有依赖项导入放在文件顶部，每个导入占一行，并按字母顺序排列。如果要使用包中的某些函数或变量，应该使用包名称作为前缀。例如：import (    \"fmt\"    \"io/ioutil\"    \"net/http\")func main() {    resp, err := http.Get(\"http://example.com\")    if err != nil {        // ...    }    defer resp.Body.Close()    body, err := ioutil.ReadAll(resp.Body)    if err != nil {        // ...    }    fmt.Println(string(body))}  错误处理：在 Go 语言中，错误处理是一种重要的编程技术。通常情况下，函数返回值应该包括一个 error 类型的变量，用于指示函数执行是否成功。可以使用errors 包来创建自定义错误。例如：func DoSomething() error {    if err := doStep1(); err != nil {        return err    }    if err := doStep2(); err != nil {        return err    }    return nil}func doStep1() error {    // 如果发生错误，则返回自定义的错误    return errors.New(\"发生了一个错误\")}  测试：为每个函数和方法编写测试代码是 Go 语言中的一条重要规则。测试代码应该覆盖每个函数的所有分支路径，以保证代码质量。同时，应该使用测试框架（如Go 的内置测试框架）来自动运行测试代码。例如：func TestAdd(t *testing.T) {    result := Add(2, 3)    if result != 5 {        t.Errorf(\"Add(2, 3) = %d; want 5\", result)    }}"
   },
   
   {
     "title": "Golang Iris",
     "url": "/posts/iris-base/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoWeb, Iris",
+    "tags": "Go, GoWeb",
     "date": "2019-04-29 22:58:36 +0800",
     
 
@@ -2605,7 +2605,7 @@
     "title": "web Swagger",
     "url": "/posts/swagger/",
     "categories": "Language, Go",
-    "tags": "Server, Go, GoWeb, GoWbeTool",
+    "tags": "Go, GoWeb",
     "date": "2019-04-29 22:58:36 +0800",
     
 
@@ -2962,7 +2962,7 @@
     "title": "手机推送",
     "url": "/posts/appOffLinePush/",
     "categories": "Dev, Utils",
-    "tags": "Dev, Client, AppPush",
+    "tags": "Client",
     "date": "2019-02-12 22:58:36 +0800",
     
 
@@ -2996,7 +2996,7 @@
     "title": "Idea 快捷键",
     "url": "/posts/idea-use/",
     "categories": "Dev, Utils",
-    "tags": "Dev, DevTools, Idea",
+    "tags": "Tools",
     "date": "2019-01-26 12:48:54 +0800",
     
 
