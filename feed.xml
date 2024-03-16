@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-03-16T15:44:02+08:00</updated>
+  <updated>2024-03-16T15:48:23+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,62 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Kubernetes Work CMD</title>
+    <link href="https://cc360428.github.io//posts/k8s-work-cmd/" rel="alternate" type="text/html" title="Kubernetes Work CMD" />
+    <published>2024-03-16T12:23:54+08:00</published>
+  
+    <updated>2024-03-16T12:23:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/k8s-work-cmd/</id>
+    <content src="https://cc360428.github.io//posts/k8s-work-cmd/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="DevOps" />
+    
+    <category term="Kubernetes" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Work CMD
+
+
+  work cmd
+
+
+generate
+
+#!/bin/bash
+KUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view --flatten &amp;gt;./config
+KUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view --flatten &amp;gt;~/.kube/config
+
+
+cmd
+
+#!/bin/bash
+
+kubectl config get-contexts        # 列出所有上下文
+kubectl config use-context ind_dev # 切换上下文
+kubectl config view                # 验证配置
+#  ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -220,75 +276,6 @@ def get_hide(redis_client, keys, output_file):
   
   
     滚动更新: Deployment 支持滚动更新应用程序的新版本。您可以更新 Deployment 的配置文件，例如更新容器镜像的版本，然后 Kubernetes 会逐步创建新的 Pod 副本并停止旧的 ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Rust Tools</title>
-    <link href="https://cc360428.github.io//posts/rust-tools/" rel="alternate" type="text/html" title="Rust Tools" />
-    <published>2023-11-06T11:58:36+08:00</published>
-  
-    <updated>2023-11-06T11:58:36+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/rust-tools/</id>
-    <content src="https://cc360428.github.io//posts/rust-tools/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Language" />
-    
-    <category term="Rust" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Cargo
-
-
-  Cargo 是 Rust 的构建工具和包管理器。它用于创建、构建、测试和发布 Rust 项目，以及管理项目的依赖关系。
-  
-    示例：创建一个新的 Rust 项目并构建它。
-
-    cargo new my_project
-cd my_project
-cargo build
-    
-  
-
-
-Cargo Clippy
-
-
-  Cargo Clippy 是一个 Rust 静态分析工具，用于检测和纠正潜在的代码问题和风格建议。
-  
-    示例：运行 Clippy 来检查代码。
-
-    cargo clippy
-    
-  
-
-
-Cargo Fmt
-
-
-  Cargo Fmt 是 Rust 的代码格式化工具，用于自动格式化 Rust 代码，以确保代码风格的一致性。
-  
-    示例：使用 Cargo Fmt 格式化 Rust 代码。
-
-    car...
     </summary>
   
 

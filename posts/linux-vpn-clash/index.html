@@ -1027,13 +1027,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/shellother/">System Linux Error</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/bash_shell/">零散的脚本</a>
         </li>
       
@@ -1056,6 +1049,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/go-interview-algorithm/">Golang Interview algorithm</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/go-interview-base/">Golang Interview Base</a>
         </li>
       
     </ul>
@@ -2516,6 +2516,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -3071,58 +3083,6 @@ services:
         </article>
       
         <article class="col">
-          <a href="/posts/cmd-docker/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1683605341"
-  data-df="ll"
-  
->
-  May  9, 2023
-</time>
-
-              <h4 class="pt-0 my-2">Docker 基础命令</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Docker
-
-Docker 基本使用
-
-
-  docker run: 运行一个容器
-
-
-这是启动 Docker 容器最基本的命令。它会从指定的镜像创建一个新的容器，并在其中运行指定的命令。例如：
-
-docker run ubuntu /bin/bash
-
-
-这将使用 ubuntu 镜像创建一个新的容器，并在其中启动 bash shell。
-
-
-  docker ps: 列出当前正在运行的容...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/docker-compose/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -3158,6 +3118,49 @@ docker run ubuntu /bin/bash
 Docker Compose 是 Docker 官方提供的一种用于管理容器化应用程序的工具，它可以通过编写一个 YAML 文件来定义和配置多个 Docker 容器的运行方式和相互关系，然后使用 docker-compose 命令来启动、停止、构建、重启、删除等操作。
 
 使用 Docker Compose 的主要优点是可以轻松地处理多个 Docker 容...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Kubernetes/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1683700981"
+  data-df="ll"
+  
+>
+  May 10, 2023
+</time>
+
+              <h4 class="pt-0 my-2">kubectl 基础命令</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  kubectl
+
+简介
+
+
+  kubectl 是 Kubernetes 命令行工具，用于与 Kubernetes 集群进行交互和管理。
+  它可以用来部署应用程序，管理集群资源（例如 Pod、Service 和 ReplicaSet 等），
+  诊断和调试问题，以及执行其他与 Kubernetes 相关的任务。通过 kubectl，您可以在命令行界面中执行所有 Kubernetes API...
                 </p>
               </div>
             </div>

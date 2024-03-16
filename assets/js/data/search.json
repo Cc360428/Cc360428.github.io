@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Kubernetes Work CMD",
+    "url": "/posts/k8s-work-cmd/",
+    "categories": "DevOps, Kubernetes",
+    "tags": "LinuxTool, Kubernetes",
+    "date": "2024-03-16 12:23:54 +0800",
+    
+
+
+
+
+
+    
+    "snippet": "Work CMD  work cmdgenerate#!/bin/bashKUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view --flatten &gt;./configKUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl conf...",
+    "content": "Work CMD  work cmdgenerate#!/bin/bashKUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view --flatten &gt;./configKUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view --flatten &gt;~/.kube/configcmd#!/bin/bashkubectl config get-contexts        # 列出所有上下文kubectl config use-context ind_dev # 切换上下文kubectl config view                # 验证配置#  # 创建新的上下文# kubectl config set-context &lt;context-name&gt; --cluster=&lt;cluster-name&gt; --user=&lt;user-name&gt; --namespace=&lt;namespace&gt;# # 配置集群# kubectl config set-cluster &lt;cluster-name&gt; --server=&lt;api-server-url&gt; --certificate-authority=&lt;ca-file&gt;kubectl rollout restart deployment ferry -n commonkubectl rollout restart deployment yxx -n gameskubectl rollout restart deployment game-gate -n gameskubectl rollout restart deployment tienlenkubectl rollout restart deployment tienlen-aikubectl get pods --sort-by=.metadata.namekubectl get pods --sort-by=.status.phasekubectl get pods --sort-by=.status.startTimekubectl get pods --sort-by=.spec.nodeNamekubectl describe pod ferry-6dddddd849-km9ffkubectl describe node k8s-master1kubectl describe service ferrykubectl describe deployment ferrykubectl get events --field-selector involvedObject.name=ferry,involvedObject.namespace=gameshelm install bonus-texas .# hallUrl = # gsUrl = # hallUrl = \"http://hall.testing:9527/hall/\"# gsUrl = \"http://gs.testing:9000/gs/2016/\"# addr = helm repo add vietnam --username username --password password https://urlkubectl set image deployment/ferry ferry=images:v1-0-1 -n common"
+  },
+  
+  {
     "title": "开发脚本",
     "url": "/posts/redis-py-utils/",
     "categories": "Dev, Utils",

@@ -35,25 +35,25 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Protocol Buffer 语法" />
+<meta property="og:title" content="Kubernetes Work CMD" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Protocol Buffer语法" />
-<meta property="og:description" content="Protocol Buffer语法" />
-<link rel="canonical" href="https://cc360428.github.io//posts/Protocol-Buffer/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/Protocol-Buffer/" />
+<meta name="description" content="Services" />
+<meta property="og:description" content="Services" />
+<link rel="canonical" href="https://cc360428.github.io//posts/k8s-work-cmd/" />
+<meta property="og:url" content="https://cc360428.github.io//posts/k8s-work-cmd/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-12-26T14:22:12+08:00" />
+<meta property="article:published_time" content="2024-03-16T12:23:54+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Protocol Buffer 语法" />
+<meta property="twitter:title" content="Kubernetes Work CMD" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-27T09:57:59+08:00","datePublished":"2019-12-26T14:22:12+08:00","description":"Protocol Buffer语法","headline":"Protocol Buffer 语法","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/Protocol-Buffer/"},"url":"https://cc360428.github.io//posts/Protocol-Buffer/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-03-16T12:23:54+08:00","datePublished":"2024-03-16T12:23:54+08:00","description":"Services","headline":"Kubernetes Work CMD","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/k8s-work-cmd/"},"url":"https://cc360428.github.io//posts/k8s-work-cmd/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Protocol Buffer 语法 | Cc Blog
+  <title>Kubernetes Work CMD | Cc Blog
   </title>
 
   <!--
@@ -471,7 +471,7 @@
         
           
             
-              <span>Protocol Buffer 语法</span>
+              <span>Kubernetes Work CMD</span>
             
 
           
@@ -554,6 +554,27 @@
   
 
   
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
 
   
   
@@ -566,6 +587,17 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -601,7 +633,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Protocol Buffer 语法</h1>
+    <h1 data-toc-skip>Kubernetes Work CMD</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -617,41 +649,18 @@
 
 <time
   
-  data-ts="1577341332"
+  data-ts="1710563034"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Dec 26, 2019
+  Mar 16, 2024
 </time>
 
       </span>
 
       <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1703642279"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Dec 27, 2023
-</time>
-
-        </span>
       
 
       
@@ -691,9 +700,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="780 words"
+  title="225 words"
 >
-  <em>4 min</em> read</span>
+  <em>1 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -702,146 +711,105 @@
   </header>
 
   <div class="content">
-    <h3 id="protocol-buffer语法"><span class="me-2">Protocol Buffer语法</span><a href="#protocol-buffer语法" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="work-cmd"><span class="me-2">Work CMD</span><a href="#work-cmd" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>好的，下面我将更详细地说明 Protobuf 的语法。</p>
+<blockquote>
+  <p>work cmd</p>
+</blockquote>
 
-<ol>
-  <li>Protobuf 版本</li>
-</ol>
+<h3 id="generate"><span class="me-2">generate</span><a href="#generate" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版本，proto3 是新版本。proto3 做了很多改进，比如对标量类型的定义进行了优化，使其更加严格和一致；移除了一些不必要的特性；默认情况下启用了所有字段都是 required 约束（但现在 required 已经被标记为 deprecated）等等。</p>
-
-<p>在 Protobuf 文件开头需要指定使用的版本，例如：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>syntax = "proto3";
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>可以通过这个语句来告诉编译器使用 proto3 版本。</p>
-
-<ol>
-  <li>包名</li>
-</ol>
-
-<p>与许多编程语言类似，Protobuf 中也有包名的概念。一个 Protobuf 文件通常属于一个特定的包，并且由该包内的多个消息组成。</p>
-
-<p>使用 <code class="language-plaintext highlighter-rouge">package</code> 关键字来指定包名，例如：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>package example;
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>这里指定了文件所属的包为 <code class="language-plaintext highlighter-rouge">example</code>。</p>
-
-<ol>
-  <li>引入其他文件</li>
-</ol>
-
-<p>如果一个 Protobuf 文件依赖于另一个文件中定义的类型，那么可以使用 <code class="language-plaintext highlighter-rouge">import</code> 关键字来引入该文件。例如：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>import "google/protobuf/timestamp.proto";
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>这里引入了 Google 提供的 Protobuf 文件中的 timestamp.proto 文件，使得我们可以在该文件中使用 Timestamp 类型。</p>
-
-<ol>
-  <li>消息类型</li>
-</ol>
-
-<p>在 Protobuf 中，使用 <code class="language-plaintext highlighter-rouge">message</code> 关键字来定义消息类型。一个消息由一个或多个字段组成，每个字段有一个名称和一个类型。</p>
-
-<p>例如：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4
-</pre></td><td class="rouge-code"><pre>message Person {
-  string name = 1;
-  int32 age = 2;
-}
+</pre></td><td class="rouge-code"><pre><span class="c">#!/bin/bash</span>
+<span class="nv">KUBECONFIG</span><span class="o">=</span>ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view <span class="nt">--flatten</span> <span class="o">&gt;</span>./config
+<span class="nv">KUBECONFIG</span><span class="o">=</span>ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view <span class="nt">--flatten</span> <span class="o">&gt;</span>~/.kube/config
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>这里定义了一个名为 Person 的消息类型，它有两个字段：name 和 age。name 的类型是 string，age 的类型是 int32。</p>
+<h3 id="cmd"><span class="me-2">cmd</span><a href="#cmd" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<ol>
-  <li>字段</li>
-</ol>
-
-<p>Protobuf 中的字段可以具有以下属性：</p>
-
-<ul>
-  <li>名称：用于标识该字段。</li>
-  <li>类型：定义了该字段所能包含的数据类型。</li>
-  <li>标识号：用于在二进制编码中标识该字段。</li>
-  <li>规则：指定该字段是否是必需的，可选的，重复的等。</li>
-</ul>
-
-<p>例如：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 6
-</pre></td><td class="rouge-code"><pre>message Person {
-  string name = 1;
-  int32 age = 2;
-  repeated string address = 3;
-  bool is_student = 4 [default = false];
-}
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="rouge-code"><pre><span class="c">#!/bin/bash</span>
+
+kubectl config get-contexts        <span class="c"># 列出所有上下文</span>
+kubectl config use-context ind_dev <span class="c"># 切换上下文</span>
+kubectl config view                <span class="c"># 验证配置</span>
+<span class="c">#  # 创建新的上下文</span>
+<span class="c"># kubectl config set-context &lt;context-name&gt; --cluster=&lt;cluster-name&gt; --user=&lt;user-name&gt; --namespace=&lt;namespace&gt;</span>
+<span class="c"># # 配置集群</span>
+<span class="c"># kubectl config set-cluster &lt;cluster-name&gt; --server=&lt;api-server-url&gt; --certificate-authority=&lt;ca-file&gt;</span>
+kubectl rollout restart deployment ferry <span class="nt">-n</span> common
+kubectl rollout restart deployment yxx <span class="nt">-n</span> games
+
+kubectl rollout restart deployment game-gate <span class="nt">-n</span> games
+kubectl rollout restart deployment tienlen
+kubectl rollout restart deployment tienlen-ai
+kubectl get pods <span class="nt">--sort-by</span><span class="o">=</span>.metadata.name
+kubectl get pods <span class="nt">--sort-by</span><span class="o">=</span>.status.phase
+kubectl get pods <span class="nt">--sort-by</span><span class="o">=</span>.status.startTime
+kubectl get pods <span class="nt">--sort-by</span><span class="o">=</span>.spec.nodeName
+kubectl describe pod ferry-6dddddd849-km9ff
+kubectl describe node k8s-master1
+kubectl describe service ferry
+kubectl describe deployment ferry
+kubectl get events <span class="nt">--field-selector</span> involvedObject.name<span class="o">=</span>ferry,involvedObject.namespace<span class="o">=</span>games
+
+helm <span class="nb">install </span>bonus-texas <span class="nb">.</span>
+
+<span class="c"># hallUrl = </span>
+<span class="c"># gsUrl = </span>
+<span class="c"># hallUrl = "http://hall.testing:9527/hall/"</span>
+<span class="c"># gsUrl = "http://gs.testing:9000/gs/2016/"</span>
+
+<span class="c"># addr = </span>
+
+helm repo add vietnam <span class="nt">--username</span> username <span class="nt">--password</span> password https://url
+
+kubectl <span class="nb">set </span>image deployment/ferry <span class="nv">ferry</span><span class="o">=</span>images:v1-0-1 <span class="nt">-n</span> common
+
 </pre></td></tr></tbody></table></code></div></div>
-
-<p>这里定义了四个字段：</p>
-
-<ul>
-  <li>name：类型为 string，标识号为 1，必需的。</li>
-  <li>age：类型为 int32，标识号为 2，必需的。</li>
-  <li>address：类型为 string 数组，标识号为 3，可重复的。</li>
-  <li>is_student：类型为 bool，标识号为 4，可选的，默认值为 false。</li>
-</ul>
-
-<ol>
-  <li>枚举</li>
-</ol>
-
-<p>除了消息类型之外，Protobuf 还支持枚举类型。通过 <code class="language-plaintext highlighter-rouge">enum</code> 关键字定义一个枚举类型，例如：</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre>enum PhoneType {
-  MOBILE = 0;
-  HOME = 1;
-  WORK = 2;
-}
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>这里定义了一个名为 PhoneType 的枚举类型，它包含三个值：MOBILE、HOME 和 WORK，对应的值分别为 0、1 和 2。</p>
-
-<ol>
-  <li>其他特性</li>
-</ol>
-
-<p>除了上述基本语法之外，Protobuf 还支持许多其他特性，如注释、嵌套类型、扩展等。具体可以参考 Protobuf 官方文档。</p>
-
 
   </div>
 
@@ -851,8 +819,8 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/language/">Language</a>,
-          <a href="/categories/go/">Go</a>
+          <a href="/categories/devops/">DevOps</a>,
+          <a href="/categories/kubernetes/">Kubernetes</a>
       </div>
     
 
@@ -862,14 +830,14 @@
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/go/"
+            href="/tags/linuxtool/"
             class="post-tag no-text-decoration"
-          >Go</a>
+          >LinuxTool</a>
         
           <a
-            href="/tags/goweb/"
+            href="/tags/kubernetes/"
             class="post-tag no-text-decoration"
-          >GoWeb</a>
+          >Kubernetes</a>
         
       </div>
     
@@ -905,21 +873,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Protocol%20Buffer%20%E8%AF%AD%E6%B3%95%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2FProtocol-Buffer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Kubernetes%20Work%20CMD%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fk8s-work-cmd%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Protocol%20Buffer%20%E8%AF%AD%E6%B3%95%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2FProtocol-Buffer%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Kubernetes%20Work%20CMD%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fk8s-work-cmd%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2FProtocol-Buffer%2F&text=Protocol%20Buffer%20%E8%AF%AD%E6%B3%95%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fk8s-work-cmd%2F&text=Kubernetes%20Work%20CMD%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2427,619 +2395,7 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -3595,7 +2951,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/restful/" class="post-preview card h-100">
+          <a href="/posts/kubectl/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3607,14 +2963,14 @@
 
 <time
   
-  data-ts="1556549916"
+  data-ts="1695278918"
   data-df="ll"
   
 >
-  Apr 29, 2019
+  Sep 21, 2023
 </time>
 
-              <h4 class="pt-0 my-2">web restful</h4>
+              <h4 class="pt-0 my-2">Kubernetes Manager</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3623,22 +2979,12 @@
 
 
 
-                  restful
+                  helm
 
-理解
+命令警告
 
-要理解 RESTful 架构，需要理解 Representational State Transfer 这个词组到底是什么意思，它的每一个词都有些什么涵义。
-
-下面我们结合 REST 原则，围绕资源展开讨论，从资源的定义、获取、表述、关联、状态变迁等角度，列举一些关键概念并加以解释
-
-资源与 URL
-
-统一资源接口
-
-资源的表达
-
-状态的转移
-
+WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /Users/cc/.kube/config
+WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
                 </p>
               </div>
             </div>
@@ -3646,7 +2992,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/swagger/" class="post-preview card h-100">
+          <a href="/posts/k8sBase/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3658,14 +3004,14 @@
 
 <time
   
-  data-ts="1556549916"
+  data-ts="1584885600"
   data-df="ll"
   
 >
-  Apr 29, 2019
+  Mar 22, 2020
 </time>
 
-              <h4 class="pt-0 my-2">web Swagger</h4>
+              <h4 class="pt-0 my-2">Kubernetes概述</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3674,22 +3020,13 @@
 
 
 
-                  swag
+                  Kubernetes
 
+简介
 
-  使用说明
+Kubernetes 是用于自动化容器操作的开源平台。它允许开发者在多个主机上部署、运行和管理容器化应用程序，并提供了一致性、可扩展性和弹性等方面的保障。
 
-
-安装下载依赖
-
-go get github.com/swaggo/swag/cmd/swag
-go get -u github.com/swaggo/gin-swagger
-go get -u github.com/swaggo/gin-swagger/swaggerFiles
-
-
-使用参考
-
-https://gitee.com/ClientCodeFile/...
+Kubernetes 的设计目标是实现跨不同主机和云环境的容器编排。它可以运行在所有主流的云平台和数据中心中，包括 Amazon Web Services（AWS）、Microsoft Azure、Goo...
                 </p>
               </div>
             </div>
@@ -3697,7 +3034,7 @@ https://gitee.com/ClientCodeFile/...
         </article>
       
         <article class="col">
-          <a href="/posts/iris-base/" class="post-preview card h-100">
+          <a href="/posts/deployment/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3709,14 +3046,14 @@ https://gitee.com/ClientCodeFile/...
 
 <time
   
-  data-ts="1556549916"
+  data-ts="1700794014"
   data-df="ll"
   
 >
-  Apr 29, 2019
+  Nov 24, 2023
 </time>
 
-              <h4 class="pt-0 my-2">Golang Iris</h4>
+              <h4 class="pt-0 my-2">Kubernetes Deploymen</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3725,8 +3062,14 @@ https://gitee.com/ClientCodeFile/...
 
 
 
-                  
+                  Base
 
+
+  
+    副本集（ReplicaSet）: Deployment 使用副本集来确保指定数量的 Pod 副本在集群中运行。副本集定义了 Pod 的模板和副本数量，并负责监控 Pod 的运行状态。如果 Pod 发生故障或被删除，副本集将自动创建新的 Pod 来替换它。
+  
+  
+    声明式配置: Deployment 使用声明式的方式来定义应用程序的部署状态。您可以编写一...
                 </p>
               </div>
             </div>
@@ -3748,22 +3091,18 @@ https://gitee.com/ClientCodeFile/...
 
   
     <a
-      href="/posts/Consul/"
+      href="/posts/redis-py-utils/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Constl</p>
+      <p>开发脚本</p>
     </a>
   
 
   
-    <a
-      href="/posts/gRPC/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>gRPC 和 ui 操作</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
