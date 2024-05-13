@@ -1116,13 +1116,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/clickhouse-base/">ClickHouse</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/redis-py-utils/">开发脚本</a>
         </li>
       
@@ -1131,6 +1124,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/services/">Kubernetes Services</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/deployment/">Kubernetes Deploymen</a>
         </li>
       
     </ul>
@@ -2715,19 +2715,19 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -3126,7 +3126,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/mysql-database/" class="post-preview card h-100">
+          <a href="/posts/mysql-operate/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3145,7 +3145,7 @@
   Dec  9, 2018
 </time>
 
-              <h4 class="pt-0 my-2">MySQL Database</h4>
+              <h4 class="pt-0 my-2">MySQL Operate</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3154,8 +3154,21 @@
 
 
 
-                  
+                  数据库（Database）
 
+库阈值
+
+
+  MySQL 8.0 版本之前，一个数据库中最多可以有 65535 个表。因为 采用 16 位 最大值为 2^16 - 1 = 65535
+  MySQL 8.0 开始，采用 32 位整数来存储表的数量，因此最大值变成了 2^32 - 1
+
+
+数据库规范
+
+
+  命名规范
+    
+      使用有意义且描述性强的名称，避免使用无意义的缩写或简写...
                 </p>
               </div>
             </div>

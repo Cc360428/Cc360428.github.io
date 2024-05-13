@@ -938,13 +938,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/clickhouse-base/">ClickHouse</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/redis-py-utils/">开发脚本</a>
         </li>
       
@@ -953,6 +946,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/services/">Kubernetes Services</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/deployment/">Kubernetes Deploymen</a>
         </li>
       
     </ul>
@@ -2973,6 +2973,51 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
+          <a href="/posts/testing-base/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1683594301"
+  data-df="ll"
+  
+>
+  May  9, 2023
+</time>
+
+              <h4 class="pt-0 my-2">API测试工具</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  API 压力测试
+
+以下是常用的 API 压力测试工具：
+
+
+  
+    Apache JMeter：JMeter 是一个开源的 Java 应用程序，可以用于负载测试、性能测试和压力测试。它支持多种协议，包括 HTTP, FTP, JDBC 等。
+  
+  
+    Gatling：Gatling 是一个基于 Scala 的开源负载测试工具，可以用于 Web、WebSocket 和 JMS...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/vscode-conf/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -3124,54 +3169,6 @@ environments
 
 pm.test(&quot;Reuest Status &quot;,function() {
     pm.res...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/postman-env/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1690335205"
-  data-df="ll"
-  
->
-  Jul 26, 2023
-</time>
-
-              <h4 class="pt-0 my-2">Postman env</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  管理环境
-
-为什么要环境管理
-
-一个典型的使用环境可能工作如下:
-
-
-  你有生产 API 和开发 API,在不同的位置。
-  你用两个环境,一个用于开发和生产。
-  每个环境包含一个变量来存储基础 URL。
-  指的是变量集合中的每个请求的 URL 字段。
-  你之间切换环境运行时要求测试它们对开发或生产环境。
-  在您的组织中,您可能有一个团队,只有进入开发环境,并与编辑个体的团队成员和...
                 </p>
               </div>
             </div>

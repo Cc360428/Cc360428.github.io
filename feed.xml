@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-13T11:53:26+08:00</updated>
+  <updated>2024-05-13T16:59:30+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -61,52 +61,6 @@
   工作原理：当用户请求访问一个网站或者特定的内容时，CDN 系统会自动选择最接近用户的服务器节点来提供内容。这样做可以减少数据传输的距离，从而降低延迟和提高加载速度。
   内容缓存：CDN 会将网站的静态内容（如图像、样式表、脚本等）缓存到其服务器节点上。当有用户请求相同内容时，CDN 会直接从缓存中提供，而不是从原始服务器获取，这样可以减轻原始服务器的负载。
   负载均衡：CDN 能够智能地分配...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>ClickHouse</title>
-    <link href="https://cc360428.github.io//posts/clickhouse-base/" rel="alternate" type="text/html" title="ClickHouse" />
-    <published>2024-04-08T12:48:54+08:00</published>
-  
-    <updated>2024-04-08T12:48:54+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/clickhouse-base/</id>
-    <content src="https://cc360428.github.io//posts/clickhouse-base/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="Dev" />
-    
-    <category term="Database" />
-    
-    <category term="Clickhouse" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      ClickHouse 是一个用于实时分析的开源列式数据库管理系统 (DBMS)，它最初由俄罗斯的 Yandex 公司开发，并且在 2016 年开源。下面是一些关于 ClickHouse 的介绍、优缺点以及一些最大阈值的信息：
-
-介绍
-
-
-  列式存储 ：ClickHouse 是一个列式存储的数据库，这意味着它将数据按列而不是按行存储。这种存储方式使得它非常适合进行大规模的数据分析和聚合操作。
-  高性能 ：ClickHouse 的设计目标之一是提供高性能的数据查询和分析能力。它能够处理大量数据，并且在复杂的查询情况下保持高性能。
-  分布式架构 ：ClickHouse 支持分布式架构，可以水平扩展以处理大规模数据集。它可以通过添加更多的节点来增加存储容量和查询吞吐量。
-  SQL 兼容性 ：ClickHouse 支持 SQL 查询语言，这使得用户可以使用熟悉的语法进行数据分析和查询操...
     </summary>
   
 
@@ -282,6 +236,48 @@ def get_hide(redis_client, keys, output_file):
           外部流量可以通过节点的 IP 地址和 NodePort 访问服务。
           使用选择器将流量路由到匹配的 Pod。
           适用于需要从集群外部访问服务的...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Kubernetes Pod</title>
+    <link href="https://cc360428.github.io//posts/pod/" rel="alternate" type="text/html" title="Kubernetes Pod" />
+    <published>2023-11-24T10:46:54+08:00</published>
+  
+    <updated>2023-11-24T10:46:54+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/pod/</id>
+    <content src="https://cc360428.github.io//posts/pod/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="DevOps" />
+    
+    <category term="Kubernetes" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Base
+
+
+  容器组合：Pod 是一个逻辑上的容器组合，可以包含一个或多个容器。这些容器在 Pod 内部共享相同的命名空间和网络，可以通过 localhost 相互通信。Pod 内的容器通常协同工作，处理应用程序的不同部分或服务。
+  网络和 IP 地址：每个 Pod 都有一个唯一的 IP 地址，用于在集群内部或集群外部进行访问。Pod 内的所有容器共享相同的网络命名空间，它们可以使用相同的 IP 地址和端口空间进行通信。这使得容器之间的通信更加简单，可以使用本地主机地址（localhost）进行通信。
+  存储和卷：Pod 可以使用存储卷（Volume）来共享和持久化数据。存储卷可以附加到 Pod 中的一个或多个容器，并提供持久化的文件系统或数据卷。这使得多个容器可以通过共享卷进行文件共享或数据交换。
+  生命周期管理：Pod 有一个生命周期，它从创建状态开始，经过运行状态，最...
     </summary>
   
 

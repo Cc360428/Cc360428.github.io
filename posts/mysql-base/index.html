@@ -652,6 +652,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -748,9 +759,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3906 words"
+  title="4129 words"
 >
-  <em>21 min</em> read</span>
+  <em>22 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -782,6 +793,35 @@
   <li><strong>社区支持和生态系统</strong>：MySQL 拥有庞大的用户社区和开发者社区，用户可以在社区中获取到丰富的资源、文档和支持。此外，MySQL 生态系统也非常丰富，有许多第三方工具和插件可以与 MySQL 集成，扩展其功能和应用场景。</li>
 </ol>
 
+<h2 id="事务"><span class="me-2">事务</span><a href="#事务" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>特性</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>原子性（Atomicity）</td>
+      <td>事务是一个不可分割的工作单位，要么全部执行成功，要么全部失败回滚。</td>
+    </tr>
+    <tr>
+      <td>一致性（Consistency）</td>
+      <td>事务执行前后数据库的完整性约束不会被破坏，即使事务执行失败也不会导致数据处于不一致的状态。</td>
+    </tr>
+    <tr>
+      <td>隔离性（Isolation）</td>
+      <td>多个事务同时执行时，各个事务之间是相互隔离的，一个事务的执行不会受到其他事务的影响。</td>
+    </tr>
+    <tr>
+      <td>持久性（Durability）</td>
+      <td>事务一旦提交，其结果将会被永久保存在数据库中，并且不会被回滚。即使发生系统崩溃，数据库系统也能够通过日志等方式恢复数据，保证事务的持久性。</td>
+    </tr>
+  </tbody>
+</table></div>
+
 <h2 id="关系型数据库"><span class="me-2">关系型数据库</span><a href="#关系型数据库" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
@@ -789,33 +829,15 @@
 </blockquote>
 
 <ol>
-  <li>
-    <p><strong>表（Table）</strong>：表是关系型数据库中的基本单位，用于存储特定类型的数据。每个表由一系列行和列组成，行代表记录，列代表字段。表可以有不同的列，每列具有特定的数据类型，如整数、字符、日期等。</p>
-  </li>
-  <li>
-    <p><strong>行（Row）</strong>：行也称为记录或元组，代表表中的一个实体或数据项。每行包含了一组相关的数据，每个字段对应一个数据值。行之间的顺序一般没有特定意义，可以通过主键来唯一标识和区分各行。</p>
-  </li>
-  <li>
-    <p><strong>列（Column）</strong>：列是表的结构化部分，用于定义每个记录的属性。每列具有特定的数据类型和约束，如整数、字符、日期、唯一性约束、非空约束等。列名通常用于标识和访问特定的数据项。</p>
-  </li>
-  <li>
-    <p><strong>主键（Primary Key）</strong>：主键是表中用于唯一标识每行记录的一列或一组列。主键必须是唯一的，且不能为空。通过主键可以快速定位和访问表中的特定记录，保证数据的完整性和一致性。</p>
-  </li>
-  <li>
-    <p><strong>外键（Foreign Key）</strong>：外键是表中的一列，它建立了与其他表之间的关联关系。外键用于指定一个表中的数据与另一个表中的数据之间的关系，通过外键可以实现表之间的引用完整性约束。</p>
-  </li>
-  <li>
-    <p><strong>关系（Relationship）</strong>：关系是指表之间的联系和连接。通过外键建立的关联关系可以帮助我们在多个表之间进行数据查询和操作，实现数据的关联和一致性。</p>
-  </li>
-  <li>
-    <p><strong>SQL（Structured Query Language）</strong>：SQL 是关系型数据库管理系统用于操作数据的标准语言。通过 SQL，用户可以执行各种操作，包括数据的查询、插入、更新、删除等，以及表的创建、修改、删除等管理操作。</p>
-  </li>
-  <li>
-    <p><strong>事务（Transaction）</strong>：事务是一系列数据库操作的集合，它要么全部执行成功，要么全部失败，具有原子性、一致性、隔离性和持久性（ACID 特性）。</p>
-  </li>
-  <li>
-    <p><strong>范式（Normalization）</strong>：范式是用于设计关系型数据库模式的一组规范化原则，旨在减少数据冗余和提高数据的存储效率。通过范式化设计，可以确保数据库的数据结构合理和标准化。</p>
-  </li>
+  <li><strong>表（Table）</strong>：表是关系型数据库中的基本单位，用于存储特定类型的数据。每个表由一系列行和列组成，行代表记录，列代表字段。表可以有不同的列，每列具有特定的数据类型，如整数、字符、日期等。</li>
+  <li><strong>行（Row）</strong>：行也称为记录或元组，代表表中的一个实体或数据项。每行包含了一组相关的数据，每个字段对应一个数据值。行之间的顺序一般没有特定意义，可以通过主键来唯一标识和区分各行。</li>
+  <li><strong>列（Column）</strong>：列是表的结构化部分，用于定义每个记录的属性。每列具有特定的数据类型和约束，如整数、字符、日期、唯一性约束、非空约束等。列名通常用于标识和访问特定的数据项。</li>
+  <li><strong>主键（Primary Key）</strong>：主键是表中用于唯一标识每行记录的一列或一组列。主键必须是唯一的，且不能为空。通过主键可以快速定位和访问表中的特定记录，保证数据的完整性和一致性。</li>
+  <li><strong>外键（Foreign Key）</strong>：外键是表中的一列，它建立了与其他表之间的关联关系。外键用于指定一个表中的数据与另一个表中的数据之间的关系，通过外键可以实现表之间的引用完整性约束。</li>
+  <li><strong>关系（Relationship）</strong>：关系是指表之间的联系和连接。通过外键建立的关联关系可以帮助我们在多个表之间进行数据查询和操作，实现数据的关联和一致性。</li>
+  <li><strong>SQL（Structured Query Language）</strong>：SQL 是关系型数据库管理系统用于操作数据的标准语言。通过 SQL，用户可以执行各种操作，包括数据的查询、插入、更新、删除等，以及表的创建、修改、删除等管理操作。</li>
+  <li><strong>事务（Transaction）</strong>：事务是一系列数据库操作的集合，它要么全部执行成功，要么全部失败，具有原子性、一致性、隔离性和持久性（ACID 特性）。</li>
+  <li><strong>范式（Normalization）</strong>：范式是用于设计关系型数据库模式的一组规范化原则，旨在减少数据冗余和提高数据的存储效率。通过范式化设计，可以确保数据库的数据结构合理和标准化。</li>
 </ol>
 
 <h2 id="数据引擎"><span class="me-2">数据引擎</span><a href="#数据引擎" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -883,34 +905,40 @@
   </tbody>
 </table></div>
 
-<h2 id="sql-类型"><span class="me-2">SQL 类型</span><a href="#sql-类型" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="sql-语言"><span class="me-2">SQL 语言</span><a href="#sql-语言" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="table-wrapper"><table>
   <thead>
     <tr>
       <th>分类</th>
+      <th>简称</th>
       <th>描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>DDL (Data Definition Language)</td>
+      <td>定义</td>
       <td>用于定义、修改和删除数据库对象（表、索引等）的语言。包括 <code class="language-plaintext highlighter-rouge">CREATE</code>、<code class="language-plaintext highlighter-rouge">ALTER</code>、<code class="language-plaintext highlighter-rouge">DROP</code> 等命令。</td>
     </tr>
     <tr>
       <td>DML (Data Manipulation Language)</td>
+      <td>操作</td>
       <td>用于对数据库中的数据进行操作的语言。包括 <code class="language-plaintext highlighter-rouge">INSERT</code>、<code class="language-plaintext highlighter-rouge">UPDATE</code>、<code class="language-plaintext highlighter-rouge">DELETE</code> 等命令。</td>
     </tr>
     <tr>
       <td>DQL (Data Query Language)</td>
+      <td>查询</td>
       <td>用于从数据库中检索数据的语言。主要命令是 <code class="language-plaintext highlighter-rouge">SELECT</code>。</td>
     </tr>
     <tr>
       <td>DCL (Data Control Language)</td>
+      <td>控制</td>
       <td>用于控制数据库访问权限和用户管理的语言。包括 <code class="language-plaintext highlighter-rouge">GRANT</code>、<code class="language-plaintext highlighter-rouge">REVOKE</code> 等命令。</td>
     </tr>
     <tr>
       <td>TCL (Transaction Control Language)</td>
+      <td>事务</td>
       <td>用于管理数据库事务的语言。包括 <code class="language-plaintext highlighter-rouge">COMMIT</code>、<code class="language-plaintext highlighter-rouge">ROLLBACK</code>、<code class="language-plaintext highlighter-rouge">SAVEPOINT</code> 等命令。</td>
     </tr>
   </tbody>
@@ -1163,18 +1191,10 @@
 </blockquote>
 
 <ol>
-  <li>
-    <p><strong>MariaDB</strong>：MariaDB 是 MySQL 的一个分支，它由 MySQL 的原始开发者创建，旨在保持与 MySQL 的兼容性，并提供一些新的功能和改进。因此，MariaDB 在很多方面与 MySQL 非常相似，用户可以轻松地迁移和使用 MariaDB。</p>
-  </li>
-  <li>
-    <p><strong>PostgreSQL</strong>：PostgreSQL 是另一个流行的开源关系型数据库管理系统，与 MySQL 相比，它在一些方面提供了更丰富和更高级的功能，如支持更复杂的数据类型、更强大的事务支持、更灵活的权限管理等。尤其在处理复杂数据结构和需要高级特性的应用场景下，PostgreSQL 往往是一个很好的选择。</p>
-  </li>
-  <li>
-    <p><strong>SQLite</strong>：SQLite 是一个轻量级的嵌入式关系型数据库管理系统，与 MySQL 不同，它不是一个独立的数据库服务器，而是直接嵌入到应用程序中，以库的形式提供。SQLite 适用于一些轻量级的应用场景，如移动应用、桌面应用等，它的特点是简单、易于使用，并且不需要单独的服务器进程。</p>
-  </li>
-  <li>
-    <p><strong>Microsoft SQL Server</strong>：Microsoft SQL Server 是微软开发的关系型数据库管理系统，它与 MySQL 相比在某些方面有所不同，比如更紧密地集成到 Microsoft 的生态系统中、提供更多的企业级特性和服务等。Microsoft SQL Server 通常用于 Windows 平台上的企业应用程序。</p>
-  </li>
+  <li><strong>MariaDB</strong>：MariaDB 是 MySQL 的一个分支，它由 MySQL 的原始开发者创建，旨在保持与 MySQL 的兼容性，并提供一些新的功能和改进。因此，MariaDB 在很多方面与 MySQL 非常相似，用户可以轻松地迁移和使用 MariaDB。</li>
+  <li><strong>PostgreSQL</strong>：PostgreSQL 是另一个流行的开源关系型数据库管理系统，与 MySQL 相比，它在一些方面提供了更丰富和更高级的功能，如支持更复杂的数据类型、更强大的事务支持、更灵活的权限管理等。尤其在处理复杂数据结构和需要高级特性的应用场景下，PostgreSQL 往往是一个很好的选择。</li>
+  <li><strong>SQLite</strong>：SQLite 是一个轻量级的嵌入式关系型数据库管理系统，与 MySQL 不同，它不是一个独立的数据库服务器，而是直接嵌入到应用程序中，以库的形式提供。SQLite 适用于一些轻量级的应用场景，如移动应用、桌面应用等，它的特点是简单、易于使用，并且不需要单独的服务器进程。</li>
+  <li><strong>Microsoft SQL Server</strong>：Microsoft SQL Server 是微软开发的关系型数据库管理系统，它与 MySQL 相比在某些方面有所不同，比如更紧密地集成到 Microsoft 的生态系统中、提供更多的企业级特性和服务等。Microsoft SQL Server 通常用于 Windows 平台上的企业应用程序。</li>
 </ol>
 
   </div>
@@ -1323,13 +1343,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/clickhouse-base/">ClickHouse</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/redis-py-utils/">开发脚本</a>
         </li>
       
@@ -1338,6 +1351,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/services/">Kubernetes Services</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/deployment/">Kubernetes Deploymen</a>
         </li>
       
     </ul>
@@ -3334,7 +3354,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/mysql-database/" class="post-preview card h-100">
+          <a href="/posts/mysql-operate/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3353,7 +3373,7 @@
   Dec  9, 2018
 </time>
 
-              <h4 class="pt-0 my-2">MySQL Database</h4>
+              <h4 class="pt-0 my-2">MySQL Operate</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3362,8 +3382,21 @@
 
 
 
-                  
+                  数据库（Database）
 
+库阈值
+
+
+  MySQL 8.0 版本之前，一个数据库中最多可以有 65535 个表。因为 采用 16 位 最大值为 2^16 - 1 = 65535
+  MySQL 8.0 开始，采用 32 位整数来存储表的数量，因此最大值变成了 2^32 - 1
+
+
+数据库规范
+
+
+  命名规范
+    
+      使用有意义且描述性强的名称，避免使用无意义的缩写或简写...
                 </p>
               </div>
             </div>
@@ -3452,11 +3485,11 @@ mysql&amp;gt; show tables;
 
   
     <a
-      href="/posts/mysql-database/"
+      href="/posts/mysql-operate/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>MySQL Database</p>
+      <p>MySQL Operate</p>
     </a>
   
 </nav>
