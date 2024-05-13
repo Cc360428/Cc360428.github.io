@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="MySQL 忘记密码" />
+<meta property="og:title" content="MySQL forgot password" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="MySQL 忘记密码" />
 <meta property="og:description" content="MySQL 忘记密码" />
@@ -40,14 +40,14 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-18T12:21:48+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="MySQL 忘记密码" />
+<meta property="twitter:title" content="MySQL forgot password" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-18T12:21:48+08:00","datePublished":"2020-04-18T12:21:48+08:00","description":"MySQL 忘记密码","headline":"MySQL 忘记密码","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/mysql-passwrod/"},"url":"https://cc360428.github.io//posts/mysql-passwrod/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-18T12:21:48+08:00","datePublished":"2020-04-18T12:21:48+08:00","description":"MySQL 忘记密码","headline":"MySQL forgot password","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/mysql-passwrod/"},"url":"https://cc360428.github.io//posts/mysql-passwrod/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>MySQL 忘记密码 | Cc Blog
+  <title>MySQL forgot password | Cc Blog
   </title>
 
   <!--
@@ -463,7 +463,7 @@
         
           
             
-              <span>MySQL 忘记密码</span>
+              <span>MySQL forgot password</span>
             
 
           
@@ -745,7 +745,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>MySQL 忘记密码</h1>
+    <h1 data-toc-skip>MySQL forgot password</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -850,7 +850,7 @@ Redirecting to /bin/systemctl stop mysqld.service
 <h3 id="修改配置文件"><span class="me-2">修改配置文件</span><a href="#修改配置文件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>在配置文件中添加<code class="language-plaintext highlighter-rouge">skip-grant-tables</code></p>
+  <p>在配置文件中添加 <code class="language-plaintext highlighter-rouge">skip-grant-tables</code></p>
 </blockquote>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
@@ -891,10 +891,10 @@ Redirecting to /bin/systemctl start mysqld.service
 <span class="o">[</span>root@Cc ~]#
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="进入mysql"><span class="me-2">进入<code class="language-plaintext highlighter-rouge">mysql</code></span><a href="#进入mysql" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="进入-mysql"><span class="me-2">进入 <code class="language-plaintext highlighter-rouge">mysql</code></span><a href="#进入-mysql" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>输入<code class="language-plaintext highlighter-rouge">mysql -u root -p</code> 直接<code class="language-plaintext highlighter-rouge">Enter</code>、<code class="language-plaintext highlighter-rouge">Enter</code></p>
+  <p>输入 <code class="language-plaintext highlighter-rouge">mysql -u root -p</code> 直接 <code class="language-plaintext highlighter-rouge">Enter</code>、<code class="language-plaintext highlighter-rouge">Enter</code></p>
 </blockquote>
 
 <pre><code class="language-mysql">[root@Cc ~]# mysql -u root -p
@@ -962,7 +962,7 @@ default-character-set<span class="o">=</span>utf8
 :wq
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="重启mysqld-服务"><span class="me-2">重启<code class="language-plaintext highlighter-rouge">mysqld</code> 服务</span><a href="#重启mysqld-服务" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="重启-mysqld-服务"><span class="me-2">重启 <code class="language-plaintext highlighter-rouge">mysqld</code> 服务</span><a href="#重启-mysqld-服务" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">[root@Cc ~]# service mysqld restart</code></p>
 
@@ -972,8 +972,8 @@ default-character-set<span class="o">=</span>utf8
 
 <ul>
   <li>重启服务还是没有用</li>
-  <li>确认过<code class="language-plaintext highlighter-rouge">update</code> 语句也执行过了（检查 执行<code class="language-plaintext highlighter-rouge">sql</code>语句看下执行结果，影响行数）</li>
-  <li>确认输入的 <code class="language-plaintext highlighter-rouge">mysql -u root -p</code> 之后输入的密码是否是自己<code class="language-plaintext highlighter-rouge">update</code>的密码</li>
+  <li>确认过 <code class="language-plaintext highlighter-rouge">update</code> 语句也执行过了（检查 执行 <code class="language-plaintext highlighter-rouge">sql</code>语句看下执行结果，影响行数）</li>
+  <li>确认输入的 <code class="language-plaintext highlighter-rouge">mysql -u root -p</code> 之后输入的密码是否是自己 <code class="language-plaintext highlighter-rouge">update</code>的密码</li>
 </ul>
 
 <h4 id="查看-user表"><span class="me-2">查看 <code class="language-plaintext highlighter-rouge">user</code>表</span><a href="#查看-user表" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
@@ -1125,21 +1125,21 @@ mysql&gt;
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=MySQL%20%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fmysql-passwrod%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=MySQL%20forgot%20password%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fmysql-passwrod%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=MySQL%20%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fmysql-passwrod%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=MySQL%20forgot%20password%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fmysql-passwrod%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fmysql-passwrod%2F&text=MySQL%20%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fmysql-passwrod%2F&text=MySQL%20forgot%20password%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2605,15 +2605,25 @@ mysql&gt;
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2679,10 +2689,10 @@ mysql&gt;
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
       
     </div>
   </section>
@@ -3122,6 +3132,30 @@ mysql&gt;
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -3185,7 +3219,7 @@ mysql&gt;
         </article>
       
         <article class="col">
-          <a href="/posts/mysql-lock/" class="post-preview card h-100">
+          <a href="/posts/mysql-base/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3197,14 +3231,14 @@ mysql&gt;
 
 <time
   
-  data-ts="1568780508"
+  data-ts="1544278908"
   data-df="ll"
   
 >
-  Sep 18, 2019
+  Dec  8, 2018
 </time>
 
-              <h4 class="pt-0 my-2">MySql lock</h4>
+              <h4 class="pt-0 my-2">MySQL Base</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3213,28 +3247,18 @@ mysql&gt;
 
 
 
-                  MySQL 锁
+                  MySQL
 
 
-  表级锁 和 行级锁
+  MySQL 是一个开源的关系型数据库管理系统，广泛应用于 Web 应用程序的开发中。它提供了一个强大的、稳定的、高效的、可扩展的数据库解决方案，能够满足从小型网站到大型企业级应用的各种需求。
 
 
 
-
-mysql&amp;gt; show tables;
-+----------------+
-| Tables_in_test |
-+----------------+
-| mylock         |
-| test           |
-+----------------+
-2 rows in set (0.03 sec)
+  特点
 
 
-表锁
 
-
-  ...
+  关系型数据库管理系统（RDBMS）：MySQL 是一种关系型数据库管理系统，它采用了关系模型来组织数据。数据存储在表中，表之间通过外键关联，形成了数据之间的...
                 </p>
               </div>
             </div>
@@ -3242,7 +3266,7 @@ mysql&amp;gt; show tables;
         </article>
       
         <article class="col">
-          <a href="/posts/Mysql-Version-info/" class="post-preview card h-100">
+          <a href="/posts/mysql-database/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3254,14 +3278,14 @@ mysql&amp;gt; show tables;
 
 <time
   
-  data-ts="1587183708"
+  data-ts="1544365308"
   data-df="ll"
   
 >
-  Apr 18, 2020
+  Dec  9, 2018
 </time>
 
-              <h4 class="pt-0 my-2">MySQL Version diff</h4>
+              <h4 class="pt-0 my-2">MySQL Database</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3270,14 +3294,8 @@ mysql&amp;gt; show tables;
 
 
 
-                  5.6
+                  
 
-
-  InnoDb 开始支持全文索引
-  InnoDb 支持设置页面大小
-  通过 innodb_page_size 指定，默认是 16KB，对于工作负载和存储设备（尤其是具有小块大小的 SSD 设备）的某些组合，较小的页面大小可以帮助避免冗余或低效的 I / O
-  InnoDB redolog 总大小的限制从之前的 4G 扩展至 512G
-  InnoDB 现在可以限制大量表打...
                 </p>
               </div>
             </div>
@@ -4737,15 +4755,25 @@ mysql&amp;gt; show tables;
     
     
     
+      
+        
+        
+
   
     
     
     
     
-      
-        
-        
-
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4811,10 +4839,10 @@ mysql&amp;gt; show tables;
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
       
     </div>
   </section>
