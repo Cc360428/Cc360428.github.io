@@ -15,7 +15,9 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <head>
+  <!-- The Head -->
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -24,12 +26,15 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  >
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.3" />
+  
+
+  
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Cc Blog" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
@@ -47,6 +52,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Cc Blog","url":"https://cc360428.github.io//page14/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  
 
   <title>Cc Blog
   </title>
@@ -61,9 +67,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-
-  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -86,9 +90,6 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
-      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
-      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
-    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,7 +101,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
@@ -271,7 +272,12 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle">
+      
+        
+        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -578,14 +584,14 @@
 <div id="post-list" class="flex-grow-1 px-xl-1">
   
     <article class="card-wrapper card">
-      <a href="/posts/Nginx-install/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/go-1.12/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Nginx 安装</h1>
+            <h1 class="card-title my-2 mt-md-0">Go 1.12 版本更新</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -595,14 +601,22 @@
 
 
 
-                linux 命令安装
+                go mod 1.12 学习
 
-1.添加Nginx到YUM源
-添加CentOS 7 Nginx yum资源库,打开终端,使用以下命令:
+go modules(check version)
 
-sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-2.安装Nginx
-在你的CentOS 7 服务器中使...
+
+  检查 golang 版本
+
+
+如果没有生成 go.sum 或者报错请输入
+export GOPROXY=https://goproxy.io
+
+C:\Users\admin&amp;gt;go version
+go version go1.12.9 windows/amd64
+
+
+把 golang 升级到 1...
               </p>
             </div>
 
@@ -620,11 +634,11 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
 
 <time
   
-  data-ts="1583936584"
+  data-ts="1575623482"
   data-df="ll"
   
 >
-  Mar 11, 2020
+  Dec  6, 2019
 </time>
 
 
@@ -633,8 +647,8 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      DevOps,
-                      Nginx
+                      Language,
+                      Go
                   </span>
                 
               </div>
@@ -649,14 +663,14 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/Nginx-conf/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/mysql-lock/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Nginx配置</h1>
+            <h1 class="card-title my-2 mt-md-0">MySql lock</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -666,12 +680,27 @@ sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-cento
 
 
 
-                配置 https
+                MySQL 锁
 
-server {
-    listen 443 ssl;  # 1.1版本后这样写
-    server_name lichaocheng.top; #填写绑定证书的域名
-    ssl_certificate  /opt/lichaocheng.top/lichaocheng.top/sll/lichaocheng.top.pem;  # 指定证书的位置，绝对路径
+
+  表级锁 和 行级锁
+
+
+
+
+mysql&amp;gt; show tables;
++----------------+
+| Tables_in_test |
++----------------+
+| mylock         |
+| test           |
++----------------+
+2 rows in set (0.03 sec)
+
+
+表锁
+
+
   ...
               </p>
             </div>
@@ -690,11 +719,91 @@ server {
 
 <time
   
-  data-ts="1583936584"
+  data-ts="1568780508"
   data-df="ll"
   
 >
-  Mar 11, 2020
+  Sep 18, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Dev,
+                      Database,
+                      Mysql
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/tcpip/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">TCP/IP</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                TCP/IP
+
+
+  TCP/IP 在传输层连个不同协议，传输控制协议(TCP)、用户数据协议(UDP)
+
+
+TCP——UDP
+
+
+  TCP 数据传输单位 TCP 报文段，UDP 数据传输单位 UDP 报文或者用户数据报
+  TCP 面向连接，UDP 面向无连接
+  TCP 高度可靠，UDP 不能保证数据可靠性传输
+  TCP 复杂性因此开销大，UDP 简单性具有较高的传输效率
+
+
+TCP...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1566449334"
+  data-df="ll"
+  
+>
+  Aug 22, 2019
 </time>
 
 
@@ -704,7 +813,7 @@ server {
                   <span class="categories">
                     
                       DevOps,
-                      Nginx
+                      Network
                   </span>
                 
               </div>
@@ -719,14 +828,14 @@ server {
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/golang-package/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/ip/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">golang 包管理</h1>
+            <h1 class="card-title my-2 mt-md-0">IP协议</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -736,35 +845,8 @@ server {
 
 
 
-                godep
+                
 
-安装
-
-go get -u -v github.com/tools/godep
-
-使用
-
-
-  
-    参考 1
-    参考 2
-  
-
-
-goverdor（go1.12 下 推荐使用）
-
-安装
-
-go get -u github.com/kardianos/govendor
-
-基本使用
-
-
-  进入项目目录
-
-
-govendor init
-govendor fetch g...
               </p>
             </div>
 
@@ -782,11 +864,11 @@ govendor fetch g...
 
 <time
   
-  data-ts="1583914751"
+  data-ts="1566362934"
   data-df="ll"
   
 >
-  Mar 11, 2020
+  Aug 21, 2019
 </time>
 
 
@@ -795,8 +877,8 @@ govendor fetch g...
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      Language,
-                      Go
+                      DevOps,
+                      Network
                   </span>
                 
               </div>
@@ -811,14 +893,14 @@ govendor fetch g...
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/gorm/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/http/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Golang Mysql Gorm</h1>
+            <h1 class="card-title my-2 mt-md-0">HTTP协议</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -828,263 +910,35 @@ govendor fetch g...
 
 
 
-                Gorm 概述
+                HTTP 协议
 
-官网
-gorm 对数据库的操作
 
-环境搭建
-
-下载依赖
-
-go get -u github.com/jinzhu/gorm
-
-实例（连接）
-
-package main
-
-import (
-	&quot;fmt&quot;
-	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot; // logs
-	&quot;github.com/jinzhu/gorm&quot;    ...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+  Hyper Text Transfer Protocol 超文本传输协议
 
 
 
-
-<time
-  
-  data-ts="1583395344"
-  data-df="ll"
-  
->
-  Mar  5, 2020
-</time>
+  http 消息结构体、请求方法、响应头信息、状态码、content-type
+  http 版本：HTTP/0.9、HTTP/1.0、HTTP/1.1、HTTP/2.0
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/utils-variableAndArray/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Go 类型转换</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                go 类型转换
-
-string int int64
-
-package main
-
-import (
-	&quot;fmt&quot;
-	&quot;strconv&quot;
-)
-
-func main() {
-	var str string
-	fmt.Printf(&quot;str type:%T\n&quot;, str)
-	str = &quot;123&quot;
-	var strInt int
-	// string &amp;gt; int
-	strInt, _ = ...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1579186716"
-  data-df="ll"
-  
->
-  Jan 16, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/baseall/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Golang基础问题</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Golang 基础问题
-
-内置标识符
+消息结构体
 
 
   
-    const
+    客户端
 
     
-      
-        iota
-iota 是一个预定义的标识符，代表顺序按行增加的无符号整数，每个 const 声明单元（被括号括起来）相互独立，分别从 0 开始。
-
-        // 常量
-const (
-    ResponseCodeOk       = iota        // 0
-   ...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
   
-  data-ts="1579186716"
-  data-df="ll"
   
->
-  Jan 16, 2020
-</time>
+    服务端
 
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/proto-error/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">proto error </h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                包名问题
-
-WARNING: Deprecated use of go_package option without a full import path in im.proto, please specify: option go_package = .;grpc;
-
-
-
-  解决问题
-    
-      在 proto 文件中添加下面代码片段即可
     
   
 
 
-  option ...
+请求方法
+
+...
               </p>
             </div>
 
@@ -1102,11 +956,332 @@ WARNING: Deprecated use of go_package option without a full import path in im.pr
 
 <time
   
-  data-ts="1577341332"
+  data-ts="1566276534"
   data-df="ll"
   
 >
-  Dec 26, 2019
+  Aug 20, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      Network
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/bit/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">物理层</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                物理层
+
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1566190134"
+  data-df="ll"
+  
+>
+  Aug 19, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      Network
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/NetworkEngineerBase/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">网络基础</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                计算机网络基础
+
+OSI 与 TCP/IP
+
+OSI
+
+TCP/IP
+
+物理层
+
+
+  网络接口
+
+
+网际层
+
+
+  IP 协议：主要的网际层协议，用于网络互联
+  ICMP 协议：报文协议，用于报告差错，向路由器主机发送差错报文
+  ARP 协议：地址解析协议，用于将 IP 解析成物理地址
+  RARP 协议：逆地址协议，物理地址解析到 IP 地址
+
+
+运输层
+
+
+  TCP：传输控制协议...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1566103734"
+  data-df="ll"
+  
+>
+  Aug 18, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      Network
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/SSM+Redis_base/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Eclipse中Maven项目创建</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Eclipse中Maven项目创建
+
+Maven项目创建
+
+
+
+
+
+
+
+项目创建之后，要到javax.servlet下的包资源会报错解决方法
+
+
+
+
+搭建SSM
+
+
+
+
+配置web.xml
+
+
+
+  配置DispatcherServlet，是SpringMVC的核心组件，用于接收所有请求，然后分发到各控制器，在配置时，必须确定初始化时加载的Spring配置文件是哪些！配置CharacterE...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1559542200"
+  data-df="ll"
+  
+>
+  Jun  3, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Java
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/beego-router/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">beego 路由设置</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                路由注解
+
+routers
+
+  // routers/routers.go
+  package routers
+
+  import (
+    &quot;lichaocheng/yun_mao/controllers&quot;
+    &quot;github.com/astaxie/beego&quot;
+  )
+
+  func init() {
+    ns := beego.NewNamespace(&quot;/v1&quot;,
+  ...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1557127284"
+  data-df="ll"
+  
+>
+  May  6, 2019
 </time>
 
 
@@ -1131,14 +1306,14 @@ WARNING: Deprecated use of go_package option without a full import path in im.pr
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/grpc-utils/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/beego-pro/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">protoc 工具</h1>
+            <h1 class="card-title my-2 mt-md-0">beego 高级编程</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1148,17 +1323,21 @@ WARNING: Deprecated use of go_package option without a full import path in im.pr
 
 
 
-                gRPC
+                beego 高级编程
 
-安装 protoc 工具
+进程内监控
+
+API 自动化文档
+
+API 全局设置
 
 
-  https://github.com/protocolbuffers/protobuf/releases
+  必须设置在 routers/router.go 文件的注释，最顶部：
 
 
-
-  -I 参数：指定 import 路径，可以指定多个-I 参数，编译时按顺序查找，不指定时默认查找当前目录
-  –go_out ：golang 编译支持，支持以下参数 - plugins=plugin1+plugin2 - 指定插件，...
+  // @APIVersion 1.0.0
+  // @Title mobile API
+  // @Description mobile has every tool to get any job done, so codenam...
               </p>
             </div>
 
@@ -1176,157 +1355,11 @@ WARNING: Deprecated use of go_package option without a full import path in im.pr
 
 <time
   
-  data-ts="1577341332"
+  data-ts="1557127284"
   data-df="ll"
   
 >
-  Dec 26, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/gRPC/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">gRPC 和 ui 操作</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                gRPC
-
-安装 protoc 工具
-
-
-  https://github.com/protocolbuffers/protobuf/releases
-
-
-
-  -I 参数：指定 import 路径，可以指定多个-I 参数，编译时按顺序查找，不指定时默认查找当前目录
-  –go_out ：golang 编译支持，支持以下参数 - plugins=plugin1+plugin2 - 指定插件，...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1577341332"
-  data-df="ll"
-  
->
-  Dec 26, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/Protocol-Buffer/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Protocol Buffer 语法</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Protocol Buffer语法
-
-好的，下面我将更详细地说明 Protobuf 的语法。
-
-
-  Protobuf 版本
-
-
-Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版本，proto3 是新版本。proto3 做了很多改进，比如对标量类型的定义进行了优化，使其更加严格和一致；移除了一些不必要的特性；默认情况下启用了所有字段都是 requi...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1577341332"
-  data-df="ll"
-  
->
-  Dec 26, 2019
+  May  6, 2019
 </time>
 
 
@@ -1632,51 +1665,12 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
       
 
       
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
         <!-- show number -->
         <li class="page-item ">
           <a
             class="page-link"
-            href="/page21"
-          >21</a>
+            href="/page18"
+          >18</a>
         </li>
       
     
@@ -1684,7 +1678,7 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     <!-- mobile pagination -->
     <li class="page-index align-middle">
       <span>14</span>
-      <span class="text-muted">/ 21</span>
+      <span class="text-muted">/ 18</span>
     </li>
 
     <!-- right arrow -->
@@ -1708,7 +1702,7 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -1731,35 +1725,35 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/k8s-work-cmd/">Kubernetes Work CMD</a>
+          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/CDN/">CDN</a>
+          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/redis-py-utils/">开发脚本</a>
+          <a href="/posts/other/">Golang 代码规范</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/services/">Kubernetes Services</a>
+          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/deployment/">Kubernetes Deploymen</a>
+          <a href="/posts/Lock/">Golang 锁</a>
         </li>
       
     </ul>
@@ -1983,194 +1977,10 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2370,80 +2180,6 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2468,153 +2204,6 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2914,6 +2503,316 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3083,21 +2982,6 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -3137,35 +3021,10 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3214,10 +3073,10 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -3229,7 +3088,7 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -3255,13 +3114,10 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>©
+  <p>
+    ©
     <time>2024</time>
-
-    
-      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
-    
-
+    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -3271,9 +3127,10 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
   </p>
 </footer>
+
 
           </div>
         </div>
@@ -3499,194 +3356,10 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3886,80 +3559,6 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3984,153 +3583,6 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4430,6 +3882,316 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4599,21 +4361,6 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4653,35 +4400,10 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4730,10 +4452,10 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -4745,7 +4467,7 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -4804,8 +4526,6 @@ Protobuf 定义了两个版本：proto2 和 proto3。其中，proto2 是旧版�
 
 
 <!-- layout specified -->
-
-
 
 
   

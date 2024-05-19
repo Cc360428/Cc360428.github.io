@@ -15,7 +15,9 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <head>
+  <!-- The Head -->
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -24,12 +26,15 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  >
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.3" />
+  
+
+  
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Go 类型转换" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="变量作用域,数组" />
@@ -46,6 +51,7 @@
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-01-16T22:58:36+08:00","datePublished":"2020-01-16T22:58:36+08:00","description":"变量作用域,数组","headline":"Go 类型转换","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/utils-variableAndArray/"},"url":"https://cc360428.github.io//posts/utils-variableAndArray/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  
 
   <title>Go 类型转换 | Cc Blog
   </title>
@@ -60,9 +66,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-
-  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -85,9 +89,6 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
-      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
-      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
-    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -99,12 +100,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.3/dist/tocbot.min.css">
   
 
   
@@ -275,7 +276,12 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle">
+      
+        
+        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -454,7 +460,9 @@
         
           
             <span>
-              <a href="/">Home</a>
+              <a href="/">
+                Home
+              </a>
             </span>
 
           
@@ -1012,7 +1020,7 @@
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -1035,35 +1043,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/k8s-work-cmd/">Kubernetes Work CMD</a>
+          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/CDN/">CDN</a>
+          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/redis-py-utils/">开发脚本</a>
+          <a href="/posts/other/">Golang 代码规范</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/services/">Kubernetes Services</a>
+          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/deployment/">Kubernetes Deploymen</a>
+          <a href="/posts/Lock/">Golang 锁</a>
         </li>
       
     </ul>
@@ -1287,194 +1295,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1674,80 +1498,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1772,153 +1522,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2218,6 +1821,316 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2387,21 +2300,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2441,35 +2339,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2518,10 +2391,10 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -2533,7 +2406,7 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -3044,211 +2917,7 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -3815,60 +3484,6 @@ sgox -os=&quot;windows linu...
         </article>
       
         <article class="col">
-          <a href="/posts/Interview/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1576076316"
-  data-df="ll"
-  
->
-  Dec 11, 2019
-</time>
-
-              <h4 class="pt-0 my-2">Golang 2019</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  20191211
-
-redis
-
-
-  redis 数据类型
-    
-      string
-      hash
-      list
-      set
-    
-  
-  数据类型一般应用场景
-  redis 持久化
-  redis 与 mongoDB 区别
-    
-      redis 支持事务（），mongoDB 不支持
-      redis 适合做缓存读写速度忧，mon...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/Lock/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -3904,23 +3519,96 @@ redis
 
 
 
-  为什么要锁
+  
+    为什么要锁
 
+    
+      go run test1.go |sort|uniq |wc -l
+会发现下面代码明明是递增 但是结果会出现最后可能不是999
+    
+
+      package main
+
+  import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/golang-package/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1583914751"
+  data-df="ll"
+  
+>
+  Mar 11, 2020
+</time>
+
+              <h4 class="pt-0 my-2">golang 包管理</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  godep
+
+安装
+
+go get -u -v github.com/tools/godep
+
+使用
 
 
   
-    
-      
-        ` go run test1.go
-        sort
-        uniq
-        wc -l 会发现下面代码明明是递增 但是结果会出现最后可能不是999`
-      
-    
+    参考 1
+    参考 2
   
 
 
-package...
+goverdor（go1.12 下 推荐使用）
+
+安装
+
+go get -u github.com/kardianos/govendor
+
+基本使用
+
+
+  进入项目目录
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+...
                 </p>
               </div>
             </div>
@@ -3942,11 +3630,11 @@ package...
 
   
     <a
-      href="/posts/baseall/"
+      href="/posts/proto-error/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Golang基础问题</p>
+      <p>proto error </p>
     </a>
   
 
@@ -3977,13 +3665,10 @@ package...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>©
+  <p>
+    ©
     <time>2024</time>
-
-    
-      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
-    
-
+    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -3993,9 +3678,10 @@ package...
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
   </p>
 </footer>
+
 
           </div>
         </div>
@@ -4221,194 +3907,10 @@ package...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4608,80 +4110,6 @@ package...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4706,153 +4134,6 @@ package...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5152,6 +4433,316 @@ package...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5321,21 +4912,6 @@ package...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -5375,35 +4951,10 @@ package...
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5452,10 +5003,10 @@ package...
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -5467,7 +5018,7 @@ package...
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -5526,8 +5077,6 @@ package...
 
 
 <!-- layout specified -->
-
-
 
 
   
@@ -5630,7 +5179,7 @@ package...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
 
 
 

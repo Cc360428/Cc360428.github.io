@@ -15,7 +15,9 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <head>
+  <!-- The Head -->
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -24,12 +26,15 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  >
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.3" />
+  
+
+  
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Cc Blog" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
@@ -47,6 +52,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Cc Blog","url":"https://cc360428.github.io//page17/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  
 
   <title>Cc Blog
   </title>
@@ -61,9 +67,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-
-  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -86,9 +90,6 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
-      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
-      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
-    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,7 +101,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
@@ -271,7 +272,12 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle">
+      
+        
+        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -578,14 +584,14 @@
 <div id="post-list" class="flex-grow-1 px-xl-1">
   
     <article class="card-wrapper card">
-      <a href="/posts/go-github-project/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/Flutter-Base/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Go Github Project</h1>
+            <h1 class="card-title my-2 mt-md-0">环境搭建</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -595,632 +601,29 @@
 
 
 
-                Github Golang Package
+                Dart
 
-读取配置文件包
+环境安装
 
 
-  https://github.com/spf13/viper
-  参考链接
+  下载 DartSDK
+  添加环境变量
 
 
-监听文件
+export DART_HOME=/usr/local/dart/dart-sdk/bin
+export PATH=&quot;${DART_HOME}:${PATH}&quot;
 
 
-  https://github.com/fsnotify/fsnotify
-  参考链接
+Flutter
 
+环境搭建
 
-交叉变异工具
 
-
-  github.com/mitchellh/gox
-  参考链接
-
-
-sgox -os=&quot;windows linu...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1556549916"
-  data-df="ll"
-  
->
-  Apr 29, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/algorithm/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Golang 算法</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                算法
-
-
-  常见的算法有
-
-
-
-
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1556549916"
-  data-df="ll"
-  
->
-  Apr 29, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/other/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Golang 代码规范</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                代码规范
-
-Go 代码规范（或 Go 规范）旨在使代码更具可读性、可维护性和可重用性。以下是一些主要的规则：
-
-
-  格式化：使用 gofmt 工具来格式化代码以提高可读性。
-  命名：遵循有意义的命名方式，使用驼峰式命名法，在变量名和函数名中使用小写字母开头，公共函数和变量名应该首字母大写。
-  注释：对于每一个包、函数、类型、方法和变量都应该添加注释，尽可能用单行注释。
-  导入：将所有...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1556549916"
-  data-df="ll"
-  
->
-  Apr 29, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/iris-base/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Golang Iris</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1556549916"
-  data-df="ll"
-  
->
-  Apr 29, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/swagger/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">web Swagger</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                swag
-
-
-  使用说明
-
-
-安装下载依赖
-
-go get github.com/swaggo/swag/cmd/swag
-go get -u github.com/swaggo/gin-swagger
-go get -u github.com/swaggo/gin-swagger/swaggerFiles
-
-
-使用参考
-
-https://gitee.com/ClientCodeFile/...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1556549916"
-  data-df="ll"
-  
->
-  Apr 29, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/restful/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">web restful</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                restful
-
-理解
-
-要理解 RESTful 架构，需要理解 Representational State Transfer 这个词组到底是什么意思，它的每一个词都有些什么涵义。
-
-下面我们结合 REST 原则，围绕资源展开讨论，从资源的定义、获取、表述、关联、状态变迁等角度，列举一些关键概念并加以解释
-
-资源与 URL
-
-统一资源接口
-
-资源的表达
-
-状态的转移
-
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1556549916"
-  data-df="ll"
-  
->
-  Apr 29, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/13-time/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Day13（Time）</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                时间包
-
-
-  时间包 time 提供了日期和时间相关的函数和结构体。使用这个包可以完成时间格式化、时间比较、定时器等功能
-
-
-获取当前时间
-
-now := time.Now()
-fmt.Println(now)
-
-
-时间格式化输出
-
-t := time.Now()
-fmt.Println(t.Format(&quot;2006-01-02 15:04:05&quot;))
-
-
-时间比较
-
-t1 := time...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1556518769"
-  data-df="ll"
-  
->
-  Apr 29, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/12-reflect/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Day12（反射）</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                反射
-
-介绍
-
-
-  反射是 Golang 中的一项重要特性，它提供了一种机制，可以在运行时动态地获取变量的类型信息、值信息、方法、字段等，并可以通过反射进行值的修改和调用方法。这使得 Golang 具备了更高的灵活性和通用性。
-  在 Golang 中，反射通过 reflect 包实现，该包提供了一些函数和类型，可以用于检查变量的类型、值、方法、字段等信息。例如，reflect.TypeO...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1556456643"
-  data-df="ll"
-  
->
-  Apr 28, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/11-Concurrent/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Day11（并发编程）</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                概念
-
-
-  并发：把任务在不同的时间点交给处理器进行处理同一时间点，任务并不会同时进行
-  并行：把每一个任务分配给每一个处理器独立完成，在同一时间点任务一定是同时运行的
-
-
-简介使用
-
-
-  创建：使用 go 关键字创建一个 goroutine go functionName()
-  
-    调整并发运行性能
-
+  获取 SDK
     
-      
-        例子：
-
-        runt...
+      zip
+        
+          https://flutter.de...
               </p>
             </div>
 
@@ -1238,11 +641,11 @@ t1 := time...
 
 <time
   
-  data-ts="1556327969"
+  data-ts="1549983516"
   data-df="ll"
   
 >
-  Apr 27, 2019
+  Feb 12, 2019
 </time>
 
 
@@ -1252,7 +655,7 @@ t1 := time...
                   <span class="categories">
                     
                       Language,
-                      Go
+                      Dart
                   </span>
                 
               </div>
@@ -1267,14 +670,14 @@ t1 := time...
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/10-interfaceAndError/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/Error/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Day10（接口和错误处理）</h1>
+            <h1 class="card-title my-2 mt-md-0">手机推送</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1284,25 +687,25 @@ t1 := time...
 
 
 
-                interface And Panic、Error
+                Error
+
+获取包错误
+
+Waiting for another flutter command to release the startup lock...
 
 
-  源码
+  解决办法
 
 
-interface
+cd /usr/local/dart/flutter/bin/cache
+rm -rf lockfile
 
-接口创建使用
 
-package main
+拉依赖包
 
-import (
-	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
-	&quot;github.com/pkg/errors&quot;
-)
+This is taking an unexpectedly long time.
 
-// UserInterface
-type UserInterface interf...
+E...
               </p>
             </div>
 
@@ -1320,11 +723,11 @@ type UserInterface interf...
 
 <time
   
-  data-ts="1556182979"
+  data-ts="1549983516"
   data-df="ll"
   
 >
-  Apr 25, 2019
+  Feb 12, 2019
 </time>
 
 
@@ -1334,7 +737,642 @@ type UserInterface interf...
                   <span class="categories">
                     
                       Language,
-                      Go
+                      Dart
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/appOffLinePush/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">手机推送</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                手机推送
+
+IOS
+
+github 方法
+
+https://www.jianshu.com/p/c90204ef6e4a
+github Test1
+
+方法
+
+https://blog.csdn.net/jeffasd/article/details/69950979
+https://www.jb51.cc/go/188684.html
+http://docs-im.easemob.com/i...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1549983516"
+  data-df="ll"
+  
+>
+  Feb 12, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Dev,
+                      Utils
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/idea-use/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Idea 快捷键</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Idea 快捷键
+
+编辑
+
+
+  Ctrl + X：剪切当前行或者选中的区域
+  Ctrl + C：复制当前行或者选中的区域
+  Ctrl + V：粘贴当前剪贴板中的内容
+  Ctrl + Z：撤销操作
+  Ctrl + Shift + Z：重做操作
+  Ctrl + D：复制当前行或者选中的区域到下一行
+  Ctrl + Delete：删除光标所在位置到单词结尾的文本
+  Ctrl + B...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1548478134"
+  data-df="ll"
+  
+>
+  Jan 26, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Dev,
+                      Utils
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/redis-all/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Redis All</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Redis（Remote Dictionary Server）
+
+什么是 Redis
+
+
+  是一个使用 C 语言编写的，开源的（BSD 许可）高性能非关系型（NoSQL）的键值对数据库。
+  Redis 可以存储键和五种不同类型的值之间的映射。键的类型只能为字符串，值支持五种数据类型：字符串、列表、集合、散列表、有序集合。
+  与传统数据库不同的是 Redis 的数据是存在内存中的，所以读...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1548478134"
+  data-df="ll"
+  
+>
+  Jan 26, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Dev,
+                      Database,
+                      Redis
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/mysql-operate/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">MySQL Operate</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                数据库（Database）
+
+库阈值
+
+
+  MySQL 8.0 版本之前，一个数据库中最多可以有 65535 个表。因为 采用 16 位 最大值为 2^16 - 1 = 65535
+  MySQL 8.0 开始，采用 32 位整数来存储表的数量，因此最大值变成了 2^32 - 1
+
+
+数据库规范
+
+
+  命名规范
+    
+      使用有意义且描述性强的名称，避免使用无意义的缩写或简写...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1544365308"
+  data-df="ll"
+  
+>
+  Dec  9, 2018
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Dev,
+                      Database,
+                      Mysql
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/mysql-base/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">MySQL Base</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                MySQL
+
+
+  MySQL 是一个开源的关系型数据库管理系统，广泛应用于 Web 应用程序的开发中。它提供了一个强大的、稳定的、高效的、可扩展的数据库解决方案，能够满足从小型网站到大型企业级应用的各种需求。
+
+
+
+  特点
+
+
+
+  关系型数据库管理系统（RDBMS）：MySQL 是一种关系型数据库管理系统，它采用了关系模型来组织数据。数据存储在表中，表之间通过外键关联，形成了数据之间的...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1544278908"
+  data-df="ll"
+  
+>
+  Dec  8, 2018
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Dev,
+                      Database,
+                      Mysql
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/vue/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Vue</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                vue
+
+学习网址
+
+https://developer.aliyun.com/mirror/NPM?from=tnpm
+
+脚手架
+
+#全局安装vue的命令行工具
+npm install -g @vue/cli
+
+#验证Vue是否安装成功
+vue -V
+
+#通过脚手架命令行方式创建vue项目
+vue create vue-demo
+
+#通过vue提供的界面来创建vue项目
+vue ui
+
+#...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1539356316"
+  data-df="ll"
+  
+>
+  Oct 12, 2018
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Vue
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/vue-use/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Vue Use</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                脚手架
+
+#全局安装vue的命令行工具
+npm install -g @vue/cli
+
+#验证Vue是否安装成功
+vue -V
+
+#通过脚手架命令行方式创建vue项目
+vue create vue-demo
+
+#通过vue提供的界面来创建vue项目
+vue ui
+
+#启动工程
+cd vue-demo
+
+yarn serve
+或者
+npm run dev
+
+
+路径
+node_modules ...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1539356316"
+  data-df="ll"
+  
+>
+  Oct 12, 2018
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Vue
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/vue-readme/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Vue readme</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                vue
+
+启动
+
+yarn install
+yarn run serve
+yarn run build
+yarn run test
+yarn run lint
+
+
+错误信息以解决
+
+Node version
+
+
+  
+    利用 Node.js 的多版本管理器 n
+
+      sudo npm cache clean -f //清除 nodejs 的 cache：
+  sudo npm ...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1539356316"
+  data-df="ll"
+  
+>
+  Oct 12, 2018
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Vue
                   </span>
                 
               </div>
@@ -1629,60 +1667,11 @@ type UserInterface interf...
         </li>
       
     
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
-        
-          <li class="page-item disabled">
-            <span class="page-link">...</span>
-          </li>
-          
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- show number -->
-        <li class="page-item ">
-          <a
-            class="page-link"
-            href="/page21"
-          >21</a>
-        </li>
-      
-    
 
     <!-- mobile pagination -->
     <li class="page-index align-middle">
       <span>17</span>
-      <span class="text-muted">/ 21</span>
+      <span class="text-muted">/ 18</span>
     </li>
 
     <!-- right arrow -->
@@ -1706,7 +1695,7 @@ type UserInterface interf...
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -1729,35 +1718,35 @@ type UserInterface interf...
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/k8s-work-cmd/">Kubernetes Work CMD</a>
+          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/CDN/">CDN</a>
+          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/redis-py-utils/">开发脚本</a>
+          <a href="/posts/other/">Golang 代码规范</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/services/">Kubernetes Services</a>
+          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/deployment/">Kubernetes Deploymen</a>
+          <a href="/posts/Lock/">Golang 锁</a>
         </li>
       
     </ul>
@@ -1981,194 +1970,10 @@ type UserInterface interf...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2368,80 +2173,6 @@ type UserInterface interf...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2466,153 +2197,6 @@ type UserInterface interf...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2912,6 +2496,316 @@ type UserInterface interf...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3081,21 +2975,6 @@ type UserInterface interf...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -3135,35 +3014,10 @@ type UserInterface interf...
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3212,10 +3066,10 @@ type UserInterface interf...
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -3227,7 +3081,7 @@ type UserInterface interf...
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -3253,13 +3107,10 @@ type UserInterface interf...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>©
+  <p>
+    ©
     <time>2024</time>
-
-    
-      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
-    
-
+    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -3269,9 +3120,10 @@ type UserInterface interf...
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
   </p>
 </footer>
+
 
           </div>
         </div>
@@ -3497,194 +3349,10 @@ type UserInterface interf...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3884,80 +3552,6 @@ type UserInterface interf...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3982,153 +3576,6 @@ type UserInterface interf...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4428,6 +3875,316 @@ type UserInterface interf...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4597,21 +4354,6 @@ type UserInterface interf...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4651,35 +4393,10 @@ type UserInterface interf...
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4728,10 +4445,10 @@ type UserInterface interf...
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -4743,7 +4460,7 @@ type UserInterface interf...
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -4802,8 +4519,6 @@ type UserInterface interf...
 
 
 <!-- layout specified -->
-
-
 
 
   

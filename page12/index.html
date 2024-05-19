@@ -15,7 +15,9 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <head>
+  <!-- The Head -->
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -24,12 +26,15 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  >
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.3" />
+  
+
+  
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Cc Blog" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
@@ -47,6 +52,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Cc Blog","url":"https://cc360428.github.io//page12/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  
 
   <title>Cc Blog
   </title>
@@ -61,9 +67,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-
-  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -86,9 +90,6 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
-      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
-      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
-    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,7 +101,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
@@ -271,7 +272,12 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle">
+      
+        
+        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -578,730 +584,6 @@
 <div id="post-list" class="flex-grow-1 px-xl-1">
   
     <article class="card-wrapper card">
-      <a href="/posts/Git-Ope-Other/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Git Open Other</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                冷门操作
-
-查看 commit 总数
-
-git log --oneline | wc -l
-
-
-查看所有提交人和提交次数
-
-git shortlog --numbered --summary
-
-
-指定用户提交代码情况
-
-git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += $1; subs += $2; loc +...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1587191584"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Dev,
-                      Utils
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/Git-Op/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Git Base Other</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Git 常用命令
-
-仓库
-
-# 在当前目录新建一个Git代码库
-$ git init
-
-# 新建一个目录，将其初始化为Git代码库
-$ git init [project-name]
-
-# 下载一个项目和它的整个代码历史
-$ git clone [url]
-
-
-配置
-
-# 显示当前的Git配置
-$ git config --list
-
-# 编辑Git配置文件
-$ git config -e ...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1587191584"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Dev,
-                      Utils
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/Git-Error/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Git Error </h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Failed to connect to 127.0.0.1 port 1080: Connection refused
-
-- 尝试了各种办法都没有解决，一直报这个端口代理的问题，看到网上有一个解决办法
-- 我个人是方法一解决了
-
-
-方法一
-
-
-  第一步 (查询是否使用了代理)
- git config –global http.proxy
-  第二步(取消代理)
- git config –...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1587191584"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Dev,
-                      Utils
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/mysql-passwrod/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">MySQL forgot password</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                MySQL 忘记密码
-
-
-  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
-
-
-关闭服务
-
-[root@Cc ~]# ps -ef |grep mysql
-root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
-mysql    20039     1  0 12:39 ?     ...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1587183708"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Dev,
-                      Database,
-                      Mysql
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/mysql-error-all/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">MySqlErrorAll</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                连接失败
-
-
-  2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded: dlopen(../Frameworks/caching_sha2_password.so, 2): image not found
-
-
-
-  
-    mysql -uroot -ppassword #登录
-  
-  
-    us...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1587183708"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Dev,
-                      Database,
-                      Mysql
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/Mysql-Version-info/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">MySQL Version diff</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                5.6
-
-
-  InnoDb 开始支持全文索引
-  InnoDb 支持设置页面大小
-  通过 innodb_page_size 指定，默认是 16KB，对于工作负载和存储设备（尤其是具有小块大小的 SSD 设备）的某些组合，较小的页面大小可以帮助避免冗余或低效的 I / O
-  InnoDB redolog 总大小的限制从之前的 4G 扩展至 512G
-  InnoDB 现在可以限制大量表打...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1587183708"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Dev,
-                      Database,
-                      Mysql
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/9-RedHad-system-ps/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">linux(CentOS7) 网络管理</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                系统启动控制、进程管理
-
-系统启动控制
-
-
-  0—-停机
-  1—单用户模式
-  2—多用户模式（没有网络文件系统）
-  3—完全多用户模式
-  4—忽略
-  5—X11 一般图形界面
-  6— 重新启动（不推荐这操作，请谨慎操作）
-
-
-
-  如果你远程黑进了系统 可以试试这个 6 操作 应该会一直重启
-
-
-设置操作
-
-
-  runleve 查看当前系统启动状态，N 代表代表上次运行级别
-...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1585414152"
-  data-df="ll"
-  
->
-  Mar 29, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      DevOps,
-                      RedHad
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/10-RedHad-network/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">linux(CentOS7) 网络管理</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                网络基础知识以及网络管理内容
-
-网络管理协议
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-TCP/IP 协议概述
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-OSI 参考模型
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-包（packet）
-
-
-  好多概念知识，会拿出时间来讲解这张预留的空白
-
-
-网络字节顺序
-
-
-  好多概念知识，会拿出时间来讲解这...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1585414152"
-  data-df="ll"
-  
->
-  Mar 29, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      DevOps,
-                      RedHad
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/8-RedHad-appliction-manger/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">linux(CentOS7) 应用程序管理</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                应用程序管理
-
-软件包基础
-
-常见安装工具包
-
-
-  RPM
-  DPKG
-
-
-RPM 使用
-
-安装软件 （rz 示例）
-
-
-  都和以下载
-
-  ftp://ftp.pbone.net/mirror/ftp.centos.org/7.7.1908/os/x86_64/Packages/lrzsz-0.12.20-36.el7.x86_64.rpm
-
-  wget http://images...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1585383072"
-  data-df="ll"
-  
->
-  Mar 28, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      DevOps,
-                      RedHad
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
       <a href="/posts/7-RedHad-user-group/" class="post-preview row g-0 flex-md-row-reverse">
         
 
@@ -1372,6 +654,730 @@ Linux 用户管理
                     
                       DevOps,
                       RedHad
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/6-RedHad-log/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">linux(CentOS7) 日志系统</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Linux 日志系统
+
+
+  日志用途
+
+
+
+  系统审计
+  检测追踪
+  分析统计
+    
+      Web 应用请求量
+      错误码分布
+      性能
+      是否需要扩容
+      多少用户量
+    
+  
+
+
+常见的日志文件
+
+
+  登录日志
+
+
+[root@Cc log]# lastlog
+用户名           端口     来自           ...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1585236252"
+  data-df="ll"
+  
+>
+  Mar 26, 2020
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      RedHad
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/5-RedHad-file/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">linux(CentOS7) 文件管理与磁盘管理</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                文件管理
+
+认识分区
+
+[root@Cc ~]# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        909M     0  909M   0% /dev
+[root@Cc ~]# df -h
+文件系统        容量  已用  可用 已用% 挂载点
+devtmpfs        909M    ...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1585236192"
+  data-df="ll"
+  
+>
+  Mar 26, 2020
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      RedHad
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/4.5-RedHad-system/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">linux(CentOS7) 目录管理、系统管理</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                目录管理命令
+
+nkdri
+
+
+  指定权限创建
+  -p递归创建
+
+
+[root@Cc 20200326]# mkdir -m777 mkdira
+[root@Cc 20200326]# ll
+总用量 8
+drwxrwxrwx 2 root root 4096 3月  25 22:52 mkdira
+drwxr-xr-x 2 root root 4096 3月  25 22:39 pwd
+...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1585151292"
+  data-df="ll"
+  
+>
+  Mar 25, 2020
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      RedHad
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/4.4-RedHad-dir/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">linux(CentOS7) 目录结构</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                linux 目录结构
+
+常用命令
+
+cp
+
+[root@Cc RedHad]#  cp /etc/nginx/conf.d/default.conf .
+[root@Cc RedHad]# ll
+总用量 4
+-rw-r--r-- 1 root root 750 3月  24 22:17 default.conf
+[root@Cc RedHad]#
+
+
+cp –help
+
+[root@Cc R...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1585063074"
+  data-df="ll"
+  
+>
+  Mar 24, 2020
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      RedHad
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/4.1~4.3-RedHad-cmd/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">linux(CentOS7) 命令操作</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                前言
+
+linux 系统架构
+
+
+  硬件
+  系统内核
+  命令解析器
+  上层应用程序
+
+
+初认命令行
+
+
+  [当前用户@计算机名字~]#
+  [当前用户@计算机名字~]$
+    
+      #为 root 用户，$普通用户
+    
+  
+
+
+[root@Cc ~]# su yf
+[yf@Cc root]$ su root
+Password:
+[root@Cc ~]#
+
+
+
+
+b...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1584973074"
+  data-df="ll"
+  
+>
+  Mar 23, 2020
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      RedHad
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/1-3-RedHad-base/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">linux(CentOS7)基础知识</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                linux 基础知识
+
+linux 历史发布
+
+启动选择
+
+Red Hat 安装
+
+安装之后远程登入
+
+
+  查看是否启动
+
+
+[root@Cc ~]# ps -ef |grep sshd
+root      1377     1  0 Mar20 ?        00:00:00 /usr/sbin/sshd -D
+root     21020  1377  0 20:49 ?     ...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1584973074"
+  data-df="ll"
+  
+>
+  Mar 23, 2020
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      RedHad
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/frp/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">frp 内网穿透</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                frp 内网穿透
+
+环境准备
+
+
+  Linux 环境
+  Windows 环境
+  Linux 云服务 开启需要端口
+  Windows
+
+
+配置文件
+
+
+  *s.ini 是服务端配置文件
+  *c.ini 是客服端配置文件
+
+
+frps.ini（linux）
+
+目录结构
+
+[root@k8s-master linux]# ll
+总用量 11096
+-rwxrwxr-x 1 admin ...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1584941545"
+  data-df="ll"
+  
+>
+  Mar 23, 2020
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Dev,
+                      Utils
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/k8sBase/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Kubernetes概述</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Kubernetes
+
+简介
+
+Kubernetes 是用于自动化容器操作的开源平台。它允许开发者在多个主机上部署、运行和管理容器化应用程序，并提供了一致性、可扩展性和弹性等方面的保障。
+
+Kubernetes 的设计目标是实现跨不同主机和云环境的容器编排。它可以运行在所有主流的云平台和数据中心中，包括 Amazon Web Services（AWS）、Microsoft Azure、Goo...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1584885600"
+  data-df="ll"
+  
+>
+  Mar 22, 2020
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      Kubernetes
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/Nginx-install/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Nginx 安装</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                linux 命令安装
+
+1.添加Nginx到YUM源
+添加CentOS 7 Nginx yum资源库,打开终端,使用以下命令:
+
+sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+2.安装Nginx
+在你的CentOS 7 服务器中使...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1583936584"
+  data-df="ll"
+  
+>
+  Mar 11, 2020
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      DevOps,
+                      Nginx
                   </span>
                 
               </div>
@@ -1667,51 +1673,12 @@ Linux 用户管理
       
 
       
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
         <!-- show number -->
         <li class="page-item ">
           <a
             class="page-link"
-            href="/page21"
-          >21</a>
+            href="/page18"
+          >18</a>
         </li>
       
     
@@ -1719,7 +1686,7 @@ Linux 用户管理
     <!-- mobile pagination -->
     <li class="page-index align-middle">
       <span>12</span>
-      <span class="text-muted">/ 21</span>
+      <span class="text-muted">/ 18</span>
     </li>
 
     <!-- right arrow -->
@@ -1743,7 +1710,7 @@ Linux 用户管理
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -1766,35 +1733,35 @@ Linux 用户管理
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/k8s-work-cmd/">Kubernetes Work CMD</a>
+          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/CDN/">CDN</a>
+          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/redis-py-utils/">开发脚本</a>
+          <a href="/posts/other/">Golang 代码规范</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/services/">Kubernetes Services</a>
+          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/deployment/">Kubernetes Deploymen</a>
+          <a href="/posts/Lock/">Golang 锁</a>
         </li>
       
     </ul>
@@ -2018,194 +1985,10 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2405,80 +2188,6 @@ Linux 用户管理
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2503,153 +2212,6 @@ Linux 用户管理
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2949,6 +2511,316 @@ Linux 用户管理
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3118,21 +2990,6 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -3172,35 +3029,10 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3249,10 +3081,10 @@ Linux 用户管理
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -3264,7 +3096,7 @@ Linux 用户管理
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -3290,13 +3122,10 @@ Linux 用户管理
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>©
+  <p>
+    ©
     <time>2024</time>
-
-    
-      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
-    
-
+    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -3306,9 +3135,10 @@ Linux 用户管理
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
   </p>
 </footer>
+
 
           </div>
         </div>
@@ -3534,194 +3364,10 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3921,80 +3567,6 @@ Linux 用户管理
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4019,153 +3591,6 @@ Linux 用户管理
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4465,6 +3890,316 @@ Linux 用户管理
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4634,21 +4369,6 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4688,35 +4408,10 @@ Linux 用户管理
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4765,10 +4460,10 @@ Linux 用户管理
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -4780,7 +4475,7 @@ Linux 用户管理
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -4839,8 +4534,6 @@ Linux 用户管理
 
 
 <!-- layout specified -->
-
-
 
 
   

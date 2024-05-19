@@ -15,7 +15,9 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <head>
+  <!-- The Head -->
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -24,12 +26,15 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  >
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.3" />
+  
+
+  
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Cc Blog" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
@@ -47,6 +52,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Cc Blog","url":"https://cc360428.github.io//page15/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  
 
   <title>Cc Blog
   </title>
@@ -61,9 +67,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-
-  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -86,9 +90,6 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
-      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
-      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
-    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,7 +101,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
@@ -271,7 +272,12 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle">
+      
+        
+        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -578,14 +584,14 @@
 <div id="post-list" class="flex-grow-1 px-xl-1">
   
     <article class="card-wrapper card">
-      <a href="/posts/Consul/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/beego-mvc/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Constl</h1>
+            <h1 class="card-title my-2 mt-md-0">Beego MVC</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -595,436 +601,16 @@
 
 
 
-                #　 Consul
+                beego MVC
 
-安装
+自动生成 controller 和 models
 
-//1.下载压缩包
-wget https://releases.hashicorp.com/consul/1.4.2/consul_1.4.2_linux_amd64.zip
-//2.解压
-unzip consul_1.4.2_linux_amd64.zip
-//3.检查安装
-./consul -v
-Consul v1.4.2
-Protocol 2 spoken...
-              </p>
-            </div>
+  bee generate appcode -tables=&quot;integral_acquisition&quot; -conn=&quot;shareaio_server:shareaio@2019@tcp(47.244.225.92:9936)/shareaio_server&quot;
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
 
+controller
 
-
-
-<time
-  
-  data-ts="1577341332"
-  data-df="ll"
-  
->
-  Dec 26, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/databases/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Databases（04735）</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                数据库系统原理（04735）
-
-第一章数据库系统概述
-
-第三节数据库系统的结构
-
-模式：物理独立性 外模式：逻辑独立性
-
-
-  数据库系统结构
-    
-      客户端系统结构
-      浏览器/服务器结构
-        
-          表示层、处理层、数据层
-        
-      
-    
-  
-
-
-第四节数据模型
-
-
-  数据模型的分类：概念层数据模型、逻辑层数据...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1576821421"
-  data-df="ll"
-  
->
-  Dec 20, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Cc,
-                      SelfStudy,
-                      ComputerBasics
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/Lock/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Golang 锁</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                锁
-
-
-  sync 包中 Locker 提供互斥锁（Mutex）和读写锁（RWMutex）
-
-
-
-  为什么要锁
-
-
-
-  
-    
-      
-        ` go run test1.go
-        sort
-        uniq
-        wc -l 会发现下面代码明明是递增 但是结果会出现最后可能不是999`
-      
-    
-  
-
-
-package...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1576162716"
-  data-df="ll"
-  
->
-  Dec 12, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/Interview/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Golang 2019</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                20191211
-
-redis
-
-
-  redis 数据类型
-    
-      string
-      hash
-      list
-      set
-    
-  
-  数据类型一般应用场景
-  redis 持久化
-  redis 与 mongoDB 区别
-    
-      redis 支持事务（），mongoDB 不支持
-      redis 适合做缓存读写速度忧，mon...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1576076316"
-  data-df="ll"
-  
->
-  Dec 11, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/go-1.12/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Go 1.12 版本更新 摘要</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                go mod 1.12 学习
-
-go modules(check version)
-
-检查 golang 版本
-
-如果没有生成 go.sum 或者报错请输入
-export GOPROXY=https://goproxy.io
-
-C:\Users\admin&amp;gt;go version
-go version go1.12.9 windows/amd64
-
-
-把 golang 升级到 1.11（...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1575623482"
-  data-df="ll"
-  
->
-  Dec  6, 2019
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/mysql-lock/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">MySql lock</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                MySQL 锁
-
-
-  表级锁 和 行级锁
-
-
-
-
-mysql&amp;gt; show tables;
-+----------------+
-| Tables_in_test |
-+----------------+
-| mylock         |
-| test           |
-+----------------+
-2 rows in set (0.03 sec)
-
-
-表锁
-
+接口 swagger
 
   ...
               </p>
@@ -1044,11 +630,11 @@ mysql&amp;gt; show tables;
 
 <time
   
-  data-ts="1568780508"
+  data-ts="1557127284"
   data-df="ll"
   
 >
-  Sep 18, 2019
+  May  6, 2019
 </time>
 
 
@@ -1057,9 +643,8 @@ mysql&amp;gt; show tables;
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      Dev,
-                      Database,
-                      Mysql
+                      Language,
+                      Go
                   </span>
                 
               </div>
@@ -1074,14 +659,14 @@ mysql&amp;gt; show tables;
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/docker-usr/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/beego-error/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">docker 实战</h1>
+            <h1 class="card-title my-2 mt-md-0">Beego Error</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1091,23 +676,27 @@ mysql&amp;gt; show tables;
 
 
 
-                docker 实战
+                Beego 错误信息记载
 
-docker 基本命令
-
-
-  docker 操作基础命令
+1.swagger 错误信息注解写错了
 
 
+  可以用以下方式解决：
+检查那个地方出错，建议使用下面的第一种方法
 
-  docker images
-  docker image ls
-  docker ps
-  docker ps -a
-  docker stop [CONTAINER ID]
-  docker rm [CONTAINER ID]
-  docker restart [CONTAINER ID]
-  do...
+
+
+  bee generate docs
+  bee run watchall true
+
+
+2.MySQL 运行时突然停止了错误
+
+1、查看 mysql 版本
+方法一：status;
+方法二：select version();
+
+2、Mysql ...
               </p>
             </div>
 
@@ -1125,11 +714,11 @@ docker 基本命令
 
 <time
   
-  data-ts="1567486134"
+  data-ts="1557127284"
   data-df="ll"
   
 >
-  Sep  3, 2019
+  May  6, 2019
 </time>
 
 
@@ -1138,8 +727,8 @@ docker 基本命令
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      DevOps,
-                      Docker
+                      Language,
+                      Go
                   </span>
                 
               </div>
@@ -1154,14 +743,14 @@ docker 基本命令
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/tcpip/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/base-beego/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">TCP/IP</h1>
+            <h1 class="card-title my-2 mt-md-0">Beego Base</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1171,22 +760,29 @@ docker 基本命令
 
 
 
-                TCP/IP
+                Beego
+
+Github
+
+Create hello directory, cd hello directory
+
+mkdir hello
+cd hello
 
 
-  TCP/IP 在传输层连个不同协议，传输控制协议(TCP)、用户数据协议(UDP)
+Init module
+
+go mod init
 
 
-TCP——UDP
+Download and install
+
+go get github.com/beego/beego/v2@latest
 
 
-  TCP 数据传输单位 TCP 报文段，UDP 数据传输单位 UDP 报文或者用户数据报
-  TCP 面向连接，UDP 面向无连接
-  TCP 高度可靠，UDP 不能保证数据可靠性传输
-  TCP 复杂性因此开销大，UDP 简单性具有较高的传输效率
+Create file hello.go
 
-
-TCP...
+``...
               </p>
             </div>
 
@@ -1204,11 +800,11 @@ TCP...
 
 <time
   
-  data-ts="1566449334"
+  data-ts="1557127284"
   data-df="ll"
   
 >
-  Aug 22, 2019
+  May  6, 2019
 </time>
 
 
@@ -1217,8 +813,8 @@ TCP...
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      DevOps,
-                      Network
+                      Language,
+                      Go
                   </span>
                 
               </div>
@@ -1233,14 +829,14 @@ TCP...
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/ip/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/go-github-project/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">IP协议</h1>
+            <h1 class="card-title my-2 mt-md-0">Go Github Project</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1250,8 +846,30 @@ TCP...
 
 
 
-                
+                Github Golang Package
 
+读取配置文件包
+
+
+  https://github.com/spf13/viper
+  参考链接
+
+
+监听文件
+
+
+  https://github.com/fsnotify/fsnotify
+  参考链接
+
+
+交叉变异工具
+
+
+  github.com/mitchellh/gox
+  参考链接
+
+
+sgox -os=&quot;windows linu...
               </p>
             </div>
 
@@ -1269,11 +887,11 @@ TCP...
 
 <time
   
-  data-ts="1566362934"
+  data-ts="1556549916"
   data-df="ll"
   
 >
-  Aug 21, 2019
+  Apr 29, 2019
 </time>
 
 
@@ -1282,8 +900,8 @@ TCP...
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      DevOps,
-                      Network
+                      Language,
+                      Go
                   </span>
                 
               </div>
@@ -1298,14 +916,14 @@ TCP...
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/http/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/other/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">HTTP协议</h1>
+            <h1 class="card-title my-2 mt-md-0">Golang 代码规范</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1315,35 +933,324 @@ TCP...
 
 
 
-                HTTP 协议
+                代码规范
+
+Go 代码规范（或 Go 规范）旨在使代码更具可读性、可维护性和可重用性。以下是一些主要的规则：
 
 
-  Hyper Text Transfer Protocol 超文本传输协议
+  格式化：使用 gofmt 工具来格式化代码以提高可读性。
+  命名：遵循有意义的命名方式，使用驼峰式命名法，在变量名和函数名中使用小写字母开头，公共函数和变量名应该首字母大写。
+  注释：对于每一个包、函数、类型、方法和变量都应该添加注释，尽可能用单行注释。
+  导入：将所有...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
 
 
 
-  http 消息结构体、请求方法、响应头信息、状态码、content-type
-  http 版本：HTTP/0.9、HTTP/1.0、HTTP/1.1、HTTP/2.0
 
-
-消息结构体
-
-
+<time
   
-    客户端
+  data-ts="1556549916"
+  data-df="ll"
+  
+>
+  Apr 29, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Go
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/14-testing/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Day14（testing）</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                testing
+
+
+  Golang 自带了一个轻量级的测试框架，可以用来编写单元测试和基准测试。该测试框架主要包含了以下几个组件：
+
+
+
+  testing.T 结构体：代表了一个单元测试，它包含了一系列断言函数，用于判断测试结果是否正确；
+  testing.B 结构体：代表了一个基准测试，它用于测试代码的性能；
+  testing.M 结构体：代表了一个测试 suite，可以用于对一组...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1553904494"
+  data-df="ll"
+  
+>
+  Mar 30, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Go
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/13-time/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Day13（Time）</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                时间包
+
+
+  时间包 time 提供了日期和时间相关的函数和结构体。使用这个包可以完成时间格式化、时间比较、定时器等功能
+
+
+获取当前时间
+
+now := time.Now()
+fmt.Println(now)
+
+
+时间格式化输出
+
+t := time.Now()
+fmt.Println(t.Format(&quot;2006-01-02 15:04:05&quot;))
+
+
+时间比较
+
+t1 := time...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1553904493"
+  data-df="ll"
+  
+>
+  Mar 30, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Go
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/12-reflect/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Day12（反射）</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                反射
+
+介绍
+
+
+  反射是 Golang 中的一项重要特性，它提供了一种机制，可以在运行时动态地获取变量的类型信息、值信息、方法、字段等，并可以通过反射进行值的修改和调用方法。这使得 Golang 具备了更高的灵活性和通用性。
+  在 Golang 中，反射通过 reflect 包实现，该包提供了一些函数和类型，可以用于检查变量的类型、值、方法、字段等信息。例如，reflect.TypeO...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1553904492"
+  data-df="ll"
+  
+>
+  Mar 30, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Go
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/11-Concurrent/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Day11（并发编程）</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                概念
+
+
+  并发：把任务在不同的时间点交给处理器进行处理同一时间点，任务并不会同时进行
+  并行：把每一个任务分配给每一个处理器独立完成，在同一时间点任务一定是同时运行的
+
+
+简介使用
+
+
+  创建：使用 go 关键字创建一个 goroutine go functionName()
+  
+    调整并发运行性能
 
     
-  
-  
-    服务端
+      
+        例子：
 
-    
-  
-
-
-请求方法
-
-...
+        runt...
               </p>
             </div>
 
@@ -1361,11 +1268,11 @@ TCP...
 
 <time
   
-  data-ts="1566276534"
+  data-ts="1553904491"
   data-df="ll"
   
 >
-  Aug 20, 2019
+  Mar 30, 2019
 </time>
 
 
@@ -1374,8 +1281,90 @@ TCP...
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      DevOps,
-                      Network
+                      Language,
+                      Go
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/10-interfaceAndError/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Day10（接口和错误处理）</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                interface And Panic、Error
+
+
+  源码
+
+
+interface
+
+接口创建使用
+
+package main
+
+import (
+	&quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
+	&quot;github.com/pkg/errors&quot;
+)
+
+// UserInterface
+type UserInterface interf...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1553904490"
+  data-df="ll"
+  
+>
+  Mar 30, 2019
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Go
                   </span>
                 
               </div>
@@ -1671,51 +1660,12 @@ TCP...
       
 
       
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- hide number -->
-        
-      
-    
-      
-      
-      
-      
-      
-
-      
-
-      
         <!-- show number -->
         <li class="page-item ">
           <a
             class="page-link"
-            href="/page21"
-          >21</a>
+            href="/page18"
+          >18</a>
         </li>
       
     
@@ -1723,7 +1673,7 @@ TCP...
     <!-- mobile pagination -->
     <li class="page-index align-middle">
       <span>15</span>
-      <span class="text-muted">/ 21</span>
+      <span class="text-muted">/ 18</span>
     </li>
 
     <!-- right arrow -->
@@ -1747,7 +1697,7 @@ TCP...
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -1770,35 +1720,35 @@ TCP...
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/k8s-work-cmd/">Kubernetes Work CMD</a>
+          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/CDN/">CDN</a>
+          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/redis-py-utils/">开发脚本</a>
+          <a href="/posts/other/">Golang 代码规范</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/services/">Kubernetes Services</a>
+          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/deployment/">Kubernetes Deploymen</a>
+          <a href="/posts/Lock/">Golang 锁</a>
         </li>
       
     </ul>
@@ -2022,194 +1972,10 @@ TCP...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2409,80 +2175,6 @@ TCP...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2507,153 +2199,6 @@ TCP...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2953,6 +2498,316 @@ TCP...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3122,21 +2977,6 @@ TCP...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -3176,35 +3016,10 @@ TCP...
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3253,10 +3068,10 @@ TCP...
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -3268,7 +3083,7 @@ TCP...
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -3294,13 +3109,10 @@ TCP...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>©
+  <p>
+    ©
     <time>2024</time>
-
-    
-      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
-    
-
+    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -3310,9 +3122,10 @@ TCP...
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
   </p>
 </footer>
+
 
           </div>
         </div>
@@ -3538,194 +3351,10 @@ TCP...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3925,80 +3554,6 @@ TCP...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4023,153 +3578,6 @@ TCP...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4469,6 +3877,316 @@ TCP...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4638,21 +4356,6 @@ TCP...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4692,35 +4395,10 @@ TCP...
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4769,10 +4447,10 @@ TCP...
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -4784,7 +4462,7 @@ TCP...
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -4843,8 +4521,6 @@ TCP...
 
 
 <!-- layout specified -->
-
-
 
 
   

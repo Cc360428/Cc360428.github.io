@@ -15,7 +15,9 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <head>
+  <!-- The Head -->
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -24,12 +26,15 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  >
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.3" />
+  
+
+  
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Day03（运算符与条件语句）" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="运算符与条件语句" />
@@ -38,14 +43,15 @@
 <meta property="og:url" content="https://cc360428.github.io//posts/3-OperatorCondition/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-04-02T13:13:45+08:00" />
+<meta property="article:published_time" content="2019-03-30T08:08:03+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Day03（运算符与条件语句）" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-04-02T13:13:45+08:00","datePublished":"2019-04-02T13:13:45+08:00","description":"运算符与条件语句","headline":"Day03（运算符与条件语句）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/3-OperatorCondition/"},"url":"https://cc360428.github.io//posts/3-OperatorCondition/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-19T19:22:34+08:00","datePublished":"2019-03-30T08:08:03+08:00","description":"运算符与条件语句","headline":"Day03（运算符与条件语句）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/3-OperatorCondition/"},"url":"https://cc360428.github.io//posts/3-OperatorCondition/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  
 
   <title>Day03（运算符与条件语句） | Cc Blog
   </title>
@@ -60,9 +66,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-
-  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -85,9 +89,6 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
-      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
-      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
-    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -99,12 +100,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.3/dist/tocbot.min.css">
   
 
   
@@ -275,7 +276,12 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle">
+      
+        
+        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -454,7 +460,9 @@
         
           
             <span>
-              <a href="/">Home</a>
+              <a href="/">
+                Home
+              </a>
             </span>
 
           
@@ -564,32 +572,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -682,6 +664,65 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -772,18 +813,41 @@
 
 <time
   
-  data-ts="1554182025"
+  data-ts="1553904483"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Apr  2, 2019
+  Mar 30, 2019
 </time>
 
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1716117754"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  May 19, 2024
+</time>
+
+        </span>
       
 
       
@@ -823,9 +887,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1594 words"
+  title="4273 words"
 >
-  <em>8 min</em> read</span>
+  <em>23 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -834,455 +898,150 @@
   </header>
 
   <div class="content">
-    <h2 id="运算符与条件语句"><span class="me-2">运算符与条件语句</span><a href="#运算符与条件语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="运算符"><span class="me-2">运算符</span><a href="#运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
-  <p><a href="https://gitee.com/GolangCodeFile/blogcode/tree/master/day03">本章源码</a></p>
+  <p>在 Go 语言（又称 Golang）中，并没有直接列出所有可能的运算法种类，因为运算法（或称为运算符）是编程语言的内置特性，用于执行不同类型的计算或逻辑操作。但是，我们可以分类列出 Go 语言中常用的运算法种类：</p>
 </blockquote>
 
-<h3 id="运算符"><span class="me-2">运算符</span><a href="#运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ol>
+  <li>
+    <p><strong>算术运算符</strong>：</p>
 
-<h4 id="算数运算符"><span class="me-2">算数运算符</span><a href="#算数运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <ul>
+      <li>加法 (<code class="language-plaintext highlighter-rouge">+</code>)</li>
+      <li>减法 (<code class="language-plaintext highlighter-rouge">-</code>)</li>
+      <li>乘法 (<code class="language-plaintext highlighter-rouge">*</code>)</li>
+      <li>除法 (<code class="language-plaintext highlighter-rouge">/</code>)</li>
+      <li>整除（取整）(<code class="language-plaintext highlighter-rouge">%</code> 或 <code class="language-plaintext highlighter-rouge">%%</code>，在某些情况下）</li>
+      <li>自增 (<code class="language-plaintext highlighter-rouge">++</code>)</li>
+      <li>自减 (<code class="language-plaintext highlighter-rouge">--</code>)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>关系运算符</strong>（或比较运算符）：</p>
 
-<blockquote>
-  <p>假定 A 值为 10，B 值为 20</p>
-</blockquote>
+    <ul>
+      <li>等于 (<code class="language-plaintext highlighter-rouge">==</code>)</li>
+      <li>不等于 (<code class="language-plaintext highlighter-rouge">!=</code>)</li>
+      <li>大于 (<code class="language-plaintext highlighter-rouge">&gt;</code>)</li>
+      <li>小于 (<code class="language-plaintext highlighter-rouge">&lt;</code>)</li>
+      <li>大于等于 (<code class="language-plaintext highlighter-rouge">&gt;=</code>)</li>
+      <li>小于等于 (<code class="language-plaintext highlighter-rouge">&lt;=</code>)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>逻辑运算符</strong>：</p>
 
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left">运算符</th>
-      <th style="text-align: left">描述</th>
-      <th style="text-align: center">实例</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">+</td>
-      <td style="text-align: left">相加</td>
-      <td style="text-align: center">A + B 输出结果 30</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">-</td>
-      <td style="text-align: left">相减</td>
-      <td style="text-align: center">A - B 输出结果 -10</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">*</td>
-      <td style="text-align: left">相乘</td>
-      <td style="text-align: center">A * B 输出结果 200</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">/</td>
-      <td style="text-align: left">相除</td>
-      <td style="text-align: center">B / A 输出结果 2</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">%</td>
-      <td style="text-align: left">求余</td>
-      <td style="text-align: center">B % A 输出结果 0</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">++</td>
-      <td style="text-align: left">自增</td>
-      <td style="text-align: center">A++ 输出结果 11</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">–</td>
-      <td style="text-align: left">自减</td>
-      <td style="text-align: center">A– 输出结果 9</td>
-    </tr>
-  </tbody>
-</table></div>
+    <ul>
+      <li>逻辑与 (<code class="language-plaintext highlighter-rouge">&amp;&amp;</code>)</li>
+      <li>逻辑或 (<code class="language-plaintext highlighter-rouge">||</code>)</li>
+      <li>逻辑非 (<code class="language-plaintext highlighter-rouge">!</code>)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>位运算符</strong>：</p>
 
-<h4 id="关系运算符"><span class="me-2">关系运算符</span><a href="#关系运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <ul>
+      <li>位与 (<code class="language-plaintext highlighter-rouge">&amp;</code>)</li>
+      <li>位或 (<code class="language-plaintext highlighter-rouge">|</code>)</li>
+      <li>位异或 (<code class="language-plaintext highlighter-rouge">^</code>)</li>
+      <li>位与非 (<code class="language-plaintext highlighter-rouge">&amp;^</code>)</li>
+      <li>左移 (<code class="language-plaintext highlighter-rouge">&lt;&lt;</code>)</li>
+      <li>右移 (<code class="language-plaintext highlighter-rouge">&gt;&gt;</code>)</li>
+      <li>无符号右移 (<code class="language-plaintext highlighter-rouge">&gt;&gt;&gt;</code>，但 Go 中没有无符号右移运算符）</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>赋值运算符</strong>：</p>
 
-<blockquote>
-  <p>假定 A 值为 10，B 值为 20</p>
-</blockquote>
+    <ul>
+      <li>赋值 (<code class="language-plaintext highlighter-rouge">=</code>)</li>
+      <li>复合赋值（例如 <code class="language-plaintext highlighter-rouge">+=</code>、<code class="language-plaintext highlighter-rouge">-=</code>、<code class="language-plaintext highlighter-rouge">*=</code>、<code class="language-plaintext highlighter-rouge">/=</code> 等）</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>其他运算符</strong>：</p>
 
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left">运算符</th>
-      <th style="text-align: left">描述</th>
-      <th style="text-align: left">实例</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">==</td>
-      <td style="text-align: left">检查两个值是否相等，如果相等返回 True 否则返回 False。</td>
-      <td style="text-align: left">(A == B) 为 False</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">!=</td>
-      <td style="text-align: left">检查两个值是否不相等，如果不相等返回 True 否则返回 False。</td>
-      <td style="text-align: left">(A != B) 为 True</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">&gt;</td>
-      <td style="text-align: left">检查左边值是否大于右边值，如果是返回 True 否则返回 False。</td>
-      <td style="text-align: left">(A &gt; B) 为 False</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">&lt;</td>
-      <td style="text-align: left">检查左边值是否小于右边值，如果是返回 True 否则返回 False。</td>
-      <td style="text-align: left">(A &lt; B) 为 True</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">&gt;=</td>
-      <td style="text-align: left">检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。</td>
-      <td style="text-align: left">(A &gt;= B) 为 False</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">&lt;=</td>
-      <td style="text-align: left">检查左边值是否小于等于右边值，如果是返回 True 否则返回 False。</td>
-      <td style="text-align: left">(A &lt;= B) 为 True</td>
-    </tr>
-  </tbody>
-</table></div>
+    <ul>
+      <li>地址运算符 (<code class="language-plaintext highlighter-rouge">&amp;</code> 用于获取变量的地址，但在赋值上下文中作为位与运算符)</li>
+      <li>指针解引用 (<code class="language-plaintext highlighter-rouge">*</code> 用于解引用指针)</li>
+      <li>长度和容量运算符 (<code class="language-plaintext highlighter-rouge">len()</code> 和 <code class="language-plaintext highlighter-rouge">cap()</code>，它们不是真正的运算符，但常用于数组、切片、映射和通道)</li>
+      <li>索引和切片 (<code class="language-plaintext highlighter-rouge">[]</code>，用于数组、切片和字符串的索引或切片操作)</li>
+      <li>通道运算符 (<code class="language-plaintext highlighter-rouge">&lt;-</code>，用于发送和接收通道的数据)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>类型断言和类型转换</strong>：</p>
+    <ul>
+      <li>类型断言 (<code class="language-plaintext highlighter-rouge">v, ok := i.(T)</code>，用于接口到具体类型的断言)</li>
+      <li>类型转换 (<code class="language-plaintext highlighter-rouge">T(v)</code>，用于将一个类型的值转换为另一个类型)</li>
+    </ul>
+  </li>
+</ol>
 
-<h4 id="逻辑运算符"><span class="me-2">逻辑运算符</span><a href="#逻辑运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="算术运算符"><span class="me-2"><strong>算术运算符</strong></span><a href="#算术运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>假定 A 值为 True，B 值为 False。</p>
+  <p>算术运算符在 Go 语言中用于执行数学计算。以下是 Go 语言中算术运算符的列表，每个运算符都附有描述和示例：</p>
 </blockquote>
 
 <div class="table-wrapper"><table>
   <thead>
     <tr>
-      <th style="text-align: left">运算符</th>
-      <th style="text-align: left">描述</th>
-      <th style="text-align: left">实例</th>
+      <th>运算符</th>
+      <th>描述</th>
+      <th>示例</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">&amp;&amp;</td>
-      <td style="text-align: left">逻辑 AND 运算符。 如果两边的操作数都是 True，则条件 True，否则为 False。</td>
-      <td style="text-align: left">(A &amp;&amp; B) 为 False</td>
+      <td><code class="language-plaintext highlighter-rouge">+</code></td>
+      <td>加法，将两个数相加</td>
+      <td><code class="language-plaintext highlighter-rouge">a := 5 + 3  // a = 8</code></td>
     </tr>
     <tr>
-      <td style="text-align: left">||</td>
-      <td style="text-align: left">逻辑 OR 运算符。 如果两边的操作数有一个 True，则条件 True，否则为 False。</td>
-      <td style="text-align: left">(A || B) 为 True</td>
+      <td><code class="language-plaintext highlighter-rouge">-</code></td>
+      <td>减法，从第一个数中减去第二个数</td>
+      <td><code class="language-plaintext highlighter-rouge">b := 5 - 3  // b = 2</code></td>
     </tr>
     <tr>
-      <td style="text-align: left">!</td>
-      <td style="text-align: left">逻辑 NOT 运算符。 如果条件为 True，则逻辑 NOT 条件 False，否则为 True。</td>
-      <td style="text-align: left">!(A &amp;&amp; B) 为 True</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<h4 id="位运算符"><span class="me-2">位运算符</span><a href="#位运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left">p</th>
-      <th style="text-align: left">q</th>
-      <th style="text-align: left">p &amp; q</th>
-      <th style="text-align: left">p | q</th>
-      <th style="text-align: left">p ^ q</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">0</td>
-      <td style="text-align: left">0</td>
-      <td style="text-align: left">0</td>
-      <td style="text-align: left">0</td>
-      <td style="text-align: left">0</td>
+      <td><code class="language-plaintext highlighter-rouge">*</code></td>
+      <td>乘法，将两个数相乘</td>
+      <td><code class="language-plaintext highlighter-rouge">c := 5 * 3  // c = 15</code></td>
     </tr>
     <tr>
-      <td style="text-align: left">0</td>
-      <td style="text-align: left">1</td>
-      <td style="text-align: left">0</td>
-      <td style="text-align: left">1</td>
-      <td style="text-align: left">1</td>
+      <td><code class="language-plaintext highlighter-rouge">/</code></td>
+      <td>除法，将第一个数除以第二个数</td>
+      <td><code class="language-plaintext highlighter-rouge">d := 10 / 3 // d = 3</code>（整数除法，结果为整数部分）</td>
     </tr>
     <tr>
-      <td style="text-align: left">1</td>
-      <td style="text-align: left">1</td>
-      <td style="text-align: left">1</td>
-      <td style="text-align: left">1</td>
-      <td style="text-align: left">0</td>
+      <td><code class="language-plaintext highlighter-rouge">%</code></td>
+      <td>取模（求余），返回两个数相除的余数</td>
+      <td><code class="language-plaintext highlighter-rouge">e := 10 % 3 // e = 1</code></td>
     </tr>
     <tr>
-      <td style="text-align: left">1</td>
-      <td style="text-align: left">0</td>
-      <td style="text-align: left">0</td>
-      <td style="text-align: left">1</td>
-      <td style="text-align: left">1</td>
+      <td><code class="language-plaintext highlighter-rouge">++</code></td>
+      <td>自增，将变量的值增加 1（前缀或后缀）</td>
+      <td><code class="language-plaintext highlighter-rouge">f := 5; f++; // f = 6</code> <br /> <code class="language-plaintext highlighter-rouge">g := 5; ++g; // g = 6</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--</code></td>
+      <td>自减，将变量的值减少 1（前缀或后缀）</td>
+      <td><code class="language-plaintext highlighter-rouge">h := 5; h--; // h = 4</code> <br /> <code class="language-plaintext highlighter-rouge">i := 5; --i; // i = 4</code></td>
     </tr>
   </tbody>
 </table></div>
 
 <blockquote>
-  <p>假定 A 为 60，B 为 13</p>
+  <p>请注意，在 Go 语言中，整数除法会向下取整（即”截断”小数部分），因此 <code class="language-plaintext highlighter-rouge">10 / 3</code> 的结果是 <code class="language-plaintext highlighter-rouge">3</code> 而不是 <code class="language-plaintext highlighter-rouge">3.333...</code>。如果你需要浮点数的除法结果，你应该至少有一个操作数是浮点数，如 <code class="language-plaintext highlighter-rouge">10.0 / 3</code> 或 <code class="language-plaintext highlighter-rouge">float64(10) / 3</code>。</p>
 </blockquote>
 
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left">运算符</th>
-      <th style="text-align: left">描述</th>
-      <th style="text-align: left">实例</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">&amp;</td>
-      <td style="text-align: left">按位与运算符”&amp;”是双目运算符。 其功能是参与运算的两数各对应的二进位相与。</td>
-      <td style="text-align: left">(A &amp; B) 结果为 12, 二进制为 0000 1100</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">|</td>
-      <td style="text-align: left">按位或运算符”|”是双目运算符。 其功能是参与运算的两数各对应的二进位相或</td>
-      <td style="text-align: left">(A | B) 结果为 61, 二进制为 0011 1101</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">^</td>
-      <td style="text-align: left">按位异或运算符”^”是双目运算符。 其功能是参与运算的两数各对应的二进位相异或，当两对应的二进位相异时，结果为 1。</td>
-      <td style="text-align: left">(A ^ B) 结果为 49, 二进制为 0011 0001</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">«</td>
-      <td style="text-align: left">左移运算符”«“是双目运算符。左移 n 位就是乘以 2 的 n 次方。 其功能把”«“左边的运算数的各二进位全部左移若干位，由”«“右边的数指定移动的位数，高位丢弃，低位补 0。</td>
-      <td style="text-align: left">A « 2 结果为 240 ，二进制为 1111 0000</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">»</td>
-      <td style="text-align: left">右移运算符”»“是双目运算符。右移 n 位就是除以 2 的 n 次方。 其功能是把”»“左边的运算数的各二进位全部右移若干位，”»“右边的数指定移动的位数。</td>
-      <td style="text-align: left">A » 2 结果为 15 ，二进制为 0000 1111</td>
-    </tr>
-  </tbody>
-</table></div>
+<p>此外，<code class="language-plaintext highlighter-rouge">++</code> 和 <code class="language-plaintext highlighter-rouge">--</code> 运算符既可以作为前缀运算符（如 <code class="language-plaintext highlighter-rouge">++i</code>），也可以作为后缀运算符（如 <code class="language-plaintext highlighter-rouge">i++</code>）。前缀运算符会先增加或减少变量的值，然后再返回新值；后缀运算符会先返回原始值，然后再增加或减少变量的值。这在循环和迭代中特别有用，但使用时需要小心以避免意外的副作用。</p>
 
-<h4 id="赋值运算符"><span class="me-2">赋值运算符</span><a href="#赋值运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left">运算符</th>
-      <th style="text-align: left">描述</th>
-      <th style="text-align: left">实例</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">=</td>
-      <td style="text-align: left">简单的赋值运算符，将一个表达式的值赋给一个左值</td>
-      <td style="text-align: left">C = A + B 将 A + B 表达式结果赋值给 C</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">+=</td>
-      <td style="text-align: left">相加后再赋值</td>
-      <td style="text-align: left">C += A 等于 C = C + A</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">-=</td>
-      <td style="text-align: left">相减后再赋值</td>
-      <td style="text-align: left">C -= A 等于 C = C - A</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">*=</td>
-      <td style="text-align: left">相乘后再赋值</td>
-      <td style="text-align: left">C _= A 等于 C = C _ A</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">/=</td>
-      <td style="text-align: left">相除后再赋值</td>
-      <td style="text-align: left">C /= A 等于 C = C / A</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">%=</td>
-      <td style="text-align: left">求余后再赋值</td>
-      <td style="text-align: left">C %= A 等于 C = C % A</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">«=</td>
-      <td style="text-align: left">左移后赋值</td>
-      <td style="text-align: left">C «= 2 等于 C = C « 2</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">»=</td>
-      <td style="text-align: left">右移后赋值</td>
-      <td style="text-align: left">C »= 2 等于 C = C » 2</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">&amp;=</td>
-      <td style="text-align: left">按位与后赋值</td>
-      <td style="text-align: left">C &amp;= 2 等于 C = C &amp; 2</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">^=</td>
-      <td style="text-align: left">按位异或后赋值</td>
-      <td style="text-align: left">C ^= 2 等于 C = C ^ 2</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">|=</td>
-      <td style="text-align: left">按位或后赋值</td>
-      <td style="text-align: left">C |= 2 等于 C = C | 2</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<h4 id="其他运算符"><span class="me-2">其他运算符</span><a href="#其他运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="table-wrapper"><table>
-  <thead>
-    <tr>
-      <th style="text-align: left">运算符</th>
-      <th style="text-align: left">描述</th>
-      <th style="text-align: left">实例</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">&amp;</td>
-      <td style="text-align: left">返回变量存储地址</td>
-      <td style="text-align: left">&amp;a; 将给出变量的实际地址。</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">*</td>
-      <td style="text-align: left">指针变量。</td>
-      <td style="text-align: left">*a; 是一个指针变量</td>
-    </tr>
-  </tbody>
-</table></div>
-
-<h3 id="条件语句"><span class="me-2">条件语句</span><a href="#条件语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<h4 id="if"><span class="me-2">if</span><a href="#if" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
-
-<span class="k">import</span> <span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
-
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">var</span> <span class="n">age</span> <span class="kt">int</span>
-	<span class="n">age</span> <span class="o">=</span> <span class="m">18</span>
-	<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="m">18</span> <span class="p">{</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"你已经成年了！"</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"判断结果"</span><span class="p">,</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="m">18</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">02</span> <span class="m">13</span><span class="o">:</span><span class="m">43</span><span class="o">:</span><span class="m">26.410</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">main</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">9</span><span class="p">]</span>  <span class="n">你已经成年了</span><span class="err">！</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">02</span> <span class="m">13</span><span class="o">:</span><span class="m">43</span><span class="o">:</span><span class="m">26.432</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">main</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">11</span><span class="p">]</span>  <span class="n">判断结果</span> <span class="no">true</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="if-else"><span class="me-2">if else</span><a href="#if-else" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
-
-<span class="k">import</span> <span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
-
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">var</span> <span class="n">name</span> <span class="kt">string</span>
-	<span class="n">name</span> <span class="o">=</span> <span class="s">"Cc"</span>
-	<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s">"Lcc"</span> <span class="p">{</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"我的名字叫%s"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"我的名字叫%s"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">02</span> <span class="m">13</span><span class="o">:</span><span class="m">54</span><span class="o">:</span><span class="m">26.758</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">ifelse</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">11</span><span class="p">]</span>  <span class="n">我的名字叫Cc</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="if-嵌套"><span class="me-2">if 嵌套</span><a href="#if-嵌套" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
-
-<span class="k">import</span> <span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
-
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">var</span> <span class="n">age</span> <span class="kt">int</span>
-	<span class="n">age</span> <span class="o">=</span> <span class="m">18</span>
-	<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="m">18</span> <span class="p">{</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"你已经成年了！"</span><span class="p">)</span>
-		<span class="k">if</span> <span class="no">true</span> <span class="p">{</span>
-			<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"你现在%d了，可以开车了！"</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"判断结果"</span><span class="p">,</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="m">18</span><span class="p">)</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">02</span> <span class="m">14</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">13.685</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">ifelse2</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">9</span><span class="p">]</span>  <span class="n">你已经成年了</span><span class="err">！</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">02</span> <span class="m">14</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">13.704</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">ifelse2</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">11</span><span class="p">]</span>  <span class="n">你现在18了</span><span class="err">，</span><span class="n">可以开车了</span><span class="err">！</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">02</span> <span class="m">14</span><span class="o">:</span><span class="m">00</span><span class="o">:</span><span class="m">13.705</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">ifelse2</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">14</span><span class="p">]</span>  <span class="n">判断结果</span> <span class="no">true</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="switch"><span class="me-2">switch</span><a href="#switch" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">switch</code> 可以做类型判断</p>
-</blockquote>
+<ul>
+  <li>完整例子</li>
+</ul>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1322,53 +1081,967 @@
 34
 35
 36
+37
+38
+39
+40
+41
+42
+43
+44
+45
 </pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
 
-<span class="k">import</span> <span class="p">(</span>
-	<span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
-<span class="p">)</span>
+<span class="k">import</span> <span class="s">"fmt"</span>
 
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c">/* 定义局部变量 */</span>
-	<span class="k">var</span> <span class="n">grade</span> <span class="o">=</span> <span class="s">"B"</span>
-	<span class="k">var</span> <span class="n">marks</span> <span class="kt">int</span> <span class="o">=</span> <span class="m">90</span>
+    <span class="c">// 定义两个整数变量</span>
+    <span class="k">var</span> <span class="n">num1</span><span class="p">,</span> <span class="n">num2</span> <span class="kt">int</span>
 
-	<span class="k">switch</span> <span class="n">marks</span> <span class="p">{</span>
-	<span class="k">case</span> <span class="m">90</span><span class="o">:</span>
-		<span class="n">grade</span> <span class="o">=</span> <span class="s">"A"</span>
-	<span class="k">case</span> <span class="m">80</span><span class="o">:</span>
-		<span class="n">grade</span> <span class="o">=</span> <span class="s">"B"</span>
-	<span class="k">case</span> <span class="m">50</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">70</span><span class="o">:</span>
-		<span class="n">grade</span> <span class="o">=</span> <span class="s">"C"</span>
-	<span class="k">default</span><span class="o">:</span>
-		<span class="n">grade</span> <span class="o">=</span> <span class="s">"D"</span>
-	<span class="p">}</span>
+    <span class="c">// 初始化这两个变量</span>
+    <span class="n">num1</span> <span class="o">=</span> <span class="m">10</span>
+    <span class="n">num2</span> <span class="o">=</span> <span class="m">3</span>
 
-	<span class="k">switch</span> <span class="p">{</span>
-	<span class="k">case</span> <span class="n">grade</span> <span class="o">==</span> <span class="s">"A"</span><span class="o">:</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"优秀!"</span><span class="p">)</span>
-	<span class="k">case</span> <span class="n">grade</span> <span class="o">==</span> <span class="s">"B"</span><span class="p">,</span> <span class="n">grade</span> <span class="o">==</span> <span class="s">"C"</span><span class="o">:</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"良好"</span><span class="p">)</span>
-	<span class="k">case</span> <span class="n">grade</span> <span class="o">==</span> <span class="s">"D"</span><span class="o">:</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"及格"</span><span class="p">)</span>
-	<span class="k">case</span> <span class="n">grade</span> <span class="o">==</span> <span class="s">"F"</span><span class="o">:</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"不及格"</span><span class="p">)</span>
-	<span class="k">default</span><span class="o">:</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"差"</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"你的等级是 %s"</span><span class="p">,</span> <span class="n">grade</span><span class="p">)</span>
+    <span class="c">// 计算两个数的和</span>
+    <span class="n">sum</span> <span class="o">:=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Sum:"</span><span class="p">,</span> <span class="n">sum</span><span class="p">)</span> <span class="c">// 输出: Sum: 13</span>
+
+    <span class="c">// 计算两个数的差</span>
+    <span class="n">difference</span> <span class="o">:=</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Difference:"</span><span class="p">,</span> <span class="n">difference</span><span class="p">)</span> <span class="c">// 输出: Difference: 7</span>
+
+    <span class="c">// 计算两个数的积</span>
+    <span class="n">product</span> <span class="o">:=</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Product:"</span><span class="p">,</span> <span class="n">product</span><span class="p">)</span> <span class="c">// 输出: Product: 30</span>
+
+    <span class="c">// 计算两个数相除的商（整数除法）</span>
+    <span class="n">quotient</span> <span class="o">:=</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Quotient:"</span><span class="p">,</span> <span class="n">quotient</span><span class="p">)</span> <span class="c">// 输出: Quotient: 3</span>
+
+    <span class="c">// 计算两个数相除的余数</span>
+    <span class="n">remainder</span> <span class="o">:=</span> <span class="n">num1</span> <span class="o">%</span> <span class="n">num2</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Remainder:"</span><span class="p">,</span> <span class="n">remainder</span><span class="p">)</span> <span class="c">// 输出: Remainder: 1</span>
+
+    <span class="c">// 使用自增运算符增加 num1 的值</span>
+    <span class="n">num1</span><span class="o">++</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"num1 after increment:"</span><span class="p">,</span> <span class="n">num1</span><span class="p">)</span> <span class="c">// 输出: num1 after increment: 11</span>
+
+    <span class="c">// 使用自减运算符减少 num2 的值</span>
+    <span class="n">num2</span><span class="o">--</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"num2 after decrement:"</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span> <span class="c">// 输出: num2 after decrement: 2</span>
+
+    <span class="c">// 合并使用算术运算符来计算一个表达式的值</span>
+    <span class="c">// 这里我们计算 (num1 + num2) * num2 - num1 的值</span>
+    <span class="n">combinedResult</span> <span class="o">:=</span> <span class="p">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">)</span> <span class="o">*</span> <span class="n">num2</span> <span class="o">-</span> <span class="n">num1</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Combined Result:"</span><span class="p">,</span> <span class="n">combinedResult</span><span class="p">)</span> <span class="c">// 输出: Combined Result: 20</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="关系运算符或比较运算符"><span class="me-2"><strong>关系运算符</strong>（或比较运算符）</span><a href="#关系运算符或比较运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>关系运算符（或比较运算符）用于比较两个操作数的大小或是否相等。以下是关系运算符的表格形式，以及每个运算符的示例：</p>
+</blockquote>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>运算符</th>
+      <th>描述</th>
+      <th>示例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">==</code></td>
+      <td>等于</td>
+      <td><code class="language-plaintext highlighter-rouge">a := 5; b := 5; fmt.Println(a == b) // 输出: true</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">!=</code></td>
+      <td>不等于</td>
+      <td><code class="language-plaintext highlighter-rouge">a := 5; b := 3; fmt.Println(a != b) // 输出: true</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&gt;</code></td>
+      <td>大于</td>
+      <td><code class="language-plaintext highlighter-rouge">a := 5; b := 3; fmt.Println(a &gt; b) // 输出: true</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;</code></td>
+      <td>小于</td>
+      <td><code class="language-plaintext highlighter-rouge">a := 3; b := 5; fmt.Println(a &lt; b) // 输出: true</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&gt;=</code></td>
+      <td>大于或等于</td>
+      <td><code class="language-plaintext highlighter-rouge">a := 5; b := 5; fmt.Println(a &gt;= b) // 输出: true</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;=</code></td>
+      <td>小于或等于</td>
+      <td><code class="language-plaintext highlighter-rouge">a := 3; b := 5; fmt.Println(a &lt;= b) // 输出: true</code></td>
+    </tr>
+  </tbody>
+</table></div>
+
+<ul>
+  <li>示例</li>
+</ul>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">14</span><span class="o">:</span><span class="m">46</span><span class="o">:</span><span class="m">51.571</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="k">switch</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">21</span><span class="p">]</span>  <span class="n">优秀</span><span class="o">!</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">14</span><span class="o">:</span><span class="m">46</span><span class="o">:</span><span class="m">51.595</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="k">switch</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">31</span><span class="p">]</span>  <span class="n">你的等级是</span> <span class="n">A</span>
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// 示例：使用 == 运算符</span>
+    <span class="n">a</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">b</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a == b:"</span><span class="p">,</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="c">// 输出: a == b: true</span>
+
+    <span class="c">// 示例：使用 != 运算符</span>
+    <span class="n">c</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">d</span> <span class="o">:=</span> <span class="m">3</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"c != d:"</span><span class="p">,</span> <span class="n">c</span> <span class="o">!=</span> <span class="n">d</span><span class="p">)</span> <span class="c">// 输出: c != d: true</span>
+
+    <span class="c">// 示例：使用 &gt; 运算符</span>
+    <span class="n">e</span> <span class="o">:=</span> <span class="m">7</span>
+    <span class="n">f</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"e &gt; f:"</span><span class="p">,</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="n">f</span><span class="p">)</span> <span class="c">// 输出: e &gt; f: true</span>
+
+    <span class="c">// 示例：使用 &lt; 运算符</span>
+    <span class="n">g</span> <span class="o">:=</span> <span class="m">3</span>
+    <span class="n">h</span> <span class="o">:=</span> <span class="m">7</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"g &lt; h:"</span><span class="p">,</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">)</span> <span class="c">// 输出: g &lt; h: true</span>
+
+    <span class="c">// 示例：使用 &gt;= 运算符</span>
+    <span class="n">i</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">j</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"i &gt;= j:"</span><span class="p">,</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">j</span><span class="p">)</span> <span class="c">// 输出: i &gt;= j: true</span>
+
+    <span class="c">// 示例：使用 &lt;= 运算符</span>
+    <span class="n">k</span> <span class="o">:=</span> <span class="m">3</span>
+    <span class="n">l</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"k &lt;= l:"</span><span class="p">,</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">l</span><span class="p">)</span> <span class="c">// 输出: k &lt;= l: true</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="select"><span class="me-2">select</span><a href="#select" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="逻辑运算符"><span class="me-2"><strong>逻辑运算符</strong></span><a href="#逻辑运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>假定 A 值为 True，B 值为 False。</p>
+</blockquote>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: left">运算符</th>
+      <th style="text-align: left">描述</th>
+      <th style="text-align: left">实例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">&amp;&amp;</td>
+      <td style="text-align: left">逻辑 AND 运算符。 如果两边的操作数都是 True，则条件 True，否则为 False。</td>
+      <td style="text-align: left">(A &amp;&amp; B) 为 False</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">||</td>
+      <td style="text-align: left">逻辑 OR 运算符。 如果两边的操作数有一个 True，则条件 True，否则为 False。</td>
+      <td style="text-align: left">(A|| B) 为 True</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">!</td>
+      <td style="text-align: left">逻辑 NOT 运算符。 如果条件为 True，则逻辑 NOT 条件 False，否则为 True。</td>
+      <td style="text-align: left">!(A &amp;&amp; B) 为 True</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<ul>
+  <li>例子
+以下是逻辑运算符的表格形式，以及每个运算符的示例：</li>
+</ul>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>运算符</th>
+      <th>描述</th>
+      <th>示例（假设 <code class="language-plaintext highlighter-rouge">a</code> 为 <code class="language-plaintext highlighter-rouge">true</code>，<code class="language-plaintext highlighter-rouge">b</code> 为 <code class="language-plaintext highlighter-rouge">false</code>）</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&amp;&amp;</code></td>
+      <td>逻辑与（AND）</td>
+      <td>如果 <code class="language-plaintext highlighter-rouge">a &amp;&amp; b</code>，则结果为 <code class="language-plaintext highlighter-rouge">false</code>（因为 <code class="language-plaintext highlighter-rouge">b</code> 为 <code class="language-plaintext highlighter-rouge">false</code>）</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>`</td>
+      <td> </td>
+      <td>`</td>
+      <td>逻辑或（OR）</td>
+      <td>如果 <code class="language-plaintext highlighter-rouge">a |     | b</code>，则结果为 <code class="language-plaintext highlighter-rouge">true</code>（因为 <code class="language-plaintext highlighter-rouge">a</code>为<code class="language-plaintext highlighter-rouge">true</code>）</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">!</code></td>
+      <td>逻辑非（NOT）</td>
+      <td>如果 <code class="language-plaintext highlighter-rouge">!a</code>，则结果为 <code class="language-plaintext highlighter-rouge">false</code>（因为 <code class="language-plaintext highlighter-rouge">a</code> 为 <code class="language-plaintext highlighter-rouge">true</code>，取反后为 <code class="language-plaintext highlighter-rouge">false</code>）</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h3 id="示例代码"><span class="me-2">示例代码</span><a href="#示例代码" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+ <span class="s">"fmt"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+ <span class="n">a</span> <span class="o">:=</span> <span class="no">true</span>
+ <span class="n">b</span> <span class="o">:=</span> <span class="no">false</span>
+
+ <span class="c">// 逻辑与（AND）</span>
+ <span class="n">andResult</span> <span class="o">:=</span> <span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">b</span>
+ <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a &amp;&amp; b:"</span><span class="p">,</span> <span class="n">andResult</span><span class="p">)</span> <span class="c">// 输出: a &amp;&amp; b: false</span>
+
+ <span class="c">// 逻辑或（OR）</span>
+ <span class="n">orResult</span> <span class="o">:=</span> <span class="n">a</span> <span class="o">||</span> <span class="n">b</span>
+ <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a || b:"</span><span class="p">,</span> <span class="n">orResult</span><span class="p">)</span> <span class="c">// 输出: a || b: true</span>
+
+ <span class="c">// 逻辑非（NOT）</span>
+ <span class="n">notResultA</span> <span class="o">:=</span> <span class="o">!</span><span class="n">a</span>
+ <span class="n">notResultB</span> <span class="o">:=</span> <span class="o">!</span><span class="n">b</span>
+ <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"!a:"</span><span class="p">,</span> <span class="n">notResultA</span><span class="p">)</span> <span class="c">// 输出: !a: false</span>
+ <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"!b:"</span><span class="p">,</span> <span class="n">notResultB</span><span class="p">)</span> <span class="c">// 输出: !b: true</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>在这个示例中，我们定义了两个布尔变量 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code>，分别赋值为 <code class="language-plaintext highlighter-rouge">true</code> 和 <code class="language-plaintext highlighter-rouge">false</code>。然后，我们使用逻辑运算符 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code>、<code class="language-plaintext highlighter-rouge">||</code> 和 <code class="language-plaintext highlighter-rouge">!</code> 对这两个变量进行运算，并将结果打印出来。逻辑与 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> 的结果只有在两个操作数都为 <code class="language-plaintext highlighter-rouge">true</code> 时才为 <code class="language-plaintext highlighter-rouge">true</code>，逻辑或 <code class="language-plaintext highlighter-rouge">||</code> 的结果只要有一个操作数为 <code class="language-plaintext highlighter-rouge">true</code> 就为 <code class="language-plaintext highlighter-rouge">true</code>，逻辑非 <code class="language-plaintext highlighter-rouge">!</code> 则是对一个布尔值取反。</p>
+
+<h3 id="位运算符"><span class="me-2"><strong>位运算符</strong></span><a href="#位运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>直观例子</li>
+</ul>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: left">p</th>
+      <th style="text-align: left">q</th>
+      <th style="text-align: left">p &amp; q</th>
+      <th style="text-align: left">p| q</th>
+      <th style="text-align: left">p ^ q</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">0</td>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">1</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<ul>
+  <li>
+    <p>解释</p>
+
+    <div class="table-wrapper"><table>
+      <thead>
+        <tr>
+          <th>运算符</th>
+          <th>描述</th>
+          <th>示例（假设 a = 60, b = 13，均为二进制表示）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&amp;</code></td>
+          <td>位与（AND）</td>
+          <td>a = <code class="language-plaintext highlighter-rouge">0011 1100</code>（60）<br />b = <code class="language-plaintext highlighter-rouge">0000 1101</code>（13）<br />a &amp; b = <code class="language-plaintext highlighter-rouge">0000 1100</code>（12）</td>
+        </tr>
+        <tr>
+          <td>|</td>
+          <td>位或（OR）</td>
+          <td>a = <code class="language-plaintext highlighter-rouge">0011 1100</code>（60）<br />b = <code class="language-plaintext highlighter-rouge">0000 1101</code>（13）<br />a | b = <code class="language-plaintext highlighter-rouge">0011 1101</code>（61）</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">^</code></td>
+          <td>位异或（XOR）</td>
+          <td>a = <code class="language-plaintext highlighter-rouge">0011 1100</code>（60）<br />b = <code class="language-plaintext highlighter-rouge">0000 1101</code>（13）<br />a ^ b = <code class="language-plaintext highlighter-rouge">0011 0001</code>（49）</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&amp;^</code></td>
+          <td>位清零（AND NOT）</td>
+          <td>a = <code class="language-plaintext highlighter-rouge">0011 1100</code>（60）<br />b = <code class="language-plaintext highlighter-rouge">0000 1101</code>（13）<br />a &amp;^ b = <code class="language-plaintext highlighter-rouge">0011 0000</code>（48）</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&lt;&lt;</code></td>
+          <td>左移</td>
+          <td>a = <code class="language-plaintext highlighter-rouge">0011 1100</code>（60）<br />a « 2 = <code class="language-plaintext highlighter-rouge">1111 0000</code>（240）</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&gt;&gt;</code></td>
+          <td>右移</td>
+          <td>a = <code class="language-plaintext highlighter-rouge">0011 1100</code>（60）<br />a » 2 = <code class="language-plaintext highlighter-rouge">0000 1111</code>（15）</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">&amp;</code>（位与）：对于每一个二进制位，只有当两个相应的二进制位都为 1 时，结果位才为 1。</li>
+      <li><code class="language-plaintext highlighter-rouge">|</code>（位或）：对于每一个二进制位，只要两个相应的二进制位中有一个为 1 时，结果位就为 1。</li>
+      <li><code class="language-plaintext highlighter-rouge">^</code>（位异或）：对于每一个二进制位，当两个相应的二进制位相异时，结果位为 1。</li>
+      <li><code class="language-plaintext highlighter-rouge">&amp;^</code>（位清零）：对于每一个二进制位，第一个操作数中与第二个操作数相应位为 1 的位清零。</li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;&lt;</code>（左移）：将第一个操作数的所有位向左移动指定的位数，右边用 0 填充。</li>
+      <li><code class="language-plaintext highlighter-rouge">&gt;&gt;</code>（右移）：将第一个操作数的所有位向右移动指定的位数，对于无符号整数，左边用 0 填充；对于有符号整数，符号位（最高位）会被复制以保持符号不变。</li>
+    </ul>
+  </li>
+  <li>
+    <p>例子</p>
+  </li>
+</ul>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+ <span class="k">var</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="m">13</span>
+
+    <span class="c">// 位与</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"a &amp; b = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="c">// 输出: a &amp; b = 12</span>
+
+    <span class="c">// 位或</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"a | b = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="o">|</span><span class="n">b</span><span class="p">)</span> <span class="c">// 输出: a | b = 61</span>
+
+    <span class="c">// 位异或</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"a ^ b = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="p">)</span> <span class="c">// 输出: a ^ b = 49</span>
+
+    <span class="c">// 位清零</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"a &amp;^ b = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="o">&amp;^</span><span class="n">b</span><span class="p">)</span> <span class="c">// 输出: a &amp;^ b = 48</span>
+
+    <span class="c">// 左移</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"a &lt;&lt; 2 = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="o">&lt;&lt;</span><span class="m">2</span><span class="p">)</span> <span class="c">// 输出: a &lt;&lt; 2 = 240</span>
+
+    <span class="c">// 右移</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"a &gt;&gt; 2 = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">a</span><span class="o">&gt;&gt;</span><span class="m">2</span><span class="p">)</span> <span class="c">// 输出: a &gt;&gt; 2 = 15</span>
+
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="赋值运算符"><span class="me-2"><strong>赋值运算符</strong></span><a href="#赋值运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>赋值运算符表格</li>
+</ul>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>运算符</th>
+      <th>描述</th>
+      <th>示例（Go 风格）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">=</code></td>
+      <td>简单的赋值运算符，将右侧操作数的值赋给左侧操作数</td>
+      <td><code class="language-plaintext highlighter-rouge">a = 5</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">+=</code></td>
+      <td>加法赋值运算符（Go 中需要显式写出）</td>
+      <td><code class="language-plaintext highlighter-rouge">a += 3</code> 相当于 <code class="language-plaintext highlighter-rouge">a = a + 3</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-=</code></td>
+      <td>减法赋值运算符（Go 中需要显式写出）</td>
+      <td><code class="language-plaintext highlighter-rouge">b -= 2</code> 相当于 <code class="language-plaintext highlighter-rouge">b = b - 2</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">*=</code></td>
+      <td>乘法赋值运算符（Go 中需要显式写出）</td>
+      <td><code class="language-plaintext highlighter-rouge">c *= 4</code> 相当于 <code class="language-plaintext highlighter-rouge">c = c * 4</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/=</code></td>
+      <td>除法赋值运算符（Go 中需要显式写出）</td>
+      <td><code class="language-plaintext highlighter-rouge">d /= 2</code> 相当于 <code class="language-plaintext highlighter-rouge">d = d / 2</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">%=</code></td>
+      <td>取模赋值运算符（Go 中需要显式写出）</td>
+      <td><code class="language-plaintext highlighter-rouge">e %= 3</code> 相当于 <code class="language-plaintext highlighter-rouge">e = e % 3</code></td>
+    </tr>
+  </tbody>
+</table></div>
+
+<ul>
+  <li>例子</li>
+</ul>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// 使用基本赋值运算符</span>
+    <span class="n">a</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a ="</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="c">// 输出: a = 5</span>
+
+    <span class="c">// 使用复合赋值运算符的Go风格（显式写出完整操作）</span>
+    <span class="n">a</span> <span class="o">+=</span> <span class="m">3</span>  <span class="c">// 相当于 a = a + 3</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a += 3, a ="</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="c">// 输出: a += 3, a = 8</span>
+
+    <span class="n">b</span> <span class="o">:=</span> <span class="m">10</span>
+    <span class="n">b</span> <span class="o">-=</span> <span class="m">2</span>  <span class="c">// 相当于 b = b - 2</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"b -= 2, b ="</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c">// 输出: b -= 2, b = 8</span>
+
+    <span class="n">c</span> <span class="o">:=</span> <span class="m">2</span>
+    <span class="n">c</span> <span class="o">*=</span> <span class="m">4</span>  <span class="c">// 相当于 c = c * 4</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"c *= 4, c ="</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c">// 输出: c *= 4, c = 8</span>
+
+    <span class="n">d</span> <span class="o">:=</span> <span class="m">10</span>
+    <span class="n">d</span> <span class="o">/=</span> <span class="m">2</span>  <span class="c">// 相当于 d = d / 2</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"d /= 2, d ="</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="c">// 输出: d /= 2, d = 5</span>
+
+    <span class="n">e</span> <span class="o">:=</span> <span class="m">9</span>
+    <span class="n">e</span> <span class="o">%=</span> <span class="m">3</span>  <span class="c">// 相当于 e = e % 3</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"e %= 3, e ="</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="c">// 输出: e %= 3, e = 0</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="其他运算符"><span class="me-2">其他运算符</span><a href="#其他运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th style="text-align: left">运算符</th>
+      <th style="text-align: left">描述</th>
+      <th style="text-align: left">实例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">&amp;</td>
+      <td style="text-align: left">返回变量存储地址</td>
+      <td style="text-align: left">&amp;a; 将给出变量的实际地址。</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">*</td>
+      <td style="text-align: left">指针变量。</td>
+      <td style="text-align: left">*a; 是一个指针变量</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h2 id="条件语句"><span class="me-2">条件语句</span><a href="#条件语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="if-if-else"><span class="me-2"><code class="language-plaintext highlighter-rouge">if</code>&amp; <code class="language-plaintext highlighter-rouge">if-else</code></span><a href="#if-if-else" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>在 Go 语言中，条件语句主要用于基于不同条件执行不同的代码块。最常用的条件语句是<code class="language-plaintext highlighter-rouge">if</code>语句，以及与之相关的<code class="language-plaintext highlighter-rouge">else</code>和<code class="language-plaintext highlighter-rouge">else if</code>子句。以下是条件语句的表格形式和例子：</p>
+
+<ul>
+  <li>条件语句</li>
+</ul>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>语句</th>
+      <th>描述</th>
+      <th>示例</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">if</code></td>
+      <td>如果条件为真，则执行代码块</td>
+      <td><code class="language-plaintext highlighter-rouge">if a &gt; b { ... }</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">if ... else</code></td>
+      <td>如果条件为真，执行第一个代码块；否则执行第二个代码块</td>
+      <td><code class="language-plaintext highlighter-rouge">if a &gt; b { ... } else { ... }</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">if ... else if ... else</code></td>
+      <td>根据多个条件执行不同的代码块</td>
+      <td><code class="language-plaintext highlighter-rouge">if a &gt; b { ... } else if a &lt; b { ... } else { ... }</code></td>
+    </tr>
+  </tbody>
+</table></div>
+
+<ul>
+  <li>例子</li>
+</ul>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">a</span> <span class="o">:=</span> <span class="m">10</span>
+    <span class="n">b</span> <span class="o">:=</span> <span class="m">5</span>
+
+    <span class="c">// 基本的if语句</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a大于b"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c">// 输出: a大于b</span>
+
+    <span class="c">// if ... else语句</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a小于b"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a不小于b"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c">// 输出: a不小于b</span>
+
+    <span class="c">// if ... else if ... else语句</span>
+    <span class="n">c</span> <span class="o">:=</span> <span class="m">3</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a最大"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"b最大"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"c最大"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"a、b和c相等或无法判断最大者"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c">// 输出: a最大</span>
+
+    <span class="c">// 可以在if语句中使用逻辑运算符组合多个条件</span>
+    <span class="n">d</span> <span class="o">:=</span> <span class="m">15</span>
+    <span class="k">if</span> <span class="n">d</span><span class="o">%</span><span class="m">2</span> <span class="o">==</span> <span class="m">0</span> <span class="o">&amp;&amp;</span> <span class="n">d</span><span class="o">%</span><span class="m">3</span> <span class="o">==</span> <span class="m">0</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"d是6的倍数"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"d不是6的倍数"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c">// 输出: d不是6的倍数（因为15是3的倍数但不是6的倍数）</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="switch"><span class="me-2"><code class="language-plaintext highlighter-rouge">switch</code></span><a href="#switch" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">switch</code> 语句有多种写法，可以用来简化条件判断。以下是一些常见的写法及其示例：</p>
+</blockquote>
+
+<h4 id="基本-switch-语句"><span class="me-2">基本 switch 语句</span><a href="#基本-switch-语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p>基本的 <code class="language-plaintext highlighter-rouge">switch</code> 语句用于依次检测表达式的值，匹配到的值执行对应的代码块。</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">:=</span> <span class="m">2</span>
+    <span class="k">switch</span> <span class="n">x</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="m">1</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"One"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="m">2</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Two"</span><span class="p">)</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Other"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>解释：根据 <code class="language-plaintext highlighter-rouge">x</code> 的值，匹配相应的 case 并执行其代码块。如果 <code class="language-plaintext highlighter-rouge">x</code> 是 2，输出 “Two”。</p>
+
+<h4 id="switch-语句带条件表达式"><span class="me-2">switch 语句带条件表达式</span><a href="#switch-语句带条件表达式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p><code class="language-plaintext highlighter-rouge">switch</code> 可以在每个 <code class="language-plaintext highlighter-rouge">case</code> 中使用条件表达式。</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">:=</span> <span class="m">10</span>
+    <span class="k">switch</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="m">0</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Negative"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">x</span> <span class="o">==</span> <span class="m">0</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Zero"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="m">0</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Positive"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>解释：<code class="language-plaintext highlighter-rouge">switch</code> 不带表达式，通过 <code class="language-plaintext highlighter-rouge">case</code> 条件来匹配，输出 “Positive”。</p>
+
+<h4 id="switch-语句带初始化语句"><span class="me-2">switch 语句带初始化语句</span><a href="#switch-语句带初始化语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p><code class="language-plaintext highlighter-rouge">switch</code> 语句可以包含一个初始化语句，在 <code class="language-plaintext highlighter-rouge">switch</code> 表达式之前执行。</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">x</span> <span class="o">:=</span> <span class="m">2</span> <span class="o">*</span> <span class="m">3</span><span class="p">;</span> <span class="n">x</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"One, Two, or Three"</span><span class="p">)</span>
+    <span class="k">case</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Four, Five, or Six"</span><span class="p">)</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Other"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>解释：先执行初始化语句 <code class="language-plaintext highlighter-rouge">x := 2 * 3</code>，然后根据 <code class="language-plaintext highlighter-rouge">x</code> 的值进行匹配并执行相应的代码块，输出 “Four, Five, or Six”。</p>
+
+<h4 id="switch-语句的-fallthrough-关键字"><span class="me-2">switch 语句的 fallthrough 关键字</span><a href="#switch-语句的-fallthrough-关键字" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p><code class="language-plaintext highlighter-rouge">fallthrough</code> 关键字用于强制执行下一个 <code class="language-plaintext highlighter-rouge">case</code> 块。</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">:=</span> <span class="m">1</span>
+    <span class="k">switch</span> <span class="n">x</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="m">1</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"One"</span><span class="p">)</span>
+        <span class="k">fallthrough</span>
+    <span class="k">case</span> <span class="m">2</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Two"</span><span class="p">)</span>
+        <span class="k">fallthrough</span>
+    <span class="k">case</span> <span class="m">3</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Three"</span><span class="p">)</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Other"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>解释：<code class="language-plaintext highlighter-rouge">x</code> 是 1，先匹配到第一个 <code class="language-plaintext highlighter-rouge">case</code> 并输出 “One”，然后 <code class="language-plaintext highlighter-rouge">fallthrough</code> 强制执行下一个 <code class="language-plaintext highlighter-rouge">case</code>，输出 “Two” 和 “Three”。</p>
+
+<h4 id="switch-语句的类型分支"><span class="me-2">switch 语句的类型分支</span><a href="#switch-语句的类型分支" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<p><code class="language-plaintext highlighter-rouge">switch</code> 语句可以用于类型分支，用于接口值的类型判断。</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="n">i</span> <span class="k">interface</span><span class="p">{}</span> <span class="o">=</span> <span class="m">10</span>
+    <span class="k">switch</span> <span class="n">v</span> <span class="o">:=</span> <span class="n">i</span><span class="o">.</span><span class="p">(</span><span class="k">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="kt">int</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Integer: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="k">case</span> <span class="kt">string</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"String: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Other type: %T</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>解释：<code class="language-plaintext highlighter-rouge">i</code> 是一个 <code class="language-plaintext highlighter-rouge">interface{}</code> 类型，<code class="language-plaintext highlighter-rouge">switch</code> 语句根据 <code class="language-plaintext highlighter-rouge">i</code> 的实际类型进行匹配，输出 “Integer: 10”。</p>
+
+<p>这些示例展示了 Go 语言中 <code class="language-plaintext highlighter-rouge">switch</code> 语句的多种用法，使得条件判断更加简洁和灵活。</p>
+
+<h3 id="select"><span class="me-2">select</span><a href="#select" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1420,12 +2093,6 @@
 		<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"no communication"</span><span class="p">)</span>
 	<span class="p">}</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">14</span><span class="o">:</span><span class="m">51</span><span class="o">:</span><span class="m">51.093</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="k">select</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">22</span><span class="p">]</span>  <span class="n">no</span> <span class="n">communication</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -1541,7 +2208,7 @@
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -1564,35 +2231,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/k8s-work-cmd/">Kubernetes Work CMD</a>
+          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/CDN/">CDN</a>
+          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/redis-py-utils/">开发脚本</a>
+          <a href="/posts/other/">Golang 代码规范</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/services/">Kubernetes Services</a>
+          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/deployment/">Kubernetes Deploymen</a>
+          <a href="/posts/Lock/">Golang 锁</a>
         </li>
       
     </ul>
@@ -1816,194 +2483,10 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2203,80 +2686,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2301,153 +2710,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2747,6 +3009,316 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2916,21 +3488,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2970,35 +3527,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3047,10 +3579,10 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -3062,7 +3594,7 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -3885,211 +4417,7 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -4285,7 +4613,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/baseAll/" class="post-preview card h-100">
+          <a href="/posts/1-go_base/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -4297,69 +4625,14 @@
 
 <time
   
-  data-ts="1551921663"
-  data-df="ll"
-  
->
-  Mar  7, 2019
-</time>
-
-              <h4 class="pt-0 my-2">Golang Base</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  GoLang
-
-GoLang
-
-https://go-zh.org/
-
-基础
-
-包、变量和函数、基本类型
-
-
-  包 package
-每个程序都是由包组成
-  导入 import
-圆括号可以组合导入
-  导出 在 Go 语言中首字母大写的名称是被导出的
-    
-      导入了一个包后，可以导出名称来调用他
-      Foo 和 FOO 都是被导出的名称。名称 foo 是不会被导出的
-...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/go_base/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1553959919"
+  data-ts="1553904481"
   data-df="ll"
   
 >
   Mar 30, 2019
 </time>
 
-              <h4 class="pt-0 my-2">Golang 入门介绍</h4>
+              <h4 class="pt-0 my-2">Day01（Golang 入门介绍）</h4>
               <div class="text-muted">
                 <p>
                   
@@ -4405,11 +4678,11 @@ Linux &amp;amp; MacOs
 
 <time
   
-  data-ts="1554038310"
+  data-ts="1553904482"
   data-df="ll"
   
 >
-  Mar 31, 2019
+  Mar 30, 2019
 </time>
 
               <h4 class="pt-0 my-2">Day02（入门基础）</h4>
@@ -4421,19 +4694,90 @@ Linux &amp;amp; MacOs
 
 
 
-                  数据类型、变量、常量
+                  数据类型
 
-本章源码
+整型
 
-数据类型
+
+  有符号整型（Signed Integer）和无符号整型（Unsigned Integer）是计算机编程中两种基本的整型数据类型，它们的主要区别在于如何解释存储在计算机中的二进制数值
+
 
 
   
-    整型：在 Golang 中，整型分为有符号整型和无符号整型。有符号整型的取值范围为 -2^31 到 2^31-1，无符号整型的取值范围为 0 到 2^32-1。常见的整型类型
+    有符号整型（Signed Integer）
 
     
-      int8: 有符号 8 位整数，取值范围为 -128 到 127
-      int16: 有符号 16 位整数，取值范围为 -3...
+      表示范围：有符号整型可以表示正数、负数和零。因为它们需要表示正负，所以它们的取值范围是关于零对称的...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/4-LoopStatementFunc/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1553904484"
+  data-df="ll"
+  
+>
+  Mar 30, 2019
+</time>
+
+              <h4 class="pt-0 my-2">Day04（循环语句）</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  循环语句
+
+源代码
+
+for
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+package main
+
+import &quot;github.com/Cc360428/HelpPackage/UtilsHelp/logs&quot;
+
+func main() {
+ array := make([]int, 5)
+ logs.Info(arr...
                 </p>
               </div>
             </div>
@@ -4490,13 +4834,10 @@ Linux &amp;amp; MacOs
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>©
+  <p>
+    ©
     <time>2024</time>
-
-    
-      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
-    
-
+    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -4506,9 +4847,10 @@ Linux &amp;amp; MacOs
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
   </p>
 </footer>
+
 
           </div>
         </div>
@@ -4734,194 +5076,10 @@ Linux &amp;amp; MacOs
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5121,80 +5279,6 @@ Linux &amp;amp; MacOs
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5219,153 +5303,6 @@ Linux &amp;amp; MacOs
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5665,6 +5602,316 @@ Linux &amp;amp; MacOs
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5834,21 +6081,6 @@ Linux &amp;amp; MacOs
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -5888,35 +6120,10 @@ Linux &amp;amp; MacOs
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5965,10 +6172,10 @@ Linux &amp;amp; MacOs
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
@@ -5980,7 +6187,7 @@ Linux &amp;amp; MacOs
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/dev/">Dev</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
       
     </div>
   </section>
@@ -6039,8 +6246,6 @@ Linux &amp;amp; MacOs
 
 
 <!-- layout specified -->
-
-
 
 
   
@@ -6143,7 +6348,7 @@ Linux &amp;amp; MacOs
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
 
 
 
