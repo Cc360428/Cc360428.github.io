@@ -15,9 +15,7 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -26,21 +24,18 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="linux(CentOS7) 目录结构" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="linux 目录 cp mv diff cat tail ……" />
 <meta property="og:description" content="linux 目录 cp mv diff cat tail ……" />
-<link rel="canonical" href="https://cc360428.github.io//posts/4.4-RedHad-dir/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/4.4-RedHad-dir/" />
+<link rel="canonical" href="http://127.0.0.1:8090/posts/4.4-RedHad-dir/" />
+<meta property="og:url" content="http://127.0.0.1:8090/posts/4.4-RedHad-dir/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-03-24T23:17:54+08:00" />
@@ -48,10 +43,9 @@
 <meta property="twitter:title" content="linux(CentOS7) 目录结构" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-03-24T23:17:54+08:00","datePublished":"2020-03-24T23:17:54+08:00","description":"linux 目录 cp mv diff cat tail ……","headline":"linux(CentOS7) 目录结构","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/4.4-RedHad-dir/"},"url":"https://cc360428.github.io//posts/4.4-RedHad-dir/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-23T17:48:03+08:00","datePublished":"2020-03-24T23:17:54+08:00","description":"linux 目录 cp mv diff cat tail ……","headline":"linux(CentOS7) 目录结构","mainEntityOfPage":{"@type":"WebPage","@id":"http://127.0.0.1:8090/posts/4.4-RedHad-dir/"},"url":"http://127.0.0.1:8090/posts/4.4-RedHad-dir/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>linux(CentOS7) 目录结构 | Cc Blog
   </title>
@@ -66,7 +60,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -89,6 +85,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,12 +99,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.3/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
   
@@ -276,12 +275,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="http://127.0.0.1:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -460,9 +454,7 @@
         
           
             <span>
-              <a href="/">
-                Home
-              </a>
+              <a href="/">Home</a>
             </span>
 
           
@@ -880,6 +872,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1716457683"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  May 23, 2024
+</time>
+
+        </span>
+      
 
       
 
@@ -918,9 +933,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3959 words"
+  title="4369 words"
 >
-  <em>21 min</em> read</span>
+  <em>24 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -930,6 +945,93 @@
 
   <div class="content">
     <h2 id="linux-目录结构"><span class="me-2">linux 目录结构</span><a href="#linux-目录结构" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>目录</th>
+      <th>功能说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/</td>
+      <td>根目录，整个文件系统的起点，包含所有其他目录和文件</td>
+    </tr>
+    <tr>
+      <td>/bin</td>
+      <td>存放基本的用户命令，如 <code class="language-plaintext highlighter-rouge">ls</code>、<code class="language-plaintext highlighter-rouge">cp</code>、<code class="language-plaintext highlighter-rouge">mv</code>、<code class="language-plaintext highlighter-rouge">rm</code> 等</td>
+    </tr>
+    <tr>
+      <td>/boot</td>
+      <td>启动加载器相关的文件，如内核镜像（vmlinuz）、初始化 RAM 磁盘镜像（initrd）</td>
+    </tr>
+    <tr>
+      <td>/dev</td>
+      <td>设备文件目录，包含各种设备的接口文件</td>
+    </tr>
+    <tr>
+      <td>/etc</td>
+      <td>系统配置文件和脚本，如网络配置文件、服务配置文件、用户账户信息等</td>
+    </tr>
+    <tr>
+      <td>/home</td>
+      <td>用户主目录，如 <code class="language-plaintext highlighter-rouge">/home/username</code>，每个用户的个人文件存放于此</td>
+    </tr>
+    <tr>
+      <td>/lib</td>
+      <td>系统程序使用的共享库文件和内核模块</td>
+    </tr>
+    <tr>
+      <td>/media</td>
+      <td>挂载点，用于临时挂载可移动媒体，如 CD-ROM、USB 存储设备</td>
+    </tr>
+    <tr>
+      <td>/mnt</td>
+      <td>挂载点，用于临时挂载文件系统</td>
+    </tr>
+    <tr>
+      <td>/opt</td>
+      <td>用于安装附加软件包或应用程序</td>
+    </tr>
+    <tr>
+      <td>/proc</td>
+      <td>虚拟文件系统，提供系统进程和内核信息，如 <code class="language-plaintext highlighter-rouge">/proc/cpuinfo</code>、<code class="language-plaintext highlighter-rouge">/proc/meminfo</code></td>
+    </tr>
+    <tr>
+      <td>/root</td>
+      <td>超级用户（root 用户）的主目录</td>
+    </tr>
+    <tr>
+      <td>/run</td>
+      <td>存放系统运行时的数据，如进程 ID 文件和套接字文件</td>
+    </tr>
+    <tr>
+      <td>/sbin</td>
+      <td>系统管理命令和守护进程程序，如 <code class="language-plaintext highlighter-rouge">ifconfig</code>、<code class="language-plaintext highlighter-rouge">reboot</code>、<code class="language-plaintext highlighter-rouge">shutdown</code></td>
+    </tr>
+    <tr>
+      <td>/srv</td>
+      <td>存放特定服务相关的数据，如 HTTP、FTP 服务的数据</td>
+    </tr>
+    <tr>
+      <td>/sys</td>
+      <td>虚拟文件系统，提供与硬件和内核模块相关的信息和接口</td>
+    </tr>
+    <tr>
+      <td>/tmp</td>
+      <td>临时文件目录，系统重启后通常会清空</td>
+    </tr>
+    <tr>
+      <td>/usr</td>
+      <td>用户级程序和数据，如二进制文件（/usr/bin）、库文件（/usr/lib）、头文件（/usr/include）、文档（/usr/share/doc）等</td>
+    </tr>
+    <tr>
+      <td>/var</td>
+      <td>可变数据文件，如日志文件（/var/log）、缓存文件（/var/cache）、邮件（/var/mail）等</td>
+    </tr>
+  </tbody>
+</table></div>
 
 <h2 id="常用命令"><span class="me-2">常用命令</span><a href="#常用命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1952,21 +2054,21 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=linux(CentOS7)%20%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F4.4-RedHad-dir%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=linux(CentOS7)%20%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%20-%20Cc%20Blog&url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2F4.4-RedHad-dir%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=linux(CentOS7)%20%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F4.4-RedHad-dir%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=linux(CentOS7)%20%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%20-%20Cc%20Blog&u=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2F4.4-RedHad-dir%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F4.4-RedHad-dir%2F&text=linux(CentOS7)%20%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2F4.4-RedHad-dir%2F&text=linux(CentOS7)%20%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1998,7 +2100,7 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -2021,35 +2123,35 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
+          <a href="/posts/vscode-conf/">VSCode conf</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
+          <a href="/posts/postman-env/">Postman env manager</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/other/">Golang 代码规范</a>
+          <a href="/posts/resume/">Resume</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
+          <a href="/posts/Canon/">佳能入门</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Lock/">Golang 锁</a>
+          <a href="/posts/mysql-operate/">MySQL Operate</a>
         </li>
       
     </ul>
@@ -2273,80 +2375,6 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2356,180 +2384,6 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2749,101 +2603,6 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2857,162 +2616,6 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3278,6 +2881,81 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3321,6 +2999,614 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3372,6 +3658,9 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -3381,10 +3670,7 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -3435,6 +3721,18 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
 
 
 
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -3953,8 +4251,6 @@ drwxr-xr-x 2 root root 4096 3月  24 23:28 <span class="nb">dir</span>
 
                   linux 基础知识
 
-linux 历史发布
-
 启动选择
 
 Red Hat 安装
@@ -3967,7 +4263,7 @@ Red Hat 安装
 
 [root@Cc ~]# ps -ef |grep sshd
 root      1377     1  0 Mar20 ?        00:00:00 /usr/sbin/sshd -D
-root     21020  1377  0 20:49 ?     ...
+root     21020  1377  0 20:49 ?        00:00:00 ...
                 </p>
               </div>
             </div>
@@ -4145,10 +4441,13 @@ drwxr-xr-x 2 root root 4096 3月  2...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
+  <p>©
     <time>2024</time>
-    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+
+    
+      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -4158,10 +4457,9 @@ drwxr-xr-x 2 root root 4096 3月  2...
     
   </p>
 
-  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
   </p>
 </footer>
-
 
           </div>
         </div>
@@ -4387,80 +4685,6 @@ drwxr-xr-x 2 root root 4096 3月  2...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4470,180 +4694,6 @@ drwxr-xr-x 2 root root 4096 3月  2...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4863,101 +4913,6 @@ drwxr-xr-x 2 root root 4096 3月  2...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4971,162 +4926,6 @@ drwxr-xr-x 2 root root 4096 3月  2...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -5392,6 +5191,81 @@ drwxr-xr-x 2 root root 4096 3月  2...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5435,6 +5309,614 @@ drwxr-xr-x 2 root root 4096 3月  2...
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -5486,6 +5968,9 @@ drwxr-xr-x 2 root root 4096 3月  2...
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -5495,10 +5980,7 @@ drwxr-xr-x 2 root root 4096 3月  2...
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -5557,6 +6039,8 @@ drwxr-xr-x 2 root root 4096 3月  2...
 
 
 <!-- layout specified -->
+
+
 
 
   
@@ -5659,7 +6143,7 @@ drwxr-xr-x 2 root root 4096 3月  2...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 

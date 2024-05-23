@@ -15,9 +15,7 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -26,34 +24,30 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Postman env" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Postman env manager" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="管理环境" />
-<meta property="og:description" content="管理环境" />
-<link rel="canonical" href="https://cc360428.github.io//posts/postman-env/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/postman-env/" />
+<meta name="description" content="为什么要环境管理" />
+<meta property="og:description" content="为什么要环境管理" />
+<link rel="canonical" href="http://127.0.0.1:8090/posts/postman-env/" />
+<meta property="og:url" content="http://127.0.0.1:8090/posts/postman-env/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-07-26T09:33:25+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Postman env" />
+<meta property="twitter:title" content="Postman env manager" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-26T09:33:25+08:00","datePublished":"2023-07-26T09:33:25+08:00","description":"管理环境","headline":"Postman env","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/postman-env/"},"url":"https://cc360428.github.io//posts/postman-env/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-23T17:48:03+08:00","datePublished":"2023-07-26T09:33:25+08:00","description":"为什么要环境管理","headline":"Postman env manager","mainEntityOfPage":{"@type":"WebPage","@id":"http://127.0.0.1:8090/posts/postman-env/"},"url":"http://127.0.0.1:8090/posts/postman-env/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
-  <title>Postman env | Cc Blog
+  <title>Postman env manager | Cc Blog
   </title>
 
   <!--
@@ -66,7 +60,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -89,6 +85,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,12 +99,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.3/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
   
@@ -276,12 +275,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="http://127.0.0.1:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -460,9 +454,7 @@
         
           
             <span>
-              <a href="/">
-                Home
-              </a>
+              <a href="/">Home</a>
             </span>
 
           
@@ -471,7 +463,7 @@
         
           
             
-              <span>Postman env</span>
+              <span>Postman env manager</span>
             
 
           
@@ -554,27 +546,6 @@
   
 
   
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-
-    
-  
 
   
   
@@ -642,21 +613,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -760,8 +716,46 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
+  
+
+  
+  
+
   
 
 
@@ -774,7 +768,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Postman env</h1>
+    <h1 data-toc-skip>Postman env manager</h1>
 
     <div class="post-meta text-muted">
       <!-- published date -->
@@ -802,6 +796,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1716457683"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  May 23, 2024
+</time>
+
+        </span>
       
 
       
@@ -841,7 +858,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1567 words"
+  title="1477 words"
 >
   <em>8 min</em> read</span>
 
@@ -852,11 +869,7 @@
   </header>
 
   <div class="content">
-    <h2 id="管理环境"><span class="me-2">管理环境</span><a href="#管理环境" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="为什么要环境管理"><span class="me-2">为什么要环境管理</span><a href="#为什么要环境管理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>一个典型的使用环境可能工作如下:</p>
+    <h3 id="为什么要环境管理"><span class="me-2">为什么要环境管理</span><a href="#为什么要环境管理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>你有生产 API 和开发 API,在不同的位置。</li>
@@ -870,44 +883,54 @@
 <h3 id="创建一个环境"><span class="me-2">创建一个环境</span><a href="#创建一个环境" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>在 Environment quick look (eye) and Manage environments (gear) buttons. 可以查看、创建、修改</li>
+  <li>在 <code class="language-plaintext highlighter-rouge">Environment quick look (eye) and Manage environments (gear) buttons</code> 可以查看、创建、修改</li>
   <li>点击 Manage environments -&gt; Add</li>
   <li>给此环境赋予名字 Environment Name</li>
-  <li>输入一个名称为您的<strong>变量</strong>,并指定 最初的 和 当前的 值——默认将当前值复制初始值
+  <li>
+    <p>输入一个名称为您的<strong>变量</strong>,并指定 最初的 和 当前的 值——默认将当前值复制初始值</p>
+
     <ul>
-      <li>Initial Value（初始值） 通过邮递员服务器和同步到您的帐户与任何合作者访问共享环境</li>
-      <li>Current Value（当前值） 是当地的邮递员程序,不会同步到您的帐户或共享与您的团队- 除非你选择坚持它
-        <blockquote>
-          <p>当前值访问时用到的值，通过脚本改变值，也会用到这个值</p>
-        </blockquote>
-      </li>
+      <li>Initial Value（初始值）通过邮递员服务器和同步到您的帐户与任何合作者访问共享环境</li>
+      <li>Current Value（当前值）是当地的邮递员程序,不会同步到您的帐户或共享与您的团队,除非你选择坚持它</li>
     </ul>
+
+    <blockquote>
+      <p>当前值访问时用到的值，通过脚本改变值，也会用到这个值</p>
+    </blockquote>
   </li>
 </ul>
 
 <h3 id="使用环境变量"><span class="me-2">使用环境变量</span><a href="#使用环境变量" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>在一个请求使用一个环境变量值,引用它的名字,包围了 双花括号 :``</p>
+  <p>在一个请求使用一个环境变量值,引用它的名字,包围了 双花括号 :</p>
 </blockquote>
 
 <h3 id="脚本"><span class="me-2">脚本</span><a href="#脚本" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>例如：</p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">tests</span><span class="p">[</span><span class="dl">"</span><span class="s2">StatusOK</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+<span class="k">if </span><span class="p">(</span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">tests</span><span class="p">[</span><span class="dl">"</span><span class="s2">Token found</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nx">pm</span><span class="p">.</span><span class="nx">environment</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">TOKEN</span><span class="dl">"</span><span class="p">,</span> <span class="nx">jsonData</span><span class="p">.</span><span class="nx">token</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">tests</span><span class="p">[</span><span class="dl">"</span><span class="s2">Token found</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
 
-<pre><code class="language-postman">tests["StatusOK"] = pm.response.code == 200
-var jsonData = pm.response.json();
-if (jsonData.token) {
-    tests["Token found"] = true
-     pm.environment.set("TOKEN", jsonData.token);
-} else {
-     tests["Token found"] = false
-}
-</code></pre>
+<h3 id="tests"><span class="me-2">Tests</span><a href="#tests" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="tests"><span class="me-2">Tests</span><a href="#tests" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<h5 id="使用的环境变量设置值"><span class="me-2">使用的环境变量设置值</span><a href="#使用的环境变量设置值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="使用的环境变量设置值"><span class="me-2">使用的环境变量设置值</span><a href="#使用的环境变量设置值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-json highlighter-rouge"><div class="code-header">
         <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
@@ -981,15 +1004,55 @@ if (jsonData.token) {
 </span><span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="request-post"><span class="me-2">request <strong>[post]</strong></span><a href="#request-post" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="request-post"><span class="me-2">request <code class="language-plaintext highlighter-rouge">post</code></span><a href="#request-post" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li>url <code class="language-plaintext highlighter-rouge">/im_square/get_info_list</code></li>
-  <li>request body</li>
+  <li>url <em>**</em><code class="language-plaintext highlighter-rouge">/im_square/get_info_list</code></li>
+  <li>
+    <p>request body</p>
+
+    <p>```json
+{
+  “page”: `### 为什么要环境管理</p>
+  </li>
+  <li>你有生产 API 和开发 API,在不同的位置。</li>
+  <li>你用两个环境,一个用于开发和生产。</li>
+  <li>每个环境包含一个变量来存储基础 URL。</li>
+  <li>指的是变量集合中的每个请求的 URL 字段。</li>
+  <li>你之间切换环境运行时要求测试它们对开发或生产环境。</li>
+  <li>在您的组织中,您可能有一个团队,只有进入开发环境,并与编辑个体的团队成员和只读存取特定环境。</li>
 </ul>
 
-<div class="language-json highlighter-rouge"><div class="code-header">
-        <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
+<h3 id="创建一个环境-1"><span class="me-2">创建一个环境</span><a href="#创建一个环境-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>在 <code class="language-plaintext highlighter-rouge">Environment quick look (eye) and Manage environments (gear) buttons</code> 可以查看、创建、修改</li>
+  <li>点击 Manage environments -&gt; Add</li>
+  <li>给此环境赋予名字 Environment Name</li>
+  <li>
+    <p>输入一个名称为您的<strong>变量</strong>,并指定 最初的 和 当前的 值——默认将当前值复制初始值</p>
+
+    <ul>
+      <li>Initial Value（初始值）通过邮递员服务器和同步到您的帐户与任何合作者访问共享环境</li>
+      <li>Current Value（当前值）是当地的邮递员程序,不会同步到您的帐户或共享与您的团队,除非你选择坚持它</li>
+    </ul>
+
+    <blockquote>
+      <p>当前值访问时用到的值，通过脚本改变值，也会用到这个值</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="使用环境变量-1"><span class="me-2">使用环境变量</span><a href="#使用环境变量-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>在一个请求使用一个环境变量值,引用它的名字,包围了 双花括号 :{{bases_url}}</p>
+</blockquote>
+
+<h3 id="脚本-1"><span class="me-2">脚本</span><a href="#脚本-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -998,85 +1061,19 @@ if (jsonData.token) {
 6
 7
 8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
-  </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="err">##</span><span class="w"> </span><span class="err">管理环境</span><span class="w">
+</pre></td><td class="rouge-code"><pre><span class="nx">tests</span><span class="p">[</span><span class="dl">"</span><span class="s2">StatusOK</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="nx">pm</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+<span class="k">if </span><span class="p">(</span><span class="nx">jsonData</span><span class="p">.</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">tests</span><span class="p">[</span><span class="dl">"</span><span class="s2">Token found</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nx">pm</span><span class="p">.</span><span class="nx">environment</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="dl">"</span><span class="s2">TOKEN</span><span class="dl">"</span><span class="p">,</span> <span class="nx">jsonData</span><span class="p">.</span><span class="nx">token</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">tests</span><span class="p">[</span><span class="dl">"</span><span class="s2">Token found</span><span class="dl">"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
 
-</span><span class="err">###</span><span class="w"> </span><span class="err">为什么要环境管理</span><span class="w">
+<h3 id="tests-1"><span class="me-2">Tests</span><a href="#tests-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-</span><span class="err">一个典型的使用环境可能工作如下:</span><span class="w">
-
-</span><span class="err">-</span><span class="w"> </span><span class="err">你有生产</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">和开发</span><span class="w"> </span><span class="err">API</span><span class="p">,</span><span class="err">在不同的位置。</span><span class="w">
-</span><span class="err">-</span><span class="w"> </span><span class="err">你用两个环境</span><span class="p">,</span><span class="err">一个用于开发和生产。</span><span class="w">
-</span><span class="err">-</span><span class="w"> </span><span class="err">每个环境包含一个变量来存储基础</span><span class="w"> </span><span class="err">URL。</span><span class="w">
-</span><span class="err">-</span><span class="w"> </span><span class="err">指的是变量集合中的每个请求的</span><span class="w"> </span><span class="err">URL</span><span class="w"> </span><span class="err">字段。</span><span class="w">
-</span><span class="err">-</span><span class="w"> </span><span class="err">你之间切换环境运行时要求测试它们对开发或生产环境。</span><span class="w">
-</span><span class="err">-</span><span class="w"> </span><span class="err">在您的组织中</span><span class="p">,</span><span class="err">您可能有一个团队</span><span class="p">,</span><span class="err">只有进入开发环境</span><span class="p">,</span><span class="err">并与编辑个体的团队成员和只读存取特定环境。</span><span class="w">
-
-</span><span class="err">###</span><span class="w"> </span><span class="err">创建一个环境</span><span class="w">
-
-</span><span class="err">-</span><span class="w"> </span><span class="err">在</span><span class="w"> </span><span class="err">Environment</span><span class="w"> </span><span class="err">quick</span><span class="w"> </span><span class="err">look</span><span class="w"> </span><span class="err">(eye)</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">Manage</span><span class="w"> </span><span class="err">environments</span><span class="w"> </span><span class="err">(gear)</span><span class="w"> </span><span class="err">buttons.</span><span class="w"> </span><span class="err">可以查看、创建、修改</span><span class="w">
-</span><span class="err">-</span><span class="w"> </span><span class="err">点击</span><span class="w"> </span><span class="err">Manage</span><span class="w"> </span><span class="err">environments</span><span class="w"> </span><span class="err">-&gt;</span><span class="w"> </span><span class="err">Add</span><span class="w">
-</span><span class="err">-</span><span class="w"> </span><span class="err">给此环境赋予名字</span><span class="w"> </span><span class="err">Environment</span><span class="w"> </span><span class="err">Name</span><span class="w">
-</span><span class="err">-</span><span class="w"> </span><span class="err">输入一个名称为您的**变量**</span><span class="p">,</span><span class="err">并指定</span><span class="w"> </span><span class="err">最初的</span><span class="w"> </span><span class="err">和</span><span class="w"> </span><span class="err">当前的</span><span class="w"> </span><span class="err">值——默认将当前值复制初始值</span><span class="w">
-  </span><span class="err">-</span><span class="w"> </span><span class="err">Initial</span><span class="w"> </span><span class="err">Value（初始值）</span><span class="w"> </span><span class="err">通过邮递员服务器和同步到您的帐户与任何合作者访问共享环境</span><span class="w">
-  </span><span class="err">-</span><span class="w"> </span><span class="err">Current</span><span class="w"> </span><span class="err">Value（当前值）</span><span class="w"> </span><span class="err">是当地的邮递员程序</span><span class="p">,</span><span class="err">不会同步到您的帐户或共享与您的团队-</span><span class="w"> </span><span class="err">除非你选择坚持它</span><span class="w">
-    </span><span class="err">&gt;</span><span class="w"> </span><span class="err">当前值访问时用到的值，通过脚本改变值，也会用到这个值</span><span class="w">
-
-</span><span class="err">###</span><span class="w"> </span><span class="err">使用环境变量</span><span class="w">
-
-</span><span class="err">&gt;</span><span class="w"> </span><span class="err">在一个请求使用一个环境变量值</span><span class="p">,</span><span class="err">引用它的名字</span><span class="p">,</span><span class="err">包围了</span><span class="w"> </span><span class="err">双花括号</span><span class="w"> </span><span class="err">:`</span><span class="p">{{</span><span class="err">base_url</span><span class="p">}}</span><span class="err">`</span><span class="w">
-
-</span><span class="err">###</span><span class="w"> </span><span class="err">脚本</span><span class="w">
-
-</span><span class="err">例如：</span><span class="w">
-
-</span><span class="err">```postman</span><span class="w">
-</span><span class="err">tests</span><span class="p">[</span><span class="s2">"StatusOK"</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">pm.response.code</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="mi">200</span><span class="w">
-</span><span class="err">var</span><span class="w"> </span><span class="err">jsonData</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">pm.response.json();</span><span class="w">
-</span><span class="err">if</span><span class="w"> </span><span class="err">(jsonData.token)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">tests</span><span class="p">[</span><span class="s2">"Token found"</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">true</span><span class="w">
-     </span><span class="err">pm.environment.set(</span><span class="s2">"TOKEN"</span><span class="p">,</span><span class="w"> </span><span class="err">jsonData.token);</span><span class="w">
-</span><span class="p">}</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="err">tests</span><span class="p">[</span><span class="s2">"Token found"</span><span class="p">]</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="tests-1"><span class="me-2">Tests</span><a href="#tests-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<h5 id="使用的环境变量设置值-1"><span class="me-2">使用的环境变量设置值</span><a href="#使用的环境变量设置值-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="使用的环境变量设置值-1"><span class="me-2">使用的环境变量设置值</span><a href="#使用的环境变量设置值-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-json highlighter-rouge"><div class="code-header">
         <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
@@ -1150,14 +1147,14 @@ if (jsonData.token) {
 </span><span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="request-post-1"><span class="me-2">request <strong>[post]</strong></span><a href="#request-post-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="request-post-1"><span class="me-2">request <code class="language-plaintext highlighter-rouge">post</code></span><a href="#request-post-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li>url <code class="language-plaintext highlighter-rouge">{{URL}}/im_square/get_info_list</code></li>
-  <li>request body</li>
-</ul>
+  <li>url <strong>{{URL}}</strong><code class="language-plaintext highlighter-rouge">/im_square/get_info_list</code></li>
+  <li>
+    <p>request body</p>
 
-<div class="language-json highlighter-rouge"><div class="code-header">
+    <div class="language-json highlighter-rouge"><div class="code-header">
         <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1165,13 +1162,15 @@ if (jsonData.token) {
 4
 5
 </pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
-  </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">page</span><span class="p">}},</span><span class="w">
-  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">pageSize</span><span class="p">}},</span><span class="w">
+  </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="err">`</span><span class="p">{{</span><span class="err">page</span><span class="p">}}</span><span class="err">`</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pageSize"</span><span class="p">:</span><span class="w"> </span><span class="err">`</span><span class="p">{{</span><span class="err">pageSize</span><span class="p">}}</span><span class="err">`</span><span class="p">,</span><span class="w">
   </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{uid}}"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></div></div>
+</span></pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
 
-<h3 id="正确的返回值"><span class="me-2">正确的返回值</span><a href="#正确的返回值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h4 id="正确的返回值"><span class="me-2">正确的返回值</span><a href="#正确的返回值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-json highlighter-rouge"><div class="code-header">
         <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
@@ -1249,7 +1248,7 @@ if (jsonData.token) {
 
 <h4 id="脚本设置环境变量以及读取-获取-response-值"><span class="me-2">脚本设置环境变量以及读取 ，获取 response 值</span><a href="#脚本设置环境变量以及读取-获取-response-值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-js highlighter-rouge"><div class="code-header">
+<div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1290,10 +1289,10 @@ if (jsonData.token) {
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">请求错误</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
-<p>,
-  “pageSize”: ,
-  “uid”: “”
-}</p>
+<p><code class="language-plaintext highlighter-rouge">,
+    "pageSize": </code>`,
+    “uid”: “”
+  }</p>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -1336,7 +1335,7 @@ if (jsonData.token) {
 38
 39
 </pre></td><td class="rouge-code"><pre>
-### 正确的返回值
+#### 正确的返回值
 
 ```json
 {
@@ -1378,7 +1377,7 @@ if (jsonData.token) {
 
 <h4 id="脚本设置环境变量以及读取-获取-response-值-1"><span class="me-2">脚本设置环境变量以及读取 ，获取 response 值</span><a href="#脚本设置环境变量以及读取-获取-response-值-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<div class="language-js highlighter-rouge"><div class="code-header">
+<div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1443,6 +1442,11 @@ if (jsonData.token) {
             class="post-tag no-text-decoration"
           >Tools</a>
         
+          <a
+            href="/tags/postman/"
+            class="post-tag no-text-decoration"
+          >Postman</a>
+        
       </div>
     
 
@@ -1477,21 +1481,21 @@ if (jsonData.token) {
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Postman%20env%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fpostman-env%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Postman%20env%20manager%20-%20Cc%20Blog&url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2Fpostman-env%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Postman%20env%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fpostman-env%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Postman%20env%20manager%20-%20Cc%20Blog&u=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2Fpostman-env%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fpostman-env%2F&text=Postman%20env%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2Fpostman-env%2F&text=Postman%20env%20manager%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1523,7 +1527,7 @@ if (jsonData.token) {
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1546,35 +1550,35 @@ if (jsonData.token) {
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
+          <a href="/posts/vscode-conf/">VSCode conf</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
+          <a href="/posts/postman-env/">Postman env manager</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/other/">Golang 代码规范</a>
+          <a href="/posts/resume/">Resume</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
+          <a href="/posts/Canon/">佳能入门</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Lock/">Golang 锁</a>
+          <a href="/posts/mysql-operate/">MySQL Operate</a>
         </li>
       
     </ul>
@@ -1798,80 +1802,6 @@ if (jsonData.token) {
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1881,180 +1811,6 @@ if (jsonData.token) {
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2274,101 +2030,6 @@ if (jsonData.token) {
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2382,162 +2043,6 @@ if (jsonData.token) {
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2803,6 +2308,81 @@ if (jsonData.token) {
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2846,6 +2426,614 @@ if (jsonData.token) {
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2897,6 +3085,9 @@ if (jsonData.token) {
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -2906,10 +3097,7 @@ if (jsonData.token) {
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -3000,19 +3188,43 @@ if (jsonData.token) {
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -3424,105 +3636,6 @@ if (jsonData.token) {
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/testing-base/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1683594301"
-  data-df="ll"
-  
->
-  May  9, 2023
-</time>
-
-              <h4 class="pt-0 my-2">API测试工具</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  API 压力测试
-
-以下是常用的 API 压力测试工具：
-
-
-  
-    Apache JMeter：JMeter 是一个开源的 Java 应用程序，可以用于负载测试、性能测试和压力测试。它支持多种协议，包括 HTTP, FTP, JDBC 等。
-  
-  
-    Gatling：Gatling 是一个基于 Scala 的开源负载测试工具，可以用于 Web、WebSocket 和 JMS...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/vscode-conf/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1685158345"
-  data-df="ll"
-  
->
-  May 27, 2023
-</time>
-
-              <h4 class="pt-0 my-2">VSCode conf</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  快捷键
-
-
-  修改同名引用 F2
-  折叠光标处的代码方法
-    
-      折叠所有 Ctrl+K+0
-      展开所有 Ctrl+K+J
-    
-  
-
-
-vscode 配置
-
-{
-    &quot;version&quot;: &quot;该配置文件的版本，由 VSCode 自动生成&quot;,
-    &quot;configurations&quot;: [
-        {
-            &quot;name&quot;: &quot;名字...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/postman/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -3608,6 +3721,168 @@ var requestJson = pm.r...
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/hyper-v/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1690421545"
+  data-df="ll"
+  
+>
+  Jul 27, 2023
+</time>
+
+              <h4 class="pt-0 my-2">Hyper-V</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  Windows Hyper-V
+
+
+  需要先下载好 Centos 7 镜像
+  阿里云地址
+
+
+创建Linux启动
+
+
+
+
+
+
+
+
+
+
+
+
+
+网络管理
+
+
+
+
+基础设置
+
+
+
+
+CentosEnter
+
+
+
+
+
+
+
+  网络设置
+
+
+1
+vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/vim-plug/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1695007945"
+  data-df="ll"
+  
+>
+  Sep 18, 2023
+</time>
+
+              <h4 class="pt-0 my-2">vim Plug Manager</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  安装
+
+1
+2
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+修改配置
+
+~/.vimrc
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -3658,10 +3933,13 @@ var requestJson = pm.r...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
+  <p>©
     <time>2024</time>
-    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+
+    
+      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -3671,10 +3949,9 @@ var requestJson = pm.r...
     
   </p>
 
-  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
   </p>
 </footer>
-
 
           </div>
         </div>
@@ -3900,80 +4177,6 @@ var requestJson = pm.r...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3983,180 +4186,6 @@ var requestJson = pm.r...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4376,101 +4405,6 @@ var requestJson = pm.r...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4484,162 +4418,6 @@ var requestJson = pm.r...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -4905,6 +4683,81 @@ var requestJson = pm.r...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4948,6 +4801,614 @@ var requestJson = pm.r...
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4999,6 +5460,9 @@ var requestJson = pm.r...
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -5008,10 +5472,7 @@ var requestJson = pm.r...
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -5070,6 +5531,8 @@ var requestJson = pm.r...
 
 
 <!-- layout specified -->
+
+
 
 
   
@@ -5172,7 +5635,7 @@ var requestJson = pm.r...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 

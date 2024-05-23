@@ -15,9 +15,7 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -26,21 +24,18 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Hyper-V" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="Windows Hyper-V" />
 <meta property="og:description" content="Windows Hyper-V" />
-<link rel="canonical" href="https://cc360428.github.io//posts/hyper-v/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/hyper-v/" />
+<link rel="canonical" href="http://127.0.0.1:8090/posts/hyper-v/" />
+<meta property="og:url" content="http://127.0.0.1:8090/posts/hyper-v/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-07-27T09:32:25+08:00" />
@@ -48,10 +43,9 @@
 <meta property="twitter:title" content="Hyper-V" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-27T09:32:25+08:00","datePublished":"2023-07-27T09:32:25+08:00","description":"Windows Hyper-V","headline":"Hyper-V","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/hyper-v/"},"url":"https://cc360428.github.io//posts/hyper-v/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-27T09:32:25+08:00","datePublished":"2023-07-27T09:32:25+08:00","description":"Windows Hyper-V","headline":"Hyper-V","mainEntityOfPage":{"@type":"WebPage","@id":"http://127.0.0.1:8090/posts/hyper-v/"},"url":"http://127.0.0.1:8090/posts/hyper-v/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>Hyper-V | Cc Blog
   </title>
@@ -66,7 +60,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -89,6 +85,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,12 +99,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.3/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
   
@@ -276,12 +275,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="http://127.0.0.1:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -460,9 +454,7 @@
         
           
             <span>
-              <a href="/">
-                Home
-              </a>
+              <a href="/">Home</a>
             </span>
 
           
@@ -540,12 +532,6 @@
 
 
   
-  
-
-  <!-- CDN URL -->
-  
-
-  <!-- Add image path -->
   
 
   
@@ -2186,34 +2172,34 @@
 
 <h2 id="创建linux启动"><span class="me-2">创建Linux启动</span><a href="#创建linux启动" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-1.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-1.png" alt="Create-1" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-2.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-2.png" alt="Create-2" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-3.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-3.png" alt="Create-3" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-4.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-4.png" alt="Create-4" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-5.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-5.png" alt="Create-5" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-6.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-6.png" alt="Create-6" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-7.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-7.png" alt="Create-7" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-8.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-8.png" alt="Create-8" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-9.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-9.png" alt="Create-9" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-10.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-10.png" alt="Create-10" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-11.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-11.png" alt="Create-11" loading="lazy"></a></p>
+<p><a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-1.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-1.png" alt="Create-1" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-2.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-2.png" alt="Create-2" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-3.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-3.png" alt="Create-3" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-4.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-4.png" alt="Create-4" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-5.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-5.png" alt="Create-5" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-6.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-6.png" alt="Create-6" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-7.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-7.png" alt="Create-7" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-8.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-8.png" alt="Create-8" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-9.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-9.png" alt="Create-9" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-10.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-10.png" alt="Create-10" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-11.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-11.png" alt="Create-11" loading="lazy"></a></p>
 
 <h2 id="网络管理"><span class="me-2">网络管理</span><a href="#网络管理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-network-1.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-network-1.png" alt="NetWorkManager-1" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-network-2.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-network-2.png" alt="NetWorkManager-2" loading="lazy"></a></p>
+<p><a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-network-1.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-network-1.png" alt="NetWorkManager-1" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-network-2.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-network-2.png" alt="NetWorkManager-2" loading="lazy"></a></p>
 
 <h2 id="基础设置"><span class="me-2">基础设置</span><a href="#基础设置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-setting-1.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-setting-1.png" alt="Setting-1" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-setting-2.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-setting-2.png" alt="Setting-2" loading="lazy"></a></p>
+<p><a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-setting-1.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-setting-1.png" alt="Setting-1" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-setting-2.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-setting-2.png" alt="Setting-2" loading="lazy"></a></p>
 
 <h2 id="centosenter"><span class="me-2">CentosEnter</span><a href="#centosenter" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-1.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-1.png" alt="CentosEnter-1" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-2.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-2.png" alt="CentosEnter-2" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-3.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-3.png" alt="CentosEnter-3" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-4.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-4.png" alt="CentosEnter-4" loading="lazy"></a></p>
+<p><a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-1.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-1.png" alt="CentosEnter-1" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-2.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-2.png" alt="CentosEnter-2" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-3.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-3.png" alt="CentosEnter-3" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-4.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-4.png" alt="CentosEnter-4" loading="lazy"></a></p>
 
 <ul>
   <li>网络设置</li>
@@ -2271,10 +2257,10 @@
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<p><a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-5.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-5.png" alt="CentosEnter-5" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-6.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-6.png" alt="CentosEnter-6" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-7.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-7.png" alt="CentosEnter-7" loading="lazy"></a>
-<a href="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-8.png" class="popup img-link  shimmer"><img src="https://cc360428.github.io/assets/img/dev/utils/hyper-v/hyper-v-ok-8.png" alt="CentosEnter-8" loading="lazy"></a></p>
+<p><a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-5.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-5.png" alt="CentosEnter-5" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-6.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-6.png" alt="CentosEnter-6" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-7.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-7.png" alt="CentosEnter-7" loading="lazy"></a>
+<a href="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-8.png" class="popup img-link  shimmer"><img src="http://127.0.0.1:8090/assets/img/dev/utils/hyper-v/hyper-v-ok-8.png" alt="CentosEnter-8" loading="lazy"></a></p>
 
 <ul>
   <li>网络工具安装
@@ -2343,21 +2329,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Hyper-V%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fhyper-v%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Hyper-V%20-%20Cc%20Blog&url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2Fhyper-v%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Hyper-V%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fhyper-v%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Hyper-V%20-%20Cc%20Blog&u=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2Fhyper-v%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fhyper-v%2F&text=Hyper-V%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2Fhyper-v%2F&text=Hyper-V%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2389,7 +2375,7 @@
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -2412,35 +2398,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
+          <a href="/posts/vscode-conf/">VSCode conf</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
+          <a href="/posts/postman-env/">Postman env manager</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/other/">Golang 代码规范</a>
+          <a href="/posts/resume/">Resume</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
+          <a href="/posts/Canon/">佳能入门</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Lock/">Golang 锁</a>
+          <a href="/posts/mysql-operate/">MySQL Operate</a>
         </li>
       
     </ul>
@@ -2664,80 +2650,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2747,180 +2659,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3140,101 +2878,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -3248,162 +2891,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3669,6 +3156,81 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3712,6 +3274,614 @@
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3763,6 +3933,9 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -3772,10 +3945,7 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -3854,19 +4024,43 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -4290,105 +4484,6 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/testing-base/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1683594301"
-  data-df="ll"
-  
->
-  May  9, 2023
-</time>
-
-              <h4 class="pt-0 my-2">API测试工具</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  API 压力测试
-
-以下是常用的 API 压力测试工具：
-
-
-  
-    Apache JMeter：JMeter 是一个开源的 Java 应用程序，可以用于负载测试、性能测试和压力测试。它支持多种协议，包括 HTTP, FTP, JDBC 等。
-  
-  
-    Gatling：Gatling 是一个基于 Scala 的开源负载测试工具，可以用于 Web、WebSocket 和 JMS...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/vscode-conf/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1685158345"
-  data-df="ll"
-  
->
-  May 27, 2023
-</time>
-
-              <h4 class="pt-0 my-2">VSCode conf</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  快捷键
-
-
-  修改同名引用 F2
-  折叠光标处的代码方法
-    
-      折叠所有 Ctrl+K+0
-      展开所有 Ctrl+K+J
-    
-  
-
-
-vscode 配置
-
-{
-    &quot;version&quot;: &quot;该配置文件的版本，由 VSCode 自动生成&quot;,
-    &quot;configurations&quot;: [
-        {
-            &quot;name&quot;: &quot;名字...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/postman/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -4474,6 +4569,123 @@ var requestJson = pm.r...
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/postman-env/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1690335205"
+  data-df="ll"
+  
+>
+  Jul 26, 2023
+</time>
+
+              <h4 class="pt-0 my-2">Postman env manager</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  为什么要环境管理
+
+
+  你有生产 API 和开发 API,在不同的位置。
+  你用两个环境,一个用于开发和生产。
+  每个环境包含一个变量来存储基础 URL。
+  指的是变量集合中的每个请求的 URL 字段。
+  你之间切换环境运行时要求测试它们对开发或生产环境。
+  在您的组织中,您可能有一个团队,只有进入开发环境,并与编辑个体的团队成员和只读存取特定环境。
+
+
+创建一个环境
+
+
+  在...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/vim-plug/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1695007945"
+  data-df="ll"
+  
+>
+  Sep 18, 2023
+</time>
+
+              <h4 class="pt-0 my-2">vim Plug Manager</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  安装
+
+1
+2
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
+修改配置
+
+~/.vimrc
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -4493,7 +4705,7 @@ var requestJson = pm.r...
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Postman env</p>
+      <p>Postman env manager</p>
     </a>
   
 
@@ -4524,10 +4736,13 @@ var requestJson = pm.r...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
+  <p>©
     <time>2024</time>
-    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+
+    
+      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -4537,10 +4752,9 @@ var requestJson = pm.r...
     
   </p>
 
-  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
   </p>
 </footer>
-
 
           </div>
         </div>
@@ -4766,80 +4980,6 @@ var requestJson = pm.r...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4849,180 +4989,6 @@ var requestJson = pm.r...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5242,101 +5208,6 @@ var requestJson = pm.r...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -5350,162 +5221,6 @@ var requestJson = pm.r...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -5771,6 +5486,81 @@ var requestJson = pm.r...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5814,6 +5604,614 @@ var requestJson = pm.r...
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -5865,6 +6263,9 @@ var requestJson = pm.r...
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -5874,10 +6275,7 @@ var requestJson = pm.r...
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -5936,6 +6334,8 @@ var requestJson = pm.r...
 
 
 <!-- layout specified -->
+
+
 
 
   
@@ -6038,7 +6438,7 @@ var requestJson = pm.r...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 

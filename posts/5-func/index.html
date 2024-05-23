@@ -15,9 +15,7 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -26,21 +24,18 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Day05（函数）" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="function 函数方法" />
 <meta property="og:description" content="function 函数方法" />
-<link rel="canonical" href="https://cc360428.github.io//posts/5-func/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/5-func/" />
+<link rel="canonical" href="http://127.0.0.1:8090/posts/5-func/" />
+<meta property="og:url" content="http://127.0.0.1:8090/posts/5-func/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-03-30T08:08:05+08:00" />
@@ -48,10 +43,9 @@
 <meta property="twitter:title" content="Day05（函数）" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-17T23:45:19+08:00","datePublished":"2019-03-30T08:08:05+08:00","description":"function 函数方法","headline":"Day05（函数）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/5-func/"},"url":"https://cc360428.github.io//posts/5-func/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-22T14:34:07+08:00","datePublished":"2019-03-30T08:08:05+08:00","description":"function 函数方法","headline":"Day05（函数）","mainEntityOfPage":{"@type":"WebPage","@id":"http://127.0.0.1:8090/posts/5-func/"},"url":"http://127.0.0.1:8090/posts/5-func/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>Day05（函数） | Cc Blog
   </title>
@@ -66,7 +60,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -89,6 +85,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,12 +99,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.3/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
   
@@ -276,12 +275,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="http://127.0.0.1:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -460,9 +454,7 @@
         
           
             <span>
-              <a href="/">
-                Home
-              </a>
+              <a href="/">Home</a>
             </span>
 
           
@@ -572,43 +564,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -690,6 +645,120 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -761,13 +830,13 @@
 
 <time
   
-  data-ts="1715960719"
+  data-ts="1716359647"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  May 17, 2024
+  May 22, 2024
 </time>
 
         </span>
@@ -810,7 +879,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1456 words"
+  title="1487 words"
 >
   <em>8 min</em> read</span>
 
@@ -823,11 +892,55 @@
   <div class="content">
     <h2 id="函数"><span class="me-2">函数</span><a href="#函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="https://gitee.com/GolangCodeFile/blogcode/tree/master/day05">源码</a></p>
+<h3 id="函数定义和调用"><span class="me-2">函数定义和调用</span><a href="#函数定义和调用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">go</code> 至少一个函数 主函数</p>
-</blockquote>
+<p>在 Go 语言中，函数的定义方式如下：</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">functionName</span><span class="p">(</span><span class="n">parameter1</span> <span class="n">type1</span><span class="p">,</span> <span class="n">parameter2</span> <span class="n">type2</span><span class="p">)</span> <span class="n">returnType</span> <span class="p">{</span>
+    <span class="c">// 函数体</span>
+    <span class="k">return</span> <span class="n">value</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>例如，一个简单的加法函数可以这样定义和调用：</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span> <span class="kt">int</span><span class="p">,</span> <span class="n">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">result</span> <span class="o">:=</span> <span class="n">add</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c">// 输出: 7</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="多个返回值"><span class="me-2">多个返回值</span><a href="#多个返回值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Go 语言支持函数返回多个值，这在处理错误时特别有用：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -846,52 +959,257 @@
 13
 14
 15
-16
-17
-18
-19
-20
-21
-</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
-
-<span class="k">import</span> <span class="p">(</span>
-	<span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
-<span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">divide</span><span class="p">(</span><span class="n">dividend</span> <span class="kt">int</span><span class="p">,</span> <span class="n">divisor</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">divisor</span> <span class="o">==</span> <span class="m">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="m">0</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Errorf</span><span class="p">(</span><span class="s">"division by zero"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">dividend</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">,</span> <span class="no">nil</span>
+<span class="p">}</span>
 
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">FuncName</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="no">false</span><span class="p">)</span>
-	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Error</span><span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">Error</span><span class="p">())</span>
-	<span class="p">}</span>
+    <span class="n">result</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">divide</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Error:"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Result:"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="p">}</span>
 <span class="p">}</span>
-
-<span class="c">// FuncName</span>
-<span class="k">func</span> <span class="n">FuncName</span><span class="p">(</span><span class="n">args1</span><span class="p">,</span> <span class="n">args2</span> <span class="kt">string</span><span class="p">,</span> <span class="n">args3</span> <span class="kt">bool</span><span class="p">)</span> <span class="p">(</span><span class="n">return1</span><span class="p">,</span> <span class="n">return2</span> <span class="kt">string</span><span class="p">,</span> <span class="n">return3</span> <span class="kt">bool</span><span class="p">,</span> <span class="n">return4</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c">/**
-	函数体
-	 */</span>
-	<span class="k">return</span>
-<span class="p">}</span>
-
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="说明"><span class="me-2">说明</span><a href="#说明" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="命名返回值"><span class="me-2">命名返回值</span><a href="#命名返回值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>函数的返回值可以被命名，这使得函数体中的代码更为清晰：</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">addAndMultiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">sum</span> <span class="kt">int</span><span class="p">,</span> <span class="n">product</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">sum</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="k">return</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">sum</span><span class="p">,</span> <span class="n">product</span> <span class="o">:=</span> <span class="n">addAndMultiply</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Sum:"</span><span class="p">,</span> <span class="n">sum</span><span class="p">)</span>          <span class="c">// 输出: Sum: 7</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Product:"</span><span class="p">,</span> <span class="n">product</span><span class="p">)</span>  <span class="c">// 输出: Product: 12</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="匿名函数和闭包"><span class="me-2">匿名函数和闭包</span><a href="#匿名函数和闭包" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>Go 语言支持匿名函数和闭包，可以在函数内部定义一个匿名函数并调用：</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// 匿名函数</span>
+    <span class="n">result</span> <span class="o">:=</span> <span class="k">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="p">}(</span><span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c">// 输出: 7</span>
+
+    <span class="c">// 闭包</span>
+    <span class="n">add</span> <span class="o">:=</span> <span class="k">func</span><span class="p">(</span><span class="n">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="m">10</span>
+    <span class="p">}</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="m">5</span><span class="p">))</span>  <span class="c">// 输出: 15</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="方法"><span class="me-2">方法</span><a href="#方法" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>在 Go 语言中，函数可以附属于一个类型，这样的函数称为方法：</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="k">type</span> <span class="n">Rectangle</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="c">// 方法</span>
+<span class="k">func</span> <span class="p">(</span><span class="n">r</span> <span class="n">Rectangle</span><span class="p">)</span> <span class="n">Area</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">r</span><span class="o">.</span><span class="n">height</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">rect</span> <span class="o">:=</span> <span class="n">Rectangle</span><span class="p">{</span><span class="n">width</span><span class="o">:</span> <span class="m">10</span><span class="p">,</span> <span class="n">height</span><span class="o">:</span> <span class="m">5</span><span class="p">}</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Area:"</span><span class="p">,</span> <span class="n">rect</span><span class="o">.</span><span class="n">Area</span><span class="p">())</span>  <span class="c">// 输出: Area: 50</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="递归函数"><span class="me-2">递归函数</span><a href="#递归函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>函数可以调用自身，这就是递归：</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="m">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="m">1</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="m">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="m">5</span><span class="p">))</span>  <span class="c">// 输出: 120</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="defer-语句"><span class="me-2">defer 语句</span><a href="#defer-语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><code class="language-plaintext highlighter-rouge">defer</code>语句用于延迟执行某个函数直到当前函数返回，这在资源清理等场景中很有用：</p>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Start"</span><span class="p">)</span>
+    <span class="k">defer</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Deferred"</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"End"</span><span class="p">)</span>
+    <span class="c">// 输出顺序: Start, End, Deferred</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="函数传参方式"><span class="me-2">函数传参方式</span><a href="#函数传参方式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="值传递"><span class="me-2">值传递</span><a href="#值传递" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>值传递是指在函数调用时，将实际参数的副本传递给函数。这样，函数内对参数的修改不会影响到函数外的变量。</p>
+
+<h4 id="示例"><span class="me-2">示例</span><a href="#示例" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">modifyValue</span><span class="p">(</span><span class="n">val</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="m">10</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">a</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">modifyValue</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c">// 输出: 5</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">modifyValue</code>函数修改了参数<code class="language-plaintext highlighter-rouge">val</code>的值，但这并不影响函数外的变量<code class="language-plaintext highlighter-rouge">a</code>。</p>
+
+<h3 id="引用传递通过指针实现"><span class="me-2">引用传递（通过指针实现）</span><a href="#引用传递通过指针实现" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>引用传递的效果是通过传递指针来实现的。传递指针允许函数修改外部变量的值。</p>
+</blockquote>
 
 <ul>
-  <li>可以 <code class="language-plaintext highlighter-rouge">return</code> 多个返回值</li>
-  <li>方法名返回值最后一个值，一般为 <code class="language-plaintext highlighter-rouge">error </code> 接收的时候判断 <code class="language-plaintext highlighter-rouge">error</code>是否为 <code class="language-plaintext highlighter-rouge">nil</code> 就像其他域名中的异常处理</li>
-  <li>使用方法时候，如果不想接收该参数可是使用 <code class="language-plaintext highlighter-rouge">_</code>来拒收</li>
+  <li>示例</li>
 </ul>
 
-<h3 id="使用格式"><span class="me-2">使用格式</span><a href="#使用格式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">modifyPointer</span><span class="p">(</span><span class="n">val</span> <span class="o">*</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">*</span><span class="n">val</span> <span class="o">=</span> <span class="m">10</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">a</span> <span class="o">:=</span> <span class="m">5</span>
+    <span class="n">modifyPointer</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c">// 输出: 10</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">modifyPointer</code>函数接收一个指向<code class="language-plaintext highlighter-rouge">int</code>类型的指针，并修改该指针指向的值。由于传递的是指针，函数内的修改会影响到外部变量<code class="language-plaintext highlighter-rouge">a</code>。</p>
 
 <ul>
   <li>
-    <p>格式一</p>
-
-    <blockquote>
-      <p>注：如果在定义返回值时定义好返回值名字，就可以直接 <code class="language-plaintext highlighter-rouge">return</code> 在方法体内需要对事先定义好的返回值名进行 <code class="language-plaintext highlighter-rouge">赋值</code> 如果没有赋值，则 <code class="language-plaintext highlighter-rouge">return </code> 为该类型的<strong>默认值</strong></p>
-    </blockquote>
+    <p>示例对比(为了更清楚地理解值传递和通过指针实现的引用传递)</p>
+  </li>
+  <li>
+    <p>值传递示例</p>
   </li>
 </ul>
 
@@ -915,75 +1233,31 @@
 16
 17
 18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
 </pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
 
-<span class="k">import</span> <span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">type</span> <span class="n">Point</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">modifyPointVal</span><span class="p">(</span><span class="n">p</span> <span class="n">Point</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="m">10</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="m">10</span>
+<span class="p">}</span>
 
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-
-	<span class="n">max</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">max</span><span class="p">(</span><span class="m">66</span><span class="p">,</span> <span class="m">99</span><span class="p">,</span> <span class="s">"lcc"</span><span class="p">)</span>
-	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
-		<span class="n">logs</span><span class="o">.</span><span class="n">Error</span><span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">Error</span><span class="p">())</span>
-	<span class="p">}</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"%d最大值"</span><span class="p">,</span> <span class="n">max</span><span class="p">)</span>
-	<span class="n">str</span> <span class="o">:=</span> <span class="n">IsNull</span><span class="p">(</span><span class="s">"66"</span><span class="p">)</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
-
+    <span class="n">p</span> <span class="o">:=</span> <span class="n">Point</span><span class="p">{</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">}</span>
+    <span class="n">modifyPointVal</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  <span class="c">// 输出: {1, 2}</span>
 <span class="p">}</span>
-
-<span class="c">// max 格式一：</span>
-<span class="k">func</span> <span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="kt">int</span><span class="p">,</span> <span class="n">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="n">max</span> <span class="kt">int</span><span class="p">,</span> <span class="n">v</span> <span class="kt">string</span><span class="p">,</span> <span class="n">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"this name %s"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-	<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="no">nil</span>
-	<span class="p">}</span>
-	<span class="n">max</span> <span class="o">=</span> <span class="n">b</span>
-	<span class="k">return</span>
-<span class="p">}</span>
-
-<span class="c">// IsNull 格式一：</span>
-<span class="k">func</span> <span class="n">IsNull</span><span class="p">(</span><span class="n">str</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">str</span><span class="p">)</span> <span class="o">==</span> <span class="m">0</span> <span class="o">&amp;&amp;</span> <span class="n">str</span> <span class="o">==</span> <span class="s">""</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="no">true</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="no">false</span>
-<span class="p">}</span>
-
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">22</span><span class="o">:</span><span class="m">47</span><span class="o">:</span><span class="m">04.408</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func1</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">19</span><span class="p">]</span>  <span class="n">this</span> <span class="n">name</span> <span class="n">lcc</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">22</span><span class="o">:</span><span class="m">47</span><span class="o">:</span><span class="m">04.421</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func1</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">11</span><span class="p">]</span>  <span class="m">99</span><span class="n">最大值</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">22</span><span class="o">:</span><span class="m">47</span><span class="o">:</span><span class="m">04.421</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func1</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">13</span><span class="p">]</span>  <span class="no">false</span>
-</pre></td></tr></tbody></table></code></div></div>
+<p><code class="language-plaintext highlighter-rouge">modifyPointVal</code>函数接收的是<code class="language-plaintext highlighter-rouge">Point</code>结构体的副本，因此对<code class="language-plaintext highlighter-rouge">p</code>的修改不会影响函数外的变量<code class="language-plaintext highlighter-rouge">p</code>。</p>
 
-<h3 id="函数值传递与引用传递"><span class="me-2">函数值传递与引用传递</span><a href="#函数值传递与引用传递" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<h4 id="值传递"><span class="me-2">值传递</span><a href="#值传递" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<blockquote>
-  <p>传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。默认情况下，Go 语言使用的是值传递，即在调用过程中不会影响到实际参数</p>
-</blockquote>
+<ul>
+  <li>引用传递（通过指针实现）示例</li>
+</ul>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1005,148 +1279,38 @@
 16
 17
 18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
 </pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
 
-<span class="k">import</span> <span class="p">(</span>
-	<span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
-<span class="p">)</span>
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">type</span> <span class="n">Point</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">modifyPointPtr</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span><span class="n">Point</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="m">10</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="m">10</span>
+<span class="p">}</span>
 
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c">/* 定义局部变量 */</span>
-	<span class="k">var</span> <span class="n">a</span> <span class="kt">int</span> <span class="o">=</span> <span class="m">100</span>
-	<span class="k">var</span> <span class="n">b</span> <span class="kt">int</span> <span class="o">=</span> <span class="m">200</span>
-
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"交换前，a 的值 : %d"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"交换前，b 的值 : %d"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-	<span class="c">/* 调用 swap() 函数
-	* &amp;a 指向 a 指针，a 变量的地址
-	* &amp;b 指向 b 指针，b 变量的地址
-	*/</span>
-	<span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span>
-
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"交换后，a 的值 : %d"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"交换后，b 的值 : %d"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="k">func</span> <span class="n">swap</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span><span class="kt">int</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">var</span> <span class="n">temp</span> <span class="kt">int</span>
-	<span class="n">temp</span> <span class="o">=</span> <span class="o">*</span><span class="n">x</span> <span class="c">/* 保存 x 地址上的值 */</span>
-	<span class="o">*</span><span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="n">y</span>   <span class="c">/* 将 y 值赋给 x */</span>
-	<span class="o">*</span><span class="n">y</span> <span class="o">=</span> <span class="n">temp</span> <span class="c">/* 将 temp 值赋给 y */</span>
-<span class="p">}</span>
-
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">02</span><span class="o">:</span><span class="m">06.856</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func3</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">12</span><span class="p">]</span>  <span class="n">交换前</span> <span class="n">a</span> <span class="n">的值为</span> <span class="o">:</span> <span class="m">100</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">02</span><span class="o">:</span><span class="m">06.858</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func3</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">13</span><span class="p">]</span>  <span class="n">交换前</span> <span class="n">b</span> <span class="n">的值为</span> <span class="o">:</span> <span class="m">200</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">02</span><span class="o">:</span><span class="m">06.858</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func3</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">18</span><span class="p">]</span>  <span class="n">交换后</span> <span class="n">a</span> <span class="n">的值</span> <span class="o">:</span> <span class="m">100</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">02</span><span class="o">:</span><span class="m">06.858</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func3</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">19</span><span class="p">]</span>  <span class="n">交换后</span> <span class="n">b</span> <span class="n">的值</span> <span class="o">:</span> <span class="m">200</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="引用传递"><span class="me-2">引用传递</span><a href="#引用传递" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<blockquote>
-  <p>引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。</p>
-</blockquote>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-</pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
-
-<span class="k">import</span> <span class="p">(</span>
-	<span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
-<span class="p">)</span>
-
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c">/* 定义局部变量 */</span>
-	<span class="k">var</span> <span class="n">a</span> <span class="o">=</span> <span class="m">100</span>
-	<span class="k">var</span> <span class="n">b</span> <span class="kt">int</span> <span class="o">=</span> <span class="m">200</span>
-
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"交换前 a 的值为 : %d"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"交换前 b 的值为 : %d"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-	<span class="c">/* 通过调用函数来交换值 */</span>
-	<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"交换后 a 的值 : %d"</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"交换后 b 的值 : %d"</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c">/* 定义相互交换值的函数 */</span>
-<span class="k">func</span> <span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
-	<span class="k">var</span> <span class="n">temp</span> <span class="kt">int</span>
-
-	<span class="n">temp</span> <span class="o">=</span> <span class="n">x</span> <span class="c">/* 保存 x 的值 */</span>
-	<span class="n">x</span> <span class="o">=</span> <span class="n">y</span>    <span class="c">/* 将 y 值赋给 x */</span>
-	<span class="n">y</span> <span class="o">=</span> <span class="n">temp</span> <span class="c">/* 将 temp 值赋给 y*/</span>
-
-	<span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">:=</span> <span class="n">Point</span><span class="p">{</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">}</span>
+    <span class="n">modifyPointPtr</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  <span class="c">// 输出: {10, 10}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<pre><code class="language-2020/04/06">2020/04/06 23:00:31.759 [I] [func2.go:13]  交换前，b 的值 : 200
-2020/04/06 23:00:31.759 [I] [func2.go:21]  交换后，a 的值 : 200
-2020/04/06 23:00:31.759 [I] [func2.go:22]  交换后，b 的值 : 100
-</code></pre>
+<p><code class="language-plaintext highlighter-rouge">modifyPointPtr</code>函数接收的是指向<code class="language-plaintext highlighter-rouge">Point</code>结构体的指针，因此对<code class="language-plaintext highlighter-rouge">p</code>的修改会影响函数外的变量<code class="language-plaintext highlighter-rouge">p</code>。</p>
 
-<h3 id="函数用法"><span class="me-2">函数用法</span><a href="#函数用法" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="总结"><span class="me-2">总结</span><a href="#总结" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="函数作为参数"><span class="me-2">函数作为参数</span><a href="#函数作为参数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li><strong>值传递</strong>：将参数的副本传递给函数。函数内部对参数的修改不会影响到外部变量。</li>
+  <li><strong>引用传递（通过指针实现）</strong>：传递参数的指针，使得函数能够修改外部变量的值。</li>
+</ul>
 
-<blockquote>
-  <p>Go 语言可以很灵活的创建函数，并作为另外一个函数的实参</p>
-</blockquote>
+<h2 id="特殊用法"><span class="me-2">特殊用法</span><a href="#特殊用法" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="可变参数"><span class="me-2">可变参数</span><a href="#可变参数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1169,33 +1333,27 @@
 17
 </pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
 
-<span class="k">import</span> <span class="p">(</span>
-	<span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
-	<span class="s">"math"</span>
-<span class="p">)</span>
+<span class="k">import</span> <span class="s">"fmt"</span>
 
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c">/* 声明函数变量 */</span>
-	<span class="n">getSquareRoot</span> <span class="o">:=</span> <span class="k">func</span><span class="p">(</span><span class="n">x</span> <span class="kt">float64</span><span class="p">)</span> <span class="kt">float64</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-	<span class="p">}</span>
-
-	<span class="c">/* 使用函数 */</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">getSquareRoot</span><span class="p">(</span><span class="m">9</span><span class="p">))</span>
+<span class="c">// 定义一个可变参数函数</span>
+<span class="k">func</span> <span class="n">sum</span><span class="p">(</span><span class="n">nums</span> <span class="o">...</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="n">total</span> <span class="o">:=</span> <span class="m">0</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">num</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">nums</span> <span class="p">{</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">total</span>
 <span class="p">}</span>
 
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span>       <span class="c">// 输出: 6</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">))</span> <span class="c">// 输出: 15</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">09</span><span class="o">:</span><span class="m">46.897</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func4</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">15</span><span class="p">]</span>  <span class="m">3</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="闭包"><span class="me-2">闭包</span><a href="#闭包" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="方法附属于类型的函数"><span class="me-2">方法（附属于类型的函数）</span><a href="#方法附属于类型的函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>Go 语言支持匿名函数，可作为闭包。匿名函数是一个”内联”语句或表达式。匿名函数的优越性在于可以直接使用函数内的变量，不必申明。</p>
+  <p>方法是附属于某个类型的函数，方法可以有接收者，可以是值类型或指针类型</p>
 </blockquote>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
@@ -1228,50 +1386,36 @@
 26
 </pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
 
-<span class="k">import</span> <span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
+<span class="k">import</span> <span class="s">"fmt"</span>
 
-<span class="k">func</span> <span class="n">getSequence</span><span class="p">()</span> <span class="k">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
-	<span class="n">i</span> <span class="o">:=</span> <span class="m">0</span>
-	<span class="k">return</span> <span class="k">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
-		<span class="n">i</span> <span class="o">+=</span> <span class="m">1</span>
-		<span class="k">return</span> <span class="n">i</span>
-	<span class="p">}</span>
+<span class="k">type</span> <span class="n">Rectangle</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="kt">int</span>
+<span class="p">}</span>
+
+<span class="c">// 值接收者方法</span>
+<span class="k">func</span> <span class="p">(</span><span class="n">r</span> <span class="n">Rectangle</span><span class="p">)</span> <span class="n">Area</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">r</span><span class="o">.</span><span class="n">height</span>
+<span class="p">}</span>
+
+<span class="c">// 指针接收者方法</span>
+<span class="k">func</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span><span class="n">Rectangle</span><span class="p">)</span> <span class="n">Scale</span><span class="p">(</span><span class="n">factor</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">width</span> <span class="o">*=</span> <span class="n">factor</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">height</span> <span class="o">*=</span> <span class="n">factor</span>
 <span class="p">}</span>
 
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="c">/* nextNumber 为一个函数，函数 i 为 0 */</span>
-	<span class="n">nextNumber</span> <span class="o">:=</span> <span class="n">getSequence</span><span class="p">()</span>
+    <span class="n">rect</span> <span class="o">:=</span> <span class="n">Rectangle</span><span class="p">{</span><span class="n">width</span><span class="o">:</span> <span class="m">10</span><span class="p">,</span> <span class="n">height</span><span class="o">:</span> <span class="m">5</span><span class="p">}</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Area:"</span><span class="p">,</span> <span class="n">rect</span><span class="o">.</span><span class="n">Area</span><span class="p">())</span>  <span class="c">// 输出: Area: 50</span>
 
-	<span class="c">/* 调用 nextNumber 函数，i 变量自增 1 并返回 */</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">nextNumber</span><span class="p">())</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">nextNumber</span><span class="p">())</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">nextNumber</span><span class="p">())</span>
-
-	<span class="c">/* 创建新的函数 nextNumber1，并查看结果 */</span>
-	<span class="n">nextNumber1</span> <span class="o">:=</span> <span class="n">getSequence</span><span class="p">()</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">nextNumber1</span><span class="p">())</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">nextNumber1</span><span class="p">())</span>
+    <span class="n">rect</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Scaled Area:"</span><span class="p">,</span> <span class="n">rect</span><span class="o">.</span><span class="n">Area</span><span class="p">())</span>  <span class="c">// 输出: Scaled Area: 200</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">12</span><span class="o">:</span><span class="m">15.449</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func5</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">19</span><span class="p">]</span>  <span class="m">1</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">12</span><span class="o">:</span><span class="m">15.450</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func5</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">20</span><span class="p">]</span>  <span class="m">2</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">12</span><span class="o">:</span><span class="m">15.450</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func5</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">21</span><span class="p">]</span>  <span class="m">3</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">12</span><span class="o">:</span><span class="m">15.450</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func5</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">25</span><span class="p">]</span>  <span class="m">1</span>
-<span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">12</span><span class="o">:</span><span class="m">15.450</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func5</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">26</span><span class="p">]</span>  <span class="m">2</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="方法"><span class="me-2">方法</span><a href="#方法" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="高阶函数"><span class="me-2">高阶函数</span><a href="#高阶函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>Go 语言中同时有函数和方法。一个方法就是一个包含了接受者的函数，接受者可以是命名类型或者结构体类型的一个值或者是一个指针。所有给定类型的方法属于该类型的方法集。</p>
+  <p>高阶函数是指接受函数作为参数或返回函数的函数</p>
 </blockquote>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
@@ -1292,36 +1436,22 @@
 14
 15
 16
-17
-18
-19
-20
 </pre></td><td class="rouge-code"><pre><span class="k">package</span> <span class="n">main</span>
 
-<span class="k">import</span> <span class="s">"github.com/Cc360428/HelpPackage/UtilsHelp/logs"</span>
+<span class="k">import</span> <span class="s">"fmt"</span>
 
-<span class="c">// 定义结构体</span>
-<span class="k">type</span> <span class="n">Circle</span> <span class="k">struct</span> <span class="p">{</span>
-	<span class="n">radius</span> <span class="kt">float64</span>
+<span class="c">// 高阶函数，返回一个函数</span>
+<span class="k">func</span> <span class="n">makeAdder</span><span class="p">(</span><span class="n">x</span> <span class="kt">int</span><span class="p">)</span> <span class="k">func</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">func</span><span class="p">(</span><span class="n">y</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">var</span> <span class="n">c1</span> <span class="n">Circle</span>
-	<span class="n">c1</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="m">10.00</span>
-	<span class="n">logs</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="s">"圆的面积 = "</span><span class="p">,</span> <span class="n">c1</span><span class="o">.</span><span class="n">getArea</span><span class="p">())</span>
+    <span class="n">add5</span> <span class="o">:=</span> <span class="n">makeAdder</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">add5</span><span class="p">(</span><span class="m">3</span><span class="p">))</span>  <span class="c">// 输出: 8</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">add5</span><span class="p">(</span><span class="m">10</span><span class="p">))</span> <span class="c">// 输出: 15</span>
 <span class="p">}</span>
-
-<span class="c">// 该 method 属于 Circle 类型对象中的方法</span>
-<span class="k">func</span> <span class="p">(</span><span class="n">c</span> <span class="n">Circle</span><span class="p">)</span> <span class="n">getArea</span><span class="p">()</span> <span class="kt">float64</span> <span class="p">{</span>
-	<span class="c">//c.radius 即为 Circle 类型对象中的属性</span>
-	<span class="k">return</span> <span class="m">3.14</span> <span class="o">*</span> <span class="n">c</span><span class="o">.</span><span class="n">radius</span> <span class="o">*</span> <span class="n">c</span><span class="o">.</span><span class="n">radius</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="m">2020</span><span class="o">/</span><span class="m">04</span><span class="o">/</span><span class="m">06</span> <span class="m">23</span><span class="o">:</span><span class="m">14</span><span class="o">:</span><span class="m">50.249</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="p">[</span><span class="n">func6</span><span class="o">.</span><span class="k">go</span><span class="o">:</span><span class="m">13</span><span class="p">]</span>  <span class="n">圆的面积</span> <span class="o">=</span>  <span class="m">314</span>
 </pre></td></tr></tbody></table></code></div></div>
 
   </div>
@@ -1391,21 +1521,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Day05%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F5-func%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Day05%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89%20-%20Cc%20Blog&url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2F5-func%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Day05%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F5-func%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Day05%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89%20-%20Cc%20Blog&u=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2F5-func%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F5-func%2F&text=Day05%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2F127.0.0.1%3A8090%2Fposts%2F5-func%2F&text=Day05%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1437,7 +1567,7 @@
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1460,35 +1590,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Go-Micro1.1-hello-world/">Micro hello world</a>
+          <a href="/posts/vscode-conf/">VSCode conf</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/3-OperatorCondition/">Day03（运算符与条件语句）</a>
+          <a href="/posts/postman-env/">Postman env manager</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/other/">Golang 代码规范</a>
+          <a href="/posts/resume/">Resume</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/go-1.12/">Go 1.12 版本更新</a>
+          <a href="/posts/Canon/">佳能入门</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Lock/">Golang 锁</a>
+          <a href="/posts/mysql-operate/">MySQL Operate</a>
         </li>
       
     </ul>
@@ -1712,80 +1842,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1795,180 +1851,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2188,101 +2070,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2296,162 +2083,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2717,6 +2348,81 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2760,6 +2466,614 @@
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2811,6 +3125,9 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -2820,10 +3137,7 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -3622,91 +3936,31 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -4044,10 +4298,13 @@ Linux &amp;amp; MacOs
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
+  <p>©
     <time>2024</time>
-    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+
+    
+      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -4057,10 +4314,9 @@ Linux &amp;amp; MacOs
     
   </p>
 
-  <p>Personal homepage<a href="https://cc360428.gitee.io/cc/" target="_blank" rel="noopener"> Home</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
   </p>
 </footer>
-
 
           </div>
         </div>
@@ -4286,80 +4542,6 @@ Linux &amp;amp; MacOs
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4369,180 +4551,6 @@ Linux &amp;amp; MacOs
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4762,101 +4770,6 @@ Linux &amp;amp; MacOs
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -4870,162 +4783,6 @@ Linux &amp;amp; MacOs
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -5291,6 +5048,81 @@ Linux &amp;amp; MacOs
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5334,6 +5166,614 @@ Linux &amp;amp; MacOs
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -5385,6 +5825,9 @@ Linux &amp;amp; MacOs
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/gobase/">GoBase</a>
       
         
@@ -5394,10 +5837,7 @@ Linux &amp;amp; MacOs
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/client/">Client</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -5456,6 +5896,8 @@ Linux &amp;amp; MacOs
 
 
 <!-- layout specified -->
+
+
 
 
   
@@ -5558,7 +6000,7 @@ Linux &amp;amp; MacOs
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 
