@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://127.0.0.1:8090/</id>
+  <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-23T17:48:11+08:00</updated>
+  <updated>2024-05-24T09:30:06+08:00</updated>
   <author>
     <name>Cc</name>
-    <uri>http://127.0.0.1:8090/</uri>
+    <uri>https://cc360428.github.io//</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://127.0.0.1:8090/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="https://cc360428.github.io//feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="http://127.0.0.1:8090/"/>
+    href="https://cc360428.github.io//"/>
   <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
   <rights> © 2024 Cc </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>docker-compose Install Yaml</title>
-    <link href="http://127.0.0.1:8090/posts/docker-compose-install-all/" rel="alternate" type="text/html" title="docker-compose Install Yaml" />
+    <link href="https://cc360428.github.io//posts/docker-compose-install-all/" rel="alternate" type="text/html" title="docker-compose Install Yaml" />
     <published>2024-05-21T12:48:54+08:00</published>
   
     <updated>2024-05-21T12:48:54+08:00</updated>
   
-    <id>http://127.0.0.1:8090/posts/docker-compose-install-all/</id>
-    <content src="http://127.0.0.1:8090/posts/docker-compose-install-all/" />
+    <id>https://cc360428.github.io//posts/docker-compose-install-all/</id>
+    <content src="https://cc360428.github.io//posts/docker-compose-install-all/" />
     <author>
       <name>Cc</name>
     </author>
@@ -75,13 +75,13 @@ services:
   
   <entry>
     <title>CDN</title>
-    <link href="http://127.0.0.1:8090/posts/CDN/" rel="alternate" type="text/html" title="CDN" />
+    <link href="https://cc360428.github.io//posts/CDN/" rel="alternate" type="text/html" title="CDN" />
     <published>2024-04-28T12:48:54+08:00</published>
   
     <updated>2024-04-28T12:48:54+08:00</updated>
   
-    <id>http://127.0.0.1:8090/posts/CDN/</id>
-    <content src="http://127.0.0.1:8090/posts/CDN/" />
+    <id>https://cc360428.github.io//posts/CDN/</id>
+    <content src="https://cc360428.github.io//posts/CDN/" />
     <author>
       <name>Cc</name>
     </author>
@@ -123,13 +123,13 @@ services:
   
   <entry>
     <title>Kubernetes Work CMD</title>
-    <link href="http://127.0.0.1:8090/posts/k8s-work-cmd/" rel="alternate" type="text/html" title="Kubernetes Work CMD" />
+    <link href="https://cc360428.github.io//posts/k8s-work-cmd/" rel="alternate" type="text/html" title="Kubernetes Work CMD" />
     <published>2024-03-16T12:23:54+08:00</published>
   
     <updated>2024-05-19T19:22:34+08:00</updated>
   
-    <id>http://127.0.0.1:8090/posts/k8s-work-cmd/</id>
-    <content src="http://127.0.0.1:8090/posts/k8s-work-cmd/" />
+    <id>https://cc360428.github.io//posts/k8s-work-cmd/</id>
+    <content src="https://cc360428.github.io//posts/k8s-work-cmd/" />
     <author>
       <name>Cc</name>
     </author>
@@ -179,13 +179,13 @@ kubectl config view                # 验证配置
   
   <entry>
     <title>MySQL Select Leetcode</title>
-    <link href="http://127.0.0.1:8090/posts/mysql-select/" rel="alternate" type="text/html" title="MySQL Select Leetcode" />
+    <link href="https://cc360428.github.io//posts/mysql-select/" rel="alternate" type="text/html" title="MySQL Select Leetcode" />
     <published>2024-01-09T23:21:48+08:00</published>
   
     <updated>2024-01-09T23:21:48+08:00</updated>
   
-    <id>http://127.0.0.1:8090/posts/mysql-select/</id>
-    <content src="http://127.0.0.1:8090/posts/mysql-select/" />
+    <id>https://cc360428.github.io//posts/mysql-select/</id>
+    <content src="https://cc360428.github.io//posts/mysql-select/" />
     <author>
       <name>Cc</name>
     </author>
@@ -229,13 +229,13 @@ insert into Products (product_id, low_fats, recyclable) values ('2', 'N', '...
   
   <entry>
     <title>MySQL Select Base</title>
-    <link href="http://127.0.0.1:8090/posts/mysql-select-base/" rel="alternate" type="text/html" title="MySQL Select Base" />
+    <link href="https://cc360428.github.io//posts/mysql-select-base/" rel="alternate" type="text/html" title="MySQL Select Base" />
     <published>2024-01-09T23:20:48+08:00</published>
   
     <updated>2024-01-09T23:20:48+08:00</updated>
   
-    <id>http://127.0.0.1:8090/posts/mysql-select-base/</id>
-    <content src="http://127.0.0.1:8090/posts/mysql-select-base/" />
+    <id>https://cc360428.github.io//posts/mysql-select-base/</id>
+    <content src="https://cc360428.github.io//posts/mysql-select-base/" />
     <author>
       <name>Cc</name>
     </author>
