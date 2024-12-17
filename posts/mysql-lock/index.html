@@ -1247,8 +1247,7 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/dev/">Dev</a>,
-          <a href="/categories/database/">Database</a>,
+          <a href="/categories/datastorage/">DataStorage</a>,
           <a href="/categories/mysql/">Mysql</a>
       </div>
     
@@ -1371,35 +1370,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/binary/">进制 & 转换</a>
+          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base/">C Base</a>
+          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base-ok/">C</a>
+          <a href="/posts/4.5-RedHad-system/">linux(CentOS7) 目录管理、系统管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C/">C#</a>
+          <a href="/posts/5-RedHad-file/">linux(CentOS7) 文件管理与磁盘管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/leetcode-readme/">Leetcode Readme</a>
+          <a href="/posts/10-RedHad-network/">linux(CentOS7) 网络管理</a>
         </li>
       
     </ul>
@@ -3180,247 +3179,7 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -3458,6 +3217,105 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/mysql-error-all/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1587183708"
+  data-df="ll"
+  
+>
+  Apr 18, 2020
+</time>
+
+              <h4 class="pt-0 my-2">MySqlErrorAll</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  连接失败
+
+
+  2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded: dlopen(../Frameworks/caching_sha2_password.so, 2): image not found
+
+
+
+  
+    mysql -uroot -ppassword #登录
+  
+  
+    us...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/mysql-passwrod/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1587183708"
+  data-df="ll"
+  
+>
+  Apr 18, 2020
+</time>
+
+              <h4 class="pt-0 my-2">MySQL forgot password</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  MySQL 忘记密码
+
+
+  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
+
+
+关闭服务
+
+1
+2
+3
+4
+5
+6
+[root@Cc ~]# ps -ef |grep mysql
+root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
+mysql    20039     1  0 ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/posts/mysql-monitor/" class="post-preview card h-100">
@@ -3501,99 +3359,6 @@
 
 
 ...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/mysql-operate/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1544365308"
-  data-df="ll"
-  
->
-  Dec  9, 2018
-</time>
-
-              <h4 class="pt-0 my-2">MySQL Operate</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  数据库（Database）
-
-库阈值
-
-
-  MySQL 8.0 版本之前，一个数据库中最多可以有 65535 个表。因为 采用 16 位 最大值为 2^16 - 1 = 65535
-  MySQL 8.0 开始，采用 32 位整数来存储表的数量，因此最大值变成了 2^32 - 1
-
-
-数据库规范
-
-
-  命名规范
-    
-      使用有意义且描述性强的名称，避免使用无意义的缩写或简写...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/Mysql-Version-info/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1587183708"
-  data-df="ll"
-  
->
-  Apr 18, 2020
-</time>
-
-              <h4 class="pt-0 my-2">MySQL Version diff</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  5.6
-
-
-  InnoDb 开始支持全文索引
-  InnoDb 支持设置页面大小
-  通过 innodb_page_size 指定，默认是 16KB，对于工作负载和存储设备（尤其是具有小块大小的 SSD 设备）的某些组合，较小的页面大小可以帮助避免冗余或低效的 I / O
-  InnoDB redolog 总大小的限制从之前的 4G 扩展至 512G
-  InnoDB 现在可以限制大量表打...
                 </p>
               </div>
             </div>

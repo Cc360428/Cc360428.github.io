@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="Git Error" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-18T14:33:04+08:00","datePublished":"2020-04-18T14:33:04+08:00","description":"Failed to connect to 127.0.0.1 port 1080: Connection refused","headline":"Git Error","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/Git-Error/"},"url":"https://cc360428.github.io//posts/Git-Error/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-15T15:59:46+08:00","datePublished":"2020-04-18T14:33:04+08:00","description":"Failed to connect to 127.0.0.1 port 1080: Connection refused","headline":"Git Error","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/Git-Error/"},"url":"https://cc360428.github.io//posts/Git-Error/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -786,6 +786,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1734249586"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Dec 15, 2024
+</time>
+
+        </span>
+      
 
       
 
@@ -824,7 +847,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="944 words"
+  title="943 words"
 >
   <em>5 min</em> read</span>
 
@@ -848,21 +871,18 @@
 <h3 id="方法一"><span class="me-2">方法一</span><a href="#方法一" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>第一步 (查询是否使用了代理)<br />
- git config –global http.proxy</li>
-  <li>第二步(取消代理)<br />
- git config –global –unset http.proxy</li>
+  <li>第一步 (查询是否使用了代理)git config –global http.proxy</li>
+  <li>第二步(取消代理)
+git config –global –unset http.proxy</li>
 </ul>
 
 <h3 id="方法二"><span class="me-2">方法二</span><a href="#方法二" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>第一步<br />
-在终端输入 defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder 这行命令可以显示电脑的隐形文件</li>
-  <li>第二步<br />
- 在 Finder 里面个人账号的文件夹里找到 gitconfig 这个隐藏文件，右击打开，然后把里面的代理 proxy 整行删掉</li>
-  <li>第三步<br />
- 回到终端，再次执行 pod setup，这个时候你就会神奇的发现，问题解决了，希望对同样有这种问题的人有所帮助</li>
+  <li>第一步在终端输入 defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder 这行命令可以显示电脑的隐形文件</li>
+  <li>第二步在 Finder 里面个人账号的文件夹里找到 gitconfig 这个隐藏文件，右击打开，然后把里面的代理 proxy 整行删掉</li>
+  <li>第三步
+回到终端，再次执行 pod setup，这个时候你就会神奇的发现，问题解决了，希望对同样有这种问题的人有所帮助</li>
 </ul>
 
 <h2 id="出现目录一直是跳过"><span class="me-2">出现目录一直是跳过</span><a href="#出现目录一直是跳过" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -913,8 +933,7 @@ hint: See the <span class="s1">'Note about fast-forwards'</span> <span class="k"
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>推送失败是代码没有拉去最新的 更远程仓库不一致<br />
- 最保险的是把你写的代码备份一份
+  <li>推送失败是代码没有拉去最新的 更远程仓库不一致最保险的是把你写的代码备份一份
     <ul>
       <li>方法 1
         <ul>
@@ -1055,7 +1074,7 @@ git push <span class="nt">-f</span> origin master
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/dev/">Dev</a>,
-          <a href="/categories/utils/">Utils</a>
+          <a href="/categories/git/">Git</a>
       </div>
     
 
@@ -1182,35 +1201,35 @@ git push <span class="nt">-f</span> origin master
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/binary/">进制 & 转换</a>
+          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base/">C Base</a>
+          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base-ok/">C</a>
+          <a href="/posts/4.5-RedHad-system/">linux(CentOS7) 目录管理、系统管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C/">C#</a>
+          <a href="/posts/5-RedHad-file/">linux(CentOS7) 文件管理与磁盘管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/leetcode-readme/">Leetcode Readme</a>
+          <a href="/posts/10-RedHad-network/">linux(CentOS7) 网络管理</a>
         </li>
       
     </ul>
@@ -3051,175 +3070,7 @@ git push <span class="nt">-f</span> origin master
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -3424,20 +3275,20 @@ git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += 
 
                   Git default
 
-Git 全局设置:
+Git 全局设置
 
 
   git config –global user.name “Cc”
   git config –global user.email “li_chao_cheng@163.com”
 
 
-创建 git 仓库:
+创建 git 仓库
 
 
   mkdir client_user_server
   cd client_user_server
   git init
-  t...
+  tou...
                 </p>
               </div>
             </div>

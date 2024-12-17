@@ -962,35 +962,35 @@ read this external guide to
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/binary/">进制 & 转换</a>
+          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base/">C Base</a>
+          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base-ok/">C</a>
+          <a href="/posts/4.5-RedHad-system/">linux(CentOS7) 目录管理、系统管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C/">C#</a>
+          <a href="/posts/5-RedHad-file/">linux(CentOS7) 文件管理与磁盘管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/leetcode-readme/">Leetcode Readme</a>
+          <a href="/posts/10-RedHad-network/">linux(CentOS7) 网络管理</a>
         </li>
       
     </ul>
@@ -2735,175 +2735,7 @@ read this external guide to
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -3111,7 +2943,7 @@ read this external guide to
         </article>
       
         <article class="col">
-          <a href="/posts/redis-monitor/" class="post-preview card h-100">
+          <a href="/posts/work/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3123,14 +2955,14 @@ read this external guide to
 
 <time
   
-  data-ts="1686718134"
+  data-ts="1642915945"
   data-df="ll"
   
 >
-  Jun 14, 2023
+  Jan 23, 2022
 </time>
 
-              <h4 class="pt-0 my-2">Redis Monitor</h4>
+              <h4 class="pt-0 my-2">项目架构图</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3139,28 +2971,41 @@ read this external guide to
 
 
 
-                  操作步骤如下
+                  本地组项目架构图
+
+层次结构
+
+1 表示层
 
 
-  redis-exporter
-  prometheus
-  grafana
+  移动端 websocket 客户端消息通讯
 
 
-redis-exporter 启动
+2 应用程序层
 
-GitHub
+3 服务层
 
 
-  
-    在机器对应目录下创建目录和文件
-
+  网络服务
     
-      mkdir -p /home/save/redis-exporter/conf
-      
-        touch redis_conf.json
+      ws
+      http
+    
+  
 
-     ...
+
+4 数据访问层：redis
+
+
+  redis mp
+  redis save
+
+
+5 基础设施层
+
+
+  docker-compose
+  Prometheus+Grafan...
                 </p>
               </div>
             </div>
@@ -3168,7 +3013,7 @@ GitHub
         </article>
       
         <article class="col">
-          <a href="/posts/mysql-monitor/" class="post-preview card h-100">
+          <a href="/posts/testing-base/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3180,14 +3025,14 @@ GitHub
 
 <time
   
-  data-ts="1686721734"
+  data-ts="1683594301"
   data-df="ll"
   
 >
-  Jun 14, 2023
+  May  9, 2023
 </time>
 
-              <h4 class="pt-0 my-2">Mysql Monitor</h4>
+              <h4 class="pt-0 my-2">API测试工具</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3196,19 +3041,16 @@ GitHub
 
 
 
-                  操作步骤如下
+                  API 压力测试
+
+以下是常用的 API 压力测试工具：
 
 
-  mysql 设置
-
-
-1
-2
-  CREATE USER &#39;exporter&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;XXXXXXXX&#39; WITH MAX_USER_CONNECTIONS 3;
-  GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO &#39;exporter&#39;@&#39;localhost&#39;;
-
-
-...
+  
+    Apache JMeter：JMeter 是一个开源的 Java 应用程序，可以用于负载测试、性能测试和压力测试。它支持多种协议，包括 HTTP, FTP, JDBC 等。
+  
+  
+    Gatling：Gatling 是一个基于 Scala 的开源负载测试工具，可以用于 Web、WebSocket 和 JMS...
                 </p>
               </div>
             </div>

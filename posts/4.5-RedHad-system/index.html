@@ -43,7 +43,7 @@
 <meta property="twitter:title" content="linux(CentOS7) 目录管理、系统管理" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-03-25T23:48:12+08:00","datePublished":"2020-03-25T23:48:12+08:00","description":"4.5(目录管理、系统管理)","headline":"linux(CentOS7) 目录管理、系统管理","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/4.5-RedHad-system/"},"url":"https://cc360428.github.io//posts/4.5-RedHad-system/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-12-17T10:08:56+08:00","datePublished":"2020-03-25T23:48:12+08:00","description":"4.5(目录管理、系统管理)","headline":"linux(CentOS7) 目录管理、系统管理","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/4.5-RedHad-system/"},"url":"https://cc360428.github.io//posts/4.5-RedHad-system/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -887,39 +887,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -935,6 +902,72 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -994,6 +1027,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1734401336"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Dec 17, 2024
+</time>
+
+        </span>
+      
 
       
 
@@ -1032,9 +1088,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1024 words"
+  title="1599 words"
 >
-  <em>5 min</em> read</span>
+  <em>8 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -1045,7 +1101,7 @@
   <div class="content">
     <h2 id="目录管理命令"><span class="me-2">目录管理命令</span><a href="#目录管理命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="nkdri"><span class="me-2">nkdri</span><a href="#nkdri" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="mkdri"><span class="me-2">mkdri</span><a href="#mkdri" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>指定权限创建</li>
@@ -1132,182 +1188,362 @@ drwxr-xr-x 3 root  root  4.0K 2月  28 23:03 hugo
 
 <h3 id="tar"><span class="me-2">tar</span><a href="#tar" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
+<h4 id="tar-基础用法"><span class="me-2">tar 基础用法</span><a href="#tar-基础用法" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="o">[</span>选项] <span class="o">[</span>归档文件名] <span class="o">[</span>要打包/解压的文件或目录]
+</pre></td></tr></tbody></table></code></div></div>
 <ul>
-  <li>打包不压缩</li>
+  <li>
+    <p>常用选项</p>
+
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">-c</code></strong>：创建新的归档文件</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">-x</code></strong>：解压归档文件</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">-v</code></strong>：显示操作过程（详细模式）</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">-f</code></strong>：指定归档文件名</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">-z</code></strong>：使用 <code class="language-plaintext highlighter-rouge">gzip</code> 压缩或解压归档文件</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">-j</code></strong>：使用 <code class="language-plaintext highlighter-rouge">bzip2</code> 压缩或解压归档文件</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">-J</code></strong>：使用 <code class="language-plaintext highlighter-rouge">xz</code> 压缩或解压归档文件</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">-C</code></strong>：指定解压到的目标目录</li>
+    </ul>
+  </li>
 </ul>
 
-<div class="language-shell highlighter-rouge"><div class="code-header">
+<h4 id="tar-常规操作"><span class="me-2"><code class="language-plaintext highlighter-rouge">tar</code> 常规操作</span><a href="#tar-常规操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li>
+    <p><strong>1. 创建归档文件（不压缩）</strong></p>
+
+    <blockquote>
+      <p>将 <code class="language-plaintext highlighter-rouge">file1.txt</code> 和 <code class="language-plaintext highlighter-rouge">file2.txt</code> 打包成 <code class="language-plaintext highlighter-rouge">archive.tar</code></p>
+    </blockquote>
+
+    <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-cvf</span> archive.tar file1.txt file2.txt
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>
+    <p><strong>2. 创建压缩归档文件</strong></p>
+
+    <ul>
+      <li>
+        <p><strong>使用 gzip 压缩（.tar.gz 或 .tgz 文件）</strong></p>
+
+        <blockquote>
+          <p>将目录 <code class="language-plaintext highlighter-rouge">myfolder/</code> 打包并用 <code class="language-plaintext highlighter-rouge">gzip</code> 压缩成 <code class="language-plaintext highlighter-rouge">archive.tar.gz</code></p>
+        </blockquote>
+
+        <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-czvf</span> archive.tar.gz myfolder/
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p><strong>使用 bzip2 压缩（.tar.bz2 文件）</strong></p>
+
+        <blockquote>
+          <p>将目录 <code class="language-plaintext highlighter-rouge">myfolder/</code> 打包并用 <code class="language-plaintext highlighter-rouge">bzip2</code> 压缩成 <code class="language-plaintext highlighter-rouge">archive.tar.bz2</code></p>
+        </blockquote>
+
+        <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># tar -cvf tarTest.txt.tar tarTest.txt</span>
-tarTest.txt
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># ll</span>
-总用量 16
-drwxr-xr-x 2 root root  4096 3月  25 22:59 lcc
-<span class="nt">-rw-r--r--</span> 1 root root     0 3月  25 23:01 tarTest.txt
-<span class="nt">-rw-r--r--</span> 1 root root 10240 3月  25 23:01 tarTest.txt.tar
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c">#</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-cjvf</span> archive.tar.bz2 myfolder/
+    
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+      <li>
+        <p><strong>使用 xz 压缩（.tar.xz 文件）</strong></p>
 
-<ul>
-  <li>打包并使用 gzip 压缩</li>
-</ul>
+        <blockquote>
+          <p>将目录 <code class="language-plaintext highlighter-rouge">myfolder/</code> 打包并用 <code class="language-plaintext highlighter-rouge">xz</code> 压缩成 <code class="language-plaintext highlighter-rouge">archive.tar.xz</code></p>
+        </blockquote>
 
-<div class="language-shell highlighter-rouge"><div class="code-header">
+        <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="rouge-code"><pre><span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># tar -zcvf tarTest.txt.tar.gz ./lcc/</span>
-./lcc/
-./lcc/b
-./lcc/a
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># ll</span>
-总用量 20
-drwxr-xr-x 2 root root  4096 3月  25 22:59 lcc
-<span class="nt">-rw-r--r--</span> 1 root root     0 3月  25 23:01 tarTest.txt
-<span class="nt">-rw-r--r--</span> 1 root root 10240 3月  25 23:01 tarTest.txt.tar
-<span class="nt">-rw-r--r--</span> 1 root root   144 3月  25 23:02 tarTest.txt.tar.gz
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c">#</span>
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-cJvf</span> archive.tar.xz myfolder/
+</pre></td></tr></tbody></table></code></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>3. 解压归档文件</strong>
+    <ul>
+      <li><strong>解压 .tar 文件（不压缩）</strong></li>
+    </ul>
 
-</pre></td></tr></tbody></table></code></div></div>
+    <blockquote>
+      <p>解压 <code class="language-plaintext highlighter-rouge">archive.tar</code> 文件到当前目录</p>
+    </blockquote>
 
-<ul>
-  <li>使用 bzip2</li>
-</ul>
-
-<div class="language-shell highlighter-rouge"><div class="code-header">
+    <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-</pre></td><td class="rouge-code"><pre><span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># tar -jcvf tarTest.txt.tar.bz2 ./lcc/</span>
-./lcc/
-./lcc/b
-./lcc/a
-<span class="nb">tar</span> <span class="o">(</span>child<span class="o">)</span>: bzip2：无法 <span class="nb">exec</span>: 没有那个文件或目录
-<span class="nb">tar</span> <span class="o">(</span>child<span class="o">)</span>: Error is not recoverable: exiting now
-<span class="nb">tar</span>: Child returned status 2
-<span class="nb">tar</span>: Error is not recoverable: exiting now
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># ll</span>
-总用量 20
-drwxr-xr-x 2 root root  4096 3月  25 22:59 lcc
-<span class="nt">-rw-r--r--</span> 1 root root     0 3月  25 23:01 tarTest.txt
-<span class="nt">-rw-r--r--</span> 1 root root 10240 3月  25 23:01 tarTest.txt.tar
-<span class="nt">-rw-r--r--</span> 1 root root     0 3月  25 23:04 tarTest.txt.tar.bz2
-<span class="nt">-rw-r--r--</span> 1 root root   144 3月  25 23:02 tarTest.txt.tar.gz
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c">#</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-xvf</span> archive.tar
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<ul>
-  <li>查看当前压缩包</li>
-</ul>
+    <ul>
+      <li><strong>解压 .tar.gz 文件（gzip 压缩）</strong></li>
+    </ul>
 
-<div class="language-shell highlighter-rouge"><div class="code-header">
+    <blockquote>
+      <p>解压 <code class="language-plaintext highlighter-rouge">archive.tar.gz</code> 文件到当前目录</p>
+    </blockquote>
+
+    <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># tar -ztvf tarTest.txt.tar.gz</span>
-drwxr-xr-x root/root         0 2020-03-25 22:59 ./lcc/
-<span class="nt">-rw-r--r--</span> root/root         0 2020-03-25 22:59 ./lcc/b
-<span class="nt">-rw-r--r--</span> root/root         0 2020-03-25 22:59 ./lcc/a
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c">#</span>
-</pre></td></tr></tbody></table></code></div></div>
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-xzvf</span> archive.tar.gz
+</pre></td></tr></tbody></table></code></div>    </div>
 
-<ul>
-  <li>解压之中指定文件</li>
-</ul>
+    <ul>
+      <li><strong>解压 .tar.bz2 文件（bzip2 压缩）</strong></li>
+    </ul>
 
-<div class="language-shell highlighter-rouge"><div class="code-header">
+    <blockquote>
+      <p>解压 <code class="language-plaintext highlighter-rouge">archive.tar.bz2</code> 文件到当前目录</p>
+    </blockquote>
+
+    <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-</pre></td><td class="rouge-code"><pre><span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># rm -rf lcc/</span>
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># ll</span>
-总用量 16
-<span class="nt">-rw-r--r--</span> 1 root root     0 3月  25 23:01 tarTest.txt
-<span class="nt">-rw-r--r--</span> 1 root root 10240 3月  25 23:01 tarTest.txt.tar
-<span class="nt">-rw-r--r--</span> 1 root root     0 3月  25 23:05 tarTest.txt.tar.bz2
-<span class="nt">-rw-r--r--</span> 1 root root   144 3月  25 23:02 tarTest.txt.tar.gz
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># tar -zxvf tarTest.txt.tar.gz ./lcc/b</span>
-./lcc/b
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c"># tree</span>
-<span class="nb">.</span>
-├── lcc
-│   └── b
-├── tarTest.txt
-├── tarTest.txt.tar
-├── tarTest.txt.tar.bz2
-└── tarTest.txt.tar.gz
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-xjvf</span> archive.tar.bz2
+</pre></td></tr></tbody></table></code></div>    </div>
 
-1 directory, 5 files
-<span class="o">[</span>root@Cc <span class="nb">tar</span><span class="o">]</span><span class="c">#</span>
+    <ul>
+      <li><strong>解压 .tar.xz 文件（xz 压缩）</strong></li>
+    </ul>
+
+    <blockquote>
+      <p>解压 <code class="language-plaintext highlighter-rouge">archive.tar.xz</code> 文件到当前目录</p>
+    </blockquote>
+
+    <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-xJvf</span> archive.tar.xz
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li><strong>4. 解压到指定目录</strong></li>
+</ul>
+
+<blockquote>
+  <p>将 <code class="language-plaintext highlighter-rouge">archive.tar.gz</code> 解压到指定目录 <code class="language-plaintext highlighter-rouge">/path/to/destination/</code></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-xzvf</span> archive.tar.gz <span class="nt">-C</span> /path/to/destination/
+</pre></td></tr></tbody></table></code></div></div>
+
+<p><strong>5. 查看归档文件内容</strong></p>
+
+<blockquote>
+  <p>列出 <code class="language-plaintext highlighter-rouge">archive.tar.gz</code> 中的文件内容，但不解压</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-tvf</span> archive.tar.gz
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>保留文件属性
-<code class="language-plaintext highlighter-rouge">[root@Cc tar]# tar -zxvpf tarTest.txt.tar.gz ./lcc/</code></li>
-  <li>排除某些文件
-<code class="language-plaintext highlighter-rouge">tar --exclude /home/*log -zcvf tarTest.txt.tar.gz ./lcc/</code></li>
+  <li><strong>6. 添加文件到现有归档文件</strong></li>
 </ul>
+
+<blockquote>
+  <p>将 <code class="language-plaintext highlighter-rouge">newfile.txt</code> 添加到现有的 <code class="language-plaintext highlighter-rouge">archive.tar</code> 文件中</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-rvf</span> archive.tar newfile.txt
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li><strong>7. 删除归档文件中的指定文件</strong></li>
+</ul>
+
+<blockquote>
+  <p>从 <code class="language-plaintext highlighter-rouge">archive.tar</code> 中删除 <code class="language-plaintext highlighter-rouge">file1.txt</code></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">--delete</span> <span class="nt">-f</span> archive.tar file1.txt
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="tar实用组合示例"><span class="me-2"><code class="language-plaintext highlighter-rouge">tar</code>实用组合示例</span><a href="#tar实用组合示例" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ul>
+  <li><strong>备份整个目录并压缩</strong></li>
+</ul>
+
+<blockquote>
+  <p>将 <code class="language-plaintext highlighter-rouge">/home/user/data/</code> 目录打包并用 <code class="language-plaintext highlighter-rouge">gzip</code> 压缩为 <code class="language-plaintext highlighter-rouge">backup.tar.gz</code></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-czvf</span> backup.tar.gz /home/user/data/
+</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li><strong>定时备份（结合 <code class="language-plaintext highlighter-rouge">cron</code>）</strong></li>
+</ul>
+
+<blockquote>
+  <p>将 <code class="language-plaintext highlighter-rouge">/home/user/data/</code> 目录备份并根据当前日期命名文件，如 <code class="language-plaintext highlighter-rouge">backup-20240617.tar.gz</code></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-czvf</span> /backup/backup-<span class="si">$(</span><span class="nb">date</span> +%Y%m%d<span class="si">)</span>.tar.gz /home/user/data/
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li><strong>提取指定文件</strong></li>
+</ul>
+
+<blockquote>
+  <p>从 <code class="language-plaintext highlighter-rouge">archive.tar.gz</code> 中提取 <code class="language-plaintext highlighter-rouge">file1.txt</code></p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-xzvf</span> archive.tar.gz file1.txt
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="tar-总结"><span class="me-2"><code class="language-plaintext highlighter-rouge">tar</code> 总结</span><a href="#tar-总结" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>操作</th>
+      <th>命令</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>创建 <code class="language-plaintext highlighter-rouge">.tar</code> 文件</td>
+      <td><code class="language-plaintext highlighter-rouge">tar -cvf archive.tar files/</code></td>
+    </tr>
+    <tr>
+      <td>创建 <code class="language-plaintext highlighter-rouge">.tar.gz</code> 文件</td>
+      <td><code class="language-plaintext highlighter-rouge">tar -czvf archive.tar.gz files/</code></td>
+    </tr>
+    <tr>
+      <td>创建 <code class="language-plaintext highlighter-rouge">.tar.bz2</code> 文件</td>
+      <td><code class="language-plaintext highlighter-rouge">tar -cjvf archive.tar.bz2 files/</code></td>
+    </tr>
+    <tr>
+      <td>解压 <code class="language-plaintext highlighter-rouge">.tar</code> 文件</td>
+      <td><code class="language-plaintext highlighter-rouge">tar -xvf archive.tar</code></td>
+    </tr>
+    <tr>
+      <td>解压 <code class="language-plaintext highlighter-rouge">.tar.gz</code> 文件</td>
+      <td><code class="language-plaintext highlighter-rouge">tar -xzvf archive.tar.gz</code></td>
+    </tr>
+    <tr>
+      <td>解压 <code class="language-plaintext highlighter-rouge">.tar.bz2</code> 文件</td>
+      <td><code class="language-plaintext highlighter-rouge">tar -xjvf archive.tar.bz2</code></td>
+    </tr>
+    <tr>
+      <td>列出归档文件内容</td>
+      <td><code class="language-plaintext highlighter-rouge">tar -tvf archive.tar.gz</code></td>
+    </tr>
+    <tr>
+      <td>解压到指定目录</td>
+      <td><code class="language-plaintext highlighter-rouge">tar -xzvf archive.tar.gz -C /destination</code></td>
+    </tr>
+  </tbody>
+</table></div>
+
+<h4 id="tar-ps"><span class="me-2">tar ps</span><a href="#tar-ps" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">.tar</code> 只是归档，不会压缩文件</li>
+  <li><code class="language-plaintext highlighter-rouge">.tar.gz</code> 和 <code class="language-plaintext highlighter-rouge">.tgz</code> 是经过 <code class="language-plaintext highlighter-rouge">gzip</code> 压缩的归档文件</li>
+  <li><code class="language-plaintext highlighter-rouge">.tar.bz2</code> 提供更高压缩率，但速度较慢</li>
+  <li><code class="language-plaintext highlighter-rouge">.tar.xz</code> 提供更高压缩率，适合较大文件</li>
+</ol>
 
 <h3 id="zipuzip"><span class="me-2">zip/uzip</span><a href="#zipuzip" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="gzipgunzip"><span class="me-2">gzip/gunzip</span><a href="#gzipgunzip" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h4 id="zip"><span class="me-2">zip</span><a href="#zip" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<h3 id="bzip2bunzip2"><span class="me-2">bzip2/bunzip2</span><a href="#bzip2bunzip2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>
+    <p>常用选项</p>
 
-<h4 id="以上三种自己百度谷歌我有时间会补上去"><span class="me-2">以上三种自己百度谷歌，我有时间会补上去</span><a href="#以上三种自己百度谷歌我有时间会补上去" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">-r</code>：递归压缩目录及其子目录中的所有文件。</li>
+      <li><code class="language-plaintext highlighter-rouge">-q</code>：安静模式，不显示压缩过程信息。</li>
+      <li><code class="language-plaintext highlighter-rouge">-v</code>：详细模式，显示详细信息。</li>
+      <li><code class="language-plaintext highlighter-rouge">-m</code>：压缩后删除源文件。</li>
+      <li><code class="language-plaintext highlighter-rouge">-9</code>：最大程度压缩文件。</li>
+    </ul>
+  </li>
+  <li>例子
+    <div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>zip example.zip file1.txt
+zip example.zip file1.txt file2.txt file3.txt
+zip <span class="nt">-r</span> example.zip myfolder/
+zip <span class="nt">-m</span> example.zip file1.txt file2.txt
+
+</pre></td></tr></tbody></table></code></div>    </div>
+    <h4 id="uzip"><span class="me-2">uzip</span><a href="#uzip" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+  </li>
+  <li>
+    <p>常用选项</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">-l</code>：列出压缩文件中的内容，但不解压。</li>
+      <li><code class="language-plaintext highlighter-rouge">-d</code>：指定解压到的目标目录。</li>
+      <li><code class="language-plaintext highlighter-rouge">-o</code>：覆盖已有文件而不询问。</li>
+      <li><code class="language-plaintext highlighter-rouge">-q</code>：安静模式，不显示解压过程信息。</li>
+    </ul>
+  </li>
+  <li>
+    <p>例子</p>
+
+    <div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>unzip example.zip
+unzip <span class="nt">-l</span> example.zip
+unzip example.zip <span class="nt">-d</span> /path/to/destination
+unzip <span class="nt">-o</span> example.zip
+unzip <span class="nt">-q</span> example.zip
+
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
 
 <h2 id="系统管理"><span class="me-2">系统管理</span><a href="#系统管理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1384,7 +1620,7 @@ drwxr-xr-x root/root         0 2020-03-25 22:59 ./lcc/
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>可以配合<code class="language-plaintext highlighter-rouge">history |grep [docker]</code>查找</li>
+  <li>可以配合 <code class="language-plaintext highlighter-rouge">history |grep [docker]</code>查找</li>
 </ul>
 
 <h3 id="date时间操作"><span class="me-2">date(时间操作)</span><a href="#date时间操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1469,13 +1705,85 @@ drwxr-xr-x root/root         0 2020-03-25 22:59 ./lcc/
   <li>vim</li>
 </ul>
 
-<h2 id="最后总结个人-shell"><span class="me-2">最后总结（个人 shell）</span><a href="#最后总结个人-shell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="最后总结"><span class="me-2">最后总结</span><a href="#最后总结" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
-  <p>用所学的 shell 备份重要的文件目录</p>
+  <p>异地备份</p>
 </blockquote>
 
-<h3 id="下次补上"><span class="me-2">下次补上</span><a href="#下次补上" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre><span class="c">#!/bin/bash</span>
+
+<span class="c"># 源目录</span>
+<span class="nv">SOURCE_DIR</span><span class="o">=</span><span class="s2">"/opt/prometheus"</span>
+<span class="c"># 目标主机 IP</span>
+<span class="nv">REMOTE_HOST</span><span class="o">=</span><span class="s2">"172.12.10.36"</span>
+<span class="c"># 目标目录</span>
+<span class="nv">REMOTE_DIR</span><span class="o">=</span><span class="s2">"/home/save/filebrowser/srv/QP/backup"</span>
+<span class="c"># 当前日期</span>
+<span class="nv">DATE</span><span class="o">=</span><span class="si">$(</span><span class="nb">date</span> +%Y%m%d<span class="si">)</span>
+
+<span class="c"># 备份文件名</span>
+<span class="nv">BACKUP_FILE</span><span class="o">=</span><span class="s2">"backup_</span><span class="nv">$DATE</span><span class="s2">.tar.gz"</span>
+
+<span class="c"># 压缩源目录</span>
+<span class="nb">tar</span> <span class="nt">-czvf</span> <span class="s2">"</span><span class="nv">$BACKUP_FILE</span><span class="s2">"</span> <span class="nt">-C</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">dirname</span> <span class="s2">"</span><span class="nv">$SOURCE_DIR</span><span class="s2">"</span><span class="si">)</span><span class="s2">"</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">basename</span> <span class="s2">"</span><span class="nv">$SOURCE_DIR</span><span class="s2">"</span><span class="si">)</span><span class="s2">"</span>
+
+<span class="c"># 检查压缩是否成功</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"压缩成功，文件名: </span><span class="nv">$BACKUP_FILE</span><span class="s2">"</span>
+
+    <span class="c"># 将压缩文件传输到远程服务器</span>
+    rsync <span class="nt">-avz</span> <span class="s2">"</span><span class="nv">$BACKUP_FILE</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$REMOTE_HOST</span><span class="s2">:</span><span class="nv">$REMOTE_DIR</span><span class="s2">/"</span>
+
+    <span class="c"># 检查传输是否成功</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> <span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"备份成功到 </span><span class="nv">$REMOTE_HOST</span><span class="s2">:</span><span class="nv">$REMOTE_DIR</span><span class="s2">/"</span>
+        <span class="c"># 删除本地备份文件（可选）</span>
+        <span class="nb">rm</span> <span class="s2">"</span><span class="nv">$BACKUP_FILE</span><span class="s2">"</span>
+    <span class="k">else
+        </span><span class="nb">echo</span> <span class="s2">"备份传输失败"</span>
+    <span class="k">fi
+else
+    </span><span class="nb">echo</span> <span class="s2">"压缩失败"</span>
+<span class="k">fi</span>
+</pre></td></tr></tbody></table></code></div></div>
 
   </div>
 
@@ -1608,35 +1916,35 @@ drwxr-xr-x root/root         0 2020-03-25 22:59 ./lcc/
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/binary/">进制 & 转换</a>
+          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base/">C Base</a>
+          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base-ok/">C</a>
+          <a href="/posts/4.5-RedHad-system/">linux(CentOS7) 目录管理、系统管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C/">C#</a>
+          <a href="/posts/5-RedHad-file/">linux(CentOS7) 文件管理与磁盘管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/leetcode-readme/">Leetcode Readme</a>
+          <a href="/posts/10-RedHad-network/">linux(CentOS7) 网络管理</a>
         </li>
       
     </ul>
@@ -3887,9 +4195,7 @@ Password:
 [root@Cc ~]#
 
 
-
-
-b...
+bas...
                 </p>
               </div>
             </div>

@@ -710,8 +710,7 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/dev/">Dev</a>,
-          <a href="/categories/database/">Database</a>,
+          <a href="/categories/datastorage/">DataStorage</a>,
           <a href="/categories/mysql/">Mysql</a>
       </div>
     
@@ -834,35 +833,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/binary/">进制 & 转换</a>
+          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base/">C Base</a>
+          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/c-base-ok/">C</a>
+          <a href="/posts/4.5-RedHad-system/">linux(CentOS7) 目录管理、系统管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/C/">C#</a>
+          <a href="/posts/5-RedHad-file/">linux(CentOS7) 文件管理与磁盘管理</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/leetcode-readme/">Leetcode Readme</a>
+          <a href="/posts/10-RedHad-network/">linux(CentOS7) 网络管理</a>
         </li>
       
     </ul>
@@ -2619,247 +2618,7 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -2923,6 +2682,58 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
+          <a href="/posts/mysql-passwrod/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1587183708"
+  data-df="ll"
+  
+>
+  Apr 18, 2020
+</time>
+
+              <h4 class="pt-0 my-2">MySQL forgot password</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  MySQL 忘记密码
+
+
+  注：vim 修改文件 i 保存退出 :wq ， 不修改退出 :q!
+
+
+关闭服务
+
+1
+2
+3
+4
+5
+6
+[root@Cc ~]# ps -ef |grep mysql
+root      3658  8508  0 12:47 pts/1    00:00:00 grep --color=auto mysql
+mysql    20039     1  0 ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/mysql-monitor/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -2971,7 +2782,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/mysql-operate/" class="post-preview card h-100">
+          <a href="/posts/mysql-base/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2983,14 +2794,14 @@
 
 <time
   
-  data-ts="1544365308"
+  data-ts="1704813588"
   data-df="ll"
   
 >
-  Dec  9, 2018
+  Jan  9, 2024
 </time>
 
-              <h4 class="pt-0 my-2">MySQL Operate</h4>
+              <h4 class="pt-0 my-2">MySQL Base</h4>
               <div class="text-muted">
                 <p>
                   
@@ -2999,78 +2810,18 @@
 
 
 
-                  数据库（Database）
-
-库阈值
+                  MySQL
 
 
-  MySQL 8.0 版本之前，一个数据库中最多可以有 65535 个表。因为 采用 16 位 最大值为 2^16 - 1 = 65535
-  MySQL 8.0 开始，采用 32 位整数来存储表的数量，因此最大值变成了 2^32 - 1
-
-
-数据库规范
-
-
-  命名规范
-    
-      使用有意义且描述性强的名称，避免使用无意义的缩写或简写...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/mysql-lock/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
+  MySQL 是一个开源的关系型数据库管理系统，广泛应用于 Web 应用程序的开发中。它提供了一个强大的、稳定的、高效的、可扩展的数据库解决方案，能够满足从小型网站到大型企业级应用的各种需求。
 
 
 
-
-<time
-  
-  data-ts="1568780508"
-  data-df="ll"
-  
->
-  Sep 18, 2019
-</time>
-
-              <h4 class="pt-0 my-2">MySql lock</h4>
-              <div class="text-muted">
-                <p>
-                  
+  特点
 
 
 
-
-
-                  MySQL 锁
-
-
-  表级锁 和 行级锁
-
-
-
-
-mysql&amp;gt; show tables;
-+----------------+
-| Tables_in_test |
-+----------------+
-| mylock         |
-| test           |
-+----------------+
-2 rows in set (0.03 sec)
-
-
-表锁
-
-
-  ...
+  关系型数据库管理系统（RDBMS）：MySQL 是一种关系型数据库管理系统，它采用了关系模型来组织数据。数据存储在表中，表之间通过外键关联，形成了数据之间的...
                 </p>
               </div>
             </div>
@@ -3092,7 +2843,7 @@ mysql&amp;gt; show tables;
 
   
     <a
-      href="/posts/Mysql-Version-info/"
+      href="/posts/mysql-version-info/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
