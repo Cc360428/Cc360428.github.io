@@ -1095,20 +1095,16 @@ root@Accesshub:/...
 
                 Git default
 
-Git 全局设置
+Git config
 
 
+  系统级别 (–system): 适用于整个系统的配置文件
+  用户级别 (–global): 适用于当前用户的配置文件
+  
+    仓库级别 (–local): 适用于当前仓库的配置文件
+  
   git config –global user.name “Cc”
-  git config –global user.email “li_chao_cheng@163.com”
-
-
-创建 git 仓库
-
-
-  mkdir client_user_server
-  cd client_user_server
-  git init
-  tou...
+  git config –global user.email “li...
               </p>
             </div>
 
@@ -1155,14 +1151,14 @@ Git 全局设置
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/Git-Ope-Other/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/Git-Work/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Git Open Other</h1>
+            <h1 class="card-title my-2 mt-md-0">Git Work</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1172,21 +1168,22 @@ Git 全局设置
 
 
 
-                冷门操作
+                Git Work Cmd
 
-查看 commit 总数
-
-git log --oneline | wc -l
+git config 配置
 
 
-查看所有提交人和提交次数
+  
+    配置当前系统用户
 
-git shortlog --numbered --summary
+    git config --global user.name &quot;Cc&quot;
+git config --global user.email &quot;li_chao_cheng@163.com&quot;
+    
+  
+  
+    对某个仓库配置
 
-
-指定用户提交代码情况
-
-git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += $1; subs += $2; loc +...
+    git config --local user.name...
               </p>
             </div>
 
@@ -1233,14 +1230,14 @@ git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += 
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/Git-Op/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/Git-Other/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Git Base Other</h1>
+            <h1 class="card-title my-2 mt-md-0">Git Other</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1250,27 +1247,25 @@ git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += 
 
 
 
-                Git 常用命令
-
-仓库
-
-# 在当前目录新建一个Git代码库
-$ git init
-
-# 新建一个目录，将其初始化为Git代码库
-$ git init [project-name]
-
-# 下载一个项目和它的整个代码历史
-$ git clone [url]
+                Git 操作统计
 
 
-配置
+  
+    查看 commit 总数
 
-# 显示当前的Git配置
-$ git config --list
+    git log --oneline | wc -l
+    
+  
+  
+    查看所有提交人和提交次数
 
-# 编辑Git配置文件
-$ git config -e ...
+    git shortlog --numbered --summary
+    
+  
+  
+    指定用户提交代码情况
+
+    git log --author=&quot;Cc&quot; --pretty=tforma...
               </p>
             </div>
 
@@ -1343,9 +1338,9 @@ $ git config -e ...
 方法一
 
 
-  第一步 (查询是否使用了代理)git config –global http.proxy
+  第一步 (查询是否使用了代理) git config –global http.proxy
   第二步(取消代理)
-git config –glo...
+git config –gl...
               </p>
             </div>
 
@@ -3395,7 +3390,7 @@ git config –glo...
   "
 >
   <p>©
-    <time>2024</time>
+    <time>2025</time>
 
     
       <a href="https://Cc360428.gitee.io/cc/">Cc</a>.

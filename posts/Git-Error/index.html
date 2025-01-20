@@ -847,7 +847,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="943 words"
+  title="945 words"
 >
   <em>5 min</em> read</span>
 
@@ -871,7 +871,7 @@
 <h3 id="方法一"><span class="me-2">方法一</span><a href="#方法一" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>第一步 (查询是否使用了代理)git config –global http.proxy</li>
+  <li>第一步 (查询是否使用了代理) git config –global http.proxy</li>
   <li>第二步(取消代理)
 git config –global –unset http.proxy</li>
 </ul>
@@ -962,8 +962,11 @@ hint: See the <span class="s1">'Note about fast-forwards'</span> <span class="k"
 <h2 id="推送失败去历史提交记录"><span class="me-2">推送失败（去历史提交记录）</span><a href="#推送失败去历史提交记录" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="1-创建全新的孤立分支-latest_branch"><span class="me-2">1. 创建全新的孤立分支 latest_branch</span><a href="#1-创建全新的孤立分支-latest_branch" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>git checkout –orphan latest_branch</p>
+<div class="language-shell highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  git checkout <span class="nt">--orphan</span> latest_branch
+</pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="2-暂存所有文件"><span class="me-2">2. 暂存所有文件</span><a href="#2-暂存所有文件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -983,7 +986,7 @@ hint: See the <span class="s1">'Note about fast-forwards'</span> <span class="k"
 
 <h3 id="6-强制更新远程服务器的-master-分支-至此清空-git-所有历史"><span class="me-2">6. 强制更新远程服务器的 master 分支, 至此清空 git 所有历史</span><a href="#6-强制更新远程服务器的-master-分支-至此清空-git-所有历史" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>git push -f origin master</p>
+<p><code class="language-plaintext highlighter-rouge">git push -f origin master</code></p>
 
 <h3 id="遇到的问题如下"><span class="me-2">遇到的问题如下</span><a href="#遇到的问题如下" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -3122,7 +3125,7 @@ git push <span class="nt">-f</span> origin master
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/Git-Op/" class="post-preview card h-100">
+          <a href="/posts/Git-Other/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3141,7 +3144,7 @@ git push <span class="nt">-f</span> origin master
   Apr 18, 2020
 </time>
 
-              <h4 class="pt-0 my-2">Git Base Other</h4>
+              <h4 class="pt-0 my-2">Git Other</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3150,41 +3153,28 @@ git push <span class="nt">-f</span> origin master
 
 
 
-                  Git 常用命令
-
-仓库
-
-1
-2
-3
-4
-5
-6
-7
-8
-# 在当前目录新建一个Git代码库
-$ git init
-
-# 新建一个目录，将其初始化为Git代码库
-$ git init [project-name]
-
-# 下载一个项目和它的整个代码历史
-$ git clone [url]
+                  Git 操作统计
 
 
-配置
+  
+    查看 commit 总数
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-# 显示当前的Git配置
-$ git config --...
+    1
+git log --oneline | wc -l
+    
+  
+  
+    查看所有提交人和提交次数
+
+    1
+git shortlog --numbered --summary
+    
+  
+  
+    指定用户提交代码情况
+
+    1
+git log --author=&quot;Cc&quot; --pretty=...
                 </p>
               </div>
             </div>
@@ -3192,7 +3182,7 @@ $ git config --...
         </article>
       
         <article class="col">
-          <a href="/posts/Git-Ope-Other/" class="post-preview card h-100">
+          <a href="/posts/Git-Work/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3211,7 +3201,7 @@ $ git config --...
   Apr 18, 2020
 </time>
 
-              <h4 class="pt-0 my-2">Git Open Other</h4>
+              <h4 class="pt-0 my-2">Git Work</h4>
               <div class="text-muted">
                 <p>
                   
@@ -3220,24 +3210,26 @@ $ git config --...
 
 
 
-                  冷门操作
+                  Git Work Cmd
 
-查看 commit 总数
-
-1
-git log --oneline | wc -l
+git config 配置
 
 
-查看所有提交人和提交次数
+  
+    配置当前系统用户
 
-1
-git shortlog --numbered --summary
+    1
+2
+git config --global user.name &quot;Cc&quot;
+git config --global user.email &quot;li_chao_cheng@163.com&quot;
+    
+  
+  
+    对某个仓库配置
 
-
-指定用户提交代码情况
-
-1
-git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += $1; subs += $2;...
+    1
+2
+git config --local u...
                 </p>
               </div>
             </div>
@@ -3275,20 +3267,16 @@ git log --author=&quot;Cc&quot; --pretty=tformat: --numstat | awk &#39;{ add += 
 
                   Git default
 
-Git 全局设置
+Git config
 
 
+  系统级别 (–system): 适用于整个系统的配置文件
+  用户级别 (–global): 适用于当前用户的配置文件
+  
+    仓库级别 (–local): 适用于当前仓库的配置文件
+  
   git config –global user.name “Cc”
-  git config –global user.email “li_chao_cheng@163.com”
-
-
-创建 git 仓库
-
-
-  mkdir client_user_server
-  cd client_user_server
-  git init
-  tou...
+  git config –global user.email “li...
                 </p>
               </div>
             </div>
@@ -3320,11 +3308,11 @@ Git 全局设置
 
   
     <a
-      href="/posts/Git-Op/"
+      href="/posts/Git-Other/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Git Base Other</p>
+      <p>Git Other</p>
     </a>
   
 </nav>
@@ -3346,7 +3334,7 @@ Git 全局设置
   "
 >
   <p>©
-    <time>2024</time>
+    <time>2025</time>
 
     
       <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
