@@ -1,45 +1,31 @@
-const swconfUrl = '/assets/js/data/swconf.js';
+self.importScripts('/assets/js/data/swcache.js');
 
-importScripts(swconfUrl);
-const purge = swconf.purge;
+const cacheName = 'chirpy-1746862908';
 
-function verifyHost(url) {
-  for (const host of swconf.allowHosts) {
-    const regex = RegExp(`^http(s)?://${host}/`);
+function verifyDomain(url) {
+  for (const domain of allowedDomains) {
+    const regex = RegExp(`^http(s)?:\/\/${domain}\/`);
     if (regex.test(url)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function isExcluded(url) {
+  for (const item of denyUrls) {
+    if (url === item) {
       return true;
     }
   }
   return false;
 }
 
-function verifyUrl(url) {
-  if (!verifyHost(url)) {
-    return false;
-  }
-
-  const requestPath = new URL(url).pathname;
-
-  for (const path of swconf.denyPaths) {
-    if (requestPath.startsWith(path)) {
-      return false;
-    }
-  }
-  return true;
-}
-
-if (!purge) {
-  swconf.allowHosts.push(location.host);
-}
-
 self.addEventListener('install', (event) => {
-  if (purge) {
-    return;
-  }
-
   event.waitUntil(
-    caches.open(swconf.cacheName).then((cache) => {
-      return cache.addAll(swconf.resources);
+    caches.open(cacheName).then((cache) => {
+      return cache.addAll(resource);
     })
   );
 });
@@ -49,12 +35,8 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((keyList) => {
       return Promise.all(
         keyList.map((key) => {
-          if (purge) {
+          if (key !== cacheName) {
             return caches.delete(key);
-          } else {
-            if (key !== swconf.cacheName) {
-              return caches.delete(key);
-            }
           }
         })
       );
@@ -78,16 +60,22 @@ self.addEventListener('fetch', (event) => {
       return fetch(event.request).then((response) => {
         const url = event.request.url;
 
-        if (purge || event.request.method !== 'GET' || !verifyUrl(url)) {
+        if (
+          event.request.method !== 'GET' ||
+          !verifyDomain(url) ||
+          isExcluded(url)
+        ) {
           return response;
         }
 
-        
+        /* see: <https://developers.google.com/web/fundamentals/primers/service-workers#cache_and_return_requests> */
         let responseToCache = response.clone();
 
-        caches.open(swconf.cacheName).then((cache) => {
+        caches.open(cacheName).then((cache) => {
+          /* console.log('[sw] Caching new resource: ' + event.request.url); */
           cache.put(event.request, responseToCache);
         });
+
         return response;
       });
     })
