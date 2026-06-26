@@ -2,4 +2,4 @@ User-agent: *
 
 Disallow: /norobots/
 
-Sitemap: http://172.12.17.18:8090/sitemap.xml
+Sitemap: https://cc360428.github.io//sitemap.xml

@@ -11,16 +11,13 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" >
+<html
+  lang="zh-CN">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
@@ -28,27 +25,27 @@
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.3" />
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Day03（运算符与条件语句）" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh_CN" />
 <meta name="description" content="运算符与条件语句" />
-<meta property="og:description" content="运算符与条件语句" />
-<link rel="canonical" href="http://172.12.17.18:8090/posts/3-OperatorCondition/" />
-<meta property="og:url" content="http://172.12.17.18:8090/posts/3-OperatorCondition/" />
+<meta name="twitter:description" property="og:description" content="运算符与条件语句" />
+<link rel="canonical" href="https://cc360428.github.io//posts/3-OperatorCondition/" />
+<meta property="og:url" content="https://cc360428.github.io//posts/3-OperatorCondition/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-03-30T08:08:03+08:00" />
+<meta property="article:modified_time" content="2024-05-22T14:34:07+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Day03（运算符与条件语句）" />
+<meta name="twitter:title" content="Day03（运算符与条件语句）" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-22T14:34:07+08:00","datePublished":"2019-03-30T08:08:03+08:00","description":"运算符与条件语句","headline":"Day03（运算符与条件语句）","mainEntityOfPage":{"@type":"WebPage","@id":"http://172.12.17.18:8090/posts/3-OperatorCondition/"},"url":"http://172.12.17.18:8090/posts/3-OperatorCondition/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-22T14:34:07+08:00","datePublished":"2019-03-30T08:08:03+08:00","description":"运算符与条件语句","headline":"Day03（运算符与条件语句）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/3-OperatorCondition/"},"url":"https://cc360428.github.io//posts/3-OperatorCondition/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Day03（运算符与条件语句） | Cc Blog
-  </title>
+  <title>Day03（运算符与条件语句） | Cc Blog</title>
 
   <!--
   The Favicons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps
@@ -57,211 +54,185 @@
 
 
 
+<link rel="icon" type="image/png" href="/assets/img/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicons/favicon.svg">
+<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 
   <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 
-<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="Cc Blog">
-<meta name="application-name" content="Cc Blog">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
 
 
+  <!-- Resource Hints -->
   
     
-      <link rel="preconnect" href="https://fonts.googleapis.com" >
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+      
+        <link rel="preconnect" href="https://fonts.googleapis.com" >
+      
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+      
     
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+      
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" >
+      
     
-      <link rel="preconnect" href="https://fonts.googleapis.com" >
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+      
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" >
+      
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
+      
     
-      <link rel="preconnect" href="https://cdn.jsdelivr.net" >
-      <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
-    
-      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
-      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
-    
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-  
-
-  <!-- GA -->
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
-
+  <!-- Theme style -->
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
-  
+  <!-- Web Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/css/all.min.css">
+
+  <!-- 3rd-party Dependencies -->
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.css">
   
 
   
-    <!-- Manific Popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2/dist/loading-attribute-polyfill.min.css">
   
 
-  <!-- JavaScript -->
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3/dist/css/glightbox.min.css">
+  
+
+  <!-- Scripts -->
+
+  <script src="/assets/js/dist/theme.min.js"></script>
+
+  <!-- JS selector for site. -->
+
+<!-- commons -->
+
+
+
+<!-- layout specified -->
+
 
   
-    <!-- Switch the mode between dark and light. -->
 
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
 
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
 
-      let self = this;
 
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
 
-          self.clearMode();
-        }
 
-        self.notify();
-      });
-    } /* constructor() */
 
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
 
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
 
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
 
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
 
-    get hasMode() {
-      return this.mode != null;
-    }
 
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
 
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
 
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
 
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
 
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
+  
+    
 
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
+    
 
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
+  
 
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
+  
+    
 
-  const modeToggle = new ModeToggle();
-</script>
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3/dist/js/glightbox.min.js,npm/clipboard@2/dist/clipboard.min.js,npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/zh.js,npm/dayjs@1/plugin/relativeTime.js,npm/dayjs@1/plugin/localizedFormat.js,npm/tocbot@4/dist/tocbot.min.js"></script>
+
+
+
+
+
+
+
+<script defer src="/assets/js/dist/post.min.js"></script>
+
+
+
+<!-- Pageviews -->
+
+  
+
+  
+
+
 
   
 
@@ -275,11 +246,9 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="http://172.12.17.18:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
-    <h1 class="site-title">
-      <a href="/">Cc Blog</a>
-    </h1>
+    <a class="site-title d-block" href="/">Cc Blog</a>
     <p class="site-subtitle fst-italic mb-0">My name is Cc and I come from China</p>
   </header>
   <!-- .profile-wrapper -->
@@ -290,7 +259,7 @@
       <li class="nav-item">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
-          <span>HOME</span>
+          <span>首页</span>
         </a>
       </li>
       <!-- the real tabs -->
@@ -300,7 +269,7 @@
             <i class="fa-fw fas fa-stream"></i>
             
 
-            <span>CATEGORIES</span>
+            <span>分类</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -310,7 +279,7 @@
             <i class="fa-fw fas fa-tags"></i>
             
 
-            <span>TAGS</span>
+            <span>标签</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -320,7 +289,7 @@
             <i class="fa-fw fas fa-archive"></i>
             
 
-            <span>ARCHIVES</span>
+            <span>归档</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -330,7 +299,7 @@
             <i class="fa-fw fas fa-info-circle"></i>
             
 
-            <span>ABOUT</span>
+            <span>关于</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -338,11 +307,27 @@
     </ul>
   </nav>
 
-  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
-    
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+    <div class="btn-group dropup">
+        <button
+          type="button"
+          class="btn btn-link nav-link"
+          aria-label="Switch Mode"
+          id="mode-toggle"
+          data-bs-toggle="dropdown"
+        ><i class="fa-regular fa-sun" data-theme-mode="light"></i><i class="fa-regular fa-moon" data-theme-mode="dark"></i><i class="fa-solid fa-display" data-theme-mode="system"></i></button>
+        <ul class="dropdown-menu rounded-3 mb-1 p-1">
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="light"><i class="fa-regular fa-sun" data-theme-mode="light"></i>浅色</button>
+          </li>
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="dark"><i class="fa-regular fa-moon" data-theme-mode="dark"></i>深色</button>
+          </li>
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="system"><i class="fa-solid fa-display" data-theme-mode="system"></i>跟随系统</button>
+          </li>
+        </ul>
+      </div>
 
       
         <span class="icon-border"></span>
@@ -350,7 +335,6 @@
     
 
     
-      
 
       
         <a
@@ -373,7 +357,6 @@
         </a>
       
     
-      
 
       
         <a
@@ -396,11 +379,10 @@
         </a>
       
     
-      
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['li_chao_cheng','163.com'].join('@')"
+          href="javascript:void(location.href = 'mailto:' + ['li_chao_cheng','163.com'].join('@'))"
           aria-label="email"
           
 
@@ -414,7 +396,8 @@
         </a>
       
     
-      
+          
+        
 
       
         <a
@@ -442,7 +425,7 @@
       <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
-<header id="topbar-wrapper" aria-label="Top Bar">
+<header id="topbar-wrapper" class="flex-shrink-0" aria-label="Top Bar">
   <div
     id="topbar"
     class="d-flex align-items-center justify-content-between px-lg-3 h-100"
@@ -454,7 +437,7 @@
         
           
             <span>
-              <a href="/">Home</a>
+              <a href="/">首页</a>
             </span>
 
           
@@ -472,19 +455,19 @@
     </nav>
     <!-- endof #breadcrumb -->
 
-    <button type="button" id="sidebar-trigger" class="btn btn-link">
+    <button type="button" id="sidebar-trigger" class="btn btn-link" aria-label="Sidebar">
       <i class="fas fa-bars fa-fw"></i>
     </button>
 
     <div id="topbar-title">
-      Post
+      文章
     </div>
 
-    <button type="button" id="search-trigger" class="btn btn-link">
+    <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
       <i class="fas fa-search fa-fw"></i>
     </button>
 
-    <search class="align-items-center ms-3 ms-lg-0">
+    <search id="search" class="align-items-center ms-3 ms-lg-0">
       <i class="fas fa-search fa-fw"></i>
       <input
         class="form-control"
@@ -492,10 +475,10 @@
         type="search"
         aria-label="search"
         autocomplete="off"
-        placeholder="Search..."
+        placeholder="搜索..."
       >
     </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">取消</button>
   </div>
 </header>
 
@@ -831,17 +814,26 @@
 
 
 
-<article class="px-1">
+
+
+
+
+
+
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>Day03（运算符与条件语句）</h1>
+    
+      <p class="post-desc fw-light mb-4">运算符与条件语句</p>
+    
 
     <div class="post-meta text-muted">
       <!-- published date -->
       <span>
-        Posted
+        发表于
         <!--
   Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
 -->
 
 
@@ -850,12 +842,12 @@
 <time
   
   data-ts="1553904483"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Mar 30, 2019
+  2019/03/30
 </time>
 
       </span>
@@ -863,10 +855,10 @@
       <!-- lastmod date -->
       
         <span>
-          Updated
+          更新于
           <!--
   Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
 -->
 
 
@@ -875,12 +867,12 @@
 <time
   
   data-ts="1716359647"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  May 22, 2024
+  2024/05/22
 </time>
 
         </span>
@@ -893,7 +885,7 @@
         <span>
           
 
-          By
+          作者
 
           <em>
             
@@ -902,8 +894,12 @@
           </em>
         </span>
 
-        <!-- read time -->
-        <!-- Calculate the post's reading time, and display the word count in tooltip -->
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -923,104 +919,119 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4726 words"
+  title="4856 字"
 >
-  <em>26 min</em> read</span>
+  <em>26 分钟</em>阅读</span>
 
+        </div>
       </div>
-      <!-- .d-flex -->
     </div>
-    <!-- .post-meta -->
   </header>
+
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">Day03（运算符与条件语句）</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">文章内容</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">Day03（运算符与条件语句）</div>
+        <button id="toc-popup-close" type="button" class="btn-close btn-sm mx-3" aria-label="Close"></button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <h2 id="运算符"><span class="me-2">运算符</span><a href="#运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
-  <p>在 Go 语言（又称 Golang）中，并没有直接列出所有可能的运算法种类，因为运算法（或称为运算符）是编程语言的内置特性，用于执行不同类型的计算或逻辑操作。但是，我们可以分类列出
-Go 语言中常用的运算法种类：</p>
+  <p>在 Go 语言（又称 Golang）中，并没有直接列出所有可能的运算法种类，因为运算法（或称为运算符）是编程语言的内置特性，用于执行不同类型的计算或逻辑操作。但是，我们可以分类列出 Go 语言中常用的运算法种类：</p>
 </blockquote>
 
 <ol>
-  <li><strong>算术运算符</strong>：</li>
+  <li>
+    <p><strong>算术运算符</strong>：</p>
+
+    <ul>
+      <li>加法 (<code class="language-plaintext highlighter-rouge">+</code>)</li>
+      <li>减法 (<code class="language-plaintext highlighter-rouge">-</code>)</li>
+      <li>乘法 (<code class="language-plaintext highlighter-rouge">*</code>)</li>
+      <li>除法 (<code class="language-plaintext highlighter-rouge">/</code>)</li>
+      <li>整除（取整）(<code class="language-plaintext highlighter-rouge">%</code> 或 <code class="language-plaintext highlighter-rouge">%%</code>，在某些情况下）</li>
+      <li>自增 (<code class="language-plaintext highlighter-rouge">++</code>)</li>
+      <li>自减 (<code class="language-plaintext highlighter-rouge">--</code>)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>关系运算符</strong>（或比较运算符）：</p>
+
+    <ul>
+      <li>等于 (<code class="language-plaintext highlighter-rouge">==</code>)</li>
+      <li>不等于 (<code class="language-plaintext highlighter-rouge">!=</code>)</li>
+      <li>大于 (<code class="language-plaintext highlighter-rouge">&gt;</code>)</li>
+      <li>小于 (<code class="language-plaintext highlighter-rouge">&lt;</code>)</li>
+      <li>大于等于 (<code class="language-plaintext highlighter-rouge">&gt;=</code>)</li>
+      <li>小于等于 (<code class="language-plaintext highlighter-rouge">&lt;=</code>)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>逻辑运算符</strong>：</p>
+
+    <ul>
+      <li>逻辑与 (<code class="language-plaintext highlighter-rouge">&amp;&amp;</code>)</li>
+      <li>逻辑或 (<code class="language-plaintext highlighter-rouge">||</code>)</li>
+      <li>逻辑非 (<code class="language-plaintext highlighter-rouge">!</code>)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>位运算符</strong>：</p>
+
+    <ul>
+      <li>位与 (<code class="language-plaintext highlighter-rouge">&amp;</code>)</li>
+      <li>位或 (<code class="language-plaintext highlighter-rouge">|</code>)</li>
+      <li>位异或 (<code class="language-plaintext highlighter-rouge">^</code>)</li>
+      <li>位与非 (<code class="language-plaintext highlighter-rouge">&amp;^</code>)</li>
+      <li>左移 (<code class="language-plaintext highlighter-rouge">&lt;&lt;</code>)</li>
+      <li>右移 (<code class="language-plaintext highlighter-rouge">&gt;&gt;</code>)</li>
+      <li>无符号右移 (<code class="language-plaintext highlighter-rouge">&gt;&gt;&gt;</code>，但 Go 中没有无符号右移运算符）</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>赋值运算符</strong>：</p>
+
+    <ul>
+      <li>赋值 (<code class="language-plaintext highlighter-rouge">=</code>)</li>
+      <li>复合赋值（例如 <code class="language-plaintext highlighter-rouge">+=</code>、<code class="language-plaintext highlighter-rouge">-=</code>、<code class="language-plaintext highlighter-rouge">*=</code>、<code class="language-plaintext highlighter-rouge">/=</code> 等）</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>其他运算符</strong>：</p>
+
+    <ul>
+      <li>地址运算符 (<code class="language-plaintext highlighter-rouge">&amp;</code> 用于获取变量的地址，但在赋值上下文中作为位与运算符)</li>
+      <li>指针解引用 (<code class="language-plaintext highlighter-rouge">*</code> 用于解引用指针)</li>
+      <li>长度和容量运算符 (<code class="language-plaintext highlighter-rouge">len()</code> 和 <code class="language-plaintext highlighter-rouge">cap()</code>，它们不是真正的运算符，但常用于数组、切片、映射和通道)</li>
+      <li>索引和切片 (<code class="language-plaintext highlighter-rouge">[]</code>，用于数组、切片和字符串的索引或切片操作)</li>
+      <li>通道运算符 (<code class="language-plaintext highlighter-rouge">&lt;-</code>，用于发送和接收通道的数据)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>类型断言和类型转换</strong>：</p>
+    <ul>
+      <li>类型断言 (<code class="language-plaintext highlighter-rouge">v, ok := i.(T)</code>，用于接口到具体类型的断言)</li>
+      <li>类型转换 (<code class="language-plaintext highlighter-rouge">T(v)</code>，用于将一个类型的值转换为另一个类型)</li>
+    </ul>
+  </li>
 </ol>
-
-<ul>
-  <li>加法 (<code class="language-plaintext highlighter-rouge">+</code>)</li>
-  <li>减法 (<code class="language-plaintext highlighter-rouge">-</code>)</li>
-  <li>乘法 (<code class="language-plaintext highlighter-rouge">*</code>)</li>
-  <li>除法 (<code class="language-plaintext highlighter-rouge">/</code>)</li>
-  <li>取模（求余）(<code class="language-plaintext highlighter-rouge">%</code>)</li>
-  <li>自增 (<code class="language-plaintext highlighter-rouge">++</code>)</li>
-  <li>自减 (<code class="language-plaintext highlighter-rouge">--</code>)</li>
-</ul>
-
-<ol>
-  <li><strong>关系运算符</strong>（或比较运算符）：</li>
-</ol>
-
-<ul>
-  <li>等于 (<code class="language-plaintext highlighter-rouge">==</code>)</li>
-  <li>不等于 (<code class="language-plaintext highlighter-rouge">!=</code>)</li>
-  <li>大于 (<code class="language-plaintext highlighter-rouge">&gt;</code>)</li>
-  <li>小于 (<code class="language-plaintext highlighter-rouge">&lt;</code>)</li>
-  <li>大于等于 (<code class="language-plaintext highlighter-rouge">&gt;=</code>)</li>
-  <li>小于等于 (<code class="language-plaintext highlighter-rouge">&lt;=</code>)</li>
-</ul>
-
-<ol>
-  <li><strong>逻辑运算符</strong>：</li>
-</ol>
-
-<ul>
-  <li>逻辑与 (<code class="language-plaintext highlighter-rouge">&amp;&amp;</code>)</li>
-  <li>逻辑或 (<code class="language-plaintext highlighter-rouge">||</code>)</li>
-  <li>逻辑非 (<code class="language-plaintext highlighter-rouge">!</code>)</li>
-</ul>
-
-<ol>
-  <li><strong>位运算符</strong>：</li>
-</ol>
-
-<ul>
-  <li>位与 (<code class="language-plaintext highlighter-rouge">&amp;</code>)</li>
-  <li>位或 (<code class="language-plaintext highlighter-rouge">|</code>)</li>
-  <li>位异或 (<code class="language-plaintext highlighter-rouge">^</code>)</li>
-  <li>位与非 (<code class="language-plaintext highlighter-rouge">&amp;^</code>)</li>
-  <li>左移 (<code class="language-plaintext highlighter-rouge">&lt;&lt;</code>)</li>
-  <li>右移 (<code class="language-plaintext highlighter-rouge">&gt;&gt;</code>)</li>
-  <li>无符号右移（Go 中没有 <code class="language-plaintext highlighter-rouge">&gt;&gt;&gt;</code>）</li>
-</ul>
-
-<ol>
-  <li><strong>赋值运算符</strong>：</li>
-</ol>
-
-<ul>
-  <li>赋值 (<code class="language-plaintext highlighter-rouge">=</code>)</li>
-  <li>复合赋值（例如 <code class="language-plaintext highlighter-rouge">+=</code>、<code class="language-plaintext highlighter-rouge">-=</code>、<code class="language-plaintext highlighter-rouge">*=</code>、<code class="language-plaintext highlighter-rouge">/=</code> 等）</li>
-</ul>
-
-<ol>
-  <li><strong>其他运算符</strong>：</li>
-</ol>
-
-<ul>
-  <li>地址运算符 (<code class="language-plaintext highlighter-rouge">&amp;</code> 用于获取变量的地址，但在赋值上下文中作为位与运算符)</li>
-  <li>指针解引用 (<code class="language-plaintext highlighter-rouge">*</code> 用于解引用指针)</li>
-  <li>长度和容量运算符 (<code class="language-plaintext highlighter-rouge">len()</code> 和 <code class="language-plaintext highlighter-rouge">cap()</code>，它们不是真正的运算符，但常用于数组、切片、映射和通道)</li>
-  <li>索引和切片 (<code class="language-plaintext highlighter-rouge">[]</code>，用于数组、切片和字符串的索引或切片操作)</li>
-  <li>通道运算符 (<code class="language-plaintext highlighter-rouge">&lt;-</code>，用于发送和接收通道的数据)</li>
-</ul>
-
-<ol>
-  <li><strong>类型断言和类型转换</strong>：</li>
-</ol>
-
-<ul>
-  <li>类型断言 (<code class="language-plaintext highlighter-rouge">v, ok := i.(T)</code>，用于接口到具体类型的断言)</li>
-  <li>类型转换 (<code class="language-plaintext highlighter-rouge">T(v)</code>，用于将一个类型的值转换为另一个类型)</li>
-</ul>
 
 <h3 id="算术运算符"><span class="me-2"><strong>算术运算符</strong></span><a href="#算术运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1055,7 +1066,7 @@ Go 语言中常用的运算法种类：</p>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">/</code></td>
       <td>除法，将第一个数除以第二个数</td>
-      <td><code class="language-plaintext highlighter-rouge">d := 10 / 3 // d = 3</code>（整数除法会截断小数部分）</td>
+      <td><code class="language-plaintext highlighter-rouge">d := 10 / 3 // d = 3</code>（整数除法，结果为整数部分）</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">%</code></td>
@@ -1064,23 +1075,22 @@ Go 语言中常用的运算法种类：</p>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">++</code></td>
-      <td>自增（语句）</td>
-      <td><code class="language-plaintext highlighter-rouge">f := 5; f++</code></td>
+      <td>自增，将变量的值增加 1（前缀或后缀）</td>
+      <td><code class="language-plaintext highlighter-rouge">f := 5; f++; // f = 6</code> <br /> <code class="language-plaintext highlighter-rouge">g := 5; ++g; // g = 6</code></td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">--</code></td>
-      <td>自减（语句）</td>
-      <td><code class="language-plaintext highlighter-rouge">g := 5; g--</code></td>
+      <td>自减，将变量的值减少 1（前缀或后缀）</td>
+      <td><code class="language-plaintext highlighter-rouge">h := 5; h--; // h = 4</code> <br /> <code class="language-plaintext highlighter-rouge">i := 5; --i; // i = 4</code></td>
     </tr>
   </tbody>
 </table></div>
 
 <blockquote>
-  <p>请注意，在 Go 语言中，整数除法会向下取整（即”截断”小数部分），因此 <code class="language-plaintext highlighter-rouge">10 / 3</code> 的结果是 <code class="language-plaintext highlighter-rouge">3</code> 而不是 <code class="language-plaintext highlighter-rouge">3.333...</code>
-。如果你需要浮点数的除法结果，你应该至少有一个操作数是浮点数，如 <code class="language-plaintext highlighter-rouge">10.0 / 3</code> 或 <code class="language-plaintext highlighter-rouge">float64(10) / 3</code>。</p>
+  <p>请注意，在 Go 语言中，整数除法会向下取整（即”截断”小数部分），因此 <code class="language-plaintext highlighter-rouge">10 / 3</code> 的结果是 <code class="language-plaintext highlighter-rouge">3</code> 而不是 <code class="language-plaintext highlighter-rouge">3.333...</code>。如果你需要浮点数的除法结果，你应该至少有一个操作数是浮点数，如 <code class="language-plaintext highlighter-rouge">10.0 / 3</code> 或 <code class="language-plaintext highlighter-rouge">float64(10) / 3</code>。</p>
 </blockquote>
 
-<p>此外，<code class="language-plaintext highlighter-rouge">++</code> 和 <code class="language-plaintext highlighter-rouge">--</code> 在 Go 中是语句，不是表达式，只能写成 <code class="language-plaintext highlighter-rouge">i++</code> 或 <code class="language-plaintext highlighter-rouge">i--</code>，不能写成 <code class="language-plaintext highlighter-rouge">++i</code>，也不能用于赋值或更复杂的表达式中。</p>
+<p>此外，<code class="language-plaintext highlighter-rouge">++</code> 和 <code class="language-plaintext highlighter-rouge">--</code> 运算符既可以作为前缀运算符（如 <code class="language-plaintext highlighter-rouge">++i</code>），也可以作为后缀运算符（如 <code class="language-plaintext highlighter-rouge">i++</code>）。前缀运算符会先增加或减少变量的值，然后再返回新值；后缀运算符会先返回原始值，然后再增加或减少变量的值。这在循环和迭代中特别有用，但使用时需要小心以避免意外的副作用。</p>
 
 <ul>
   <li>完整例子</li>
@@ -1088,7 +1098,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1234,7 +1244,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1367,14 +1377,7 @@ Go 语言中常用的运算法种类：</p>
       <td> </td>
       <td>`</td>
       <td>逻辑或（OR）</td>
-      <td>如果</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">a |     | b</code>，则结果为 <code class="language-plaintext highlighter-rouge">true</code>（因为 <code class="language-plaintext highlighter-rouge">a</code>为<code class="language-plaintext highlighter-rouge">true</code>）</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td>如果 <code class="language-plaintext highlighter-rouge">a |     | b</code>，则结果为 <code class="language-plaintext highlighter-rouge">true</code>（因为 <code class="language-plaintext highlighter-rouge">a</code>为<code class="language-plaintext highlighter-rouge">true</code>）</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">!</code></td>
@@ -1390,7 +1393,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1440,9 +1443,7 @@ Go 语言中常用的运算法种类：</p>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>在这个示例中，我们定义了两个布尔变量 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code>，分别赋值为 <code class="language-plaintext highlighter-rouge">true</code> 和 <code class="language-plaintext highlighter-rouge">false</code>。然后，我们使用逻辑运算符 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code>、<code class="language-plaintext highlighter-rouge">||</code> 和 <code class="language-plaintext highlighter-rouge">!</code>
-对这两个变量进行运算，并将结果打印出来。逻辑与 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> 的结果只有在两个操作数都为 <code class="language-plaintext highlighter-rouge">true</code> 时才为 <code class="language-plaintext highlighter-rouge">true</code>，逻辑或 <code class="language-plaintext highlighter-rouge">||</code>
-的结果只要有一个操作数为 <code class="language-plaintext highlighter-rouge">true</code> 就为 <code class="language-plaintext highlighter-rouge">true</code>，逻辑非 <code class="language-plaintext highlighter-rouge">!</code> 则是对一个布尔值取反。</p>
+<p>在这个示例中，我们定义了两个布尔变量 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code>，分别赋值为 <code class="language-plaintext highlighter-rouge">true</code> 和 <code class="language-plaintext highlighter-rouge">false</code>。然后，我们使用逻辑运算符 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code>、<code class="language-plaintext highlighter-rouge">||</code> 和 <code class="language-plaintext highlighter-rouge">!</code> 对这两个变量进行运算，并将结果打印出来。逻辑与 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> 的结果只有在两个操作数都为 <code class="language-plaintext highlighter-rouge">true</code> 时才为 <code class="language-plaintext highlighter-rouge">true</code>，逻辑或 <code class="language-plaintext highlighter-rouge">||</code> 的结果只要有一个操作数为 <code class="language-plaintext highlighter-rouge">true</code> 就为 <code class="language-plaintext highlighter-rouge">true</code>，逻辑非 <code class="language-plaintext highlighter-rouge">!</code> 则是对一个布尔值取反。</p>
 
 <h3 id="位运算符"><span class="me-2"><strong>位运算符</strong></span><a href="#位运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -1554,7 +1555,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1662,7 +1663,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1750,8 +1751,7 @@ Go 语言中常用的运算法种类：</p>
 
 <h3 id="if-if-else"><span class="me-2"><code class="language-plaintext highlighter-rouge">if</code>&amp; <code class="language-plaintext highlighter-rouge">if-else</code></span><a href="#if-if-else" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>在 Go 语言中，条件语句主要用于基于不同条件执行不同的代码块。最常用的条件语句是<code class="language-plaintext highlighter-rouge">if</code>语句，以及与之相关的<code class="language-plaintext highlighter-rouge">else</code>和<code class="language-plaintext highlighter-rouge">else if</code>
-子句。以下是条件语句的表格形式和例子：</p>
+<p>在 Go 语言中，条件语句主要用于基于不同条件执行不同的代码块。最常用的条件语句是<code class="language-plaintext highlighter-rouge">if</code>语句，以及与之相关的<code class="language-plaintext highlighter-rouge">else</code>和<code class="language-plaintext highlighter-rouge">else if</code>子句。以下是条件语句的表格形式和例子：</p>
 
 <ul>
   <li>条件语句</li>
@@ -1790,7 +1790,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1892,7 +1892,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1932,7 +1932,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1972,7 +1972,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2010,7 +2010,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2058,7 +2058,7 @@ Go 语言中常用的运算法种类：</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2097,15 +2097,14 @@ Go 语言中常用的运算法种类：</p>
 <h3 id="select"><span class="me-2">select</span><a href="#select" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>在 Go 语言中，<code class="language-plaintext highlighter-rouge">select</code> 语句用于处理多个 channel 的操作。<code class="language-plaintext highlighter-rouge">select</code> 语句会阻塞，直到其中的某个 case 可以继续执行，然后执行这个
-case 的代码。以下是一些使用 <code class="language-plaintext highlighter-rouge">select</code> 语句的例子，展示了如何在不同情况下使用它。</p>
+  <p>在 Go 语言中，<code class="language-plaintext highlighter-rouge">select</code> 语句用于处理多个 channel 的操作。<code class="language-plaintext highlighter-rouge">select</code> 语句会阻塞，直到其中的某个 case 可以继续执行，然后执行这个 case 的代码。以下是一些使用 <code class="language-plaintext highlighter-rouge">select</code> 语句的例子，展示了如何在不同情况下使用它。</p>
 </blockquote>
 
 <h4 id="基本使用示例"><span class="me-2">基本使用示例</span><a href="#基本使用示例" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2169,14 +2168,13 @@ case 的代码。以下是一些使用 <code class="language-plaintext highlight
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>在这个例子中，<code class="language-plaintext highlighter-rouge">select</code> 语句会阻塞，直到 <code class="language-plaintext highlighter-rouge">ch1</code> 或 <code class="language-plaintext highlighter-rouge">ch2</code> 中有消息到达。由于 <code class="language-plaintext highlighter-rouge">ch1</code> 的消息先到达，所以输出将会是 “Message from
-ch1”。</p>
+<p>在这个例子中，<code class="language-plaintext highlighter-rouge">select</code> 语句会阻塞，直到 <code class="language-plaintext highlighter-rouge">ch1</code> 或 <code class="language-plaintext highlighter-rouge">ch2</code> 中有消息到达。由于 <code class="language-plaintext highlighter-rouge">ch1</code> 的消息先到达，所以输出将会是 “Message from ch1”。</p>
 
 <h4 id="带超时的-select-示例"><span class="me-2">带超时的 select 示例</span><a href="#带超时的-select-示例" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2230,7 +2228,7 @@ ch1”。</p>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2307,15 +2305,14 @@ ch1”。</p>
 </pre></td></tr></tbody></table></code></div></div>
 
 <blockquote>
-  <p>这个例子展示了如何在循环中使用 <code class="language-plaintext highlighter-rouge">select</code> 语句。程序会持续从 <code class="language-plaintext highlighter-rouge">ch1</code> 和 <code class="language-plaintext highlighter-rouge">ch2</code> 接收消息并输出。如果 3
-秒内没有消息到达，则输出 “Timeout” 并退出循环。</p>
+  <p>这个例子展示了如何在循环中使用 <code class="language-plaintext highlighter-rouge">select</code> 语句。程序会持续从 <code class="language-plaintext highlighter-rouge">ch1</code> 和 <code class="language-plaintext highlighter-rouge">ch2</code> 接收消息并输出。如果 3 秒内没有消息到达，则输出 “Timeout” 并退出循环。</p>
 </blockquote>
 
 <h4 id="带默认-case-的-select-示例"><span class="me-2">带默认 case 的 select 示例</span><a href="#带默认-case-的-select-示例" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -2351,25 +2348,37 @@ ch1”。</p>
 
 <blockquote>
   <ul>
-    <li>在这个例子中，<code class="language-plaintext highlighter-rouge">select</code> 语句带有一个 <code class="language-plaintext highlighter-rouge">default</code> case。如果 <code class="language-plaintext highlighter-rouge">ch</code> 没有消息，则会执行 <code class="language-plaintext highlighter-rouge">default</code> case，输出 “No message
-  received”。</li>
-    <li>通过这些示例，可以看出 <code class="language-plaintext highlighter-rouge">select</code> 语句在处理并发编程中的强大功能，能够简洁地处理多个 channel 的操作，并且可以通过超时和默认
-  case 来增强程序的健壮性。</li>
+    <li>在这个例子中，<code class="language-plaintext highlighter-rouge">select</code> 语句带有一个 <code class="language-plaintext highlighter-rouge">default</code> case。如果 <code class="language-plaintext highlighter-rouge">ch</code> 没有消息，则会执行 <code class="language-plaintext highlighter-rouge">default</code> case，输出 “No message received”。</li>
+    <li>通过这些示例，可以看出 <code class="language-plaintext highlighter-rouge">select</code> 语句在处理并发编程中的强大功能，能够简洁地处理多个 channel 的操作，并且可以通过超时和默认 case 来增强程序的健壮性。</li>
   </ul>
 </blockquote>
 
   </div>
 
   <div class="post-tail-wrapper text-muted">
-    <!-- categories -->
-    
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/language/">Language</a>,
-          <a href="/categories/go/">Go</a>
-      </div>
-    
+    <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+      <!-- categories -->
+      
+        <div class="post-meta">
+          <i class="far fa-folder-open fa-fw me-1"></i>
+          
+            <a href="/categories/language/">Language</a>,
+            <a href="/categories/go/">Go</a>
+        </div>
+      
+
+      <!-- "Edit this post" link -->
+      <!-- Link to edit the post to contribute. -->
+
+
+
+
+
+
+
+
+
+    </div>
 
     <!-- tags -->
     
@@ -2404,18 +2413,18 @@ ch1”。</p>
         
           
 
-          This post is licensed under 
+          本文由作者按照 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
-         by the author.
+         进行授权
         
       </div>
 
       <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
-  <span class="share-label text-muted">Share</span>
+  <span class="share-label text-muted">分享</span>
   <span class="share-icons">
     
     
@@ -2425,21 +2434,21 @@ ch1”。</p>
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Day03%EF%BC%88%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%EF%BC%89%20-%20Cc%20Blog&url=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2F3-OperatorCondition%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Day03%EF%BC%88%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%EF%BC%89%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F3-OperatorCondition%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Day03%EF%BC%88%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%EF%BC%89%20-%20Cc%20Blog&u=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2F3-OperatorCondition%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Day03%EF%BC%88%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%EF%BC%89%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F3-OperatorCondition%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2F3-OperatorCondition%2F&text=Day03%EF%BC%88%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%EF%BC%89%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F3-OperatorCondition%2F&text=Day03%EF%BC%88%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5%EF%BC%89%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -2450,8 +2459,8 @@ ch1”。</p>
       class="btn small"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="Copy link"
-      data-title-succeed="Link copied successfully!"
+      title="分享链接"
+      data-title-succeed="链接已复制！"
     >
       <i class="fa-fw fas fa-link pe-none fs-6"></i>
     </button>
@@ -2469,7 +2478,7 @@ ch1”。</p>
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
             <div class="access">
               <!-- Get 5 last posted/updated posts -->
 
@@ -2487,42 +2496,42 @@ ch1”。</p>
 
 
   <section id="access-lastmod">
-    <h2 class="panel-heading">Recently Updated</h2>
+    <h2 class="panel-heading">最近更新</h2>
     <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/go-stdlib/">Go 标准库专题</a>
+          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/high-concurrency-arch/">高并发架构专题</a>
+          <a href="/posts/DataStructure/">DataStructure（02142）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/cache-consistency/">缓存一致性专题</a>
+          <a href="/posts/math-education/">Math 国内教育</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/go-interview-system-design/">系统设计专项</a>
+          <a href="/posts/Java_Base_SE/">Java基础</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/distributed/">分布式系统专题</a>
+          <a href="/posts/resume/">Resume</a>
         </li>
       
     </ul>
@@ -2766,66 +2775,6 @@ ch1”。</p>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2850,448 +2799,6 @@ ch1”。</p>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -3630,11 +3137,10 @@ ch1”。</p>
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -3676,6 +3182,98 @@ ch1”。</p>
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3936,6 +3534,177 @@ ch1”。</p>
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4090,63 +3859,6 @@ ch1”。</p>
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4216,36 +3928,6 @@ ch1”。</p>
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4453,7 +4135,7 @@ ch1”。</p>
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">热门标签</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -4463,16 +4145,13 @@ ch1”。</p>
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -4486,6 +4165,9 @@ ch1”。</p>
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
+      
     </div>
   </section>
 
@@ -4498,8 +4180,12 @@ ch1”。</p>
 
 
 
-  <section id="toc-wrapper" class="ps-0 pe-4">
-    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+
+
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">文章内容</h2>
     <nav id="toc"></nav>
   </section>
 
@@ -4536,809 +4222,6 @@ ch1”。</p>
 
 
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -5524,6 +4407,618 @@ ch1”。</p>
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -5727,15 +5222,15 @@ ch1”。</p>
 
 
   <aside id="related-posts" aria-labelledby="related-label">
-    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <h3 class="mb-4" id="related-label">相关文章</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/1-go_base/" class="post-preview card h-100">
+          <a href="/posts/14-testing/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
 -->
 
 
@@ -5743,51 +5238,27 @@ ch1”。</p>
 
 <time
   
-  data-ts="1553904481"
-  data-df="ll"
+  data-ts="1553904494"
+  data-df="YYYY/MM/DD"
   
 >
-  Mar 30, 2019
+  2019/03/30
 </time>
 
-              <h4 class="pt-0 my-2">Day01（Golang 入门介绍）</h4>
+              <h4 class="pt-0 my-2">Day14（testing）</h4>
               <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  Go 基础
-
-初步认识 Go
-
-
-  Go 跨平台（Linux、Windows、macOS），同一份代码可通过 交叉编译 生成不同平台的二进制
-  语法简洁、并发模型清晰，支持通过 CGO 调用 C 代码
-  应用广（Web、基础设施、云原生、数据处理等）
-
-
-Go 环境
-
-Linux &amp;amp; macOS
-
-
-  下载 Go 安装包：在 Go 官方网站下载适合自己系统和架构的安装包
-  ...
-                </p>
+                <p>testing     Golang 自带了一个轻量级的测试框架，可以用来编写单元测试和基准测试。该测试框架主要包含了以下几个组件：      testing.T 结构体：代表了一个单元测试，它包含了一系列断言函数，用于判断测试结果是否正确；   testing.B 结构体：代表了一个基准测试，它用于测试代码的性能；   testing.M 结构体：代表了一个测试 suite，可以用于对一组...</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/posts/2-datatype/" class="post-preview card h-100">
+          <a href="/posts/13-time/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
 -->
 
 
@@ -5795,48 +5266,27 @@ Linux &amp;amp; macOS
 
 <time
   
-  data-ts="1553904482"
-  data-df="ll"
+  data-ts="1553904493"
+  data-df="YYYY/MM/DD"
   
 >
-  Mar 30, 2019
+  2019/03/30
 </time>
 
-              <h4 class="pt-0 my-2">Day02（入门基础）</h4>
+              <h4 class="pt-0 my-2">Day13（Time）</h4>
               <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  数据类型
-
-整型
-
-
-  有符号整型（Signed Integer）和无符号整型（Unsigned Integer）是计算机编程中两种基本的整型数据类型，它们的主要区别在于如何解释存储在计算机中的二进制数值
-
-
-
-  
-    有符号整型（Signed Integer）
-
-    
-      表示范围：有符号整型可以表示正数、负数和零。因为它们需要表示正负，所以它们的取值范围是关于零对称的...
-                </p>
+                <p>时间包     时间包 time 提供了日期和时间相关的函数和结构体。使用这个包可以完成时间格式化、时间比较、定时器等功能   获取当前时间  1 2 now := time.Now() fmt.Println(now)   时间格式化输出  1 2 t := time.Now() fmt.Println(t.Format("2006-01-02 15:04:05"))   时间比较  1 ...</p>
               </div>
             </div>
           </a>
         </article>
       
         <article class="col">
-          <a href="/posts/4-LoopStatementFunc/" class="post-preview card h-100">
+          <a href="/posts/12-reflect/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
 -->
 
 
@@ -5844,45 +5294,16 @@ Linux &amp;amp; macOS
 
 <time
   
-  data-ts="1553904484"
-  data-df="ll"
+  data-ts="1553904492"
+  data-df="YYYY/MM/DD"
   
 >
-  Mar 30, 2019
+  2019/03/30
 </time>
 
-              <h4 class="pt-0 my-2">Day04（循环语句）</h4>
+              <h4 class="pt-0 my-2">Day12（反射）</h4>
               <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  
-  有几种常见的循环方式，主要包括 for 循环、range 循环以及带有 break 和 continue 关键字的循环。这些循环可以用来遍历数组、切片、映射（map）、字符串、通道（channel）等。下面详细介绍每种循环的用法和示例
-
-
-for
-
-基本的 for 循环
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-package main
-
-import &quot;fmt&quot;
-
-func main()...
-                </p>
+                <p>反射  介绍     反射是 Golang 中的一项重要特性，它提供了一种机制，可以在运行时动态地获取变量的类型信息、值信息、方法、字段等，并可以通过反射进行值的修改和调用方法。这使得 Golang 具备了更高的灵活性和通用性。   在 Golang 中，反射通过 reflect 包实现，该包提供了一些函数和类型，可以用于检查变量的类型、值、方法、字段等信息。例如，reflect.TypeO...</p>
               </div>
             </div>
           </a>
@@ -5905,7 +5326,7 @@ func main()...
     <a
       href="/posts/2-datatype/"
       class="btn btn-outline-primary"
-      aria-label="Older"
+      aria-label="上一篇"
     >
       <p>Day02（入门基础）</p>
     </a>
@@ -5915,17 +5336,12 @@ func main()...
     <a
       href="/posts/4-LoopStatementFunc/"
       class="btn btn-outline-primary"
-      aria-label="Newer"
+      aria-label="下一篇"
     >
       <p>Day04（循环语句）</p>
     </a>
   
 </nav>
-
-            
-              
-              <!--  The comments switcher -->
-
 
             
 
@@ -5949,12 +5365,19 @@ func main()...
       <span
         data-bs-toggle="tooltip"
         data-bs-placement="top"
-        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
-      >Some rights reserved.</span>
+        title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。"
+      >保留部分权利。</span>
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  <p>本站采用 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 主题 <a
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="v7.6.0"
+        href="https://github.com/cotes2020/jekyll-theme-chirpy"
+        target="_blank"
+        rel="noopener"
+      >Chirpy</a>
   </p>
 </footer>
 
@@ -5963,7 +5386,7 @@ func main()...
 
         <!-- The Search results -->
 
-<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
+<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
   <div class="col-11 content">
     <div id="search-hints">
       <!-- The trending tags list -->
@@ -6202,66 +5625,6 @@ func main()...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -6286,448 +5649,6 @@ func main()...
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -7066,11 +5987,10 @@ func main()...
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -7112,6 +6032,98 @@ func main()...
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -7372,6 +6384,177 @@ func main()...
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -7526,63 +6709,6 @@ func main()...
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -7652,36 +6778,6 @@ func main()...
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -7889,7 +6985,7 @@ func main()...
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">热门标签</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -7899,16 +6995,13 @@ func main()...
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -7921,6 +7014,9 @@ func main()...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -7940,161 +7036,41 @@ func main()...
       </aside>
     </div>
 
-    <div id="mask"></div>
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
 
     
       <aside
   id="notification"
-  class="toast"
+  class="toast w-auto rounded-5 text-nowrap"
   role="alert"
   aria-live="assertive"
   aria-atomic="true"
   data-bs-animation="true"
   data-bs-autohide="false"
 >
-  <div class="toast-header">
+  <div class="d-flex align-items-center">
+    <div class="toast-body ps-3">发现新内容</div>
     <button
       type="button"
-      class="btn-close ms-auto"
+      class="btn btn-primary btn-sm rounded-2 py-0"
+      aria-label="Update"
+    >更新</button>
+    <button
+      type="button"
+      class="btn-close mx-3 ms-2"
       data-bs-dismiss="toast"
       aria-label="Close"
     ></button>
-  </div>
-  <div class="toast-body text-center pt-0">
-    <p class="px-2 mb-3">A new version of content is available.</p>
-    <button type="button" class="btn btn-primary" aria-label="Update">
-      Update
-    </button>
   </div>
 </aside>
 
     
 
-    <!-- JavaScripts -->
-
-    <!-- JS selector for site. -->
-
-<!-- commons -->
-
-
-
-<!-- layout specified -->
-
-
-
-
-  
-
-  
-    <!-- image lazy-loading & popup & clipboard -->
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    
+    <!-- Embedded scripts -->
 
     
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-
-
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
-
-
-
-
-
-
-<script defer src="/assets/js/dist/post.min.js"></script>
-
-
-
-
+      
+      <!-- The comments switcher -->
 
 
     
@@ -8109,30 +7085,32 @@ func main()...
 
 
 <script>
-  /* Note: dependent library will be loaded in `js-selector.html` */
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('search-results'),
-    json: '/assets/js/data/search.json',
-    searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-    noResultsText: '<p class="mt-5"></p>',
-    templateMiddleware: function(prop, value, template) {
-      if (prop === 'categories') {
-        if (value === '') {
-          return `${value}`;
-        } else {
-          return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('search-results'),
+      json: '/assets/js/data/search.json',
+      searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{content}</p>  </article>',
+      noResultsText: '<p class="mt-5">搜索结果为空</p>',
+      templateMiddleware: function(prop, value, template) {
+        if (prop === 'categories') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+          }
         }
-      }
 
-      if (prop === 'tags') {
-        if (value === '') {
-          return `${value}`;
-        } else {
-          return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+        if (prop === 'tags') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+          }
         }
       }
-    }
+    });
   });
 </script>
 

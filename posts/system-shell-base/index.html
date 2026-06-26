@@ -11,16 +11,13 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" >
+<html
+  lang="zh-CN">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
@@ -28,27 +25,27 @@
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.3" />
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="linux Shell Base" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh_CN" />
 <meta name="description" content="Shell" />
-<meta property="og:description" content="Shell" />
-<link rel="canonical" href="http://172.12.17.18:8090/posts/system-shell-base/" />
-<meta property="og:url" content="http://172.12.17.18:8090/posts/system-shell-base/" />
+<meta name="twitter:description" property="og:description" content="Shell" />
+<link rel="canonical" href="https://cc360428.github.io//posts/system-shell-base/" />
+<meta property="og:url" content="https://cc360428.github.io//posts/system-shell-base/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-20T22:05:01+08:00" />
+<meta property="article:modified_time" content="2020-04-20T22:05:01+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="linux Shell Base" />
+<meta name="twitter:title" content="linux Shell Base" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-20T22:05:01+08:00","datePublished":"2020-04-20T22:05:01+08:00","description":"Shell","headline":"linux Shell Base","mainEntityOfPage":{"@type":"WebPage","@id":"http://172.12.17.18:8090/posts/system-shell-base/"},"url":"http://172.12.17.18:8090/posts/system-shell-base/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-20T22:05:01+08:00","datePublished":"2020-04-20T22:05:01+08:00","description":"Shell","headline":"linux Shell Base","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/system-shell-base/"},"url":"https://cc360428.github.io//posts/system-shell-base/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>linux Shell Base | Cc Blog
-  </title>
+  <title>linux Shell Base | Cc Blog</title>
 
   <!--
   The Favicons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps
@@ -57,211 +54,185 @@
 
 
 
+<link rel="icon" type="image/png" href="/assets/img/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicons/favicon.svg">
+<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 
   <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 
-<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="Cc Blog">
-<meta name="application-name" content="Cc Blog">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
 
 
+  <!-- Resource Hints -->
   
     
-      <link rel="preconnect" href="https://fonts.googleapis.com" >
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+      
+        <link rel="preconnect" href="https://fonts.googleapis.com" >
+      
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+      
     
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+      
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" >
+      
     
-      <link rel="preconnect" href="https://fonts.googleapis.com" >
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+      
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" >
+      
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
+      
     
-      <link rel="preconnect" href="https://cdn.jsdelivr.net" >
-      <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
-    
-      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
-      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
-    
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-  
-
-  <!-- GA -->
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+  
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
-
+  <!-- Theme style -->
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
-  
+  <!-- Web Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7/css/all.min.css">
+
+  <!-- 3rd-party Dependencies -->
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.css">
   
 
   
-    <!-- Manific Popup -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2/dist/loading-attribute-polyfill.min.css">
   
 
-  <!-- JavaScript -->
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3/dist/css/glightbox.min.css">
+  
+
+  <!-- Scripts -->
+
+  <script src="/assets/js/dist/theme.min.js"></script>
+
+  <!-- JS selector for site. -->
+
+<!-- commons -->
+
+
+
+<!-- layout specified -->
+
 
   
-    <!-- Switch the mode between dark and light. -->
 
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
 
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
 
-      let self = this;
 
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
 
-          self.clearMode();
-        }
 
-        self.notify();
-      });
-    } /* constructor() */
 
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
 
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
 
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
 
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
 
-    get hasMode() {
-      return this.mode != null;
-    }
 
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
 
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
 
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
 
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
 
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
+  
+    
 
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
+    
 
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
+  
 
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
+  
+    
 
-  const modeToggle = new ModeToggle();
-</script>
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3/dist/js/glightbox.min.js,npm/clipboard@2/dist/clipboard.min.js,npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/zh.js,npm/dayjs@1/plugin/relativeTime.js,npm/dayjs@1/plugin/localizedFormat.js,npm/tocbot@4/dist/tocbot.min.js"></script>
+
+
+
+
+
+
+
+<script defer src="/assets/js/dist/post.min.js"></script>
+
+
+
+<!-- Pageviews -->
+
+  
+
+  
+
+
 
   
 
@@ -275,11 +246,9 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="http://172.12.17.18:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
-    <h1 class="site-title">
-      <a href="/">Cc Blog</a>
-    </h1>
+    <a class="site-title d-block" href="/">Cc Blog</a>
     <p class="site-subtitle fst-italic mb-0">My name is Cc and I come from China</p>
   </header>
   <!-- .profile-wrapper -->
@@ -290,7 +259,7 @@
       <li class="nav-item">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
-          <span>HOME</span>
+          <span>首页</span>
         </a>
       </li>
       <!-- the real tabs -->
@@ -300,7 +269,7 @@
             <i class="fa-fw fas fa-stream"></i>
             
 
-            <span>CATEGORIES</span>
+            <span>分类</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -310,7 +279,7 @@
             <i class="fa-fw fas fa-tags"></i>
             
 
-            <span>TAGS</span>
+            <span>标签</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -320,7 +289,7 @@
             <i class="fa-fw fas fa-archive"></i>
             
 
-            <span>ARCHIVES</span>
+            <span>归档</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -330,7 +299,7 @@
             <i class="fa-fw fas fa-info-circle"></i>
             
 
-            <span>ABOUT</span>
+            <span>关于</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -338,11 +307,27 @@
     </ul>
   </nav>
 
-  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
-    
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+    <div class="btn-group dropup">
+        <button
+          type="button"
+          class="btn btn-link nav-link"
+          aria-label="Switch Mode"
+          id="mode-toggle"
+          data-bs-toggle="dropdown"
+        ><i class="fa-regular fa-sun" data-theme-mode="light"></i><i class="fa-regular fa-moon" data-theme-mode="dark"></i><i class="fa-solid fa-display" data-theme-mode="system"></i></button>
+        <ul class="dropdown-menu rounded-3 mb-1 p-1">
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="light"><i class="fa-regular fa-sun" data-theme-mode="light"></i>浅色</button>
+          </li>
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="dark"><i class="fa-regular fa-moon" data-theme-mode="dark"></i>深色</button>
+          </li>
+          <li>
+            <button class="dropdown-item d-flex align-items-center" type="button" data-theme-mode="system"><i class="fa-solid fa-display" data-theme-mode="system"></i>跟随系统</button>
+          </li>
+        </ul>
+      </div>
 
       
         <span class="icon-border"></span>
@@ -350,7 +335,6 @@
     
 
     
-      
 
       
         <a
@@ -373,7 +357,6 @@
         </a>
       
     
-      
 
       
         <a
@@ -396,11 +379,10 @@
         </a>
       
     
-      
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['li_chao_cheng','163.com'].join('@')"
+          href="javascript:void(location.href = 'mailto:' + ['li_chao_cheng','163.com'].join('@'))"
           aria-label="email"
           
 
@@ -414,7 +396,8 @@
         </a>
       
     
-      
+          
+        
 
       
         <a
@@ -442,7 +425,7 @@
       <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
-<header id="topbar-wrapper" aria-label="Top Bar">
+<header id="topbar-wrapper" class="flex-shrink-0" aria-label="Top Bar">
   <div
     id="topbar"
     class="d-flex align-items-center justify-content-between px-lg-3 h-100"
@@ -454,7 +437,7 @@
         
           
             <span>
-              <a href="/">Home</a>
+              <a href="/">首页</a>
             </span>
 
           
@@ -472,19 +455,19 @@
     </nav>
     <!-- endof #breadcrumb -->
 
-    <button type="button" id="sidebar-trigger" class="btn btn-link">
+    <button type="button" id="sidebar-trigger" class="btn btn-link" aria-label="Sidebar">
       <i class="fas fa-bars fa-fw"></i>
     </button>
 
     <div id="topbar-title">
-      Post
+      文章
     </div>
 
-    <button type="button" id="search-trigger" class="btn btn-link">
+    <button type="button" id="search-trigger" class="btn btn-link" aria-label="Search">
       <i class="fas fa-search fa-fw"></i>
     </button>
 
-    <search class="align-items-center ms-3 ms-lg-0">
+    <search id="search" class="align-items-center ms-3 ms-lg-0">
       <i class="fas fa-search fa-fw"></i>
       <input
         class="form-control"
@@ -492,10 +475,10 @@
         type="search"
         aria-label="search"
         autocomplete="off"
-        placeholder="Search..."
+        placeholder="搜索..."
       >
     </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">取消</button>
   </div>
 </header>
 
@@ -574,67 +557,6 @@
     
 
     
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-    
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
 
     
     
@@ -697,6 +619,8 @@
     
 
     <!-- take out classes -->
+    
+
     
 
     
@@ -763,6 +687,73 @@
     
 
     
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
     
 
     
@@ -826,6 +817,8 @@
     
 
     
+
+    
     
 
     
@@ -886,6 +879,8 @@
     
 
     <!-- take out classes -->
+    
+
     
 
     
@@ -1175,17 +1170,24 @@
 
 
 
-<article class="px-1">
+
+
+
+
+
+
+<article class="px-1" data-toc="true">
   <header>
     <h1 data-toc-skip>linux Shell Base</h1>
+    
 
     <div class="post-meta text-muted">
       <!-- published date -->
       <span>
-        Posted
+        发表于
         <!--
   Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
 -->
 
 
@@ -1194,12 +1196,12 @@
 <time
   
   data-ts="1587391501"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Apr 20, 2020
+  2020/04/20
 </time>
 
       </span>
@@ -1214,7 +1216,7 @@
         <span>
           
 
-          By
+          作者
 
           <em>
             
@@ -1223,8 +1225,12 @@
           </em>
         </span>
 
-        <!-- read time -->
-        <!-- Calculate the post's reading time, and display the word count in tooltip -->
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -1244,15 +1250,36 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1399 words"
+  title="1399 字"
 >
-  <em>7 min</em> read</span>
+  <em>7 分钟</em>阅读</span>
 
+        </div>
       </div>
-      <!-- .d-flex -->
     </div>
-    <!-- .post-meta -->
   </header>
+
+  
+    <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
+      <span class="label text-truncate">linux Shell Base</span>
+      <button type="button" class="toc-trigger btn me-1">
+        <i class="fa-solid fa-list-ul fa-fw"></i>
+      </button>
+    </div>
+
+    <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
+      <span class="label ps-2 pe-1">文章内容</span>
+      <i class="fa-solid fa-angle-right fa-fw"></i>
+    </button>
+
+    <dialog id="toc-popup" class="p-0">
+      <div class="header d-flex flex-row align-items-center justify-content-between">
+        <div class="label text-truncate py-2 ms-4">linux Shell Base</div>
+        <button id="toc-popup-close" type="button" class="btn-close btn-sm mx-3" aria-label="Close"></button>
+      </div>
+      <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
+    </dialog>
+  
 
   <div class="content">
     <h1 id="shell">Shell</h1>
@@ -1267,7 +1294,7 @@
 
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1289,7 +1316,7 @@ vim helloworld.sh
     <p>执行</p>
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1318,7 +1345,7 @@ Hello World <span class="o">!</span>
   <li>创建使用
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1349,7 +1376,7 @@ echo "I am good at </span><span class="k">${</span><span class="nv">skill</span>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1375,7 +1402,7 @@ script.sh: line 4: user_name: <span class="nb">readonly </span>variable
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1409,7 +1436,7 @@ script.sh: line 4: user_name: <span class="nb">readonly </span>variable
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1423,7 +1450,7 @@ script.sh: line 4: user_name: <span class="nb">readonly </span>variable
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre>运行结果
@@ -1437,7 +1464,7 @@ C<span class="se">\s</span>adf@<span class="nv">$@</span><span class="c">#!$@#@#
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1478,7 +1505,7 @@ Hello, I know you are <span class="s2">"Cc"</span><span class="o">!</span>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1504,7 +1531,7 @@ Hello, I know you are <span class="s2">"Cc"</span><span class="o">!</span>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre>运行结果
@@ -1516,7 +1543,7 @@ hello, Cc <span class="o">!</span> hello, <span class="k">${</span><span class="
   <li>获取长度
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1531,7 +1558,7 @@ hello, Cc <span class="o">!</span> hello, <span class="k">${</span><span class="
   <li>提取字符串
     <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1561,7 +1588,7 @@ hello, Cc <span class="o">!</span> hello, <span class="k">${</span><span class="
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1617,7 +1644,7 @@ hello, Cc <span class="o">!</span> hello, <span class="k">${</span><span class="
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1661,7 +1688,7 @@ hello, Cc <span class="o">!</span> hello, <span class="k">${</span><span class="
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -1708,7 +1735,7 @@ M
 
 <h4 id="算术运算符"><span class="me-2">算术运算符</span><a href="#算术运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p><a href="http://172.12.17.18:8090/assets/img/dev/shell/算术运算符.png" class="popup img-link  shimmer"><img src="http://172.12.17.18:8090/assets/img/dev/shell/算术运算符.png" alt="算术运算符" loading="lazy"></a></p>
+<p><a href="/assets/img/dev/shell/算术运算符.png" class="popup img-link shimmer"><img src="/assets/img/dev/shell/算术运算符.png" alt="算术运算符" loading="lazy"></a></p>
 
 <blockquote>
   <p>代码 operator/t2.sh
@@ -1723,7 +1750,7 @@ M
 
 <h4 id="关系运算符"><span class="me-2">关系运算符</span><a href="#关系运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p><a href="http://172.12.17.18:8090/assets/img/dev/shell/关系运算符.png" class="popup img-link  shimmer"><img src="http://172.12.17.18:8090/assets/img/dev/shell/关系运算符.png" alt="关系运算符" loading="lazy"></a></p>
+<p><a href="/assets/img/dev/shell/关系运算符.png" class="popup img-link shimmer"><img src="/assets/img/dev/shell/关系运算符.png" alt="关系运算符" loading="lazy"></a></p>
 
 <blockquote>
   <p>代码 operator/t3.sh</p>
@@ -1731,7 +1758,7 @@ M
 
 <h3 id="布尔运算符"><span class="me-2">布尔运算符</span><a href="#布尔运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><a href="http://172.12.17.18:8090/assets/img/dev/shell/布尔运算符.png" class="popup img-link  shimmer"><img src="http://172.12.17.18:8090/assets/img/dev/shell/布尔运算符.png" alt="算术运算符" loading="lazy"></a></p>
+<p><a href="/assets/img/dev/shell/布尔运算符.png" class="popup img-link shimmer"><img src="/assets/img/dev/shell/布尔运算符.png" alt="算术运算符" loading="lazy"></a></p>
 
 <blockquote>
   <p>代码 operator/t4.sh</p>
@@ -1739,7 +1766,7 @@ M
 
 <h4 id="逻辑运算符"><span class="me-2">逻辑运算符</span><a href="#逻辑运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p><a href="http://172.12.17.18:8090/assets/img/dev/shell/逻辑运算符.png" class="popup img-link  shimmer"><img src="http://172.12.17.18:8090/assets/img/dev/shell/逻辑运算符.png" alt="逻辑运算符" loading="lazy"></a></p>
+<p><a href="/assets/img/dev/shell/逻辑运算符.png" class="popup img-link shimmer"><img src="/assets/img/dev/shell/逻辑运算符.png" alt="逻辑运算符" loading="lazy"></a></p>
 
 <blockquote>
   <p>代码 operator/t5.sh</p>
@@ -1747,7 +1774,7 @@ M
 
 <h4 id="字符串运算符"><span class="me-2">字符串运算符</span><a href="#字符串运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p><a href="http://172.12.17.18:8090/assets/img/dev/shell/字符串运算符.png" class="popup img-link  shimmer"><img src="http://172.12.17.18:8090/assets/img/dev/shell/字符串运算符.png" alt="字符串运算符" loading="lazy"></a></p>
+<p><a href="/assets/img/dev/shell/字符串运算符.png" class="popup img-link shimmer"><img src="/assets/img/dev/shell/字符串运算符.png" alt="字符串运算符" loading="lazy"></a></p>
 
 <blockquote>
   <p>代码 operator/t6.sh</p>
@@ -1755,7 +1782,7 @@ M
 
 <h4 id="文件检测运算符"><span class="me-2">文件检测运算符</span><a href="#文件检测运算符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p><a href="http://172.12.17.18:8090/assets/img/dev/shell/文件检测运算符.png" class="popup img-link  shimmer"><img src="http://172.12.17.18:8090/assets/img/dev/shell/文件检测运算符.png" alt="文件检测运算符" loading="lazy"></a></p>
+<p><a href="/assets/img/dev/shell/文件检测运算符.png" class="popup img-link shimmer"><img src="/assets/img/dev/shell/文件检测运算符.png" alt="文件检测运算符" loading="lazy"></a></p>
 
 <blockquote>
   <p>代码 operator/t7.sh</p>
@@ -1764,15 +1791,29 @@ M
   </div>
 
   <div class="post-tail-wrapper text-muted">
-    <!-- categories -->
-    
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/devops/">DevOps</a>,
-          <a href="/categories/linux/">Linux</a>
-      </div>
-    
+    <div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+      <!-- categories -->
+      
+        <div class="post-meta">
+          <i class="far fa-folder-open fa-fw me-1"></i>
+          
+            <a href="/categories/devops/">DevOps</a>,
+            <a href="/categories/shell/">Shell</a>
+        </div>
+      
+
+      <!-- "Edit this post" link -->
+      <!-- Link to edit the post to contribute. -->
+
+
+
+
+
+
+
+
+
+    </div>
 
     <!-- tags -->
     
@@ -1780,9 +1821,9 @@ M
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/linux/"
+            href="/tags/linuxtool/"
             class="post-tag no-text-decoration"
-          >Linux</a>
+          >LinuxTool</a>
         
           <a
             href="/tags/shell/"
@@ -1802,18 +1843,18 @@ M
         
           
 
-          This post is licensed under 
+          本文由作者按照 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
-         by the author.
+         进行授权
         
       </div>
 
       <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
-  <span class="share-label text-muted">Share</span>
+  <span class="share-label text-muted">分享</span>
   <span class="share-icons">
     
     
@@ -1823,21 +1864,21 @@ M
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=linux%20Shell%20Base%20-%20Cc%20Blog&url=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2Fsystem-shell-base%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=linux%20Shell%20Base%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fsystem-shell-base%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=linux%20Shell%20Base%20-%20Cc%20Blog&u=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2Fsystem-shell-base%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=linux%20Shell%20Base%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fsystem-shell-base%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2Fsystem-shell-base%2F&text=linux%20Shell%20Base%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2Fsystem-shell-base%2F&text=linux%20Shell%20Base%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1848,8 +1889,8 @@ M
       class="btn small"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="Copy link"
-      data-title-succeed="Link copied successfully!"
+      title="分享链接"
+      data-title-succeed="链接已复制！"
     >
       <i class="fa-fw fas fa-link pe-none fs-6"></i>
     </button>
@@ -1867,7 +1908,7 @@ M
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
             <div class="access">
               <!-- Get 5 last posted/updated posts -->
 
@@ -1885,42 +1926,42 @@ M
 
 
   <section id="access-lastmod">
-    <h2 class="panel-heading">Recently Updated</h2>
+    <h2 class="panel-heading">最近更新</h2>
     <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/go-stdlib/">Go 标准库专题</a>
+          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/high-concurrency-arch/">高并发架构专题</a>
+          <a href="/posts/DataStructure/">DataStructure（02142）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/cache-consistency/">缓存一致性专题</a>
+          <a href="/posts/math-education/">Math 国内教育</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/go-interview-system-design/">系统设计专项</a>
+          <a href="/posts/Java_Base_SE/">Java基础</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/distributed/">分布式系统专题</a>
+          <a href="/posts/resume/">Resume</a>
         </li>
       
     </ul>
@@ -2164,66 +2205,6 @@ M
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -2248,448 +2229,6 @@ M
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -3028,11 +2567,10 @@ M
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -3074,6 +2612,98 @@ M
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -3334,6 +2964,177 @@ M
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3488,63 +3289,6 @@ M
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3614,36 +3358,6 @@ M
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3851,7 +3565,7 @@ M
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">热门标签</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -3861,16 +3575,13 @@ M
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -3884,6 +3595,9 @@ M
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
       
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
+      
     </div>
   </section>
 
@@ -3896,8 +3610,12 @@ M
 
 
 
-  <section id="toc-wrapper" class="ps-0 pe-4">
-    <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
+
+
+
+  <div class="toc-border-cover z-3"></div>
+  <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
+    <h2 class="panel-heading ps-3 pb-2 mb-0">文章内容</h2>
     <nav id="toc"></nav>
   </section>
 
@@ -3933,6 +3651,31 @@ M
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
   
 
@@ -4166,30 +3909,6 @@ M
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -4429,15 +4148,15 @@ M
 
 
   <aside id="related-posts" aria-labelledby="related-label">
-    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <h3 class="mb-4" id="related-label">相关文章</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/bash_shell/" class="post-preview card h-100">
+          <a href="/posts/vim/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
 -->
 
 
@@ -4445,110 +4164,16 @@ M
 
 <time
   
-  data-ts="1587391501"
-  data-df="ll"
+  data-ts="1683518821"
+  data-df="YYYY/MM/DD"
   
 >
-  Apr 20, 2020
+  2023/05/08
 </time>
 
-              <h4 class="pt-0 my-2">零散的脚本</h4>
+              <h4 class="pt-0 my-2">Vim 使用说明</h4>
               <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  开发 sh 脚本
-
-杀死进程
-
-kill.sh
-
-#!/bin/sh
-#根据进程名杀死进程
-if [ $# -lt 1 ]
-then
-  echo &quot;缺少参数：procedure_name&quot;
-  exit 1
-fi
-
-PROCESS=`ps -ef|grep $1|grep -v grep|grep -v PPID|awk &#39;{ print $2}&#39;`
-for i in $PROCESS
-d...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/auto_shell/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1683270301"
-  data-df="ll"
-  
->
-  May  5, 2023
-</time>
-
-              <h4 class="pt-0 my-2">自动化脚本</h4>
-              <div class="text-muted">
-                <p>
-                  
-
-
-
-
-
-                  自动化脚本
-
-备份文件
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-#!/bin/bash
-
-# 定义变量
-backup_dir=&quot;/path/to/backup&quot;
-file_to_backup=&quot;/path/to/file.txt&quot;
-
-# 创建备份目录
-mkdir -p &quot;$backup_dir&quot;
-
-# 备份文件
-backup_f...
-                </p>
+                <p>vim  Vim(Vi IMproved) 是一个高级的文本编辑器，是 Unix 和类 Unix 系统中最受欢迎的编辑器之一。它可以处理多种文件类型，包括纯文本、代码等，并且支持多种操作模式和自定义配置，可以提高编辑效率。  Vim 的一些基本概念和使用方法     操作模式：Vim 有三种操作模式，分别是命令模式（Command mode）、插入模式（Insert mode）和视觉模式（V...</p>
               </div>
             </div>
           </a>
@@ -4559,7 +4184,7 @@ backup_f...
             <div class="card-body">
               <!--
   Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
 -->
 
 
@@ -4568,37 +4193,43 @@ backup_f...
 <time
   
   data-ts="1683518701"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
 >
-  May  8, 2023
+  2023/05/08
 </time>
 
               <h4 class="pt-0 my-2">Linux 基础命令</h4>
               <div class="text-muted">
-                <p>
-                  
+                <p>Linux 基础命令  Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下是一些常用的 Linux 基础命令：     ls：列出目录内容   cd：切换目录   mkdir：创建新目录   rm：删除文件或目录   cp：复制文件或目录   mv：移动文件或目录   touch：创建新文件   cat：连接、显示文件内容   grep：文本搜索工具   ping：测试网络...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/auto_shell/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
 
 
 
 
+<time
+  
+  data-ts="1683270301"
+  data-df="YYYY/MM/DD"
+  
+>
+  2023/05/05
+</time>
 
-                  Linux 基础命令
-
-Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下是一些常用的 Linux 基础命令：
-
-
-  ls：列出目录内容
-  cd：切换目录
-  mkdir：创建新目录
-  rm：删除文件或目录
-  cp：复制文件或目录
-  mv：移动文件或目录
-  touch：创建新文件
-  cat：连接、显示文件内容
-  grep：文本搜索工具
-  ping：测试网络...
-                </p>
+              <h4 class="pt-0 my-2">自动化脚本</h4>
+              <div class="text-muted">
+                <p>自动化脚本  备份文件  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 #!/bin/bash  # 定义变量 backup_dir="/path/to/backup" file_to_backup="/path/to/file.txt"  # 创建备份目录 mkdir -p "$backup_dir"  # 备份文件 backup_f...</p>
               </div>
             </div>
           </a>
@@ -4621,7 +4252,7 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
     <a
       href="/posts/bash_shell/"
       class="btn btn-outline-primary"
-      aria-label="Older"
+      aria-label="上一篇"
     >
       <p>零散的脚本</p>
     </a>
@@ -4631,17 +4262,12 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
     <a
       href="/posts/education/"
       class="btn btn-outline-primary"
-      aria-label="Newer"
+      aria-label="下一篇"
     >
       <p>English 国内教育</p>
     </a>
   
 </nav>
-
-            
-              
-              <!--  The comments switcher -->
-
 
             
 
@@ -4665,12 +4291,19 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
       <span
         data-bs-toggle="tooltip"
         data-bs-placement="top"
-        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
-      >Some rights reserved.</span>
+        title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。"
+      >保留部分权利。</span>
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  <p>本站采用 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 主题 <a
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="v7.6.0"
+        href="https://github.com/cotes2020/jekyll-theme-chirpy"
+        target="_blank"
+        rel="noopener"
+      >Chirpy</a>
   </p>
 </footer>
 
@@ -4679,7 +4312,7 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
 
         <!-- The Search results -->
 
-<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
+<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
   <div class="col-11 content">
     <div id="search-hints">
       <!-- The trending tags list -->
@@ -4918,66 +4551,6 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -5002,448 +4575,6 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -5782,11 +4913,10 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
     
     
     
-  
-    
-    
-    
-    
+      
+        
+        
+
   
     
     
@@ -5828,6 +4958,98 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -6088,6 +5310,177 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -6242,63 +5635,6 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
     
     
     
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -6368,36 +5704,6 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -6605,7 +5911,7 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">热门标签</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -6615,16 +5921,13 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -6637,6 +5940,9 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -6656,161 +5962,41 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
       </aside>
     </div>
 
-    <div id="mask"></div>
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
 
     
       <aside
   id="notification"
-  class="toast"
+  class="toast w-auto rounded-5 text-nowrap"
   role="alert"
   aria-live="assertive"
   aria-atomic="true"
   data-bs-animation="true"
   data-bs-autohide="false"
 >
-  <div class="toast-header">
+  <div class="d-flex align-items-center">
+    <div class="toast-body ps-3">发现新内容</div>
     <button
       type="button"
-      class="btn-close ms-auto"
+      class="btn btn-primary btn-sm rounded-2 py-0"
+      aria-label="Update"
+    >更新</button>
+    <button
+      type="button"
+      class="btn-close mx-3 ms-2"
       data-bs-dismiss="toast"
       aria-label="Close"
     ></button>
-  </div>
-  <div class="toast-body text-center pt-0">
-    <p class="px-2 mb-3">A new version of content is available.</p>
-    <button type="button" class="btn btn-primary" aria-label="Update">
-      Update
-    </button>
   </div>
 </aside>
 
     
 
-    <!-- JavaScripts -->
-
-    <!-- JS selector for site. -->
-
-<!-- commons -->
-
-
-
-<!-- layout specified -->
-
-
-
-
-  
-
-  
-    <!-- image lazy-loading & popup & clipboard -->
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    
+    <!-- Embedded scripts -->
 
     
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
-
-
-
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
-
-
-
-
-
-
-<script defer src="/assets/js/dist/post.min.js"></script>
-
-
-
-
+      
+      <!-- The comments switcher -->
 
 
     
@@ -6825,30 +6011,32 @@ Linux 是一种典型的 Unix 类操作系统，基于命令行操作，以下�
 
 
 <script>
-  /* Note: dependent library will be loaded in `js-selector.html` */
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('search-results'),
-    json: '/assets/js/data/search.json',
-    searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-    noResultsText: '<p class="mt-5"></p>',
-    templateMiddleware: function(prop, value, template) {
-      if (prop === 'categories') {
-        if (value === '') {
-          return `${value}`;
-        } else {
-          return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('search-results'),
+      json: '/assets/js/data/search.json',
+      searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{content}</p>  </article>',
+      noResultsText: '<p class="mt-5">搜索结果为空</p>',
+      templateMiddleware: function(prop, value, template) {
+        if (prop === 'categories') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+          }
         }
-      }
 
-      if (prop === 'tags') {
-        if (value === '') {
-          return `${value}`;
-        } else {
-          return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+        if (prop === 'tags') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+          }
         }
       }
-    }
+    });
   });
 </script>
 
