@@ -15,9 +15,7 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -26,21 +24,18 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Day01（Golang 入门介绍）" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="golang 基础入门、golang hellworld" />
-<meta property="og:description" content="golang 基础入门、golang hellworld" />
-<link rel="canonical" href="https://cc360428.github.io//posts/1-go_base/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/1-go_base/" />
+<meta name="description" content="Go 基础入门、Hello World" />
+<meta property="og:description" content="Go 基础入门、Hello World" />
+<link rel="canonical" href="http://172.12.17.18:8090/posts/1-go_base/" />
+<meta property="og:url" content="http://172.12.17.18:8090/posts/1-go_base/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-03-30T08:08:01+08:00" />
@@ -48,10 +43,9 @@
 <meta property="twitter:title" content="Day01（Golang 入门介绍）" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-19T16:33:23+08:00","datePublished":"2019-03-30T08:08:01+08:00","description":"golang 基础入门、golang hellworld","headline":"Day01（Golang 入门介绍）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/1-go_base/"},"url":"https://cc360428.github.io//posts/1-go_base/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-19T16:33:23+08:00","datePublished":"2019-03-30T08:08:01+08:00","description":"Go 基础入门、Hello World","headline":"Day01（Golang 入门介绍）","mainEntityOfPage":{"@type":"WebPage","@id":"http://172.12.17.18:8090/posts/1-go_base/"},"url":"http://172.12.17.18:8090/posts/1-go_base/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>Day01（Golang 入门介绍） | Cc Blog
   </title>
@@ -66,7 +60,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -89,6 +85,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,12 +99,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.3/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
   
@@ -276,12 +275,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="http://172.12.17.18:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -460,9 +454,7 @@
         
           
             <span>
-              <a href="/">
-                Home
-              </a>
+              <a href="/">Home</a>
             </span>
 
           
@@ -642,6 +634,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -657,17 +660,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -920,9 +912,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1626 words"
+  title="1240 words"
 >
-  <em>9 min</em> read</span>
+  <em>6 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -931,60 +923,61 @@
   </header>
 
   <div class="content">
-    <h2 id="golang-基础"><span class="me-2">Golang 基础</span><a href="#golang-基础" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+    <h2 id="go-基础"><span class="me-2">Go 基础</span><a href="#go-基础" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="https://gitee.com/GolangCodeFile/blogcode/tree/master/helloWorld">本章源码</a></p>
-
-<h3 id="初步认识-golang"><span class="me-2">初步认识 Golang</span><a href="#初步认识-golang" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="初步认识-go"><span class="me-2">初步认识 Go</span><a href="#初步认识-go" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>Go 跨平台（linux、windows、mac），只要编写完代码之后 <code class="language-plaintext highlighter-rouge">交叉</code>编译即可</li>
-  <li>Go 语言单一、简洁、天生高并发、CGO</li>
-  <li>Go 应用广（web 应用、区块链、运维、云计算、大数据）</li>
+  <li>Go 跨平台（Linux、Windows、macOS），同一份代码可通过 <code class="language-plaintext highlighter-rouge">交叉编译</code> 生成不同平台的二进制</li>
+  <li>语法简洁、并发模型清晰，支持通过 CGO 调用 C 代码</li>
+  <li>应用广（Web、基础设施、云原生、数据处理等）</li>
 </ul>
 
 <h3 id="go-环境"><span class="me-2">Go 环境</span><a href="#go-环境" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="linux--macos"><span class="me-2">Linux &amp; MacOs</span><a href="#linux--macos" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="linux--macos"><span class="me-2">Linux &amp; macOS</span><a href="#linux--macos" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ol>
-  <li>下载 Golang 安装包：在 Golang <a href="https://go.dev/dl/">官方网站</a>上下载适合自己 Linux 发行版和架构的 Golang 安装包</li>
-  <li>
-    <p>解压安装包：将下载的安装包解压到系统的某个目录下，如 /usr/local。</p>
+  <li>下载 Go 安装包：在 Go <a href="https://go.dev/dl/">官方网站</a>下载适合自己系统和架构的安装包</li>
+  <li>解压安装包：将下载的安装包解压到系统的某个目录下，如 /usr/local。</li>
+</ol>
 
-    <div class="language-sh highlighter-rouge"><div class="code-header">
+<div class="language-sh highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nb">sudo tar</span> <span class="nt">-C</span> /usr/local <span class="nt">-xzf</span> go<span class="k">*</span>.tar.gz
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>
-    <p>配置环境变量：编辑 ~/.bashrc 或者 ~/.profile 文件，添加以下内容：</p>
+</pre></td><td class="rouge-code"><pre>   <span class="nb">sudo tar</span> <span class="nt">-C</span> /usr/local <span class="nt">-xzf</span> go<span class="k">*</span>.tar.gz
+</pre></td></tr></tbody></table></code></div></div>
 
-    <div class="language-sh highlighter-rouge"><div class="code-header">
+<ol>
+  <li>配置环境变量：编辑 <code class="language-plaintext highlighter-rouge">~/.bashrc</code> 或 <code class="language-plaintext highlighter-rouge">~/.profile</code>，添加以下内容：</li>
+</ol>
+
+<div class="language-sh highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/go/bin
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>
-    <p>使环境变量生效：执行以下命令使环境变量生效</p>
+</pre></td><td class="rouge-code"><pre>   <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/go/bin
+</pre></td></tr></tbody></table></code></div></div>
 
-    <div class="language-sh highlighter-rouge"><div class="code-header">
+<ol>
+  <li>使环境变量生效：执行以下命令使环境变量生效</li>
+</ol>
+
+<div class="language-sh highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nb">source</span> ~/.bashrc
-</pre></td></tr></tbody></table></code></div>    </div>
+</pre></td><td class="rouge-code"><pre>   <span class="nb">source</span> ~/.bashrc
+</pre></td></tr></tbody></table></code></div></div>
 
-    <p>或者</p>
+<p>或者</p>
 
-    <div class="language-sh highlighter-rouge"><div class="code-header">
+<div class="language-sh highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nb">source</span> ~/.profile
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>检查安装：打开命令行终端，输入 go version 命令，如果输出 Golang 的版本号，则说明 Golang 安装成功</li>
+</pre></td><td class="rouge-code"><pre>   <span class="nb">source</span> ~/.profile
+</pre></td></tr></tbody></table></code></div></div>
+
+<ol>
+  <li>检查安装：打开终端，执行 <code class="language-plaintext highlighter-rouge">go version</code>，如果输出 Go 版本号则安装成功</li>
 </ol>
 
 <blockquote>
@@ -994,19 +987,20 @@
 <h4 id="windows"><span class="me-2">Windows</span><a href="#windows" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ol>
-  <li>下载 Golang 安装包：在 Golang 官方网站 <a href="https://go.dev/dl/">官方网站</a>上下载适合自己 Windows 版本和架构的 Golang 安装包。</li>
+  <li>下载 Go 安装包：在 Go 官方网站 <a href="https://go.dev/dl/">官方网站</a>下载适合自己 Windows 版本和架构的安装包</li>
   <li>运行安装程序：运行下载的 Golang 安装包，按照提示进行安装，通常只需要选择安装路径和确认安装即可</li>
-  <li>
-    <p>配置环境变量：将 Golang 的 bin 目录添加到系统的 PATH 环境变量中，这样才能在命令行中使用 Golang 的命令</p>
+  <li>配置环境变量：将 Go 的 bin 目录添加到系统的 PATH 环境变量中，这样才能在命令行中使用 Go 命令</li>
+</ol>
 
-    <ul>
-      <li>打开”控制面板” -&gt; “系统和安全” -&gt; “系统” -&gt; “高级系统设置” -&gt; “环境变量”</li>
-      <li>在”系统变量”中找到”Path”变量，点击”编辑”</li>
-      <li>在编辑系统变量窗口中，点击”新建”，输入 Golang 的 bin 目录，例如 C:\Go\bin</li>
-      <li>点击”确定”保存修改。</li>
-    </ul>
-  </li>
-  <li>检查安装：打开命令行终端，输入 go version 命令，如果输出 Golang 的版本号，则说明 Golang 安装成功。</li>
+<ul>
+  <li>打开”控制面板” -&gt; “系统和安全” -&gt; “系统” -&gt; “高级系统设置” -&gt; “环境变量”</li>
+  <li>在”系统变量”中找到”Path”变量，点击”编辑”</li>
+  <li>在编辑系统变量窗口中，点击”新建”，输入 Golang 的 bin 目录，例如 C:\Go\bin</li>
+  <li>点击”确定”保存修改。</li>
+</ul>
+
+<ol>
+  <li>检查安装：打开终端执行 <code class="language-plaintext highlighter-rouge">go version</code>，如果输出 Go 版本号则安装成功</li>
 </ol>
 
 <blockquote>
@@ -1016,30 +1010,30 @@
 <h4 id="环境变量"><span class="me-2">环境变量</span><a href="#环境变量" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <blockquote>
-  <p>注：GOROOT、GOPATH、GOOS、GOHOSTARCH 、GO111MODULE、GOPROXY 重要</p>
+  <p>注：常见环境变量：<code class="language-plaintext highlighter-rouge">GOROOT</code>、<code class="language-plaintext highlighter-rouge">GOPATH</code>、<code class="language-plaintext highlighter-rouge">GOOS</code>、<code class="language-plaintext highlighter-rouge">GOARCH</code>、<code class="language-plaintext highlighter-rouge">GOMOD</code>、<code class="language-plaintext highlighter-rouge">GOPROXY</code></p>
 </blockquote>
 
 <h4 id="git-工具安装"><span class="me-2">Git 工具安装</span><a href="#git-工具安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">go get</code> 下载代码需要 依赖 <code class="language-plaintext highlighter-rouge">git</code></p>
+  <p>拉取源码或依赖时需要 <code class="language-plaintext highlighter-rouge">git</code>（如 <code class="language-plaintext highlighter-rouge">go mod download</code>、<code class="language-plaintext highlighter-rouge">go install</code>）</p>
 </blockquote>
 
-<h4 id="golang-开发工具"><span class="me-2">Golang 开发工具</span><a href="#golang-开发工具" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="go-开发工具"><span class="me-2">Go 开发工具</span><a href="#go-开发工具" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <blockquote>
   <p>推荐开发工具</p>
 </blockquote>
 
 <ul>
-  <li>Goland</li>
-  <li>vs code</li>
+  <li>GoLand</li>
+  <li>VS Code（推荐安装 <code class="language-plaintext highlighter-rouge">gopls</code>）</li>
   <li>vim</li>
 </ul>
 
-<h3 id="golang-helloworld"><span class="me-2">Golang <code class="language-plaintext highlighter-rouge">HelloWorld</code></span><a href="#golang-helloworld" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="go-hello-world"><span class="me-2">Go <code class="language-plaintext highlighter-rouge">Hello World</code></span><a href="#go-hello-world" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="在某个目录下面创建-maingo"><span class="me-2">在某个目录下面创建 <code class="language-plaintext highlighter-rouge">main.go</code></span><a href="#在某个目录下面创建-maingo" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h4 id="在目录下创建-maingo"><span class="me-2">在目录下创建 <code class="language-plaintext highlighter-rouge">main.go</code></span><a href="#在目录下创建-maingo" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1081,7 +1075,7 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
 
 <h4 id="分隔符"><span class="me-2">分隔符</span><a href="#分隔符" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p>一行代表一个结束，每一句不需要与其他语言一行 <code class="language-plaintext highlighter-rouge">;</code>来表示结束，Go 语言在编译时 i 自动会完成</p>
+<p>一行代表一个结束，不需要像某些语言那样写 <code class="language-plaintext highlighter-rouge">;</code>。Go 编译器会在合适的位置自动插入分号</p>
 
 <h4 id="注释"><span class="me-2">注释</span><a href="#注释" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -1112,101 +1106,61 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
 <h4 id="关键字"><span class="me-2">关键字</span><a href="#关键字" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li>25 个关键保留字
+  <li>25 个关键字：
     <ul>
-      <li>包管理-2
-        <ol>
-          <li>import</li>
-          <li>package</li>
-        </ol>
-      </li>
-      <li>程序实体声明与定义-8
-        <ol>
-          <li>chan</li>
-          <li>const</li>
-          <li>func</li>
-          <li>interface</li>
-          <li>map</li>
-          <li>struct</li>
-          <li>type</li>
-          <li>var</li>
-        </ol>
-      </li>
-      <li>程序流程控制-16
-        <ol>
-          <li>break</li>
-          <li>case</li>
-          <li>continue</li>
-          <li>default</li>
-          <li>defer</li>
-          <li>else</li>
-          <li>fallthrough</li>
-          <li>for</li>
-          <li>go</li>
-          <li>goto</li>
-          <li>if</li>
-          <li>range</li>
-          <li>return</li>
-          <li>select</li>
-          <li>switch</li>
-        </ol>
-      </li>
+      <li>break, default, func, interface, select</li>
+      <li>case, defer, go, map, struct</li>
+      <li>chan, else, goto, package, switch</li>
+      <li>const, fallthrough, if, range, type</li>
+      <li>continue, for, import, return, var</li>
     </ul>
   </li>
-  <li>36 个预定义标识符
-    <ol>
-      <li>append</li>
-      <li>bool</li>
-      <li>byte</li>
-      <li>cap</li>
-      <li>close</li>
-      <li>copy</li>
-      <li>recover</li>
-      <li>false</li>
-      <li>TRUE</li>
-      <li>panic</li>
-      <li>print</li>
-      <li>println</li>
-      <li>iota</li>
-      <li>len</li>
-      <li>make</li>
-      <li>new</li>
-      <li>nil</li>
-      <li>real</li>
-      <li>int</li>
-      <li>int8</li>
-      <li>int16</li>
-      <li>int32</li>
-      <li>int64</li>
-      <li>string</li>
-      <li>uint</li>
-      <li>uint8</li>
-      <li>uint16</li>
-      <li>uint32</li>
-      <li>uint64</li>
-      <li>uintprt</li>
-      <li>complex</li>
-      <li>complex64</li>
-      <li>complex128</li>
-      <li>float32</li>
-      <li>float64</li>
-      <li>imag</li>
-    </ol>
+  <li>预定义标识符（节选）：
+    <ul>
+      <li>基本类型：<code class="language-plaintext highlighter-rouge">bool</code> <code class="language-plaintext highlighter-rouge">byte</code> <code class="language-plaintext highlighter-rouge">rune</code> <code class="language-plaintext highlighter-rouge">string</code> <code class="language-plaintext highlighter-rouge">int</code> <code class="language-plaintext highlighter-rouge">uint</code> <code class="language-plaintext highlighter-rouge">uintptr</code> <code class="language-plaintext highlighter-rouge">float32</code> <code class="language-plaintext highlighter-rouge">float64</code> <code class="language-plaintext highlighter-rouge">complex64</code> <code class="language-plaintext highlighter-rouge">complex128</code> <code class="language-plaintext highlighter-rouge">error</code></li>
+      <li>常量：<code class="language-plaintext highlighter-rouge">true</code> <code class="language-plaintext highlighter-rouge">false</code> <code class="language-plaintext highlighter-rouge">iota</code> <code class="language-plaintext highlighter-rouge">nil</code></li>
+      <li>内置函数：<code class="language-plaintext highlighter-rouge">append</code> <code class="language-plaintext highlighter-rouge">cap</code> <code class="language-plaintext highlighter-rouge">close</code> <code class="language-plaintext highlighter-rouge">copy</code> <code class="language-plaintext highlighter-rouge">delete</code> <code class="language-plaintext highlighter-rouge">len</code> <code class="language-plaintext highlighter-rouge">make</code> <code class="language-plaintext highlighter-rouge">new</code> <code class="language-plaintext highlighter-rouge">panic</code> <code class="language-plaintext highlighter-rouge">print</code> <code class="language-plaintext highlighter-rouge">println</code> <code class="language-plaintext highlighter-rouge">real</code> <code class="language-plaintext highlighter-rouge">recover</code></li>
+    </ul>
   </li>
+</ul>
+
+<h3 id="go-modules-快速开始"><span class="me-2">Go Modules 快速开始</span><a href="#go-modules-快速开始" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>从 Go 1.16 起，默认启用 Modules。建议新项目都使用 Modules。</p>
+</blockquote>
+
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>go mod init example.com/hello
+go mod tidy
+go run <span class="nb">.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>常用命令：</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">go env</code>：查看环境变量</li>
+  <li><code class="language-plaintext highlighter-rouge">go list ./...</code>：列出当前模块内所有包</li>
+  <li><code class="language-plaintext highlighter-rouge">go test ./...</code>：运行所有测试</li>
+  <li><code class="language-plaintext highlighter-rouge">go fmt ./...</code>：格式化代码</li>
 </ul>
 
 <h4 id="常见"><span class="me-2">常见</span><a href="#常见" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li>变量的声明必须使用空格隔开</li>
-  <li>运算符之间加空格，一定时候加空格会跟好看，不要怕会占空间、<code class="language-plaintext highlighter-rouge">go</code> 语言编译时候可以去掉空格和换行</li>
+  <li>运算符之间加空格，适当加空格更好看</li>
   <li>未使用的变量会编译不通过</li>
-  <li>写完代码之后常见使用 <code class="language-plaintext highlighter-rouge">go fmt [*.go]</code>格式化代码</li>
+  <li>写完代码之后常见使用 <code class="language-plaintext highlighter-rouge">go fmt ./...</code> 格式化代码</li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">pubulic</code> And <code class="language-plaintext highlighter-rouge">private</code></p>
+    <p><code class="language-plaintext highlighter-rouge">public</code> And <code class="language-plaintext highlighter-rouge">private</code></p>
 
     <blockquote>
-      <p>不管变量名或者是方法名，如果首字母大写就是(pubulic) ，首字母小写就是(private)</p>
+      <p>不管变量名或者方法名，首字母大写就是 <code class="language-plaintext highlighter-rouge">public</code>，首字母小写就是 <code class="language-plaintext highlighter-rouge">private</code></p>
     </blockquote>
   </li>
 </ul>
@@ -1237,23 +1191,15 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
 <h4 id="基础概括"><span class="me-2">基础概括</span><a href="#基础概括" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ol>
-  <li>语言特性和语法：Golang 是一门静态类型、编译型、并发型、垃圾回收的编程语言。它的语法简洁、清晰，具有自动垃圾回收、内置并发机制等特性，使得开发人员可以更快速、高效地开发应用程序。</li>
-  <li>变量和常量：在 Golang 中，变量必须显式声明，可以使用 var 或 := 来声明变量。常量则使用 const 关键字声明。</li>
-  <li>基本数据类型：Golang 中的基本数据类型包括整型、浮点型、布尔型、字符串等。其中整型又包括 int、int8、int16、int32、int64 等类型，浮点型则包括 float32 和 float64 两种类型。</li>
-  <li>控制流程语句：Golang 中的控制流程语句包括条件语句、循环语句和跳转语句。其中条件语句包括 if 和 switch 语句，循环语句则包括 for 和 range 语句，跳转语句则包括 break、continue 和 goto 语句。</li>
-  <li>数组、切片和映射：Golang 中的数组是固定长度的，而切片则是可变长度的，它们都可以用来存储同一种类型的数据。映射则是一种键值对的数据结构，也称为字典或哈希表。</li>
-  <li>函数和方法：在 Golang 中，函数是独立的代码块，可以被多次调用。方法则是属于某个类型的函数，它可以通过该类型的实例来调用。</li>
-  <li>结构体和接口：Golang 中的结构体是一种自定义类型，由多个字段组成。接口则是一种抽象类型，定义了一组方法，用来描述一种行为。</li>
-  <li>并发编程：Golang 内置了 goroutine 和 channel，它们是 Golang 并发编程的核心。goroutine 是一种轻量级的线程，通过关键字 go 来启动。channel 则是一种通信机制，用来在 goroutine 之间传递数据。本教程代码所有都会公开到 <code class="language-plaintext highlighter-rouge">gitee.com</code></li>
+  <li>语言特性和语法：Go 是一门静态类型、编译型、并发型、带垃圾回收的编程语言。</li>
+  <li>变量和常量：变量必须显式声明，可用 <code class="language-plaintext highlighter-rouge">var</code> 或 <code class="language-plaintext highlighter-rouge">:=</code>；常量使用 <code class="language-plaintext highlighter-rouge">const</code>。</li>
+  <li>基本数据类型：整型、浮点型、布尔型、字符串等。</li>
+  <li>控制流程语句：<code class="language-plaintext highlighter-rouge">if</code>、<code class="language-plaintext highlighter-rouge">switch</code>、<code class="language-plaintext highlighter-rouge">for</code>、<code class="language-plaintext highlighter-rouge">range</code>、<code class="language-plaintext highlighter-rouge">break</code>、<code class="language-plaintext highlighter-rouge">continue</code>、<code class="language-plaintext highlighter-rouge">goto</code>。</li>
+  <li>数组、切片和映射：数组是固定长度；切片可变长度；映射是键值对结构。</li>
+  <li>函数和方法：函数可独立调用，方法绑定到类型。</li>
+  <li>结构体和接口：结构体定义数据，接口定义行为。</li>
+  <li>并发编程：Go 内置 goroutine 和 channel。</li>
 </ol>
-
-<blockquote>
-  <p>为什么不使用 <code class="language-plaintext highlighter-rouge">github.com</code> 因为 github 下载会受到网络影响，所以 <code class="language-plaintext highlighter-rouge">go</code> 教程代码会使用 <code class="language-plaintext highlighter-rouge">gitee</code> 代码管理，在此也谢谢 <code class="language-plaintext highlighter-rouge">gitee</code></p>
-</blockquote>
-
-<h4 id="gitee-仓库地址"><span class="me-2">gitee 仓库地址</span><a href="#gitee-仓库地址" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
-
-<p><a href="https://gitee.com/GolangCodeFile/blogcode">gitee 地址</a></p>
 
   </div>
 
@@ -1322,21 +1268,21 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Day01%EF%BC%88Golang%20%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D%EF%BC%89%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F1-go_base%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Day01%EF%BC%88Golang%20%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D%EF%BC%89%20-%20Cc%20Blog&url=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2F1-go_base%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Day01%EF%BC%88Golang%20%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D%EF%BC%89%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F1-go_base%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Day01%EF%BC%88Golang%20%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D%EF%BC%89%20-%20Cc%20Blog&u=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2F1-go_base%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F1-go_base%2F&text=Day01%EF%BC%88Golang%20%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D%EF%BC%89%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2F1-go_base%2F&text=Day01%EF%BC%88Golang%20%E5%85%A5%E9%97%A8%E4%BB%8B%E7%BB%8D%EF%BC%89%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1368,7 +1314,7 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1391,35 +1337,35 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/14-testing/">Go Release History</a>
+          <a href="/posts/go-stdlib/">Go 标准库专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Error/">Git Error </a>
+          <a href="/posts/high-concurrency-arch/">高并发架构专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/git-base/">Git Base</a>
+          <a href="/posts/cache-consistency/">缓存一致性专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
+          <a href="/posts/go-interview-system-design/">系统设计专项</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
+          <a href="/posts/distributed/">分布式系统专题</a>
         </li>
       
     </ul>
@@ -1663,194 +1609,6 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1924,599 +1682,6 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2812,10 +1977,1118 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3033,13 +3306,16 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -3052,9 +3328,6 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -3937,7 +4210,199 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -4189,19 +4654,22 @@ D:<span class="se">\f</span>ile<span class="se">\g</span>opath<span class="se">\
                   运算符
 
 
-  在 Go 语言（又称 Golang）中，并没有直接列出所有可能的运算法种类，因为运算法（或称为运算符）是编程语言的内置特性，用于执行不同类型的计算或逻辑操作。但是，我们可以分类列出 Go 语言中常用的运算法种类：
+  在 Go 语言（又称 Golang）中，并没有直接列出所有可能的运算法种类，因为运算法（或称为运算符）是编程语言的内置特性，用于执行不同类型的计算或逻辑操作。但是，我们可以分类列出
+Go 语言中常用的运算法种类：
 
 
 
-  
-    算术运算符：
+  算术运算符：
 
-    
-      加法 (+)
-      减法 (-)
-      乘法 (*)
-      除法 (/)
-      整...
+
+
+  加法 (+)
+  减法 (-)
+  乘法 (*)
+  除法 (/)
+  取模（求余）(%)
+  自增 (++)
+  自减 (--)...
                 </p>
               </div>
             </div>
@@ -4315,10 +4783,13 @@ func main()...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
-    <time>2025</time>
-    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+  <p>©
+    <time>2026</time>
+
+    
+      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -4576,194 +5047,6 @@ func main()...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4837,599 +5120,6 @@ func main()...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -5725,10 +5415,1118 @@ func main()...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -5946,13 +6744,16 @@ func main()...
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -5965,9 +6766,6 @@ func main()...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -6026,6 +6824,8 @@ func main()...
 
 
 <!-- layout specified -->
+
+
 
 
   
@@ -6128,7 +6928,7 @@ func main()...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 

@@ -15,9 +15,7 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -26,33 +24,29 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Cc Blog" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<link rel="canonical" href="https://cc360428.github.io//page2/" />
-<meta property="og:url" content="https://cc360428.github.io//page2/" />
+<link rel="canonical" href="http://172.12.17.18:8090/page2/" />
+<meta property="og:url" content="http://172.12.17.18:8090/page2/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="https://cc360428.github.io//" />
-<link rel="next" href="https://cc360428.github.io//page3" />
+<link rel="prev" href="http://172.12.17.18:8090/" />
+<link rel="next" href="http://172.12.17.18:8090/page3" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Cc Blog" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Cc Blog","url":"https://cc360428.github.io//page2/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Cc Blog","url":"http://172.12.17.18:8090/page2/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>Cc Blog
   </title>
@@ -67,7 +61,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -90,6 +86,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -101,7 +100,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
@@ -272,12 +271,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="http://172.12.17.18:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -584,14 +578,14 @@
 <div id="post-list" class="flex-grow-1 px-xl-1">
   
     <article class="card-wrapper card">
-      <a href="/posts/rust-tools/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/redis/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Rust Tools</h1>
+            <h1 class="card-title my-2 mt-md-0">Redis 面试题</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -601,24 +595,361 @@
 
 
 
-                Cargo
+                Redis 面试题
+
+高频问题（带答）
+
+1. Redis 常用数据结构及场景？
+
+答：
+
+  string：计数、验证码、配置缓存
+  hash：对象属性（用户信息）
+  list：消息队列、时间线
+  set：去重、关系集合
+  zset：排行榜、延迟队列
 
 
-  Cargo 是 Rust 的构建工具和包管理器。它用于创建、构建、测试和发布 Rust 项目，以及管理项目的依赖关系。
+2. Redis 持久化方式？
+
+答： RDB（快照）与 AOF（追加日志）。RDB 恢复快但可能丢数据；AOF 更完整但体积更...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
   
-    示例：创建一个新的 Rust 项目并构建它。
+  data-ts="1775526000"
+  data-df="ll"
+  
+>
+  Apr  7, 2026
+</time>
 
-    cargo new my_project
-cd my_project
-cargo build
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Interview
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/algorithm/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">算法题目</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                算法题目
+
+高频题型清单
+
+
+  数组与双指针
+  链表反转与环检测
+  树的遍历与层序
+  二分查找与边界
+  动态规划与滑动窗口
+
+
+二叉树遍历示例
+
+type Node struct {
+	Val   int
+	Left  *Node
+	Right *Node
+}
+
+func PreOrder(n *Node) {
+	if n == nil {
+		return
+	}
+	fmt.Pri...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1775525400"
+  data-df="ll"
+  
+>
+  Apr  7, 2026
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Interview
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/go-interview-senior/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Go高级</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Go高级
+
+速查要点
+
+
+  GMP 调度模型
+  GC 过程与调优思路
+  内存布局与对齐
+  性能分析：pprof
+  并发安全与锁优化
+  模块与依赖治理
+
+
+常见面试题（带答）
+
+1. GMP 模型是什么？
+
+答： G 是 goroutine，M 是 OS 线程，P 是处理器（运行队列）。P 负责调度 G 在 M 上执行。
+
+2. Go 的 GC 过程？
+
+答： Go 使用三色标记清...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1775524800"
+  data-df="ll"
+  
+>
+  Apr  7, 2026
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Interview
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/go-interview-advanced/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Go进阶</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Go进阶
+
+速查要点
+
+
+  并发同步：Mutex、RWMutex、WaitGroup、Once
+  channel 与 select 的细节
+  context 的取消传播
+  错误包装与判断
+  map 实现与并发问题
+  逃逸分析与内存分配
+
+
+常见面试题（带答）
+
+1. map 是否并发安全？
+
+答： 不是。并发读写会 panic。可用 sync.Mutex/RWMutex 或 sy...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1775524200"
+  data-df="ll"
+  
+>
+  Apr  7, 2026
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Language,
+                      Interview
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/1-go-interview-basic/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Go 基础</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Go 基础
+
+语言基础
+
+Go 的值类型和引用类型有哪些？
+
+
+  
+    值类型 (Value Types): 创建该值的一个完整副本
+
+    
+      基本类型: int,float,bool,rune,string
+      复合类型: array,struct
     
   
+  
+    引用类型 (Reference Types): 指向底层数据结构的指针
 
-
-Cargo Clippy
-
-
-  Cargo Clippy 是一个 R...
+    
+...
               </p>
             </div>
 
@@ -636,11 +967,11 @@ Cargo Clippy
 
 <time
   
-  data-ts="1699243116"
+  data-ts="1775523600"
   data-df="ll"
   
 >
-  Nov  6, 2023
+  Apr  7, 2026
 </time>
 
 
@@ -650,7 +981,7 @@ Cargo Clippy
                   <span class="categories">
                     
                       Language,
-                      Rust
+                      Interview
                   </span>
                 
               </div>
@@ -665,14 +996,14 @@ Cargo Clippy
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/rust/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/docker-compose-install-all/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Rust</h1>
+            <h1 class="card-title my-2 mt-md-0">docker-compose Install Yaml</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -682,90 +1013,17 @@ Cargo Clippy
 
 
 
-                系统环境配置
-
-
-  vim /etc/profile 追加
-
-
-export CARGO_HOME=$HOME/.cargo
-export RUSTUP_HOME=$HOME/.rustup
-export RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=http://mi...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1699239516"
-  data-df="ll"
-  
->
-  Nov  6, 2023
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Rust
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/linux-vpn-clash/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">clash</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                docker-compose
+                consul
 
 version: &quot;3&quot;
+
 services:
-  clash:
-    container_name: clash
-    image: dreamacro/clash
+  consul-server1:
+    image: hashicorp/consul:latest
+    container_name: consul-server1
     restart: always
     volumes:
-      - ./config/:/root/.config/clash
-      - ./ui:/ui:ro # 仪表盘...
+      - ${PWD}/config/server1.json:/consul/c...
               </p>
             </div>
 
@@ -783,11 +1041,11 @@ services:
 
 <time
   
-  data-ts="1696896361"
+  data-ts="1716266934"
   data-df="ll"
   
 >
-  Oct 10, 2023
+  May 21, 2024
 </time>
 
 
@@ -797,7 +1055,7 @@ services:
                   <span class="categories">
                     
                       DevOps,
-                      Software
+                      Docker
                   </span>
                 
               </div>
@@ -812,14 +1070,14 @@ services:
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/C/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/CDN/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">C#</h1>
+            <h1 class="card-title my-2 mt-md-0">CDN</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -829,13 +1087,17 @@ services:
 
 
 
-                简介
-
-C# 是一种多范式编程语言，主要用于开发 Microsoft 平台上的应用程序。C# 具有以下功能和用途：
+                CDN
 
 
-  Windows 应用程序开发：C# 是开发 Windows 桌面应用程序的首选语言之一。你可以使用 C# 和 .NET 框架创建功能丰富的 Windows 应用程序，包括图形用户界面 (GUI)、数据库连接、文件处理等。
-  Web 应用程序开发：C# 可以用于开发 W...
+  CDN 是内容分发网络（Content Delivery Network）的缩写。它是一个由分布在全球各地的服务器网络组成的系统，用于在用户请求内容时快速交付网站、应用程序、音频、视频和其他互联网内容
+
+
+工作原理
+
+
+  网络架构：CDN 由多个位于全球各地的服务器节点组成，这些节点通常称为边缘服务器。这些服务器节点分布在地理位置上的关键位置，以便尽可能地靠近最终用户。
+ ...
               </p>
             </div>
 
@@ -853,11 +1115,11 @@ C# 是一种多范式编程语言，主要用于开发 Microsoft 平台上的应
 
 <time
   
-  data-ts="1696561120"
+  data-ts="1714279734"
   data-df="ll"
   
 >
-  Oct  6, 2023
+  Apr 28, 2024
 </time>
 
 
@@ -866,8 +1128,8 @@ C# 是一种多范式编程语言，主要用于开发 Microsoft 平台上的应
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      Language,
-                      CSharp
+                      DevOps,
+                      Network
                   </span>
                 
               </div>
@@ -882,14 +1144,14 @@ C# 是一种多范式编程语言，主要用于开发 Microsoft 平台上的应
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/spark/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/k8s-work-cmd/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Spark</h1>
+            <h1 class="card-title my-2 mt-md-0">Kubernetes Work CMD</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -899,13 +1161,17 @@ C# 是一种多范式编程语言，主要用于开发 Microsoft 平台上的应
 
 
 
-                简介
-
-Apache Spark 是一个开源的大数据处理框架，它提供了高性能、通用的集群计算引擎，能够处理大规模数据集的并行计算任务。Spark 的主要功能和应用包括：
+                Work CMD
 
 
-  批处理：Spark 提供了强大的批处理功能，可以高效地处理大规模的数据集。它支持使用高级的数据操作和转换算子，如过滤、映射、聚合等，以及复杂的数据分析和处理任务。
-  实时流处理：Spark Streaming 是 ...
+  work cmd
+
+
+generate
+
+#!/bin/bash
+KUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view --flatten &amp;gt;./config
+KUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local ku...
               </p>
             </div>
 
@@ -923,150 +1189,11 @@ Apache Spark 是一个开源的大数据处理框架，它提供了高性能、�
 
 <time
   
-  data-ts="1696561116"
+  data-ts="1710563034"
   data-df="ll"
   
 >
-  Oct  6, 2023
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Spark
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/scala/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Scala</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                简介
-
-Scala 是一种功能强大的编程语言，具有以下特性和用途：
-
-
-  面向对象编程：Scala 是一种完全面向对象的语言，支持类、对象、继承、多态等面向对象的概念。你可以使用 Scala 编写可重用、模块化的代码，并利用面向对象的设计模式来构建复杂的应用程序。
-  函数式编程：Scala 提供了丰富的函数式编程特性，包括高阶函数、匿名函数、不可变数据结构等。函数式编程的优势在于它可以使...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1696561116"
-  data-df="ll"
-  
->
-  Oct  6, 2023
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Scala
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/kubectl/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Kubernetes Manager</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                helm
-
-命令警告
-
-WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /Users/cc/.kube/config
-WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1695278918"
-  data-df="ll"
-  
->
-  Sep 21, 2023
+  Mar 16, 2024
 </time>
 
 
@@ -1091,14 +1218,14 @@ WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/OperatingSystemsError/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/mysql-select/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">OperatingSystemsError</h1>
+            <h1 class="card-title my-2 mt-md-0">MySQL Select Leetcode</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1108,21 +1235,17 @@ WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
 
 
 
-                操作系统概论复习
+                查询
 
-章节
-
-第一章
+可回收且低脂的产品
 
 
-  与分时系统相比，实时系统具有以下特点
-（1）多路性
-（2）独立性
-（3）及时性
-（4）交互性
-（5）可靠性
-  核心扩展技术的核心思想就是将软件构件动态地下载到内核中，以达到改变操作系统行为的日的
-  层次结构的基本思想是将操作系统分解为多个小的、容易理解的层，系统功能被隔离在不同层中，每一层提供对系统功能的部分抽象，然后采用单向调用的顺序，形成一...
+  
+    元数据
+
+    Create table If Not Exists Products (product_id int, low_fats ENUM(&#39;Y&#39;, &#39;N&#39;), recyclable ENUM(&#39;Y&#39;,&#39;N&#39;));
+Truncate table Products;
+insert into Products (product_id, l...
               </p>
             </div>
 
@@ -1140,11 +1263,11 @@ WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
 
 <time
   
-  data-ts="1695275821"
+  data-ts="1704813708"
   data-df="ll"
   
 >
-  Sep 21, 2023
+  Jan  9, 2024
 </time>
 
 
@@ -1153,9 +1276,8 @@ WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      Cc,
-                      SelfStudy,
-                      ComputerBasics
+                      DataStorage,
+                      MySQL
                   </span>
                 
               </div>
@@ -1170,14 +1292,14 @@ WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/OperationsResearch/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/mysql-select-base/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">运筹学基础（02375）</h1>
+            <h1 class="card-title my-2 mt-md-0">MySQL Select Base</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1187,27 +1309,13 @@ WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
 
 
 
-                运筹学基础
+                MySQL Select Base
 
 
-  
-    公式概念
-
-    
-      求和
-        
-          公式：$\displaystyle \sum ^n _{i=1}$ 简化 $\sum$
-          例子：$\displaystyle \sum ^5 _{i=1} = 1+2+3+4+5 = 15$
-        
-      
-    
-  
-
-
-第一章
-
-
-  定性决策...
+  基本的 SQL 语法：了解 SQL 的基本语法结构，包括 SELECT、FROM、WHERE、GROUP BY、ORDER BY 等关键字的使用方法
+  表的创建和管理：理解如何创建表，定义列的数据类型，以及如何管理表的结构，包括添加、删除、修改列等操作
+  索引：了解索引的概念以及如何在表上创建索引，以提高查询性能
+  聚合函数：掌握聚合函数如 ...
               </p>
             </div>
 
@@ -1225,11 +1333,11 @@ WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
 
 <time
   
-  data-ts="1695103021"
+  data-ts="1704813648"
   data-df="ll"
   
 >
-  Sep 19, 2023
+  Jan  9, 2024
 </time>
 
 
@@ -1238,84 +1346,8 @@ WARNING: Kubernetes configuration file is world-readable. This is insecure. ...
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      Cc,
-                      SelfStudy
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/vim-plug/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">vim Plug Manager</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                安装
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-
-修改配置
-
-~/.vimrc
-
-call plug#begin(&#39;~/.vim/plugged&#39;)
-
-Plug &#39;vim-airline/v...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1695007945"
-  data-df="ll"
-  
->
-  Sep 18, 2023
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Dev,
-                      Utils
+                      DataStorage,
+                      MySQL
                   </span>
                 
               </div>
@@ -1614,12 +1646,25 @@ Plug &#39;vim-airline/v...
       
 
       
+        <!-- hide number -->
+        
+      
+    
+      
+      
+      
+      
+      
+
+      
+
+      
         <!-- show number -->
         <li class="page-item ">
           <a
             class="page-link"
-            href="/page19"
-          >19</a>
+            href="/page20"
+          >20</a>
         </li>
       
     
@@ -1627,7 +1672,7 @@ Plug &#39;vim-airline/v...
     <!-- mobile pagination -->
     <li class="page-index align-middle">
       <span>2</span>
-      <span class="text-muted">/ 19</span>
+      <span class="text-muted">/ 20</span>
     </li>
 
     <!-- right arrow -->
@@ -1651,7 +1696,7 @@ Plug &#39;vim-airline/v...
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1674,35 +1719,35 @@ Plug &#39;vim-airline/v...
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/14-testing/">Go Release History</a>
+          <a href="/posts/go-stdlib/">Go 标准库专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Error/">Git Error </a>
+          <a href="/posts/high-concurrency-arch/">高并发架构专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/git-base/">Git Base</a>
+          <a href="/posts/cache-consistency/">缓存一致性专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
+          <a href="/posts/go-interview-system-design/">系统设计专项</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
+          <a href="/posts/distributed/">分布式系统专题</a>
         </li>
       
     </ul>
@@ -1946,194 +1991,6 @@ Plug &#39;vim-airline/v...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2207,599 +2064,6 @@ Plug &#39;vim-airline/v...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3095,10 +2359,1118 @@ Plug &#39;vim-airline/v...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3316,13 +3688,16 @@ Plug &#39;vim-airline/v...
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -3335,9 +3710,6 @@ Plug &#39;vim-airline/v...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -3363,10 +3735,13 @@ Plug &#39;vim-airline/v...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
-    <time>2025</time>
-    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+  <p>©
+    <time>2026</time>
+
+    
+      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -3624,194 +3999,6 @@ Plug &#39;vim-airline/v...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3885,599 +4072,6 @@ Plug &#39;vim-airline/v...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -4773,10 +4367,1118 @@ Plug &#39;vim-airline/v...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4994,13 +5696,16 @@ Plug &#39;vim-airline/v...
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -5013,9 +5718,6 @@ Plug &#39;vim-airline/v...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -5074,6 +5776,8 @@ Plug &#39;vim-airline/v...
 
 
 <!-- layout specified -->
+
+
 
 
   

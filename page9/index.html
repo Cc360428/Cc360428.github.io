@@ -15,9 +15,7 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -26,33 +24,29 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Cc Blog" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<link rel="canonical" href="https://cc360428.github.io//page9/" />
-<meta property="og:url" content="https://cc360428.github.io//page9/" />
+<link rel="canonical" href="http://172.12.17.18:8090/page9/" />
+<meta property="og:url" content="http://172.12.17.18:8090/page9/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="https://cc360428.github.io//page8" />
-<link rel="next" href="https://cc360428.github.io//page10" />
+<link rel="prev" href="http://172.12.17.18:8090/page8" />
+<link rel="next" href="http://172.12.17.18:8090/page10" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Cc Blog" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Cc Blog","url":"https://cc360428.github.io//page9/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Cc Blog","url":"http://172.12.17.18:8090/page9/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>Cc Blog
   </title>
@@ -67,7 +61,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -90,6 +86,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -101,7 +100,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
@@ -272,12 +271,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="http://172.12.17.18:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -584,14 +578,14 @@
 <div id="post-list" class="flex-grow-1 px-xl-1">
   
     <article class="card-wrapper card">
-      <a href="/posts/k8s-base/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/2-install/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Kubernetes 部署</h1>
+            <h1 class="card-title my-2 mt-md-0">Python Install</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -601,18 +595,24 @@
 
 
 
-                Kubernetes 搭建
+                python install
 
-准备
 
-在搭建 Kubernetes 之前，您需要先准备一些必要的配置和工具，包括：
+  Mac
+  Linux
+  Windows
+
+
+Mac os
+
+方法一
 
 
   
-    至少三个节点：用于部署 Kubernetes 集群的主机。一般情况下，建议使用至少三个物理或虚拟机来搭建 Kubernetes 集群，以确保高可用性和容错性。
+    打开 Python 官方网站（https://www.python.org/downloads/mac-osx/）。
   
   
-    操作系统：Kubernetes 支持多种操作系统，例如 Ubuntu、CentO...
+    在“Python releases for Mac OS X”部分中，选择适合您的 Mac 版本的 Python 安装程序。通常...
               </p>
             </div>
 
@@ -630,85 +630,11 @@
 
 <time
   
-  data-ts="1615970613"
+  data-ts="1653357609"
   data-df="ll"
   
 >
-  Mar 17, 2021
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      DevOps,
-                      Kubernetes
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/dart-readme/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Dart Readme</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                Dart
-环境安装
-
-  下载DartSDK
-  添加环境变量
-    export DART_HOME=/usr/local/dart/dart-sdk/bin
-export PATH=&quot;${DART_HOME}:${PATH}&quot;
-    
-  
-
-
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1613141916"
-  data-df="ll"
-  
->
-  Feb 12, 2021
+  May 24, 2022
 </time>
 
 
@@ -718,7 +644,7 @@ export PATH=&quot;${DART_HOME}:${PATH}&quot;
                   <span class="categories">
                     
                       Language,
-                      Dart
+                      Python
                   </span>
                 
               </div>
@@ -733,14 +659,14 @@ export PATH=&quot;${DART_HOME}:${PATH}&quot;
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/go-1.13/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/1-base/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Go 1.13 版本更新 摘要</h1>
+            <h1 class="card-title my-2 mt-md-0">Python Base</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -750,19 +676,11 @@ export PATH=&quot;${DART_HOME}:${PATH}&quot;
 
 
 
-                Go 1.13
+                简介
 
 
-  工具链、运行时、标准库
-
-
-工具链
-
-
-  环境变量 Go111MODOULE 默认值 auto
-  增加了环境变量 GOPIVATE 私有变量
-
-
+  Python是一种高级编程语言，于1991年由Guido van Rossum创建。它的设计理念是强调可读性、代码简洁、易于维护和扩展，这使得Python在许多领域得到了广泛应用。
+  作为一种解释型语言，Python不需要像C或Java这样的编译程序来将代码转换为机器语言，而是直接在运行时解释代码。这使得Python具有一些显著的优点，例如快速开发原型、交互式编程和动态类型。...
               </p>
             </div>
 
@@ -780,11 +698,11 @@ export PATH=&quot;${DART_HOME}:${PATH}&quot;
 
 <time
   
-  data-ts="1608887482"
+  data-ts="1653357608"
   data-df="ll"
   
 >
-  Dec 25, 2020
+  May 24, 2022
 </time>
 
 
@@ -794,7 +712,7 @@ export PATH=&quot;${DART_HOME}:${PATH}&quot;
                   <span class="categories">
                     
                       Language,
-                      Go
+                      Python
                   </span>
                 
               </div>
@@ -809,14 +727,14 @@ export PATH=&quot;${DART_HOME}:${PATH}&quot;
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/14-testing/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/DataStructure/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Go Release History</h1>
+            <h1 class="card-title my-2 mt-md-0">DataStructure（02142）</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -826,29 +744,370 @@ export PATH=&quot;${DART_HOME}:${PATH}&quot;
 
 
 
-                Go Release History
+                数据结构导论（02142）
+
+第一章 概论（重点）
+
+1 引言
 
 
-  Release History
-
-
-
-Go 1.1 (2013 年 5 月)
-
-语言特性
-
-
-  没有重大语言特性更新，专注于性能改进和标准库增强
-
-
-运行时改进
-
-
-  引入分段栈（Segmented Stacks）：
+  数据结构：是计算机组织数据和存储数据的方式
+  计算机解决问题步骤
     
-      函数调用栈的分配从固定大小切换为按需分配，减少了内存浪费
-      提升了栈扩展的性能
+      建立数学模型
+      设计算法
+      编程实现算法
     
+  
+  程序=数据结构+算法
+  通常操作：查找、读取、插入、删除、更新
+  合理的数据结构有什么用
+    
+      可降低程序设计的复杂性
+     ...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1648732795"
+  data-df="ll"
+  
+>
+  Mar 31, 2022
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Cc,
+                      SelfStudy
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/InternetPrinciples/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">InternetPrinciples（04735）</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                计算机网络原理（04735）
+
+第一章 计算机概述
+
+1 计算机网络基本概念
+
+网络协议
+
+
+  
+    网络通讯实体之间的在数据交换过程中需要遵循的规则或约定
+  
+  
+    三要素
+    
+      语法（syntax）
+      语义（semantics）
+      时序（timing）
+    
+  
+
+
+网络功能（核心功能：资源共享）
+
+
+  硬件资源共享
+  软件资...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1647755821"
+  data-df="ll"
+  
+>
+  Mar 20, 2022
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Cc,
+                      SelfStudy
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/github-jekyll/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Jekyll Github Readme</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                Supported macOS versions
+
+
+  Monterey (macOS 12)
+  Big Sur (macOS 11)
+  Catalina (macOS 10.15)
+
+
+Older macOS versions might work, but we don’t officially support them.
+
+Install Ruby
+
+To install Jek...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1644677916"
+  data-df="ll"
+  
+>
+  Feb 12, 2022
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Dev,
+                      Blog
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/work/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">项目架构图</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                本地组项目架构图
+
+层次结构
+
+1 表示层
+
+
+  移动端 websocket 客户端消息通讯
+
+
+2 应用程序层
+
+3 服务层
+
+
+  网络服务
+    
+      ws
+      http
+    
+  
+
+
+4 数据访问层：redis
+
+
+  redis mp
+  redis save
+
+
+5 基础设施层
+
+
+  docker-compose
+  Prometheus+Grafan...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1642915945"
+  data-df="ll"
+  
+>
+  Jan 23, 2022
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Dev,
+                      Utils
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/leetcode-arrary/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Leetcode 数组</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
+
+
+
+
+
+                两数之和
+
+
+  题目连接
+  
+    题目解释
+
+    
+      给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个整数，并返回它们的数组下标。
+      你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
+      你可以按任意顺序返回答案。
+    
+  
+  示例 1
+
+
   ...
               </p>
             </div>
@@ -867,11 +1126,11 @@ Go 1.1 (2013 年 5 月)
 
 <time
   
-  data-ts="1594080494"
+  data-ts="1641035289"
   data-df="ll"
   
 >
-  Jul  7, 2020
+  Jan  1, 2022
 </time>
 
 
@@ -880,8 +1139,8 @@ Go 1.1 (2013 年 5 月)
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      Language,
-                      Go
+                      Dev,
+                      LeetCode
                   </span>
                 
               </div>
@@ -896,14 +1155,14 @@ Go 1.1 (2013 年 5 月)
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/Go-Microother/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/leetcode-okay/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Micro hello Index</h1>
+            <h1 class="card-title my-2 mt-md-0">Leetcode 解题方式</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -913,11 +1172,15 @@ Go 1.1 (2013 年 5 月)
 
 
 
-                go-micro 中文网
+                解题方式
 
+暴力枚举
 
-  https://microhq.cn/index-cn
+查找表
 
+哈希表
+
+双指针
 
               </p>
             </div>
@@ -936,11 +1199,11 @@ Go 1.1 (2013 年 5 月)
 
 <time
   
-  data-ts="1593152532"
+  data-ts="1641006489"
   data-df="ll"
   
 >
-  Jun 26, 2020
+  Jan  1, 2022
 </time>
 
 
@@ -949,8 +1212,8 @@ Go 1.1 (2013 年 5 月)
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      Language,
-                      Go
+                      Dev,
+                      LeetCode
                   </span>
                 
               </div>
@@ -965,14 +1228,14 @@ Go 1.1 (2013 年 5 月)
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/Go-Micro1.1-hello-world/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/leetcode-readme/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Micro hello world</h1>
+            <h1 class="card-title my-2 mt-md-0">Leetcode Readme</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -982,191 +1245,37 @@ Go 1.1 (2013 年 5 月)
 
 
 
-                go-Micro
+                LeetCode
 
 
-  参考资料
-
-
-1 环境搭建
-
-
-  
+  中国站
+  国际站
+  PS
     
-      work
-      version
+      建议在中国站做完之后，可以去看下国际站，国际上对题目的理解
     
   
-  
+  解题语言全部使用 Golang
+
+
+解题顺序
+
+
+  按照 Tag 分类
+  从简单到困难
+
+
+解题方法
+
+
+  先思考、写出方法
+  写出伪代码
+  写出自己答案
+  运行查看结果 维度
+  复习
     
-      System
-      windows 8.1
-    
-    
-      golang
-      go version go1.13.4 windows/amd64
-    
-    
-      micro
-   ...
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1593152532"
-  data-df="ll"
-  
->
-  Jun 26, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/Go-Micro-1.2-api/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Micro API</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                micro API
-
-Go API 是基于服务发现驱动开发的可插拔 API 框架，旨在帮助构建强大的 API 网关。
-
-指令
-
-
-  micro api 参数
-
-
-$ micro api -h
-NAME:
-   micro.exe api - Run the api gateway
-
-USAGE:
-   micro.exe api [command options] [arguments.....
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1593152532"
-  data-df="ll"
-  
->
-  Jun 26, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/kratos-kratos-utils/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">kratos utils</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                安装所有 kraots 工具集
-
-
-  通过 kratos 安装
-
-
-执行命令:kratos tool install all
-
-$ kratos tool install all
-go get -u github.com/go-kratos/kratos/tool/kratos@v0.5.0
+      第一遍：解题
 ...
-kratos: 安装成功!
-...
-protoc: 安装成功!
-...
-genbts: 安...
               </p>
             </div>
 
@@ -1184,11 +1293,11 @@ genbts: 安...
 
 <time
   
-  data-ts="1593152532"
+  data-ts="1640992088"
   data-df="ll"
   
 >
-  Jun 26, 2020
+  Jan  1, 2022
 </time>
 
 
@@ -1197,8 +1306,8 @@ genbts: 安...
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      Language,
-                      Go
+                      Dev,
+                      LeetCode
                   </span>
                 
               </div>
@@ -1213,14 +1322,14 @@ genbts: 安...
     </article>
   
     <article class="card-wrapper card">
-      <a href="/posts/kratos-kratos-other/" class="post-preview row g-0 flex-md-row-reverse">
+      <a href="/posts/clickhouse-base/" class="post-preview row g-0 flex-md-row-reverse">
         
 
         
 
         <div class="col-md-12">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">kratos 依赖注入</h1>
+            <h1 class="card-title my-2 mt-md-0">ClickHouse</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>
@@ -1230,17 +1339,12 @@ genbts: 安...
 
 
 
-                依赖注入
+                ClickHouse 是一个用于实时分析的开源列式数据库管理系统 (DBMS)，它最初由俄罗斯的 Yandex 公司开发，并且在 2016 年开源。下面是一些关于 ClickHouse 的介绍、优缺点以及一些最大阈值的信息：
 
-Kratos 是一款基于 Go 语言的微服务开发框架，它内置了依赖注入功能。在 Kratos 中，我们可以使用构造函数注入或者字段注入的方式来实现依赖注入。
+介绍
 
-构造函数注入是指将依赖通过构造函数参数的方式传递给要注入的对象。例如：
 
-type FooService struct {
-    barService *BarService
-}
-
-func NewFooService(...
+  列式存储 ：ClickHouse 是一个列式存储的数据库，这意味着它将数据按列而不是按行存储。这种存储方式使得它非常适合进行大规模的数据分析和聚合操作。...
               </p>
             </div>
 
@@ -1258,11 +1362,11 @@ func NewFooService(...
 
 <time
   
-  data-ts="1593152532"
+  data-ts="1617857334"
   data-df="ll"
   
 >
-  Jun 26, 2020
+  Apr  8, 2021
 </time>
 
 
@@ -1271,80 +1375,8 @@ func NewFooService(...
                   <i class="far fa-folder-open fa-fw me-1"></i>
                   <span class="categories">
                     
-                      Language,
-                      Go
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
-  
-    <article class="card-wrapper card">
-      <a href="/posts/kratos-kratos-interface/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">kratos interface</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                kratos 微服务
-
-常见的 url
-
-
-  查看所有 discovery 表：http://172.12.15.81:7171/discovery/fetch/all
-  查看服务的所有 http 对外接口：http://127.0.0.1:36001/metadata
-
-
-              </p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1593152532"
-  data-df="ll"
-  
->
-  Jun 26, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Language,
-                      Go
+                      DataStorage,
+                      ClickHouse
                   </span>
                 
               </div>
@@ -1653,12 +1685,25 @@ func NewFooService(...
       
 
       
+        <!-- hide number -->
+        
+      
+    
+      
+      
+      
+      
+      
+
+      
+
+      
         <!-- show number -->
         <li class="page-item ">
           <a
             class="page-link"
-            href="/page19"
-          >19</a>
+            href="/page20"
+          >20</a>
         </li>
       
     
@@ -1666,7 +1711,7 @@ func NewFooService(...
     <!-- mobile pagination -->
     <li class="page-index align-middle">
       <span>9</span>
-      <span class="text-muted">/ 19</span>
+      <span class="text-muted">/ 20</span>
     </li>
 
     <!-- right arrow -->
@@ -1690,7 +1735,7 @@ func NewFooService(...
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1713,35 +1758,35 @@ func NewFooService(...
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/14-testing/">Go Release History</a>
+          <a href="/posts/go-stdlib/">Go 标准库专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Error/">Git Error </a>
+          <a href="/posts/high-concurrency-arch/">高并发架构专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/git-base/">Git Base</a>
+          <a href="/posts/cache-consistency/">缓存一致性专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
+          <a href="/posts/go-interview-system-design/">系统设计专项</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
+          <a href="/posts/distributed/">分布式系统专题</a>
         </li>
       
     </ul>
@@ -1985,194 +2030,6 @@ func NewFooService(...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2246,599 +2103,6 @@ func NewFooService(...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3134,10 +2398,1118 @@ func NewFooService(...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3355,13 +3727,16 @@ func NewFooService(...
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -3374,9 +3749,6 @@ func NewFooService(...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -3402,10 +3774,13 @@ func NewFooService(...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
-    <time>2025</time>
-    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+  <p>©
+    <time>2026</time>
+
+    
+      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -3663,194 +4038,6 @@ func NewFooService(...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3924,599 +4111,6 @@ func NewFooService(...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -4812,10 +4406,1118 @@ func NewFooService(...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -5033,13 +5735,16 @@ func NewFooService(...
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -5052,9 +5757,6 @@ func NewFooService(...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -5113,6 +5815,8 @@ func NewFooService(...
 
 
 <!-- layout specified -->
+
+
 
 
   

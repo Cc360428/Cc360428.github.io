@@ -1,42 +1,42 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>https://cc360428.github.io//</id>
+  <id>http://172.12.17.18:8090/</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-05-10T15:41:33+08:00</updated>
+  <updated>2026-04-13T09:15:07+08:00</updated>
   <author>
     <name>Cc</name>
-    <uri>https://cc360428.github.io//</uri>
+    <uri>http://172.12.17.18:8090/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="https://cc360428.github.io//feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="http://172.12.17.18:8090/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="https://cc360428.github.io//"/>
-  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
-  <rights> © 2025 Cc </rights>
+    href="http://172.12.17.18:8090/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
+  <rights> © 2026 Cc </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
 
   
   <entry>
-    <title>docker-compose Install Yaml</title>
-    <link href="https://cc360428.github.io//posts/docker-compose-install-all/" rel="alternate" type="text/html" title="docker-compose Install Yaml" />
-    <published>2024-05-21T12:48:54+08:00</published>
+    <title>Go 标准库专题</title>
+    <link href="http://172.12.17.18:8090/posts/go-stdlib/" rel="alternate" type="text/html" title="Go 标准库专题" />
+    <published>2026-04-08T09:30:00+08:00</published>
   
-    <updated>2024-05-21T12:48:54+08:00</updated>
+    <updated>2026-04-08T09:30:00+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/docker-compose-install-all/</id>
-    <content src="https://cc360428.github.io//posts/docker-compose-install-all/" />
+    <id>http://172.12.17.18:8090/posts/go-stdlib/</id>
+    <content src="http://172.12.17.18:8090/posts/go-stdlib/" />
     <author>
       <name>Cc</name>
     </author>
 
   
     
-    <category term="DevOps" />
+    <category term="Language" />
     
-    <category term="Docker" />
+    <category term="Interview" />
     
   
 
@@ -48,25 +48,31 @@
 
 
 
-      consul
+      Go 标准库专题
 
-version: "3"
+高频题（带答）
 
-services:
-  consul-server1:
-    image: hashicorp/consul:latest
-    container_name: consul-server1
-    restart: always
-    volumes:
-      - ${PWD}/config/server1.json:/consul/config/server1.json:ro
-      - ${PWD}/config/certs/:/consul/config/certs/:ro
-    networks:
-      - consul
-    ports:
-      - "9999:8500"
-      - "10001:8600/tcp"
-      - "10002:8600/udp"
-    command: "...
+1. net/http 中 Client 是否可复用？
+
+答： 可以且应该复用；每次新建会导致连接无法复用与资源浪费。
+
+2. http.Transport 的作用？
+
+答： 管理连接池、代理、TLS、Keep-Alive 等底层传输细节。
+
+3. http.Server 的几个关键超时参数？
+
+答： ReadTimeout、WriteTimeout、IdleTimeout、ReadHeaderTimeout。
+
+4. context 在标准库中的常见使用点？
+
+答： http、database/sql、os/exec、net 等均支持取消与超时。
+
+5. time.After 与 time.NewTimer 的差异？
+
+答： time.After 每次创建新 Timer；高频场景应复用 time.NewTimer。
+
+6. time.Ticke...
     </summary>
   
 
@@ -74,23 +80,23 @@ services:
 
   
   <entry>
-    <title>CDN</title>
-    <link href="https://cc360428.github.io//posts/CDN/" rel="alternate" type="text/html" title="CDN" />
-    <published>2024-04-28T12:48:54+08:00</published>
+    <title>高并发架构专题</title>
+    <link href="http://172.12.17.18:8090/posts/high-concurrency-arch/" rel="alternate" type="text/html" title="高并发架构专题" />
+    <published>2026-04-07T10:50:00+08:00</published>
   
-    <updated>2024-04-28T12:48:54+08:00</updated>
+    <updated>2026-04-07T10:50:00+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/CDN/</id>
-    <content src="https://cc360428.github.io//posts/CDN/" />
+    <id>http://172.12.17.18:8090/posts/high-concurrency-arch/</id>
+    <content src="http://172.12.17.18:8090/posts/high-concurrency-arch/" />
     <author>
       <name>Cc</name>
     </author>
 
   
     
-    <category term="DevOps" />
+    <category term="Language" />
     
-    <category term="Network" />
+    <category term="Interview" />
     
   
 
@@ -102,19 +108,45 @@ services:
 
 
 
-      CDN
+      高并发架构专题
 
+高频题（带答）
 
-  CDN 是内容分发网络（Content Delivery Network）的缩写。它是一个由分布在全球各地的服务器网络组成的系统，用于在用户请求内容时快速交付网站、应用程序、音频、视频和其他互联网内容
+1. QPS、TPS 与并发数的关系？
 
+答： QPS/TPS 是吞吐量，和并发、响应时间相关：吞吐 ≈ 并发 / 平均响应时间。
 
-工作原理
+2. 高并发系统的核心目标？
 
+答： 保证稳定性与可扩展性，同时在可控成本下提升吞吐与降低延迟。
 
-  网络架构：CDN 由多个位于全球各地的服务器节点组成，这些节点通常称为边缘服务器。这些服务器节点分布在地理位置上的关键位置，以便尽可能地靠近最终用户。
-  工作原理：当用户请求访问一个网站或者特定的内容时，CDN 系统会自动选择最接近用户的服务器节点来提供内容。这样做可以减少数据传输的距离，从而降低延迟和提高加载速度。
-  内容缓存：CDN 会将网站的静态内容（如图像、样式表、脚本等）缓存到其服务器节点上。当有用户请求相同内容时，CDN 会直接从缓存中提供，而不是从原始服务器获取，这样可以减轻原始服务器的负载。
-  负载均衡：CDN 能够智能地分配...
+3. 负载均衡的常见策略？
+
+答： 轮询、最少连接、权重、hash、一致性哈希。
+
+4. 多级缓存的价值？
+
+答： 降低回源压力，提升热点数据访问速度。
+
+5. CDN 在高并发中的作用？
+
+答： 静态内容就近分发，显著降低源站压力与带宽消耗。
+
+6. 读写分离的优势与风险？
+
+答： 提升读吞吐，但需处理主从延迟导致的一致性问题。
+
+7. 分库分表适用场景？
+
+答： 单库性能瓶颈明显或数据量过大时，需水平拆分。
+
+8. 限流的常用算法？
+
+答： 令牌桶、漏桶、固定窗口、滑动窗口。
+
+9. 熔断与降级的区别？
+
+答： 熔...
     </summary>
   
 
@@ -122,23 +154,23 @@ services:
 
   
   <entry>
-    <title>Kubernetes Work CMD</title>
-    <link href="https://cc360428.github.io//posts/k8s-work-cmd/" rel="alternate" type="text/html" title="Kubernetes Work CMD" />
-    <published>2024-03-16T12:23:54+08:00</published>
+    <title>系统设计专项</title>
+    <link href="http://172.12.17.18:8090/posts/go-interview-system-design/" rel="alternate" type="text/html" title="系统设计专项" />
+    <published>2026-04-07T10:40:00+08:00</published>
   
-    <updated>2024-05-19T19:22:34+08:00</updated>
+    <updated>2026-04-07T10:40:00+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/k8s-work-cmd/</id>
-    <content src="https://cc360428.github.io//posts/k8s-work-cmd/" />
+    <id>http://172.12.17.18:8090/posts/go-interview-system-design/</id>
+    <content src="http://172.12.17.18:8090/posts/go-interview-system-design/" />
     <author>
       <name>Cc</name>
     </author>
 
   
     
-    <category term="DevOps" />
+    <category term="Language" />
     
-    <category term="Kubernetes" />
+    <category term="Interview" />
     
   
 
@@ -150,27 +182,37 @@ services:
 
 
 
-      Work CMD
+      系统设计专项
 
+高频题（带答）
 
-  work cmd
+1. 什么是高可用？
 
+答： 通过冗余、故障转移、健康检查保证服务在部分故障时仍可对外提供服务。
 
-generate
+2. 如何做限流？
 
-#!/bin/bash
-KUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view --flatten &amp;gt;./config
-KUBECONFIG=ind_dev:ind_dev_local:vn_dev:vn_dev_local kubectl config view --flatten &amp;gt;~/.kube/config
+答： 常见算法：固定窗口、滑动窗口、令牌桶、漏桶。落地可用 Redis 或本地内存实现。
 
+3. 如何做熔断与降级？
 
-cmd
+答： 熔断在失败率高时快速失败并保护下游；降级提供兜底方案（默认值/缓存/静态页）。
 
-#!/bin/bash
+4. 设计一个短链系统的关键点？
 
-kubectl config get-contexts        # 列出所有上下文
-kubectl config use-context ind_dev # 切换上下文
-kubectl config view                # 验证配置
-#  ...
+答： ID 生成（自增/雪花/哈希）、去重、缓存、过期、统计、黑名单与反爬。
+
+5. 如何设计消息队列消费幂等？
+
+答： 通过业务唯一键去重，或基于状态机、数据库唯一约束实现幂等。
+
+6. 如何解决分布式事务？
+
+答： 常见方案：本地消息表+最终一致性、TCC、SAGA；实际选型视业务复杂度。
+
+7. 设计一个登录系统需要考虑什么？
+
+答： 认证方式、密码加密、会话管理、过期策略、多端登录与...
     </summary>
   
 
@@ -178,23 +220,23 @@ kubectl config view                # 验证配置
 
   
   <entry>
-    <title>MySQL Select Leetcode</title>
-    <link href="https://cc360428.github.io//posts/mysql-select/" rel="alternate" type="text/html" title="MySQL Select Leetcode" />
-    <published>2024-01-09T23:21:48+08:00</published>
+    <title>缓存一致性专题</title>
+    <link href="http://172.12.17.18:8090/posts/cache-consistency/" rel="alternate" type="text/html" title="缓存一致性专题" />
+    <published>2026-04-07T10:40:00+08:00</published>
   
-    <updated>2024-01-09T23:21:48+08:00</updated>
+    <updated>2026-04-07T10:40:00+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/mysql-select/</id>
-    <content src="https://cc360428.github.io//posts/mysql-select/" />
+    <id>http://172.12.17.18:8090/posts/cache-consistency/</id>
+    <content src="http://172.12.17.18:8090/posts/cache-consistency/" />
     <author>
       <name>Cc</name>
     </author>
 
   
     
-    <category term="DataStorage" />
+    <category term="Language" />
     
-    <category term="Mysql" />
+    <category term="Interview" />
     
   
 
@@ -206,19 +248,39 @@ kubectl config view                # 验证配置
 
 
 
-      查询
+      缓存一致性专题
 
-可回收且低脂的产品
+高频题（带答）
 
+1. 什么是缓存一致性问题？
 
-  
-    元数据
+答： 缓存与数据库的数据短暂不一致，导致读到旧数据或脏数据。
 
-    Create table If Not Exists Products (product_id int, low_fats ENUM('Y', 'N'), recyclable ENUM('Y','N'));
-Truncate table Products;
-insert into Products (product_id, low_fats, recyclable) values ('0', 'Y', 'N');
-insert into Products (product_id, low_fats, recyclable) values ('1', 'Y', 'Y');
-insert into Products (product_id, low_fats, recyclable) values ('2', 'N', '...
+2. Cache Aside 的标准写流程？
+
+答： 先写数据库，再删除缓存；必要时延迟再删以兜底并发脏读。
+
+3. Cache Aside 的读流程？
+
+答： 先读缓存，未命中再读数据库并回填缓存。
+
+4. Write-Through 的特点？
+
+答： 写缓存即写库，保证一致性但写延迟更高。
+
+5. Write-Back 的风险？
+
+答： 写入先落缓存，异步刷库，吞吐高但存在丢数据风险。
+
+6. Read-Through 与 Cache Aside 的差别？
+
+答： Read-Through 由缓存层负责回源与填充；Cache Aside 由业务层控制。
+
+7. “双删”策略是什么？
+
+答： 写库前/后各删一次缓存，降低并发读写造成的脏缓存概率。
+
+8...
     </summary>
   
 
@@ -226,23 +288,23 @@ insert into Products (product_id, low_fats, recyclable) values ('2', 'N', '...
 
   
   <entry>
-    <title>MySQL Select Base</title>
-    <link href="https://cc360428.github.io//posts/mysql-select-base/" rel="alternate" type="text/html" title="MySQL Select Base" />
-    <published>2024-01-09T23:20:48+08:00</published>
+    <title>网络专项</title>
+    <link href="http://172.12.17.18:8090/posts/go-interview-network/" rel="alternate" type="text/html" title="网络专项" />
+    <published>2026-04-07T10:30:00+08:00</published>
   
-    <updated>2024-01-09T23:20:48+08:00</updated>
+    <updated>2026-04-07T10:30:00+08:00</updated>
   
-    <id>https://cc360428.github.io//posts/mysql-select-base/</id>
-    <content src="https://cc360428.github.io//posts/mysql-select-base/" />
+    <id>http://172.12.17.18:8090/posts/go-interview-network/</id>
+    <content src="http://172.12.17.18:8090/posts/go-interview-network/" />
     <author>
       <name>Cc</name>
     </author>
 
   
     
-    <category term="DataStorage" />
+    <category term="Language" />
     
-    <category term="Mysql" />
+    <category term="Interview" />
     
   
 
@@ -254,16 +316,33 @@ insert into Products (product_id, low_fats, recyclable) values ('2', 'N', '...
 
 
 
-      MySQL Select Base
+      网络专项
 
+高频题（带答）
 
-  基本的 SQL 语法：了解 SQL 的基本语法结构，包括 SELECT、FROM、WHERE、GROUP BY、ORDER BY 等关键字的使用方法
-  表的创建和管理：理解如何创建表，定义列的数据类型，以及如何管理表的结构，包括添加、删除、修改列等操作
-  索引：了解索引的概念以及如何在表上创建索引，以提高查询性能
-  聚合函数：掌握聚合函数如 COUNT、SUM、AVG、MIN、MAX 等的使用，以便对数据进行统计和计算
-  GROUP BY 子句：学习如何使用 GROUP BY 子句对数据进行分组，并结合聚合函数进行分组统计
-  HAVING 子句：了解 HAVING 子句的作用，它与 WHERE 子句的区别，以及在 GROUP BY 后进行条件过滤的用法
-  连接（JOIN）：学习不同类型的连接操作，如 INNER JOIN、LEF...
+1. TCP 三次握手与四次挥手？
+
+答： 三次握手建立连接（SYN/SYN-ACK/ACK），四次挥手断开（FIN/ACK/FIN/ACK），确保双方收发完成。
+
+2. 为什么有 TIME_WAIT？
+
+答： 确保最后 ACK 可达并让旧连接数据包过期，避免影响新连接。
+
+3. HTTP 与 HTTPS 区别？
+
+答： HTTPS 在 HTTP 之上增加 TLS 握手与加密，保证传输安全与身份校验。
+
+4. HTTP/1.1 与 HTTP/2 区别？
+
+答： HTTP/2 支持多路复用、头部压缩、二进制帧，减少连接开销。
+
+5. REST 与 gRPC 的差异？
+
+答： REST 多基于 HTTP/JSON，易调试；gRPC 基于 HTTP/2+Protobuf，性能更好、强类型。
+
+6. 长连接与短连接怎么选？
+
+答： 高频请求适合长连接降低握手开销...
     </summary>
   
 

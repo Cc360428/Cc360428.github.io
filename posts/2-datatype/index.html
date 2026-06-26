@@ -15,9 +15,7 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="en" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
@@ -26,21 +24,18 @@
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Day02（入门基础）" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="数据类型、变量、常量" />
 <meta property="og:description" content="数据类型、变量、常量" />
-<link rel="canonical" href="https://cc360428.github.io//posts/2-datatype/" />
-<meta property="og:url" content="https://cc360428.github.io//posts/2-datatype/" />
+<link rel="canonical" href="http://172.12.17.18:8090/posts/2-datatype/" />
+<meta property="og:url" content="http://172.12.17.18:8090/posts/2-datatype/" />
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-03-30T08:08:02+08:00" />
@@ -48,10 +43,9 @@
 <meta property="twitter:title" content="Day02（入门基础）" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-19T16:33:23+08:00","datePublished":"2019-03-30T08:08:02+08:00","description":"数据类型、变量、常量","headline":"Day02（入门基础）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/2-datatype/"},"url":"https://cc360428.github.io//posts/2-datatype/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-19T16:33:23+08:00","datePublished":"2019-03-30T08:08:02+08:00","description":"数据类型、变量、常量","headline":"Day02（入门基础）","mainEntityOfPage":{"@type":"WebPage","@id":"http://172.12.17.18:8090/posts/2-datatype/"},"url":"http://172.12.17.18:8090/posts/2-datatype/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>Day02（入门基础） | Cc Blog
   </title>
@@ -66,7 +60,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="Cc Blog">
 <meta name="application-name" content="Cc Blog">
@@ -89,6 +85,9 @@
       <link rel="preconnect" href="https://cdn.jsdelivr.net" >
       <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
     
+      <link rel="preconnect" href="https://cdnjs.cloudflare.com" >
+      <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" >
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
   
@@ -100,12 +99,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.3/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
   
@@ -276,12 +275,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://cc360428.github.io/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="http://172.12.17.18:8090/assets/img/favicons/all.png" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">Cc Blog</a>
@@ -460,9 +454,7 @@
         
           
             <span>
-              <a href="/">
-                Home
-              </a>
+              <a href="/">Home</a>
             </span>
 
           
@@ -594,6 +586,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -609,6 +612,39 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1018,9 +1054,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4904 words"
+  title="5050 words"
 >
-  <em>27 min</em> read</span>
+  <em>28 min</em> read</span>
 
       </div>
       <!-- .d-flex -->
@@ -1042,8 +1078,10 @@
     <p>有符号整型（Signed Integer）</p>
 
     <ul>
-      <li><strong>表示范围</strong>：有符号整型可以表示正数、负数和零。因为它们需要表示正负，所以它们的取值范围是关于零对称的。例如，一个 8 位的有符号整型（<code class="language-plaintext highlighter-rouge">int8</code>），可以表示-128 到 127 之间的整数。</li>
-      <li><strong>表示方法</strong>：在计算机内部，有符号整型的最高位（也称为符号位）用于表示数的正负。通常，如果符号位为 0，表示该数为正；如果符号位为 1，表示该数为负。剩下的位用于表示数值的大小。有符号整数的表示方法通常有两种：原码、反码和补码，其中补码是最常用的表示方法。</li>
+      <li><strong>表示范围</strong>：有符号整型可以表示正数、负数和零。因为它们需要表示正负，所以它们的取值范围是关于零对称的。例如，一个 8
+位的有符号整型（<code class="language-plaintext highlighter-rouge">int8</code>），可以表示-128 到 127 之间的整数。</li>
+      <li><strong>表示方法</strong>：在计算机内部，有符号整型的最高位（也称为符号位）用于表示数的正负。通常，如果符号位为 0，表示该数为正；如果符号位为
+1，表示该数为负。剩下的位用于表示数值的大小。有符号整数的表示方法通常有两种：原码、反码和补码，其中补码是最常用的表示方法。</li>
       <li><strong>应用场景</strong>：当需要处理的数据可能为正数、负数或零时，应使用有符号整型。</li>
     </ul>
   </li>
@@ -1051,7 +1089,8 @@
     <p>无符号整型（Unsigned Integer）</p>
 
     <ul>
-      <li><strong>表示范围</strong>：无符号整型只能表示正数和零，不能表示负数。因此，它们的取值范围是从 0 到某个最大值。例如，一个 8 位的无符号整型（<code class="language-plaintext highlighter-rouge">uint8</code>），可以表示 0 到 255 之间的整数。</li>
+      <li><strong>表示范围</strong>：无符号整型只能表示正数和零，不能表示负数。因此，它们的取值范围是从 0 到某个最大值。例如，一个 8 位的无符号整型（
+<code class="language-plaintext highlighter-rouge">uint8</code>），可以表示 0 到 255 之间的整数。</li>
       <li><strong>表示方法</strong>：无符号整型的所有位都用于表示数值的大小，没有专门的符号位。因此，对于相同位数的整型，无符号整型能够表示的数值范围是有符号整型的两倍（仅考虑正数部分）。</li>
       <li>
         <p><strong>应用场景</strong>：当处理的数据只可能为正数或零时，如表示像素值、颜色分量、数量、大小等，应使用无符号整型。此外，在网络通信和硬件编程中，无符号整型也经常被用来表示数据的大小、地址偏移等。</p>
@@ -1121,6 +1160,10 @@
   </li>
 </ul>
 
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">int</code> / <code class="language-plaintext highlighter-rouge">uint</code> 的位宽与平台有关：在 64 位平台为 64 位，在 32 位平台为 32 位。</p>
+</blockquote>
+
 <h3 id="浮点型"><span class="me-2">浮点型</span><a href="#浮点型" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
@@ -1153,7 +1196,8 @@
 </table></div>
 
 <blockquote>
-  <p>通常推荐使用<code class="language-plaintext highlighter-rouge">float64</code>类型，因为它提供了更高的精度和更大的取值范围。然而，在需要节省内存空间或对性能有严格要求的场景下，可以考虑使用<code class="language-plaintext highlighter-rouge">float32</code>类型</p>
+  <p>通常推荐使用<code class="language-plaintext highlighter-rouge">float64</code>类型，因为它提供了更高的精度和更大的取值范围。然而，在需要节省内存空间或对性能有严格要求的场景下，可以考虑使用
+<code class="language-plaintext highlighter-rouge">float32</code>类型</p>
 </blockquote>
 
 <h3 id="布尔型"><span class="me-2">布尔型</span><a href="#布尔型" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1174,17 +1218,18 @@
 </blockquote>
 
 <ul>
-  <li>
-    <p>字符串在 Go 语言中的表示方式是用双引号（<code class="language-plaintext highlighter-rouge">""</code>）或反引号（``）括起来的一系列字符。例如</p>
+  <li>字符串在 Go 语言中的表示方式是用双引号（<code class="language-plaintext highlighter-rouge">""</code>）或反引号（``）括起来的一系列字符。例如</li>
+</ul>
 
-    <div class="language-go highlighter-rouge"><div class="code-header">
+<div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="n">s1</span> <span class="o">:=</span> <span class="s">"Hello, World!"</span>
-<span class="n">s2</span> <span class="o">:=</span> <span class="s">`This is a raw string literal.`</span>
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
+</pre></td><td class="rouge-code"><pre>  <span class="n">s1</span> <span class="o">:=</span> <span class="s">"Hello, World!"</span>
+  <span class="n">s2</span> <span class="o">:=</span> <span class="s">`This is a raw string literal.`</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
   <li>
     <p>在 Go 语言中，字符串是不可变的（immutable），即一旦创建了一个字符串，就不能再修改它的内容。如果需要修改字符串，通常需要创建一个新的字符串。</p>
   </li>
@@ -1192,27 +1237,32 @@
     <p>字符串在 Go 语言中的功能特点包括：</p>
 
     <ol>
-      <li><strong>数据存储与序列化</strong>：字符串类型常用于数据的存储和序列化。例如，可以将数据转换为 JSON 格式的字符串进行存储和传输，或者将字符串解析为数据结构进行反序列化。</li>
-      <li><strong>网络通信与数据交互</strong>：在网络通信和数据交互中，字符串类型用于表示和传输各种信息。例如，HTTP 请求和响应中的数据通常以字符串的形式进行传输，API 接口也常使用字符串表示参数和返回值。</li>
+      <li><strong>数据存储与序列化</strong>：字符串类型常用于数据的存储和序列化。例如，可以将数据转换为 JSON
+格式的字符串进行存储和传输，或者将字符串解析为数据结构进行反序列化。</li>
+      <li><strong>网络通信与数据交互</strong>：在网络通信和数据交互中，字符串类型用于表示和传输各种信息。例如，HTTP 请求和响应中的数据通常以字符串的形式进行传输，API
+接口也常使用字符串表示参数和返回值。</li>
       <li><strong>文件读写与日志记录</strong>：字符串类型用于文件读写和日志记录，例如读取文本文件的内容、写入日志信息等。在文件读写和日志记录过程中，字符串类型能够有效地处理和操作文本数据。</li>
     </ol>
   </li>
   <li>
-    <p>字符串在 Go 语言中的内部表示通常是一个字符数组（byte slice）的引用，其中每个字符可能是一个字节（对于 ASCII 字符）或多个字节（对于 UTF-8 编码的多字节字符）。在 Go 语言中，字符串类型提供了许多内置的方法来操作和处理字符串，例如连接、拆分、查找、替换等。</p>
+    <p>字符串在 Go 语言中的内部表示通常是一个字符数组（byte slice）的引用，其中每个字符可能是一个字节（对于 ASCII 字符）或多个字节（对于
+UTF-8 编码的多字节字符）。在 Go 语言中，字符串类型提供了许多内置的方法来操作和处理字符串，例如连接、拆分、查找、替换等。</p>
   </li>
   <li>
     <p>此外，Go 语言还提供了两种特殊的字符类型来处理字符串中的字符：</p>
 
     <ul>
       <li><code class="language-plaintext highlighter-rouge">byte</code> 类型（等价于 <code class="language-plaintext highlighter-rouge">uint8</code>）：用于表示 ASCII 字符集中的字符，每个字符占用一个字节。</li>
-      <li><code class="language-plaintext highlighter-rouge">rune</code> 类型（等价于 <code class="language-plaintext highlighter-rouge">int32</code>）：用于表示 Unicode 字符集中的字符，可以表示包括中文、日文等任何 Unicode 字符。在处理包含多字节字符的字符串时，通常使用 <code class="language-plaintext highlighter-rouge">rune</code> 类型来遍历和访问字符串中的每个字符。</li>
+      <li><code class="language-plaintext highlighter-rouge">rune</code> 类型（等价于 <code class="language-plaintext highlighter-rouge">int32</code>）：用于表示 Unicode 字符集中的字符，可以表示包括中文、日文等任何 Unicode
+字符。在处理包含多字节字符的字符串时，通常使用 <code class="language-plaintext highlighter-rouge">rune</code> 类型来遍历和访问字符串中的每个字符。</li>
     </ul>
   </li>
 </ul>
 
 <h3 id="其他"><span class="me-2">其他</span><a href="#其他" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>在 Go 语言中，除了整型（integer types）、浮点型（floating-point types）、布尔型（bool）和字符串类型（string）之外，还有其他几种基本数据类型。以下是 Go 语言中的一些主要数据类型：</p>
+<p>在 Go 语言中，除了整型（integer types）、浮点型（floating-point types）、布尔型（bool）和字符串类型（string）之外，还有其他几种基本数据类型。以下是
+Go 语言中的一些主要数据类型：</p>
 
 <h4 id="复合类型"><span class="me-2">复合类型</span><a href="#复合类型" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -1244,9 +1294,11 @@
 <h4 id="其他基本类型"><span class="me-2">其他基本类型</span><a href="#其他基本类型" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
-  <li><strong>字节切片</strong>（Byte Slice）：通常用于处理字节数据，如读取文件或网络数据时。虽然字节切片不是一种独立的数据类型，但它在 Go 编程中非常常见。</li>
+  <li><strong>字节切片</strong>（Byte Slice）：通常用于处理字节数据，如读取文件或网络数据时。虽然字节切片不是一种独立的数据类型，但它在 Go
+编程中非常常见。</li>
   <li><strong>rune</strong>：<code class="language-plaintext highlighter-rouge">rune</code> 是 <code class="language-plaintext highlighter-rouge">int32</code> 的别名，用于表示一个 Unicode 码点。它通常用于处理包含多字节字符的文本数据。</li>
-  <li><strong>复数类型</strong>（Complex Types）：Go 语言支持两种复数类型：<code class="language-plaintext highlighter-rouge">complex64</code> 和 <code class="language-plaintext highlighter-rouge">complex128</code>，分别对应 <code class="language-plaintext highlighter-rouge">float32</code> 和 <code class="language-plaintext highlighter-rouge">float64</code> 的实部和虚部。</li>
+  <li><strong>复数类型</strong>（Complex Types）：Go 语言支持两种复数类型：<code class="language-plaintext highlighter-rouge">complex64</code> 和 <code class="language-plaintext highlighter-rouge">complex128</code>，分别对应 <code class="language-plaintext highlighter-rouge">float32</code> 和 <code class="language-plaintext highlighter-rouge">float64</code>
+的实部和虚部。</li>
 </ul>
 
 <h4 id="示例"><span class="me-2">示例</span><a href="#示例" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
@@ -1293,12 +1345,56 @@
 <span class="k">var</span> <span class="n">runeVar</span> <span class="kt">rune</span>   <span class="c">// rune 类型，用于表示Unicode码点</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="零值与类型转换"><span class="me-2">零值与类型转换</span><a href="#零值与类型转换" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="零值"><span class="me-2">零值</span><a href="#零值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>数值类型：<code class="language-plaintext highlighter-rouge">0</code></li>
+  <li>布尔类型：<code class="language-plaintext highlighter-rouge">false</code></li>
+  <li>字符串：<code class="language-plaintext highlighter-rouge">""</code></li>
+  <li>指针、切片、map、chan、func、interface：<code class="language-plaintext highlighter-rouge">nil</code></li>
+</ul>
+
+<h3 id="类型转换显式"><span class="me-2">类型转换（显式）</span><a href="#类型转换显式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>Go 不支持隐式数值转换，需要显式转换。</p>
+</blockquote>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="n">i</span> <span class="kt">int32</span> <span class="o">=</span> <span class="m">10</span>
+<span class="k">var</span> <span class="n">j</span> <span class="kt">int64</span> <span class="o">=</span> <span class="kt">int64</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">var</span> <span class="n">b</span> <span class="kt">byte</span> <span class="o">=</span> <span class="m">97</span>
+<span class="k">var</span> <span class="n">s</span> <span class="kt">string</span> <span class="o">=</span> <span class="kt">string</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c">// "a"</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="string--byte--rune"><span class="me-2">string / []byte / []rune</span><a href="#string--byte--rune" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">s</span> <span class="o">:=</span> <span class="s">"你好"</span>
+<span class="n">bs</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="c">// UTF-8 字节序列</span>
+<span class="n">rs</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">rune</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="c">// Unicode 码点序列</span>
+</pre></td></tr></tbody></table></code></div></div>
+
 <h2 id="变量"><span class="me-2">变量</span><a href="#变量" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <h3 id="基本介绍"><span class="me-2">基本介绍</span><a href="#基本介绍" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p>在 Go 语言（通常被称为 Golang）中，变量是用于存储数据的标识符。变量有一个名称（也称为标识符），一个类型和一个值。下面是一些关于 Golang 变量的基本介绍：</p>
+  <p>在 Go 语言（通常被称为 Golang）中，变量是用于存储数据的标识符。变量有一个名称（也称为标识符），一个类型和一个值。下面是一些关于
+Golang 变量的基本介绍：</p>
 </blockquote>
 
 <h4 id="变量声明"><span class="me-2"><strong>变量声明</strong></span><a href="#变量声明" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
@@ -1308,42 +1404,43 @@
 </blockquote>
 
 <ul>
-  <li>
-    <p>使用<code class="language-plaintext highlighter-rouge">var</code>声明</p>
-
-    <div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="k">var</span> <span class="n">name</span> <span class="kt">string</span>
-<span class="k">var</span> <span class="n">age</span> <span class="kt">int</span>
-<span class="k">var</span> <span class="n">isStudent</span> <span class="kt">bool</span>
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>
-    <p>使用短变量声明操作符<code class="language-plaintext highlighter-rouge">:=</code>（也称为类型推导）</p>
-
-    <div class="language-go highlighter-rouge"><div class="code-header">
-        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="n">name</span> <span class="o">:=</span> <span class="s">"Alice"</span>
-<span class="n">age</span> <span class="o">:=</span> <span class="m">30</span>
-<span class="n">isStudent</span> <span class="o">:=</span> <span class="no">true</span>
-</pre></td></tr></tbody></table></code></div>    </div>
-
-    <blockquote>
-      <p>注意：使用<code class="language-plaintext highlighter-rouge">:=</code>声明的变量是自动初始化的，并且只能在函数内部使用（即它们是函数作用域的局部变量）。</p>
-    </blockquote>
-  </li>
+  <li>使用<code class="language-plaintext highlighter-rouge">var</code>声明</li>
 </ul>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  <span class="k">var</span> <span class="n">name</span> <span class="kt">string</span>
+  <span class="k">var</span> <span class="n">age</span> <span class="kt">int</span>
+  <span class="k">var</span> <span class="n">isStudent</span> <span class="kt">bool</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>使用短变量声明操作符<code class="language-plaintext highlighter-rouge">:=</code>（也称为类型推导）</li>
+</ul>
+
+<div class="language-go highlighter-rouge"><div class="code-header">
+        <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  <span class="n">name</span> <span class="o">:=</span> <span class="s">"Alice"</span>
+  <span class="n">age</span> <span class="o">:=</span> <span class="m">30</span>
+  <span class="n">isStudent</span> <span class="o">:=</span> <span class="no">true</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<blockquote>
+  <p>注意：使用<code class="language-plaintext highlighter-rouge">:=</code>声明的变量是自动初始化的，并且只能在函数内部使用（即它们是函数作用域的局部变量）。</p>
+</blockquote>
 
 <h4 id="变量类型"><span class="me-2"><strong>变量类型</strong></span><a href="#变量类型" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <blockquote>
-  <p>Golang 是一种静态类型语言，这意味着变量的类型在声明后不能更改。Golang 中的基本类型包括整数（如<code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">int8</code>, <code class="language-plaintext highlighter-rouge">int16</code>, <code class="language-plaintext highlighter-rouge">int32</code>, <code class="language-plaintext highlighter-rouge">int64</code>, <code class="language-plaintext highlighter-rouge">uint</code>, <code class="language-plaintext highlighter-rouge">uint8</code>, <code class="language-plaintext highlighter-rouge">uint16</code>, <code class="language-plaintext highlighter-rouge">uint32</code>, <code class="language-plaintext highlighter-rouge">uint64</code>, <code class="language-plaintext highlighter-rouge">byte</code>等）、浮点数（如<code class="language-plaintext highlighter-rouge">float32</code>, <code class="language-plaintext highlighter-rouge">float64</code>）、复数（如<code class="language-plaintext highlighter-rouge">complex64</code>, <code class="language-plaintext highlighter-rouge">complex128</code>）、布尔值（<code class="language-plaintext highlighter-rouge">bool</code>）、字符串（<code class="language-plaintext highlighter-rouge">string</code>）等。此外，还有数组、切片、映射、通道和结构体等复合类型。</p>
+  <p>Golang 是一种静态类型语言，这意味着变量的类型在声明后不能更改。Golang 中的基本类型包括整数（如<code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">int8</code>, <code class="language-plaintext highlighter-rouge">int16</code>,
+<code class="language-plaintext highlighter-rouge">int32</code>, <code class="language-plaintext highlighter-rouge">int64</code>, <code class="language-plaintext highlighter-rouge">uint</code>, <code class="language-plaintext highlighter-rouge">uint8</code>, <code class="language-plaintext highlighter-rouge">uint16</code>, <code class="language-plaintext highlighter-rouge">uint32</code>, <code class="language-plaintext highlighter-rouge">uint64</code>, <code class="language-plaintext highlighter-rouge">byte</code>等）、浮点数（如<code class="language-plaintext highlighter-rouge">float32</code>, <code class="language-plaintext highlighter-rouge">float64</code>）、复数（如
+<code class="language-plaintext highlighter-rouge">complex64</code>, <code class="language-plaintext highlighter-rouge">complex128</code>）、布尔值（<code class="language-plaintext highlighter-rouge">bool</code>）、字符串（<code class="language-plaintext highlighter-rouge">string</code>）等。此外，还有数组、切片、映射、通道和结构体等复合类型。</p>
 </blockquote>
 
 <ul>
@@ -1351,7 +1448,8 @@
     <p><strong>变量初始化</strong></p>
 
     <blockquote>
-      <p>在声明变量时，可以使用赋值操作符<code class="language-plaintext highlighter-rouge">=</code>来初始化变量。如果声明了变量但没有初始化，那么它的值将是该类型的零值（例如，对于整数类型为 0，对于布尔类型为 false，对于字符串类型为空字符串”“等）。</p>
+      <p>在声明变量时，可以使用赋值操作符<code class="language-plaintext highlighter-rouge">=</code>来初始化变量。如果声明了变量但没有初始化，那么它的值将是该类型的零值（例如，对于整数类型为
+0，对于布尔类型为 false，对于字符串类型为空字符串”“等）。</p>
     </blockquote>
   </li>
   <li>
@@ -1364,7 +1462,8 @@
   </li>
   <li>
     <p><strong>命名规范</strong>：
-变量名应遵循一定的命名规范以提高代码的可读性和可维护性。通常，变量名应该使用驼峰命名法（camelCase），并且应该具有描述性以反映其用途。避免使用与 Golang 关键字或内置函数名相同的变量名。</p>
+变量名应遵循一定的命名规范以提高代码的可读性和可维护性。通常，变量名应该使用驼峰命名法（camelCase），并且应该具有描述性以反映其用途。避免使用与
+Golang 关键字或内置函数名相同的变量名。</p>
   </li>
 </ul>
 
@@ -1480,12 +1579,14 @@
 <h3 id="iota"><span class="me-2">iota</span><a href="#iota" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
-  <p><code class="language-plaintext highlighter-rouge">iota</code>是一个预定义的标识符，用于创建自增的无类型整数常量。它通常用于枚举类型，为每个枚举值生成一个唯一的常量。<code class="language-plaintext highlighter-rouge">iota</code>的行为类似于一个计数器，每次在常量声明中出现时都会自增一次。</p>
+  <p><code class="language-plaintext highlighter-rouge">iota</code>是一个预定义的标识符，用于创建自增的无类型整数常量。它通常用于枚举类型，为每个枚举值生成一个唯一的常量。<code class="language-plaintext highlighter-rouge">iota</code>
+的行为类似于一个计数器，每次在常量声明中出现时都会自增一次。</p>
 </blockquote>
 
 <h4 id="基本用法"><span class="me-2">基本用法</span><a href="#基本用法" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<p><code class="language-plaintext highlighter-rouge">iota</code>在每个<code class="language-plaintext highlighter-rouge">const</code>关键字出现时被重置为 0，并在每个<code class="language-plaintext highlighter-rouge">const</code>块中为每个新声明的常量自增。如果在同一行声明了多个常量，则它们将共享相同的<code class="language-plaintext highlighter-rouge">iota</code>值，除非显式地给其中一个常量赋值。</p>
+<p><code class="language-plaintext highlighter-rouge">iota</code>在每个<code class="language-plaintext highlighter-rouge">const</code>关键字出现时被重置为 0，并在每个<code class="language-plaintext highlighter-rouge">const</code>块中为每个新声明的常量自增。如果在同一行声明了多个常量，则它们将共享相同的
+<code class="language-plaintext highlighter-rouge">iota</code>值，除非显式地给其中一个常量赋值。</p>
 
 <h4 id="使用示例"><span class="me-2">使用示例</span><a href="#使用示例" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
@@ -1618,9 +1719,11 @@
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>在这个例子中，首先定义了星期几的常量，并使用<code class="language-plaintext highlighter-rouge">iota</code>进行自动递增。然后，我们显式地将<code class="language-plaintext highlighter-rouge">Monday</code>的值赋给了<code class="language-plaintext highlighter-rouge">WeekdayStart</code>，但请注意，这并不会改变<code class="language-plaintext highlighter-rouge">iota</code>的自动递增行为，<code class="language-plaintext highlighter-rouge">iota</code>的值在赋值之后继续递增。</p>
+<p>在这个例子中，首先定义了星期几的常量，并使用<code class="language-plaintext highlighter-rouge">iota</code>进行自动递增。然后，我们显式地将<code class="language-plaintext highlighter-rouge">Monday</code>的值赋给了<code class="language-plaintext highlighter-rouge">WeekdayStart</code>
+，但请注意，这并不会改变<code class="language-plaintext highlighter-rouge">iota</code>的自动递增行为，<code class="language-plaintext highlighter-rouge">iota</code>的值在赋值之后继续递增。</p>
 
-<p>接下来，在同一行声明了<code class="language-plaintext highlighter-rouge">Wednesday</code>和<code class="language-plaintext highlighter-rouge">Thursday</code>，并为它们分别赋了<code class="language-plaintext highlighter-rouge">iota + 2</code>和<code class="language-plaintext highlighter-rouge">iota + 3</code>的值。由于它们在同一行声明，所以它们都使用了同一个<code class="language-plaintext highlighter-rouge">iota</code>值（此时为 2），但加上了不同的偏移量。</p>
+<p>接下来，在同一行声明了<code class="language-plaintext highlighter-rouge">Wednesday</code>和<code class="language-plaintext highlighter-rouge">Thursday</code>，并为它们分别赋了<code class="language-plaintext highlighter-rouge">iota + 2</code>和<code class="language-plaintext highlighter-rouge">iota + 3</code>的值。由于它们在同一行声明，所以它们都使用了同一个
+<code class="language-plaintext highlighter-rouge">iota</code>值（此时为 2），但加上了不同的偏移量。</p>
 
 <p>最后，在一个新的<code class="language-plaintext highlighter-rouge">const</code>块中再次使用了<code class="language-plaintext highlighter-rouge">iota</code>，它会被重置为 0，并在该块中继续递增。</p>
 
@@ -1634,7 +1737,8 @@
 
 <h3 id="常量的声明和初始化"><span class="me-2">常量的声明和初始化</span><a href="#常量的声明和初始化" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>在 Go 语言中，常量可以使用<code class="language-plaintext highlighter-rouge">const</code>关键字进行声明。你可以在同一行声明多个常量，如果它们具有相同的类型。如果常量的类型没有明确指定，那么 Go 编译器会根据常量的值来推断其类型。</p>
+<p>在 Go 语言中，常量可以使用<code class="language-plaintext highlighter-rouge">const</code>关键字进行声明。你可以在同一行声明多个常量，如果它们具有相同的类型。如果常量的类型没有明确指定，那么
+Go 编译器会根据常量的值来推断其类型。</p>
 
 <p>以下是一些常量声明的例子：</p>
 
@@ -1735,7 +1839,9 @@
 
 <h3 id="iota-枚举"><span class="me-2">iota 枚举</span><a href="#iota-枚举" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p><code class="language-plaintext highlighter-rouge">iota</code>是 Go 语言中的一个特殊常量，用于创建枚举值。在<code class="language-plaintext highlighter-rouge">const</code>声明中，<code class="language-plaintext highlighter-rouge">iota</code>会被自动赋值为 0，然后在每次新的<code class="language-plaintext highlighter-rouge">const</code>声明中自增 1。<code class="language-plaintext highlighter-rouge">iota</code>通常用于生成一组递增的整数常量。如上面示例中所示，你可以在同一行使用<code class="language-plaintext highlighter-rouge">iota</code>为多个常量赋值，或者在不同的行中使用<code class="language-plaintext highlighter-rouge">iota</code>来生成连续的整数常量。</p>
+<p><code class="language-plaintext highlighter-rouge">iota</code>是 Go 语言中的一个特殊常量，用于创建枚举值。在<code class="language-plaintext highlighter-rouge">const</code>声明中，<code class="language-plaintext highlighter-rouge">iota</code>会被自动赋值为 0，然后在每次新的<code class="language-plaintext highlighter-rouge">const</code>声明中自增
+1。<code class="language-plaintext highlighter-rouge">iota</code>通常用于生成一组递增的整数常量。如上面示例中所示，你可以在同一行使用<code class="language-plaintext highlighter-rouge">iota</code>为多个常量赋值，或者在不同的行中使用
+<code class="language-plaintext highlighter-rouge">iota</code>来生成连续的整数常量。</p>
 
   </div>
 
@@ -1746,8 +1852,7 @@
         <i class="far fa-folder-open fa-fw me-1"></i>
         
           <a href="/categories/language/">Language</a>,
-          <a href="/categories/go/">Go</a>,
-          <a href="/categories/base/">Base</a>
+          <a href="/categories/go/">Go</a>
       </div>
     
 
@@ -1805,21 +1910,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Day02%EF%BC%88%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%89%20-%20Cc%20Blog&url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F2-datatype%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Day02%EF%BC%88%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%89%20-%20Cc%20Blog&url=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2F2-datatype%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Day02%EF%BC%88%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%89%20-%20Cc%20Blog&u=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F2-datatype%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Day02%EF%BC%88%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%89%20-%20Cc%20Blog&u=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2F2-datatype%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fcc360428.github.io%2F%2Fposts%2F2-datatype%2F&text=Day02%EF%BC%88%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%89%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2F172.12.17.18%3A8090%2Fposts%2F2-datatype%2F&text=Day02%EF%BC%88%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%EF%BC%89%20-%20Cc%20Blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1851,7 +1956,7 @@
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1874,35 +1979,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/14-testing/">Go Release History</a>
+          <a href="/posts/go-stdlib/">Go 标准库专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Git-Error/">Git Error </a>
+          <a href="/posts/high-concurrency-arch/">高并发架构专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/git-base/">Git Base</a>
+          <a href="/posts/cache-consistency/">缓存一致性专题</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/4.1~4.3-RedHad-cmd/">linux(CentOS7) 命令操作</a>
+          <a href="/posts/go-interview-system-design/">系统设计专项</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/4.4-RedHad-dir/">linux(CentOS7) 目录结构</a>
+          <a href="/posts/distributed/">分布式系统专题</a>
         </li>
       
     </ul>
@@ -2146,194 +2251,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2407,599 +2324,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3295,10 +2619,1118 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -3516,13 +3948,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -3535,9 +3970,6 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -4408,7 +4840,199 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -4620,24 +5244,23 @@
 
 
 
-                  Golang 基础
+                  Go 基础
 
-本章源码
-
-初步认识 Golang
+初步认识 Go
 
 
-  Go 跨平台（linux、windows、mac），只要编写完代码之后 交叉编译即可
-  Go 语言单一、简洁、天生高并发、CGO
-  Go 应用广（web 应用、区块链、运维、云计算、大数据）
+  Go 跨平台（Linux、Windows、macOS），同一份代码可通过 交叉编译 生成不同平台的二进制
+  语法简洁、并发模型清晰，支持通过 CGO 调用 C 代码
+  应用广（Web、基础设施、云原生、数据处理等）
 
 
 Go 环境
 
-Linux &amp;amp; MacOs
+Linux &amp;amp; macOS
 
 
-  下载 Golang 安装包：在 Golang 官方网站上下载适合自己 ...
+  下载 Go 安装包：在 Go 官方网站下载适合自己系统和架构的安装包
+  ...
                 </p>
               </div>
             </div>
@@ -4676,19 +5299,22 @@ Linux &amp;amp; MacOs
                   运算符
 
 
-  在 Go 语言（又称 Golang）中，并没有直接列出所有可能的运算法种类，因为运算法（或称为运算符）是编程语言的内置特性，用于执行不同类型的计算或逻辑操作。但是，我们可以分类列出 Go 语言中常用的运算法种类：
+  在 Go 语言（又称 Golang）中，并没有直接列出所有可能的运算法种类，因为运算法（或称为运算符）是编程语言的内置特性，用于执行不同类型的计算或逻辑操作。但是，我们可以分类列出
+Go 语言中常用的运算法种类：
 
 
 
-  
-    算术运算符：
+  算术运算符：
 
-    
-      加法 (+)
-      减法 (-)
-      乘法 (*)
-      除法 (/)
-      整...
+
+
+  加法 (+)
+  减法 (-)
+  乘法 (*)
+  除法 (/)
+  取模（求余）(%)
+  自增 (++)
+  自减 (--)...
                 </p>
               </div>
             </div>
@@ -4802,10 +5428,13 @@ func main()...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
-    <time>2025</time>
-    <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+  <p>©
+    <time>2026</time>
+
+    
+      <a href="https://Cc360428.gitee.io/cc/">Cc</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -5063,194 +5692,6 @@ func main()...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5324,599 +5765,6 @@ func main()...
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -6212,10 +6060,1118 @@ func main()...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -6433,13 +7389,16 @@ func main()...
         <a class="post-tag btn btn-outline-primary" href="/tags/go/">Go</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/linuxtool/">LinuxTool</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/linux/">Linux</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/goweb/">GoWeb</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/database/">Database</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/interview/">Interview</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -6452,9 +7411,6 @@ func main()...
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/python-base/">Python Base</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/redhad/">RedHad</a>
       
     </div>
   </section>
@@ -6513,6 +7469,8 @@ func main()...
 
 
 <!-- layout specified -->
+
+
 
 
   
@@ -6615,7 +7573,7 @@ func main()...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.3/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 
