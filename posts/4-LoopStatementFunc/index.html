@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-03-30T08:08:04+08:00" />
-<meta property="article:modified_time" content="2024-05-22T14:34:07+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Day04（循环语句）" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-22T14:34:07+08:00","datePublished":"2019-03-30T08:08:04+08:00","description":"循环语句","headline":"Day04（循环语句）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/4-LoopStatementFunc/"},"url":"https://cc360428.github.io//posts/4-LoopStatementFunc/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2019-03-30T08:08:04+08:00","description":"循环语句","headline":"Day04（循环语句）","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/4-LoopStatementFunc/"},"url":"https://cc360428.github.io//posts/4-LoopStatementFunc/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -547,21 +547,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -810,6 +795,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -877,13 +867,13 @@
 
 <time
   
-  data-ts="1716359647"
+  data-ts="1782462049"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2024/05/22
+  2026/06/26
 </time>
 
         </span>
@@ -966,9 +956,9 @@
   <p>有几种常见的循环方式，主要包括 for 循环、range 循环以及带有 break 和 continue 关键字的循环。这些循环可以用来遍历数组、切片、映射（map）、字符串、通道（channel）等。下面详细介绍每种循环的用法和示例</p>
 </blockquote>
 
-<h3 id="for"><span class="me-2">for</span><a href="#for" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="for"><span class="me-2">for</span><a href="#for" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="基本的-for-循环"><span class="me-2">基本的 <code class="language-plaintext highlighter-rouge">for</code> 循环</span><a href="#基本的-for-循环" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="基本的-for-循环"><span class="me-2">基本的 <code class="language-plaintext highlighter-rouge">for</code> 循环</span><a href="#基本的-for-循环" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -996,7 +986,7 @@
   <p>这个示例中的 <code class="language-plaintext highlighter-rouge">for</code> 循环从 0 循环到 4，总共执行 5 次。</p>
 </blockquote>
 
-<h4 id="省略初始和后置语句的-for-循环"><span class="me-2">省略初始和后置语句的 <code class="language-plaintext highlighter-rouge">for</code> 循环</span><a href="#省略初始和后置语句的-for-循环" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="省略初始和后置语句的-for-循环"><span class="me-2">省略初始和后置语句的 <code class="language-plaintext highlighter-rouge">for</code> 循环</span><a href="#省略初始和后置语句的-for-循环" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1028,7 +1018,7 @@
   <p>这个示例中的 <code class="language-plaintext highlighter-rouge">for</code> 循环只包含条件语句，初始语句和后置语句都省略了。</p>
 </blockquote>
 
-<h4 id="无限循环"><span class="me-2">无限循环</span><a href="#无限循环" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="无限循环"><span class="me-2">无限循环</span><a href="#无限循环" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1066,11 +1056,11 @@
   <p>这个示例展示了一个无限循环，通过 <code class="language-plaintext highlighter-rouge">break</code> 语句跳出循环。</p>
 </blockquote>
 
-<h3 id="range-循环"><span class="me-2"><code class="language-plaintext highlighter-rouge">range</code> 循环</span><a href="#range-循环" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="range-循环"><span class="me-2"><code class="language-plaintext highlighter-rouge">range</code> 循环</span><a href="#range-循环" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">range</code> 循环用于遍历数组、切片、映射、字符串和通道。</p>
 
-<h4 id="遍历数组或切片"><span class="me-2">遍历数组或切片</span><a href="#遍历数组或切片" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="遍历数组或切片"><span class="me-2">遍历数组或切片</span><a href="#遍历数组或切片" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1100,7 +1090,7 @@
   <p>这个示例使用 <code class="language-plaintext highlighter-rouge">range</code> 循环遍历一个切片，打印出每个元素的索引和值。</p>
 </blockquote>
 
-<h4 id="遍历映射"><span class="me-2">遍历映射</span><a href="#遍历映射" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="遍历映射"><span class="me-2">遍历映射</span><a href="#遍历映射" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1130,7 +1120,7 @@
   <p>这个示例使用 <code class="language-plaintext highlighter-rouge">range</code> 循环遍历一个映射，打印出每个键值对。</p>
 </blockquote>
 
-<h4 id="遍历字符串"><span class="me-2">遍历字符串</span><a href="#遍历字符串" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="遍历字符串"><span class="me-2">遍历字符串</span><a href="#遍历字符串" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1160,7 +1150,7 @@
   <p>这个示例使用 <code class="language-plaintext highlighter-rouge">range</code> 循环遍历一个字符串，打印出每个字符的索引和值（以 Unicode 码点表示）。</p>
 </blockquote>
 
-<h4 id="遍历通道"><span class="me-2">遍历通道</span><a href="#遍历通道" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="遍历通道"><span class="me-2">遍历通道</span><a href="#遍历通道" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1200,9 +1190,9 @@
   <p>这个示例使用 <code class="language-plaintext highlighter-rouge">range</code> 循环遍历一个通道，直到通道被关闭。</p>
 </blockquote>
 
-<h3 id="使用-break-和-continue"><span class="me-2">使用 <code class="language-plaintext highlighter-rouge">break</code> 和 <code class="language-plaintext highlighter-rouge">continue</code></span><a href="#使用-break-和-continue" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="使用-break-和-continue"><span class="me-2">使用 <code class="language-plaintext highlighter-rouge">break</code> 和 <code class="language-plaintext highlighter-rouge">continue</code></span><a href="#使用-break-和-continue" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="break-语句"><span class="me-2"><code class="language-plaintext highlighter-rouge">break</code> 语句</span><a href="#break-语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="break-语句"><span class="me-2"><code class="language-plaintext highlighter-rouge">break</code> 语句</span><a href="#break-语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">break</code> 语句用于立即退出循环。</p>
 
@@ -1238,7 +1228,7 @@
   <p>这个示例中的循环会在 <code class="language-plaintext highlighter-rouge">i</code> 等于 5 时退出。</p>
 </blockquote>
 
-<h4 id="continue-语句"><span class="me-2"><code class="language-plaintext highlighter-rouge">continue</code> 语句</span><a href="#continue-语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="continue-语句"><span class="me-2"><code class="language-plaintext highlighter-rouge">continue</code> 语句</span><a href="#continue-语句" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">continue</code> 语句用于跳过当前循环的剩余部分，立即开始下一次循环迭代。</p>
 
@@ -1280,11 +1270,11 @@
   <p>在 Go 语言的 <code class="language-plaintext highlighter-rouge">for</code> 循环中，可以使用一些特殊的语法和关键字来控制循环的执行流程，包括 <code class="language-plaintext highlighter-rouge">goto</code>、标签、<code class="language-plaintext highlighter-rouge">break</code>、<code class="language-plaintext highlighter-rouge">continue</code> 等。这些工具可以帮助我们更灵活地控制循环。下面介绍这些特殊用法并提供相应的示例。</p>
 </blockquote>
 
-<h3 id="使用-goto-跳转"><span class="me-2">使用 <code class="language-plaintext highlighter-rouge">goto</code> 跳转</span><a href="#使用-goto-跳转" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="使用-goto-跳转"><span class="me-2">使用 <code class="language-plaintext highlighter-rouge">goto</code> 跳转</span><a href="#使用-goto-跳转" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">goto</code> 语句可以跳转到代码中的标签位置。标签是由标签名和冒号组成的一行代码。</p>
 
-<h4 id="示例使用-goto-跳转"><span class="me-2">示例：使用 <code class="language-plaintext highlighter-rouge">goto</code> 跳转</span><a href="#示例使用-goto-跳转" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="示例使用-goto-跳转"><span class="me-2">示例：使用 <code class="language-plaintext highlighter-rouge">goto</code> 跳转</span><a href="#示例使用-goto-跳转" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1328,11 +1318,11 @@
   <p>在这个例子中，当 <code class="language-plaintext highlighter-rouge">i</code> 等于 5 时，<code class="language-plaintext highlighter-rouge">goto Loop</code> 语句将控制权转移到标签 <code class="language-plaintext highlighter-rouge">Loop</code> 所在的位置，从而跳过了 <code class="language-plaintext highlighter-rouge">i</code> 等于 5 的情况。输出结果为：0 1 2 3 4 6 7 8 9。</p>
 </blockquote>
 
-<h3 id="使用标签与-break-和-continue"><span class="me-2">使用标签与 <code class="language-plaintext highlighter-rouge">break</code> 和 <code class="language-plaintext highlighter-rouge">continue</code></span><a href="#使用标签与-break-和-continue" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="使用标签与-break-和-continue"><span class="me-2">使用标签与 <code class="language-plaintext highlighter-rouge">break</code> 和 <code class="language-plaintext highlighter-rouge">continue</code></span><a href="#使用标签与-break-和-continue" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>在 Go 中，<code class="language-plaintext highlighter-rouge">break</code> 和 <code class="language-plaintext highlighter-rouge">continue</code> 可以与标签一起使用，以便在多层嵌套循环中控制特定的循环。</p>
 
-<h4 id="示例带标签的-break"><span class="me-2">示例：带标签的 <code class="language-plaintext highlighter-rouge">break</code></span><a href="#示例带标签的-break" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="示例带标签的-break"><span class="me-2">示例：带标签的 <code class="language-plaintext highlighter-rouge">break</code></span><a href="#示例带标签的-break" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1384,7 +1374,7 @@
 <span class="nv">i</span><span class="o">=</span>1, <span class="nv">j</span><span class="o">=</span>0
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="示例带标签的-continue"><span class="me-2">示例：带标签的 <code class="language-plaintext highlighter-rouge">continue</code></span><a href="#示例带标签的-continue" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="示例带标签的-continue"><span class="me-2">示例：带标签的 <code class="language-plaintext highlighter-rouge">continue</code></span><a href="#示例带标签的-continue" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1442,11 +1432,11 @@
 <span class="nv">i</span><span class="o">=</span>2, <span class="nv">j</span><span class="o">=</span>2
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="在-for-循环中使用-defer"><span class="me-2">在 <code class="language-plaintext highlighter-rouge">for</code> 循环中使用 <code class="language-plaintext highlighter-rouge">defer</code></span><a href="#在-for-循环中使用-defer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="在-for-循环中使用-defer"><span class="me-2">在 <code class="language-plaintext highlighter-rouge">for</code> 循环中使用 <code class="language-plaintext highlighter-rouge">defer</code></span><a href="#在-for-循环中使用-defer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p><code class="language-plaintext highlighter-rouge">defer</code> 语句在函数结束时才会执行，但是在循环中，每次迭代都会注册一个新的 <code class="language-plaintext highlighter-rouge">defer</code> 调用，当函数结束时，所有的 <code class="language-plaintext highlighter-rouge">defer</code> 调用会按照逆序执行。</p>
 
-<h4 id="示例在循环中使用-defer"><span class="me-2">示例：在循环中使用 <code class="language-plaintext highlighter-rouge">defer</code></span><a href="#示例在循环中使用-defer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="示例在循环中使用-defer"><span class="me-2">示例：在循环中使用 <code class="language-plaintext highlighter-rouge">defer</code></span><a href="#示例在循环中使用-defer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1484,11 +1474,11 @@
 0
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="使用-return-退出函数"><span class="me-2">使用 <code class="language-plaintext highlighter-rouge">return</code> 退出函数</span><a href="#使用-return-退出函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="使用-return-退出函数"><span class="me-2">使用 <code class="language-plaintext highlighter-rouge">return</code> 退出函数</span><a href="#使用-return-退出函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>在 <code class="language-plaintext highlighter-rouge">for</code> 循环中，可以使用 <code class="language-plaintext highlighter-rouge">return</code> 语句来直接退出整个函数。</p>
 
-<h4 id="示例使用-return-退出函数"><span class="me-2">示例：使用 <code class="language-plaintext highlighter-rouge">return</code> 退出函数</span><a href="#示例使用-return-退出函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="示例使用-return-退出函数"><span class="me-2">示例：使用 <code class="language-plaintext highlighter-rouge">return</code> 退出函数</span><a href="#示例使用-return-退出函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-go highlighter-rouge"><div class="code-header">
         <span data-label-text="Go"><i class="fas fa-code fa-fw small"></i></span>
@@ -1686,35 +1676,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

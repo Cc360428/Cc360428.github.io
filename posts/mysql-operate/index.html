@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-12-09T22:21:48+08:00" />
-<meta property="article:modified_time" content="2018-12-09T22:21:48+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="MySQL Operate" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2018-12-09T22:21:48+08:00","datePublished":"2018-12-09T22:21:48+08:00","description":"数据库（Database）","headline":"MySQL Operate","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/mysql-operate/"},"url":"https://cc360428.github.io//posts/mysql-operate/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2018-12-09T22:21:48+08:00","description":"数据库（Database）","headline":"MySQL Operate","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/mysql-operate/"},"url":"https://cc360428.github.io//posts/mysql-operate/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -558,21 +558,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -744,6 +729,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -796,6 +786,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -873,14 +886,14 @@
   <div class="content">
     <h2 id="数据库database"><span class="me-2">数据库（Database）</span><a href="#数据库database" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="库阈值"><span class="me-2">库阈值</span><a href="#库阈值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="库阈值"><span class="me-2">库阈值</span><a href="#库阈值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>MySQL 8.0 版本之前，一个数据库中最多可以有 65535 个表。因为 采用 16 位 最大值为 <code class="language-plaintext highlighter-rouge">2^16 - 1 = 65535</code></li>
   <li>MySQL 8.0 开始，采用 32 位整数来存储表的数量，因此最大值变成了 <code class="language-plaintext highlighter-rouge">2^32 - 1</code></li>
 </ul>
 
-<h3 id="数据库规范"><span class="me-2">数据库规范</span><a href="#数据库规范" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="数据库规范"><span class="me-2">数据库规范</span><a href="#数据库规范" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>命名规范
@@ -910,7 +923,7 @@
   </li>
 </ul>
 
-<h3 id="数据库操作"><span class="me-2">数据库操作</span><a href="#数据库操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="数据库操作"><span class="me-2">数据库操作</span><a href="#数据库操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>
@@ -1009,7 +1022,7 @@
 
 <h2 id="表table"><span class="me-2">表（Table）</span><a href="#表table" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="表阈值"><span class="me-2">表阈值</span><a href="#表阈值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="表阈值"><span class="me-2">表阈值</span><a href="#表阈值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>5.7 版本以前的 InnoDB 存储引擎中，每个表的行数限制为约 5000 万行</li>
@@ -1017,7 +1030,7 @@
   <li><strong>单表超过了 500 万行或者单表超过 2GB</strong> 建议分表</li>
 </ul>
 
-<h3 id="表基础操作"><span class="me-2">表基础操作</span><a href="#表基础操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="表基础操作"><span class="me-2">表基础操作</span><a href="#表基础操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>
@@ -1121,7 +1134,7 @@
   </li>
 </ol>
 
-<h3 id="表索引"><span class="me-2">表索引</span><a href="#表索引" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="表索引"><span class="me-2">表索引</span><a href="#表索引" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>
@@ -1184,7 +1197,7 @@
   </li>
 </ol>
 
-<h3 id="事务操作"><span class="me-2">事务操作</span><a href="#事务操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="事务操作"><span class="me-2">事务操作</span><a href="#事务操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
   <p>事务（Transaction）是一组数据库操作，被视为一个逻辑单元，要么全部执行成功，要么全部失败回滚，以保持数据的一致性和完整性。</p>
@@ -1263,9 +1276,9 @@
   </li>
 </ul>
 
-<h3 id="表视图"><span class="me-2">表视图</span><a href="#表视图" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="表视图"><span class="me-2">表视图</span><a href="#表视图" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="什么是视图"><span class="me-2">什么是视图</span><a href="#什么是视图" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="什么是视图"><span class="me-2">什么是视图</span><a href="#什么是视图" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
   <p>视图（View）是数据库中的一种虚拟表格，它是基于一个或多个实际表格的查询结果动态生成的。视图本身并不存储数据，而是根据定义的查询语句在查询时动态生成结果集。</p>
@@ -1299,7 +1312,7 @@
   <p>视图在数据库中广泛应用于各种场景，包括报表生成、数据分析、权限控制等。使用视图可以使数据库更加灵活、易于管理，并提高应用程序的性能和可扩展性。</p>
 </blockquote>
 
-<h4 id="视图操作"><span class="me-2">视图操作</span><a href="#视图操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="视图操作"><span class="me-2">视图操作</span><a href="#视图操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ol>
   <li>
@@ -1461,7 +1474,7 @@
 <span class="gi">+-------------+--------------+
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="表字段操作"><span class="me-2">表字段操作</span><a href="#表字段操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="表字段操作"><span class="me-2">表字段操作</span><a href="#表字段操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>
@@ -1520,7 +1533,7 @@
   </li>
 </ol>
 
-<h3 id="字段约束"><span class="me-2">字段约束</span><a href="#字段约束" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="字段约束"><span class="me-2">字段约束</span><a href="#字段约束" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>
@@ -1632,7 +1645,7 @@
   </li>
 </ol>
 
-<h3 id="属性设置"><span class="me-2">属性设置</span><a href="#属性设置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="属性设置"><span class="me-2">属性设置</span><a href="#属性设置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ol>
   <li>
@@ -1667,7 +1680,7 @@
   </li>
 </ol>
 
-<h4 id="例子"><span class="me-2">例子</span><a href="#例子" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="例子"><span class="me-2">例子</span><a href="#例子" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>
@@ -1872,35 +1885,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

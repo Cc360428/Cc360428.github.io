@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-06-26T14:22:12+08:00" />
-<meta property="article:modified_time" content="2020-06-26T14:22:12+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="kratos discovery" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-06-26T14:22:12+08:00","datePublished":"2020-06-26T14:22:12+08:00","description":"常见的微服务注册中心","headline":"kratos discovery","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/kratos-discovery/"},"url":"https://cc360428.github.io//posts/kratos-discovery/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2020-06-26T14:22:12+08:00","description":"常见的微服务注册中心","headline":"kratos discovery","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/kratos-discovery/"},"url":"https://cc360428.github.io//posts/kratos-discovery/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -529,11 +529,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -661,6 +656,11 @@
     
 
     
+  
+
+  
+  
+
   
 
 
@@ -708,6 +708,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -783,7 +806,7 @@
   
 
   <div class="content">
-    <h3 id="常见的微服务注册中心"><span class="me-2">常见的微服务注册中心</span><a href="#常见的微服务注册中心" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="常见的微服务注册中心"><span class="me-2">常见的微服务注册中心</span><a href="#常见的微服务注册中心" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>consul</li>
@@ -793,11 +816,11 @@
   <li>kratos(discovery)</li>
 </ul>
 
-<h3 id="discovery"><span class="me-2">discovery</span><a href="#discovery" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="discovery"><span class="me-2">discovery</span><a href="#discovery" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="安装"><span class="me-2">安装</span><a href="#安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="安装"><span class="me-2">安装</span><a href="#安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="源码安装"><span class="me-2">源码安装</span><a href="#源码安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="源码安装"><span class="me-2">源码安装</span><a href="#源码安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li><a href="https://github.com/bilibili/discovery">github</a></li>
@@ -819,15 +842,15 @@ go build
 <code class="language-plaintext highlighter-rouge">./discovery -conf discovery-example.toml -alsologtostderr</code></li>
 </ul>
 
-<h4 id="生成-docker-images"><span class="me-2">生成 docker images</span><a href="#生成-docker-images" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="生成-docker-images"><span class="me-2">生成 docker images</span><a href="#生成-docker-images" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">docker build -t cc360428/discovery:latest .</code></p>
 
-<h5 id="docker-安装"><span class="me-2">docker 安装</span><a href="#docker-安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="docker-安装"><span class="me-2">docker 安装</span><a href="#docker-安装" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p><code class="language-plaintext highlighter-rouge">docker run -itd --name disvoery -p 7171:7171 lichaocheng/discovery</code></p>
 
-<h4 id="注册"><span class="me-2">注册</span><a href="#注册" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="注册"><span class="me-2">注册</span><a href="#注册" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
   <p>使用 kraots 之前 <code class="language-plaintext highlighter-rouge">set DISCOVERY_NODES=127.0.0.1:7171</code></p>
@@ -999,7 +1022,7 @@ go build
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="发现"><span class="me-2">发现</span><a href="#发现" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="发现"><span class="me-2">发现</span><a href="#发现" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
   <p>发现方式两种：1、直接连接输入 服务端 IP 地址；2、通过 discovery 注册中心（或其他的注册中心）</p>
@@ -1231,35 +1254,35 @@ go build
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-03-18T18:01:33+08:00" />
-<meta property="article:modified_time" content="2021-03-18T18:01:33+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Go mod" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-03-18T18:01:33+08:00","datePublished":"2021-03-18T18:01:33+08:00","description":"Go mod","headline":"Go mod","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/go.mod/"},"url":"https://cc360428.github.io//posts/go.mod/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2021-03-18T18:01:33+08:00","description":"Go mod","headline":"Go mod","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/go.mod/"},"url":"https://cc360428.github.io//posts/go.mod/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -547,21 +547,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -737,6 +722,11 @@
     
 
     
+  
+
+  
+  
+
   
 
 
@@ -784,6 +774,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -861,13 +874,13 @@
   <div class="content">
     <h2 id="go-mod"><span class="me-2">Go mod</span><a href="#go-mod" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="基础"><span class="me-2">基础</span><a href="#基础" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="基础"><span class="me-2">基础</span><a href="#基础" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>使用 <code class="language-plaintext highlighter-rouge">go mod</code> 管理依赖是官方推荐的方式，可以方便地管理代码的版本和依赖。</p>
 
 <p>下面是一些常见的 <code class="language-plaintext highlighter-rouge">go mod</code> 使用方法：</p>
 
-<h5 id="1-初始化项目"><span class="me-2">1. 初始化项目</span><a href="#1-初始化项目" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="1-初始化项目"><span class="me-2">1. 初始化项目</span><a href="#1-初始化项目" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>在项目的根目录下，执行以下命令初始化 <code class="language-plaintext highlighter-rouge">go mod</code>：</p>
 
@@ -879,7 +892,7 @@
 
 <p>其中 <code class="language-plaintext highlighter-rouge">&lt;module-name&gt;</code> 是项目的模块名，通常是一个域名的反转加上项目名，例如 <code class="language-plaintext highlighter-rouge">github.com/example-project</code>。</p>
 
-<h5 id="2-添加依赖"><span class="me-2">2. 添加依赖</span><a href="#2-添加依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="2-添加依赖"><span class="me-2">2. 添加依赖</span><a href="#2-添加依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>假设你要添加一个名为 <code class="language-plaintext highlighter-rouge">example-dependency</code> 的依赖，你可以执行以下命令：</p>
 
@@ -891,7 +904,7 @@
 
 <p>这会将 <code class="language-plaintext highlighter-rouge">example-dependency</code> 下载到本地，并自动更新 <code class="language-plaintext highlighter-rouge">go.mod</code> 文件中的依赖信息。</p>
 
-<h5 id="3-升级依赖"><span class="me-2">3. 升级依赖</span><a href="#3-升级依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="3-升级依赖"><span class="me-2">3. 升级依赖</span><a href="#3-升级依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>你可以使用以下命令来升级项目的依赖：</p>
 
@@ -903,11 +916,11 @@
 
 <p>这会将所有依赖升级到最新版本。</p>
 
-<h5 id="4-构建项目"><span class="me-2">4. 构建项目</span><a href="#4-构建项目" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="4-构建项目"><span class="me-2">4. 构建项目</span><a href="#4-构建项目" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>使用 <code class="language-plaintext highlighter-rouge">go build</code> 或者 <code class="language-plaintext highlighter-rouge">go run</code> 命令来构建或运行项目，<code class="language-plaintext highlighter-rouge">go mod</code> 会自动下载依赖并构建项目。</p>
 
-<h5 id="5-清理依赖"><span class="me-2">5. 清理依赖</span><a href="#5-清理依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="5-清理依赖"><span class="me-2">5. 清理依赖</span><a href="#5-清理依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>如果你想要清理掉不再使用的依赖，可以使用以下命令：</p>
 
@@ -921,9 +934,9 @@
 
 <p>除了上述基本用法之外，<code class="language-plaintext highlighter-rouge">go mod</code> 还支持许多其他的功能，例如指定依赖的版本、使用私有仓库等。熟悉 <code class="language-plaintext highlighter-rouge">go mod</code> 的使用可以提高项目的开发效率和代码的可维护性。</p>
 
-<h3 id="高级使用"><span class="me-2">高级使用</span><a href="#高级使用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="高级使用"><span class="me-2">高级使用</span><a href="#高级使用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h5 id="1-指定依赖版本"><span class="me-2">1. 指定依赖版本</span><a href="#1-指定依赖版本" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="1-指定依赖版本"><span class="me-2">1. 指定依赖版本</span><a href="#1-指定依赖版本" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>可以使用以下命令指定依赖的版本：</p>
 
@@ -935,7 +948,7 @@
 
 <p>其中 <code class="language-plaintext highlighter-rouge">v1.2.3</code> 是依赖的具体版本。</p>
 
-<h5 id="2-使用代理下载依赖"><span class="me-2">2. 使用代理下载依赖</span><a href="#2-使用代理下载依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="2-使用代理下载依赖"><span class="me-2">2. 使用代理下载依赖</span><a href="#2-使用代理下载依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>如果因为某些原因无法直接从官方源下载依赖，可以使用代理来下载依赖。例如，使用 <code class="language-plaintext highlighter-rouge">goproxy.io</code> 作为代理：</p>
 
@@ -947,7 +960,7 @@
 
 <p>这会将代理地址设置为 <code class="language-plaintext highlighter-rouge">https://goproxy.io</code>，如果代理无法使用，会直接从官方源下载。</p>
 
-<h5 id="3-使用私有仓库"><span class="me-2">3. 使用私有仓库</span><a href="#3-使用私有仓库" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="3-使用私有仓库"><span class="me-2">3. 使用私有仓库</span><a href="#3-使用私有仓库" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>如果依赖不在公共仓库中，可以使用私有仓库来下载依赖。例如，使用 <code class="language-plaintext highlighter-rouge">gitlab.com</code> 作为私有仓库：</p>
 
@@ -959,7 +972,7 @@
 
 <p>这会将 <code class="language-plaintext highlighter-rouge">gitlab.com</code> 设置为私有仓库，<code class="language-plaintext highlighter-rouge">go mod</code> 会从该仓库下载依赖。</p>
 
-<h5 id="4-使用本地包"><span class="me-2">4. 使用本地包</span><a href="#4-使用本地包" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="4-使用本地包"><span class="me-2">4. 使用本地包</span><a href="#4-使用本地包" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>如果你正在开发一个本地的包或者库，可以使用以下命令将其添加到 <code class="language-plaintext highlighter-rouge">go.mod</code> 文件中：</p>
 
@@ -971,7 +984,7 @@
 
 <p>其中 <code class="language-plaintext highlighter-rouge">example-package</code> 是本地包的名称，<code class="language-plaintext highlighter-rouge">../example-package</code> 是本地包的路径。</p>
 
-<h5 id="5-禁止自动更新依赖"><span class="me-2">5. 禁止自动更新依赖</span><a href="#5-禁止自动更新依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="5-禁止自动更新依赖"><span class="me-2">5. 禁止自动更新依赖</span><a href="#5-禁止自动更新依赖" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <p>如果你想要禁止自动更新依赖，可以在 <code class="language-plaintext highlighter-rouge">go.mod</code> 文件中添加以下内容：</p>
 
@@ -989,7 +1002,7 @@
 
 <p>这会锁定 Golang 的版本，禁止自动更新。</p>
 
-<h4 id="gomod-使用"><span class="me-2">go.mod 使用</span><a href="#gomod-使用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="gomod-使用"><span class="me-2">go.mod 使用</span><a href="#gomod-使用" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
@@ -1180,35 +1193,35 @@ retract (
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

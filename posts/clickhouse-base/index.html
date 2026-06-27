@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-04-08T12:48:54+08:00" />
-<meta property="article:modified_time" content="2021-04-08T12:48:54+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="ClickHouse" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-04-08T12:48:54+08:00","datePublished":"2021-04-08T12:48:54+08:00","description":"ClickHouse 是一个用于实时分析的开源列式数据库管理系统 (DBMS)，它最初由俄罗斯的 Yandex 公司开发，并且在 2016 年开源。下面是一些关于 ClickHouse 的介绍、优缺点以及一些最大阈值的信息：","headline":"ClickHouse","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/clickhouse-base/"},"url":"https://cc360428.github.io//posts/clickhouse-base/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2021-04-08T12:48:54+08:00","description":"ClickHouse 是一个用于实时分析的开源列式数据库管理系统 (DBMS)，它最初由俄罗斯的 Yandex 公司开发，并且在 2016 年开源。下面是一些关于 ClickHouse 的介绍、优缺点以及一些最大阈值的信息：","headline":"ClickHouse","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/clickhouse-base/"},"url":"https://cc360428.github.io//posts/clickhouse-base/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -529,11 +529,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -587,6 +582,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -644,6 +644,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -721,7 +744,7 @@
   <div class="content">
     <p>ClickHouse 是一个用于实时分析的开源列式数据库管理系统 (DBMS)，它最初由俄罗斯的 Yandex 公司开发，并且在 2016 年开源。下面是一些关于 ClickHouse 的介绍、优缺点以及一些最大阈值的信息：</p>
 
-<h3 id="介绍"><span class="me-2">介绍</span><a href="#介绍" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="介绍"><span class="me-2">介绍</span><a href="#介绍" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><strong>列式存储</strong> ：ClickHouse 是一个列式存储的数据库，这意味着它将数据按列而不是按行存储。这种存储方式使得它非常适合进行大规模的数据分析和聚合操作。</li>
@@ -731,7 +754,7 @@
   <li><strong>实时数据分析</strong> ：尽管 ClickHouse 主要用于批处理分析，但它也具有一定的实时查询能力，可以满足一些实时数据分析的需求。</li>
 </ul>
 
-<h3 id="优点"><span class="me-2">优点</span><a href="#优点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="优点"><span class="me-2">优点</span><a href="#优点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><strong>高性能</strong> ：ClickHouse 在处理大规模数据集时表现出色，可以快速执行复杂的分析查询。</li>
@@ -740,7 +763,7 @@
   <li><strong>开源和社区支持</strong> ：作为一个开源项目，ClickHouse 拥有一个活跃的社区，用户可以从社区中获得支持和贡献新的功能和改进。</li>
 </ul>
 
-<h3 id="缺点"><span class="me-2">缺点</span><a href="#缺点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="缺点"><span class="me-2">缺点</span><a href="#缺点" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><strong>实时性限制</strong> ：虽然 ClickHouse 具有一定的实时查询能力，但它主要用于批处理分析，对于需要实时数据更新和查询的应用场景可能不够适用。</li>
@@ -748,7 +771,7 @@
   <li><strong>存储格式转换成本</strong> ：由于 ClickHouse 使用列式存储，因此需要在存储和检索数据之间进行格式转换，这可能会导致一些额外的成本和复杂性。</li>
 </ul>
 
-<h3 id="最大阈值"><span class="me-2">最大阈值</span><a href="#最大阈值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="最大阈值"><span class="me-2">最大阈值</span><a href="#最大阈值" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>ClickHouse 的性能和容量受到多个因素的影响，包括硬件配置、数据模式、查询复杂度等。一般来说，ClickHouse 可以处理非常大的数据集，并且能够在毫秒级的时间内响应查询。然而，具体的最大阈值取决于具体的硬件配置和工作负载。通常情况下，ClickHouse 可以处理数十亿甚至上百亿行的数据，并且能够在大型集群中进行水平扩展以处理更大规模的数据集。</p>
 
@@ -897,35 +920,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

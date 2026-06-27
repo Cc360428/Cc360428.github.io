@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-03-23T13:32:25+08:00" />
-<meta property="article:modified_time" content="2020-03-23T13:32:25+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="frp 内网穿透" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-03-23T13:32:25+08:00","datePublished":"2020-03-23T13:32:25+08:00","description":"网络服务映射","headline":"frp 内网穿透","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/frp/"},"url":"https://cc360428.github.io//posts/frp/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2020-03-23T13:32:25+08:00","description":"网络服务映射","headline":"frp 内网穿透","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/frp/"},"url":"https://cc360428.github.io//posts/frp/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -558,21 +558,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -715,6 +700,11 @@
     
 
     
+  
+
+  
+  
+
   
 
 
@@ -764,6 +754,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -841,7 +854,7 @@
   <div class="content">
     <h2 id="frp-内网穿透"><span class="me-2">frp 内网穿透</span><a href="#frp-内网穿透" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="环境准备"><span class="me-2">环境准备</span><a href="#环境准备" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="环境准备"><span class="me-2">环境准备</span><a href="#环境准备" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li><a href="http://images.lichaocheng.top/static/upload/2020/03/23/4433791b371e04241e11393d93dd133c.gz">Linux 环境</a></li>
@@ -857,9 +870,9 @@
   <li>*c.ini 是客服端配置文件</li>
 </ul>
 
-<h4 id="frpsinilinux"><span class="me-2">frps.ini（linux）</span><a href="#frpsinilinux" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="frpsinilinux"><span class="me-2">frps.ini（linux）</span><a href="#frpsinilinux" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="目录结构"><span class="me-2">目录结构</span><a href="#目录结构" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="目录结构"><span class="me-2">目录结构</span><a href="#目录结构" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -883,7 +896,7 @@ drwxrwxr-x 2 admin admin     4096 1月   6 16:04 systemd
 
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="修改内容"><span class="me-2">修改内容</span><a href="#修改内容" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="修改内容"><span class="me-2">修改内容</span><a href="#修改内容" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -937,7 +950,7 @@ auth_token <span class="o">=</span> 123
 <span class="c"># 方括号内的ssh是代理名称，在同一个frp穿透服务器下的代理名称不能重复，否则不能启动。</span>
 <span class="c"># bind_addr是frp客户端内网的ip，也可以是客户端内网同一局域网下的其他IP</span>
 <span class="o">[</span>ssh]
-<span class="c">##### type = tcp</span>
+<span class="c">#### type = tcp</span>
 bind_addr <span class="o">=</span> 0.0.0.0
 listen_port <span class="o">=</span> 6000
 
@@ -949,13 +962,13 @@ listen_port <span class="o">=</span> 6000
 custom_domains <span class="o">=</span> zhishi.com
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="运行方式"><span class="me-2">运行方式</span><a href="#运行方式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="运行方式"><span class="me-2">运行方式</span><a href="#运行方式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">./frps -c frps.ini</code></p>
 
-<h3 id="frpciniwindows"><span class="me-2">frpc.ini（Windows）</span><a href="#frpciniwindows" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="frpciniwindows"><span class="me-2">frpc.ini（Windows）</span><a href="#frpciniwindows" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="目录结构-1"><span class="me-2">目录结构</span><a href="#目录结构-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="目录结构-1"><span class="me-2">目录结构</span><a href="#目录结构-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -985,7 +998,7 @@ drwxr-xr-x 1 Administrator 197121        0 11月  2 21:25 systemd/
 Administrator@DESKTOP-DHQ6SHN MINGW64 ~/Desktop/fsdownload/frp_windows_amd64/frp_0.29.1_windows_amd64
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="修改内容-1"><span class="me-2">修改内容</span><a href="#修改内容-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="修改内容-1"><span class="me-2">修改内容</span><a href="#修改内容-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1027,11 +1040,11 @@ local_port <span class="o">=</span> 8380
 custom_domains <span class="o">=</span> web.zhishi.com
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="运行方式-1"><span class="me-2">运行方式</span><a href="#运行方式-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="运行方式-1"><span class="me-2">运行方式</span><a href="#运行方式-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p><code class="language-plaintext highlighter-rouge">./frpc.exe -c frpc.ini</code></p>
 
-<h3 id="nginx-代理域名映射"><span class="me-2">nginx 代理域名映射</span><a href="#nginx-代理域名映射" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="nginx-代理域名映射"><span class="me-2">nginx 代理域名映射</span><a href="#nginx-代理域名映射" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-nginx highlighter-rouge"><div class="code-header">
         <span data-label-text="Nginx"><i class="fas fa-code fa-fw small"></i></span>
@@ -1191,35 +1204,35 @@ custom_domains <span class="o">=</span> web.zhishi.com
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

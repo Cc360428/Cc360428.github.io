@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-03-29T00:49:12+08:00" />
-<meta property="article:modified_time" content="2020-03-29T00:49:12+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="linux(CentOS7) 网络管理" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-03-29T00:49:12+08:00","datePublished":"2020-03-29T00:49:12+08:00","description":"10（网络管理）","headline":"linux(CentOS7) 网络管理","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/9-RedHad-system-ps/"},"url":"https://cc360428.github.io//posts/9-RedHad-system-ps/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2020-03-29T00:49:12+08:00","description":"10（网络管理）","headline":"linux(CentOS7) 网络管理","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/9-RedHad-system-ps/"},"url":"https://cc360428.github.io//posts/9-RedHad-system-ps/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -547,21 +547,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -757,6 +742,43 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
       
 
       
@@ -830,6 +852,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -907,7 +952,7 @@
   <div class="content">
     <h2 id="系统启动控制进程管理"><span class="me-2">系统启动控制、进程管理</span><a href="#系统启动控制进程管理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="系统启动控制"><span class="me-2">系统启动控制</span><a href="#系统启动控制" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="系统启动控制"><span class="me-2">系统启动控制</span><a href="#系统启动控制" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>0—-停机</li>
@@ -923,7 +968,7 @@
   <p>如果你远程黑进了系统 可以试试这个 <strong>6</strong> 操作 应该会一直重启</p>
 </blockquote>
 
-<h4 id="设置操作"><span class="me-2">设置操作</span><a href="#设置操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="设置操作"><span class="me-2">设置操作</span><a href="#设置操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">runleve</code> 查看当前系统启动状态，N 代表代表上次运行级别</li>
@@ -940,9 +985,9 @@ N 3
 <span class="o">[</span>root@Cc RedHad]# init 5
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="linux-初始化脚本-etcinittab-的解析"><span class="me-2">Linux 初始化脚本 <code class="language-plaintext highlighter-rouge">/etc/inittab</code> 的解析</span><a href="#linux-初始化脚本-etcinittab-的解析" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="linux-初始化脚本-etcinittab-的解析"><span class="me-2">Linux 初始化脚本 <code class="language-plaintext highlighter-rouge">/etc/inittab</code> 的解析</span><a href="#linux-初始化脚本-etcinittab-的解析" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h4 id="linux-启动服务控制"><span class="me-2">Linux 启动服务控制</span><a href="#linux-启动服务控制" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="linux-启动服务控制"><span class="me-2">Linux 启动服务控制</span><a href="#linux-启动服务控制" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">start</code> 开启</li>
@@ -959,7 +1004,7 @@ Starting network <span class="o">(</span>via systemctl<span class="o">)</span>: 
 <span class="o">[</span>root@Cc RedHad]# /etc/init.d/network stop
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="使用chkconfig-查看各个服务运行级别情况"><span class="me-2">使用<code class="language-plaintext highlighter-rouge">chkconfig</code> 查看各个服务运行级别情况</span><a href="#使用chkconfig-查看各个服务运行级别情况" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="使用chkconfig-查看各个服务运行级别情况"><span class="me-2">使用<code class="language-plaintext highlighter-rouge">chkconfig</code> 查看各个服务运行级别情况</span><a href="#使用chkconfig-查看各个服务运行级别情况" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <ul>
   <li>查看</li>
@@ -1027,9 +1072,9 @@ network        	0:off	1:off	2:on	3:on	4:on	5:on	6:on
   <li><code class="language-plaintext highlighter-rouge">service [服务名] restart</code> 重启</li>
 </ul>
 
-<h3 id="进程管理"><span class="me-2">进程管理</span><a href="#进程管理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="进程管理"><span class="me-2">进程管理</span><a href="#进程管理" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="概述"><span class="me-2">概述</span><a href="#概述" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="概述"><span class="me-2">概述</span><a href="#概述" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
   <li>
@@ -1050,9 +1095,9 @@ network        	0:off	1:off	2:on	3:on	4:on	5:on	6:on
   </li>
 </ul>
 
-<h4 id="进程管理工具常用命令"><span class="me-2">进程管理工具、常用命令</span><a href="#进程管理工具常用命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="进程管理工具常用命令"><span class="me-2">进程管理工具、常用命令</span><a href="#进程管理工具常用命令" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h5 id="进程监视ps"><span class="me-2">进程监视<code class="language-plaintext highlighter-rouge">ps</code></span><a href="#进程监视ps" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="进程监视ps"><span class="me-2">进程监视<code class="language-plaintext highlighter-rouge">ps</code></span><a href="#进程监视ps" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1072,7 +1117,7 @@ network        	0:off	1:off	2:on	3:on	4:on	5:on	6:on
     ps <span class="nt">-f</span>		列出全部进程相关信息
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="系统状态监视top"><span class="me-2">系统状态监视<code class="language-plaintext highlighter-rouge">top</code></span><a href="#系统状态监视top" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="系统状态监视top"><span class="me-2">系统状态监视<code class="language-plaintext highlighter-rouge">top</code></span><a href="#系统状态监视top" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1084,16 +1129,16 @@ network        	0:off	1:off	2:on	3:on	4:on	5:on	6:on
     top <span class="nt">-u</span> testUser		显示指定用户进程信息
 </pre></td></tr></tbody></table></code></div></div>
 
-<h5 id="终止进程"><span class="me-2">终止进程</span><a href="#终止进程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
+<h4 id="终止进程"><span class="me-2">终止进程</span><a href="#终止进程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
 
-<h6 id="下载web程序">下载<code class="language-plaintext highlighter-rouge">web</code>程序</h6>
+<h5 id="下载web程序"><span class="me-2">下载<code class="language-plaintext highlighter-rouge">web</code>程序</span><a href="#下载web程序" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
 <ul>
   <li>windows 体验</li>
   <li>Linux 运行：</li>
 </ul>
 
-<h6 id="示例">示例</h6>
+<h5 id="示例"><span class="me-2">示例</span><a href="#示例" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">kill </code>[进程 ID]</li>
@@ -1135,9 +1180,9 @@ root     23420 17944  0 21:41 pts/4    00:00:00 <span class="nb">grep</span> <sp
 </pre></td><td class="rouge-code"><pre><span class="o">[</span>root@Cc ~]# killall <span class="nt">-9</span> HelloWorld
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="系统管理员常见操作"><span class="me-2">系统管理员常见操作</span><a href="#系统管理员常见操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="系统管理员常见操作"><span class="me-2">系统管理员常见操作</span><a href="#系统管理员常见操作" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="更改sshd-默认端口"><span class="me-2">更改<code class="language-plaintext highlighter-rouge">sshd</code> 默认端口</span><a href="#更改sshd-默认端口" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="更改sshd-默认端口"><span class="me-2">更改<code class="language-plaintext highlighter-rouge">sshd</code> 默认端口</span><a href="#更改sshd-默认端口" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1199,7 +1244,7 @@ Welcome to Alibaba Cloud Elastic Compute Service !
 [root@Cc ~]#
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="查看某个用户所有进程"><span class="me-2">查看某个用户所有进程</span><a href="#查看某个用户所有进程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="查看某个用户所有进程"><span class="me-2">查看某个用户所有进程</span><a href="#查看某个用户所有进程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1211,7 +1256,7 @@ root     32651 10980  0 23:07 pts/1    00:00:00 <span class="nb">grep</span> <sp
 <span class="o">[</span>root@Cc RedHad]#
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="终止某个用户所有进程"><span class="me-2">终止某个用户所有进程</span><a href="#终止某个用户所有进程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="终止某个用户所有进程"><span class="me-2">终止某个用户所有进程</span><a href="#终止某个用户所有进程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1223,7 +1268,7 @@ root     32651 10980  0 23:07 pts/1    00:00:00 <span class="nb">grep</span> <sp
 <span class="o">[</span>root@Cc ~]#
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="根据端口查对应的进程"><span class="me-2">根据端口查对应的进程</span><a href="#根据端口查对应的进程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="根据端口查对应的进程"><span class="me-2">根据端口查对应的进程</span><a href="#根据端口查对应的进程" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1243,7 +1288,7 @@ server  2155 root    6u  IPv6  40398      0t0  TCP <span class="k">*</span>:8180
 <span class="o">[</span>root@Cc ~]#
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="通过以上知识可以做进程监控shell"><span class="me-2">通过以上知识可以做进程监控（shell）</span><a href="#通过以上知识可以做进程监控shell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="通过以上知识可以做进程监控shell"><span class="me-2">通过以上知识可以做进程监控（shell）</span><a href="#通过以上知识可以做进程监控shell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
   <p>可能会用到 <code class="language-plaintext highlighter-rouge">rsync</code> 命令 安装即可</p>
@@ -1402,35 +1447,35 @@ server  2155 root    6u  IPv6  40398      0t0  TCP <span class="k">*</span>:8180
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

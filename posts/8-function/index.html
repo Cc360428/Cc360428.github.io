@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-05-24T10:00:13+08:00" />
-<meta property="article:modified_time" content="2022-05-24T10:00:13+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Python Function" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-24T10:00:13+08:00","datePublished":"2022-05-24T10:00:13+08:00","description":"简介","headline":"Python Function","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/8-function/"},"url":"https://cc360428.github.io//posts/8-function/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2022-05-24T10:00:13+08:00","description":"简介","headline":"Python Function","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/8-function/"},"url":"https://cc360428.github.io//posts/8-function/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -529,11 +529,6 @@
   
 
   
-
-  
-  
-
-  
     
     
 
@@ -646,6 +641,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -698,6 +698,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -773,7 +796,7 @@
   
 
   <div class="content">
-    <h3 id="简介"><span class="me-2">简介</span><a href="#简介" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="简介"><span class="me-2">简介</span><a href="#简介" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>Python函数是一段用来完成特定任务的可重复调用的代码块。它们接受输入参数、执行某些操作并返回结果。函数可以帮助我们组织代码，避免出现重复的代码，并使代码更易于阅读和维护。</li>
@@ -799,7 +822,7 @@
   <li>除了上面这种简单的函数，Python还支持很多不同类型的函数，包括没有参数的函数、返回值的函数、匿名函数和高阶函数等。</li>
 </ul>
 
-<h3 id="定义函数"><span class="me-2">定义函数</span><a href="#定义函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="定义函数"><span class="me-2">定义函数</span><a href="#定义函数" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>在 Python 中，可以使用 <code class="language-plaintext highlighter-rouge">def</code> 关键字定义函数。函数定义语法如下：</p>
 
@@ -840,7 +863,7 @@
 <p>在这个例子中，<code class="language-plaintext highlighter-rouge">add_numbers</code> 是函数名，它接受两个参数 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code>。函数体代码将它们相加，并将结果存储在变量 <code class="language-plaintext highlighter-rouge">result</code>
 中。最后，通过 <code class="language-plaintext highlighter-rouge">return</code> 语句将结果返回给调用方。</p>
 
-<h3 id="函数定义详解"><span class="me-2">函数定义详解</span><a href="#函数定义详解" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="函数定义详解"><span class="me-2">函数定义详解</span><a href="#函数定义详解" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>函数名</li>
@@ -848,11 +871,11 @@
   <li>函数体。</li>
 </ul>
 
-<h4 id="函数名"><span class="me-2">函数名</span><a href="#函数名" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="函数名"><span class="me-2">函数名</span><a href="#函数名" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Python 中的函数名必须遵循标识符命名规则，即由字母、数字和下划线组成，不能以数字开头。建议给函数选用有意义的名字，便于代码的阅读和理解。</p>
 
-<h4 id="参数列表"><span class="me-2">参数列表</span><a href="#参数列表" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="参数列表"><span class="me-2">参数列表</span><a href="#参数列表" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>函数可以接受零个或多个参数，这些参数传递给函数后，可以在函数内部使用。在 Python 中，参数列表放在括号中，多个参数之间用逗号隔开。例如：</p>
 
@@ -879,7 +902,7 @@
 <p>在上面的例子中，<code class="language-plaintext highlighter-rouge">arg2</code> 有一个默认值为 <code class="language-plaintext highlighter-rouge">0</code>，<code class="language-plaintext highlighter-rouge">arg3</code> 有一个默认值为 <code class="language-plaintext highlighter-rouge">'default'</code>。因此，在调用 <code class="language-plaintext highlighter-rouge">my_func</code>
 时，可以省略这两个参数。如果不指定 <code class="language-plaintext highlighter-rouge">arg2</code>，则它将被设置为 <code class="language-plaintext highlighter-rouge">0</code>。如果不指定 <code class="language-plaintext highlighter-rouge">arg3</code>，则它将被设置为 <code class="language-plaintext highlighter-rouge">'default'</code>。</p>
 
-<h4 id="函数体"><span class="me-2">函数体</span><a href="#函数体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="函数体"><span class="me-2">函数体</span><a href="#函数体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>函数体是包含在函数定义中的代码块。函数体通常包含一些操作，用于处理输入参数并生成输出结果。在 Python
 中，函数体由缩进的语句组成，这些语句会在函数被调用时执行。</p>
@@ -901,7 +924,7 @@
 <p>在上面的例子中，<code class="language-plaintext highlighter-rouge">my_func</code> 接受两个参数 <code class="language-plaintext highlighter-rouge">arg1</code> 和 <code class="language-plaintext highlighter-rouge">arg2</code>。函数体包含两行代码，第一行使用 <code class="language-plaintext highlighter-rouge">print</code>
 函数打印参数的值，第二行将 <code class="language-plaintext highlighter-rouge">arg1</code> 和 <code class="language-plaintext highlighter-rouge">arg2</code> 相加，并将结果返回给调用方。</p>
 
-<h3 id="模块"><span class="me-2">模块</span><a href="#模块" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="模块"><span class="me-2">模块</span><a href="#模块" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>
@@ -956,7 +979,7 @@ print(sqrt(25))  # 输出 5.0
 异常。</p>
 </blockquote>
 
-<h3 id="包"><span class="me-2">包</span><a href="#包" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="包"><span class="me-2">包</span><a href="#包" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
   <p>在 Python 中，包是一个目录，其中包含了一组模块和子包。包的主要作用是将相关的模块组织在一起，使得程序设计更加模块化和易于管理。</p>
@@ -1192,35 +1215,35 @@ print(sqrt(25))  # 输出 5.0
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

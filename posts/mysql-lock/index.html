@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-09-18T12:21:48+08:00" />
-<meta property="article:modified_time" content="2019-09-18T12:21:48+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="MySql lock" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-09-18T12:21:48+08:00","datePublished":"2019-09-18T12:21:48+08:00","description":"MySQL 锁","headline":"MySql lock","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/mysql-lock/"},"url":"https://cc360428.github.io//posts/mysql-lock/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2019-09-18T12:21:48+08:00","description":"MySQL 锁","headline":"MySql lock","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/mysql-lock/"},"url":"https://cc360428.github.io//posts/mysql-lock/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -817,21 +817,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -926,6 +911,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -978,6 +968,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -1071,7 +1084,7 @@
 2 rows in set (0.03 sec)
 </code></pre>
 
-<h3 id="表锁"><span class="me-2">表锁</span><a href="#表锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="表锁"><span class="me-2">表锁</span><a href="#表锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
   <p>表锁有两种</p>
@@ -1079,7 +1092,7 @@
   <p>元数据锁（Meta Data Lock，MDL）</p>
 </blockquote>
 
-<h4 id="查询争用状态变量"><span class="me-2">查询争用状态变量</span><a href="#查询争用状态变量" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="查询争用状态变量"><span class="me-2">查询争用状态变量</span><a href="#查询争用状态变量" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <pre><code class="language-mysql">show status like 'table_locks%';
 +-----------------------+-------+
@@ -1159,9 +1172,9 @@
   <li><code class="language-plaintext highlighter-rouge">session2：Query OK, 0 rows affected (38.67 sec)</code>修改完成</li>
 </ol>
 
-<h3 id="行锁innodb"><span class="me-2">行锁(<code class="language-plaintext highlighter-rouge">InnoDB</code>)</span><a href="#行锁innodb" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="行锁innodb"><span class="me-2">行锁(<code class="language-plaintext highlighter-rouge">InnoDB</code>)</span><a href="#行锁innodb" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="按照范围分类"><span class="me-2">按照范围分类</span><a href="#按照范围分类" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="按照范围分类"><span class="me-2">按照范围分类</span><a href="#按照范围分类" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
   <p><code class="language-plaintext highlighter-rouge">记录锁</code>、<code class="language-plaintext highlighter-rouge">间隙锁</code>、<code class="language-plaintext highlighter-rouge">Next-Key锁</code></p>
@@ -1173,7 +1186,7 @@
   <li><code class="language-plaintext highlighter-rouge">Next-Key 锁</code>: 记录锁 + 间隙锁，RR 隔离级下默认使用 Next-Key 锁，即锁定当前记录也锁定记录间隙。</li>
 </ul>
 
-<h4 id="按照功能分类"><span class="me-2">按照功能分类</span><a href="#按照功能分类" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="按照功能分类"><span class="me-2">按照功能分类</span><a href="#按照功能分类" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <blockquote>
   <p><code class="language-plaintext highlighter-rouge">共享读锁（S）</code>、<code class="language-plaintext highlighter-rouge">排他写锁（X）</code></p>
@@ -1237,7 +1250,7 @@
   <p>在索引记录之间的间隙中加锁，或者是在某一条索引记录之前或者之后加锁，并不包括该索引记录本身。gap lock 的机制主要是 <code class="language-plaintext highlighter-rouge">解决</code>可重复读模式下的的 <code class="language-plaintext highlighter-rouge">幻读问题</code></p>
 </blockquote>
 
-<h3 id="死锁"><span class="me-2">死锁</span><a href="#死锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="死锁"><span class="me-2">死锁</span><a href="#死锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <blockquote>
   <p>两个 session 互相等待 对方资源释放之后才能释放自己资源造成死锁</p>
@@ -1258,7 +1271,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">transaction</code></p>
 
-<h4 id="避免死锁"><span class="me-2">避免死锁</span><a href="#避免死锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="避免死锁"><span class="me-2">避免死锁</span><a href="#避免死锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>越是轻量的事务，占有越少的锁资源，这样发生死锁的几率就越小 1.避免使用子查询，尽量使用主键等等，以 <code class="language-plaintext highlighter-rouge">提高SQL运行速度</code> 2.尽量快提交事务，<code class="language-plaintext highlighter-rouge">减少持有锁的时间</code></p>
 
@@ -1407,35 +1420,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

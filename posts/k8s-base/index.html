@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-03-17T16:43:33+08:00" />
-<meta property="article:modified_time" content="2021-03-17T16:43:33+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Kubernetes 部署" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-03-17T16:43:33+08:00","datePublished":"2021-03-17T16:43:33+08:00","description":"kubernets 前期准备","headline":"Kubernetes 部署","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/k8s-base/"},"url":"https://cc360428.github.io//posts/k8s-base/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2021-03-17T16:43:33+08:00","description":"kubernets 前期准备","headline":"Kubernetes 部署","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/k8s-base/"},"url":"https://cc360428.github.io//posts/k8s-base/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -569,21 +569,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -755,6 +740,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -809,6 +799,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -884,9 +897,9 @@
   
 
   <div class="content">
-    <h3 id="kubernetes-搭建"><span class="me-2">Kubernetes 搭建</span><a href="#kubernetes-搭建" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+    <h2 id="kubernetes-搭建"><span class="me-2">Kubernetes 搭建</span><a href="#kubernetes-搭建" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h3 id="准备"><span class="me-2">准备</span><a href="#准备" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="准备"><span class="me-2">准备</span><a href="#准备" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>在搭建 Kubernetes 之前，您需要先准备一些必要的配置和工具，包括：</p>
 
@@ -928,7 +941,7 @@
   </li>
 </ol>
 
-<h4 id="最低配置"><span class="me-2">最低配置</span><a href="#最低配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="最低配置"><span class="me-2">最低配置</span><a href="#最低配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Kubernetes 的硬件要求主要由 Master 节点和 Node 节点的配置决定。以下是 Kubernetes 推荐的最低硬件配置：</p>
 
@@ -955,7 +968,7 @@
 
 <p>需要注意的是，以上硬件配置只是 Kubernetes 的最低要求，如果您希望集群具有更好的性能和可靠性，可以考虑增加 CPU、内存和磁盘空间等资源。</p>
 
-<h4 id="搭建前-masternode"><span class="me-2">搭建前 master/node</span><a href="#搭建前-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="搭建前-masternode"><span class="me-2">搭建前 master/node</span><a href="#搭建前-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>在部署 Kubernetes 集群之前，您需要进行一些节点的预配置工作。下面是一些常见的命令，用于关闭防火墙、Swap 分区、SELinux，并修改主机名：</p>
 
@@ -1068,7 +1081,7 @@ last <span class="c"># 查看用户登录信息</span>
   </li>
 </ul>
 
-<h3 id="搭建前准备-masternode"><span class="me-2">搭建前准备 （master/node）</span><a href="#搭建前准备-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="搭建前准备-masternode"><span class="me-2">搭建前准备 （master/node）</span><a href="#搭建前准备-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>
@@ -1132,7 +1145,7 @@ reboot <span class="c"># 重启</span>
   </li>
 </ul>
 
-<h3 id="安装-docker-20101-masternode"><span class="me-2">安装 docker 20.10.1 （master/node）</span><a href="#安装-docker-20101-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="安装-docker-20101-masternode"><span class="me-2">安装 docker 20.10.1 （master/node）</span><a href="#安装-docker-20101-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1200,7 +1213,7 @@ yum <span class="nb">install </span>docker-ce docker-ce-cli <span class="nt">-y<
 </span>systemctl <span class="nb">enable </span>docker <span class="o">&amp;&amp;</span> systemctl start docker
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="设置阿里云-yum-软件源-masternode"><span class="me-2">设置阿里云 yum 软件源 （master/node）</span><a href="#设置阿里云-yum-软件源-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="设置阿里云-yum-软件源-masternode"><span class="me-2">设置阿里云 yum 软件源 （master/node）</span><a href="#设置阿里云-yum-软件源-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1220,7 +1233,7 @@ baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
 </span><span class="no">EOF
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="安装-kubeadmkubeletkubectl-masternode"><span class="me-2">安装 kubeadm、kubelet、kubectl （master/node）</span><a href="#安装-kubeadmkubeletkubectl-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="安装-kubeadmkubeletkubectl-masternode"><span class="me-2">安装 kubeadm、kubelet、kubectl （master/node）</span><a href="#安装-kubeadmkubeletkubectl-masternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1230,7 +1243,7 @@ baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
  systemctl <span class="nb">enable </span>kubelet
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="kubernetes-init-master"><span class="me-2">kubernetes init （master）</span><a href="#kubernetes-init-master" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="kubernetes-init-master"><span class="me-2">kubernetes init （master）</span><a href="#kubernetes-init-master" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1250,7 +1263,7 @@ baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
   <span class="nt">--pod-network-cidr</span><span class="o">=</span>10.244.0.0/16
 </pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="成功信息"><span class="me-2">成功信息</span><a href="#成功信息" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="成功信息"><span class="me-2">成功信息</span><a href="#成功信息" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1300,7 +1313,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
     <span class="nt">--discovery-token-ca-cert-hash</span> sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="输入创建测试是否-okmasternode"><span class="me-2">输入创建测试是否 OK（master/node）</span><a href="#输入创建测试是否-okmasternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="输入创建测试是否-okmasternode"><span class="me-2">输入创建测试是否 OK（master/node）</span><a href="#输入创建测试是否-okmasternode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1320,7 +1333,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
   kubectl get nodes  <span class="c"># 测试</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="安装网络插件"><span class="me-2">安装网络插件</span><a href="#安装网络插件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="安装网络插件"><span class="me-2">安装网络插件</span><a href="#安装网络插件" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1332,7 +1345,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
 <span class="c"># 199.232.28.133 raw.githubusercontent.com</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="node-加入-master-集群中"><span class="me-2">node 加入 master 集群中</span><a href="#node-加入-master-集群中" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="node-加入-master-集群中"><span class="me-2">node 加入 master 集群中</span><a href="#node-加入-master-集群中" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <div class="language-shell highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1344,7 +1357,7 @@ kubeadm <span class="nb">join </span>172.13.8.15:6443 <span class="nt">--token</
     <span class="nt">--discovery-token-ca-cert-hash</span> sha256:744f6cd77ba585411ddde4a8ed181859c17643df0c90ba4ec7eb859b69875bcd
 </pre></td></tr></tbody></table></code></div></div>
 
-<h3 id="后记"><span class="me-2">后记</span><a href="#后记" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="后记"><span class="me-2">后记</span><a href="#后记" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
   <li>
@@ -2051,35 +2064,35 @@ spec:
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>

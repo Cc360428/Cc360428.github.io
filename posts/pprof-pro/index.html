@@ -36,12 +36,12 @@
 <meta property="og:site_name" content="Cc Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-03-17T18:01:33+08:00" />
-<meta property="article:modified_time" content="2021-03-17T18:01:33+08:00" />
+<meta property="article:modified_time" content="2026-06-26T16:20:49+08:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Pprof 监听" />
 <meta name="twitter:site" content="@Cc63451336" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-03-17T18:01:33+08:00","datePublished":"2021-03-17T18:01:33+08:00","description":"获取 60 秒数据","headline":"Pprof 监听","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/pprof-pro/"},"url":"https://cc360428.github.io//posts/pprof-pro/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-26T16:20:49+08:00","datePublished":"2021-03-17T18:01:33+08:00","description":"获取 60 秒数据","headline":"Pprof 监听","mainEntityOfPage":{"@type":"WebPage","@id":"https://cc360428.github.io//posts/pprof-pro/"},"url":"https://cc360428.github.io//posts/pprof-pro/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -547,21 +547,6 @@
 
       
     
-
-    
-  
-
-  
-  
-
-  
-    
-    
-
-    
-      
-        
-        
       
 
       
@@ -711,6 +696,11 @@
     
 
     
+  
+
+  
+  
+
   
 
   
@@ -763,6 +753,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          更新于
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/modules/components/locale-datetime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782462049"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2026/06/26
+</time>
+
+        </span>
       
 
       
@@ -844,17 +857,17 @@
 
 <p>http://localhost:9999/ui/</p>
 
-<h3 id="1开发一个能够并发且正常游戏的模拟客户端"><span class="me-2">1.开发一个能够并发且正常游戏的模拟客户端</span><a href="#1开发一个能够并发且正常游戏的模拟客户端" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="1开发一个能够并发且正常游戏的模拟客户端"><span class="me-2">1.开发一个能够并发且正常游戏的模拟客户端</span><a href="#1开发一个能够并发且正常游戏的模拟客户端" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>（我这边有一套比较简陋的代码，支持批量创建玩家、登陆玩家、修改玩家道具，只需要实现跟业务相关的逻辑即可）</p>
 
-<h3 id="2-在游戏服务器代码中启用-pprof"><span class="me-2">2. 在游戏服务器代码中启用 pprof</span><a href="#2-在游戏服务器代码中启用-pprof" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="2-在游戏服务器代码中启用-pprof"><span class="me-2">2. 在游戏服务器代码中启用 pprof</span><a href="#2-在游戏服务器代码中启用-pprof" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>首先添加 pprof 库， <code class="language-plaintext highlighter-rouge">import _ "net/http/pprof"</code></p>
 
 <p>然后启动 http 监听一个端口 <code class="language-plaintext highlighter-rouge">http.ListenAndServe(":9999", nil)</code></p>
 
-<h3 id="3启动服务器并监测服务器的资源使用情况"><span class="me-2">3.启动服务器，并监测服务器的资源使用情况</span><a href="#3启动服务器并监测服务器的资源使用情况" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="3启动服务器并监测服务器的资源使用情况"><span class="me-2">3.启动服务器，并监测服务器的资源使用情况</span><a href="#3启动服务器并监测服务器的资源使用情况" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>启动服务器后，使用 <code class="language-plaintext highlighter-rouge">ps -aux | grep servername</code> 查找服务器对应的 pid</p>
 
@@ -862,13 +875,13 @@
 
 <p>使用 <code class="language-plaintext highlighter-rouge">iotop -p pid</code> 监测服务器进程磁盘 io 的使用情况</p>
 
-<h3 id="4用模拟客户端进行压测"><span class="me-2">4.用模拟客户端进行压测</span><a href="#4用模拟客户端进行压测" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="4用模拟客户端进行压测"><span class="me-2">4.用模拟客户端进行压测</span><a href="#4用模拟客户端进行压测" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>建议使用多个实例分批次进行并发压测。比如要压测 500 个玩家，可以分成 5 批 100 个玩家，先登陆第一批玩家，等第一批玩家开始游戏了，再登陆第二批玩家。</p>
 
 <p>这样做的好处，一是可以避免瞬间的高峰把服务器搞挂了。二是能够较为真实的模拟不同玩家在不同时间的操作，可以更好地暴露问题。</p>
 
-<h3 id="5收集数据"><span class="me-2">5.收集数据</span><a href="#5收集数据" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="5收集数据"><span class="me-2">5.收集数据</span><a href="#5收集数据" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <p>进入压测状态后，使用 <code class="language-plaintext highlighter-rouge">go tool pprof http://localhost:9999/debug/pprof/profile</code> 收集服务器的数据。收集 30s 后在进入命令行模式后输入 quit 退出，会生成名为【pprof.servername.samples.cpu.00x.pb.gz】的文件，默认放到$HOME/pprof/下。</p>
 
@@ -876,31 +889,31 @@
 
 <p>也可以通过游戏客户端登陆进行更为直观的体验，可以发现游戏是否存在卡顿，延迟等问题。</p>
 
-<h3 id="6问题分析和优化"><span class="me-2">6.问题分析和优化</span><a href="#6问题分析和优化" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="6问题分析和优化"><span class="me-2">6.问题分析和优化</span><a href="#6问题分析和优化" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<h4 id="61-cpu-过高"><span class="me-2">6.1 CPU 过高</span><a href="#61-cpu-过高" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="61-cpu-过高"><span class="me-2">6.1 CPU 过高</span><a href="#61-cpu-过高" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>使用 <code class="language-plaintext highlighter-rouge">go tool pprof -http=ip:9998 [步骤5中生成的文件]</code> 解读 pprof 文件。</p>
 
 <p>访问对应的端口，可以在 <code class="language-plaintext highlighter-rouge">VIEW/Flame Graph</code>里面看到压测时的火焰图，进而分析耗 CPU 操作。</p>
 
-<h4 id="62-内存过高"><span class="me-2">6.2 内存过高</span><a href="#62-内存过高" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="62-内存过高"><span class="me-2">6.2 内存过高</span><a href="#62-内存过高" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>首先判断是否存在内存泄漏。如果没有泄漏，则分析代码看是否有优化的空间。如果有泄漏，可以使用 <code class="language-plaintext highlighter-rouge">valgrind</code>进行检测。</p>
 
-<h4 id="63-io-过高"><span class="me-2">6.3 io 过高</span><a href="#63-io-过高" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="63-io-过高"><span class="me-2">6.3 io 过高</span><a href="#63-io-过高" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>通过 <code class="language-plaintext highlighter-rouge">iostat -x 1</code>查看 io 是否到达瓶颈。主要看 <code class="language-plaintext highlighter-rouge">r/s（每秒完成的读io） w/s（每秒完成的写io） await（平均每次io的等待时间） svctm（平均每次io的服务时间）</code></p>
 
-<h4 id="64-死锁"><span class="me-2">6.4 死锁</span><a href="#64-死锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="64-死锁"><span class="me-2">6.4 死锁</span><a href="#64-死锁" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>通过访问服务器监听的端口（以上面为例，为 9999），通过 <code class="language-plaintext highlighter-rouge">full goroutine stack dump</code> 分析整个游戏的协程情况，结合代码分析问题。</p>
 
-<h4 id="65-链接读写"><span class="me-2">6.5 链接读写</span><a href="#65-链接读写" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="65-链接读写"><span class="me-2">6.5 链接读写</span><a href="#65-链接读写" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>通过 <code class="language-plaintext highlighter-rouge">netstat -nap | head</code> 观察 <code class="language-plaintext highlighter-rouge">Recv-Q</code> 和 <code class="language-plaintext highlighter-rouge">Send-Q</code> 是否为零，如果不为 0，则说明有阻塞存在，导致数据读写延迟。</p>
 
-<h4 id="66-其他"><span class="me-2">6.6 其他</span><a href="#66-其他" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<h3 id="66-其他"><span class="me-2">6.6 其他</span><a href="#66-其他" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>如果上面几个方面都没有问题，但是游戏依然出现卡顿或者延迟的情况，可以考虑分析游戏依赖的服务是否出现问题，比如大厅、redis、中台等。因为 go 协程的特性，当有协程这些请求外部服务阻塞时，会切换到其他协程进行工作，所以无法从火焰图上看到真实的阻塞的耗时情况。</p>
 
@@ -1061,35 +1074,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/InternetPrinciples/">InternetPrinciples（04735）</a>
+          <a href="/posts/1-go_base/">Day01（Golang 入门介绍）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/DataStructure/">DataStructure（02142）</a>
+          <a href="/posts/6-variableAndArray/">Day06（作用域与数组）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/math-education/">Math 国内教育</a>
+          <a href="/posts/9-mapAndContainer/">Day09（MapAndContainer）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Java_Base_SE/">Java基础</a>
+          <a href="/posts/10-interfaceAndError/">Day10（接口和错误处理）</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/resume/">Resume</a>
+          <a href="/posts/2-datatype/">Day02（数据类型、变量与常量）</a>
         </li>
       
     </ul>
