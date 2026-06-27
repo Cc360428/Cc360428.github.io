@@ -4,7 +4,7 @@
   <id>https://cc360428.github.io//</id>
   <title>Cc Blog</title>
   <subtitle># A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2026-06-27T10:48:49+08:00</updated>
+  <updated>2026-06-27T14:50:43+08:00</updated>
   <author>
     <name>Cc</name>
     <uri>https://cc360428.github.io//</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Go 版本发布历史</title>
+    <link href="https://cc360428.github.io//posts/go-release-history/" rel="alternate" type="text/html" title="Go 版本发布历史" />
+    <published>2026-06-27T08:08:14+08:00</published>
+  
+    <updated>2026-06-27T08:08:14+08:00</updated>
+  
+    <id>https://cc360428.github.io//posts/go-release-history/</id>
+    <content type="text/html" src="https://cc360428.github.io//posts/go-release-history/" />
+    <author>
+      <name>Cc</name>
+    </author>
+
+  
+    
+    <category term="Language" />
+    
+    <category term="Go" />
+    
+  
+
+  <summary>官方文档: https://go.dev/doc/devel/release    本文档记录了 Go 语言从 Go 1 到最新版本的重要特性、改进和变更。     📊 Go 版本演进时间线  gantt     title Go 主要版本发布时间线     dateFormat  YYYY-MM     section 早期版本     Go 1     :2012-03, 1M     Go 1.1   :2013-05, 1M     Go 1.2   :2013-12, 1M     Go 1.3   :2014-06, 1M     Go 1.4   :2014-12, 1M     Go 1.5   :2015-08, 1M     Go 1.6   :2016-02, 1M     Go 1.7   :2016-08, 1M     Go 1.8   :2017-02,...</summary>
+
+  </entry>
 
   
   <entry>
@@ -119,32 +145,6 @@
   
 
   <summary>查询  可回收且低脂的产品          元数据      Create table If Not Exists Products (product_id int, low_fats ENUM('Y', 'N'), recyclable ENUM('Y','N')); Truncate table Products; insert into Products (product_id, low_fats, recyclable) values ('0', 'Y', 'N'); insert into Products (product_id, low_fats, recyclable) values ('1', 'Y', 'Y'); insert into Products (product_id, low_fats, recyclable) values ('2', 'N', '...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>MySQL Select Base</title>
-    <link href="https://cc360428.github.io//posts/mysql-select-base/" rel="alternate" type="text/html" title="MySQL Select Base" />
-    <published>2024-01-09T23:20:48+08:00</published>
-  
-    <updated>2026-06-26T16:20:49+08:00</updated>
-  
-    <id>https://cc360428.github.io//posts/mysql-select-base/</id>
-    <content type="text/html" src="https://cc360428.github.io//posts/mysql-select-base/" />
-    <author>
-      <name>Cc</name>
-    </author>
-
-  
-    
-    <category term="DataStorage" />
-    
-    <category term="Mysql" />
-    
-  
-
-  <summary>MySQL Select Base     基本的 SQL 语法：了解 SQL 的基本语法结构，包括 SELECT、FROM、WHERE、GROUP BY、ORDER BY 等关键字的使用方法   表的创建和管理：理解如何创建表，定义列的数据类型，以及如何管理表的结构，包括添加、删除、修改列等操作   索引：了解索引的概念以及如何在表上创建索引，以提高查询性能   聚合函数：掌握聚合函数如 COUNT、SUM、AVG、MIN、MAX 等的使用，以便对数据进行统计和计算   GROUP BY 子句：学习如何使用 GROUP BY 子句对数据进行分组，并结合聚合函数进行分组统计   HAVING 子句：了解 HAVING 子句的作用，它与 WHERE 子句的区别，以及在 GROUP BY 后进行条件过滤的用法   连接（JOIN）：学习不同类型的连接操作，如 INNER JOIN、LEF...</summary>
 
   </entry>
 
