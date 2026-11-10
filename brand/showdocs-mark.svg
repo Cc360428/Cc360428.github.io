@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <title>ShowDocs</title>
+  <rect x="13" y="4" width="30" height="34" rx="9" fill="#27AE9E"/>
+  <rect x="5" y="11" width="30" height="33" rx="9" fill="#4B60D3"/>
+  <path d="M27 20h-8a4 4 0 0 0 0 8h3a4 4 0 0 1 0 8h-9" stroke="#fff" stroke-width="3.3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,3503 @@
+import{_ as a,a as s,c as t,b as e}from"./chunks/framework.BSuaGltH.js";const d=JSON.parse('{"title":"LeetCode Go · 数学与几何（6）","description":"数学与几何分类，第 1952–2443 题，共 30 题，含题目、可折叠解法与 Go 实现。","frontmatter":{"title":"LeetCode Go · 数学与几何（6）","description":"数学与几何分类，第 1952–2443 题，共 30 题，含题目、可折叠解法与 Go 实现。","showdocs":{"topics":[{"id":"leetcode","title":"LeetCode","link":"/topics/leetcode/"}],"kind":"实践案例","scope":"general","audience":"general","group":"原理与设计","summary":"数学与几何分类，第 1952–2443 题，共 30 题，含题目、可折叠解法与 Go 实现。","status":"active","related":[{"title":"LeetCode Go · 并查集（1）","link":"/principles/algorithms/leetcode-go/union-find-01","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（2）","link":"/principles/algorithms/leetcode-go/union-find-02","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（3）","link":"/principles/algorithms/leetcode-go/union-find-03","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（4）","link":"/principles/algorithms/leetcode-go/union-find-04","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并发（1）","link":"/principles/algorithms/leetcode-go/concurrency-01","kind":"实践案例","scope":"general","audience":"general"}],"prev":{"text":"LeetCode Go · 数学与几何（5）","link":"/principles/algorithms/leetcode-go/math-05"},"next":{"text":"LeetCode Go · 数学与几何（7）","link":"/principles/algorithms/leetcode-go/math-07"}},"layout":"ReadingPage","sidebar":false,"aside":false,"prev":{"text":"LeetCode Go · 数学与几何（5）","link":"/principles/algorithms/leetcode-go/math-05"},"next":{"text":"LeetCode Go · 数学与几何（7）","link":"/principles/algorithms/leetcode-go/math-07"}},"headers":[],"relativePath":"principles/algorithms/leetcode-go/math-06.md","filePath":"principles/algorithms/leetcode-go/math-06.md"}'),m={name:"principles/algorithms/leetcode-go/math-06.md"};function o(p,n,l,i,c,h){return s(),t("div",null,[...n[0]||(n[0]=[e("div",{innerHTML:`<div class="leetcode-reading"><h1 id="leetcode-go-·-数学与几何-6" tabindex="-1">LeetCode Go · 数学与几何（6） <a class="header-anchor" href="#leetcode-go-·-数学与几何-6" aria-label="Permalink to &quot;LeetCode Go · 数学与几何（6）&quot;">&ZeroWidthSpace;</a></h1>
+<p><a href="/principles/algorithms/leetcode-go/index">返回题库与筛选</a> · <a href="/principles/algorithms/leetcode-go/coverage">收录范围与使用说明</a></p>
+<details class="leetcode-attribution"><summary>来源与许可</summary><p>题目版权归 LeetCode；题解来自 <a href="https://github.com/doocs/leetcode" target="_blank" rel="noopener noreferrer">Doocs/leetcode</a>，按 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> 共享。补充 Go 代码来自<a href="https://github.com/EndlessCheng/codeforces-go/tree/e0fea933e2d713fd302622d2bb82a60f959a198e" target="_blank" rel="noopener noreferrer">灵茶山艾府</a>、<a href="https://github.com/halfrost/LeetCode-Go/tree/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e" target="_blank" rel="noopener noreferrer">halfrost</a>，保留 MIT 许可及逐题署名。本站提取 Go、调整分类及折叠排版；标注“本站整理”的 Go 解法依据题意与参考思路补写，按 CC BY-SA 4.0 共享。收录日期：2026-10-31；主题源版本：<a href="https://github.com/doocs/leetcode/tree/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011" target="_blank" rel="noopener noreferrer">91ef8c241a5e</a>。</p></details>
+<p class="leetcode-reading-hint">本卷 30 题 · 点击题目展开，先独立思考，再查看解法。</p><details class="leetcode-question" name="leetcode-questions" open>
+<summary class="leetcode-question-heading"><h2 id="q-1952" tabindex="-1">1952. 三除数 <a class="header-anchor" href="#q-1952" aria-label="Permalink to &quot;1952. 三除数 {#q-1952}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、枚举、数论、筛法、质因数分解</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数 <code>n</code> 。如果 <code>n</code> <strong>恰好有三个正除数</strong> ，返回 <code>true</code><em> </em>；否则，返回<em> </em><code>false</code> 。</p>&#10;&#10;<p>如果存在整数 <code>k</code> ，满足 <code>n = k * m</code> ，那么整数 <code>m</code> 就是 <code>n</code> 的一个 <strong>除数</strong> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>n = 2&#10;<strong>输出：</strong>false&#10;<strong>解释：</strong>2 只有两个除数：1 和 2 。</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><strong>输入：</strong>n = 4&#10;<strong>输出：</strong>true&#10;<strong>解释：</strong>4 有三个除数：1、2 和 4 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：枚举 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>恰有三个正因数的数必为某个素数的平方。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 不大，枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 统计中间因数个数是否为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 即可判定。</p>
+</blockquote>
+<p>一个数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 一定有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 两个正除数，因此只需要枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 之间的数，看它们是否是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的正除数即可，是则累加计数器，最后判断计数器是否为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为给定的整数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func isThree(n int) bool {</span></span>
+<span class="line"><span>	cnt := 0</span></span>
+<span class="line"><span>	for i := 2; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		if n%i == 0 {</span></span>
+<span class="line"><span>			cnt++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return cnt == 1</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：枚举优化 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>线性枚举在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 接近上限时偏慢。改为枚举到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mi>n</mi>
+  </msqrt>
+</math></span>，每找到因数对计数加二（平方时加一），判断总数是否为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+</math></span>。</p>
+</blockquote>
+<p>我们可以枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mi>n</mi>
+  </msqrt>
+</math></span> 之间的数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 能被 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 整除，并且 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>n</mi>
+    <mi>i</mi>
+  </mfrac>
+</math></span> 不等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，那么计数器累加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>，否则计数器累加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。最后判断计数器是否为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+</math></span> 即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msqrt>
+    <mi>n</mi>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为给定的整数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func isThree(n int) bool {</span></span>
+<span class="line"><span>	cnt := 0</span></span>
+<span class="line"><span>	for i := 1; i &#x3C;= n/i; i++ {</span></span>
+<span class="line"><span>		if n%i == 0 {</span></span>
+<span class="line"><span>			if n/i == i {</span></span>
+<span class="line"><span>				cnt++</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				cnt += 2</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return cnt == 3</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/three-divisors" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1952.Three%20Divisors/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1979" tabindex="-1">1979. 找出数组的最大公约数 <a class="header-anchor" href="#q-1979" aria-label="Permalink to &quot;1979. 找出数组的最大公约数 {#q-1979}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、数学、最大公约数、数论、欧几里得算法</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数数组 <code>nums</code> ，返回数组中最大数和最小数的 <strong>最大公约数</strong> 。</p>&#10;&#10;<p>两个数的 <strong>最大公约数</strong> 是能够被两个数整除的最大正整数。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>nums = [2,5,6,9,10]&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>&#10;nums 中最小的数是 2&#10;nums 中最大的数是 10&#10;2 和 10 的最大公约数是 2&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><strong>输入：</strong>nums = [7,5,6,8,3]&#10;<strong>输出：</strong>1&#10;<strong>解释：</strong>&#10;nums 中最小的数是 3&#10;nums 中最大的数是 8&#10;3 和 8 的最大公约数是 1&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre><strong>输入：</strong>nums = [3,3]&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>&#10;nums 中最小的数是 3&#10;nums 中最大的数是 3&#10;3 和 3 的最大公约数是 3&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>2 &lt;= nums.length &lt;= 1000</code></li>&#10;	<li><code>1 &lt;= nums[i] &lt;= 1000</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：模拟 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>数组的最大公约数等于最大元与最小元的公约数，其余元素不必参与。一遍求两端再调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">gcd</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们根据题意模拟即可，即先找出数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 中的最大值和最小值，然后求最大值和最小值的最大公约数。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func findGCD(nums []int) int {</span></span>
+<span class="line"><span>	a, b := slices.Max(nums), slices.Min(nums)</span></span>
+<span class="line"><span>	return gcd(a, b)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func gcd(a, b int) int {</span></span>
+<span class="line"><span>	if b == 0 {</span></span>
+<span class="line"><span>		return a</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return gcd(b, a%b)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/find-greatest-common-divisor-of-array" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1979.Find%20Greatest%20Common%20Divisor%20of%20Array/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1999" tabindex="-1">1999. 最小的仅由两个数组成的倍数 🔒 <a class="header-anchor" href="#q-1999" aria-label="Permalink to &quot;1999. 最小的仅由两个数组成的倍数 🔒 {#q-1999}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、枚举</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你三个整数, <code>k</code>, <code>digit1</code>和 <code>digit2</code>, 你想要找到满足以下条件的 <strong>最小 </strong>整数：</p>&#10;&#10;<ul>&#10;	<li><span><b>大于</b></span><code>k</code> 且是 <code>k</code> 的<strong>倍数</strong></li>&#10;	<li><strong>仅由</strong><code>digit1</code> <span>和 </span><code>digit2</code> 组成，即 <strong>每一位数 </strong>均是 <code>digit1</code> 或 <code>digit2</code></li>&#10;</ul>&#10;&#10;<p>请你返回<strong> </strong><strong>最小的满足这两个条件的整数</strong>，如果不存在这样的整数，或者最小的满足这两个条件的整数不在32位整数范围（0~<code>2<sup>31</sup>-1</code>），就返回 <code>-1</code> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>k = 2, digit1 = 0, digit2 = 2&#10;<strong>输出：</strong>20&#10;<strong>解释：</strong>&#10;20 是第一个仅有数字0和2组成的，比2大且是2的倍数的整数。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>k = 3, digit1 = 4, digit2 = 2&#10;<strong>输出：</strong>24&#10;<strong>解释：</strong>&#10;24 是第一个仅有数字 2 和 4 组成的，比 3 大且是 3 的倍数的整数。</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>k = 2, digit1 = 0, digit2 = 0&#10;<strong>输出：</strong>-1&#10;<strong>解释：&#10;</strong>不存在仅由 0 组成的比 2 大且是 2 的倍数的整数，因此返回 -1 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= k &lt;= 1000</code></li>&#10;	<li><code>0 &lt;= digit1 &lt;= 9</code></li>&#10;	<li><code>0 &lt;= digit2 &lt;= 9</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：BFS · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>在仅含两个给定数字的整数中找大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的最小倍数。按数值枚举倍数可能很长；按数位 BFS 可按从小到大生成全体合法整数。</p>
+<p>两数字先排序，从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 出发每次在末尾接上其中一个数字。队列保证先短后长、同长则字典序，因而第一个大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 且能整除 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 者即最小。超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>31</mn>
+    </mrow>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 则无解。</p>
+</blockquote>
+<p>我们观察 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的范围，发现 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+  <mo>&#x2264;</mo>
+  <mi>k</mi>
+  <mo>&#x2264;</mo>
+  <mn>1000</mn>
+</math></span>，因此，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>i</mi>
+  <mi>g</mi>
+  <mi>i</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>i</mi>
+  <mi>g</mi>
+  <mi>i</mi>
+  <mi>t</mi>
+  <mn>2</mn>
+</math></span> 都为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，那么一定不存在满足条件的整数，直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 即可。</p>
+<p>否则，我们不妨设 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>i</mi>
+  <mi>g</mi>
+  <mi>i</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+  <mo>&#x2264;</mo>
+  <mi>d</mi>
+  <mi>i</mi>
+  <mi>g</mi>
+  <mi>i</mi>
+  <mi>t</mi>
+  <mn>2</mn>
+</math></span>，接下来我们可以使用 BFS 的方法，初始时将整数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 入队，然后不断地从队首取出一个整数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <msup>
+    <mn>2</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>31</mn>
+    </mrow>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，那么说明不存在满足条件的整数，直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 即可。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mi>k</mi>
+</math></span> 且 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo lspace="thickmathspace" rspace="thickmathspace">mod</mo>
+  <mi>k</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>，那么说明找到了满足条件的整数，直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 即可。否则，我们将其乘以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 后加上 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>i</mi>
+  <mi>g</mi>
+  <mi>i</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>i</mi>
+  <mi>g</mi>
+  <mi>i</mi>
+  <mi>t</mi>
+  <mn>2</mn>
+</math></span>，并将这两个整数入队，继续进行搜索。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>log</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+  </msub>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>M</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>log</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+  </msub>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>M</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>M</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>31</mn>
+    </mrow>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func findInteger(k int, digit1 int, digit2 int) int {</span></span>
+<span class="line"><span>	if digit1 == 0 &#x26;&#x26; digit2 == 0 {</span></span>
+<span class="line"><span>		return -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if digit1 > digit2 {</span></span>
+<span class="line"><span>		digit1, digit2 = digit2, digit1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	q := []int{0}</span></span>
+<span class="line"><span>	for {</span></span>
+<span class="line"><span>		x := q[0]</span></span>
+<span class="line"><span>		q = q[1:]</span></span>
+<span class="line"><span>		if x > math.MaxInt32 {</span></span>
+<span class="line"><span>			return -1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if x > k &#x26;&#x26; x%k == 0 {</span></span>
+<span class="line"><span>			return x</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		q = append(q, x*10+digit1)</span></span>
+<span class="line"><span>		if digit1 != digit2 {</span></span>
+<span class="line"><span>			q = append(q, x*10+digit2)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/smallest-greater-multiple-made-of-two-digits" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1999.Smallest%20Greater%20Multiple%20Made%20of%20Two%20Digits/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2001" tabindex="-1">2001. 可互换矩形的组数 <a class="header-anchor" href="#q-2001" aria-label="Permalink to &quot;2001. 可互换矩形的组数 {#q-2001}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、数学、计数、数论</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>用一个下标从 <strong>0</strong> 开始的二维整数数组 <code>rectangles</code> 来表示 <code>n</code> 个矩形，其中 <code>rectangles[i] = [width<sub>i</sub>, height<sub>i</sub>]</code> 表示第 <code>i</code> 个矩形的宽度和高度。</p>&#10;&#10;<p>如果两个矩形 <code>i</code> 和 <code>j</code>（<code>i &lt; j</code>）的宽高比相同，则认为这两个矩形 <strong>可互换</strong> 。更规范的说法是，两个矩形满足 <code>width<sub>i</sub>/height<sub>i</sub> == width<sub>j</sub>/height<sub>j</sub></code>（使用实数除法而非整数除法），则认为这两个矩形 <strong>可互换</strong> 。</p>&#10;&#10;<p>计算并返回 <code>rectangles</code> 中有多少对 <strong>可互换 </strong>矩形。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>rectangles = [[4,8],[3,6],[10,20],[15,30]]&#10;<strong>输出：</strong>6&#10;<strong>解释：</strong>下面按下标（从 0 开始）列出可互换矩形的配对情况：&#10;- 矩形 0 和矩形 1 ：4/8 == 3/6&#10;- 矩形 0 和矩形 2 ：4/8 == 10/20&#10;- 矩形 0 和矩形 3 ：4/8 == 15/30&#10;- 矩形 1 和矩形 2 ：3/6 == 10/20&#10;- 矩形 1 和矩形 3 ：3/6 == 15/30&#10;- 矩形 2 和矩形 3 ：10/20 == 15/30&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>rectangles = [[4,5],[7,8]]&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>不存在成对的可互换矩形。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == rectangles.length</code></li>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>rectangles[i].length == 2</code></li>&#10;	<li><code>1 &lt;= width<sub>i</sub>, height<sub>i</sub> &lt;= 10<sup>5</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：数学 + 哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>可互换当且仅当宽高比相同。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，两两比较比值会达到平方级，难以接受。</p>
+<p>浮点除法存在精度误差，不能直接用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>w</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>h</mi>
+</math></span> 作为键。将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>w</mi>
+  <mo>,</mo>
+  <mi>h</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 除以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">gcd</mo>
+  <mo stretchy="false">(</mo>
+  <mi>w</mi>
+  <mo>,</mo>
+  <mi>h</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 后，同一最简分数对应同一对整数。</p>
+<p>为此用哈希表统计每个最简对出现次数；每读入一个矩形，先累加已有同比例个数，再写入计数，避免组合数的二次扫描。</p>
+</blockquote>
+<p>为了能够唯一表示矩形，我们需要将矩形的宽高比化简为最简分数。因此，我们可以求出每个矩形的宽高比的最大公约数，然后将宽高比化简为最简分数。接下来，我们使用哈希表统计每个最简分数的矩形数量，然后计算每个最简分数的矩形数量的组合数，即可得到答案。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>M</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>M</mi>
+</math></span> 分别是矩形的数量和矩形的最大边长。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func interchangeableRectangles(rectangles [][]int) int64 {</span></span>
+<span class="line"><span>	ans := 0</span></span>
+<span class="line"><span>	cnt := map[int]int{}</span></span>
+<span class="line"><span>	for _, e := range rectangles {</span></span>
+<span class="line"><span>		w, h := e[0], e[1]</span></span>
+<span class="line"><span>		g := gcd(w, h)</span></span>
+<span class="line"><span>		w, h = w/g, h/g</span></span>
+<span class="line"><span>		x := w*100001 + h</span></span>
+<span class="line"><span>		ans += cnt[x]</span></span>
+<span class="line"><span>		cnt[x]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return int64(ans)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func gcd(a, b int) int {</span></span>
+<span class="line"><span>	if b == 0 {</span></span>
+<span class="line"><span>		return a</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return gcd(b, a%b)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/number-of-pairs-of-interchangeable-rectangles" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2001.Number%20of%20Pairs%20of%20Interchangeable%20Rectangles/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2028" tabindex="-1">2028. 找出缺失的观测数据 <a class="header-anchor" href="#q-2028" aria-label="Permalink to &quot;2028. 找出缺失的观测数据 {#q-2028}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、数学、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>现有一份 <code>n + m</code> 次投掷单个<strong> 六面</strong> 骰子的观测数据，骰子的每个面从 <code>1</code> 到 <code>6</code> 编号。观测数据中缺失了 <code>n</code> 份，你手上只拿到剩余 <code>m</code> 次投掷的数据。幸好你有之前计算过的这 <code>n + m</code> 次投掷数据的 <strong>平均值</strong> 。</p>&#10;&#10;<p>给你一个长度为 <code>m</code> 的整数数组 <code>rolls</code> ，其中 <code>rolls[i]</code> 是第 <code>i</code> 次观测的值。同时给你两个整数 <code>mean</code> 和 <code>n</code> 。</p>&#10;&#10;<p>返回一个长度为<em> </em><code>n</code><em> </em>的数组，包含所有缺失的观测数据，且满足这<em> </em><code>n + m</code><em> </em>次投掷的 <strong>平均值</strong> 是<em> </em><code>mean</code> 。如果存在多组符合要求的答案，只需要返回其中任意一组即可。如果不存在答案，返回一个空数组。</p>&#10;&#10;<p><code>k</code> 个数字的 <strong>平均值</strong> 为这些数字求和后再除以 <code>k</code> 。</p>&#10;&#10;<p>注意 <code>mean</code> 是一个整数，所以 <code>n + m</code> 次投掷的总和需要被 <code>n + m</code> 整除。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>rolls = [3,2,4,3], mean = 4, n = 2&#10;<strong>输出：</strong>[6,6]&#10;<strong>解释：</strong>所有 n + m 次投掷的平均值是 (3 + 2 + 4 + 3 + 6 + 6) / 6 = 4 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>rolls = [1,5,6], mean = 3, n = 4&#10;<strong>输出：</strong>[2,3,2,2]&#10;<strong>解释：</strong>所有 n + m 次投掷的平均值是 (1 + 5 + 6 + 2 + 3 + 2 + 2) / 7 = 3 。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>rolls = [1,2,3,4], mean = 6, n = 4&#10;<strong>输出：</strong>[]&#10;<strong>解释：</strong>无论丢失的 4 次数据是什么，平均值都不可能是 6 。&#10;</pre>&#10;&#10;<p><strong>示例 4：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>rolls = [1], mean = 3, n = 1&#10;<strong>输出：</strong>[5]&#10;<strong>解释：</strong>所有 n + m 次投掷的平均值是 (1 + 5) / 2 = 3 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>m == rolls.length</code></li>&#10;	<li><code>1 &lt;= n, m &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= rolls[i], mean &lt;= 6</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：构造 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>缺失 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 个骰子，每个在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，且全体平均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>e</mi>
+  <mi>a</mi>
+  <mi>n</mi>
+</math></span>。总和被唯一确定，故只需判断缺失和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 是否落在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mi>n</mi>
+  <mo stretchy="false">]</mo>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>,</mo>
+  <mi>m</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，构造而非搜索。</p>
+<p>可行时把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 尽量均分：先人人 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>n</mi>
+</math></span>，再给前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo lspace="thickmathspace" rspace="thickmathspace">mod</mo>
+  <mi>n</mi>
+</math></span> 个各加一，均不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>6</mn>
+</math></span>。</p>
+</blockquote>
+<p>根据题目描述，所有数字之和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#xD7;</mo>
+  <mtext mathvariant="italic">mean</mtext>
+</math></span>，已知的数字之和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <munderover>
+    <mo data-mjx-texclass="OP">&#x2211;</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mo>=</mo>
+      <mn>0</mn>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi>m</mi>
+      <mo>&#x2212;</mo>
+      <mn>1</mn>
+    </mrow>
+  </munderover>
+  <mtext mathvariant="italic">rolls</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，那么缺失的数字之和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#xD7;</mo>
+  <mtext mathvariant="italic">mean</mtext>
+  <mo>&#x2212;</mo>
+  <munderover>
+    <mo data-mjx-texclass="OP">&#x2211;</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mo>=</mo>
+      <mn>0</mn>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi>m</mi>
+      <mo>&#x2212;</mo>
+      <mn>1</mn>
+    </mrow>
+  </munderover>
+  <mtext mathvariant="italic">rolls</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+<p>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&gt;</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mn>6</mn>
+</math></span> 或者 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&lt;</mo>
+  <mi>n</mi>
+</math></span>，说明不存在满足条件的答案，返回空数组。</p>
+<p>否则，我们可以将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 平均分配到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 个数字上，即每个数字的值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>n</mi>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo lspace="thickmathspace" rspace="thickmathspace">mod</mo>
+  <mi>n</mi>
+</math></span> 个数字的值再加上 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 分别为缺失的数字个数和已知的数字个数。忽略答案的空间消耗，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func missingRolls(rolls []int, mean int, n int) []int {</span></span>
+<span class="line"><span>	m := len(rolls)</span></span>
+<span class="line"><span>	s := (n + m) * mean</span></span>
+<span class="line"><span>	for _, v := range rolls {</span></span>
+<span class="line"><span>		s -= v</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if s > n*6 || s &#x3C; n {</span></span>
+<span class="line"><span>		return []int{}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := make([]int, n)</span></span>
+<span class="line"><span>	for i, j := 0, 0; i &#x3C; n; i, j = i+1, j+1 {</span></span>
+<span class="line"><span>		ans[i] = s / n</span></span>
+<span class="line"><span>		if j &#x3C; s%n {</span></span>
+<span class="line"><span>			ans[i]++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/find-missing-observations" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2028.Find%20Missing%20Observations/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2033" tabindex="-1">2033. 获取单值网格的最小操作数 <a class="header-anchor" href="#q-2033" aria-label="Permalink to &quot;2033. 获取单值网格的最小操作数 {#q-2033}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、数学、矩阵、排序</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个大小为 <code>m x n</code> 的二维整数网格 <code>grid</code> 和一个整数 <code>x</code> 。</p>&#10;&#10;<p>每一次操作，你可以对 <code>grid</code> 中的任一元素 <strong>加</strong> <code>x</code> 或 <strong>减</strong> <code>x</code> 。</p>&#10;&#10;<p><strong>单值网格</strong> 是全部元素都相等的网格。</p>&#10;&#10;<p>返回使网格化为 <strong>单值</strong> 网格所需的 <strong>最小</strong> 操作数。如果不能，返回 -1 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2033.Minimum%20Operations%20to%20Make%20a%20Uni-Value%20Grid/images/gridtxt.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>grid = [[2,4],[6,8]], x = 2&#10;<strong>输出：</strong>4&#10;<strong>解释：</strong>可以执行下述操作使所有元素都等于 4 ： &#10;- 2 加 x 一次。&#10;- 6 减 x 一次。&#10;- 8 减 x 两次。&#10;共计 4 次操作。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2033.Minimum%20Operations%20to%20Make%20a%20Uni-Value%20Grid/images/gridtxt-1.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>grid = [[1,5],[2,3]], x = 1&#10;<strong>输出：</strong>5&#10;<strong>解释：</strong>可以使所有元素都等于 3 。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2033.Minimum%20Operations%20to%20Make%20a%20Uni-Value%20Grid/images/gridtxt-2.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>grid = [[1,2],[3,4]], x = 2&#10;<strong>输出：</strong>-1&#10;<strong>解释：</strong>无法使所有元素相等。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>m == grid.length</code></li>&#10;	<li><code>n == grid[i].length</code></li>&#10;	<li><code>1 &lt;= m, n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= m * n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= x, grid[i][j] &lt;= 10<sup>4</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：贪心 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每次只能加减 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，故所有格子模 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 必须相同，否则无解。格子数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，要把它们改成同一值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>，操作次数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP">&#x2211;</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <msub>
+    <mi>a</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>&#x2212;</mo>
+  <mi>t</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>x</mi>
+</math></span>。</p>
+<p>该和在中位数处最小。摊平后排序取中位，再累加绝对差除以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>。</p>
+</blockquote>
+<p>首先，要使得网格化为单值网格，那么网格的所有元素与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的余数必须相同。</p>
+<p>因此，我们可以先遍历网格，判断所有元素与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的余数是否相同，若不同则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。否则，我们将所有元素放入数组中，对数组进行排序，取中位数，然后遍历数组，计算每个元素与中位数的差值，再除以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，将所有的差值相加，即为答案。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>&#xD7;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>&#xD7;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>&#xD7;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 分别为网格的行数和列数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func minOperations(grid [][]int, x int) int {</span></span>
+<span class="line"><span>	mod := grid[0][0] % x</span></span>
+<span class="line"><span>	nums := []int{}</span></span>
+<span class="line"><span>	for _, row := range grid {</span></span>
+<span class="line"><span>		for _, v := range row {</span></span>
+<span class="line"><span>			if v%x != mod {</span></span>
+<span class="line"><span>				return -1</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			nums = append(nums, v)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	sort.Ints(nums)</span></span>
+<span class="line"><span>	mid := nums[len(nums)>>1]</span></span>
+<span class="line"><span>	ans := 0</span></span>
+<span class="line"><span>	for _, v := range nums {</span></span>
+<span class="line"><span>		ans += abs(v-mid) / x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func abs(x int) int {</span></span>
+<span class="line"><span>	if x &#x3C; 0 {</span></span>
+<span class="line"><span>		return -x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return x</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/minimum-operations-to-make-a-uni-value-grid" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2033.Minimum%20Operations%20to%20Make%20a%20Uni-Value%20Grid/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2081" tabindex="-1">2081. k 镜像数字的和 <a class="header-anchor" href="#q-2081" aria-label="Permalink to &quot;2081. k 镜像数字的和 {#q-2081}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、枚举</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>一个 <strong>k 镜像数字</strong> 指的是一个在十进制和 k 进制下从前往后读和从后往前读都一样的 <strong>没有前导 0</strong> 的 <strong>正</strong> 整数。</p>&#10;&#10;<ul>&#10;	<li>比方说，<code>9</code> 是一个 2 镜像数字。<code>9</code> 在十进制下为 <code>9</code> ，二进制下为 <code>1001</code> ，两者从前往后读和从后往前读都一样。</li>&#10;	<li>相反地，<code>4</code> 不是一个 2 镜像数字。<code>4</code> 在二进制下为 <code>100</code> ，从前往后和从后往前读不相同。</li>&#10;</ul>&#10;&#10;<p>给你进制 <code>k</code> 和一个数字 <code>n</code> ，请你返回 k 镜像数字中 <strong>最小</strong> 的 <code>n</code> 个数 <strong>之和</strong> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><b>示例 1：</b></p>&#10;&#10;<pre><b>输入：</b>k = 2, n = 5&#10;<b>输出：</b>25&#10;<strong>解释：&#10;</strong>最小的 5 个 2 镜像数字和它们的二进制表示如下：&#10;  十进制       二进制&#10;    1          1&#10;    3          11&#10;    5          101&#10;    7          111&#10;    9          1001&#10;它们的和为 1 + 3 + 5 + 7 + 9 = 25 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><b>输入：</b>k = 3, n = 7&#10;<b>输出：</b>499&#10;<strong>解释：&#10;</strong>7 个最小的 3 镜像数字和它们的三进制表示如下：&#10;  十进制       三进制&#10;    1          1&#10;    2          2&#10;    4          11&#10;    8          22&#10;    121        11111&#10;    151        12121&#10;    212        21212&#10;它们的和为 1 + 2 + 4 + 8 + 121 + 151 + 212 = 499 。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre><b>输入：</b>k = 7, n = 17&#10;<b>输出：</b>20379000&#10;<b>解释：</b>17 个最小的 7 镜像数字分别为：&#10;1, 2, 3, 4, 5, 6, 8, 121, 171, 242, 292, 16561, 65656, 2137312, 4602064, 6597956, 6958596&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>2 &lt;= k &lt;= 9</code></li>&#10;	<li><code>1 &lt;= n &lt;= 30</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：折半枚举 + 数学 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>30</mn>
+</math></span>，但 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 镜像数随长度稀疏，不能从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 扫到很大。十进制回文可由前半段唯一确定，枚举量小得多。</p>
+<p>按长度折半枚举前半，镜像生成十进制回文，再检验 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 进制是否回文。凑满 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 个后求和。</p>
+</blockquote>
+<p>对于一个 k 镜像数字，我们可以将其分为两部分：前半部分和后半部分。对于偶数长度的数字，前半部分和后半部分完全相同；对于奇数长度的数字，前半部分和后半部分相同，但中间的数字可以是任意数字。</p>
+<p>我们可以通过枚举前半部分的数字，然后根据前半部分构造出完整的 k 镜像数字。具体步骤如下：</p>
+<ol>
+<li><strong>枚举长度</strong>：从 1 开始枚举数字的长度，直到找到满足条件的 k 镜像数字。</li>
+<li><strong>计算前半部分的范围</strong>：对于长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 的数字，前半部分的范围是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">(</mo>
+      <mi>l</mi>
+      <mo>&#x2212;</mo>
+      <mn>1</mn>
+      <mo stretchy="false">)</mo>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo>,</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mo stretchy="false">(</mo>
+      <mi>l</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+      <mo stretchy="false">)</mo>
+      <mrow data-mjx-texclass="ORD">
+        <mo>/</mo>
+      </mrow>
+      <mn>2</mn>
+    </mrow>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li><strong>构造 k 镜像数字</strong>：对于每个前半部分的数字 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，如果长度为偶数，则直接将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 作为前半部分；如果长度为奇数，则将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 除以 10 得到前半部分。然后将前半部分的数字反转并添加到后半部分，构造出完整的 k 镜像数字。</li>
+<li><strong>检查 k 镜像数字</strong>：将构造出的数字转换为 k 进制，检查其是否是回文数。</li>
+<li><strong>累加结果</strong>：如果是 k 镜像数字，则将其累加到结果中，并减少计数器 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>。当计数器 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 减至 0 时，返回结果。</li>
+</ol>
+<p>时间复杂度主要取决于枚举的长度和前半部分的范围。由于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的最大值为 30，因此在实际操作中，枚举的次数是有限的。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，因为我们只使用了常数级别的额外空间。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func kMirror(k int, n int) int64 {</span></span>
+<span class="line"><span>	check := func(x int64, k int) bool {</span></span>
+<span class="line"><span>		s := []int{}</span></span>
+<span class="line"><span>		for x > 0 {</span></span>
+<span class="line"><span>			s = append(s, int(x%int64(k)))</span></span>
+<span class="line"><span>			x /= int64(k)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for i, j := 0, len(s)-1; i &#x3C; j; i, j = i+1, j-1 {</span></span>
+<span class="line"><span>			if s[i] != s[j] {</span></span>
+<span class="line"><span>				return false</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return true</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	var ans int64 = 0</span></span>
+<span class="line"><span>	for l := 1; ; l++ {</span></span>
+<span class="line"><span>		x := pow10((l - 1) / 2)</span></span>
+<span class="line"><span>		y := pow10((l + 1) / 2)</span></span>
+<span class="line"><span>		for i := x; i &#x3C; y; i++ {</span></span>
+<span class="line"><span>			v := int64(i)</span></span>
+<span class="line"><span>			j := i</span></span>
+<span class="line"><span>			if l%2 != 0 {</span></span>
+<span class="line"><span>				j = i / 10</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			for j > 0 {</span></span>
+<span class="line"><span>				v = v*10 + int64(j%10)</span></span>
+<span class="line"><span>				j /= 10</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if check(v, k) {</span></span>
+<span class="line"><span>				ans += v</span></span>
+<span class="line"><span>				n--</span></span>
+<span class="line"><span>				if n == 0 {</span></span>
+<span class="line"><span>					return ans</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func pow10(exp int) int {</span></span>
+<span class="line"><span>	res := 1</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; exp; i++ {</span></span>
+<span class="line"><span>		res *= 10</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return res</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/sum-of-k-mirror-numbers" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2081.Sum%20of%20k-Mirror%20Numbers/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2117" tabindex="-1">2117. 一个区间内所有数乘积的缩写 <a class="header-anchor" href="#q-2117" aria-label="Permalink to &quot;2117. 一个区间内所有数乘积的缩写 {#q-2117}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、数论</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你两个正整数 <code>left</code> 和 <code>right</code> ，满足 <code>left &lt;= right</code> 。请你计算 <strong>闭区间</strong> <code>[left, right]</code> 中所有整数的 <strong>乘积</strong> 。</p>&#10;&#10;<p>由于乘积可能非常大，你需要将它按照以下步骤 <strong>缩写</strong> ：</p>&#10;&#10;<ol>&#10;	<li>统计乘积中 <strong>后缀</strong> 0 的数目，并 <strong>移除</strong> 这些 0 ，将这个数目记为 <code>C</code> 。&#10;&#10;    <ul>&#10;    	<li>比方说，<code>1000</code> 中有 <code>3</code> 个后缀 0 ，<code>546</code> 中没有后缀 0 。</li>&#10;    </ul>&#10;    </li>&#10;    <li>将乘积中剩余数字的位数记为 <code>d</code> 。如果 <code>d > 10</code> ，那么将乘积表示为 <code>&lt;pre>...&lt;suf></code> 的形式，其中 <code>&lt;pre></code> 表示乘积最 <strong>开始</strong> 的 <code>5</code> 个数位，<code>&lt;suf></code> 表示删除后缀 0 <strong>之后</strong> 结尾的 <code>5</code> 个数位。如果 <code>d &lt;= 10</code> ，我们不对它做修改。&#10;    <ul>&#10;    	<li>比方说，我们将 <code>1234567654321</code> 表示为 <code>12345...54321</code> ，但是 <code>1234567</code> 仍然表示为 <code>1234567</code> 。</li>&#10;    </ul>&#10;    </li>&#10;    <li>最后，将乘积表示为 <strong>字符串</strong> <code>&quot;&lt;pre>...&lt;suf>eC&quot;</code> 。&#10;    <ul>&#10;    	<li>比方说，<code>12345678987600000</code> 被表示为 <code>&quot;12345...89876e5&quot;</code> 。</li>&#10;    </ul>&#10;    </li>&#10;&#10;</ol>&#10;&#10;<p>请你返回一个字符串，表示 <strong>闭区间</strong> <code>[left, right]</code> 中所有整数 <strong>乘积</strong> 的 <strong>缩写</strong> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>left = 1, right = 4&#10;<b>输出：</b>&quot;24e0&quot;&#10;<strong>解释：</strong>&#10;乘积为 1 × 2 × 3 × 4 = 24 。&#10;由于没有后缀 0 ，所以 24 保持不变，缩写的结尾为 &quot;e0&quot; 。&#10;因为乘积的结果是 2 位数，小于 10 ，所欲我们不进一步将它缩写。&#10;所以，最终将乘积表示为 &quot;24e0&quot; 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>left = 2, right = 11&#10;<strong>输出：</strong>&quot;399168e2&quot;&#10;<strong>解释：</strong>乘积为 39916800 。&#10;有 2 个后缀 0 ，删除后得到 399168 。缩写的结尾为 &quot;e2&quot; 。 &#10;删除后缀 0 后是 6 位数，不需要进一步缩写。 &#10;所以，最终将乘积表示为 &quot;399168e2&quot; 。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>left = 371, right = 375&#10;<strong>输出：</strong>&quot;7219856259e3&quot;&#10;<strong>解释：</strong>乘积为 7219856259000 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= left &lt;= right &lt;= 10<sup>4</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>区间乘积的位数可达数万，直接高精度乘法再截取前后五位代价过大。科学计数法要求去掉尾随零，并在位数超过十时输出前五位、后五位与指数。</p>
+<p>尾随零的个数等于因子 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+</math></span> 的对数的较小值。去掉这些因子后，后缀可用对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+  </msup>
+</math></span> 取模维护最后若干位；前缀则用浮点（或反复除以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span>）把有效数字压回五位以上的窗口。</p>
+<p>为此先统计并扣除 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mtext mathvariant="italic">cnt</mtext>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mtext mathvariant="italic">cnt</mtext>
+    <mn>5</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span> 个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+</math></span>，再扫一遍乘积维护 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pre</mtext>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">suf</mtext>
+</math></span>；若后缀曾超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+  </msup>
+</math></span> 则按缩写格式输出，否则输出完整去零结果。</p>
+</blockquote>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func abbreviateProduct(left int, right int) string {</span></span>
+<span class="line"><span>	cnt2, cnt5 := 0, 0</span></span>
+<span class="line"><span>	for i := left; i &#x3C;= right; i++ {</span></span>
+<span class="line"><span>		x := i</span></span>
+<span class="line"><span>		for x%2 == 0 {</span></span>
+<span class="line"><span>			cnt2++</span></span>
+<span class="line"><span>			x /= 2</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for x%5 == 0 {</span></span>
+<span class="line"><span>			cnt5++</span></span>
+<span class="line"><span>			x /= 5</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	c := int(math.Min(float64(cnt2), float64(cnt5)))</span></span>
+<span class="line"><span>	cnt2 = c</span></span>
+<span class="line"><span>	cnt5 = c</span></span>
+<span class="line"><span>	suf := int64(1)</span></span>
+<span class="line"><span>	pre := float64(1)</span></span>
+<span class="line"><span>	gt := false</span></span>
+<span class="line"><span>	for i := left; i &#x3C;= right; i++ {</span></span>
+<span class="line"><span>		for suf *= int64(i); cnt2 > 0 &#x26;&#x26; suf%2 == 0; {</span></span>
+<span class="line"><span>			cnt2--</span></span>
+<span class="line"><span>			suf /= int64(2)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for cnt5 > 0 &#x26;&#x26; suf%5 == 0 {</span></span>
+<span class="line"><span>			cnt5--</span></span>
+<span class="line"><span>			suf /= int64(5)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if float64(suf) >= 1e10 {</span></span>
+<span class="line"><span>			gt = true</span></span>
+<span class="line"><span>			suf %= int64(1e10)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for pre *= float64(i); pre > 1e5; {</span></span>
+<span class="line"><span>			pre /= 10</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if gt {</span></span>
+<span class="line"><span>		return fmt.Sprintf("%05d...%05de%d", int(pre), int(suf)%int(1e5), c)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return fmt.Sprintf("%de%d", suf, c)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/abbreviating-the-product-of-a-range" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2117.Abbreviating%20the%20Product%20of%20a%20Range/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2119" tabindex="-1">2119. 反转两次的数字 <a class="header-anchor" href="#q-2119" aria-label="Permalink to &quot;2119. 反转两次的数字 {#q-2119}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p><strong>反转</strong> 一个整数意味着倒置它的所有位。</p>&#10;&#10;<ul>&#10;	<li>例如，反转 <code>2021</code> 得到 <code>1202</code> 。反转 <code>12300</code> 得到 <code>321</code> ，<strong>不保留前导零</strong> 。</li>&#10;</ul>&#10;&#10;<p>给你一个整数 <code>num</code> ，<strong>反转</strong> <code>num</code> 得到 <code>reversed1</code> ，<strong>接着反转</strong> <code>reversed1</code> 得到 <code>reversed2</code> 。如果 <code>reversed2</code> 等于 <code>num</code> ，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>num = 526&#10;<strong>输出：</strong>true&#10;<strong>解释：</strong>反转 num 得到 625 ，接着反转 625 得到 526 ，等于 num 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><strong>输入：</strong>num = 1800&#10;<strong>输出：</strong>false&#10;<strong>解释：</strong>反转 num 得到 81 ，接着反转 81 得到 18 ，不等于 num 。 </pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre><strong>输入：</strong>num = 0&#10;<strong>输出：</strong>true&#10;<strong>解释：</strong>反转 num 得到 0 ，接着反转 0 得到 0 ，等于 num 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>0 &lt;= num &lt;= 10<sup>6</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：数学 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>反转整数会丢掉前导零，因而第二次反转能否回到原数，取决于第一次是否丢掉了末尾零。对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 做两次真实反转即可验证，但数字范围虽不大，仍可直接看数位性质。</p>
+<p>若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>，两次反转仍为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>。否则，第一次反转丢掉末尾零当且仅当 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 含因子 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span>，即个位为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>。</p>
+<p>因此当且仅当 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> 或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo lspace="thickmathspace" rspace="thickmathspace">mod</mo>
+  <mn>10</mn>
+  <mo>&#x2260;</mo>
+  <mn>0</mn>
+</math></span> 时答案为真。</p>
+</blockquote>
+<p>如果数字是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，或者数字的个位不是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，那么反转两次后的数字一定和原数字相等。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func isSameAfterReversals(num int) bool {</span></span>
+<span class="line"><span>	return num == 0 || num%10 != 0</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/a-number-after-a-double-reversal" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2119.A%20Number%20After%20a%20Double%20Reversal/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2125" tabindex="-1">2125. 银行中的激光束数量 <a class="header-anchor" href="#q-2125" aria-label="Permalink to &quot;2125. 银行中的激光束数量 {#q-2125}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、数学、字符串、矩阵</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>银行内部的防盗安全装置已经激活。给你一个下标从 <strong>0</strong> 开始的二进制字符串数组 <code>bank</code> ，表示银行的平面图，这是一个大小为 <code>m x n</code> 的二维矩阵。 <code>bank[i]</code> 表示第 <code>i</code> 行的设备分布，由若干 <code>'0'</code> 和若干 <code>'1'</code> 组成。<code>'0'</code> 表示单元格是空的，而 <code>'1'</code> 表示单元格有一个安全设备。</p>&#10;&#10;<p>对任意两个安全设备而言，<strong>如果</strong><strong>同时</strong> 满足下面两个条件，则二者之间存在 <strong>一个</strong> 激光束：</p>&#10;&#10;<ul>&#10;	<li>两个设备位于两个 <strong>不同行</strong> ：<code>r<sub>1</sub></code> 和 <code>r<sub>2</sub></code> ，其中 <code>r<sub>1</sub> &lt; r<sub>2</sub></code> 。</li>&#10;	<li>满足 <code>r<sub>1</sub> &lt; i &lt; r<sub>2</sub></code> 的 <strong>所有 </strong>行 <code>i</code> ，都 <strong>没有安全设备</strong> 。</li>&#10;</ul>&#10;&#10;<p>激光束是独立的，也就是说，一个激光束既不会干扰另一个激光束，也不会与另一个激光束合并成一束。</p>&#10;&#10;<p>返回银行中激光束的总数量。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2100-2199/2125.Number%20of%20Laser%20Beams%20in%20a%20Bank/images/laser1.jpg" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>bank = [&quot;011001&quot;,&quot;000000&quot;,&quot;010100&quot;,&quot;001000&quot;]&#10;<strong>输出：</strong>8&#10;<strong>解释：</strong>在下面每组设备对之间，存在一条激光束。总共是 8 条激光束：&#10; * bank[0][1] -- bank[2][1]&#10; * bank[0][1] -- bank[2][3]&#10; * bank[0][2] -- bank[2][1]&#10; * bank[0][2] -- bank[2][3]&#10; * bank[0][5] -- bank[2][1]&#10; * bank[0][5] -- bank[2][3]&#10; * bank[2][1] -- bank[3][2]&#10; * bank[2][3] -- bank[3][2]&#10;注意，第 0 行和第 3 行上的设备之间不存在激光束。&#10;这是因为第 2 行存在安全设备，这不满足第 2 个条件。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2100-2199/2125.Number%20of%20Laser%20Beams%20in%20a%20Bank/images/laser2.jpg" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>bank = [&quot;000&quot;,&quot;111&quot;,&quot;000&quot;]&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>不存在两个位于不同行的设备&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>m == bank.length</code></li>&#10;	<li><code>n == bank[i].length</code></li>&#10;	<li><code>1 &lt;= m, n &lt;= 500</code></li>&#10;	<li><code>bank[i][j]</code> 为 <code>'0'</code> 或 <code>'1'</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：逐行统计 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>激光只存在于两行安全设备之间，且中间行不能再有设备。若枚举行对再检查中间是否全空，行数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 时可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>m</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span> 的行对，再乘上扫行的代价。</p>
+<p>相邻两个「非空行」之间的光束数恰为两行设备数之积，中间的空行可以跳过。因此只需按行统计 <code v-pre>1</code> 的个数，记住上一非空行的计数。</p>
+<p>扫过每一行，若当前计数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cur</mtext>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>，则累加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pre</mtext>
+  <mo>&#xD7;</mo>
+  <mtext mathvariant="italic">cur</mtext>
+</math></span> 并更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pre</mtext>
+</math></span>。</p>
+</blockquote>
+<p>我们可以逐行统计每行的安全设备数量，如果当前行没有安全设备，直接跳过，否则我们将当前行的安全设备数量乘以前一行的安全设备数量，累加到答案中。然后更新前一行的安全设备数量为当前行的安全设备数量。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>&#xD7;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 分别为行数和列数。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func numberOfBeams(bank []string) (ans int) {</span></span>
+<span class="line"><span>	pre := 0</span></span>
+<span class="line"><span>	for _, row := range bank {</span></span>
+<span class="line"><span>		if cur := strings.Count(row, "1"); cur > 0 {</span></span>
+<span class="line"><span>			ans += pre * cur</span></span>
+<span class="line"><span>			pre = cur</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/number-of-laser-beams-in-a-bank" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2125.Number%20of%20Laser%20Beams%20in%20a%20Bank/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2162" tabindex="-1">2162. 设置时间的最少代价 <a class="header-anchor" href="#q-2162" aria-label="Permalink to &quot;2162. 设置时间的最少代价 {#q-2162}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、枚举</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>常见的微波炉可以设置加热时间，且加热时间满足以下条件：</p>&#10;&#10;<ul>&#10;	<li>至少为 <code>1</code> 秒钟。</li>&#10;	<li>至多为 <code>99</code> 分 <code>99</code> 秒。</li>&#10;</ul>&#10;&#10;<p>你可以 <strong>最多</strong> 输入 <strong>4 个数字</strong> 来设置加热时间。如果你输入的位数不足 4 位，微波炉会自动加 <strong>前缀</strong> <strong>0</strong> 来补足 4 位。微波炉会将设置好的四位数中，<strong>前</strong> 两位当作分钟数，<strong>后</strong> 两位当作秒数。它们所表示的总时间就是加热时间。比方说：</p>&#10;&#10;<ul>&#10;	<li>你输入 <code>9</code> <code>5</code> <code>4</code> （三个数字），被自动补足为 <code>0954</code> ，并表示 <code>9</code> 分 <code>54</code> 秒。</li>&#10;	<li>你输入 <code>0</code> <code>0</code> <code>0</code> <code>8</code> （四个数字），表示 <code>0</code> 分 <code>8</code> 秒。</li>&#10;	<li>你输入 <code>8</code> <code>0</code> <code>9</code> <code>0</code> ，表示 <code>80</code> 分 <code>90</code> 秒。</li>&#10;	<li>你输入 <code>8</code> <code>1</code> <code>3</code> <code>0</code> ，表示 <code>81</code> 分 <code>30</code> 秒。</li>&#10;</ul>&#10;&#10;<p>给你整数 <code>startAt</code> ，<code>moveCost</code> ，<code>pushCost</code> 和 <code>targetSeconds</code> 。<strong>一开始</strong>，你的手指在数字 <code>startAt</code> 处。将手指移到<strong> 任何其他数字</strong> ，需要花费 <code>moveCost</code> 的单位代价。<strong>每</strong> 输入你手指所在位置的数字一次，需要花费 <code>pushCost</code> 的单位代价。</p>&#10;&#10;<p>要设置 <code>targetSeconds</code> 秒的加热时间，可能会有多种设置方法。你想要知道这些方法中，总代价最小为多少。</p>&#10;&#10;<p>请你能返回设置 <code>targetSeconds</code> 秒钟加热时间需要花费的最少代价。</p>&#10;&#10;<p>请记住，虽然微波炉的秒数最多可以设置到 <code>99</code> 秒，但一分钟等于 <code>60</code> 秒。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2100-2199/2162.Minimum%20Cost%20to%20Set%20Cooking%20Time/images/1.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>startAt = 1, moveCost = 2, pushCost = 1, targetSeconds = 600&#10;<b>输出：</b>6&#10;<b>解释：</b>以下为设置加热时间的所有方法。&#10;- 1 0 0 0 ，表示 10 分 0 秒。&#10;  手指一开始就在数字 1 处，输入 1 （代价为 1），移到 0 处（代价为 2），输入 0（代价为 1），输入 0（代价为 1），输入 0（代价为 1）。&#10;  总代价为：1 + 2 + 1 + 1 + 1 = 6 。这是所有方案中的最小代价。&#10;- 0 9 6 0，表示 9 分 60 秒。它也表示 600 秒。&#10;  手指移到 0 处（代价为 2），输入 0 （代价为 1），移到 9 处（代价为 2），输入 9（代价为 1），移到 6 处（代价为 2），输入 6（代价为 1），移到 0 处（代价为 2），输入 0（代价为 1）。&#10;  总代价为：2 + 1 + 2 + 1 + 2 + 1 + 2 + 1 = 12 。&#10;- 9 6 0，微波炉自动补全为 0960 ，表示 9 分 60 秒。&#10;  手指移到 9 处（代价为 2），输入 9 （代价为 1），移到 6 处（代价为 2），输入 6（代价为 1），移到 0 处（代价为 2），输入 0（代价为 1）。&#10;  总代价为：2 + 1 + 2 + 1 + 2 + 1 = 9 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2100-2199/2162.Minimum%20Cost%20to%20Set%20Cooking%20Time/images/2.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>startAt = 0, moveCost = 1, pushCost = 2, targetSeconds = 76&#10;<b>输出：</b>6&#10;<b>解释：</b>最优方案为输入两个数字 7 6，表示 76 秒。&#10;手指移到 7 处（代价为 1），输入 7 （代价为 2），移到 6 处（代价为 1），输入 6（代价为 2）。总代价为：1 + 2 + 1 + 2 = 6&#10;其他可行方案为 0076 ，076 ，0116 和 116 ，但是它们的代价都比 6 大。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>0 &lt;= startAt &lt;= 9</code></li>&#10;	<li><code>1 &lt;= moveCost, pushCost &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= targetSeconds &lt;= 6039</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>微波炉用四位分钟与秒显示，同一秒数可写成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 分 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 秒或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 分 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>+</mo>
+  <mn>60</mn>
+</math></span> 秒（需仍在两位范围内）。代价由指针移动与按键组成，枚举合法四位序列即可。</p>
+<p>对一种 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">m</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">s</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 去掉前导零后，从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">startAt</mtext>
+</math></span> 起模拟每位是否换指并累加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">moveCost</mtext>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pushCost</mtext>
+</math></span>。</p>
+<p>取 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="monospace">f</mtext>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>,</mo>
+  <mi>s</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="monospace">f</mtext>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>s</mi>
+  <mo>+</mo>
+  <mn>60</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 的较小值。</p>
+</blockquote>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func minCostSetTime(startAt int, moveCost int, pushCost int, targetSeconds int) int {</span></span>
+<span class="line"><span>	m, s := targetSeconds/60, targetSeconds%60</span></span>
+<span class="line"><span>	f := func(m, s int) int {</span></span>
+<span class="line"><span>		if m &#x3C; 0 || m > 99 || s &#x3C; 0 || s > 99 {</span></span>
+<span class="line"><span>			return 0x3f3f3f3f</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		arr := []int{m / 10, m % 10, s / 10, s % 10}</span></span>
+<span class="line"><span>		i := 0</span></span>
+<span class="line"><span>		for ; i &#x3C; 4 &#x26;&#x26; arr[i] == 0; i++ {</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		t := 0</span></span>
+<span class="line"><span>		prev := startAt</span></span>
+<span class="line"><span>		for ; i &#x3C; 4; i++ {</span></span>
+<span class="line"><span>			if arr[i] != prev {</span></span>
+<span class="line"><span>				t += moveCost</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			t += pushCost</span></span>
+<span class="line"><span>			prev = arr[i]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return t</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return min(f(m, s), f(m-1, s+60))</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/minimum-cost-to-set-cooking-time" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2162.Minimum%20Cost%20to%20Set%20Cooking%20Time/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2165" tabindex="-1">2165. 重排数字的最小值 <a class="header-anchor" href="#q-2165" aria-label="Permalink to &quot;2165. 重排数字的最小值 {#q-2165}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、排序</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数 <code>num</code> 。<strong>重排</strong> <code>num</code> 中的各位数字，使其值 <strong>最小化</strong> 且不含 <strong>任何</strong> 前导零。</p>&#10;&#10;<p>返回不含前导零且值最小的重排数字。</p>&#10;&#10;<p>注意，重排各位数字后，<code>num</code> 的符号不会改变。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>num = 310&#10;<strong>输出：</strong>103&#10;<strong>解释：</strong>310 中各位数字的可行排列有：013、031、103、130、301、310 。&#10;不含任何前导零且值最小的重排数字是 103 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><strong>输入：</strong>num = -7605&#10;<strong>输出：</strong>-7650&#10;<strong>解释：</strong>-7605 中各位数字的部分可行排列为：-7650、-6705、-5076、-0567。&#10;不含任何前导零且值最小的重排数字是 -7650 。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>-10<sup>15</sup> &lt;= num &lt;= 10<sup>15</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：计数 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>重排数位：负数十位应尽量大，正数应尽量小且不能有前导零。对数位全排列在位数较多时不必要。</p>
+<p>计数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>– <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>9</mn>
+</math></span> 的出现次数。负数从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>9</mn>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 拼接；正数先拿出一个最小非零数字当首位，再从小到大接上剩余（含零）。</p>
+<p>从绝对值统计，最后按符号输出。</p>
+</blockquote>
+<p>我们首先用一个数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 记录 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 中每个数字的出现次数。</p>
+<p>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 是负数，那么数字应该按照从大到小的顺序排列，因此我们从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>9</mn>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 遍历 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span>，将数字按照出现次数从大到小的顺序排列。</p>
+<p>如果是正数，我们首先找到第一个非 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 的数字，将其放在第一位，然后按照从小到大的顺序排列剩余的数字。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数字 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 的大小。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func smallestNumber(num int64) (ans int64) {</span></span>
+<span class="line"><span>	neg := num &#x3C; 0</span></span>
+<span class="line"><span>	num = max(num, -num)</span></span>
+<span class="line"><span>	cnt := make([]int, 10)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	for num > 0 {</span></span>
+<span class="line"><span>		cnt[num%10]++</span></span>
+<span class="line"><span>		num /= 10</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	if neg {</span></span>
+<span class="line"><span>		for i := 9; i >= 0; i-- {</span></span>
+<span class="line"><span>			for cnt[i] > 0 {</span></span>
+<span class="line"><span>				ans = ans*10 + int64(i)</span></span>
+<span class="line"><span>				cnt[i]--</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return -ans</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	if cnt[0] > 0 {</span></span>
+<span class="line"><span>		for i := 1; i &#x3C; 10; i++ {</span></span>
+<span class="line"><span>			if cnt[i] > 0 {</span></span>
+<span class="line"><span>				cnt[i]--</span></span>
+<span class="line"><span>				ans = int64(i)</span></span>
+<span class="line"><span>				break</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	for i := 0; i &#x3C; 10; i++ {</span></span>
+<span class="line"><span>		for cnt[i] > 0 {</span></span>
+<span class="line"><span>			ans = ans*10 + int64(i)</span></span>
+<span class="line"><span>			cnt[i]--</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/smallest-value-of-the-rearranged-number" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2165.Smallest%20Value%20of%20the%20Rearranged%20Number/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2169" tabindex="-1">2169. 得到 0 的操作数 <a class="header-anchor" href="#q-2169" aria-label="Permalink to &quot;2169. 得到 0 的操作数 {#q-2169}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你两个 <strong>非负</strong> 整数 <code>num1</code> 和 <code>num2</code> 。</p>&#10;&#10;<p>每一步 <strong>操作</strong> 中，如果 <code>num1 >= num2</code> ，你必须用 <code>num1</code> 减 <code>num2</code> ；否则，你必须用 <code>num2</code> 减 <code>num1</code> 。</p>&#10;&#10;<ul>&#10;	<li>例如，<code>num1 = 5</code> 且 <code>num2 = 4</code> ，应该用 <code>num1</code> 减 <code>num2</code> ，因此，得到 <code>num1 = 1</code> 和 <code>num2 = 4</code> 。然而，如果 <code>num1 = 4</code>且 <code>num2 = 5</code> ，一步操作后，得到 <code>num1 = 4</code> 和 <code>num2 = 1</code> 。</li>&#10;</ul>&#10;&#10;<p>返回使 <code>num1 = 0</code> 或 <code>num2 = 0</code> 的 <strong>操作数</strong> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>num1 = 2, num2 = 3&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>&#10;- 操作 1 ：num1 = 2 ，num2 = 3 。由于 num1 &lt; num2 ，num2 减 num1 得到 num1 = 2 ，num2 = 3 - 2 = 1 。&#10;- 操作 2 ：num1 = 2 ，num2 = 1 。由于 num1 > num2 ，num1 减 num2 。&#10;- 操作 3 ：num1 = 1 ，num2 = 1 。由于 num1 == num2 ，num1 减 num2 。&#10;此时 num1 = 0 ，num2 = 1 。由于 num1 == 0 ，不需要再执行任何操作。&#10;所以总操作数是 3 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>num1 = 10, num2 = 10&#10;<strong>输出：</strong>1&#10;<strong>解释：</strong>&#10;- 操作 1 ：num1 = 10 ，num2 = 10 。由于 num1 == num2 ，num1 减 num2 得到 num1 = 10 - 10 = 0 。&#10;此时 num1 = 0 ，num2 = 10 。由于 num1 == 0 ，不需要再执行任何操作。&#10;所以总操作数是 1 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>0 &lt;= num1, num2 &lt;= 10<sup>5</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：模拟 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每次从较大数中减去较小数，直到一方为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，这与辗转相减相同。数值不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>，直接模拟步数可接受。</p>
+<p>循环中比较 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num2</mtext>
+</math></span>，减去较小者并计数。</p>
+<p>任一方为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 时返回计数。</p>
+</blockquote>
+<p>我们可以直接模拟这个过程，循环执行以下操作：</p>
+<ul>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+  <mo>&#x2265;</mo>
+  <mtext mathvariant="italic">num2</mtext>
+</math></span>，则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+  <mo>=</mo>
+  <mtext mathvariant="italic">num1</mtext>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">num2</mtext>
+</math></span>；</li>
+<li>否则， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num2</mtext>
+  <mo>=</mo>
+  <mtext mathvariant="italic">num2</mtext>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">num1</mtext>
+</math></span>。</li>
+<li>每执行一次操作，操作数加一。</li>
+</ul>
+<p>当 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+</math></span> 或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num2</mtext>
+</math></span> 有一个为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 时，停止循环，返回操作数。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num2</mtext>
+</math></span> 的最大值。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countOperations(num1 int, num2 int) (ans int) {</span></span>
+<span class="line"><span>	for ; num1 != 0 &#x26;&#x26; num2 != 0; ans++ {</span></span>
+<span class="line"><span>		if num1 >= num2 {</span></span>
+<span class="line"><span>			num1 -= num2</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			num2 -= num1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：数学 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一在两数相差很大时会减许多次。辗转相减可改成辗转相除：一次加上商、把被减数换成余数。</p>
+<p>步数降到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，与欧几里得算法同阶。</p>
+</blockquote>
+<p>如果按照方法一的模拟过程，我们会发现，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+</math></span> 远大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num2</mtext>
+</math></span>，那么每次操作我们都会减少 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+</math></span> 的值，这样会导致操作数过多。我们可以优化这个过程，每次操作时，我们可以直接将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+</math></span> 除以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num2</mtext>
+</math></span> 的商加到答案中，然后将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+</math></span> 对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num2</mtext>
+</math></span> 取余，这样可以减少操作数。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num1</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num2</mtext>
+</math></span> 的最大值。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countOperations(num1 int, num2 int) (ans int) {</span></span>
+<span class="line"><span>	for num1 != 0 &#x26;&#x26; num2 != 0 {</span></span>
+<span class="line"><span>		if num1 >= num2 {</span></span>
+<span class="line"><span>			ans += num1 / num2</span></span>
+<span class="line"><span>			num1 %= num2</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			ans += num2 / num1</span></span>
+<span class="line"><span>			num2 %= num1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-operations-to-obtain-zero" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2169.Count%20Operations%20to%20Obtain%20Zero/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2177" tabindex="-1">2177. 找到和为给定整数的三个连续整数 <a class="header-anchor" href="#q-2177" aria-label="Permalink to &quot;2177. 找到和为给定整数的三个连续整数 {#q-2177}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数 <code>num</code> ，请你返回三个连续的整数，它们的 <strong>和</strong> 为<em> </em><code>num</code> 。如果 <code>num</code> 无法被表示成三个连续整数的和，请你返回一个 <strong>空</strong> 数组。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><b>输入：</b>num = 33&#10;<b>输出：</b>[10,11,12]&#10;<b>解释：</b>33 可以表示为 10 + 11 + 12 = 33 。&#10;10, 11, 12 是 3 个连续整数，所以返回 [10, 11, 12] 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><b>输入：</b>num = 4&#10;<b>输出：</b>[]&#10;<b>解释：</b>没有办法将 4 表示成 3 个连续整数的和。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>0 &lt;= num &lt;= 10<sup>15</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：数学 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>三个连续整数之和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mi>x</mi>
+</math></span>，故 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 必须是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+</math></span> 的倍数，此时中间数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>3</mn>
+</math></span>。</p>
+<p>整除则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，否则空数组。</p>
+<p>判断与构造均为常数时间。</p>
+</blockquote>
+<p>我们假设三个连续的整数分别为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>, <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>, <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span>，则它们的和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <mi>x</mi>
+</math></span>，因此 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 必须是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+</math></span> 的倍数。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 不是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+</math></span> 的倍数，则无法表示成三个连续整数的和，返回空数组。否则，令 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mtext mathvariant="italic">num</mtext>
+    <mn>3</mn>
+  </mfrac>
+</math></span>，则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>, <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>, <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 就是三个连续整数，它们的和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func sumOfThree(num int64) []int64 {</span></span>
+<span class="line"><span>	if num%3 != 0 {</span></span>
+<span class="line"><span>		return []int64{}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	x := num / 3</span></span>
+<span class="line"><span>	return []int64{x - 1, x, x + 1}</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/find-three-consecutive-integers-that-sum-to-a-given-number" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2177.Find%20Three%20Consecutive%20Integers%20That%20Sum%20to%20a%20Given%20Number/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2180" tabindex="-1">2180. 统计各位数字之和为偶数的整数个数 <a class="header-anchor" href="#q-2180" aria-label="Permalink to &quot;2180. 统计各位数字之和为偶数的整数个数 {#q-2180}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个正整数 <code>num</code> ，请你统计并返回 <strong>小于或等于</strong> <code>num</code> 且各位数字之和为 <strong>偶数</strong> 的正整数的数目。</p>&#10;&#10;<p>正整数的 <strong>各位数字之和</strong> 是其所有位上的对应数字相加的结果。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>num = 4&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>&#10;只有 2 和 4 满足小于等于 4 且各位数字之和为偶数。    &#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>num = 30&#10;<strong>输出：</strong>14&#10;<strong>解释：</strong>&#10;只有 14 个整数满足小于等于 30 且各位数字之和为偶数，分别是： &#10;2、4、6、8、11、13、15、17、19、20、22、24、26 和 28 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= num &lt;= 1000</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：枚举 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>统计 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mtext mathvariant="italic">num</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 中数位和为偶数的个数。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+  <mo>&#x2264;</mo>
+  <mn>1000</mn>
+</math></span>，枚举每个数并求数位和即可。</p>
+<p>对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 反复取模累加，偶则计数加一。</p>
+<p>实现简单，复杂度带一个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+</math></span> 因子。</p>
+</blockquote>
+<p>一种最简单直接的方法是枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo>.</mo>
+  <mo>.</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的所有整数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 各位数字之和是否为偶数，是则答案加一。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 的值。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countEven(num int) (ans int) {</span></span>
+<span class="line"><span>	for i := 1; i &#x3C;= num; i++ {</span></span>
+<span class="line"><span>		s := 0</span></span>
+<span class="line"><span>		for x := i; x > 0; x /= 10 {</span></span>
+<span class="line"><span>			s += x % 10</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if s%2 == 0 {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：数学 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一随 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 线性增长。注意到每 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 个连续整数中恰有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+</math></span> 个数字和为偶数，可先按整十段计算，再处理余数。</p>
+<p>整十段贡献 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mtext mathvariant="italic">num</mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>10</mn>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+  <mo>&#xD7;</mo>
+  <mn>5</mn>
+</math></span>，去掉 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 后为减一。余下的个位个数还取决于高位数字和的奇偶，用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的最低位调整公式中的偏移。</p>
+<p>位数循环只需 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们观察发现，在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo>.</mo>
+  <mo>.</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的所有数中，每 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 个数中，就有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+</math></span> 个数的各位数字之和为偶数。例如，在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo>.</mo>
+  <mn>.9</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 中，每 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 个数中，就有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+</math></span> 个数的各位数字之和为偶数，分别是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>6</mn>
+  <mo>,</mo>
+  <mn>8</mn>
+</math></span>。</p>
+<p>因此，我们可以先算出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 中有多少个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 的倍数，然后乘以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+</math></span> 再减去 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>（排除 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 这个偶数），可以得到初始答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN">&#x230A;</mo>
+    <mfrac>
+      <mrow>
+        <mi>n</mi>
+        <mi>u</mi>
+        <mi>m</mi>
+      </mrow>
+      <mn>10</mn>
+    </mfrac>
+    <mo data-mjx-texclass="CLOSE">&#x230B;</mo>
+  </mrow>
+  <mo>&#xD7;</mo>
+  <mn>5</mn>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。</p>
+<p>接下来，我们还需要考虑剩下的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi mathvariant="normal">%</mi>
+  <mn>10</mn>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 个数字中，有多少个数的各位数字之和为偶数。这些数字是否是偶数，跟数字的前面数字之和有关，因此，我们可以算出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 的前面数字之和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，那么剩余的数字中，还有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN">&#x230A;</mo>
+    <mfrac>
+      <mrow>
+        <mi>n</mi>
+        <mi>u</mi>
+        <mi>m</mi>
+        <mi mathvariant="normal">%</mi>
+        <mn>10</mn>
+        <mo>+</mo>
+        <mn>2</mn>
+        <mo>&#x2212;</mo>
+        <mo stretchy="false">(</mo>
+        <mi>s</mi>
+        <mi mathvariant="normal">&amp;</mi>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+      </mrow>
+      <mn>2</mn>
+    </mfrac>
+    <mo data-mjx-texclass="CLOSE">&#x230B;</mo>
+  </mrow>
+</math></span> 个数的各位数字之和为偶数。累加到答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 中即可。</p>
+<p>我们不妨举个例子，假设 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>123</mn>
+</math></span>，那么前面 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo>.</mo>
+  <mn>.119</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 中一共有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>12</mn>
+</math></span> 个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 的倍数，每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 的倍数中有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+</math></span> 个数的各位数字之和为偶数，因此，初始答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+  <mo>=</mo>
+  <mn>12</mn>
+  <mo>&#xD7;</mo>
+  <mn>5</mn>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mn>59</mn>
+</math></span>。</p>
+<p>剩下的数字分别是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>120</mn>
+  <mo>,</mo>
+  <mn>121</mn>
+  <mo>,</mo>
+  <mn>122</mn>
+  <mo>,</mo>
+  <mn>123</mn>
+</math></span>，每个数字的前两位数字之和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo>=</mo>
+  <mn>3</mn>
+</math></span>，是奇数，因此，剩下的数字中，只有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 个数的各位数字之和为偶数，累加到答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 中，最终答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo>=</mo>
+  <mn>61</mn>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 的值。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countEven(num int) (ans int) {</span></span>
+<span class="line"><span>	ans = num/10*5 - 1</span></span>
+<span class="line"><span>	s := 0</span></span>
+<span class="line"><span>	for x := num / 10; x > 0; x /= 10 {</span></span>
+<span class="line"><span>		s += x % 10</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans += (num%10 + 2 - (s &#x26; 1)) >> 1</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-integers-with-even-digit-sum" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2180.Count%20Integers%20With%20Even%20Digit%20Sum/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2183" tabindex="-1">2183. 统计可以被 K 整除的下标对数目 <a class="header-anchor" href="#q-2183" aria-label="Permalink to &quot;2183. 统计可以被 K 整除的下标对数目 {#q-2183}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、数学、计数、最大公约数、数论、欧几里得算法</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个下标从 <strong>0</strong> 开始、长度为 <code>n</code> 的整数数组 <code>nums</code> 和一个整数 <code>k</code> ，返回满足下述条件的下标对 <code>(i, j)</code> 的数目：</p>&#10;&#10;<ul>&#10;	<li><code>0 &lt;= i &lt; j &lt;= n - 1</code> 且</li>&#10;	<li><code>nums[i] * nums[j]</code> 能被 <code>k</code> 整除。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>nums = [1,2,3,4,5], k = 2&#10;<strong>输出：</strong>7&#10;<strong>解释：</strong>&#10;共有 7 对下标的对应积可以被 2 整除：&#10;(0, 1)、(0, 3)、(1, 2)、(1, 3)、(1, 4)、(2, 3) 和 (3, 4)&#10;它们的积分别是 2、4、6、8、10、12 和 20 。&#10;其他下标对，例如 (0, 2) 和 (2, 4) 的乘积分别是 3 和 15 ，都无法被 2 整除。    &#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><strong>输入：</strong>nums = [1,2,3,4], k = 5&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>不存在对应积可以被 5 整除的下标对。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= nums[i], k &lt;= 10<sup>5</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 实现（灵茶山艾府） · Go 实现</summary>
+<p><a href="https://github.com/EndlessCheng/codeforces-go/blob/e0fea933e2d713fd302622d2bb82a60f959a198e/leetcode/weekly/281/d/d.go" target="_blank" rel="noopener noreferrer">灵茶山艾府 · 源码</a> · <a href="https://opensource.org/license/mit" target="_blank" rel="noopener noreferrer">MIT 许可</a></p>
+<div v-pre>
+<blockquote>
+<p>本站根据 Go 源码整理，非作者原文。</p>
+</blockquote>
+<p><strong>思路</strong>：先枚举 k 的全部约数，令 cnt[d] 表示此前元素中能被约数 d 整除的数量。当前值为 v 时，v 与先前值的乘积能被 k 整除，等价于先前值能被 k/gcd(v,k) 整除，因此直接累加对应计数。然后遍历所有约数，把能整除 v 的约数计数加一。先查询、后更新可避免把当前元素与自己配对。</p>
+<p><strong>复杂度</strong>：设数组长度为 n，k 的约数个数为 D。枚举约数需 O(√k)，每个元素求 gcd 并扫描全部约数；按哈希映射平均常数时间计算，总时间为 O(√k+n(D+log(k+1)))，辅助空间为 O(D)。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>// github.com/EndlessCheng/codeforces-go</span></span>
+<span class="line"><span>func coutPairs(nums []int, k int) (ans int64) {</span></span>
+<span class="line"><span>	divisors := []int{}</span></span>
+<span class="line"><span>	for d := 1; d*d &#x3C;= k; d++ {</span></span>
+<span class="line"><span>		if k%d == 0 {</span></span>
+<span class="line"><span>			divisors = append(divisors, d)</span></span>
+<span class="line"><span>			if d*d &#x3C; k {</span></span>
+<span class="line"><span>				divisors = append(divisors, k/d)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	cnt := map[int]int{}</span></span>
+<span class="line"><span>	for _, v := range nums {</span></span>
+<span class="line"><span>		ans += int64(cnt[k/gcd(v, k)])</span></span>
+<span class="line"><span>		for _, d := range divisors {</span></span>
+<span class="line"><span>			if v%d == 0 {</span></span>
+<span class="line"><span>				cnt[d]++</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func gcd(a, b int) int {</span></span>
+<span class="line"><span>	for a != 0 {</span></span>
+<span class="line"><span>		a, b = b%a, a</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return b</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-array-pairs-divisible-by-k" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2183.Count%20Array%20Pairs%20Divisible%20by%20K/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2217" tabindex="-1">2217. 找到指定长度的回文数 <a class="header-anchor" href="#q-2217" aria-label="Permalink to &quot;2217. 找到指定长度的回文数 {#q-2217}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、数学</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数数组 <code>queries</code> 和一个 <strong>正</strong> 整数 <code>intLength</code> ，请你返回一个数组 <code>answer</code> ，其中 <code>answer[i]</code> 是长度为 <code>intLength</code> 的 <strong>正回文数</strong> 中第<em> </em><code>queries[i]</code> 小的数字，如果不存在这样的回文数，则为 <code>-1</code> 。</p>&#10;&#10;<p><strong>回文数</strong> 指的是从前往后和从后往前读一模一样的数字。回文数不能有前导 0 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>queries = [1,2,3,4,5,90], intLength = 3&#10;<b>输出：</b>[101,111,121,131,141,999]&#10;<strong>解释：</strong>&#10;长度为 3 的最小回文数依次是：&#10;101, 111, 121, 131, 141, 151, 161, 171, 181, 191, 202, ...&#10;第 90 个长度为 3 的回文数是 999 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>queries = [2,4,6], intLength = 4&#10;<b>输出：</b>[1111,1331,1551]&#10;<strong>解释：</strong>&#10;长度为 4 的前 6 个回文数是：&#10;1001, 1111, 1221, 1331, 1441 和 1551 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= queries.length &lt;= 5 * 10<sup>4</sup></code></li>&#10;	<li><code>1 &lt;= queries[i] &lt;= 10<sup>9</sup></code></li>&#10;	<li><code>1 &lt;= intLength &lt;= 15</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>要输出长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">intLength</mtext>
+</math></span> 的第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 个回文数， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>9</mn>
+  </msup>
+</math></span>，长度可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>15</mn>
+</math></span>，既不能按顺序生成全部回文，也不能对每个询问暴力构造。回文由前半段唯一决定：后半段是前半段的镜像。</p>
+<p>前半长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">&#x2308;</mo>
+  <mtext mathvariant="italic">intLength</mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo fence="false" stretchy="false">&#x2309;</mo>
+</math></span>，合法前半是从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mi>l</mi>
+      <mo>&#x2212;</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mi>l</mi>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 的全体整数。第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 个对应 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mo>=</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mi>l</mi>
+      <mo>&#x2212;</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo>+</mo>
+  <mi>q</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>；若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> 越界则答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，否则把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> 的字符串镜像拼上（奇数长度时丢掉中间位的重复）。每个询问 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">intLength</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func kthPalindrome(queries []int, intLength int) []int64 {</span></span>
+<span class="line"><span>	l := (intLength + 1) >> 1</span></span>
+<span class="line"><span>	start, end := int(math.Pow10(l-1)), int(math.Pow10(l))-1</span></span>
+<span class="line"><span>	var ans []int64</span></span>
+<span class="line"><span>	for _, q := range queries {</span></span>
+<span class="line"><span>		v := start + q - 1</span></span>
+<span class="line"><span>		if v > end {</span></span>
+<span class="line"><span>			ans = append(ans, -1)</span></span>
+<span class="line"><span>			continue</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		t := v</span></span>
+<span class="line"><span>		if intLength%2 == 1 {</span></span>
+<span class="line"><span>			t /= 10</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for t > 0 {</span></span>
+<span class="line"><span>			v = v*10 + t%10</span></span>
+<span class="line"><span>			t /= 10</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans = append(ans, int64(v))</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/find-palindrome-with-fixed-length" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2217.Find%20Palindrome%20With%20Fixed%20Length/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2221" tabindex="-1">2221. 数组的三角和 <a class="header-anchor" href="#q-2221" aria-label="Permalink to &quot;2221. 数组的三角和 {#q-2221}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、数学、组合数学、数论、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> ，其中 <code>nums[i]</code> 是 <code>0</code> 到 <code>9</code> 之间（两者都包含）的一个数字。</p>&#10;&#10;<p><code>nums</code> 的 <strong>三角和</strong> 是执行以下操作以后最后剩下元素的值：</p>&#10;&#10;<ol>&#10;	<li><code>nums</code> 初始包含 <code>n</code> 个元素。如果 <code>n == 1</code> ，<strong>终止</strong> 操作。否则，<strong>创建</strong> 一个新的下标从 <strong>0</strong> 开始的长度为 <code>n - 1</code> 的整数数组 <code>newNums</code> 。</li>&#10;	<li>对于满足 <code>0 &lt;= i &lt; n - 1</code> 的下标 <code>i</code> ，<code>newNums[i]</code> <strong>赋值</strong> 为 <code>(nums[i] + nums[i+1]) % 10</code> ，<code>%</code> 表示取余运算。</li>&#10;	<li>将 <code>newNums</code> <strong>替换</strong> 数组 <code>nums</code> 。</li>&#10;	<li>从步骤 1 开始 <strong>重复</strong> 整个过程。</li>&#10;</ol>&#10;&#10;<p>请你返回 <code>nums</code> 的三角和。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2221.Find%20Triangular%20Sum%20of%20an%20Array/images/ex1drawio.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<b>输入：</b>nums = [1,2,3,4,5]&#10;<b>输出：</b>8&#10;<strong>解释：</strong>&#10;上图展示了得到数组三角和的过程。</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>nums = [5]&#10;<b>输出：</b>5&#10;<b>解释：</b>&#10;由于 nums 中只有一个元素，数组的三角和为这个元素自己。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>&#10;	<li><code>0 &lt;= nums[i] &lt;= 9</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：模拟 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每一轮把相邻两数之和模 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 写成新数组，直到剩一个数。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>3</mn>
+  </msup>
+</math></span>，模拟 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 轮、第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 轮做 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 次加法，总时间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>，可以通过。无需闭式或组合数，按题意原地更新即可。</p>
+<p>从长为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 的一轮做到长为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，内层把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 写成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+  <mo lspace="thickmathspace" rspace="thickmathspace">mod</mo>
+  <mn>10</mn>
+</math></span>。最后留下的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 即三角和。</p>
+</blockquote>
+<p>我们可以直接模拟题目描述的操作，对数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 进行 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 轮操作，每轮操作都按照题目描述的规则更新数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span>。最后返回数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 中剩下的唯一元素即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func triangularSum(nums []int) int {</span></span>
+<span class="line"><span>	for k := len(nums) - 1; k > 0; k-- {</span></span>
+<span class="line"><span>		for i := 0; i &#x3C; k; i++ {</span></span>
+<span class="line"><span>			nums[i] = (nums[i] + nums[i+1]) % 10</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return nums[0]</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/find-triangular-sum-of-an-array" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2221.Find%20Triangular%20Sum%20of%20an%20Array/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2235" tabindex="-1">2235. 两整数相加 <a class="header-anchor" href="#q-2235" aria-label="Permalink to &quot;2235. 两整数相加 {#q-2235}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre>给你两个整数 <code>num1</code> 和 <code>num2</code>，返回这两个整数的和。&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>num1 = 12, num2 = 5&#10;<strong>输出：</strong>17&#10;<strong>解释：</strong>num1 是 12，num2 是 5 ，它们的和是 12 + 5 = 17 ，因此返回 17 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>num1 = -10, num2 = 4&#10;<strong>输出：</strong>-6&#10;<strong>解释：</strong>num1 + num2 = -6 ，因此返回 -6 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>-100 &lt;= num1, num2 &lt;= 100</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：使用加法运算符 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>求两整数之和，取值范围只有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mo>&#x2212;</mo>
+  <mn>100</mn>
+  <mo>,</mo>
+  <mn>100</mn>
+  <mo stretchy="false">]</mo>
+</math></span>。直接使用语言提供的加法即可在常数时间得到结果，无需额外处理进位。</p>
+</blockquote>
+<p>我们可以直接使用加法运算符 <code v-pre>+</code> 来计算两个整数的和。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func sum(num1 int, num2 int) int {</span></span>
+<span class="line"><span>	return num1 + num2</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：位运算（不使用加法运算符） · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一依赖加法运算符。若不允许使用它，就要在比特上模拟竖式加法：异或给出无进位的和，与运算左移一位给出进位，反复直到进位为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>。</p>
+<p>Python 整数无限长，需先与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mtext mathvariant="monospace">xFFFFFFFF</mtext>
+</math></span> 截成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>32</mn>
+</math></span> 位再循环；若最高位为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，再按补码还原成负数。时间与位数成正比。</p>
+</blockquote>
+<p>我们也可以在不使用加法运算符的前提下，使用位运算来计算两个整数的和。</p>
+<p>假设 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <msub>
+    <mn>1</mn>
+    <mi>i</mi>
+  </msub>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <msub>
+    <mn>2</mn>
+    <mi>i</mi>
+  </msub>
+</math></span> 分别表示 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mn>1</mn>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mn>2</mn>
+</math></span> 的第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 个二进制位。一共有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4</mn>
+</math></span> 种情况：</p>
+<table tabindex="0">
+<thead>
+<tr>
+<th><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <msub>
+    <mn>1</mn>
+    <mi>i</mi>
+  </msub>
+</math></span></th>
+<th><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <msub>
+    <mn>2</mn>
+    <mi>i</mi>
+  </msub>
+</math></span></th>
+<th>不进位的和</th>
+<th>进位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>观察可以发现，“不进位的和”与“异或运算”有相同规律，而进位则与“与”运算规律相同，并且需要左移一位。</p>
+<p>因此：</p>
+<ul>
+<li>对两数进行按位 <code v-pre>&amp;</code> 与运算，然后左移一位，得到进位，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>r</mi>
+  <mi>y</mi>
+</math></span>；</li>
+<li>对两数进行按位 <code v-pre>^</code> 异或运算，得到不进位的和；</li>
+<li>问题转换为求：“不进位的数 + 进位” 之和；</li>
+<li>循环，直至第二个数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，返回第一个数即可（也可以用递归实现）。</li>
+</ul>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>M</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>M</mi>
+</math></span> 为题目中数字的最大值。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func sum(num1 int, num2 int) int {</span></span>
+<span class="line"><span>	for num2 != 0 {</span></span>
+<span class="line"><span>		carry := (num1 &#x26; num2) &#x3C;&#x3C; 1</span></span>
+<span class="line"><span>		num1 ^= num2</span></span>
+<span class="line"><span>		num2 = carry</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return num1</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/add-two-integers" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2235.Add%20Two%20Integers/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2240" tabindex="-1">2240. 买钢笔和铅笔的方案数 <a class="header-anchor" href="#q-2240" aria-label="Permalink to &quot;2240. 买钢笔和铅笔的方案数 {#q-2240}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、枚举</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数 <code>total</code> ，表示你拥有的总钱数。同时给你两个整数 <code>cost1</code> 和 <code>cost2</code> ，分别表示一支钢笔和一支铅笔的价格。你可以花费你部分或者全部的钱，去买任意数目的两种笔。</p>&#10;&#10;<p>请你返回购买钢笔和铅笔的 <strong>不同方案数目</strong> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><b>输入：</b>total = 20, cost1 = 10, cost2 = 5&#10;<b>输出：</b>9&#10;<b>解释：</b>一支钢笔的价格为 10 ，一支铅笔的价格为 5 。&#10;- 如果你买 0 支钢笔，那么你可以买 0 ，1 ，2 ，3 或者 4 支铅笔。&#10;- 如果你买 1 支钢笔，那么你可以买 0 ，1 或者 2 支铅笔。&#10;- 如果你买 2 支钢笔，那么你没法买任何铅笔。&#10;所以买钢笔和铅笔的总方案数为 5 + 3 + 1 = 9 种。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><b>输入：</b>total = 5, cost1 = 10, cost2 = 10&#10;<b>输出：</b>1&#10;<b>解释：</b>钢笔和铅笔的价格都为 10 ，都比拥有的钱数多，所以你没法购买任何文具。所以只有 1 种方案：买 0 支钢笔和 0 支铅笔。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= total, cost1, cost2 &lt;= 10<sup>6</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：枚举 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>总金额为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">total</mtext>
+</math></span>，两种商品单价固定，购买数量不限，求方案数。完全背包在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">total</mtext>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>6</mn>
+  </msup>
+</math></span> 时空间偏大，且只需计数。固定钢笔数量后，铅笔的可行个数是一段前缀。</p>
+<p>枚举钢笔支数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2208;</mo>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mtext mathvariant="italic">total</mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mtext mathvariant="italic">cost1</mtext>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+  <mo stretchy="false">]</mo>
+</math></span>，剩余金额能买 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">total</mtext>
+  <mo>&#x2212;</mo>
+  <mi>x</mi>
+  <mo>&#x22C5;</mo>
+  <mtext mathvariant="italic">cost1</mtext>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mtext mathvariant="italic">cost2</mtext>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+</math></span> 支铅笔，贡献该值加一。循环长度约为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">total</mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mtext mathvariant="italic">cost1</mtext>
+</math></span>。</p>
+</blockquote>
+<p>我们可以枚举购买钢笔的数量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，对于每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，我们最多可以购买铅笔的数量为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mrow>
+      <mtext mathvariant="italic">total</mtext>
+      <mo>&#x2212;</mo>
+      <mi>x</mi>
+      <mo>&#xD7;</mo>
+      <mtext mathvariant="italic">cost1</mtext>
+    </mrow>
+    <mtext mathvariant="italic">cost2</mtext>
+  </mfrac>
+</math></span>，那么数量加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 即为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的方案数。我们累加所有的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的方案数，即为答案。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mfrac>
+    <mrow>
+      <mi>t</mi>
+      <mi>o</mi>
+      <mi>t</mi>
+      <mi>a</mi>
+      <mi>l</mi>
+    </mrow>
+    <mrow>
+      <mi>c</mi>
+      <mi>o</mi>
+      <mi>s</mi>
+      <mi>t</mi>
+      <mn>1</mn>
+    </mrow>
+  </mfrac>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func waysToBuyPensPencils(total int, cost1 int, cost2 int) (ans int64) {</span></span>
+<span class="line"><span>	for x := 0; x &#x3C;= total/cost1; x++ {</span></span>
+<span class="line"><span>		y := (total-x*cost1)/cost2 + 1</span></span>
+<span class="line"><span>		ans += int64(y)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/number-of-ways-to-buy-pens-and-pencils" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2240.Number%20of%20Ways%20to%20Buy%20Pens%20and%20Pencils/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2249" tabindex="-1">2249. 统计圆内格点数目 <a class="header-anchor" href="#q-2249" aria-label="Permalink to &quot;2249. 统计圆内格点数目 {#q-2249}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：几何、数组、哈希表、数学、枚举</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个二维整数数组 <code>circles</code> ，其中 <code>circles[i] = [x<sub>i</sub>, y<sub>i</sub>, r<sub>i</sub>]</code> 表示网格上圆心为 <code>(x<sub>i</sub>, y<sub>i</sub>)</code> 且半径为 <code>r<sub>i</sub></code> 的第 <code>i</code> 个圆，返回出现在<strong> 至少一个 </strong>圆内的 <strong>格点数目</strong> 。</p>&#10;&#10;<p><strong>注意：</strong></p>&#10;&#10;<ul>&#10;	<li><strong>格点</strong> 是指整数坐标对应的点。</li>&#10;	<li><strong>圆周上的点</strong> 也被视为出现在圆内的点。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2249.Count%20Lattice%20Points%20Inside%20a%20Circle/images/exa-11.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>circles = [[2,2,1]]&#10;<strong>输出：</strong>5&#10;<strong>解释：</strong>&#10;给定的圆如上图所示。&#10;出现在圆内的格点为 (1, 2)、(2, 1)、(2, 2)、(2, 3) 和 (3, 2)，在图中用绿色标识。&#10;像 (1, 1) 和 (1, 3) 这样用红色标识的点，并未出现在圆内。&#10;因此，出现在至少一个圆内的格点数目是 5 。</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2249.Count%20Lattice%20Points%20Inside%20a%20Circle/images/exa-22.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>circles = [[2,2,2],[3,4,1]]&#10;<strong>输出：</strong>16&#10;<strong>解释：</strong>&#10;给定的圆如上图所示。&#10;共有 16 个格点出现在至少一个圆内。&#10;其中部分点的坐标是 (0, 2)、(2, 0)、(2, 4)、(3, 2) 和 (4, 4) 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= circles.length &lt;= 200</code></li>&#10;	<li><code>circles[i].length == 3</code></li>&#10;	<li><code>1 &lt;= x<sub>i</sub>, y<sub>i</sub> &lt;= 100</code></li>&#10;	<li><code>1 &lt;= r<sub>i</sub> &lt;= min(x<sub>i</sub>, y<sub>i</sub>)</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：枚举 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>统计至少被一个圆覆盖的整点。圆至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>200</mn>
+</math></span> 个，坐标与半径不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>100</mn>
+</math></span>，整点范围很小。对每个圆枚举其外接正方形再判重，需要去重集合；对边界盒内每个整点测试是否落入任一圆，实现更直接。</p>
+<p>取所有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+</math></span> 的最大值作为枚举上界，对每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mi>j</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 检查是否存在圆满足距离平方不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>r</mi>
+    <mn>2</mn>
+  </msup>
+</math></span>，命中即计数并跳出。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>X</mi>
+  <mi>Y</mi>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 在本题范围内可通过。</p>
+</blockquote>
+<p>枚举所有的格点，判断其是否在圆内，如果在圆内，则答案加一。</p>
+<p>枚举的时候，可以将所有圆的最大横纵坐标求出来，作为枚举的上界。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>X</mi>
+  <mo>&#xD7;</mo>
+  <mi>Y</mi>
+  <mo>&#xD7;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>X</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>Y</mi>
+</math></span> 分别为所有圆的最大横纵坐标，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为圆的个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countLatticePoints(circles [][]int) (ans int) {</span></span>
+<span class="line"><span>	mx, my := 0, 0</span></span>
+<span class="line"><span>	for _, c := range circles {</span></span>
+<span class="line"><span>		mx = max(mx, c[0]+c[2])</span></span>
+<span class="line"><span>		my = max(my, c[1]+c[2])</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := 0; i &#x3C;= mx; i++ {</span></span>
+<span class="line"><span>		for j := 0; j &#x3C;= my; j++ {</span></span>
+<span class="line"><span>			for _, c := range circles {</span></span>
+<span class="line"><span>				dx, dy := i-c[0], j-c[1]</span></span>
+<span class="line"><span>				if dx*dx+dy*dy &#x3C;= c[2]*c[2] {</span></span>
+<span class="line"><span>					ans++</span></span>
+<span class="line"><span>					break</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-lattice-points-inside-a-circle" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2249.Count%20Lattice%20Points%20Inside%20a%20Circle/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2280" tabindex="-1">2280. 表示一个折线图的最少线段数 <a class="header-anchor" href="#q-2280" aria-label="Permalink to &quot;2280. 表示一个折线图的最少线段数 {#q-2280}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：几何、数组、数学、数论、排序</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个二维整数数组 <code>stockPrices</code> ，其中 <code>stockPrices[i] = [day<sub>i</sub>, price<sub>i</sub>]</code> 表示股票在 <code>day<sub>i</sub></code> 的价格为 <code>price<sub>i</sub></code> 。<strong>折线图</strong> 是一个二维平面上的若干个点组成的图，横坐标表示日期，纵坐标表示价格，折线图由相邻的点连接而成。比方说下图是一个例子：</p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2280.Minimum%20Lines%20to%20Represent%20a%20Line%20Chart/images/1920px-pushkin_population_historysvg.png" loading="lazy">&#10;<p>请你返回要表示一个折线图所需要的 <strong>最少线段数</strong> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2280.Minimum%20Lines%20to%20Represent%20a%20Line%20Chart/images/ex0.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>stockPrices = [[1,7],[2,6],[3,5],[4,4],[5,4],[6,3],[7,2],[8,1]]&#10;<b>输出：</b>3&#10;<strong>解释：</strong>&#10;上图为输入对应的图，横坐标表示日期，纵坐标表示价格。&#10;以下 3 个线段可以表示折线图：&#10;- 线段 1 （红色）从 (1,7) 到 (4,4) ，经过 (1,7) ，(2,6) ，(3,5) 和 (4,4) 。&#10;- 线段 2 （蓝色）从 (4,4) 到 (5,4) 。&#10;- 线段 3 （绿色）从 (5,4) 到 (8,1) ，经过 (5,4) ，(6,3) ，(7,2) 和 (8,1) 。&#10;可以证明，无法用少于 3 条线段表示这个折线图。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2280.Minimum%20Lines%20to%20Represent%20a%20Line%20Chart/images/ex1.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>stockPrices = [[3,4],[1,2],[7,8],[2,3]]&#10;<b>输出：</b>1&#10;<strong>解释：</strong>&#10;如上图所示，折线图可以用一条线段表示。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= stockPrices.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>stockPrices[i].length == 2</code></li>&#10;	<li><code>1 &lt;= day<sub>i</sub>, price<sub>i</sub> &lt;= 10<sup>9</sup></code></li>&#10;	<li>所有 <code>day<sub>i</sub></code> <strong>互不相同</strong> 。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：斜率比较 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>按日期连折线，共线的连续段只需一条直线。点数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，日期互异。先按日期排序，再判断相邻两段斜率是否相同。用除法比斜率会有浮点误差，应改成交叉相乘。</p>
+<p>维护上一段 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#x394;</mi>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x394;</mi>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">&#x394;</mi>
+  <mi>y</mi>
+  <mo>&#x22C5;</mo>
+  <mi mathvariant="normal">&#x394;</mi>
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>&#x2260;</mo>
+  <mi mathvariant="normal">&#x394;</mi>
+  <mi>x</mi>
+  <mo>&#x22C5;</mo>
+  <mi mathvariant="normal">&#x394;</mi>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 则需要新的一条线。单个点贡献 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 条。</p>
+</blockquote>
+<p>需要注意：</p>
+<ol>
+<li>只有一个点时，需要的线段数为 0；</li>
+<li>利用除法计算斜率时，会有浮点误差，可以改成乘法比较。</li>
+</ol>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func minimumLines(stockPrices [][]int) int {</span></span>
+<span class="line"><span>	ans := 0</span></span>
+<span class="line"><span>	sort.Slice(stockPrices, func(i, j int) bool { return stockPrices[i][0] &#x3C; stockPrices[j][0] })</span></span>
+<span class="line"><span>	for i, dx, dy := 1, 0, 1; i &#x3C; len(stockPrices); i++ {</span></span>
+<span class="line"><span>		x, y := stockPrices[i-1][0], stockPrices[i-1][1]</span></span>
+<span class="line"><span>		x1, y1 := stockPrices[i][0], stockPrices[i][1]</span></span>
+<span class="line"><span>		dx1, dy1 := x1-x, y1-y</span></span>
+<span class="line"><span>		if dy*dx1 != dx*dy1 {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		dx, dy = dx1, dy1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/minimum-lines-to-represent-a-line-chart" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2280.Minimum%20Lines%20to%20Represent%20a%20Line%20Chart/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2348" tabindex="-1">2348. 全 0 子数组的数目 <a class="header-anchor" href="#q-2348" aria-label="Permalink to &quot;2348. 全 0 子数组的数目 {#q-2348}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、数学</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数数组 <code>nums</code> ，返回全部为 <code>0</code> 的 <strong>子数组</strong> 数目。</p>&#10;&#10;<p><strong>子数组</strong> 是一个数组中一段连续非空元素组成的序列。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><b>输入：</b>nums = [1,3,0,0,2,0,0,4]&#10;<b>输出：</b>6&#10;<b>解释：</b>&#10;子数组 [0] 出现了 4 次。&#10;子数组 [0,0] 出现了 2 次。&#10;不存在长度大于 2 的全 0 子数组，所以我们返回 6 。</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><b>输入：</b>nums = [0,0,0,2,0,0]&#10;<b>输出：</b>9&#10;<strong>解释：&#10;</strong>子数组 [0] 出现了 5 次。&#10;子数组 [0,0] 出现了 3 次。&#10;子数组 [0,0,0] 出现了 1 次。&#10;不存在长度大于 3 的全 0 子数组，所以我们返回 9 。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre><b>输入：</b>nums = [2,10,2019]&#10;<b>输出：</b>0&#10;<b>解释：</b>没有全 0 子数组，所以我们返回 0 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：遍历计数 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>全零子数组由连续零段决定。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，应按段统计而非枚举两端。</p>
+<p>扫过时维护当前连续零个数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span>：遇到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 加一并把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 累入答案（以该位置结尾的全零段）；遇到非零则清零。</p>
+</blockquote>
+<p>我们遍历数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span>，用变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 记录当前连续的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 的个数。那么对于当前遍历到的元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 自增 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，以当前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 为结尾的全 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 子数组的个数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span>，将其累加到答案中。否则，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 置为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>。</p>
+<p>遍历结束后，返回答案即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>相似题目：</p>
+<ul>
+<li><a href="https://github.com/doocs/leetcode/blob/main/solution/0400-0499/0413.Arithmetic%20Slices/README.md" target="_blank" rel="noopener noreferrer">413. 等差数列划分</a></li>
+<li><a href="https://github.com/doocs/leetcode/blob/main/solution/1500-1599/1513.Number%20of%20Substrings%20With%20Only%201s/README.md" target="_blank" rel="noopener noreferrer">1513. 仅含 1 的子串数</a></li>
+</ul>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func zeroFilledSubarray(nums []int) (ans int64) {</span></span>
+<span class="line"><span>	cnt := 0</span></span>
+<span class="line"><span>	for _, x := range nums {</span></span>
+<span class="line"><span>		if x == 0 {</span></span>
+<span class="line"><span>			cnt++</span></span>
+<span class="line"><span>			ans += int64(cnt)</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			cnt = 0</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/number-of-zero-filled-subarrays" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2348.Number%20of%20Zero-Filled%20Subarrays/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2364" tabindex="-1">2364. 统计坏数对的数目 <a class="header-anchor" href="#q-2364" aria-label="Permalink to &quot;2364. 统计坏数对的数目 {#q-2364}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、数学、计数</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个下标从<strong> 0</strong> 开始的整数数组 <code>nums</code> 。如果 <code>i &lt; j</code> 且 <code>j - i != nums[j] - nums[i]</code> ，那么我们称 <code>(i, j)</code> 是一个 <strong>坏</strong><strong>数对</strong> 。</p>&#10;&#10;<p>请你返回 <code>nums</code> 中 <strong>坏数对</strong> 的总数目。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><b>输入：</b>nums = [4,1,3,3]&#10;<b>输出：</b>5&#10;<b>解释：</b>数对 (0, 1) 是坏数对，因为 1 - 0 != 1 - 4 。&#10;数对 (0, 2) 是坏数对，因为 2 - 0 != 3 - 4, 2 != -1 。&#10;数对 (0, 3) 是坏数对，因为 3 - 0 != 3 - 4, 3 != -1 。&#10;数对 (1, 2) 是坏数对，因为 2 - 1 != 3 - 1, 1 != 2 。&#10;数对 (2, 3) 是坏数对，因为 3 - 2 != 3 - 3, 1 != 0 。&#10;总共有 5 个坏数对，所以我们返回 5 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><b>输入：</b>nums = [1,2,3,4,5]&#10;<b>输出：</b>0&#10;<strong>解释：</strong>没有坏数对。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：式子转换 + 哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>坏数对满足 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+  <mo>&#x2212;</mo>
+  <mi>i</mi>
+  <mo>&#x2260;</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2260;</mo>
+  <mi>j</mi>
+  <mo>&#x2212;</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，应统计互补的好对。</p>
+<p>从左到右扫描，当前下标 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与此前同余 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的个数之差即新增坏对，再把该键加一。前缀计数避免双重循环。</p>
+</blockquote>
+<p>根据题目描述，我们可以得知，对于任意的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&lt;</mo>
+  <mi>j</mi>
+</math></span>，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+  <mo>&#x2212;</mo>
+  <mi>i</mi>
+  <mo>&#x2260;</mo>
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mi>j</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 是一个坏数对。</p>
+<p>我们可以将式子转换为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2260;</mo>
+  <mi>j</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+</math></span>。这启发我们用哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 来统计 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的出现次数。</p>
+<p>遍历数组，对于当前元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span> 加到答案中，然后将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的出现次数加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>最后，我们返回答案即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countBadPairs(nums []int) (ans int64) {</span></span>
+<span class="line"><span>	cnt := map[int]int{}</span></span>
+<span class="line"><span>	for i, x := range nums {</span></span>
+<span class="line"><span>		x = i - x</span></span>
+<span class="line"><span>		ans += int64(i - cnt[x])</span></span>
+<span class="line"><span>		cnt[x]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-number-of-bad-pairs" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2364.Count%20Number%20of%20Bad%20Pairs/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2409" tabindex="-1">2409. 统计共同度过的日子数 <a class="header-anchor" href="#q-2409" aria-label="Permalink to &quot;2409. 统计共同度过的日子数 {#q-2409}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、字符串</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>Alice 和 Bob 计划分别去罗马开会。</p>&#10;&#10;<p>给你四个字符串 <code>arriveAlice</code> ，<code>leaveAlice</code> ，<code>arriveBob</code> 和 <code>leaveBob</code> 。Alice 会在日期 <code>arriveAlice</code> 到 <code>leaveAlice</code> 之间在城市里（<strong>日期为闭区间</strong>），而 Bob 在日期 <code>arriveBob</code> 到 <code>leaveBob</code> 之间在城市里（<strong>日期为闭区间</strong>）。每个字符串都包含 5 个字符，格式为 <code>&quot;MM-DD&quot;</code> ，对应着一个日期的月和日。</p>&#10;&#10;<p>请你返回 Alice和 Bob 同时在罗马的天数。</p>&#10;&#10;<p>你可以假设所有日期都在 <strong>同一个</strong> 自然年，而且 <strong>不是</strong> 闰年。每个月份的天数分别为：<code>[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]</code> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>arriveAlice = &quot;08-15&quot;, leaveAlice = &quot;08-18&quot;, arriveBob = &quot;08-16&quot;, leaveBob = &quot;08-19&quot;&#10;<b>输出：</b>3&#10;<b>解释：</b>Alice 从 8 月 15 号到 8 月 18 号在罗马。Bob 从 8 月 16 号到 8 月 19 号在罗马，他们同时在罗马的日期为 8 月 16、17 和 18 号。所以答案为 3 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>arriveAlice = &quot;10-01&quot;, leaveAlice = &quot;10-31&quot;, arriveBob = &quot;11-01&quot;, leaveBob = &quot;12-31&quot;&#10;<b>输出：</b>0&#10;<b>解释：</b>Alice 和 Bob 没有同时在罗马的日子，所以我们返回 0 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>所有日期的格式均为 <code>&quot;MM-DD&quot;</code> 。</li>&#10;	<li>Alice 和 Bob 的到达日期都 <strong>早于或等于</strong> 他们的离开日期。</li>&#10;	<li>题目测试用例所给出的日期均为 <strong>非闰年</strong> 的有效日期。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：前缀和 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>共同天数是两段闭区间的交集长度。逐日枚举全年可以做完，日期却是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="monospace">MM-DD</mtext>
+</math></span>，比较和计数都要先落到同一个序号上。</p>
+<p>现场把前面各月天数加起来，每次转换都重复同一段常数工作。该格式的字典序与日历顺序一致，交集由较晚的到达日和较早的离开日决定；非闰年各月长度固定，预先求前缀和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+</math></span> 后，第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 月 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 日直接对应年内第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>f</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mi>m</mi>
+      <mo>&#x2212;</mo>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mo>+</mo>
+  <mi>d</mi>
+</math></span> 天。</p>
+<p>两端日期经 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+</math></span> 换成序号后相减加一，即得交集长度；左端晚于右端则为空。</p>
+</blockquote>
+<p>我们将两个到达日与离开日分别取较晚者和较早者，再用月份天数的前缀和换成当年的第几天，最后计算闭区间长度。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>var f = [12]int{0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func countDaysTogether(arriveAlice string, leaveAlice string, arriveBob string, leaveBob string) int {</span></span>
+<span class="line"><span>	start := arriveAlice</span></span>
+<span class="line"><span>	if arriveBob > start {</span></span>
+<span class="line"><span>		start = arriveBob</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	end := leaveAlice</span></span>
+<span class="line"><span>	if leaveBob &#x3C; end {</span></span>
+<span class="line"><span>		end = leaveBob</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	d1 := f[int(start[0]-'0')*10+int(start[1]-'0')-1] + int(start[3]-'0')*10 + int(start[4]-'0')</span></span>
+<span class="line"><span>	d2 := f[int(end[0]-'0')*10+int(end[1]-'0')-1] + int(end[3]-'0')*10 + int(end[4]-'0')</span></span>
+<span class="line"><span>	return max(d2-d1+1, 0)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-days-spent-together" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2409.Count%20Days%20Spent%20Together/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2413" tabindex="-1">2413. 最小偶倍数 <a class="header-anchor" href="#q-2413" aria-label="Permalink to &quot;2413. 最小偶倍数 {#q-2413}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、数论</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre>给你一个正整数 <code>n</code> ，返回 <code>2</code><em> </em>和<em> </em><code>n</code> 的最小公倍数（正整数）。&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>n = 5&#10;<strong>输出：</strong>10&#10;<strong>解释：</strong>5 和 2 的最小公倍数是 10 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><strong>输入：</strong>n = 6&#10;<strong>输出：</strong>6&#10;<strong>解释：</strong>6 和 2 的最小公倍数是 6 。注意数字会是它自身的倍数。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 150</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：数学 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>150</mn>
+</math></span>，求 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的最小公倍数。若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为偶数，则自身已是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 的倍数；否则乘 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>。常数时间即可。</p>
+</blockquote>
+<p>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为偶数，那么 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的最小公倍数就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 本身。否则， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的最小公倍数就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mn>2</mn>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func smallestEvenMultiple(n int) int {</span></span>
+<span class="line"><span>	if n%2 == 0 {</span></span>
+<span class="line"><span>		return n</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return n * 2</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/smallest-even-multiple" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2413.Smallest%20Even%20Multiple/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2417" tabindex="-1">2417. 最近的公平整数 🔒 <a class="header-anchor" href="#q-2417" aria-label="Permalink to &quot;2417. 最近的公平整数 🔒 {#q-2417}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、枚举</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一个 <strong>正整数</strong> <code>n</code>。</p>&#10;&#10;<p>如果一个整数 <code>k</code> 中的 <strong>偶数 </strong>位数与<strong> 奇数</strong> 位数相等，那么我们称 <code>k</code> 为公平整数。</p>&#10;&#10;<p>返回 <em><strong>大于或等于 </strong></em><code>n</code><em> 的 <strong>最小 </strong>的公平整数。</em></p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> n = 2&#10;<strong>输出:</strong> 10&#10;<strong>解释:</strong> 大于等于 2 的最小的公平整数是 10。&#10;10是公平整数，因为它的偶数和奇数个数相等 (一个奇数和一个偶数)。</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> n = 403&#10;<strong>输出:</strong> 1001&#10;<strong>解释:</strong> 大于或等于 403 的最小的公平整数是 1001。&#10;1001 是公平整数，因为它有相等数量的偶数和奇数 (两个奇数和两个偶数)。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>9</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：分类讨论 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>公平整数要求偶数位与奇数位个数相等，故位数必须为偶数。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 本身可能已公平；否则要找不小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的最近者。</p>
+<p>若当前位数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 为奇数，任何 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 位数都不可能公平，直接构造 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 位的最小公平数：最高位为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，低一半为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 为偶数且 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 尚未公平，则对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 递归，直到落入上述两类之一。</p>
+</blockquote>
+<p>我们记 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的位数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，奇数位数、偶数位数分别为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span>。</p>
+<ul>
+<li>若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mi>b</mi>
+</math></span>，则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 本身就是 <code v-pre>fair</code> 的，直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 即可；</li>
+<li>否则，若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 为奇数，那么我们找到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 位的最小 <code v-pre>fair</code> 数即可，形如 <code v-pre>10000111</code>；若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 为偶数，我们直接暴力递归 <code v-pre>closestFair(n+1)</code> 即可。</li>
+</ul>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msqrt>
+    <mi>n</mi>
+  </msqrt>
+  <mo>&#xD7;</mo>
+  <msub>
+    <mi>log</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+  </msub>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func closestFair(n int) int {</span></span>
+<span class="line"><span>	a, b := 0, 0</span></span>
+<span class="line"><span>	t, k := n, 0</span></span>
+<span class="line"><span>	for t > 0 {</span></span>
+<span class="line"><span>		if (t%10)%2 == 1 {</span></span>
+<span class="line"><span>			a++</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			b++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		k++</span></span>
+<span class="line"><span>		t /= 10</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if a == b {</span></span>
+<span class="line"><span>		return n</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if k%2 == 1 {</span></span>
+<span class="line"><span>		x := int(math.Pow(10, float64(k)))</span></span>
+<span class="line"><span>		y := 0</span></span>
+<span class="line"><span>		for i := 0; i &#x3C; k>>1; i++ {</span></span>
+<span class="line"><span>			y = y*10 + 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return x + y</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return closestFair(n + 1)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/closest-fair-integer" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2417.Closest%20Fair%20Integer/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2427" tabindex="-1">2427. 公因子的数目 <a class="header-anchor" href="#q-2427" aria-label="Permalink to &quot;2427. 公因子的数目 {#q-2427}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、枚举、最大公约数、数论、欧几里得算法</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你两个正整数 <code>a</code> 和 <code>b</code> ，返回 <code>a</code> 和 <code>b</code> 的 <strong>公</strong> 因子的数目。</p>&#10;&#10;<p>如果 <code>x</code> 可以同时整除 <code>a</code> 和 <code>b</code> ，则认为 <code>x</code> 是 <code>a</code> 和 <code>b</code> 的一个 <strong>公因子</strong> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>a = 12, b = 6&#10;<strong>输出：</strong>4&#10;<strong>解释：</strong>12 和 6 的公因子是 1、2、3、6 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><strong>输入：</strong>a = 25, b = 30&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>25 和 30 的公因子是 1、5 。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= a, b &lt;= 1000</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：枚举 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>公因子必整除 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">gcd</mo>
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo>&#x2264;</mo>
+  <mn>1000</mn>
+</math></span>，枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>g</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 判断是否整除 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span> 即可，不必分别检查 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span>。</p>
+</blockquote>
+<p>我们可以先算出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 的最大公约数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>，然后枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo>.</mo>
+  <mo>.</mo>
+  <mi>g</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 中的每个数，判断其是否是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span> 的因子，如果是，则答案加一。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func commonFactors(a int, b int) (ans int) {</span></span>
+<span class="line"><span>	g := gcd(a, b)</span></span>
+<span class="line"><span>	for x := 1; x &#x3C;= g; x++ {</span></span>
+<span class="line"><span>		if g%x == 0 {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func gcd(a int, b int) int {</span></span>
+<span class="line"><span>	if b == 0 {</span></span>
+<span class="line"><span>		return a</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return gcd(b, a%b)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：枚举优化 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一已线性扫到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>。因子成对出现，枚举到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mi>g</mi>
+  </msqrt>
+</math></span> 即可同时计入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>x</mi>
+</math></span>（平方时只计一次），时间降为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msqrt>
+    <mi>g</mi>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>与方法一类似，我们可以先算出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 的最大公约数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>，然后枚举最大公约数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span> 的所有因子，累加答案。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msqrt>
+    <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+    <mo stretchy="false">(</mo>
+    <mi>a</mi>
+    <mo>,</mo>
+    <mi>b</mi>
+    <mo stretchy="false">)</mo>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func commonFactors(a int, b int) (ans int) {</span></span>
+<span class="line"><span>	g := gcd(a, b)</span></span>
+<span class="line"><span>	for x := 1; x*x &#x3C;= g; x++ {</span></span>
+<span class="line"><span>		if g%x == 0 {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>			if x*x &#x3C; g {</span></span>
+<span class="line"><span>				ans++</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func gcd(a int, b int) int {</span></span>
+<span class="line"><span>	if b == 0 {</span></span>
+<span class="line"><span>		return a</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return gcd(b, a%b)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/number-of-common-factors" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2427.Number%20of%20Common%20Factors/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2442" tabindex="-1">2442. 反转之后不同整数的数目 <a class="header-anchor" href="#q-2442" aria-label="Permalink to &quot;2442. 反转之后不同整数的数目 {#q-2442}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、数学、计数</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个由 <strong>正</strong> 整数组成的数组 <code>nums</code> 。</p>&#10;&#10;<p>你必须取出数组中的每个整数，<strong>反转其中每个数位</strong>，并将反转后得到的数字添加到数组的末尾。这一操作只针对 <code>nums</code> 中原有的整数执行。</p>&#10;&#10;<p>返回结果数组中 <strong>不同</strong> 整数的数目。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,13,10,12,31]&#10;<strong>输出：</strong>6&#10;<strong>解释：</strong>反转每个数字后，结果数组是 [1,13,10,12,31,<em><strong>1,31,1,21,13</strong></em>] 。&#10;反转后得到的数字添加到数组的末尾并按斜体加粗表示。注意对于整数 10 ，反转之后会变成 01 ，即 1 。&#10;数组中不同整数的数目为 6（数字 1、10、12、13、21 和 31）。</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [2,2,2]&#10;<strong>输出：</strong>1&#10;<strong>解释：</strong>反转每个数字后，结果数组是 [2,2,2,<em><strong>2,2,2</strong></em>] 。&#10;数组中不同整数的数目为 1（数字 2）。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= nums[i] &lt;= 10<sup>6</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每个原数及其数位反转都要计入集合。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>、数值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>6</mn>
+  </msup>
+</math></span>，反转可按字符串倒置。先把原数组放入集合，再逐个插入反转结果，大小即为答案。</p>
+</blockquote>
+<p>我们先用哈希表记录数组中的所有整数，然后遍历数组中的每个整数，对其进行反转，将反转后的整数添加到哈希表中，最后返回哈希表的大小即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是数组的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countDistinctIntegers(nums []int) int {</span></span>
+<span class="line"><span>	s := map[int]struct{}{}</span></span>
+<span class="line"><span>	for _, x := range nums {</span></span>
+<span class="line"><span>		s[x] = struct{}{}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for _, x := range nums {</span></span>
+<span class="line"><span>		y := 0</span></span>
+<span class="line"><span>		for x > 0 {</span></span>
+<span class="line"><span>			y = y*10 + x%10</span></span>
+<span class="line"><span>			x /= 10</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		s[y] = struct{}{}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return len(s)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-number-of-distinct-integers-after-reverse-operations" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2442.Count%20Number%20of%20Distinct%20Integers%20After%20Reverse%20Operations/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2443" tabindex="-1">2443. 反转之后的数字和 <a class="header-anchor" href="#q-2443" aria-label="Permalink to &quot;2443. 反转之后的数字和 {#q-2443}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数学、枚举</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个 <strong>非负</strong> 整数 <code>num</code> 。如果存在某个 <strong>非负</strong> 整数 <code>k</code> 满足 <code>k + reverse(k) = num</code>  ，则返回 <code>true</code> ；否则，返回<em> </em><code>false</code> 。</p>&#10;&#10;<p><code>reverse(k)</code> 表示 <code>k</code> 反转每个数位后得到的数字。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>num = 443&#10;<strong>输出：</strong>true&#10;<strong>解释：</strong>172 + 271 = 443 ，所以返回 true 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>num = 63&#10;<strong>输出：</strong>false&#10;<strong>解释：</strong>63 不能表示为非负整数及其反转后数字之和，返回 false 。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>num = 181&#10;<strong>输出：</strong>true&#10;<strong>解释：</strong>140 + 041 = 181 ，所以返回 true 。注意，反转后的数字可能包含前导零。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>0 &lt;= num &lt;= 10<sup>5</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：暴力枚举 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 上枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 并检查 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mi>v</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+  <mi>s</mi>
+  <mi>e</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 是否等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span>。枚举量可接受，按字符串反转即可。</p>
+</blockquote>
+<p>在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo>.</mo>
+  <mo>.</mo>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 范围内枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mi>v</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+  <mi>s</mi>
+  <mi>e</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 是否等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 即可。</p>
+<p>时间复杂度 $O(n \\times \\log n)。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 的大小。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func sumOfNumberAndReverse(num int) bool {</span></span>
+<span class="line"><span>	for x := 0; x &#x3C;= num; x++ {</span></span>
+<span class="line"><span>		k, y := x, 0</span></span>
+<span class="line"><span>		for k > 0 {</span></span>
+<span class="line"><span>			y = y*10 + k%10</span></span>
+<span class="line"><span>			k /= 10</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if x+y == num {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return false</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/sum-of-number-and-its-reverse" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2443.Sum%20of%20Number%20and%20Its%20Reverse/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details></div>`},null,-1)])])}const g=a(m,[["render",o]]);export{d as __pageData,g as default};

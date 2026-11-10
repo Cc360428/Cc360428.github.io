@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="790" viewBox="0 0 480 790" role="img" aria-labelledby="title desc">
+<title id="title">十一人足球场主要区域</title><desc id="desc">采用常见105米乘68米规格的比例俯视图。两端罚球区深16.5米、球门区深5.5米，罚球点距球门线11米，球门宽7.32米。此规格是示例而非唯一合法尺寸。</desc>
+<rect width="480" height="790" rx="12" fill="#fff"/>
+<g font-family="Microsoft YaHei, Noto Sans SC, sans-serif" fill="#172a46" text-anchor="middle">
+<text x="240" y="36" font-size="24" font-weight="700">足球：罚球区与球门区</text><text x="240" y="68" font-size="20">示例宽 68 m · 长 105 m</text>
+<g stroke="#233f64" stroke-width="2" fill="none">
+<rect x="70" y="90" width="340" height="525" fill="#f2f7fb"/>
+<rect x="139.2" y="90" width="201.6" height="82.5" fill="#dceef5"/><rect x="139.2" y="532.5" width="201.6" height="82.5" fill="#dceef5"/>
+<rect x="194.2" y="90" width="91.6" height="27.5"/><rect x="194.2" y="587.5" width="91.6" height="27.5"/>
+<path d="M70 352.5H410"/><circle cx="240" cy="352.5" r="45.75"/>
+<path d="M203.44 172.5A45.75 45.75 0 0 0 276.56 172.5 M203.44 532.5A45.75 45.75 0 0 1 276.56 532.5"/>
+<path d="M221.7 90V80H258.3V90 M221.7 615V625H258.3V615" stroke-width="3"/>
+</g>
+<g fill="#172a46"><circle cx="240" cy="145" r="4"/><circle cx="240" cy="560" r="4"/><circle cx="240" cy="352.5" r="4"/></g>
+<text x="240" y="242" font-size="22">上方进攻方向 ↑</text><text x="240" y="481" font-size="22">下方进攻方向 ↓</text><text x="240" y="665" font-size="20">浅蓝大框：罚球区，深 16.5 m</text><text x="240" y="697" font-size="20">小框：球门区，深 5.5 m</text><text x="240" y="729" font-size="20">黑点：罚球点，距球门线 11 m</text><text x="240" y="768" font-size="18">主要区域按比例 · 省略角球弧等细节</text>
+</g></svg>

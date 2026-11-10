@@ -1,0 +1,6110 @@
+import{_ as s,a,c as t,b as e}from"./chunks/framework.BSuaGltH.js";const d=JSON.parse('{"title":"LeetCode Go · 数据结构设计（4）","description":"数据结构设计分类，第 1670–2526 题，共 30 题，含题目、可折叠解法与 Go 实现。","frontmatter":{"title":"LeetCode Go · 数据结构设计（4）","description":"数据结构设计分类，第 1670–2526 题，共 30 题，含题目、可折叠解法与 Go 实现。","showdocs":{"topics":[{"id":"leetcode","title":"LeetCode","link":"/topics/leetcode/"}],"kind":"实践案例","scope":"general","audience":"general","group":"原理与设计","summary":"数据结构设计分类，第 1670–2526 题，共 30 题，含题目、可折叠解法与 Go 实现。","status":"active","related":[{"title":"LeetCode Go · 并查集（1）","link":"/principles/algorithms/leetcode-go/union-find-01","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（2）","link":"/principles/algorithms/leetcode-go/union-find-02","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（3）","link":"/principles/algorithms/leetcode-go/union-find-03","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（4）","link":"/principles/algorithms/leetcode-go/union-find-04","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并发（1）","link":"/principles/algorithms/leetcode-go/concurrency-01","kind":"实践案例","scope":"general","audience":"general"}],"prev":{"text":"LeetCode Go · 数据结构设计（3）","link":"/principles/algorithms/leetcode-go/design-03"},"next":{"text":"LeetCode Go · 数据结构设计（5）","link":"/principles/algorithms/leetcode-go/design-05"}},"layout":"ReadingPage","sidebar":false,"aside":false,"prev":{"text":"LeetCode Go · 数据结构设计（3）","link":"/principles/algorithms/leetcode-go/design-03"},"next":{"text":"LeetCode Go · 数据结构设计（5）","link":"/principles/algorithms/leetcode-go/design-05"}},"headers":[],"relativePath":"principles/algorithms/leetcode-go/design-04.md","filePath":"principles/algorithms/leetcode-go/design-04.md"}'),p={name:"principles/algorithms/leetcode-go/design-04.md"};function l(o,n,i,m,c,h){return a(),t("div",null,[...n[0]||(n[0]=[e("div",{innerHTML:`<div class="leetcode-reading"><h1 id="leetcode-go-·-数据结构设计-4" tabindex="-1">LeetCode Go · 数据结构设计（4） <a class="header-anchor" href="#leetcode-go-·-数据结构设计-4" aria-label="Permalink to &quot;LeetCode Go · 数据结构设计（4）&quot;">&ZeroWidthSpace;</a></h1>
+<p><a href="/principles/algorithms/leetcode-go/index">返回题库与筛选</a> · <a href="/principles/algorithms/leetcode-go/coverage">收录范围与使用说明</a></p>
+<details class="leetcode-attribution"><summary>来源与许可</summary><p>题目版权归 LeetCode；题解来自 <a href="https://github.com/doocs/leetcode" target="_blank" rel="noopener noreferrer">Doocs/leetcode</a>，按 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> 共享。补充 Go 代码来自<a href="https://github.com/EndlessCheng/codeforces-go/tree/e0fea933e2d713fd302622d2bb82a60f959a198e" target="_blank" rel="noopener noreferrer">灵茶山艾府</a>、<a href="https://github.com/halfrost/LeetCode-Go/tree/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e" target="_blank" rel="noopener noreferrer">halfrost</a>，保留 MIT 许可及逐题署名。本站提取 Go、调整分类及折叠排版；标注“本站整理”的 Go 解法依据题意与参考思路补写，按 CC BY-SA 4.0 共享。收录日期：2026-10-31；主题源版本：<a href="https://github.com/doocs/leetcode/tree/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011" target="_blank" rel="noopener noreferrer">91ef8c241a5e</a>。</p></details>
+<p class="leetcode-reading-hint">本卷 30 题 · 点击题目展开，先独立思考，再查看解法。</p><details class="leetcode-question" name="leetcode-questions" open>
+<summary class="leetcode-question-heading"><h2 id="q-1670" tabindex="-1">1670. 设计前中后队列 <a class="header-anchor" href="#q-1670" aria-label="Permalink to &quot;1670. 设计前中后队列 {#q-1670}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、队列、数组、链表、数据流、双向链表</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>请你设计一个队列，支持在前，中，后三个位置的 <code>push</code> 和 <code>pop</code> 操作。</p>&#10;&#10;<p>请你完成 <code>FrontMiddleBack</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>FrontMiddleBack()</code> 初始化队列。</li>&#10;	<li><code>void pushFront(int val)</code> 将 <code>val</code> 添加到队列的 <strong>最前面</strong> 。</li>&#10;	<li><code>void pushMiddle(int val)</code> 将 <code>val</code> 添加到队列的 <strong>正中间</strong> 。</li>&#10;	<li><code>void pushBack(int val)</code> 将 <code>val</code> 添加到队里的 <strong>最后面</strong> 。</li>&#10;	<li><code>int popFront()</code> 将 <strong>最前面</strong> 的元素从队列中删除并返回值，如果删除之前队列为空，那么返回 <code>-1</code> 。</li>&#10;	<li><code>int popMiddle()</code> 将 <b>正中间</b> 的元素从队列中删除并返回值，如果删除之前队列为空，那么返回 <code>-1</code> 。</li>&#10;	<li><code>int popBack()</code> 将 <strong>最后面</strong> 的元素从队列中删除并返回值，如果删除之前队列为空，那么返回 <code>-1</code> 。</li>&#10;</ul>&#10;&#10;<p>请注意当有 <strong>两个</strong> 中间位置的时候，选择靠前面的位置进行操作。比方说：</p>&#10;&#10;<ul>&#10;	<li>将 <code>6</code> 添加到 <code>[1, 2, 3, 4, 5]</code> 的中间位置，结果数组为 <code>[1, 2, <strong>6</strong>, 3, 4, 5]</code> 。</li>&#10;	<li>从 <code>[1, 2, <strong>3</strong>, 4, 5, 6]</code> 的中间位置弹出元素，返回 <code>3</code> ，数组变为 <code>[1, 2, 4, 5, 6]</code> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;FrontMiddleBackQueue&quot;, &quot;pushFront&quot;, &quot;pushBack&quot;, &quot;pushMiddle&quot;, &quot;pushMiddle&quot;, &quot;popFront&quot;, &quot;popMiddle&quot;, &quot;popMiddle&quot;, &quot;popBack&quot;, &quot;popFront&quot;]&#10;[[], [1], [2], [3], [4], [], [], [], [], []]&#10;<strong>输出：</strong>&#10;[null, null, null, null, null, 1, 3, 4, 2, -1]&#10;&#10;<strong>解释：</strong>&#10;FrontMiddleBackQueue q = new FrontMiddleBackQueue();&#10;q.pushFront(1);   // [<strong>1</strong>]&#10;q.pushBack(2);    // [1, <strong>2</strong>]&#10;q.pushMiddle(3);  // [1, <strong>3</strong>, 2]&#10;q.pushMiddle(4);  // [1, <strong>4</strong>, 3, 2]&#10;q.popFront();     // 返回 1 -> [4, 3, 2]&#10;q.popMiddle();    // 返回 3 -> [4, 2]&#10;q.popMiddle();    // 返回 4 -> [2]&#10;q.popBack();      // 返回 2 -> []&#10;q.popFront();     // 返回 -1 -> [] （队列为空）&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= val &lt;= 10<sup>9</sup></code></li>&#10;	<li>最多调用 <code>1000</code> 次 <code>pushFront</code>， <code>pushMiddle</code>， <code>pushBack</code>， <code>popFront</code>， <code>popMiddle</code> 和 <code>popBack</code> 。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：两个双端队列 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>需要 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 在队首、队中、队尾插入删除，单列表定位中点是线性的。拆成两个双端队列，前半 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>、后半 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>，并保持 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 比 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 长至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>插删落在对应半边后调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="monospace">rebalance</mtext>
+</math></span> 挪一个元素。中点在等长时是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 尾，否则是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 头。</p>
+</blockquote>
+<p>我们用两个双端队列，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 存储前半部分，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 存储后半部分。每次由 <code v-pre>rebalance</code> 函数来维护两个队列的平衡性，即保持 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 的长度大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 的长度，且长度之差不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>在 <code v-pre>pushFront</code>、<code v-pre>pushMiddle</code> 和 <code v-pre>pushBack</code> 函数中，我们只需要将元素添加到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 中，并调用 <code v-pre>rebalance</code> 函数即可。</p>
+<p>对于 <code v-pre>popFront</code> 函数，我们需要判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 是否为空，如果都为空，则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，否则我们需要判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 是否为空，如果不为空，则弹出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 的队首元素，否则弹出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 的队首元素，并调用 <code v-pre>rebalance</code> 函数。</p>
+<p>对于 <code v-pre>popMiddle</code> 函数，我们需要判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 是否为空，如果都为空，则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，否则我们需要判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 的长度是否相等，如果相等，则弹出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 的队尾元素，否则弹出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 的队首元素，并调用 <code v-pre>rebalance</code> 函数。</p>
+<p>对于 <code v-pre>popBack</code> 函数，我们只需要判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 是否为空，如果为空，则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，否则弹出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>q</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 的队尾元素，并调用 <code v-pre>rebalance</code> 函数。</p>
+<p>以上操作的时间复杂度均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是队列中的元素数量。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type FrontMiddleBackQueue struct {</span></span>
+<span class="line"><span>	q1, q2 Deque</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() FrontMiddleBackQueue {</span></span>
+<span class="line"><span>	return FrontMiddleBackQueue{}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FrontMiddleBackQueue) PushFront(val int) {</span></span>
+<span class="line"><span>	this.q1.PushFront(val)</span></span>
+<span class="line"><span>	this.rebalance()</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FrontMiddleBackQueue) PushMiddle(val int) {</span></span>
+<span class="line"><span>	this.q1.PushBack(val)</span></span>
+<span class="line"><span>	this.rebalance()</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FrontMiddleBackQueue) PushBack(val int) {</span></span>
+<span class="line"><span>	this.q2.PushBack(val)</span></span>
+<span class="line"><span>	this.rebalance()</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FrontMiddleBackQueue) PopFront() int {</span></span>
+<span class="line"><span>	if this.q1.Empty() &#x26;&#x26; this.q2.Empty() {</span></span>
+<span class="line"><span>		return -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var val int</span></span>
+<span class="line"><span>	if !this.q1.Empty() {</span></span>
+<span class="line"><span>		val = this.q1.PopFront()</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		val = this.q2.PopFront()</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.rebalance()</span></span>
+<span class="line"><span>	return val</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FrontMiddleBackQueue) PopMiddle() int {</span></span>
+<span class="line"><span>	if this.q1.Empty() &#x26;&#x26; this.q2.Empty() {</span></span>
+<span class="line"><span>		return -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var val int</span></span>
+<span class="line"><span>	if this.q1.Size() == this.q2.Size() {</span></span>
+<span class="line"><span>		val = this.q1.PopBack()</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		val = this.q2.PopFront()</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.rebalance()</span></span>
+<span class="line"><span>	return val</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FrontMiddleBackQueue) PopBack() int {</span></span>
+<span class="line"><span>	if this.q2.Empty() {</span></span>
+<span class="line"><span>		return -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	val := this.q2.PopBack()</span></span>
+<span class="line"><span>	this.rebalance()</span></span>
+<span class="line"><span>	return val</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FrontMiddleBackQueue) rebalance() {</span></span>
+<span class="line"><span>	if this.q1.Size() > this.q2.Size() {</span></span>
+<span class="line"><span>		this.q2.PushFront(this.q1.PopBack())</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if this.q2.Size() > this.q1.Size()+1 {</span></span>
+<span class="line"><span>		this.q1.PushBack(this.q2.PopFront())</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// template</span></span>
+<span class="line"><span>type Deque struct{ l, r []int }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (q Deque) Empty() bool {</span></span>
+<span class="line"><span>	return len(q.l) == 0 &#x26;&#x26; len(q.r) == 0</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (q Deque) Size() int {</span></span>
+<span class="line"><span>	return len(q.l) + len(q.r)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (q *Deque) PushFront(v int) {</span></span>
+<span class="line"><span>	q.l = append(q.l, v)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (q *Deque) PushBack(v int) {</span></span>
+<span class="line"><span>	q.r = append(q.r, v)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (q *Deque) PopFront() (v int) {</span></span>
+<span class="line"><span>	if len(q.l) > 0 {</span></span>
+<span class="line"><span>		q.l, v = q.l[:len(q.l)-1], q.l[len(q.l)-1]</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		v, q.r = q.r[0], q.r[1:]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (q *Deque) PopBack() (v int) {</span></span>
+<span class="line"><span>	if len(q.r) > 0 {</span></span>
+<span class="line"><span>		q.r, v = q.r[:len(q.r)-1], q.r[len(q.r)-1]</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		v, q.l = q.l[0], q.l[1:]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (q Deque) Front() int {</span></span>
+<span class="line"><span>	if len(q.l) > 0 {</span></span>
+<span class="line"><span>		return q.l[len(q.l)-1]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return q.r[0]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (q Deque) Back() int {</span></span>
+<span class="line"><span>	if len(q.r) > 0 {</span></span>
+<span class="line"><span>		return q.r[len(q.r)-1]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return q.l[0]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (q Deque) Get(i int) int {</span></span>
+<span class="line"><span>	if i &#x3C; len(q.l) {</span></span>
+<span class="line"><span>		return q.l[len(q.l)-1-i]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return q.r[i-len(q.l)]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your FrontMiddleBackQueue object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor();</span></span>
+<span class="line"><span> * obj.PushFront(val);</span></span>
+<span class="line"><span> * obj.PushMiddle(val);</span></span>
+<span class="line"><span> * obj.PushBack(val);</span></span>
+<span class="line"><span> * param_4 := obj.PopFront();</span></span>
+<span class="line"><span> * param_5 := obj.PopMiddle();</span></span>
+<span class="line"><span> * param_6 := obj.PopBack();</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-front-middle-back-queue" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1670.Design%20Front%20Middle%20Back%20Queue/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1724" tabindex="-1">1724. 检查边长度限制的路径是否存在 II 🔒 <a class="header-anchor" href="#q-1724" aria-label="Permalink to &quot;1724. 检查边长度限制的路径是否存在 II 🔒 {#q-1724}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：深度优先搜索、并查集、图、设计、最小生成树、排序、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>一张有 <code>n</code> 个节点的无向图以边的列表 <code>edgeList</code> 的形式定义，其中 <code>edgeList[i] = [u<sub>i</sub>, v<sub>i</sub>, dis<sub>i</sub>]</code> 表示一条连接 <code>u<sub>i</sub></code> 和 <code>v<sub>i</sub></code> ，距离为 <code>dis<sub>i</sub></code> 的边。注意，同一对节点间可能有<strong>多条</strong>边，且该图可能不是连通的。</p>&#10;&#10;<p>实现 <code>DistanceLimitedPathsExist</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>DistanceLimitedPathsExist(int n, int[][] edgeList)</code> 以给定的无向图初始化对象。</li>&#10;	<li><code>boolean query(int p, int q, int limit)</code> 当存在一条从 <code>p</code> 到 <code>q</code> 的路径，且路径中每条边的距离都<strong>严格小于</strong> <code>limit</code> 时，返回 <code>true</code> ，否则返回 <code>false</code> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><b>示例 1:</b></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1700-1799/1724.Checking%20Existence%20of%20Edge%20Length%20Limited%20Paths%20II/images/1693449815-oSOAxI-%E6%88%AA%E5%B1%8F2023-08-31%2010.43.30.png)%7B:width=400%7D" loading="lazy"><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1700-1799/1724.Checking%20Existence%20of%20Edge%20Length%20Limited%20Paths%20II/images/1693449815-oSOAxI-%E6%88%AA%E5%B1%8F2023-08-31%2010.43.30.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<b>输入：</b>&#10;[&quot;DistanceLimitedPathsExist&quot;, &quot;query&quot;, &quot;query&quot;, &quot;query&quot;, &quot;query&quot;]&#10;[[6, [[0, 2, 4], [0, 3, 2], [1, 2, 3], [2, 3, 1], [4, 5, 5]]], [2, 3, 2], [1, 3, 3], [2, 0, 3], [0, 5, 6]]&#10;<b>输出：</b>&#10;[null, true, false, true, false]&#10;&#10;<b>解释：</b>&#10;DistanceLimitedPathsExist distanceLimitedPathsExist = new DistanceLimitedPathsExist(6, [[0, 2, 4], [0, 3, 2], [1, 2, 3], [2, 3, 1], [4, 5, 5]]);&#10;distanceLimitedPathsExist.query(2, 3, 2); // 返回 true。存在一条从 2 到 3 ，距离为 1 的边，&#10;                                          // 这条边的距离小于 2。&#10;distanceLimitedPathsExist.query(1, 3, 3); // 返回 false。从 1 到 3 之间不存在每条边的距离都&#10;                                          // <strong>严格</strong>小于 3 的路径。&#10;distanceLimitedPathsExist.query(2, 0, 3); // 返回 true。存在一条从 2 到 0 的路径，使得每条边的&#10;                                          // 距离 &lt; 3：从 2 到 3 到 0 行进即可。&#10;distanceLimitedPathsExist.query(0, 5, 6); // 返回 false。从 0 到 5 之间不存在路径。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>2 &lt;= n &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>0 &lt;= edgeList.length &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>edgeList[i].length == 3</code></li>&#10;	<li><code>0 &lt;= u<sub>i</sub>, v<sub>i</sub>, p, q &lt;= n-1</code></li>&#10;	<li><code>u<sub>i</sub> != v<sub>i</sub></code></li>&#10;	<li><code>p != q</code></li>&#10;	<li><code>1 &lt;= dis<sub>i</sub>, limit &lt;= 10<sup>9</sup></code></li>&#10;	<li>最多调用 <code>10<sup>4</sup></code> 次 <code>query</code> 。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：可持久化并查集 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>多次在线询问两点是否能只走权严格小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">limit</mtext>
+</math></span> 的边相通。离线按权排序并查集适合一次性询问，这里询问穿插在构造之后且需反复查询。</p>
+<p>把边按权从小到大并入并查集，每次合并记录发生的时刻（即边权）。查询时只沿着「合并时刻 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&lt;</mo>
+  <mtext mathvariant="italic">limit</mtext>
+</math></span>」的父指针跳，等价于只使用权更小的边。</p>
+<p>可持久化并查集用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">version</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 保存结点被挂到父结点的权。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">find</mtext>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 之前停止上升，两点根相同则连通。</p>
+</blockquote>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type PersistentUnionFind struct {</span></span>
+<span class="line"><span>	rank    []int</span></span>
+<span class="line"><span>	parent  []int</span></span>
+<span class="line"><span>	version []int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func NewPersistentUnionFind(n int) *PersistentUnionFind {</span></span>
+<span class="line"><span>	rank := make([]int, n)</span></span>
+<span class="line"><span>	parent := make([]int, n)</span></span>
+<span class="line"><span>	version := make([]int, n)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	for i := 0; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		parent[i] = i</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	return &#x26;PersistentUnionFind{</span></span>
+<span class="line"><span>		rank:    rank,</span></span>
+<span class="line"><span>		parent:  parent,</span></span>
+<span class="line"><span>		version: version,</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (uf *PersistentUnionFind) find(x int, t int) int {</span></span>
+<span class="line"><span>	if uf.parent[x] == x || uf.version[x] >= t {</span></span>
+<span class="line"><span>		return x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return uf.find(uf.parent[x], t)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (uf *PersistentUnionFind) union(a, b, t int) bool {</span></span>
+<span class="line"><span>	pa := uf.find(a, int(^uint(0)>>1))</span></span>
+<span class="line"><span>	pb := uf.find(b, int(^uint(0)>>1))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	if pa == pb {</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	if uf.rank[pa] > uf.rank[pb] {</span></span>
+<span class="line"><span>		uf.version[pb] = t</span></span>
+<span class="line"><span>		uf.parent[pb] = pa</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		uf.version[pa] = t</span></span>
+<span class="line"><span>		uf.parent[pa] = pb</span></span>
+<span class="line"><span>		if uf.rank[pa] == uf.rank[pb] {</span></span>
+<span class="line"><span>			uf.rank[pb]++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	return true</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type DistanceLimitedPathsExist struct {</span></span>
+<span class="line"><span>	puf *PersistentUnionFind</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(n int, edgeList [][]int) DistanceLimitedPathsExist {</span></span>
+<span class="line"><span>	sort.Slice(edgeList, func(i, j int) bool {</span></span>
+<span class="line"><span>		return edgeList[i][2] &#x3C; edgeList[j][2]</span></span>
+<span class="line"><span>	})</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	puf := NewPersistentUnionFind(n)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	for _, edge := range edgeList {</span></span>
+<span class="line"><span>		puf.union(edge[0], edge[1], edge[2])</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	return DistanceLimitedPathsExist{</span></span>
+<span class="line"><span>		puf: puf,</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (dle *DistanceLimitedPathsExist) Query(p, q, limit int) bool {</span></span>
+<span class="line"><span>	return dle.puf.find(p, limit) == dle.puf.find(q, limit)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your DistanceLimitedPathsExist object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(n, edgeList);</span></span>
+<span class="line"><span> * param_1 := obj.Query(p,q,limit);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/checking-existence-of-edge-length-limited-paths-ii" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1724.Checking%20Existence%20of%20Edge%20Length%20Limited%20Paths%20II/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1756" tabindex="-1">1756. 设计最近使用（MRU）队列 🔒 <a class="header-anchor" href="#q-1756" aria-label="Permalink to &quot;1756. 设计最近使用（MRU）队列 🔒 {#q-1756}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数组、链表、分治、双向链表、树堆、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>设计一种类似队列的数据结构，该数据结构将最近使用的元素移到队列尾部。</p>&#10;&#10;<p>实现 <code>MRUQueue</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>MRUQueue(int n)</code>  使用 <code>n</code> 个元素： <code>[1,2,3,...,n]</code> 构造 <code>MRUQueue</code> 。</li>&#10;	<li><code>fetch(int k)</code> 将第 <code>k</code> 个元素<strong>（从 1 开始索引）</strong>移到队尾，并返回该元素。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><b>示例 1：</b></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;MRUQueue&quot;, &quot;fetch&quot;, &quot;fetch&quot;, &quot;fetch&quot;, &quot;fetch&quot;]&#10;[[8], [3], [5], [2], [8]]&#10;<strong>输出：</strong>&#10;[null, 3, 6, 2, 2]&#10;&#10;<strong>解释：</strong>&#10;MRUQueue mRUQueue = new MRUQueue(8); // 初始化队列为 [1,2,3,4,5,6,7,8]。&#10;mRUQueue.fetch(3); // 将第 3 个元素 (3) 移到队尾，使队列变为 [1,2,4,5,6,7,8,3] 并返回该元素。&#10;mRUQueue.fetch(5); // 将第 5 个元素 (6) 移到队尾，使队列变为 [1,2,4,5,7,8,3,6] 并返回该元素。&#10;mRUQueue.fetch(2); // 将第 2 个元素 (2) 移到队尾，使队列变为 [1,4,5,7,8,3,6,2] 并返回该元素。&#10;mRUQueue.fetch(8); // 第 8 个元素 (2) 已经在队列尾部了，所以直接返回该元素即可。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><b>提示：</b></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 2000</code></li>&#10;	<li><code>1 &lt;= k &lt;= n</code></li>&#10;	<li>最多调用 <code>2000</code> 次 <code>fetch</code></li>&#10;</ul>&#10;&#10;<p> </p>&#10;<b>进阶：</b>找到每次 <code>fetch</code> 的复杂度为 <code>O(n)</code> 的算法比较简单。你可以找到每次 <code>fetch</code> 的复杂度更佳的算法吗？</div>
+</details>
+<details class="details custom-block"><summary>方法二：树状数组 + 二分查找 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一每次删除是线性的。若不真正删除、只在末尾追加，则需快速定位「逻辑上的第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个未删除位置」。</p>
+<p>树状数组记录各下标被移走的次数，二分第一个满足 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">query</mtext>
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2265;</mo>
+  <mi>k</mi>
+</math></span> 的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，将该值追加到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 末尾并在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 处标记删除。单次 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>log</mi>
+    <mn>2</mn>
+  </msup>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们用一个数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 维护当前队列中的元素，移动第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个元素时，我们考虑不删除该元素，而是直接将其追加到数组末尾。如果不删除，我们如何知道第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个元素在数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 中的位置呢？</p>
+<p>我们可以用一个树状数组维护数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 中每个位置的元素是否被删除，如果第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 个位置的元素被删除，那么我们更新树状数组中的第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 个位置，表示该位置被移动的次数增加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。这样，我们每次要删除第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个元素时，可以用二分查找，找到第一个满足 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mi>t</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mi>e</mi>
+  <mo>.</mo>
+  <mi>q</mi>
+  <mi>u</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+  <mi>y</mi>
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#x2265;</mo>
+  <mi>k</mi>
+</math></span> 的位置 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，即为第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个元素在数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 中的位置。不妨记 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>q</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，那么我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 追加到数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 的末尾，同时更新树状数组中第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 个位置的值，表示该位置被移动的次数增加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。最后，我们返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>log</mi>
+    <mn>2</mn>
+  </msup>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为队列的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type BinaryIndexedTree struct {</span></span>
+<span class="line"><span>	n int</span></span>
+<span class="line"><span>	c []int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func newBinaryIndexedTree(n int) *BinaryIndexedTree {</span></span>
+<span class="line"><span>	c := make([]int, n+1)</span></span>
+<span class="line"><span>	return &#x26;BinaryIndexedTree{n, c}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *BinaryIndexedTree) update(x, delta int) {</span></span>
+<span class="line"><span>	for x &#x3C;= this.n {</span></span>
+<span class="line"><span>		this.c[x] += delta</span></span>
+<span class="line"><span>		x += x &#x26; -x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *BinaryIndexedTree) query(x int) int {</span></span>
+<span class="line"><span>	s := 0</span></span>
+<span class="line"><span>	for x > 0 {</span></span>
+<span class="line"><span>		s += this.c[x]</span></span>
+<span class="line"><span>		x -= x &#x26; -x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return s</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type MRUQueue struct {</span></span>
+<span class="line"><span>	q    []int</span></span>
+<span class="line"><span>	tree *BinaryIndexedTree</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(n int) MRUQueue {</span></span>
+<span class="line"><span>	q := make([]int, n+1)</span></span>
+<span class="line"><span>	for i := 1; i &#x3C;= n; i++ {</span></span>
+<span class="line"><span>		q[i] = i</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return MRUQueue{q, newBinaryIndexedTree(n + 2010)}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MRUQueue) Fetch(k int) int {</span></span>
+<span class="line"><span>	l, r := 1, len(this.q)</span></span>
+<span class="line"><span>	for l &#x3C; r {</span></span>
+<span class="line"><span>		mid := (l + r) >> 1</span></span>
+<span class="line"><span>		if mid-this.tree.query(mid) >= k {</span></span>
+<span class="line"><span>			r = mid</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			l = mid + 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	x := this.q[l]</span></span>
+<span class="line"><span>	this.q = append(this.q, x)</span></span>
+<span class="line"><span>	this.tree.update(l, 1)</span></span>
+<span class="line"><span>	return x</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your MRUQueue object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(n);</span></span>
+<span class="line"><span> * param_1 := obj.Fetch(k);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-most-recently-used-queue" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1756.Design%20Most%20Recently%20Used%20Queue/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1797" tabindex="-1">1797. 设计一个验证系统 <a class="header-anchor" href="#q-1797" aria-label="Permalink to &quot;1797. 设计一个验证系统 {#q-1797}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、哈希表、链表、双向链表</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>你需要设计一个包含验证码的验证系统。每一次验证中，用户会收到一个新的验证码，这个验证码在 <code>currentTime</code> 时刻之后 <code>timeToLive</code> 秒过期。如果验证码被更新了，那么它会在 <code>currentTime</code> （可能与之前的 <code>currentTime</code> 不同）时刻延长 <code>timeToLive</code> 秒。</p>&#10;&#10;<p>请你实现 <code>AuthenticationManager</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>AuthenticationManager(int timeToLive)</code> 构造 <code>AuthenticationManager</code> 并设置 <code>timeToLive</code> 参数。</li>&#10;	<li><code>generate(string tokenId, int currentTime)</code> 给定 <code>tokenId</code> ，在当前时间 <code>currentTime</code> 生成一个新的验证码。</li>&#10;	<li><code>renew(string tokenId, int currentTime)</code> 将给定 <code>tokenId</code> 且 <strong>未过期</strong> 的验证码在 <code>currentTime</code> 时刻更新。如果给定 <code>tokenId</code> 对应的验证码不存在或已过期，请你忽略该操作，不会有任何更新操作发生。</li>&#10;	<li><code>countUnexpiredTokens(int currentTime)</code> 请返回在给定 <code>currentTime</code> 时刻，<strong>未过期</strong> 的验证码数目。</li>&#10;</ul>&#10;&#10;<p>如果一个验证码在时刻 <code>t</code> 过期，且另一个操作恰好在时刻 <code>t</code> 发生（<code>renew</code> 或者 <code>countUnexpiredTokens</code> 操作），过期事件 <strong>优先于</strong> 其他操作。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1700-1799/1797.Design%20Authentication%20Manager/images/copy-of-pc68_q2.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;AuthenticationManager&quot;, &quot;<code>renew</code>&quot;, &quot;generate&quot;, &quot;<code>countUnexpiredTokens</code>&quot;, &quot;generate&quot;, &quot;<code>renew</code>&quot;, &quot;<code>renew</code>&quot;, &quot;<code>countUnexpiredTokens</code>&quot;]&#10;[[5], [&quot;aaa&quot;, 1], [&quot;aaa&quot;, 2], [6], [&quot;bbb&quot;, 7], [&quot;aaa&quot;, 8], [&quot;bbb&quot;, 10], [15]]&#10;<strong>输出：</strong>&#10;[null, null, null, 1, null, null, null, 0]&#10;&#10;<strong>解释：</strong>&#10;AuthenticationManager authenticationManager = new AuthenticationManager(5); // 构造 AuthenticationManager ，设置 <code>timeToLive</code> = 5 秒。&#10;authenticationManager.<code>renew</code>(&quot;aaa&quot;, 1); // 时刻 1 时，没有验证码的 tokenId 为 &quot;aaa&quot; ，没有验证码被更新。&#10;authenticationManager.generate(&quot;aaa&quot;, 2); // 时刻 2 时，生成一个 tokenId 为 &quot;aaa&quot; 的新验证码。&#10;authenticationManager.<code>countUnexpiredTokens</code>(6); // 时刻 6 时，只有 tokenId 为 &quot;aaa&quot; 的验证码未过期，所以返回 1 。&#10;authenticationManager.generate(&quot;bbb&quot;, 7); // 时刻 7 时，生成一个 tokenId 为 &quot;bbb&quot; 的新验证码。&#10;authenticationManager.<code>renew</code>(&quot;aaa&quot;, 8); // tokenId 为 &quot;aaa&quot; 的验证码在时刻 7 过期，且 8 >= 7 ，所以时刻 8 的renew 操作被忽略，没有验证码被更新。&#10;authenticationManager.<code>renew</code>(&quot;bbb&quot;, 10); // tokenId 为 &quot;bbb&quot; 的验证码在时刻 10 没有过期，所以 renew 操作会执行，该 token 将在时刻 15 过期。&#10;authenticationManager.<code>countUnexpiredTokens</code>(15); // tokenId 为 &quot;bbb&quot; 的验证码在时刻 15 过期，tokenId 为 &quot;aaa&quot; 的验证码在时刻 7 过期，所有验证码均已过期，所以返回 0 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= timeToLive &lt;= 10<sup>8</sup></code></li>&#10;	<li><code>1 &lt;= currentTime &lt;= 10<sup>8</sup></code></li>&#10;	<li><code>1 &lt;= tokenId.length &lt;= 5</code></li>&#10;	<li><code>tokenId</code> 只包含小写英文字母。</li>&#10;	<li>所有 <code>generate</code> 函数的调用都会包含独一无二的 <code>tokenId</code> 值。</li>&#10;	<li>所有函数调用中，<code>currentTime</code> 的值 <strong>严格递增</strong> 。</li>&#10;	<li>所有函数的调用次数总共不超过 <code>2000</code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>验证码在生成或续期后于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">currentTime</mtext>
+  <mo>+</mo>
+  <mtext mathvariant="italic">timeToLive</mtext>
+</math></span> 过期。操作次数有限，用哈希表存过期时刻即可。</p>
+<p>生成直接写入；续期仅当尚未过期；计数则扫表统计过期时刻大于查询时刻的条目。</p>
+</blockquote>
+<p>我们可以简单维护一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span>，键为 <code v-pre>tokenId</code>，值为过期时间。</p>
+<ul>
+<li><code v-pre>generate</code> 操作时，将 <code v-pre>tokenId</code> 作为键，<code v-pre>currentTime + timeToLive</code> 作为值存入哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 中。</li>
+<li><code v-pre>renew</code> 操作时，如果 <code v-pre>tokenId</code> 不在哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 中，或者 <code v-pre>currentTime &gt;= d[tokenId]</code>，则忽略该操作；否则，更新 <code v-pre>d[tokenId]</code> 为 <code v-pre>currentTime + timeToLive</code>。</li>
+<li><code v-pre>countUnexpiredTokens</code> 操作时，遍历哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span>，统计未过期的 <code v-pre>tokenId</code> 个数。</li>
+</ul>
+<p>时间复杂度方面，<code v-pre>generate</code> 和 <code v-pre>renew</code> 操作的时间复杂度均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，<code v-pre>countUnexpiredTokens</code> 操作的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 的键值对个数。</p>
+<p>空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 的键值对个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type AuthenticationManager struct {</span></span>
+<span class="line"><span>	t int</span></span>
+<span class="line"><span>	d map[string]int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(timeToLive int) AuthenticationManager {</span></span>
+<span class="line"><span>	return AuthenticationManager{timeToLive, map[string]int{}}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *AuthenticationManager) Generate(tokenId string, currentTime int) {</span></span>
+<span class="line"><span>	this.d[tokenId] = currentTime + this.t</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *AuthenticationManager) Renew(tokenId string, currentTime int) {</span></span>
+<span class="line"><span>	if v, ok := this.d[tokenId]; !ok || v &#x3C;= currentTime {</span></span>
+<span class="line"><span>		return</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.Generate(tokenId, currentTime)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *AuthenticationManager) CountUnexpiredTokens(currentTime int) int {</span></span>
+<span class="line"><span>	ans := 0</span></span>
+<span class="line"><span>	for _, exp := range this.d {</span></span>
+<span class="line"><span>		if exp > currentTime {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your AuthenticationManager object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(timeToLive);</span></span>
+<span class="line"><span> * obj.Generate(tokenId,currentTime);</span></span>
+<span class="line"><span> * obj.Renew(tokenId,currentTime);</span></span>
+<span class="line"><span> * param_3 := obj.CountUnexpiredTokens(currentTime);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-authentication-manager" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1797.Design%20Authentication%20Manager/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1804" tabindex="-1">1804. 实现 Trie （前缀树） II 🔒 <a class="header-anchor" href="#q-1804" aria-label="Permalink to &quot;1804. 实现 Trie （前缀树） II 🔒 {#q-1804}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、字典树、哈希表、字符串</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>前缀树（<strong><a href="https://en.wikipedia.org/wiki/Trie" target="_blank" rel="noopener noreferrer">trie</a></strong> ，发音为 &quot;try&quot;）是一个树状的数据结构，用于高效地存储和检索一系列字符串的前缀。前缀树有许多应用，如自动补全和拼写检查。</p>&#10;&#10;<p>实现前缀树 Trie 类：</p>&#10;&#10;<ul>&#10;	<li><code>Trie()</code> 初始化前缀树对象。</li>&#10;	<li><code>void insert(String word)</code> 将字符串 <code>word</code> 插入前缀树中。</li>&#10;	<li><code>int countWordsEqualTo(String word)</code> 返回前缀树中字符串 <code>word</code> 的实例个数。</li>&#10;	<li><code>int countWordsStartingWith(String prefix)</code> 返回前缀树中以 <code>prefix</code> 为前缀的字符串个数。</li>&#10;	<li><code>void erase(String word)</code> 从前缀树中移除字符串 <code>word</code> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;&#10;<pre><b>输入</b>&#10;[&quot;Trie&quot;, &quot;insert&quot;, &quot;insert&quot;, &quot;countWordsEqualTo&quot;, &quot;countWordsStartingWith&quot;, &quot;erase&quot;, &quot;countWordsEqualTo&quot;, &quot;countWordsStartingWith&quot;, &quot;erase&quot;, &quot;countWordsStartingWith&quot;]&#10;[[], [&quot;apple&quot;], [&quot;apple&quot;], [&quot;apple&quot;], [&quot;app&quot;], [&quot;apple&quot;], [&quot;apple&quot;], [&quot;app&quot;], [&quot;apple&quot;], [&quot;app&quot;]]&#10;<b>输出</b>&#10;[null, null, null, 2, 2, null, 1, 1, null, 0]&#10;&#10;<b>解释</b>&#10;Trie trie = new Trie();&#10;trie.insert(&quot;apple&quot;);               // 插入 &quot;apple&quot;。&#10;trie.insert(&quot;apple&quot;);               // 插入另一个 &quot;apple&quot;。&#10;trie.countWordsEqualTo(&quot;apple&quot;);    // 有两个 &quot;apple&quot; 实例，所以返回 2。&#10;trie.countWordsStartingWith(&quot;app&quot;); // &quot;app&quot; 是 &quot;apple&quot; 的前缀，所以返回 2。&#10;trie.erase(&quot;apple&quot;);                // 移除一个 &quot;apple&quot;。&#10;trie.countWordsEqualTo(&quot;apple&quot;);    // 现在只有一个 &quot;apple&quot; 实例，所以返回 1。&#10;trie.countWordsStartingWith(&quot;app&quot;); // 返回 1&#10;trie.erase(&quot;apple&quot;);                // 移除 &quot;apple&quot;。现在前缀树是空的。&#10;trie.countWordsStartingWith(&quot;app&quot;); // 返回 0&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><b>提示：</b></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= word.length, prefix.length &lt;= 2000</code></li>&#10;	<li><code>word</code> 和 <code>prefix</code> 只包含小写英文字母。</li>&#10;	<li><code>insert</code>、 <code>countWordsEqualTo</code>、 <code>countWordsStartingWith</code> 和 <code>erase</code> <strong>总共</strong>调用最多 <code>3 * 10<sup>4</sup></code> 次。</li>&#10;	<li>保证每次调用 <code>erase</code> 时，字符串 <code>word</code> 总是存在于前缀树中。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：数组实现前缀树 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>普通前缀树只回答「是否存在」，本题还要返回某单词的出现次数、某前缀下的单词个数，并支持删除。若每次查询都扫描全部已插入字符串，操作次数与串长的乘积会过大。</p>
+<p>在每个节点额外维护两个计数： <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> 为以此节点结尾的单词次数， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mi>v</mi>
+</math></span> 为经过该节点的单词次数。插入时沿路径累加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mi>v</mi>
+</math></span>，终点累加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span>；查询单词或前缀只需走到对应节点读取计数；删除则沿路径递减，从而各操作仍与单词长度成正比。</p>
+</blockquote>
+<p>前缀树每个节点包括三部分：</p>
+<ol>
+<li>指向子节点的指针数组 children，对于本题而言，数组长度为 26，即小写英文字母的数量。<code v-pre>children[0]</code> 对应小写字母 a，...，<code v-pre>children[25]</code> 对应小写字母 z。</li>
+<li>int 变量 <code v-pre>v</code>，表示以该节点结尾的字符串个数。</li>
+<li>int 变量 <code v-pre>pv</code>，表示以该节点作为前缀节点的字符串个数。</li>
+</ol>
+<p><strong>1. 插入字符串</strong></p>
+<p>我们从字典树的根开始，插入字符串。对于当前字符对应的子节点，有两种情况：</p>
+<ul>
+<li>子节点存在。沿着指针移动到子节点，继续处理下一个字符。</li>
+<li>子节点不存在。创建一个新的子节点，记录在 <code v-pre>children</code> 数组的对应位置上，然后沿着指针移动到子节点，让子节点的 <code v-pre>pv</code> 值加 1。继续搜索下一个字符。</li>
+</ul>
+<p>重复以上步骤，直到处理字符串的最后一个字符，然后将当前节点的 <code v-pre>v</code> 值加 1。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串的长度。</p>
+<p><strong>2. 查找前缀</strong></p>
+<p>我们从字典树的根开始，查找前缀。对于当前字符对应的子节点，有两种情况：</p>
+<ul>
+<li>子节点存在。沿着指针移动到子节点，继续搜索下一个字符。</li>
+<li>子节点不存在。说明字典树中不包含该前缀，返回空指针。</li>
+</ul>
+<p>重复以上步骤，直到返回空指针或搜索完前缀的最后一个字符。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串的长度。</p>
+<p><strong>3. 移除字符串</strong></p>
+<p>我们从字典树的根节点开始，依次将对应的子节点的 <code v-pre>pv</code> 值减 1，直到搜索完字符串的最后一个字符。然后将当前节点的 <code v-pre>v</code> 值减 1。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type Trie struct {</span></span>
+<span class="line"><span>	children [26]*Trie</span></span>
+<span class="line"><span>	v        int</span></span>
+<span class="line"><span>	pv       int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() (_ Trie) { return }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Trie) Insert(word string) {</span></span>
+<span class="line"><span>	node := this</span></span>
+<span class="line"><span>	for _, c := range word {</span></span>
+<span class="line"><span>		c -= 'a'</span></span>
+<span class="line"><span>		if node.children[c] == nil {</span></span>
+<span class="line"><span>			node.children[c] = &#x26;Trie{}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		node = node.children[c]</span></span>
+<span class="line"><span>		node.pv++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	node.v++</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Trie) CountWordsEqualTo(word string) int {</span></span>
+<span class="line"><span>	node := this.search(word)</span></span>
+<span class="line"><span>	if node == nil {</span></span>
+<span class="line"><span>		return 0</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return node.v</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Trie) CountWordsStartingWith(prefix string) int {</span></span>
+<span class="line"><span>	node := this.search(prefix)</span></span>
+<span class="line"><span>	if node == nil {</span></span>
+<span class="line"><span>		return 0</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return node.pv</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Trie) Erase(word string) {</span></span>
+<span class="line"><span>	node := this</span></span>
+<span class="line"><span>	for _, c := range word {</span></span>
+<span class="line"><span>		c -= 'a'</span></span>
+<span class="line"><span>		node = node.children[c]</span></span>
+<span class="line"><span>		node.pv--</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	node.v--</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Trie) search(word string) *Trie {</span></span>
+<span class="line"><span>	node := this</span></span>
+<span class="line"><span>	for _, c := range word {</span></span>
+<span class="line"><span>		c -= 'a'</span></span>
+<span class="line"><span>		if node.children[c] == nil {</span></span>
+<span class="line"><span>			return nil</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		node = node.children[c]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return node</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your Trie object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor();</span></span>
+<span class="line"><span> * obj.Insert(word);</span></span>
+<span class="line"><span> * param_2 := obj.CountWordsEqualTo(word);</span></span>
+<span class="line"><span> * param_3 := obj.CountWordsStartingWith(prefix);</span></span>
+<span class="line"><span> * obj.Erase(word);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/implement-trie-ii-prefix-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1804.Implement%20Trie%20II%20(Prefix%20Tree)/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1825" tabindex="-1">1825. 求出 MK 平均值 <a class="header-anchor" href="#q-1825" aria-label="Permalink to &quot;1825. 求出 MK 平均值 {#q-1825}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、队列、数据流、有序集合、树堆、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你两个整数 <code>m</code> 和 <code>k</code> ，以及数据流形式的若干整数。你需要实现一个数据结构，计算这个数据流的 <b>MK 平均值</b> 。</p>&#10;&#10;<p><strong>MK 平均值</strong> 按照如下步骤计算：</p>&#10;&#10;<ol>&#10;	<li>如果数据流中的整数少于 <code>m</code> 个，<strong>MK 平均值</strong> 为 <code>-1</code> ，否则将数据流中最后 <code>m</code> 个元素拷贝到一个独立的容器中。</li>&#10;	<li>从这个容器中删除最小的 <code>k</code> 个数和最大的 <code>k</code> 个数。</li>&#10;	<li>计算剩余元素的平均值，并 <strong>向下取整到最近的整数</strong> 。</li>&#10;</ol>&#10;&#10;<p>请你实现 <code>MKAverage</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>MKAverage(int m, int k)</code> 用一个空的数据流和两个整数 <code>m</code> 和 <code>k</code> 初始化 <strong>MKAverage</strong> 对象。</li>&#10;	<li><code>void addElement(int num)</code> 往数据流中插入一个新的元素 <code>num</code> 。</li>&#10;	<li><code>int calculateMKAverage()</code> 对当前的数据流计算并返回 <strong>MK 平均数</strong> ，结果需 <strong>向下取整到最近的整数</strong> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;MKAverage&quot;, &quot;addElement&quot;, &quot;addElement&quot;, &quot;calculateMKAverage&quot;, &quot;addElement&quot;, &quot;calculateMKAverage&quot;, &quot;addElement&quot;, &quot;addElement&quot;, &quot;addElement&quot;, &quot;calculateMKAverage&quot;]&#10;[[3, 1], [3], [1], [], [10], [], [5], [5], [5], []]&#10;<strong>输出：</strong>&#10;[null, null, null, -1, null, 3, null, null, null, 5]&#10;&#10;<strong>解释：</strong>&#10;MKAverage obj = new MKAverage(3, 1); &#10;obj.addElement(3);        // 当前元素为 [3]&#10;obj.addElement(1);        // 当前元素为 [3,1]&#10;obj.calculateMKAverage(); // 返回 -1 ，因为 m = 3 ，但数据流中只有 2 个元素&#10;obj.addElement(10);       // 当前元素为 [3,1,10]&#10;obj.calculateMKAverage(); // 最后 3 个元素为 [3,1,10]&#10;                          // 删除最小以及最大的 1 个元素后，容器为 [3]&#10;                          // [3] 的平均值等于 3/1 = 3 ，故返回 3&#10;obj.addElement(5);        // 当前元素为 [3,1,10,5]&#10;obj.addElement(5);        // 当前元素为 [3,1,10,5,5]&#10;obj.addElement(5);        // 当前元素为 [3,1,10,5,5,5]&#10;obj.calculateMKAverage(); // 最后 3 个元素为 [5,5,5]&#10;                          // 删除最小以及最大的 1 个元素后，容器为 [5]&#10;                          // [5] 的平均值等于 5/1 = 5 ，故返回 5&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>3 &lt;= m &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= k*2 &lt; m</code></li>&#10;	<li><code>1 &lt;= num &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>addElement</code> 与 <code>calculateMKAverage</code> 总操作次数不超过 <code>10<sup>5</sup></code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：有序集合 + 队列 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>要对长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 的窗口去掉最小与最大各 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个数后求平均，且插入频繁。若每次对窗口排序，单次为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，操作次数大时无法接受。</p>
+<p>用队列保存插入顺序，并用三个有序集合分别存放最小 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个、中间一段与最大 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个，同时维护中间和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>。插入或弹出后把溢出的元素在三个集合之间搬移，使两端长度回到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。平均数即为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们可以维护以下数据结构或变量：</p>
+<ul>
+<li>一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 的队列 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span>，其中队首元素为最早加入的元素，队尾元素为最近加入的元素；</li>
+<li>三个有序集合，分别为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span>, <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span>, <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 分别存储最小的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个元素和最大的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个元素，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 存储剩余的元素；</li>
+<li>一个变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，维护 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 中所有元素的和；</li>
+<li>部分编程语言（如 Java, Go）额外维护两个变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>i</mi>
+  <mi>z</mi>
+  <mi>e</mi>
+  <mn>1</mn>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>i</mi>
+  <mi>z</mi>
+  <mi>e</mi>
+  <mn>3</mn>
+</math></span>，分别表示 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 中元素的个数。</li>
+</ul>
+<p>调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>d</mi>
+  <mi>d</mi>
+  <mi>E</mi>
+  <mi>l</mi>
+  <mi>e</mi>
+  <mi>m</mi>
+  <mi>e</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 函数时，顺序执行以下操作：</p>
+<ol>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span> 为空，或者 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo>&#x2264;</mo>
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mi>o</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，则将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span> 中；否则如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 为空，或者 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo>&#x2265;</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>h</mi>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，则将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 中；否则将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 中，同时将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 的值加到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 中。</li>
+<li>接下来将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 加入队列 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 中，如果此时队列 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 的长度大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>，则将队首元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 从队列 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 中移除，接下来从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span>, <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 中选择其中一个包含 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的集合，将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 从该集合中移除，如果该集合为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span>，则将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 减去 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的值。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span> 的长度大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，则循环将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span> 中的最大值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mi>o</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span> 中移除，将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mi>o</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 中，同时将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 加上 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mi>o</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的值。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 的长度大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，则循环将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 中的最小值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>h</mi>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 中移除，将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>h</mi>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 中，同时将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 加上 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>h</mi>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的值。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span> 的长度小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，并且 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 不为空，则循环将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 中的最小值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 中移除，将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+</math></span> 中，同时将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 减去 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的值。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 的长度小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，并且 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 不为空，则循环将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 中的最大值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+</math></span> 中移除，将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mi>i</mi>
+</math></span> 中，同时将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 减去 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的值。</li>
+</ol>
+<p>调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>a</mi>
+  <mi>l</mi>
+  <mi>c</mi>
+  <mi>u</mi>
+  <mi>l</mi>
+  <mi>a</mi>
+  <mi>t</mi>
+  <mi>e</mi>
+  <mi>M</mi>
+  <mi>K</mi>
+  <mi>A</mi>
+  <mi>v</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+  <mi>a</mi>
+  <mi>g</mi>
+  <mi>e</mi>
+  <mo stretchy="false">(</mo>
+  <mo stretchy="false">)</mo>
+</math></span> 函数时，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 的长度小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>，则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，否则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mrow>
+      <mi>m</mi>
+      <mo>&#x2212;</mo>
+      <mn>2</mn>
+      <mi>k</mi>
+    </mrow>
+  </mfrac>
+</math></span>。</p>
+<p>时间复杂度方面，每次调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>d</mi>
+  <mi>d</mi>
+  <mi>E</mi>
+  <mi>l</mi>
+  <mi>e</mi>
+  <mi>m</mi>
+  <mi>e</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 函数的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，每次调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>a</mi>
+  <mi>l</mi>
+  <mi>c</mi>
+  <mi>u</mi>
+  <mi>l</mi>
+  <mi>a</mi>
+  <mi>t</mi>
+  <mi>e</mi>
+  <mi>M</mi>
+  <mi>K</mi>
+  <mi>A</mi>
+  <mi>v</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+  <mi>a</mi>
+  <mi>g</mi>
+  <mi>e</mi>
+  <mo stretchy="false">(</mo>
+  <mo stretchy="false">)</mo>
+</math></span> 函数的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type MKAverage struct {</span></span>
+<span class="line"><span>	lo, mid, hi  *redblacktree.Tree</span></span>
+<span class="line"><span>	q            []int</span></span>
+<span class="line"><span>	m, k, s      int</span></span>
+<span class="line"><span>	size1, size3 int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(m int, k int) MKAverage {</span></span>
+<span class="line"><span>	lo := redblacktree.NewWithIntComparator()</span></span>
+<span class="line"><span>	mid := redblacktree.NewWithIntComparator()</span></span>
+<span class="line"><span>	hi := redblacktree.NewWithIntComparator()</span></span>
+<span class="line"><span>	return MKAverage{lo, mid, hi, []int{}, m, k, 0, 0, 0}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MKAverage) AddElement(num int) {</span></span>
+<span class="line"><span>	merge := func(rbt *redblacktree.Tree, key, value int) {</span></span>
+<span class="line"><span>		if v, ok := rbt.Get(key); ok {</span></span>
+<span class="line"><span>			nxt := v.(int) + value</span></span>
+<span class="line"><span>			if nxt == 0 {</span></span>
+<span class="line"><span>				rbt.Remove(key)</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				rbt.Put(key, nxt)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			rbt.Put(key, value)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	if this.lo.Empty() || num &#x3C;= this.lo.Right().Key.(int) {</span></span>
+<span class="line"><span>		merge(this.lo, num, 1)</span></span>
+<span class="line"><span>		this.size1++</span></span>
+<span class="line"><span>	} else if this.hi.Empty() || num >= this.hi.Left().Key.(int) {</span></span>
+<span class="line"><span>		merge(this.hi, num, 1)</span></span>
+<span class="line"><span>		this.size3++</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		merge(this.mid, num, 1)</span></span>
+<span class="line"><span>		this.s += num</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.q = append(this.q, num)</span></span>
+<span class="line"><span>	if len(this.q) > this.m {</span></span>
+<span class="line"><span>		x := this.q[0]</span></span>
+<span class="line"><span>		this.q = this.q[1:]</span></span>
+<span class="line"><span>		if _, ok := this.lo.Get(x); ok {</span></span>
+<span class="line"><span>			merge(this.lo, x, -1)</span></span>
+<span class="line"><span>			this.size1--</span></span>
+<span class="line"><span>		} else if _, ok := this.hi.Get(x); ok {</span></span>
+<span class="line"><span>			merge(this.hi, x, -1)</span></span>
+<span class="line"><span>			this.size3--</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			merge(this.mid, x, -1)</span></span>
+<span class="line"><span>			this.s -= x</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for ; this.size1 > this.k; this.size1-- {</span></span>
+<span class="line"><span>		x := this.lo.Right().Key.(int)</span></span>
+<span class="line"><span>		merge(this.lo, x, -1)</span></span>
+<span class="line"><span>		merge(this.mid, x, 1)</span></span>
+<span class="line"><span>		this.s += x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for ; this.size3 > this.k; this.size3-- {</span></span>
+<span class="line"><span>		x := this.hi.Left().Key.(int)</span></span>
+<span class="line"><span>		merge(this.hi, x, -1)</span></span>
+<span class="line"><span>		merge(this.mid, x, 1)</span></span>
+<span class="line"><span>		this.s += x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for ; this.size1 &#x3C; this.k &#x26;&#x26; !this.mid.Empty(); this.size1++ {</span></span>
+<span class="line"><span>		x := this.mid.Left().Key.(int)</span></span>
+<span class="line"><span>		merge(this.mid, x, -1)</span></span>
+<span class="line"><span>		this.s -= x</span></span>
+<span class="line"><span>		merge(this.lo, x, 1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for ; this.size3 &#x3C; this.k &#x26;&#x26; !this.mid.Empty(); this.size3++ {</span></span>
+<span class="line"><span>		x := this.mid.Right().Key.(int)</span></span>
+<span class="line"><span>		merge(this.mid, x, -1)</span></span>
+<span class="line"><span>		this.s -= x</span></span>
+<span class="line"><span>		merge(this.hi, x, 1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MKAverage) CalculateMKAverage() int {</span></span>
+<span class="line"><span>	if len(this.q) &#x3C; this.m {</span></span>
+<span class="line"><span>		return -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return this.s / (this.m - 2*this.k)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your MKAverage object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(m, k);</span></span>
+<span class="line"><span> * obj.AddElement(num);</span></span>
+<span class="line"><span> * param_2 := obj.CalculateMKAverage();</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：单有序集合 + 滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一要同时维护三棵有序树，实现与平衡条件较繁。也可以只保留一个有序集合表示整个窗口：窗口刚满时建表并累加中间和，之后根据新元素、旧元素落入的名次增量调整 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>。结构更简单，单次仍是对数时间。</p>
+</blockquote>
+<p>用一个队列记录插入顺序，再用一个有序集合维护当前长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 的窗口。窗口刚满时一次性建表，并累加去掉最小、最大各 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个元素后的中间和；之后每次插入或删除时，根据元素在有序集合中的位置增量调整中间和。</p>
+<p>与方法一把窗口拆成三个集合不同，这里只维护一份有序序列。</p>
+<p>时间复杂度方面，每次调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>d</mi>
+  <mi>d</mi>
+  <mi>E</mi>
+  <mi>l</mi>
+  <mi>e</mi>
+  <mi>m</mi>
+  <mi>e</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，每次调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>a</mi>
+  <mi>l</mi>
+  <mi>c</mi>
+  <mi>u</mi>
+  <mi>l</mi>
+  <mi>a</mi>
+  <mi>t</mi>
+  <mi>e</mi>
+  <mi>M</mi>
+  <mi>K</mi>
+  <mi>A</mi>
+  <mi>v</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+  <mi>a</mi>
+  <mi>g</mi>
+  <mi>e</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>Java、C++、Go 中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，用树状数组维护频次即可在对数时间内完成名次查询与第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 小查询，语义与有序集合一致。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type MKAverage struct {</span></span>
+<span class="line"><span>	m, k int</span></span>
+<span class="line"><span>	s    int</span></span>
+<span class="line"><span>	q    []int</span></span>
+<span class="line"><span>	c    []int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(m int, k int) MKAverage {</span></span>
+<span class="line"><span>	return MKAverage{m: m, k: k, c: make([]int, 100001)}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MKAverage) AddElement(num int) {</span></span>
+<span class="line"><span>	this.q = append(this.q, num)</span></span>
+<span class="line"><span>	if len(this.q) == this.m {</span></span>
+<span class="line"><span>		for _, x := range this.q {</span></span>
+<span class="line"><span>			this.update(x, 1)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for i := this.k; i &#x3C; this.m-this.k; i++ {</span></span>
+<span class="line"><span>			this.s += this.kth(i)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	} else if len(this.q) > this.m {</span></span>
+<span class="line"><span>		i := this.rank(num)</span></span>
+<span class="line"><span>		if i &#x3C; this.k {</span></span>
+<span class="line"><span>			this.s += this.kth(this.k - 1)</span></span>
+<span class="line"><span>		} else if i &#x3C;= this.m-this.k {</span></span>
+<span class="line"><span>			this.s += num</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			this.s += this.kth(this.m - this.k)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		this.update(num, 1)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>		x := this.q[0]</span></span>
+<span class="line"><span>		this.q = this.q[1:]</span></span>
+<span class="line"><span>		i = this.rank(x)</span></span>
+<span class="line"><span>		if i &#x3C; this.k {</span></span>
+<span class="line"><span>			this.s -= this.kth(this.k)</span></span>
+<span class="line"><span>		} else if i &#x3C;= this.m-this.k {</span></span>
+<span class="line"><span>			this.s -= x</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			this.s -= this.kth(this.m - this.k)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		this.update(x, -1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MKAverage) CalculateMKAverage() int {</span></span>
+<span class="line"><span>	if len(this.q) &#x3C; this.m {</span></span>
+<span class="line"><span>		return -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return this.s / (this.m - this.k*2)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MKAverage) update(x, d int) {</span></span>
+<span class="line"><span>	for ; x &#x3C; len(this.c); x += x &#x26; -x {</span></span>
+<span class="line"><span>		this.c[x] += d</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MKAverage) query(x int) (ans int) {</span></span>
+<span class="line"><span>	for ; x > 0; x -= x &#x26; -x {</span></span>
+<span class="line"><span>		ans += this.c[x]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MKAverage) rank(x int) int {</span></span>
+<span class="line"><span>	return this.query(x - 1)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MKAverage) kth(k int) int {</span></span>
+<span class="line"><span>	need, idx := k+1, 0</span></span>
+<span class="line"><span>	for p := 1 &#x3C;&#x3C; 16; p > 0; p >>= 1 {</span></span>
+<span class="line"><span>		nxt := idx + p</span></span>
+<span class="line"><span>		if nxt &#x3C; len(this.c) &#x26;&#x26; this.c[nxt] &#x3C; need {</span></span>
+<span class="line"><span>			need -= this.c[nxt]</span></span>
+<span class="line"><span>			idx = nxt</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return idx + 1</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/finding-mk-average" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1825.Finding%20MK%20Average/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1845" tabindex="-1">1845. 座位预约管理系统 <a class="header-anchor" href="#q-1845" aria-label="Permalink to &quot;1845. 座位预约管理系统 {#q-1845}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>请你设计一个管理 <code>n</code> 个座位预约的系统，座位编号从 <code>1</code> 到 <code>n</code> 。</p>&#10;&#10;<p>请你实现 <code>SeatManager</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>SeatManager(int n)</code> 初始化一个 <code>SeatManager</code> 对象，它管理从 <code>1</code> 到 <code>n</code> 编号的 <code>n</code> 个座位。所有座位初始都是可预约的。</li>&#10;	<li><code>int reserve()</code> 返回可以预约座位的 <strong>最小编号</strong> ，此座位变为不可预约。</li>&#10;	<li><code>void unreserve(int seatNumber)</code> 将给定编号 <code>seatNumber</code> 对应的座位变成可以预约。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>&#10;[&quot;SeatManager&quot;, &quot;reserve&quot;, &quot;reserve&quot;, &quot;unreserve&quot;, &quot;reserve&quot;, &quot;reserve&quot;, &quot;reserve&quot;, &quot;reserve&quot;, &quot;unreserve&quot;]&#10;[[5], [], [], [2], [], [], [], [], [5]]&#10;<strong>输出：</strong>&#10;[null, 1, 2, null, 2, 3, 4, 5, null]&#10;&#10;<strong>解释：</strong>&#10;SeatManager seatManager = new SeatManager(5); // 初始化 SeatManager ，有 5 个座位。&#10;seatManager.reserve();    // 所有座位都可以预约，所以返回最小编号的座位，也就是 1 。&#10;seatManager.reserve();    // 可以预约的座位为 [2,3,4,5] ，返回最小编号的座位，也就是 2 。&#10;seatManager.unreserve(2); // 将座位 2 变为可以预约，现在可预约的座位为 [2,3,4,5] 。&#10;seatManager.reserve();    // 可以预约的座位为 [2,3,4,5] ，返回最小编号的座位，也就是 2 。&#10;seatManager.reserve();    // 可以预约的座位为 [3,4,5] ，返回最小编号的座位，也就是 3 。&#10;seatManager.reserve();    // 可以预约的座位为 [4,5] ，返回最小编号的座位，也就是 4 。&#10;seatManager.reserve();    // 唯一可以预约的是座位 5 ，所以返回 5 。&#10;seatManager.unreserve(5); // 将座位 5 变为可以预约，现在可预约的座位为 [5] 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= seatNumber &lt;= n</code></li>&#10;	<li>每一次对 <code>reserve</code> 的调用，题目保证至少存在一个可以预约的座位。</li>&#10;	<li>每一次对 <code>unreserve</code> 的调用，题目保证 <code>seatNumber</code> 在调用函数前都是被预约状态。</li>&#10;	<li>对 <code>reserve</code> 和 <code>unreserve</code> 的调用 <strong>总共</strong> 不超过 <code>10<sup>5</sup></code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：优先队列（小根堆） · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>要反复取出当前最小的空闲座位，并支持归还。若每次在布尔数组上扫描最小空位，单次可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，操作次数大时偏慢。</p>
+<p>把全部空闲编号放进小根堆， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">reserve</mtext>
+</math></span> 弹出堆顶， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">unreserve</mtext>
+</math></span> 把编号推回。两端操作均为对数时间。</p>
+</blockquote>
+<p>我们定义一个优先队列（小根堆） <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">q</mtext>
+</math></span>，用于存储所有可预约的座位编号。初始时，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的所有座位编号加入到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">q</mtext>
+</math></span> 中。</p>
+<p>调用 <code v-pre>reserve</code> 方法时，我们从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">q</mtext>
+</math></span> 中弹出堆顶元素，即可预约的座位编号的最小值。</p>
+<p>调用 <code v-pre>unreserve</code> 方法时，我们将座位编号加入到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">q</mtext>
+</math></span> 中。</p>
+<p>时间复杂度方面，初始化的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，<code v-pre>reserve</code> 和 <code v-pre>unreserve</code> 方法的时间复杂度均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type SeatManager struct {</span></span>
+<span class="line"><span>	q hp</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(n int) SeatManager {</span></span>
+<span class="line"><span>	q := hp{}</span></span>
+<span class="line"><span>	for i := 1; i &#x3C;= n; i++ {</span></span>
+<span class="line"><span>		heap.Push(&#x26;q, i)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return SeatManager{q}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *SeatManager) Reserve() int {</span></span>
+<span class="line"><span>	return heap.Pop(&#x26;this.q).(int)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *SeatManager) Unreserve(seatNumber int) {</span></span>
+<span class="line"><span>	heap.Push(&#x26;this.q, seatNumber)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type hp struct{ sort.IntSlice }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (h hp) Less(i, j int) bool { return h.IntSlice[i] &#x3C; h.IntSlice[j] }</span></span>
+<span class="line"><span>func (h *hp) Push(v any)        { h.IntSlice = append(h.IntSlice, v.(int)) }</span></span>
+<span class="line"><span>func (h *hp) Pop() any {</span></span>
+<span class="line"><span>	a := h.IntSlice</span></span>
+<span class="line"><span>	v := a[len(a)-1]</span></span>
+<span class="line"><span>	h.IntSlice = a[:len(a)-1]</span></span>
+<span class="line"><span>	return v</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your SeatManager object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(n);</span></span>
+<span class="line"><span> * param_1 := obj.Reserve();</span></span>
+<span class="line"><span> * obj.Unreserve(seatNumber);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/seat-reservation-manager" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1845.Seat%20Reservation%20Manager/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1865" tabindex="-1">1865. 找出和为指定值的下标对 <a class="header-anchor" href="#q-1865" aria-label="Permalink to &quot;1865. 找出和为指定值的下标对 {#q-1865}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数组、哈希表</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你两个整数数组 <code>nums1</code> 和 <code>nums2</code> ，请你实现一个支持下述两类查询的数据结构：</p>&#10;&#10;<ol>&#10;	<li><strong>累加</strong> ，将一个正整数加到 <code>nums2</code> 中指定下标对应元素上。</li>&#10;	<li><strong>计数 </strong>，统计满足 <code>nums1[i] + nums2[j]</code> 等于指定值的下标对 <code>(i, j)</code> 数目（<code>0 &lt;= i &lt; nums1.length</code> 且 <code>0 &lt;= j &lt; nums2.length</code>）。</li>&#10;</ol>&#10;&#10;<p>实现 <code>FindSumPairs</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>FindSumPairs(int[] nums1, int[] nums2)</code> 使用整数数组 <code>nums1</code> 和 <code>nums2</code> 初始化 <code>FindSumPairs</code> 对象。</li>&#10;	<li><code>void add(int index, int val)</code> 将 <code>val</code> 加到 <code>nums2[index]</code> 上，即，执行 <code>nums2[index] += val</code> 。</li>&#10;	<li><code>int count(int tot)</code> 返回满足 <code>nums1[i] + nums2[j] == tot</code> 的下标对 <code>(i, j)</code> 数目。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;FindSumPairs&quot;, &quot;count&quot;, &quot;add&quot;, &quot;count&quot;, &quot;count&quot;, &quot;add&quot;, &quot;add&quot;, &quot;count&quot;]&#10;[[[1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]], [7], [3, 2], [8], [4], [0, 1], [1, 1], [7]]&#10;<strong>输出：</strong>&#10;[null, 8, null, 2, 1, null, null, 11]&#10;&#10;<strong>解释：</strong>&#10;FindSumPairs findSumPairs = new FindSumPairs([1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]);&#10;findSumPairs.count(7);  // 返回 8 ; 下标对 (2,2), (3,2), (4,2), (2,4), (3,4), (4,4) 满足 2 + 5 = 7 ，下标对 (5,1), (5,5) 满足 3 + 4 = 7&#10;findSumPairs.add(3, 2); // 此时 nums2 = [1,4,5,<em><strong>4</strong></em><code>,5,4</code>]&#10;findSumPairs.count(8);  // 返回 2 ；下标对 (5,2), (5,4) 满足 3 + 5 = 8&#10;findSumPairs.count(4);  // 返回 1 ；下标对 (5,0) 满足 3 + 1 = 4&#10;findSumPairs.add(0, 1); // 此时 nums2 = [<em><strong><code>2</code></strong></em>,4,5,4<code>,5,4</code>]&#10;findSumPairs.add(1, 1); // 此时 nums2 = [<code>2</code>,<em><strong>5</strong></em>,5,4<code>,5,4</code>]&#10;findSumPairs.count(7);  // 返回 11 ；下标对 (2,1), (2,2), (2,4), (3,1), (3,2), (3,4), (4,1), (4,2), (4,4) 满足 2 + 5 = 7 ，下标对 (5,3), (5,5) 满足 3 + 4 = 7&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums1.length &lt;= 1000</code></li>&#10;	<li><code>1 &lt;= nums2.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= nums1[i] &lt;= 10<sup>9</sup></code></li>&#10;	<li><code>1 &lt;= nums2[i] &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>0 &lt;= index &lt; nums2.length</code></li>&#10;	<li><code>1 &lt;= val &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= tot &lt;= 10<sup>9</sup></code></li>&#10;	<li>最多调用 <code>add</code> 和 <code>count</code> 函数各 <code>1000</code> 次</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>要支持修改 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mn>2</mn>
+</math></span> 的一个元素，并查询 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mn>1</mn>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mn>2</mn>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的对数。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mn>2</mn>
+</math></span> 很长，每次查询双层枚举不可行。</p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mn>1</mn>
+</math></span> 长度不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>3</mn>
+  </msup>
+</math></span>，对其枚举即可。用哈希表维护 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mn>2</mn>
+</math></span> 的频次： <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">count</mtext>
+</math></span> 对每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2208;</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mn>1</mn>
+</math></span> 累加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo>&#x2212;</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span>； <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">add</mtext>
+</math></span> 时先减旧值再加新值。</p>
+</blockquote>
+<p>我们注意到，数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums1</mtext>
+</math></span> 的长度不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+    <mn>3</mn>
+  </msup>
+</math></span>，数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums2</mtext>
+</math></span> 的长度达到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+    <mn>5</mn>
+  </msup>
+</math></span>，因此，如果直接暴力枚举所有下标对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mi>j</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，计算 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums1</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mtext mathvariant="italic">nums2</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 是否等于指定值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">tot</mtext>
+</math></span>，那么会超出时间限制。</p>
+<p>能否只枚举长度较短的数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums1</mtext>
+</math></span> 呢？答案是可以的。我们用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 统计数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums2</mtext>
+</math></span> 中每个元素出现的次数，然后枚举数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums1</mtext>
+</math></span> 中的每个元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，计算 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">tot</mtext>
+  <mo>&#x2212;</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的值之和即可。</p>
+<p>在调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>add</mtext>
+</math></span> 方法时，我们需要先将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums2</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mi>d</mi>
+  <mi>e</mi>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 对应的值从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 中减去 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，然后将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums2</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mi>d</mi>
+  <mi>e</mi>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的值加上 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">val</mtext>
+</math></span>，最后将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums2</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mi>d</mi>
+  <mi>e</mi>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 对应的值加上 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>在调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>count</mtext>
+</math></span> 方法时，我们只需要遍历数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums1</mtext>
+</math></span>，对于每个元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，计算 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">tot</mtext>
+  <mo>&#x2212;</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的值之和即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 分别是数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums1</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums2</mtext>
+</math></span> 的长度，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 是调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>count</mtext>
+</math></span> 方法的次数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type FindSumPairs struct {</span></span>
+<span class="line"><span>	nums1 []int</span></span>
+<span class="line"><span>	nums2 []int</span></span>
+<span class="line"><span>	cnt   map[int]int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(nums1 []int, nums2 []int) FindSumPairs {</span></span>
+<span class="line"><span>	cnt := map[int]int{}</span></span>
+<span class="line"><span>	for _, x := range nums2 {</span></span>
+<span class="line"><span>		cnt[x]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return FindSumPairs{nums1, nums2, cnt}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FindSumPairs) Add(index int, val int) {</span></span>
+<span class="line"><span>	this.cnt[this.nums2[index]]--</span></span>
+<span class="line"><span>	this.nums2[index] += val</span></span>
+<span class="line"><span>	this.cnt[this.nums2[index]]++</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FindSumPairs) Count(tot int) (ans int) {</span></span>
+<span class="line"><span>	for _, x := range this.nums1 {</span></span>
+<span class="line"><span>		ans += this.cnt[tot-x]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your FindSumPairs object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(nums1, nums2);</span></span>
+<span class="line"><span> * obj.Add(index,val);</span></span>
+<span class="line"><span> * param_2 := obj.Count(tot);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/finding-pairs-with-a-certain-sum" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1865.Finding%20Pairs%20With%20a%20Certain%20Sum/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1912" tabindex="-1">1912. 设计电影租借系统 <a class="header-anchor" href="#q-1912" aria-label="Permalink to &quot;1912. 设计电影租借系统 {#q-1912}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数组、哈希表、有序集合、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>你有一个电影租借公司和 <code>n</code> 个电影商店。你想要实现一个电影租借系统，它支持查询、预订和返还电影的操作。同时系统还能生成一份当前被借出电影的报告。</p>&#10;&#10;<p>所有电影用二维整数数组 <code>entries</code> 表示，其中 <code>entries[i] = [shop<sub>i</sub>, movie<sub>i</sub>, price<sub>i</sub>]</code> 表示商店 <code>shop<sub>i</sub></code> 有一份电影 <code>movie<sub>i</sub></code> 的拷贝，租借价格为 <code>price<sub>i</sub></code> 。每个商店有 <strong>至多一份</strong> 编号为 <code>movie<sub>i</sub></code> 的电影拷贝。</p>&#10;&#10;<p>系统需要支持以下操作：</p>&#10;&#10;<ul>&#10;	<li><strong>Search：</strong>找到拥有指定电影且 <strong>未借出</strong> 的商店中 <strong>最便宜的 5 个</strong> 。商店需要按照 <strong>价格</strong> 升序排序，如果价格相同，则 <code>shop<sub>i</sub></code> <strong>较小</strong> 的商店排在前面。如果查询结果少于 5 个商店，则将它们全部返回。如果查询结果没有任何商店，则返回空列表。</li>&#10;	<li><strong>Rent：</strong>从指定商店借出指定电影，题目保证指定电影在指定商店 <strong>未借出</strong> 。</li>&#10;	<li><strong>Drop：</strong>在指定商店返还 <strong>之前已借出</strong> 的指定电影。</li>&#10;	<li><strong>Report：</strong>返回 <strong>最便宜的 5 部已借出电影</strong> （可能有重复的电影 ID），将结果用二维列表 <code>res</code> 返回，其中 <code>res[j] = [shop<sub>j</sub>, movie<sub>j</sub>]</code> 表示第 <code>j</code> 便宜的已借出电影是从商店 <code>shop<sub>j</sub></code> 借出的电影 <code>movie<sub>j</sub></code> 。<code>res</code> 中的电影需要按 <strong>价格</strong> 升序排序；如果价格相同，则<strong> </strong><code>shop<sub>j</sub></code> <strong>较小</strong> 的排在前面；如果仍然相同，则 <code>movie<sub>j</sub></code> <strong>较小 </strong>的排在前面。如果当前借出的电影小于 5 部，则将它们全部返回。如果当前没有借出电影，则返回一个空的列表。</li>&#10;</ul>&#10;&#10;<p>请你实现 <code>MovieRentingSystem</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>MovieRentingSystem(int n, int[][] entries)</code> 将 <code>MovieRentingSystem</code> 对象用 <code>n</code> 个商店和 <code>entries</code> 表示的电影列表初始化。</li>&#10;	<li><code>List&lt;Integer> search(int movie)</code> 如上所述，返回 <strong>未借出</strong> 指定 <code>movie</code> 的商店列表。</li>&#10;	<li><code>void rent(int shop, int movie)</code> 从指定商店 <code>shop</code> 借出指定电影 <code>movie</code> 。</li>&#10;	<li><code>void drop(int shop, int movie)</code> 在指定商店 <code>shop</code> 返还之前借出的电影 <code>movie</code> 。</li>&#10;	<li><code>List&lt;List&lt;Integer>> report()</code> 如上所述，返回最便宜的 <strong>已借出</strong> 电影列表。</li>&#10;</ul>&#10;&#10;<p><strong>注意：</strong>测试数据保证 <code>rent</code> 操作中指定商店拥有 <strong>未借出 </strong>的指定电影，且 <code>drop</code> 操作指定的商店 <strong>之前已借出</strong> 指定电影。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;MovieRentingSystem&quot;, &quot;search&quot;, &quot;rent&quot;, &quot;rent&quot;, &quot;report&quot;, &quot;drop&quot;, &quot;search&quot;]&#10;[[3, [[0, 1, 5], [0, 2, 6], [0, 3, 7], [1, 1, 4], [1, 2, 7], [2, 1, 5]]], [1], [0, 1], [1, 2], [], [1, 2], [2]]&#10;<strong>输出：</strong>&#10;[null, [1, 0, 2], null, null, [[0, 1], [1, 2]], null, [0, 1]]&#10;&#10;<strong>解释：</strong>&#10;MovieRentingSystem movieRentingSystem = new MovieRentingSystem(3, [[0, 1, 5], [0, 2, 6], [0, 3, 7], [1, 1, 4], [1, 2, 7], [2, 1, 5]]);&#10;movieRentingSystem.search(1);  // 返回 [1, 0, 2] ，商店 1，0 和 2 有未借出的 ID 为 1 的电影。商店 1 最便宜，商店 0 和 2 价格相同，所以按商店编号排序。&#10;movieRentingSystem.rent(0, 1); // 从商店 0 借出电影 1 。现在商店 0 未借出电影编号为 [2,3] 。&#10;movieRentingSystem.rent(1, 2); // 从商店 1 借出电影 2 。现在商店 1 未借出的电影编号为 [1] 。&#10;movieRentingSystem.report();   // 返回 [[0, 1], [1, 2]] 。商店 0 借出的电影 1 最便宜，然后是商店 1 借出的电影 2 。&#10;movieRentingSystem.drop(1, 2); // 在商店 1 返还电影 2 。现在商店 1 未借出的电影编号为 [1,2] 。&#10;movieRentingSystem.search(2);  // 返回 [0, 1] 。商店 0 和 1 有未借出的 ID 为 2 的电影。商店 0 最便宜，然后是商店 1 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 3 * 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= entries.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>0 &lt;= shop<sub>i</sub> &lt; n</code></li>&#10;	<li><code>1 &lt;= movie<sub>i</sub>, price<sub>i</sub> &lt;= 10<sup>4</sup></code></li>&#10;	<li>每个商店 <strong>至多</strong> 有一份电影 <code>movie<sub>i</sub></code> 的拷贝。</li>&#10;	<li><code>search</code>，<code>rent</code>，<code>drop</code> 和 <code>report</code> 的调用 <strong>总共</strong> 不超过 <code>10<sup>5</sup></code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：有序集合 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">search</mtext>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">report</mtext>
+</math></span> 都要按价格、店铺、影片的字典序取前五，且租还会频繁改集合。每次全表排序在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>,</mo>
+  <mi>m</mi>
+</math></span> 达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span> 时不可行。</p>
+<p>未租出影片按 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">movie</mtext>
+</math></span> 分桶，桶内以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">price</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">shop</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 有序；已租出影片放在全局有序集 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">price</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">shop</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">movie</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>。价格另用哈希记下，以便 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 取到排序键。</p>
+<p>租出即从对应桶删除并插入全局集，归还则反向操作。前五元素可直接切片，单次更新为对数时间。</p>
+</blockquote>
+<p>我们定义一个有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">available</mtext>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">available</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>m</mi>
+  <mi>o</mi>
+  <mi>v</mi>
+  <mi>i</mi>
+  <mi>e</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 存储所有未借出的电影 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>o</mi>
+  <mi>v</mi>
+  <mi>i</mi>
+  <mi>e</mi>
+</math></span> 的商店列表，列表中的元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">price</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">shop</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>，并按照 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">price</mtext>
+</math></span> 升序排序，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">price</mtext>
+</math></span> 相同，则按照 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">shop</mtext>
+</math></span> 升序排序。</p>
+<p>另外定义一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">price_map</mtext>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">price_map</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">shop</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">movie</mtext>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">]</mo>
+</math></span> 存储商店 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">shop</mtext>
+</math></span> 中电影 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">movie</mtext>
+</math></span> 的租借价格。</p>
+<p>我们还定义一个有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">rented</mtext>
+</math></span>，其中存储所有已借出的电影，元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">price</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">shop</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">movie</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>，并按照 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">price</mtext>
+</math></span> 升序排序，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">price</mtext>
+</math></span> 相同，则按照 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">shop</mtext>
+</math></span> 升序排序，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">shop</mtext>
+</math></span> 也相同，则按照 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">movie</mtext>
+</math></span> 升序排序。</p>
+<p>对于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>MovieRentingSystem</mtext>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>,</mo>
+  <mtext>entries</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 操作，我们遍历 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>entries</mtext>
+</math></span>，将每个商店的电影信息加入到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">available</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">price_map</mtext>
+</math></span> 中。时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>entries</mtext>
+</math></span> 的长度。</p>
+<p>对于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>search</mtext>
+  <mo stretchy="false">(</mo>
+  <mtext>movie</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 操作，我们返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">available</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext>movie</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 中前 5 个商店的编号。时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>对于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>rent</mtext>
+  <mo stretchy="false">(</mo>
+  <mtext>shop</mtext>
+  <mo>,</mo>
+  <mtext>movie</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 操作，我们从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">available</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext>movie</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 中移除 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">price</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">shop</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>，并将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">price</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">shop</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">movie</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 加入到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">rented</mtext>
+</math></span> 中。时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>对于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>drop</mtext>
+  <mo stretchy="false">(</mo>
+  <mtext>shop</mtext>
+  <mo>,</mo>
+  <mtext>movie</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 操作，我们从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">rented</mtext>
+</math></span> 中移除 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">price</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">shop</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">movie</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>，并将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">price</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">shop</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 加入到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">available</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext>movie</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 中。时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>对于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>report</mtext>
+  <mo stretchy="false">(</mo>
+  <mo stretchy="false">)</mo>
+</math></span> 操作，我们返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">rented</mtext>
+</math></span> 中前 5 个已借出电影的商店编号和电影编号。时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>entries</mtext>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type MovieRentingSystem struct {</span></span>
+<span class="line"><span>	available map[int]*treeset.Set // movie -> (price, shop)</span></span>
+<span class="line"><span>	priceMap  map[int64]int</span></span>
+<span class="line"><span>	rented    *treeset.Set // (price, shop, movie)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(n int, entries [][]int) MovieRentingSystem {</span></span>
+<span class="line"><span>	// comparator for (price, shop)</span></span>
+<span class="line"><span>	cmpAvail := func(a, b any) int {</span></span>
+<span class="line"><span>		x := a.([2]int)</span></span>
+<span class="line"><span>		y := b.([2]int)</span></span>
+<span class="line"><span>		if x[0] != y[0] {</span></span>
+<span class="line"><span>			return x[0] - y[0]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return x[1] - y[1]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	// comparator for (price, shop, movie)</span></span>
+<span class="line"><span>	cmpRented := func(a, b any) int {</span></span>
+<span class="line"><span>		x := a.([3]int)</span></span>
+<span class="line"><span>		y := b.([3]int)</span></span>
+<span class="line"><span>		if x[0] != y[0] {</span></span>
+<span class="line"><span>			return x[0] - y[0]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if x[1] != y[1] {</span></span>
+<span class="line"><span>			return x[1] - y[1]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return x[2] - y[2]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	mrs := MovieRentingSystem{</span></span>
+<span class="line"><span>		available: make(map[int]*treeset.Set),</span></span>
+<span class="line"><span>		priceMap:  make(map[int64]int),</span></span>
+<span class="line"><span>		rented:    treeset.NewWith(cmpRented),</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	for _, e := range entries {</span></span>
+<span class="line"><span>		shop, movie, price := e[0], e[1], e[2]</span></span>
+<span class="line"><span>		if _, ok := mrs.available[movie]; !ok {</span></span>
+<span class="line"><span>			mrs.available[movie] = treeset.NewWith(cmpAvail)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		mrs.available[movie].Add([2]int{price, shop})</span></span>
+<span class="line"><span>		mrs.priceMap[f(shop, movie)] = price</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	return mrs</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MovieRentingSystem) Search(movie int) []int {</span></span>
+<span class="line"><span>	res := []int{}</span></span>
+<span class="line"><span>	if _, ok := this.available[movie]; !ok {</span></span>
+<span class="line"><span>		return res</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	it := this.available[movie].Iterator()</span></span>
+<span class="line"><span>	it.Begin()</span></span>
+<span class="line"><span>	cnt := 0</span></span>
+<span class="line"><span>	for it.Next() &#x26;&#x26; cnt &#x3C; 5 {</span></span>
+<span class="line"><span>		pair := it.Value().([2]int)</span></span>
+<span class="line"><span>		res = append(res, pair[1])</span></span>
+<span class="line"><span>		cnt++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return res</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MovieRentingSystem) Rent(shop int, movie int) {</span></span>
+<span class="line"><span>	price := this.priceMap[f(shop, movie)]</span></span>
+<span class="line"><span>	this.available[movie].Remove([2]int{price, shop})</span></span>
+<span class="line"><span>	this.rented.Add([3]int{price, shop, movie})</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MovieRentingSystem) Drop(shop int, movie int) {</span></span>
+<span class="line"><span>	price := this.priceMap[f(shop, movie)]</span></span>
+<span class="line"><span>	this.rented.Remove([3]int{price, shop, movie})</span></span>
+<span class="line"><span>	this.available[movie].Add([2]int{price, shop})</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MovieRentingSystem) Report() [][]int {</span></span>
+<span class="line"><span>	res := [][]int{}</span></span>
+<span class="line"><span>	it := this.rented.Iterator()</span></span>
+<span class="line"><span>	it.Begin()</span></span>
+<span class="line"><span>	cnt := 0</span></span>
+<span class="line"><span>	for it.Next() &#x26;&#x26; cnt &#x3C; 5 {</span></span>
+<span class="line"><span>		t := it.Value().([3]int)</span></span>
+<span class="line"><span>		res = append(res, []int{t[1], t[2]})</span></span>
+<span class="line"><span>		cnt++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return res</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func f(shop, movie int) int64 {</span></span>
+<span class="line"><span>	return (int64(shop) &#x3C;&#x3C; 30) | int64(movie)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your MovieRentingSystem object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(n, entries);</span></span>
+<span class="line"><span> * param_1 := obj.Search(movie);</span></span>
+<span class="line"><span> * obj.Rent(shop,movie);</span></span>
+<span class="line"><span> * obj.Drop(shop,movie);</span></span>
+<span class="line"><span> * param_4 := obj.Report();</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-movie-rental-system" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1912.Design%20Movie%20Rental%20System/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1993" tabindex="-1">1993. 树上的操作 <a class="header-anchor" href="#q-1993" aria-label="Permalink to &quot;1993. 树上的操作 {#q-1993}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、广度优先搜索、设计、数组、哈希表</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一棵 <code>n</code> 个节点的树，编号从 <code>0</code> 到 <code>n - 1</code> ，以父节点数组 <code>parent</code> 的形式给出，其中 <code>parent[i]</code> 是第 <code>i</code> 个节点的父节点。树的根节点为 <code>0</code> 号节点，所以 <code>parent[0] = -1</code> ，因为它没有父节点。你想要设计一个数据结构实现树里面对节点的加锁，解锁和升级操作。</p>&#10;&#10;<p>数据结构需要支持如下函数：</p>&#10;&#10;<ul>&#10;	<li><strong>Lock：</strong>指定用户给指定节点 <strong>上锁</strong> ，上锁后其他用户将无法给同一节点上锁。只有当节点处于未上锁的状态下，才能进行上锁操作。</li>&#10;	<li><strong>Unlock：</strong>指定用户给指定节点 <strong>解锁</strong> ，只有当指定节点当前正被指定用户锁住时，才能执行该解锁操作。</li>&#10;	<li><b>Upgrade：</b>指定用户给指定节点 <strong>上锁</strong> ，并且将该节点的所有子孙节点 <strong>解锁</strong> 。只有如下 3 个条件 <strong>全部</strong> 满足时才能执行升级操作：&#10;	<ul>&#10;		<li>指定节点当前状态为未上锁。</li>&#10;		<li>指定节点至少有一个上锁状态的子孙节点（可以是 <strong>任意</strong> 用户上锁的）。</li>&#10;		<li>指定节点没有任何上锁的祖先节点。</li>&#10;	</ul>&#10;	</li>&#10;</ul>&#10;&#10;<p>请你实现 <code>LockingTree</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>LockingTree(int[] parent)</code> 用父节点数组初始化数据结构。</li>&#10;	<li><code>lock(int num, int user)</code> 如果 id 为 <code>user</code> 的用户可以给节点 <code>num</code> 上锁，那么返回 <code>true</code> ，否则返回 <code>false</code> 。如果可以执行此操作，节点 <code>num</code> 会被 id 为 <code>user</code> 的用户 <strong>上锁</strong> 。</li>&#10;	<li><code>unlock(int num, int user)</code> 如果 id 为 <code>user</code> 的用户可以给节点 <code>num</code> 解锁，那么返回 <code>true</code> ，否则返回 <code>false</code> 。如果可以执行此操作，节点 <code>num</code> 变为 <strong>未上锁</strong> 状态。</li>&#10;	<li><code>upgrade(int num, int user)</code> 如果 id 为 <code>user</code> 的用户可以给节点 <code>num</code> 升级，那么返回 <code>true</code> ，否则返回 <code>false</code> 。如果可以执行此操作，节点 <code>num</code> 会被 <strong>升级 </strong>。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1993.Operations%20on%20Tree/images/untitled.png" loading="lazy"></p>&#10;&#10;<pre><strong>输入：</strong>&#10;[&quot;LockingTree&quot;, &quot;lock&quot;, &quot;unlock&quot;, &quot;unlock&quot;, &quot;lock&quot;, &quot;upgrade&quot;, &quot;lock&quot;]&#10;[[[-1, 0, 0, 1, 1, 2, 2]], [2, 2], [2, 3], [2, 2], [4, 5], [0, 1], [0, 1]]&#10;<strong>输出：</strong>&#10;[null, true, false, true, true, true, false]&#10;&#10;<strong>解释：</strong>&#10;LockingTree lockingTree = new LockingTree([-1, 0, 0, 1, 1, 2, 2]);&#10;lockingTree.lock(2, 2);    // 返回 true ，因为节点 2 未上锁。&#10;                           // 节点 2 被用户 2 上锁。&#10;lockingTree.unlock(2, 3);  // 返回 false ，因为用户 3 无法解锁被用户 2 上锁的节点。&#10;lockingTree.unlock(2, 2);  // 返回 true ，因为节点 2 之前被用户 2 上锁。&#10;                           // 节点 2 现在变为未上锁状态。&#10;lockingTree.lock(4, 5);    // 返回 true ，因为节点 4 未上锁。&#10;                           // 节点 4 被用户 5 上锁。&#10;lockingTree.upgrade(0, 1); // 返回 true ，因为节点 0 未上锁且至少有一个被上锁的子孙节点（节点 4）。&#10;                           // 节点 0 被用户 1 上锁，节点 4 变为未上锁。&#10;lockingTree.lock(0, 1);    // 返回 false ，因为节点 0 已经被上锁了。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == parent.length</code></li>&#10;	<li><code>2 &lt;= n &lt;= 2000</code></li>&#10;	<li>对于 <code>i != 0</code> ，满足 <code>0 &lt;= parent[i] &lt;= n - 1</code></li>&#10;	<li><code>parent[0] == -1</code></li>&#10;	<li><code>0 &lt;= num &lt;= n - 1</code></li>&#10;	<li><code>1 &lt;= user &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>parent</code> 表示一棵合法的树。</li>&#10;	<li><code>lock</code> ，<code>unlock</code> 和 <code>upgrade</code> 的调用 <strong>总共 </strong>不超过 <code>2000</code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：DFS · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>加锁、解锁是单点更新；升级要求自身与祖先均未锁、且子孙中至少一把锁，成功后解开全部子孙并锁住自身。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>2000</mn>
+</math></span>，沿父链与 DFS 子孙均可接受。</p>
+<p>数组记下锁的用户，邻接表存孩子。升级先爬父指针拒绝已锁祖先，再 DFS 解锁子孙并记录是否找到锁。</p>
+</blockquote>
+<p>我们定义以下几个变量：</p>
+<ul>
+<li><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+  <mi>e</mi>
+  <mi>d</mi>
+</math></span>：记录每个节点的锁定状态，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+  <mi>e</mi>
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的锁定状态，如果节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 未被上锁，则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+  <mi>e</mi>
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，否则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+  <mi>e</mi>
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 为锁定节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的用户编号。</li>
+<li><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span>：记录每个节点的父节点。</li>
+<li><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>h</mi>
+  <mi>i</mi>
+  <mi>l</mi>
+  <mi>d</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mi>n</mi>
+</math></span>：记录每个节点的子节点。</li>
+</ul>
+<p>调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+</math></span> 函数时，如果节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 未被上锁，则将节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 上锁，返回 <code v-pre>true</code>，否则返回 <code v-pre>false</code>。</p>
+<p>调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>n</mi>
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+</math></span> 函数时，如果节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 被上锁且上锁的用户编号为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>s</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+</math></span>，则将节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 解锁，返回 <code v-pre>true</code>，否则返回 <code v-pre>false</code>。</p>
+<p>调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>p</mi>
+  <mi>g</mi>
+  <mi>r</mi>
+  <mi>a</mi>
+  <mi>d</mi>
+  <mi>e</mi>
+</math></span> 函数时，我们首先判断节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 及其祖先节点是否被上锁，如果是，则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mi>a</mi>
+  <mi>l</mi>
+  <mi>s</mi>
+  <mi>e</mi>
+</math></span>。否则，我们判断节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 的子孙节点是否有被上锁的，如果没有，则返回 <code v-pre>false</code>。否则，我们将节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 及其子孙节点解锁，然后将节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 上锁，返回 <code v-pre>true</code>。</p>
+<p>时间复杂度方面，初始化和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>p</mi>
+  <mi>g</mi>
+  <mi>r</mi>
+  <mi>a</mi>
+  <mi>d</mi>
+  <mi>e</mi>
+</math></span> 函数的时间复杂度均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>n</mi>
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+</math></span> 函数的时间复杂度均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是节点的数量。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type LockingTree struct {</span></span>
+<span class="line"><span>	locked   []int</span></span>
+<span class="line"><span>	parent   []int</span></span>
+<span class="line"><span>	children [][]int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(parent []int) LockingTree {</span></span>
+<span class="line"><span>	n := len(parent)</span></span>
+<span class="line"><span>	locked := make([]int, n)</span></span>
+<span class="line"><span>	for i := range locked {</span></span>
+<span class="line"><span>		locked[i] = -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	children := make([][]int, n)</span></span>
+<span class="line"><span>	for i := 1; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		children[parent[i]] = append(children[parent[i]], i)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return LockingTree{locked, parent, children}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *LockingTree) Lock(num int, user int) bool {</span></span>
+<span class="line"><span>	if this.locked[num] == -1 {</span></span>
+<span class="line"><span>		this.locked[num] = user</span></span>
+<span class="line"><span>		return true</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return false</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *LockingTree) Unlock(num int, user int) bool {</span></span>
+<span class="line"><span>	if this.locked[num] == user {</span></span>
+<span class="line"><span>		this.locked[num] = -1</span></span>
+<span class="line"><span>		return true</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return false</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *LockingTree) Upgrade(num int, user int) bool {</span></span>
+<span class="line"><span>	x := num</span></span>
+<span class="line"><span>	for ; x != -1; x = this.parent[x] {</span></span>
+<span class="line"><span>		if this.locked[x] != -1 {</span></span>
+<span class="line"><span>			return false</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	find := false</span></span>
+<span class="line"><span>	var dfs func(int)</span></span>
+<span class="line"><span>	dfs = func(x int) {</span></span>
+<span class="line"><span>		for _, y := range this.children[x] {</span></span>
+<span class="line"><span>			if this.locked[y] != -1 {</span></span>
+<span class="line"><span>				find = true</span></span>
+<span class="line"><span>				this.locked[y] = -1</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			dfs(y)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs(num)</span></span>
+<span class="line"><span>	if !find {</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.locked[num] = user</span></span>
+<span class="line"><span>	return true</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your LockingTree object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(parent);</span></span>
+<span class="line"><span> * param_1 := obj.Lock(num,user);</span></span>
+<span class="line"><span> * param_2 := obj.Unlock(num,user);</span></span>
+<span class="line"><span> * param_3 := obj.Upgrade(num,user);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：显式栈 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>加锁、解锁是单点更新。升级要求自身与祖先都没锁，并且子孙里至少有一把锁，成功后解开全部子孙再锁住自身。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>2000</mn>
+</math></span>，祖先可以沿父亲指针向上走；若对子孙递归，链长达到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1000</mn>
+</math></span> 就会超出 Python 的递归上限。子孙是否上锁与顺序无关，只要每个孩子都被看过。因此升级在确认祖先未锁之后，用栈从当前节点的孩子开始展开：弹出节点时若它被锁就解开并记下找到过锁，再把它的孩子压入栈。至少解开过一把锁，才把当前节点锁给该用户。</p>
+</blockquote>
+<p>我们定义以下几个变量：</p>
+<ul>
+<li><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+  <mi>e</mi>
+  <mi>d</mi>
+</math></span>：记录每个节点的锁定状态，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+  <mi>e</mi>
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的锁定状态，如果节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 未被上锁，则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+  <mi>e</mi>
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，否则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+  <mi>e</mi>
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 为锁定节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的用户编号。</li>
+<li><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span>：记录每个节点的父节点。</li>
+<li><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>h</mi>
+  <mi>i</mi>
+  <mi>l</mi>
+  <mi>d</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mi>n</mi>
+</math></span>：记录每个节点的子节点。</li>
+</ul>
+<p>调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+</math></span> 函数时，如果节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 未被上锁，则将节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 上锁，返回 <code v-pre>true</code>，否则返回 <code v-pre>false</code>。</p>
+<p>调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>n</mi>
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+</math></span> 函数时，如果节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 被上锁且上锁的用户编号为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>s</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+</math></span>，则将节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 解锁，返回 <code v-pre>true</code>，否则返回 <code v-pre>false</code>。</p>
+<p>调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>p</mi>
+  <mi>g</mi>
+  <mi>r</mi>
+  <mi>a</mi>
+  <mi>d</mi>
+  <mi>e</mi>
+</math></span> 函数时，先从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 沿父亲指针向上走。只要 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 自己或某个祖先已被上锁，就返回 <code v-pre>false</code>。否则用显式栈展开 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 的子孙：弹出节点时，若它被锁就解开并把标记设为已找到锁，再把它的孩子压入栈。若一个被锁的子孙都没有，返回 <code v-pre>false</code>。否则把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+</math></span> 锁给 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>s</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+</math></span>，返回 <code v-pre>true</code>。</p>
+<p>时间复杂度方面，初始化和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>p</mi>
+  <mi>g</mi>
+  <mi>r</mi>
+  <mi>a</mi>
+  <mi>d</mi>
+  <mi>e</mi>
+</math></span> 函数的时间复杂度均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>n</mi>
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>c</mi>
+  <mi>k</mi>
+</math></span> 函数的时间复杂度均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是节点的数量。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type LockingTree struct {</span></span>
+<span class="line"><span>	locked   []int</span></span>
+<span class="line"><span>	parent   []int</span></span>
+<span class="line"><span>	children [][]int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(parent []int) LockingTree {</span></span>
+<span class="line"><span>	n := len(parent)</span></span>
+<span class="line"><span>	locked := make([]int, n)</span></span>
+<span class="line"><span>	for i := range locked {</span></span>
+<span class="line"><span>		locked[i] = -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	children := make([][]int, n)</span></span>
+<span class="line"><span>	for i := 1; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		children[parent[i]] = append(children[parent[i]], i)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return LockingTree{locked, parent, children}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *LockingTree) Lock(num int, user int) bool {</span></span>
+<span class="line"><span>	if this.locked[num] == -1 {</span></span>
+<span class="line"><span>		this.locked[num] = user</span></span>
+<span class="line"><span>		return true</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return false</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *LockingTree) Unlock(num int, user int) bool {</span></span>
+<span class="line"><span>	if this.locked[num] == user {</span></span>
+<span class="line"><span>		this.locked[num] = -1</span></span>
+<span class="line"><span>		return true</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return false</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *LockingTree) Upgrade(num int, user int) bool {</span></span>
+<span class="line"><span>	x := num</span></span>
+<span class="line"><span>	for ; x != -1; x = this.parent[x] {</span></span>
+<span class="line"><span>		if this.locked[x] != -1 {</span></span>
+<span class="line"><span>			return false</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	find := false</span></span>
+<span class="line"><span>	stk := append([]int(nil), this.children[num]...)</span></span>
+<span class="line"><span>	for len(stk) > 0 {</span></span>
+<span class="line"><span>		x := stk[len(stk)-1]</span></span>
+<span class="line"><span>		stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>		if this.locked[x] != -1 {</span></span>
+<span class="line"><span>			find = true</span></span>
+<span class="line"><span>			this.locked[x] = -1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for _, y := range this.children[x] {</span></span>
+<span class="line"><span>			stk = append(stk, y)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if !find {</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.locked[num] = user</span></span>
+<span class="line"><span>	return true</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your LockingTree object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(parent);</span></span>
+<span class="line"><span> * param_1 := obj.Lock(num,user);</span></span>
+<span class="line"><span> * param_2 := obj.Unlock(num,user);</span></span>
+<span class="line"><span> * param_3 := obj.Upgrade(num,user);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/operations-on-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1993.Operations%20on%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2013" tabindex="-1">2013. 检测正方形 <a class="header-anchor" href="#q-2013" aria-label="Permalink to &quot;2013. 检测正方形 {#q-2013}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数组、哈希表、计数、数据流</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个在 X-Y 平面上的点构成的数据流。设计一个满足下述要求的算法：</p>&#10;&#10;<ul>&#10;	<li><strong>添加</strong> 一个在数据流中的新点到某个数据结构中<strong>。</strong>可以添加 <strong>重复</strong> 的点，并会视作不同的点进行处理。</li>&#10;	<li>给你一个查询点，请你从数据结构中选出三个点，使这三个点和查询点一同构成一个 <strong>面积为正</strong> 的 <strong>轴对齐正方形</strong> ，<strong>统计</strong> 满足该要求的方案数目<strong>。</strong></li>&#10;</ul>&#10;&#10;<p><strong>轴对齐正方形</strong> 是一个正方形，除四条边长度相同外，还满足每条边都与 x-轴 或 y-轴 平行或垂直。</p>&#10;&#10;<p>实现 <code>DetectSquares</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>DetectSquares()</code> 使用空数据结构初始化对象</li>&#10;	<li><code>void add(int[] point)</code> 向数据结构添加一个新的点 <code>point = [x, y]</code></li>&#10;	<li><code>int count(int[] point)</code> 统计按上述方式与点 <code>point = [x, y]</code> 共同构造 <strong>轴对齐正方形</strong> 的方案数。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2013.Detect%20Squares/images/image.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;DetectSquares&quot;, &quot;add&quot;, &quot;add&quot;, &quot;add&quot;, &quot;count&quot;, &quot;count&quot;, &quot;add&quot;, &quot;count&quot;]&#10;[[], [[3, 10]], [[11, 2]], [[3, 2]], [[11, 10]], [[14, 8]], [[11, 2]], [[11, 10]]]&#10;<strong>输出：</strong>&#10;[null, null, null, null, 1, 0, null, 2]&#10;&#10;<strong>解释：</strong>&#10;DetectSquares detectSquares = new DetectSquares();&#10;detectSquares.add([3, 10]);&#10;detectSquares.add([11, 2]);&#10;detectSquares.add([3, 2]);&#10;detectSquares.count([11, 10]); // 返回 1 。你可以选择：&#10;// - 第一个，第二个，和第三个点&#10;detectSquares.count([14, 8]); // 返回 0 。查询点无法与数据结构中的这些点构成正方形。&#10;detectSquares.add([11, 2]); // 允许添加重复的点。&#10;detectSquares.count([11, 10]); // 返回 2 。你可以选择：&#10;// - 第一个，第二个，和第三个点&#10;// - 第一个，第三个，和第四个点&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>point.length == 2</code></li>&#10;	<li><code>0 &lt;= x, y &lt;= 1000</code></li>&#10;	<li>调用 <code>add</code> 和 <code>count</code> 的 <strong>总次数</strong> 最多为 <code>5000</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>总调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2264;</mo>
+  <mn>5000</mn>
+</math></span>，坐标在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>1000</mn>
+  <mo stretchy="false">]</mo>
+</math></span>。每次 <code v-pre>count</code> 若枚举全部三点组合，最坏偏慢且实现繁琐。轴对齐正方形由一条水平边唯一确定另外两点。</p>
+<p>用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">[</mo>
+  <mi>y</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 记录重点。对查询 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span>，枚举已有横坐标 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>&#x2260;</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>，边长 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>&#x2212;</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>，则上下两个正方形的另外两点坐标随之确定。</p>
+<p>方案数为对应三个位置计数的乘积。<code v-pre>add</code> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，<code v-pre>count</code> 对横坐标线性。</p>
+</blockquote>
+<p>我们可以用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 维护所有点的信息，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">[</mo>
+  <mi>y</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的个数。</p>
+<p>当调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>d</mi>
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 方法时，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">[</mo>
+  <mi>y</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的值加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>当调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>u</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span> 方法时，我们需要获取另外的三个点，构成一个轴对齐正方形。我们可以枚举平行于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 轴且与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span> 的距离为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 的点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span>，如果存在这样的点，根据这两个点，我们可以确定另外两个点为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，或者 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>&#x2212;</mo>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>&#x2212;</mo>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。我们将这两种情况的方案数累加即可。</p>
+<p>时间复杂度方面，调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>d</mi>
+  <mi>d</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 方法的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>u</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>y</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">)</mo>
+</math></span> 方法的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>；空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数据流中的点的个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type DetectSquares struct {</span></span>
+<span class="line"><span>	cnt map[int]map[int]int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() DetectSquares {</span></span>
+<span class="line"><span>	return DetectSquares{map[int]map[int]int{}}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *DetectSquares) Add(point []int) {</span></span>
+<span class="line"><span>	x, y := point[0], point[1]</span></span>
+<span class="line"><span>	if _, ok := this.cnt[x]; !ok {</span></span>
+<span class="line"><span>		this.cnt[x] = map[int]int{}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.cnt[x][y]++</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *DetectSquares) Count(point []int) (ans int) {</span></span>
+<span class="line"><span>	x1, y1 := point[0], point[1]</span></span>
+<span class="line"><span>	if cnt1, ok := this.cnt[x1]; ok {</span></span>
+<span class="line"><span>		for x2, cnt2 := range this.cnt {</span></span>
+<span class="line"><span>			if x2 != x1 {</span></span>
+<span class="line"><span>				d := x2 - x1</span></span>
+<span class="line"><span>				ans += cnt2[y1] * cnt1[y1+d] * cnt2[y1+d]</span></span>
+<span class="line"><span>				ans += cnt2[y1] * cnt1[y1-d] * cnt2[y1-d]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your DetectSquares object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor();</span></span>
+<span class="line"><span> * obj.Add(point);</span></span>
+<span class="line"><span> * param_2 := obj.Count(point);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/detect-squares" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2013.Detect%20Squares/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2034" tabindex="-1">2034. 股票价格波动 <a class="header-anchor" href="#q-2034" aria-label="Permalink to &quot;2034. 股票价格波动 {#q-2034}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、哈希表、数据流、有序集合、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一支股票价格的数据流。数据流中每一条记录包含一个 <strong>时间戳</strong> 和该时间点股票对应的 <strong>价格</strong> 。</p>&#10;&#10;<p>不巧的是，由于股票市场内在的波动性，股票价格记录可能不是按时间顺序到来的。某些情况下，有的记录可能是错的。如果两个有相同时间戳的记录出现在数据流中，前一条记录视为错误记录，后出现的记录 <b>更正</b> 前一条错误的记录。</p>&#10;&#10;<p>请你设计一个算法，实现：</p>&#10;&#10;<ul>&#10;	<li><strong>更新 </strong>股票在某一时间戳的股票价格，如果有之前同一时间戳的价格，这一操作将 <strong>更正</strong> 之前的错误价格。</li>&#10;	<li>找到当前记录里 <b>最新股票价格</b> 。<strong>最新股票价格</strong> 定义为时间戳最晚的股票价格。</li>&#10;	<li>找到当前记录里股票的 <strong>最高价格</strong> 。</li>&#10;	<li>找到当前记录里股票的 <strong>最低价格</strong> 。</li>&#10;</ul>&#10;&#10;<p>请你实现 <code>StockPrice</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>StockPrice()</code> 初始化对象，当前无股票价格记录。</li>&#10;	<li><code>void update(int timestamp, int price)</code> 在时间点 <code>timestamp</code> 更新股票价格为 <code>price</code> 。</li>&#10;	<li><code>int current()</code> 返回股票 <strong>最新价格</strong> 。</li>&#10;	<li><code>int maximum()</code> 返回股票 <strong>最高价格</strong> 。</li>&#10;	<li><code>int minimum()</code> 返回股票 <strong>最低价格</strong> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>&#10;[&quot;StockPrice&quot;, &quot;update&quot;, &quot;update&quot;, &quot;current&quot;, &quot;maximum&quot;, &quot;update&quot;, &quot;maximum&quot;, &quot;update&quot;, &quot;minimum&quot;]&#10;[[], [1, 10], [2, 5], [], [], [1, 3], [], [4, 2], []]&#10;<strong>输出：</strong>&#10;[null, null, null, 5, 10, null, 5, null, 2]&#10;&#10;<strong>解释：</strong>&#10;StockPrice stockPrice = new StockPrice();&#10;stockPrice.update(1, 10); // 时间戳为 [1] ，对应的股票价格为 [10] 。&#10;stockPrice.update(2, 5);  // 时间戳为 [1,2] ，对应的股票价格为 [10,5] 。&#10;stockPrice.current();     // 返回 5 ，最新时间戳为 2 ，对应价格为 5 。&#10;stockPrice.maximum();     // 返回 10 ，最高价格的时间戳为 1 ，价格为 10 。&#10;stockPrice.update(1, 3);  // 之前时间戳为 1 的价格错误，价格更新为 3 。&#10;                          // 时间戳为 [1,2] ，对应股票价格为 [3,5] 。&#10;stockPrice.maximum();     // 返回 5 ，更正后最高价格为 5 。&#10;stockPrice.update(4, 2);  // 时间戳为 [1,2,4] ，对应价格为 [3,5,2] 。&#10;stockPrice.minimum();     // 返回 2 ，最低价格时间戳为 4 ，价格为 2 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= timestamp, price &lt;= 10<sup>9</sup></code></li>&#10;	<li><code>update</code>，<code>current</code>，<code>maximum</code> 和 <code>minimum</code> <strong>总</strong> 调用次数不超过 <code>10<sup>5</sup></code> 。</li>&#10;	<li><code>current</code>，<code>maximum</code> 和 <code>minimum</code> 被调用时，<code>update</code> 操作 <strong>至少</strong> 已经被调用过 <strong>一次</strong> 。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 + 有序集合 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>需支持更正历史时刻的价格，并查询当前价、最高价、最低价，总操作 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>。仅哈希表无法取最值；仅有序集合无法按时间点覆盖。</p>
+<p>哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 存时刻到价格，有序多重集 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>s</mi>
+</math></span> 存当前所有价格。更新时若时刻已存在，先删旧价再插入新价，并维护最大时刻 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>t</mi>
+</math></span>。</p>
+<p>当前价为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>t</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，最值取 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>s</mi>
+</math></span> 两端。</p>
+</blockquote>
+<p>我们定义以下几个数据结构或变量，其中：</p>
+<ul>
+<li><code v-pre>d</code>：表示一个哈希表，用于存储时间戳和对应的价格；</li>
+<li><code v-pre>ls</code>：表示一个有序集合，用于存储所有的价格；</li>
+<li><code v-pre>last</code>：表示最后一次更新的时间戳。</li>
+</ul>
+<p>那么，我们可以得到以下几个操作：</p>
+<ul>
+<li><code v-pre>update(timestamp, price)</code>：更新时间戳 <code v-pre>timestamp</code> 对应的价格为 <code v-pre>price</code>。如果 <code v-pre>timestamp</code> 已经存在，那么我们需要先将其对应的价格从有序集合中删除，再将其更新为 <code v-pre>price</code>。否则，我们直接将其更新为 <code v-pre>price</code>。然后，我们需要更新 <code v-pre>last</code> 为 <code v-pre>max(last, timestamp)</code>。时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li><code v-pre>current()</code>：返回 <code v-pre>last</code> 对应的价格。时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li><code v-pre>maximum()</code>：返回有序集合中的最大值。时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li><code v-pre>minimum()</code>：返回有序集合中的最小值。时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+</ul>
+<p>空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为 <code v-pre>update</code> 操作的次数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type StockPrice struct {</span></span>
+<span class="line"><span>	d    map[int]int</span></span>
+<span class="line"><span>	ls   *redblacktree.Tree</span></span>
+<span class="line"><span>	last int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() StockPrice {</span></span>
+<span class="line"><span>	return StockPrice{</span></span>
+<span class="line"><span>		d:    make(map[int]int),</span></span>
+<span class="line"><span>		ls:   redblacktree.NewWithIntComparator(),</span></span>
+<span class="line"><span>		last: 0,</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *StockPrice) Update(timestamp int, price int) {</span></span>
+<span class="line"><span>	merge := func(rbt *redblacktree.Tree, key, value int) {</span></span>
+<span class="line"><span>		if v, ok := rbt.Get(key); ok {</span></span>
+<span class="line"><span>			nxt := v.(int) + value</span></span>
+<span class="line"><span>			if nxt == 0 {</span></span>
+<span class="line"><span>				rbt.Remove(key)</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				rbt.Put(key, nxt)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			rbt.Put(key, value)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if v, ok := this.d[timestamp]; ok {</span></span>
+<span class="line"><span>		merge(this.ls, v, -1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.d[timestamp] = price</span></span>
+<span class="line"><span>	merge(this.ls, price, 1)</span></span>
+<span class="line"><span>	this.last = max(this.last, timestamp)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *StockPrice) Current() int {</span></span>
+<span class="line"><span>	return this.d[this.last]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *StockPrice) Maximum() int {</span></span>
+<span class="line"><span>	return this.ls.Right().Key.(int)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *StockPrice) Minimum() int {</span></span>
+<span class="line"><span>	return this.ls.Left().Key.(int)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your StockPrice object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor();</span></span>
+<span class="line"><span> * obj.Update(timestamp,price);</span></span>
+<span class="line"><span> * param_2 := obj.Current();</span></span>
+<span class="line"><span> * param_3 := obj.Maximum();</span></span>
+<span class="line"><span> * param_4 := obj.Minimum();</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/stock-price-fluctuation" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2034.Stock%20Price%20Fluctuation/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2043" tabindex="-1">2043. 简易银行系统 <a class="header-anchor" href="#q-2043" aria-label="Permalink to &quot;2043. 简易银行系统 {#q-2043}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数组、哈希表、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>你的任务是为一个很受欢迎的银行设计一款程序，以自动化执行所有传入的交易（转账，存款和取款）。银行共有 <code>n</code> 个账户，编号从 <code>1</code> 到 <code>n</code> 。每个账号的初始余额存储在一个下标从 <strong>0</strong> 开始的整数数组 <code>balance</code> 中，其中第 <code>(i + 1)</code> 个账户的初始余额是 <code>balance[i]</code> 。</p>&#10;&#10;<p>请你执行所有 <strong>有效的</strong> 交易。如果满足下面全部条件，则交易 <strong>有效</strong> ：</p>&#10;&#10;<ul>&#10;	<li>指定的账户编号在 <code>1</code> 和 <code>n</code> 之间，且</li>&#10;	<li>取款或者转账需要的钱的总数 <strong>小于或者等于</strong> 账户余额。</li>&#10;</ul>&#10;&#10;<p>实现 <code>Bank</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>Bank(long[] balance)</code> 使用下标从 <strong>0</strong> 开始的整数数组 <code>balance</code> 初始化该对象。</li>&#10;	<li><code>boolean transfer(int account1, int account2, long money)</code> 从编号为 <code>account1</code> 的账户向编号为 <code>account2</code> 的账户转帐 <code>money</code> 美元。如果交易成功，返回 <code>true</code> ，否则，返回 <code>false</code> 。</li>&#10;	<li><code>boolean deposit(int account, long money)</code> 向编号为 <code>account</code> 的账户存款 <code>money</code> 美元。如果交易成功，返回 <code>true</code> ；否则，返回 <code>false</code> 。</li>&#10;	<li><code>boolean withdraw(int account, long money)</code> 从编号为 <code>account</code> 的账户取款 <code>money</code> 美元。如果交易成功，返回 <code>true</code> ；否则，返回 <code>false</code> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<pre>&#10;<strong>输入</strong>：&#10;[&quot;Bank&quot;, &quot;withdraw&quot;, &quot;transfer&quot;, &quot;deposit&quot;, &quot;transfer&quot;, &quot;withdraw&quot;]&#10;[[[10, 100, 20, 50, 30]], [3, 10], [5, 1, 20], [5, 20], [3, 4, 15], [10, 50]]&#10;<strong>输出：</strong>&#10;[null, true, true, true, false, false]&#10;&#10;<strong>解释：</strong>&#10;Bank bank = new Bank([10, 100, 20, 50, 30]);&#10;bank.withdraw(3, 10);    // 返回 true ，账户 3 的余额是 $20 ，所以可以取款 $10 。&#10;                         // 账户 3 余额为 $20 - $10 = $10 。&#10;bank.transfer(5, 1, 20); // 返回 true ，账户 5 的余额是 $30 ，所以可以转账 $20 。&#10;                         // 账户 5 的余额为 $30 - $20 = $10 ，账户 1 的余额为 $10 + $20 = $30 。&#10;bank.deposit(5, 20);     // 返回 true ，可以向账户 5 存款 $20 。&#10;                         // 账户 5 的余额为 $10 + $20 = $30 。&#10;bank.transfer(3, 4, 15); // 返回 false ，账户 3 的当前余额是 $10 。&#10;                         // 所以无法转账 $15 。&#10;bank.withdraw(10, 50);   // 返回 false ，交易无效，因为账户 10 并不存在。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == balance.length</code></li>&#10;	<li><code>1 &lt;= n, account, account1, account2 &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>0 &lt;= balance[i], money &lt;= 10<sup>12</sup></code></li>&#10;	<li><code>transfer</code>, <code>deposit</code>, <code>withdraw</code> 三个函数，<strong>每个</strong> 最多调用 <code>10<sup>4</sup></code> 次</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：模拟 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>账户数与单次金额范围大，但每笔操作只改一两个余额。用数组按下标存余额，编号从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 起故访问 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>c</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>u</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。</p>
+<p>转账、取款先判编号合法且余额足够；存款只判编号。各操作 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们可以使用一个数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">balance</mtext>
+</math></span> 来存储每个账户的余额。对于每个操作，我们只需要根据题目要求进行相应的判断和更新即可。</p>
+<p>对于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">transfer</mtext>
+</math></span> 操作，我们需要检查账户编号是否合法以及账户余额是否足够，如果满足条件则进行转账操作。</p>
+<p>对于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">deposit</mtext>
+</math></span> 操作，我们只需要检查账户编号是否合法，然后进行存款操作。</p>
+<p>对于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">withdraw</mtext>
+</math></span> 操作，我们需要检查账户编号是否合法以及账户余额是否足够，如果满足条件则进行取款操作。</p>
+<p>以上每个操作的时间复杂度均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，因此整体时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 是操作次数。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type Bank struct {</span></span>
+<span class="line"><span>	balance []int64</span></span>
+<span class="line"><span>	n       int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(balance []int64) Bank {</span></span>
+<span class="line"><span>	return Bank{balance, len(balance)}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bank) Transfer(account1 int, account2 int, money int64) bool {</span></span>
+<span class="line"><span>	if account1 > this.n || account2 > this.n || this.balance[account1-1] &#x3C; money {</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.balance[account1-1] -= money</span></span>
+<span class="line"><span>	this.balance[account2-1] += money</span></span>
+<span class="line"><span>	return true</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bank) Deposit(account int, money int64) bool {</span></span>
+<span class="line"><span>	if account > this.n {</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.balance[account-1] += money</span></span>
+<span class="line"><span>	return true</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bank) Withdraw(account int, money int64) bool {</span></span>
+<span class="line"><span>	if account > this.n || this.balance[account-1] &#x3C; money {</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.balance[account-1] -= money</span></span>
+<span class="line"><span>	return true</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your Bank object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(balance);</span></span>
+<span class="line"><span> * param_1 := obj.Transfer(account1,account2,money);</span></span>
+<span class="line"><span> * param_2 := obj.Deposit(account,money);</span></span>
+<span class="line"><span> * param_3 := obj.Withdraw(account,money);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/simple-bank-system" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2043.Simple%20Bank%20System/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2069" tabindex="-1">2069. 模拟行走机器人 II <a class="header-anchor" href="#q-2069" aria-label="Permalink to &quot;2069. 模拟行走机器人 II {#q-2069}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个在 XY 平面上的 <code>width x height</code> 的网格图，<strong>左下角</strong> 的格子为 <code>(0, 0)</code> ，<strong>右上角</strong> 的格子为 <code>(width - 1, height - 1)</code> 。网格图中相邻格子为四个基本方向之一（<code>&quot;North&quot;</code>，<code>&quot;East&quot;</code>，<code>&quot;South&quot;</code> 和 <code>&quot;West&quot;</code>）。一个机器人 <strong>初始</strong> 在格子 <code>(0, 0)</code> ，方向为 <code>&quot;East&quot;</code> 。</p>&#10;&#10;<p>机器人可以根据指令移动指定的 <strong>步数</strong> 。每一步，它可以执行以下操作。</p>&#10;&#10;<ol>&#10;	<li>沿着当前方向尝试 <strong>往前一步</strong> 。</li>&#10;	<li>如果机器人下一步将到达的格子 <strong>超出了边界</strong> ，机器人会 <strong>逆时针</strong> 转 90 度，然后再尝试往前一步。</li>&#10;</ol>&#10;&#10;<p>如果机器人完成了指令要求的移动步数，它将停止移动并等待下一个指令。</p>&#10;&#10;<p>请你实现 <code>Robot</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>Robot(int width, int height)</code> 初始化一个 <code>width x height</code> 的网格图，机器人初始在 <code>(0, 0)</code> ，方向朝 <code>&quot;East&quot;</code> 。</li>&#10;	<li><code>void step(int num)</code> 给机器人下达前进 <code>num</code> 步的指令。</li>&#10;	<li><code>int[] getPos()</code> 返回机器人当前所处的格子位置，用一个长度为 2 的数组 <code>[x, y]</code> 表示。</li>&#10;	<li><code>String getDir()</code> 返回当前机器人的朝向，为 <code>&quot;North&quot;</code> ，<code>&quot;East&quot;</code> ，<code>&quot;South&quot;</code> 或者 <code>&quot;West&quot;</code> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="example-1" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2069.Walking%20Robot%20Simulation%20II/images/example-1.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;Robot&quot;, &quot;step&quot;, &quot;step&quot;, &quot;getPos&quot;, &quot;getDir&quot;, &quot;step&quot;, &quot;step&quot;, &quot;step&quot;, &quot;getPos&quot;, &quot;getDir&quot;]&#10;[[6, 3], [2], [2], [], [], [2], [1], [4], [], []]&#10;<strong>输出：</strong>&#10;[null, null, null, [4, 0], &quot;East&quot;, null, null, null, [1, 2], &quot;West&quot;]&#10;&#10;<strong>解释：</strong>&#10;Robot robot = new Robot(6, 3); // 初始化网格图，机器人在 (0, 0) ，朝东。&#10;robot.step(2);  // 机器人朝东移动 2 步，到达 (2, 0) ，并朝东。&#10;robot.step(2);  // 机器人朝东移动 2 步，到达 (4, 0) ，并朝东。&#10;robot.getPos(); // 返回 [4, 0]&#10;robot.getDir(); // 返回 &quot;East&quot;&#10;robot.step(2);  // 朝东移动 1 步到达 (5, 0) ，并朝东。&#10;                // 下一步继续往东移动将出界，所以逆时针转变方向朝北。&#10;                // 然后，往北移动 1 步到达 (5, 1) ，并朝北。&#10;robot.step(1);  // 朝北移动 1 步到达 (5, 2) ，并朝 <strong>北</strong> （不是朝西）。&#10;robot.step(4);  // 下一步继续往北移动将出界，所以逆时针转变方向朝西。&#10;                // 然后，移动 4 步到 (1, 2) ，并朝西。&#10;robot.getPos(); // 返回 [1, 2]&#10;robot.getDir(); // 返回 &quot;West&quot;&#10;&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>2 &lt;= width, height &lt;= 100</code></li>&#10;	<li><code>1 &lt;= num &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>step</code> ，<code>getPos</code> 和 <code>getDir</code> <strong>总共 </strong>调用次数不超过 <code>10<sup>4</sup></code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：分类讨论 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p><code v-pre>step</code> 可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span> 且调用多次，逐步走格子会超时。机器人只沿矩形边界循环，周长 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mo stretchy="false">(</mo>
+  <mi>w</mi>
+  <mo>+</mo>
+  <mi>h</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。位置对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 取模后落在四条边上。</p>
+<p>按累计步数分段还原坐标与朝向。未移动时朝东；回到原点且已移动过则朝南，与「刚走完最后一条边」一致。</p>
+</blockquote>
+<p>我们记 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>w</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mi>t</mi>
+  <mi>h</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>y</mi>
+  <mo>=</mo>
+  <mi>h</mi>
+  <mi>e</mi>
+  <mi>i</mi>
+  <mi>g</mi>
+  <mi>h</mi>
+  <mi>t</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，则机器人的运动轨迹是一个以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 为左下角，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>m</mi>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 为右上角的矩形的边界。我们可以将机器人的运动轨迹分为四段：</p>
+<ol>
+<li>从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 沿着 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 轴正方向运动到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，此时机器人的朝向为 &quot;East&quot;。</li>
+<li>从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 沿着 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span> 轴正方向运动到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>m</mi>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，此时机器人的朝向为 &quot;North&quot;。</li>
+<li>从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>m</mi>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 沿着 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 轴负方向运动到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mi>m</mi>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，此时机器人的朝向为 &quot;West&quot;。</li>
+<li>从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mi>m</mi>
+  <mi>y</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 沿着 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>y</mi>
+</math></span> 轴负方向运动到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，此时机器人的朝向为 &quot;South&quot;。</li>
+</ol>
+<p>因此，我们可以将机器人的运动轨迹看作是一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mo>&#x22C5;</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>2</mn>
+  <mo>&#x22C5;</mo>
+  <mi>m</mi>
+  <mi>y</mi>
+</math></span> 的循环。对于每次调用 <code v-pre>step(num)</code>，我们可以将机器人的当前位置加上 <code v-pre>num</code>，然后对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 取模，得到机器人的新位置。根据机器人的新位置，我们可以判断出机器人的朝向和坐标。</p>
+<p>注意，如果机器人没有移动过，那么它的朝向应该是 &quot;East&quot;。如果机器人移动过，且位置为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，则机器人的朝向应该是 &quot;South&quot;。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type Robot struct {</span></span>
+<span class="line"><span>	mx, my, p, cur int</span></span>
+<span class="line"><span>	moved          bool</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(width int, height int) Robot {</span></span>
+<span class="line"><span>	mx := width - 1</span></span>
+<span class="line"><span>	my := height - 1</span></span>
+<span class="line"><span>	return Robot{</span></span>
+<span class="line"><span>		mx:    mx,</span></span>
+<span class="line"><span>		my:    my,</span></span>
+<span class="line"><span>		p:     2*mx + 2*my,</span></span>
+<span class="line"><span>		cur:   0,</span></span>
+<span class="line"><span>		moved: false,</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Robot) Step(num int) {</span></span>
+<span class="line"><span>	this.moved = true</span></span>
+<span class="line"><span>	this.cur = (this.cur + num) % this.p</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Robot) GetPos() []int {</span></span>
+<span class="line"><span>	d := this.cur</span></span>
+<span class="line"><span>	mx, my := this.mx, this.my</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	if 0 &#x3C;= d &#x26;&#x26; d &#x3C;= mx {</span></span>
+<span class="line"><span>		return []int{d, 0}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if mx &#x3C; d &#x26;&#x26; d &#x3C;= mx+my {</span></span>
+<span class="line"><span>		return []int{mx, d - mx}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if mx+my &#x3C; d &#x26;&#x26; d &#x3C;= 2*mx+my {</span></span>
+<span class="line"><span>		return []int{mx - (d - (mx + my)), my}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return []int{0, my - (d - (2*mx + my))}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Robot) GetDir() string {</span></span>
+<span class="line"><span>	d := this.cur</span></span>
+<span class="line"><span>	mx, my := this.mx, this.my</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	if !this.moved {</span></span>
+<span class="line"><span>		return "East"</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if 1 &#x3C;= d &#x26;&#x26; d &#x3C;= mx {</span></span>
+<span class="line"><span>		return "East"</span></span>
+<span class="line"><span>	} else if mx &#x3C; d &#x26;&#x26; d &#x3C;= mx+my {</span></span>
+<span class="line"><span>		return "North"</span></span>
+<span class="line"><span>	} else if mx+my &#x3C; d &#x26;&#x26; d &#x3C;= 2*mx+my {</span></span>
+<span class="line"><span>		return "West"</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return "South"</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your Robot object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(width, height);</span></span>
+<span class="line"><span> * obj.Step(num);</span></span>
+<span class="line"><span> * param_2 := obj.GetPos();</span></span>
+<span class="line"><span> * param_3 := obj.GetDir();</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/walking-robot-simulation-ii" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2069.Walking%20Robot%20Simulation%20II/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2080" tabindex="-1">2080. 区间内查询数字的频率 <a class="header-anchor" href="#q-2080" aria-label="Permalink to &quot;2080. 区间内查询数字的频率 {#q-2080}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、线段树、数组、哈希表、二分查找</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>请你设计一个数据结构，它能求出给定子数组内一个给定值的 <strong>频率</strong> 。</p>&#10;&#10;<p>子数组中一个值的 <strong>频率</strong> 指的是这个子数组中这个值的出现次数。</p>&#10;&#10;<p>请你实现 <code>RangeFreqQuery</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>RangeFreqQuery(int[] arr)</code> 用下标从 <strong>0</strong> 开始的整数数组 <code>arr</code> 构造一个类的实例。</li>&#10;	<li><code>int query(int left, int right, int value)</code> 返回子数组 <code>arr[left...right]</code> 中 <code>value</code> 的 <strong>频率</strong> 。</li>&#10;</ul>&#10;&#10;<p>一个 <strong>子数组</strong> 指的是数组中一段连续的元素。<code>arr[left...right]</code> 指的是 <code>nums</code> 中包含下标 <code>left</code> 和 <code>right</code> <strong>在内</strong> 的中间一段连续元素。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>&#10;[&quot;RangeFreqQuery&quot;, &quot;query&quot;, &quot;query&quot;]&#10;[[[12, 33, 4, 56, 22, 2, 34, 33, 22, 12, 34, 56]], [1, 2, 4], [0, 11, 33]]&#10;<strong>输出：</strong>&#10;[null, 1, 2]&#10;&#10;<strong>解释：</strong>&#10;RangeFreqQuery rangeFreqQuery = new RangeFreqQuery([12, 33, 4, 56, 22, 2, 34, 33, 22, 12, 34, 56]);&#10;rangeFreqQuery.query(1, 2, 4); // 返回 1 。4 在子数组 [33, 4] 中出现 1 次。&#10;rangeFreqQuery.query(0, 11, 33); // 返回 2 。33 在整个子数组中出现 2 次。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= arr.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= arr[i], value &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>0 &lt;= left &lt;= right &lt; arr.length</code></li>&#10;	<li>调用 <code>query</code> 不超过 <code>10<sup>5</sup></code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 + 二分查找 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>静态数组上多次询问区间内某值出现次数。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 与询问均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，线段树可行，但单值频率只需该值的下标列表。</p>
+<p>哈希表记下每个值的升序下标，询问对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mi>e</mi>
+  <mi>f</mi>
+  <mi>t</mi>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mi>i</mi>
+  <mi>g</mi>
+  <mi>h</mi>
+  <mi>t</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 做两次二分，差即为个数。</p>
+</blockquote>
+<p>我们用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span> 来存储每个值对应的下标数组。在构造函数中，我们遍历数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">arr</mtext>
+</math></span>，将每个值对应的下标加入到哈希表中。</p>
+<p>在查询函数中，我们首先判断哈希表中是否存在给定的值。如果不存在，说明该值在数组中不存在，直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>。否则，我们获取该值对应的下标数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">idx</mtext>
+</math></span>。然后我们使用二分查找找到下标数组中第一个大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">left</mtext>
+</math></span> 的下标 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>，以及第一个大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">right</mtext>
+</math></span> 的下标 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>。最后返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>&#x2212;</mo>
+  <mi>l</mi>
+</math></span> 即可。</p>
+<p>时间复杂度方面，构造函数的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，查询函数的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组的长度。空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type RangeFreqQuery struct {</span></span>
+<span class="line"><span>	g map[int][]int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(arr []int) RangeFreqQuery {</span></span>
+<span class="line"><span>	g := make(map[int][]int)</span></span>
+<span class="line"><span>	for i, v := range arr {</span></span>
+<span class="line"><span>		g[v] = append(g[v], i)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return RangeFreqQuery{g}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *RangeFreqQuery) Query(left int, right int, value int) int {</span></span>
+<span class="line"><span>	if idx, ok := this.g[value]; ok {</span></span>
+<span class="line"><span>		l := sort.SearchInts(idx, left)</span></span>
+<span class="line"><span>		r := sort.SearchInts(idx, right+1)</span></span>
+<span class="line"><span>		return r - l</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return 0</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your RangeFreqQuery object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(arr);</span></span>
+<span class="line"><span> * param_1 := obj.Query(left,right,value);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/range-frequency-queries" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2080.Range%20Frequency%20Queries/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2102" tabindex="-1">2102. 序列顺序查询 <a class="header-anchor" href="#q-2102" aria-label="Permalink to &quot;2102. 序列顺序查询 {#q-2102}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数据流、有序集合、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>一个观光景点由它的名字 <code>name</code> 和景点评分 <code>score</code> 组成，其中 <code>name</code> 是所有观光景点中 <strong>唯一</strong> 的字符串，<code>score</code> 是一个整数。景点按照最好到最坏排序。景点评分 <strong>越高</strong> ，这个景点越好。如果有两个景点的评分一样，那么 <strong>字典序较小</strong> 的景点更好。</p>&#10;&#10;<p>你需要搭建一个系统，查询景点的排名。初始时系统里没有任何景点。这个系统支持：</p>&#10;&#10;<ul>&#10;	<li><strong>添加</strong> 景点，每次添加 <strong>一个</strong> 景点。</li>&#10;	<li><strong>查询 </strong>已经添加景点中第 <code>i</code> <strong>好</strong> 的景点，其中 <code>i</code> 是系统目前位置查询的次数（包括当前这一次）。&#10;	<ul>&#10;		<li>比方说，如果系统正在进行第 <code>4</code> 次查询，那么需要返回所有已经添加景点中第 <code>4</code> 好的。</li>&#10;	</ul>&#10;	</li>&#10;</ul>&#10;&#10;<p>注意，测试数据保证 <strong>任意查询时刻</strong> ，查询次数都 <strong>不超过</strong> 系统中景点的数目。</p>&#10;&#10;<p>请你实现 <code>SORTracker</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>SORTracker()</code> 初始化系统。</li>&#10;	<li><code>void add(string name, int score)</code> 向系统中添加一个名为 <code>name</code> 评分为 <code>score</code> 的景点。</li>&#10;	<li><code>string get()</code> 查询第 <code>i</code> 好的景点，其中 <code>i</code> 是目前系统查询的次数（包括当前这次查询）。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;SORTracker&quot;, &quot;add&quot;, &quot;add&quot;, &quot;get&quot;, &quot;add&quot;, &quot;get&quot;, &quot;add&quot;, &quot;get&quot;, &quot;add&quot;, &quot;get&quot;, &quot;add&quot;, &quot;get&quot;, &quot;get&quot;]&#10;[[], [&quot;bradford&quot;, 2], [&quot;branford&quot;, 3], [], [&quot;alps&quot;, 2], [], [&quot;orland&quot;, 2], [], [&quot;orlando&quot;, 3], [], [&quot;alpine&quot;, 2], [], []]&#10;<strong>输出：</strong>&#10;[null, null, null, &quot;branford&quot;, null, &quot;alps&quot;, null, &quot;bradford&quot;, null, &quot;bradford&quot;, null, &quot;bradford&quot;, &quot;orland&quot;]&#10;&#10;<strong>解释：</strong>&#10;SORTracker tracker = new SORTracker(); // 初始化系统&#10;tracker.add(&quot;bradford&quot;, 2); // 添加 name=&quot;bradford&quot; 且 score=2 的景点。&#10;tracker.add(&quot;branford&quot;, 3); // 添加 name=&quot;branford&quot; 且 score=3 的景点。&#10;tracker.get();              // 从好到坏的景点为：branford ，bradford 。&#10;                            // 注意到 branford 比 bradford 好，因为它的 <strong>评分更高</strong> (3 > 2) 。&#10;                            // 这是第 1 次调用 get() ，所以返回最好的景点：&quot;branford&quot; 。&#10;tracker.add(&quot;alps&quot;, 2);     // 添加 name=&quot;alps&quot; 且 score=2 的景点。&#10;tracker.get();              // 从好到坏的景点为：branford, alps, bradford 。&#10;                            // 注意 alps 比 bradford 好，虽然它们评分相同，都为 2 。&#10;                            // 这是因为 &quot;alps&quot; <strong>字典序</strong> 比 &quot;bradford&quot; 小。&#10;                            // 返回第 2 好的地点 &quot;alps&quot; ，因为当前为第 2 次调用 get() 。&#10;tracker.add(&quot;orland&quot;, 2);   // 添加 name=&quot;orland&quot; 且 score=2 的景点。&#10;tracker.get();              // 从好到坏的景点为：branford, alps, bradford, orland 。&#10;                            // 返回 &quot;bradford&quot; ，因为当前为第 3 次调用 get() 。&#10;tracker.add(&quot;orlando&quot;, 3);  // 添加 name=&quot;orlando&quot; 且 score=3 的景点。&#10;tracker.get();              // 从好到坏的景点为：branford, orlando, alps, bradford, orland 。&#10;                            // 返回 &quot;bradford&quot;.&#10;tracker.add(&quot;alpine&quot;, 2);   // 添加 name=&quot;alpine&quot; 且 score=2 的景点。&#10;tracker.get();              // 从好到坏的景点为：branford, orlando, alpine, alps, bradford, orland 。&#10;                            // 返回 &quot;bradford&quot; 。&#10;tracker.get();              // 从好到坏的景点为：branford, orlando, alpine, alps, bradford, orland 。&#10;                            // 返回 &quot;orland&quot; 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>name</code> 只包含小写英文字母，且每个景点名字互不相同。</li>&#10;	<li><code>1 &lt;= name.length &lt;= 10</code></li>&#10;	<li><code>1 &lt;= score &lt;= 10<sup>5</sup></code></li>&#10;	<li>任意时刻，调用 <code>get</code> 的次数都不超过调用 <code>add</code> 的次数。</li>&#10;	<li><strong>总共</strong> 调用 <code>add</code> 和 <code>get</code> 不超过 <code>4 * 10<sup>4</sup></code> </li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 实现（灵茶山艾府） · Go 实现</summary>
+<p><a href="https://github.com/EndlessCheng/codeforces-go/blob/e0fea933e2d713fd302622d2bb82a60f959a198e/leetcode/biweekly/67/d/d.go" target="_blank" rel="noopener noreferrer">灵茶山艾府 · 源码</a> · <a href="https://opensource.org/license/mit" target="_blank" rel="noopener noreferrer">MIT 许可</a></p>
+<div v-pre>
+<blockquote>
+<p>本站根据 Go 源码整理，非作者原文。</p>
+</blockquote>
+<p><strong>思路</strong>：用红黑树按分数降序、同分名字字典序升序保存景点。迭代器始终指向下一次 Get 应返回的排名；若新插入景点排在迭代器之前，就把迭代器向前移一位以维持该排名。Get 返回当前位置的名字，再向后移一位。初始的零分哨兵位于所有真实景点之后，统一处理边界。</p>
+<p><strong>复杂度</strong>：设已加入景点数为 P，最长名字长度为 b。考虑字符串比较，Add 最坏时间为 O(b log(P+1))；Get 的迭代器移动最坏为 O(log(P+1))，不能把单次移动一概视为 O(1)。题目中 b≤10，可把名字比较视为常数。树节点和迭代器的辅助空间为 O(P)，名字保留已有字符串引用。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>import "github.com/emirpasic/gods/trees/redblacktree"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/* 巧妙利用查询的特殊性</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>为了高效插入数据，我们可以用平衡树来维护所有景点。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>注意到每次 \`get\` 后仅会将查询次数加一，我们可以直接用一个迭代器（指针）$\\textit{cur}$ 指向下次查询需要返回的元素。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- 对于添加操作，如果添加的景点排在当前 $\\textit{cur}$ 前面，那么移动 $\\textit{cur}$ 至其前一个元素，否则不移动 $\\textit{cur}$；</span></span>
+<span class="line"><span>- 对于查询操作，每次查询结束后将 $\\textit{cur}$ 移至其下一个元素。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>代码实现时，可以在初始时插入一个哨兵元素，从而简化判断逻辑。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>*/</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// github.com/EndlessCheng/codeforces-go</span></span>
+<span class="line"><span>type pair struct {</span></span>
+<span class="line"><span>	score int</span></span>
+<span class="line"><span>	name  string</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func compare(x, y interface{}) int {</span></span>
+<span class="line"><span>	a, b := x.(pair), y.(pair)</span></span>
+<span class="line"><span>	if a.score > b.score || a.score == b.score &#x26;&#x26; a.name &#x3C; b.name {</span></span>
+<span class="line"><span>		return -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return 1</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type SORTracker struct {</span></span>
+<span class="line"><span>	*redblacktree.Tree</span></span>
+<span class="line"><span>	cur redblacktree.Iterator</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() SORTracker {</span></span>
+<span class="line"><span>	root := redblacktree.NewWith(compare)</span></span>
+<span class="line"><span>	root.Put(pair{}, nil) // 哨兵</span></span>
+<span class="line"><span>	return SORTracker{root, root.IteratorAt(root.Left())}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (t *SORTracker) Add(name string, score int) {</span></span>
+<span class="line"><span>	p := pair{score, name}</span></span>
+<span class="line"><span>	t.Put(p, nil)</span></span>
+<span class="line"><span>	if compare(p, t.cur.Key()) &#x3C; 0 {</span></span>
+<span class="line"><span>		t.cur.Prev() // 移动至前一个元素</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (t *SORTracker) Get() string {</span></span>
+<span class="line"><span>	name := t.cur.Key().(pair).name</span></span>
+<span class="line"><span>	t.cur.Next() // 移动至下一个元素</span></span>
+<span class="line"><span>	return name</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/sequentially-ordinal-rank-tracker" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2102.Sequentially%20Ordinal%20Rank%20Tracker/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2166" tabindex="-1">2166. 设计位集 <a class="header-anchor" href="#q-2166" aria-label="Permalink to &quot;2166. 设计位集 {#q-2166}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数组、哈希表、字符串</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p><strong>位集 Bitset</strong> 是一种能以紧凑形式存储位的数据结构。</p>&#10;&#10;<p>请你实现 <code>Bitset</code> 类。</p>&#10;&#10;<ul>&#10;	<li><code>Bitset(int size)</code> 用 <code>size</code> 个位初始化 Bitset ，所有位都是 <code>0</code> 。</li>&#10;	<li><code>void fix(int idx)</code> 将下标为 <code>idx</code> 的位上的值更新为 <code>1</code> 。如果值已经是 <code>1</code> ，则不会发生任何改变。</li>&#10;	<li><code>void unfix(int idx)</code> 将下标为 <code>idx</code> 的位上的值更新为 <code>0</code> 。如果值已经是 <code>0</code> ，则不会发生任何改变。</li>&#10;	<li><code>void flip()</code> 翻转 Bitset 中每一位上的值。换句话说，所有值为 <code>0</code> 的位将会变成 <code>1</code> ，反之亦然。</li>&#10;	<li><code>boolean all()</code> 检查 Bitset 中 <strong>每一位</strong> 的值是否都是 <code>1</code> 。如果满足此条件，返回 <code>true</code> ；否则，返回 <code>false</code> 。</li>&#10;	<li><code>boolean one()</code> 检查 Bitset 中 是否 <strong>至少一位</strong> 的值是 <code>1</code> 。如果满足此条件，返回 <code>true</code> ；否则，返回 <code>false</code> 。</li>&#10;	<li><code>int count()</code> 返回 Bitset 中值为 1 的位的 <strong>总数</strong> 。</li>&#10;	<li><code>String toString()</code> 返回 Bitset 的当前组成情况。注意，在结果字符串中，第 <code>i</code> 个下标处的字符应该与 Bitset 中的第 <code>i</code> 位一致。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<pre>&#10;<strong>输入</strong>&#10;[&quot;Bitset&quot;, &quot;fix&quot;, &quot;fix&quot;, &quot;flip&quot;, &quot;all&quot;, &quot;unfix&quot;, &quot;flip&quot;, &quot;one&quot;, &quot;unfix&quot;, &quot;count&quot;, &quot;toString&quot;]&#10;[[5], [3], [1], [], [], [0], [], [], [0], [], []]&#10;<strong>输出</strong>&#10;[null, null, null, null, false, null, null, true, null, 2, &quot;01010&quot;]&#10;&#10;<strong>解释</strong>&#10;Bitset bs = new Bitset(5); // bitset = &quot;00000&quot;.&#10;bs.fix(3);     // 将 idx = 3 处的值更新为 1 ，此时 bitset = &quot;00010&quot; 。&#10;bs.fix(1);     // 将 idx = 1 处的值更新为 1 ，此时 bitset = &quot;01010&quot; 。&#10;bs.flip();     // 翻转每一位上的值，此时 bitset = &quot;10101&quot; 。&#10;bs.all();      // 返回 False ，bitset 中的值不全为 1 。&#10;bs.unfix(0);   // 将 idx = 0 处的值更新为 0 ，此时 bitset = &quot;00101&quot; 。&#10;bs.flip();     // 翻转每一位上的值，此时 bitset = &quot;11010&quot; 。&#10;bs.one();      // 返回 True ，至少存在一位的值为 1 。&#10;bs.unfix(0);   // 将 idx = 0 处的值更新为 0 ，此时 bitset = &quot;01010&quot; 。&#10;bs.count();    // 返回 2 ，当前有 2 位的值为 1 。&#10;bs.toString(); // 返回 &quot;01010&quot; ，即 bitset 的当前组成情况。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= size &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>0 &lt;= idx &lt;= size - 1</code></li>&#10;	<li>至多调用 <code>fix</code>、<code>unfix</code>、<code>flip</code>、<code>all</code>、<code>one</code>、<code>count</code> 和 <code>toString</code> 方法 <strong>总共</strong> <code>10<sup>5</sup></code> 次</li>&#10;	<li>至少调用 <code>all</code>、<code>one</code>、<code>count</code> 或 <code>toString</code> 方法一次</li>&#10;	<li>至多调用 <code>toString</code> 方法 <code>5</code> 次</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>需要支持单点置位、翻转全体、查询全 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> / 存在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> / 计数以及输出。朴素数组在频繁 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="monospace">flip</mtext>
+</math></span> 时要扫 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 位， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 与操作次数都可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>。</p>
+<p>同时维护当前串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 与其补串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span>，翻转改为交换二者，并把计数改成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span>。单点修改同步更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span>。</p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="monospace">toString</mtext>
+</math></span> 直接拼接 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span>。</p>
+</blockquote>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type Bitset struct {</span></span>
+<span class="line"><span>	a   []byte</span></span>
+<span class="line"><span>	b   []byte</span></span>
+<span class="line"><span>	cnt int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(size int) Bitset {</span></span>
+<span class="line"><span>	a := bytes.Repeat([]byte{'0'}, size)</span></span>
+<span class="line"><span>	b := bytes.Repeat([]byte{'1'}, size)</span></span>
+<span class="line"><span>	return Bitset{a, b, 0}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bitset) Fix(idx int) {</span></span>
+<span class="line"><span>	if this.a[idx] == '0' {</span></span>
+<span class="line"><span>		this.a[idx] = '1'</span></span>
+<span class="line"><span>		this.cnt++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.b[idx] = '0'</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bitset) Unfix(idx int) {</span></span>
+<span class="line"><span>	if this.a[idx] == '1' {</span></span>
+<span class="line"><span>		this.a[idx] = '0'</span></span>
+<span class="line"><span>		this.cnt--</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.b[idx] = '1'</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bitset) Flip() {</span></span>
+<span class="line"><span>	this.a, this.b = this.b, this.a</span></span>
+<span class="line"><span>	this.cnt = len(this.a) - this.cnt</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bitset) All() bool {</span></span>
+<span class="line"><span>	return this.cnt == len(this.a)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bitset) One() bool {</span></span>
+<span class="line"><span>	return this.cnt > 0</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bitset) Count() int {</span></span>
+<span class="line"><span>	return this.cnt</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Bitset) ToString() string {</span></span>
+<span class="line"><span>	return string(this.a)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your Bitset object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(size);</span></span>
+<span class="line"><span> * obj.Fix(idx);</span></span>
+<span class="line"><span> * obj.Unfix(idx);</span></span>
+<span class="line"><span> * obj.Flip();</span></span>
+<span class="line"><span> * param_4 := obj.All();</span></span>
+<span class="line"><span> * param_5 := obj.One();</span></span>
+<span class="line"><span> * param_6 := obj.Count();</span></span>
+<span class="line"><span> * param_7 := obj.ToString();</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-bitset" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2166.Design%20Bitset/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2227" tabindex="-1">2227. 加密解密字符串 <a class="header-anchor" href="#q-2227" aria-label="Permalink to &quot;2227. 加密解密字符串 {#q-2227}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、字典树、数组、哈希表、字符串</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个字符数组 <code>keys</code> ，由若干 <strong>互不相同</strong> 的字符组成。还有一个字符串数组 <code>values</code> ，内含若干长度为 2 的字符串。另给你一个字符串数组 <code>dictionary</code> ，包含解密后所有允许的原字符串。请你设计并实现一个支持加密及解密下标从 <strong>0</strong> 开始字符串的数据结构。</p>&#10;&#10;<p>字符串 <strong>加密</strong> 按下述步骤进行：</p>&#10;&#10;<ol>&#10;	<li>对字符串中的每个字符 <code>c</code> ，先从 <code>keys</code> 中找出满足 <code>keys[i] == c</code> 的下标 <code>i</code> 。</li>&#10;	<li>在字符串中，用 <code>values[i]</code> 替换字符 <code>c</code> 。</li>&#10;</ol>&#10;&#10;<p>请注意，如果 <code>keys</code> 中不存在字符串中的字符，则无法执行加密过程，返回空字符串 <code>&quot;&quot;</code>。</p>&#10;&#10;<p>字符串 <strong>解密</strong> 按下述步骤进行：</p>&#10;&#10;<ol>&#10;	<li>将字符串每相邻 2 个字符划分为一个子字符串，对于每个子字符串 <code>s</code> ，找出满足 <code>values[i] == s</code> 的一个下标 <code>i</code> 。如果存在多个有效的 <code>i</code> ，从中选择 <strong>任意</strong> 一个。这意味着一个字符串解密可能得到多个解密字符串。</li>&#10;	<li>在字符串中，用 <code>keys[i]</code> 替换 <code>s</code> 。</li>&#10;</ol>&#10;&#10;<p>实现 <code>Encrypter</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>Encrypter(char[] keys, String[] values, String[] dictionary)</code> 用 <code>keys</code>、<code>values</code> 和 <code>dictionary</code> 初始化 <code>Encrypter</code> 类。</li>&#10;	<li><code>String encrypt(String word1)</code> 按上述加密过程完成对 <code>word1</code> 的加密，并返回加密后的字符串。</li>&#10;	<li><code>int decrypt(String word2)</code> 统计并返回可以由 <code>word2</code> 解密得到且出现在 <code>dictionary</code> 中的字符串数目。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;Encrypter&quot;, &quot;encrypt&quot;, &quot;decrypt&quot;]&#10;[[['a', 'b', 'c', 'd'], [&quot;ei&quot;, &quot;zf&quot;, &quot;ei&quot;, &quot;am&quot;], [&quot;abcd&quot;, &quot;acbd&quot;, &quot;adbc&quot;, &quot;badc&quot;, &quot;dacb&quot;, &quot;cadb&quot;, &quot;cbda&quot;, &quot;abad&quot;]], [&quot;abcd&quot;], [&quot;eizfeiam&quot;]]&#10;<strong>输出：</strong>&#10;[null, &quot;eizfeiam&quot;, 2]&#10;&#10;<strong>解释：</strong>&#10;Encrypter encrypter = new Encrypter([['a', 'b', 'c', 'd'], [&quot;ei&quot;, &quot;zf&quot;, &quot;ei&quot;, &quot;am&quot;], [&quot;abcd&quot;, &quot;acbd&quot;, &quot;adbc&quot;, &quot;badc&quot;, &quot;dacb&quot;, &quot;cadb&quot;, &quot;cbda&quot;, &quot;abad&quot;]);&#10;encrypter.encrypt(&quot;abcd&quot;); // 返回 &quot;eizfeiam&quot;。 &#10;                           // 'a' 映射为 &quot;ei&quot;，'b' 映射为 &quot;zf&quot;，'c' 映射为 &quot;ei&quot;，'d' 映射为 &quot;am&quot;。&#10;encrypter.decrypt(&quot;eizfeiam&quot;); // return 2. &#10;                              // &quot;ei&quot; 可以映射为 'a' 或 'c'，&quot;zf&quot; 映射为 'b'，&quot;am&quot; 映射为 'd'。 &#10;                              // 因此，解密后可以得到的字符串是 &quot;abad&quot;，&quot;cbad&quot;，&quot;abcd&quot; 和 &quot;cbcd&quot;。 &#10;                              // 其中 2 个字符串，&quot;abad&quot; 和 &quot;abcd&quot;，在 dictionary 中出现，所以答案是 2 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= keys.length == values.length &lt;= 26</code></li>&#10;	<li><code>values[i].length == 2</code></li>&#10;	<li><code>1 &lt;= dictionary.length &lt;= 100</code></li>&#10;	<li><code>1 &lt;= dictionary[i].length &lt;= 100</code></li>&#10;	<li>所有 <code>keys[i]</code> 和 <code>dictionary[i]</code> <strong>互不相同</strong></li>&#10;	<li><code>1 &lt;= word1.length &lt;= 2000</code></li>&#10;	<li><code>1 &lt;= word2.length &lt;= 200</code></li>&#10;	<li>所有 <code>word1[i]</code> 都出现在 <code>keys</code> 中</li>&#10;	<li><code>word2.length</code> 是偶数</li>&#10;	<li><code>keys</code>、<code>values[i]</code>、<code>dictionary[i]</code>、<code>word1</code> 和 <code>word2</code> 只含小写英文字母</li>&#10;	<li>至多调用 <code>encrypt</code> 和 <code>decrypt</code> <strong>总计</strong> <code>200</code> 次</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>加密是把每个字符换成固定的长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 的串；解密则要数词典里有多少单词加密后等于给定串。词典至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>100</mn>
+</math></span> 个词，解密却可能被调用多次，若每次对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">word2</mtext>
+</math></span> 做逆映射再与词典比较，重复加密的开销可以预先消掉。</p>
+<p>构造时用哈希表记下字符到密文的映射，并把词典中每个词的加密结果计入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">encrypt</mtext>
+</math></span> 按映射拼接，遇缺失字符返回空串； <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">decrypt</mtext>
+</math></span> 直接查 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">word2</mtext>
+  <mo stretchy="false">]</mo>
+</math></span>。解密变为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mp</mtext>
+</math></span> 记录每个字符的加密结果，用另一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 记录每个加密结果出现的次数。</p>
+<p>在构造函数中，我们遍历 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">keys</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">values</mtext>
+</math></span>，将每个字符和其对应的加密结果存入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mp</mtext>
+</math></span> 中。然后遍历 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">dictionary</mtext>
+</math></span>，统计每个加密结果出现的次数。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 分别是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">keys</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">dictionary</mtext>
+</math></span> 的长度。</p>
+<p>在加密函数中，我们遍历输入字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">word1</mtext>
+</math></span> 的每个字符，查找其加密结果并拼接起来。如果某个字符没有对应的加密结果，说明无法加密，返回空字符串。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">word1</mtext>
+</math></span> 的长度。</p>
+<p>在解密函数中，我们直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">word2</mtext>
+</math></span> 对应的次数。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type Encrypter struct {</span></span>
+<span class="line"><span>	mp  map[byte]string</span></span>
+<span class="line"><span>	cnt map[string]int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(keys []byte, values []string, dictionary []string) Encrypter {</span></span>
+<span class="line"><span>	mp := map[byte]string{}</span></span>
+<span class="line"><span>	cnt := map[string]int{}</span></span>
+<span class="line"><span>	for i, k := range keys {</span></span>
+<span class="line"><span>		mp[k] = values[i]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	e := Encrypter{mp, cnt}</span></span>
+<span class="line"><span>	for _, v := range dictionary {</span></span>
+<span class="line"><span>		e.cnt[e.Encrypt(v)]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return e</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Encrypter) Encrypt(word1 string) string {</span></span>
+<span class="line"><span>	var ans strings.Builder</span></span>
+<span class="line"><span>	for _, c := range word1 {</span></span>
+<span class="line"><span>		if v, ok := this.mp[byte(c)]; ok {</span></span>
+<span class="line"><span>			ans.WriteString(v)</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			return ""</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans.String()</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Encrypter) Decrypt(word2 string) int {</span></span>
+<span class="line"><span>	return this.cnt[word2]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your Encrypter object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(keys, values, dictionary);</span></span>
+<span class="line"><span> * param_1 := obj.Encrypt(word1);</span></span>
+<span class="line"><span> * param_2 := obj.Decrypt(word2);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/encrypt-and-decrypt-strings" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2227.Encrypt%20and%20Decrypt%20Strings/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2241" tabindex="-1">2241. 设计一个 ATM 机器 <a class="header-anchor" href="#q-2241" aria-label="Permalink to &quot;2241. 设计一个 ATM 机器 {#q-2241}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：贪心、设计、数组</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>一个 ATM 机器，存有 <code>5</code> 种面值的钞票：<code>20</code> ，<code>50</code> ，<code>100</code> ，<code>200</code> 和 <code>500</code> 美元。初始时，ATM 机是空的。用户可以用它存或者取任意数目的钱。</p>&#10;&#10;<p>取款时，机器会优先取 <b>较大</b> 数额的钱。</p>&#10;&#10;<ul>&#10;	<li>比方说，你想取 <code>$300</code> ，并且机器里有 <code>2</code> 张 <code>$50</code> 的钞票，<code>1</code> 张 <code>$100</code> 的钞票和<code>1</code> 张 <code>$200</code> 的钞票，那么机器会取出 <code>$100</code> 和 <code>$200</code> 的钞票。</li>&#10;	<li>但是，如果你想取 <code>$600</code> ，机器里有 <code>3</code> 张 <code>$200</code> 的钞票和<code>1</code> 张 <code>$500</code> 的钞票，那么取款请求会被拒绝，因为机器会先取出 <code>$500</code> 的钞票，然后无法取出剩余的 <code>$100</code> 。注意，因为有 <code>$500</code> 钞票的存在，机器 <strong>不能</strong> 取 <code>$200</code> 的钞票。</li>&#10;</ul>&#10;&#10;<p>请你实现 ATM 类：</p>&#10;&#10;<ul>&#10;	<li><code>ATM()</code> 初始化 ATM 对象。</li>&#10;	<li><code>void deposit(int[] banknotesCount)</code> 分别存入 <code>$20</code> ，<code>$50</code>，<code>$100</code>，<code>$200</code> 和 <code>$500</code> 钞票的数目。</li>&#10;	<li><code>int[] withdraw(int amount)</code> 返回一个长度为 <code>5</code> 的数组，分别表示 <code>$20</code> ，<code>$50</code>，<code>$100</code> ，<code>$200</code> 和 <code>$500</code> 钞票的数目，并且更新 ATM 机里取款后钞票的剩余数量。如果无法取出指定数额的钱，请返回 <code>[-1]</code> （这种情况下 <strong>不</strong> 取出任何钞票）。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;ATM&quot;, &quot;deposit&quot;, &quot;withdraw&quot;, &quot;deposit&quot;, &quot;withdraw&quot;, &quot;withdraw&quot;]&#10;[[], [[0,0,1,2,1]], [600], [[0,1,0,1,1]], [600], [550]]&#10;<strong>输出：</strong>&#10;[null, null, [0,0,1,0,1], null, [-1], [0,1,0,0,1]]&#10;&#10;<strong>解释：</strong>&#10;ATM atm = new ATM();&#10;atm.deposit([0,0,1,2,1]); // 存入 1 张 $100 ，2 张 $200 和 1 张 $500 的钞票。&#10;atm.withdraw(600);        // 返回 [0,0,1,0,1] 。机器返回 1 张 $100 和 1 张 $500 的钞票。机器里剩余钞票的数量为 [0,0,0,2,0] 。&#10;atm.deposit([0,1,0,1,1]); // 存入 1 张 $50 ，1 张 $200 和 1 张 $500 的钞票。&#10;                          // 机器中剩余钞票数量为 [0,1,0,3,1] 。&#10;atm.withdraw(600);        // 返回 [-1] 。机器会尝试取出 $500 的钞票，然后无法得到剩余的 $100 ，所以取款请求会被拒绝。&#10;                          // 由于请求被拒绝，机器中钞票的数量不会发生改变。&#10;atm.withdraw(550);        // 返回 [0,1,0,0,1] ，机器会返回 1 张 $50 的钞票和 1 张 $500 的钞票。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>banknotesCount.length == 5</code></li>&#10;	<li><code>0 &lt;= banknotesCount[i] &lt;= 10<sup>9</sup></code></li>&#10;	<li><code>1 &lt;= amount &lt;= 10<sup>9</sup></code></li>&#10;	<li><strong>总共</strong> 最多有 <code>5000</code> 次 <code>withdraw</code> 和 <code>deposit</code> 的调用。</li>&#10;	<li><span>函数 </span><code>withdraw</code> 和 <code>deposit</code> 至少各有 <strong>一次 </strong>调用。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：模拟 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>面额只有五种，存取调用合计 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5000</mn>
+</math></span> 次，金额可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>9</mn>
+  </msup>
+</math></span>。按张模拟每一种组合不可行，题目要求尽量用大面额，这正是贪心取整。</p>
+<p>用长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+</math></span> 的数组记下库存。存款按位累加。取款从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>500</mn>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>20</mn>
+</math></span> 依次取 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mtext mathvariant="italic">amount</mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <msub>
+    <mi>d</mi>
+    <mi>i</mi>
+  </msub>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+  <mo>,</mo>
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+</math></span> 张；若最后仍有余额则整笔失败且不改库存，否则再扣减。面额数是常数，单次 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们用一个数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">d</mtext>
+</math></span> 记录钞票面额，用一个数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 记录每种面额的钞票数量。</p>
+<p>对于 <code v-pre>deposit</code> 操作，我们只需要将对应面额的钞票数量加上即可。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>对于 <code v-pre>withdraw</code> 操作，我们从大到小枚举每种面额的钞票，取出尽可能多且不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">amount</mtext>
+</math></span> 的钞票，然后将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">amount</mtext>
+</math></span> 减去取出的钞票面额之和，如果最后 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">amount</mtext>
+</math></span> 仍大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，说明无法取出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">amount</mtext>
+</math></span> 的钞票，返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 即可。否则，返回取出的钞票数量即可。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>var d = [...]int{20, 50, 100, 200, 500}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const m = len(d)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type ATM [m]int</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() ATM {</span></span>
+<span class="line"><span>	return ATM{}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *ATM) Deposit(banknotesCount []int) {</span></span>
+<span class="line"><span>	for i, x := range banknotesCount {</span></span>
+<span class="line"><span>		this[i] += x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *ATM) Withdraw(amount int) []int {</span></span>
+<span class="line"><span>	ans := make([]int, m)</span></span>
+<span class="line"><span>	for i := m - 1; i >= 0; i-- {</span></span>
+<span class="line"><span>		ans[i] = min(amount/d[i], this[i])</span></span>
+<span class="line"><span>		amount -= ans[i] * d[i]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if amount > 0 {</span></span>
+<span class="line"><span>		return []int{-1}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i, x := range ans {</span></span>
+<span class="line"><span>		this[i] -= x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your ATM object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor();</span></span>
+<span class="line"><span> * obj.Deposit(banknotesCount);</span></span>
+<span class="line"><span> * param_2 := obj.Withdraw(amount);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-an-atm-machine" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2241.Design%20an%20ATM%20Machine/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2254" tabindex="-1">2254. 设计视频共享平台 🔒 <a class="header-anchor" href="#q-2254" aria-label="Permalink to &quot;2254. 设计视频共享平台 🔒 {#q-2254}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、哈希表、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>你有一个视频分享平台，用户可以上传和删除视频。每个 <code>video</code> 都是 <strong>字符串 </strong>类型的数字，其中字符串的第 <code>i</code> 位表示视频中第 <code>i</code> 分钟的内容。例如，第一个数字表示视频中第 <code>0</code> 分钟的内容，第二个数字表示视频中第 <code>1</code> 分钟的内容，以此类推。视频的观众也可以喜欢和不喜欢视频。该平台会跟踪每个视频的 <strong>观看次数</strong>、<strong>点赞次数 </strong>和 <strong>不喜欢次数</strong>。</p>&#10;&#10;<p>当视频上传时，它与最小可用整数 <code>videoId</code> 相关联，<code>videoId</code> 从 <code>0</code> 开始的。一旦一个视频被删除，与该视频关联的 <code>videoId</code> 就可以用于另一个视频。</p>&#10;&#10;<p>实现 <code>VideoSharingPlatform</code> 类:</p>&#10;&#10;<ul>&#10;	<li><code>VideoSharingPlatform()</code> 初始化对象。</li>&#10;	<li><code>int upload(String video)</code> 用户上传一个 <code>video</code>. 返回与视频相关联的<code>videoId</code> 。</li>&#10;	<li><code>void remove(int videoId)</code> 如果存在与 <code>videoId</code> 相关联的视频，则删除该视频。</li>&#10;	<li><code>String watch(int videoId, int startMinute, int endMinute)</code> 如果有一个视频与 <code>videoId</code> 相关联，则将该视频的观看次数增加 <code>1</code>，并返回视频字符串的子字符串，从 <code>startMinute</code> 开始，以 <code>min(endMinute, video.length - 1</code><code>)</code>(含边界) 结束。否则，返回 <code>&quot;-1&quot;</code>。</li>&#10;	<li><code>void like(int videoId)</code> 如果存在与 <code>videoId</code> 相关联的视频，则将与 <code>videoId</code> 相关联的视频的点赞数增加 <code>1</code>。</li>&#10;	<li><code>void dislike(int videoId)</code> 如果存在与 <code>videoId</code> 相关联的视频，则将与 <code>videoId</code> 相关联的视频上的不喜欢次数增加 <code>1</code>。</li>&#10;	<li><code>int[] getLikesAndDislikes(int videoId)</code> 返回一个长度为 <code>2</code> ，<strong>下标从 0 开始 </strong>的整型数组，其中 <code>values[0]</code> 是与 <code>videoId</code> 相关联的视频上的点赞数，<code>values[1]</code> 是不喜欢数。如果没有与 <code>videoId</code> 相关联的视频，则返回 <code>[-1]</code>。</li>&#10;	<li><code>int getViews(int videoId)</code> 返回与 <code>videoId</code> 相关联的视频的观看次数，如果没有与 <code>videoId</code> 相关联的视频，返回 <code>-1</code>。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;&#10;<pre>&#10;<strong>输入</strong>&#10;[&quot;VideoSharingPlatform&quot;, &quot;upload&quot;, &quot;upload&quot;, &quot;remove&quot;, &quot;remove&quot;, &quot;upload&quot;, &quot;watch&quot;, &quot;watch&quot;, &quot;like&quot;, &quot;dislike&quot;, &quot;dislike&quot;, &quot;getLikesAndDislikes&quot;, &quot;getViews&quot;]&#10;[[], [&quot;123&quot;], [&quot;456&quot;], [4], [0], [&quot;789&quot;], [1, 0, 5], [1, 0, 1], [1], [1], [1], [1], [1]]&#10;<strong>输出</strong>&#10;[null, 0, 1, null, null, 0, &quot;456&quot;, &quot;45&quot;, null, null, null, [1, 2], 2]&#10;&#10;<strong>解释</strong>&#10;VideoSharingPlatform videoSharingPlatform = new VideoSharingPlatform();&#10;videoSharingPlatform.upload(&quot;123&quot;);          // 最小的可用 videoId 是 0，所以返回 0。&#10;videoSharingPlatform.upload(&quot;456&quot;);          // 最小的可用 videoId 是 1，所以返回 1。&#10;videoSharingPlatform.remove(4);              // 没有与 videoId 4 相关联的视频，所以什么都不做。&#10;videoSharingPlatform.remove(0);              // 删除与 videoId 0 关联的视频。&#10;videoSharingPlatform.upload(&quot;789&quot;);          // 由于与 videoId 0 相关联的视频被删除，&#10;                                             // 0 是最小的可用 videoId，所以返回 0。&#10;videoSharingPlatform.watch(1, 0, 5);         // 与 videoId 1 关联的视频为 &quot;456&quot;。&#10;                                             // 从分钟 0 到分钟 min(5,3 - 1)= 2 的视频为 &quot;456&quot;，因此返回 &quot;456&quot;。&#10;videoSharingPlatform.watch(1, 0, 1);         // 与 videoId 1 关联的视频为 &quot;456&quot;。&#10;                                             // 从分钟 0 到分钟 min(1,3 - 1)= 1 的视频为 &quot;45&quot;，因此返回 &quot;45&quot;。&#10;videoSharingPlatform.like(1);                // 增加与 videoId 1 相关的视频的点赞数。&#10;videoSharingPlatform.dislike(1);             // 增加与 videoId 1 相关联的视频的不喜欢的数量。&#10;videoSharingPlatform.dislike(1);             // 增加与 videoId 1 相关联的视频的不喜欢的数量。&#10;videoSharingPlatform.getLikesAndDislikes(1); // 在与 videoId 1 相关的视频中有 1 个喜欢和 2 个不喜欢，因此返回[1,2]。&#10;videoSharingPlatform.getViews(1);            // 与 videoId 1 相关联的视频有 2 个观看数，因此返回2。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;&#10;<pre>&#10;<strong>输入</strong>&#10;[&quot;VideoSharingPlatform&quot;, &quot;remove&quot;, &quot;watch&quot;, &quot;like&quot;, &quot;dislike&quot;, &quot;getLikesAndDislikes&quot;, &quot;getViews&quot;]&#10;[[], [0], [0, 0, 1], [0], [0], [0], [0]]&#10;<strong>输出</strong>&#10;[null, null, &quot;-1&quot;, null, null, [-1], -1]&#10;&#10;<strong>解释</strong>&#10;VideoSharingPlatform videoSharingPlatform = new VideoSharingPlatform();&#10;videoSharingPlatform.remove(0);              // 没有与 videoId 0 相关联的视频，所以什么都不做。&#10;videoSharingPlatform.watch(0, 0, 1);         // 没有与 videoId 0 相关联的视频，因此返回 &quot;-1&quot;。&#10;videoSharingPlatform.like(0);                // 没有与 videoId 0 相关联的视频，所以什么都不做。&#10;videoSharingPlatform.dislike(0);             // 没有与 videoId 0 相关联的视频，所以什么都不做。&#10;videoSharingPlatform.getLikesAndDislikes(0); // 没有与 videoId 0 相关联的视频，因此返回 [-1]。&#10;videoSharingPlatform.getViews(0);            // 没有视频与 videoId 0 相关联，因此返回 -1。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= video.length &lt;= 10<sup>5</sup></code></li>&#10;	<li>调用 <code>upload</code> 时所有 <code>video.length</code> 的总和不会超过 <code>10<sup>5</sup></code></li>&#10;	<li><code>video</code> 由数字组成</li>&#10;	<li><code>0 &lt;= videoId &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>0 &lt;= startMinute &lt; endMinute &lt; 10<sup>5</sup></code></li>&#10;	<li><code>startMinute &lt; video.length</code></li>&#10;	<li>调用  <code>watch</code> 时所有 <code>endMinute - startMinute</code> 的总和不会超过 <code>10<sup>5</sup></code>。</li>&#10;	<li>所有函数 <strong>总共 </strong>最多调用 <code>10<sup>5</sup></code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 解法（本站整理） · Go 实现</summary>
+<p><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2254.Design%20Video%20Sharing%20Platform/README.md" target="_blank" rel="noopener noreferrer">Doocs 参考题解</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></p>
+<div v-pre>
+<p>根据题意整理：源文没有非空实现。哈希表保存每个视频及计数，递增编号记录尚未使用的新 ID，最小堆保存已删除可复用的 ID。上传优先取堆顶；删除不存在的视频不入堆，避免重复回收。Watch 截取包含右端的分钟区间并增加一次观看数。q 为操作数、L 为存储的视频总长度，上传和删除 O(log q)，其他方法 O(1)（Go 字符串切片共享数据），空间 O(q+L)。提供 VideoSharingPlatform、Constructor 与首字母大写的 Go 方法；删除后复用的 ID 全部计数重新归零。</p>
+<p>出处：<a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2254.Design%20Video%20Sharing%20Platform/README.md" target="_blank" rel="noopener noreferrer">Doocs 原题与题解</a>，固定提交 91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011；题意、参考及本 Go 改写采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>// 题意与参考：Doocs LeetCode，CC BY-SA 4.0。</span></span>
+<span class="line"><span>// https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2254.Design%20Video%20Sharing%20Platform/README.md</span></span>
+<span class="line"><span>// Go 实现与测试沿用 CC BY-SA 4.0；来源性质见配套说明。</span></span>
+<span class="line"><span>import "container/heap"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type idHeap []int</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (h idHeap) Len() int           { return len(h) }</span></span>
+<span class="line"><span>func (h idHeap) Less(i, j int) bool { return h[i] &#x3C; h[j] }</span></span>
+<span class="line"><span>func (h idHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }</span></span>
+<span class="line"><span>func (h *idHeap) Push(x any)        { *h = append(*h, x.(int)) }</span></span>
+<span class="line"><span>func (h *idHeap) Pop() any          { a := *h; x := a[len(a)-1]; *h = a[:len(a)-1]; return x }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type video struct {</span></span>
+<span class="line"><span>	content                string</span></span>
+<span class="line"><span>	views, likes, dislikes int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>type VideoSharingPlatform struct {</span></span>
+<span class="line"><span>	videos map[int]*video</span></span>
+<span class="line"><span>	free   idHeap</span></span>
+<span class="line"><span>	next   int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() VideoSharingPlatform { return VideoSharingPlatform{videos: map[int]*video{}} }</span></span>
+<span class="line"><span>func (p *VideoSharingPlatform) Upload(s string) int {</span></span>
+<span class="line"><span>	id := p.next</span></span>
+<span class="line"><span>	if p.free.Len() > 0 {</span></span>
+<span class="line"><span>		id = heap.Pop(&#x26;p.free).(int)</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		p.next++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	p.videos[id] = &#x26;video{content: s}</span></span>
+<span class="line"><span>	return id</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>func (p *VideoSharingPlatform) Remove(id int) {</span></span>
+<span class="line"><span>	if _, ok := p.videos[id]; ok {</span></span>
+<span class="line"><span>		delete(p.videos, id)</span></span>
+<span class="line"><span>		heap.Push(&#x26;p.free, id)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>func (p *VideoSharingPlatform) Watch(id, start, end int) string {</span></span>
+<span class="line"><span>	v := p.videos[id]</span></span>
+<span class="line"><span>	if v == nil {</span></span>
+<span class="line"><span>		return "-1"</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	v.views++</span></span>
+<span class="line"><span>	if end >= len(v.content) {</span></span>
+<span class="line"><span>		end = len(v.content) - 1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return v.content[start : end+1]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>func (p *VideoSharingPlatform) Like(id int) {</span></span>
+<span class="line"><span>	if v := p.videos[id]; v != nil {</span></span>
+<span class="line"><span>		v.likes++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>func (p *VideoSharingPlatform) Dislike(id int) {</span></span>
+<span class="line"><span>	if v := p.videos[id]; v != nil {</span></span>
+<span class="line"><span>		v.dislikes++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>func (p *VideoSharingPlatform) GetLikesAndDislikes(id int) []int {</span></span>
+<span class="line"><span>	if v := p.videos[id]; v != nil {</span></span>
+<span class="line"><span>		return []int{v.likes, v.dislikes}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return []int{-1}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>func (p *VideoSharingPlatform) GetViews(id int) int {</span></span>
+<span class="line"><span>	if v := p.videos[id]; v != nil {</span></span>
+<span class="line"><span>		return v.views</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return -1</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-video-sharing-platform" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2254.Design%20Video%20Sharing%20Platform/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2276" tabindex="-1">2276. 统计区间中的整数数目 <a class="header-anchor" href="#q-2276" aria-label="Permalink to &quot;2276. 统计区间中的整数数目 {#q-2276}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、线段树、有序集合</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你区间的 <strong>空</strong> 集，请你设计并实现满足要求的数据结构：</p>&#10;&#10;<ul>&#10;	<li><strong>新增：</strong>添加一个区间到这个区间集合中。</li>&#10;	<li><strong>统计：</strong>计算出现在 <strong>至少一个</strong> 区间中的整数个数。</li>&#10;</ul>&#10;&#10;<p>实现 <code>CountIntervals</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>CountIntervals()</code> 使用区间的空集初始化对象</li>&#10;	<li><code>void add(int left, int right)</code> 添加区间 <code>[left, right]</code> 到区间集合之中。</li>&#10;	<li><code>int count()</code> 返回出现在 <strong>至少一个</strong> 区间中的整数个数。</li>&#10;</ul>&#10;&#10;<p><strong>注意：</strong>区间 <code>[left, right]</code> 表示满足 <code>left &lt;= x &lt;= right</code> 的所有整数 <code>x</code> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入</strong>&#10;[&quot;CountIntervals&quot;, &quot;add&quot;, &quot;add&quot;, &quot;count&quot;, &quot;add&quot;, &quot;count&quot;]&#10;[[], [2, 3], [7, 10], [], [5, 8], []]&#10;<strong>输出</strong>&#10;[null, null, null, 6, null, 8]&#10;&#10;<strong>解释</strong>&#10;CountIntervals countIntervals = new CountIntervals(); // 用一个区间空集初始化对象&#10;countIntervals.add(2, 3);  // 将 [2, 3] 添加到区间集合中&#10;countIntervals.add(7, 10); // 将 [7, 10] 添加到区间集合中&#10;countIntervals.count();    // 返回 6&#10;                           // 整数 2 和 3 出现在区间 [2, 3] 中&#10;                           // 整数 7、8、9、10 出现在区间 [7, 10] 中&#10;countIntervals.add(5, 8);  // 将 [5, 8] 添加到区间集合中&#10;countIntervals.count();    // 返回 8&#10;                           // 整数 2 和 3 出现在区间 [2, 3] 中&#10;                           // 整数 5 和 6 出现在区间 [5, 8] 中&#10;                           // 整数 7 和 8 出现在区间 [5, 8] 和区间 [7, 10] 中&#10;                           // 整数 9 和 10 出现在区间 [7, 10] 中</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= left &lt;= right &lt;= 10<sup>9</sup></code></li>&#10;	<li>最多调用  <code>add</code> 和 <code>count</code> 方法 <strong>总计</strong> <code>10<sup>5</sup></code> 次</li>&#10;	<li>调用 <code>count</code> 方法至少一次</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：线段树（动态开点） · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>要维护若干可能重叠的整数区间，支持加入一段并查询已被覆盖的整数个数。坐标到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>9</mn>
+  </msup>
+</math></span>，操作 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span> 次，不能开数组，也不能每次重建。覆盖次数不重要，区间赋值「整段已覆盖」即可。</p>
+<p>动态开点线段树的值域为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>9</mn>
+  </msup>
+  <mo stretchy="false">]</mo>
+</math></span>，节点只在访问时创建。修改把区间赋成满覆盖并用懒标记下传；查询根上的覆盖长度。单次 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>9</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>根据题目描述，我们需要维护一个区间集合，支持区间的添加和查询操作。对于区间的添加，我们可以使用线段树来维护区间集合。</p>
+<p>线段树将整个区间分割为多个不连续的子区间，子区间的数量不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>w</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mi>t</mi>
+  <mi>h</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。更新某个元素的值，只需要更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>w</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mi>t</mi>
+  <mi>h</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 个区间，并且这些区间都包含在一个包含该元素的大区间内。区间修改时，需要使用<strong>懒标记</strong>保证效率。</p>
+<ul>
+<li>线段树的每个节点代表一个区间；</li>
+<li>线段树具有唯一的根节点，代表的区间是整个统计范围，如 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>N</mi>
+  <mo stretchy="false">]</mo>
+</math></span>；</li>
+<li>线段树的每个叶子节点代表一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的元区间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span>；</li>
+<li>对于每个内部节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，它的左儿子是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo>,</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，右儿子是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span>, 其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>d</mi>
+  <mo>=</mo>
+  <mo stretchy="false">&#x230A;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo stretchy="false">&#x230B;</mo>
+</math></span> (即向下取整)。</li>
+</ul>
+<p>由于题目数据范围较大，我们可以使用动态开点的线段树来实现。动态开点的线段树是指，我们只在需要的时候才开点，而不是一开始就开好所有的点，这样可以节省空间。</p>
+<p>时间复杂度方面，每次操作的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 为操作次数，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数据范围。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type Node struct {</span></span>
+<span class="line"><span>	left  *Node</span></span>
+<span class="line"><span>	right *Node</span></span>
+<span class="line"><span>	l     int</span></span>
+<span class="line"><span>	r     int</span></span>
+<span class="line"><span>	mid   int</span></span>
+<span class="line"><span>	v     int</span></span>
+<span class="line"><span>	add   int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type SegmentTree struct {</span></span>
+<span class="line"><span>	root *Node</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func newNode(l, r int) *Node {</span></span>
+<span class="line"><span>	return &#x26;Node{</span></span>
+<span class="line"><span>		left:  nil,</span></span>
+<span class="line"><span>		right: nil,</span></span>
+<span class="line"><span>		l:     l,</span></span>
+<span class="line"><span>		r:     r,</span></span>
+<span class="line"><span>		mid:   (l + r) / 2,</span></span>
+<span class="line"><span>		v:     0,</span></span>
+<span class="line"><span>		add:   0,</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func newSegmentTree() *SegmentTree {</span></span>
+<span class="line"><span>	return &#x26;SegmentTree{</span></span>
+<span class="line"><span>		root: newNode(1, 1000000001),</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (st *SegmentTree) modify(l, r, v int, node *Node) {</span></span>
+<span class="line"><span>	if node == nil {</span></span>
+<span class="line"><span>		node = st.root</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if l > r {</span></span>
+<span class="line"><span>		return</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if node.l >= l &#x26;&#x26; node.r &#x3C;= r {</span></span>
+<span class="line"><span>		node.v = node.r - node.l + 1</span></span>
+<span class="line"><span>		node.add = v</span></span>
+<span class="line"><span>		return</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	st.pushdown(node)</span></span>
+<span class="line"><span>	if l &#x3C;= node.mid {</span></span>
+<span class="line"><span>		st.modify(l, r, v, node.left)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if r > node.mid {</span></span>
+<span class="line"><span>		st.modify(l, r, v, node.right)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	st.pushup(node)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (st *SegmentTree) query(l, r int, node *Node) int {</span></span>
+<span class="line"><span>	if node == nil {</span></span>
+<span class="line"><span>		node = st.root</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if l > r {</span></span>
+<span class="line"><span>		return 0</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if node.l >= l &#x26;&#x26; node.r &#x3C;= r {</span></span>
+<span class="line"><span>		return node.v</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	st.pushdown(node)</span></span>
+<span class="line"><span>	v := 0</span></span>
+<span class="line"><span>	if l &#x3C;= node.mid {</span></span>
+<span class="line"><span>		v += st.query(l, r, node.left)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if r > node.mid {</span></span>
+<span class="line"><span>		v += st.query(l, r, node.right)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return v</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (st *SegmentTree) pushup(node *Node) {</span></span>
+<span class="line"><span>	node.v = node.left.v + node.right.v</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (st *SegmentTree) pushdown(node *Node) {</span></span>
+<span class="line"><span>	if node.left == nil {</span></span>
+<span class="line"><span>		node.left = newNode(node.l, node.mid)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if node.right == nil {</span></span>
+<span class="line"><span>		node.right = newNode(node.mid+1, node.r)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if node.add != 0 {</span></span>
+<span class="line"><span>		left := node.left</span></span>
+<span class="line"><span>		right := node.right</span></span>
+<span class="line"><span>		left.add = node.add</span></span>
+<span class="line"><span>		right.add = node.add</span></span>
+<span class="line"><span>		left.v = left.r - left.l + 1</span></span>
+<span class="line"><span>		right.v = right.r - right.l + 1</span></span>
+<span class="line"><span>		node.add = 0</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type CountIntervals struct {</span></span>
+<span class="line"><span>	tree *SegmentTree</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() CountIntervals {</span></span>
+<span class="line"><span>	return CountIntervals{</span></span>
+<span class="line"><span>		tree: newSegmentTree(),</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (ci *CountIntervals) Add(left, right int) {</span></span>
+<span class="line"><span>	ci.tree.modify(left, right, 1, nil)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (ci *CountIntervals) Count() int {</span></span>
+<span class="line"><span>	return ci.tree.query(1, 1000000000, nil)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your CountIntervals object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor();</span></span>
+<span class="line"><span> * obj.Add(left,right);</span></span>
+<span class="line"><span> * param_2 := obj.Count();</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-integers-in-intervals" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2276.Count%20Integers%20in%20Intervals/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2286" tabindex="-1">2286. 以组为单位订音乐会的门票 <a class="header-anchor" href="#q-2286" aria-label="Permalink to &quot;2286. 以组为单位订音乐会的门票 {#q-2286}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、树状数组、线段树、二分查找</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>一个音乐会总共有 <code>n</code> 排座位，编号从 <code>0</code> 到 <code>n - 1</code> ，每一排有 <code>m</code> 个座椅，编号为 <code>0</code> 到 <code>m - 1</code> 。你需要设计一个买票系统，针对以下情况进行座位安排：</p>&#10;&#10;<ul>&#10;	<li>同一组的 <code>k</code> 位观众坐在<strong> 同一排座位，且座位连续 </strong>。</li>&#10;	<li><code>k</code> 位观众中 <strong>每一位</strong> 都有座位坐，但他们 <strong>不一定</strong> 坐在一起。</li>&#10;</ul>&#10;&#10;<p>由于观众非常挑剔，所以：</p>&#10;&#10;<ul>&#10;	<li>只有当一个组里所有成员座位的排数都 <strong>小于等于</strong> <code>maxRow</code> ，这个组才能订座位。每一组的 <code>maxRow</code> 可能 <strong>不同</strong> 。</li>&#10;	<li>如果有多排座位可以选择，优先选择 <strong>最小</strong> 的排数。如果同一排中有多个座位可以坐，优先选择号码 <strong>最小</strong> 的。</li>&#10;</ul>&#10;&#10;<p>请你实现 <code>BookMyShow</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>BookMyShow(int n, int m)</code> ，初始化对象，<code>n</code> 是排数，<code>m</code> 是每一排的座位数。</li>&#10;	<li><code>int[] gather(int k, int maxRow)</code> 返回长度为 <code>2</code> 的数组，表示 <code>k</code> 个成员中 <strong>第一个座位</strong> 的排数和座位编号，这 <code>k</code> 位成员必须坐在 <strong>同一排座位，且座位连续 </strong>。换言之，返回最小可能的 <code>r</code> 和 <code>c</code> 满足第 <code>r</code> 排中 <code>[c, c + k - 1]</code> 的座位都是空的，且 <code>r &lt;= maxRow</code> 。如果 <strong>无法</strong> 安排座位，返回 <code>[]</code> 。</li>&#10;	<li><code>boolean scatter(int k, int maxRow)</code> 如果组里所有 <code>k</code> 个成员 <strong>不一定</strong> 要坐在一起的前提下，都能在第 <code>0</code> 排到第 <code>maxRow</code> 排之间找到座位，那么请返回 <code>true</code> 。这种情况下，每个成员都优先找排数 <strong>最小</strong> ，然后是座位编号最小的座位。如果不能安排所有 <code>k</code> 个成员的座位，请返回 <code>false</code> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;BookMyShow&quot;, &quot;gather&quot;, &quot;gather&quot;, &quot;scatter&quot;, &quot;scatter&quot;]&#10;[[2, 5], [4, 0], [2, 0], [5, 1], [5, 1]]&#10;<strong>输出：</strong>&#10;[null, [0, 0], [], true, false]&#10;&#10;<strong>解释：</strong>&#10;BookMyShow bms = new BookMyShow(2, 5); // 总共有 2 排，每排 5 个座位。&#10;bms.gather(4, 0); // 返回 [0, 0]&#10;                  // 这一组安排第 0 排 [0, 3] 的座位。&#10;bms.gather(2, 0); // 返回 []&#10;                  // 第 0 排只剩下 1 个座位。&#10;                  // 所以无法安排 2 个连续座位。&#10;bms.scatter(5, 1); // 返回 True&#10;                   // 这一组安排第 0 排第 4 个座位和第 1 排 [0, 3] 的座位。&#10;bms.scatter(5, 1); // 返回 False&#10;                   // 总共只剩下 1 个座位。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>&#10;	<li><code>1 &lt;= m, k &lt;= 10<sup>9</sup></code></li>&#10;	<li><code>0 &lt;= maxRow &lt;= n - 1</code></li>&#10;	<li><code>gather</code> 和 <code>scatter</code> <strong>总</strong> 调用次数不超过 <code>5 * 10<sup>4</sup></code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：线段树 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">gather</mtext>
+</math></span> 要在某一行找到连续 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个空位且行号尽量小； <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">scatter</mtext>
+</math></span> 只要从前若干行凑齐 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个座位。行数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>5</mn>
+  <mo>&#xD7;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>，每行座位数达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>9</mn>
+  </msup>
+</math></span>，不能按座位开数组，按行线性扫描也会超时。</p>
+<p>线段树下标从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的行，节点维护区间剩余座位和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 与单行剩余最大值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">gather</mtext>
+</math></span> 在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mtext mathvariant="italic">maxRow</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 上找最左满足 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>&#x2265;</mo>
+  <mi>k</mi>
+</math></span> 的行，再把该行剩余改为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>m</mi>
+    <mo data-mjx-alternate="1">&#x2032;</mo>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mi>k</mi>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">scatter</mtext>
+</math></span> 先查区间和是否够，再从前往后逐行扣减。单次对数。</p>
+</blockquote>
+<p>分析题意我们得知：</p>
+<ul>
+<li>对于 <code v-pre>gather(k, maxRow)</code> 操作，要求 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个人坐在同一行并且座位连续，也就是说，我们要找到最小的行，满足该行的剩余座位大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。</li>
+<li>对于 <code v-pre>scatter(k, maxRow)</code> 操作，只需要找到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个座位就行，但是要求这 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个座位的行数尽可能小，因此，我们要找到第一个满足剩余座位数大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 的行，进行座位分配，然后继续往后查找。</li>
+</ul>
+<p>我们可以用线段树来实现。线段树每个节点的信息有：</p>
+<ul>
+<li><code v-pre>l</code>：节点对应的区间左端点</li>
+<li><code v-pre>r</code>：节点对应的区间右端点</li>
+<li><code v-pre>s</code>：节点对应的区间总的剩余座位数</li>
+<li><code v-pre>mx</code>：节点对应的区间最大剩余座位数</li>
+</ul>
+<p>注意，线段树节点区间的下标从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 开始。</p>
+<p>线段树的操作有：</p>
+<ul>
+<li><code v-pre>build(u, l, r)</code>：建立节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span>，对应区间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，并递归建立其左右子节点。</li>
+<li><code v-pre>modify(u, x, v)</code>：从节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span> 开始，找到对应区间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 中的第一个满足 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mo>=</mo>
+  <mi>r</mi>
+  <mo>=</mo>
+  <mi>x</mi>
+</math></span> 的节点，将该节点的 <code v-pre>s</code> 和 <code v-pre>mx</code> 修改为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span>，并向上更新。</li>
+<li><code v-pre>query_sum(u, l, r)</code>：从节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span> 开始，统计对应区间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 中的 <code v-pre>s</code> 之和。</li>
+<li><code v-pre>query_idx(u, l, r, k)</code>：从节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span> 开始，找到对应区间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 中的第一个满足 <code v-pre>mx</code> 大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的节点，返回该节点的 <code v-pre>l</code>。查找时，我们从最大的区间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mi>R</mi>
+  <mi>o</mi>
+  <mi>w</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 开始，由于我们要找最左边的满足 <code v-pre>mx</code> 大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的节点。因此，对于当前区间，我们判断前半部分区间的 <code v-pre>mx</code> 是否符合要求，是则说明答案就在前半部分区间，递归查找即可。否则说明答案在后半部分区间，递归查找后半部分区间。</li>
+<li><code v-pre>pushup(u)</code>：利用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span> 的子节点信息更新当前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span> 的信息。</li>
+</ul>
+<p>对于 <code v-pre>gather(k, maxRow)</code> 操作，我们先用 <code v-pre>query_idx(1, 1, n, k)</code> 找到第一个满足剩余座位数大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的行，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>。然后我们用 <code v-pre>query_sum(1, i, i)</code> 得到该行的剩余座位数，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>。接下来，我们用 <code v-pre>modify(1, i, s - k)</code> 将该行的剩余座位数修改为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&#x2212;</mo>
+  <mi>k</mi>
+</math></span>，并向上更新。最后，我们返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>m</mi>
+  <mo>&#x2212;</mo>
+  <mi>s</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 即可。</p>
+<p>对于 <code v-pre>scatter(k, maxRow)</code> 操作，我们先用 <code v-pre>query_sum(1, 1, maxRow)</code> 统计前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mi>R</mi>
+  <mi>o</mi>
+  <mi>w</mi>
+</math></span> 行的剩余座位数，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&lt;</mo>
+  <mi>k</mi>
+</math></span>，说明没有足够的座位，返回 <code v-pre>false</code>；否则，我们用 <code v-pre>query_idx(1, 1, maxRow, 1)</code> 找到第一个满足剩余座位数大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的行，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>。从该行开始，每次用 <code v-pre>query_sum(1, i, i)</code> 得到该行的剩余座位数，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mi>i</mi>
+  </msub>
+</math></span>。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>&#x2265;</mo>
+  <mi>k</mi>
+</math></span>，我们直接用 <code v-pre>modify(1, i, s_i - k)</code> 将该行的剩余座位数修改为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>&#x2212;</mo>
+  <mi>k</mi>
+</math></span>，并向上更新，然后返回 <code v-pre>true</code>。否则，我们更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>=</mo>
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <msub>
+    <mi>s</mi>
+    <mi>i</mi>
+  </msub>
+</math></span>，然后将该行的剩余座位数修改为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，并向上更新。最后，我们返回 <code v-pre>true</code>。</p>
+<p>时间复杂度：</p>
+<ul>
+<li>初始化的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li><code v-pre>gather(k, maxRow)</code> 的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li><code v-pre>scatter(k, maxRow)</code> 的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+</ul>
+<p>整体时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mi>q</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 分别为行数和操作数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type BookMyShow struct {</span></span>
+<span class="line"><span>	n, m int</span></span>
+<span class="line"><span>	tree *segmentTree</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(n int, m int) BookMyShow {</span></span>
+<span class="line"><span>	return BookMyShow{n, m, newSegmentTree(n, m)}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *BookMyShow) Gather(k int, maxRow int) []int {</span></span>
+<span class="line"><span>	maxRow++</span></span>
+<span class="line"><span>	i := this.tree.queryIdx(1, 1, maxRow, k)</span></span>
+<span class="line"><span>	if i == 0 {</span></span>
+<span class="line"><span>		return []int{}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	s := this.tree.querySum(1, i, i)</span></span>
+<span class="line"><span>	this.tree.modify(1, i, s-k)</span></span>
+<span class="line"><span>	return []int{i - 1, this.m - s}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *BookMyShow) Scatter(k int, maxRow int) bool {</span></span>
+<span class="line"><span>	maxRow++</span></span>
+<span class="line"><span>	if this.tree.querySum(1, 1, maxRow) &#x3C; k {</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	i := this.tree.queryIdx(1, 1, maxRow, 1)</span></span>
+<span class="line"><span>	for j := i; j &#x3C;= this.n; j++ {</span></span>
+<span class="line"><span>		s := this.tree.querySum(1, j, j)</span></span>
+<span class="line"><span>		if s >= k {</span></span>
+<span class="line"><span>			this.tree.modify(1, j, s-k)</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		k -= s</span></span>
+<span class="line"><span>		this.tree.modify(1, j, 0)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return true</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type node struct {</span></span>
+<span class="line"><span>	l, r, s, mx int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type segmentTree struct {</span></span>
+<span class="line"><span>	tr []*node</span></span>
+<span class="line"><span>	m  int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func newSegmentTree(n, m int) *segmentTree {</span></span>
+<span class="line"><span>	tr := make([]*node, n&#x3C;&#x3C;2)</span></span>
+<span class="line"><span>	for i := range tr {</span></span>
+<span class="line"><span>		tr[i] = &#x26;node{}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	t := &#x26;segmentTree{tr, m}</span></span>
+<span class="line"><span>	t.build(1, 1, n)</span></span>
+<span class="line"><span>	return t</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (t *segmentTree) build(u, l, r int) {</span></span>
+<span class="line"><span>	t.tr[u].l, t.tr[u].r = l, r</span></span>
+<span class="line"><span>	if l == r {</span></span>
+<span class="line"><span>		t.tr[u].s, t.tr[u].mx = t.m, t.m</span></span>
+<span class="line"><span>		return</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	mid := (l + r) >> 1</span></span>
+<span class="line"><span>	t.build(u&#x3C;&#x3C;1, l, mid)</span></span>
+<span class="line"><span>	t.build(u&#x3C;&#x3C;1|1, mid+1, r)</span></span>
+<span class="line"><span>	t.pushup(u)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (t *segmentTree) modify(u, x, v int) {</span></span>
+<span class="line"><span>	if t.tr[u].l == x &#x26;&#x26; t.tr[u].r == x {</span></span>
+<span class="line"><span>		t.tr[u].s, t.tr[u].mx = v, v</span></span>
+<span class="line"><span>		return</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	mid := (t.tr[u].l + t.tr[u].r) >> 1</span></span>
+<span class="line"><span>	if x &#x3C;= mid {</span></span>
+<span class="line"><span>		t.modify(u&#x3C;&#x3C;1, x, v)</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		t.modify(u&#x3C;&#x3C;1|1, x, v)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	t.pushup(u)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (t *segmentTree) querySum(u, l, r int) int {</span></span>
+<span class="line"><span>	if t.tr[u].l >= l &#x26;&#x26; t.tr[u].r &#x3C;= r {</span></span>
+<span class="line"><span>		return t.tr[u].s</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	mid := (t.tr[u].l + t.tr[u].r) >> 1</span></span>
+<span class="line"><span>	v := 0</span></span>
+<span class="line"><span>	if l &#x3C;= mid {</span></span>
+<span class="line"><span>		v = t.querySum(u&#x3C;&#x3C;1, l, r)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if r > mid {</span></span>
+<span class="line"><span>		v += t.querySum(u&#x3C;&#x3C;1|1, l, r)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return v</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (t *segmentTree) queryIdx(u, l, r, k int) int {</span></span>
+<span class="line"><span>	if t.tr[u].mx &#x3C; k {</span></span>
+<span class="line"><span>		return 0</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if t.tr[u].l == t.tr[u].r {</span></span>
+<span class="line"><span>		return t.tr[u].l</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	mid := (t.tr[u].l + t.tr[u].r) >> 1</span></span>
+<span class="line"><span>	if t.tr[u&#x3C;&#x3C;1].mx >= k {</span></span>
+<span class="line"><span>		return t.queryIdx(u&#x3C;&#x3C;1, l, r, k)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if r > mid {</span></span>
+<span class="line"><span>		return t.queryIdx(u&#x3C;&#x3C;1|1, l, r, k)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return 0</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (t *segmentTree) pushup(u int) {</span></span>
+<span class="line"><span>	t.tr[u].s = t.tr[u&#x3C;&#x3C;1].s + t.tr[u&#x3C;&#x3C;1|1].s</span></span>
+<span class="line"><span>	t.tr[u].mx = max(t.tr[u&#x3C;&#x3C;1].mx, t.tr[u&#x3C;&#x3C;1|1].mx)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your BookMyShow object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(n, m);</span></span>
+<span class="line"><span> * param_1 := obj.Gather(k,maxRow);</span></span>
+<span class="line"><span> * param_2 := obj.Scatter(k,maxRow);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/booking-concert-tickets-in-groups" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2286.Booking%20Concert%20Tickets%20in%20Groups/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2296" tabindex="-1">2296. 设计一个文本编辑器 <a class="header-anchor" href="#q-2296" aria-label="Permalink to &quot;2296. 设计一个文本编辑器 {#q-2296}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：栈、设计、链表、字符串、双向链表、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>请你设计一个带光标的文本编辑器，它可以实现以下功能：</p>&#10;&#10;<ul>&#10;	<li><strong>添加：</strong>在光标所在处添加文本。</li>&#10;	<li><strong>删除：</strong>在光标所在处删除文本（模拟键盘的删除键）。</li>&#10;	<li><strong>移动：</strong>将光标往左或者往右移动。</li>&#10;</ul>&#10;&#10;<p>当删除文本时，只有光标左边的字符会被删除。光标会留在文本内，也就是说任意时候 <code>0 &lt;= cursor.position &lt;= currentText.length</code> 都成立。</p>&#10;&#10;<p>请你实现 <code>TextEditor</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>TextEditor()</code> 用空文本初始化对象。</li>&#10;	<li><code>void addText(string text)</code> 将 <code>text</code> 添加到光标所在位置。添加完后光标在 <code>text</code> 的右边。</li>&#10;	<li><code>int deleteText(int k)</code> 删除光标左边 <code>k</code> 个字符。返回实际删除的字符数目。</li>&#10;	<li><code>string cursorLeft(int k)</code> 将光标向左移动 <code>k</code> 次。返回移动后光标左边 <code>min(10, len)</code> 个字符，其中 <code>len</code> 是光标左边的字符数目。</li>&#10;	<li><code>string cursorRight(int k)</code> 将光标向右移动 <code>k</code> 次。返回移动后光标左边 <code>min(10, len)</code> 个字符，其中 <code>len</code> 是光标左边的字符数目。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;TextEditor&quot;, &quot;addText&quot;, &quot;deleteText&quot;, &quot;addText&quot;, &quot;cursorRight&quot;, &quot;cursorLeft&quot;, &quot;deleteText&quot;, &quot;cursorLeft&quot;, &quot;cursorRight&quot;]&#10;[[], [&quot;leetcode&quot;], [4], [&quot;practice&quot;], [3], [8], [10], [2], [6]]&#10;<strong>输出：</strong>&#10;[null, null, 4, null, &quot;etpractice&quot;, &quot;leet&quot;, 4, &quot;&quot;, &quot;practi&quot;]&#10;&#10;<strong>解释：</strong>&#10;TextEditor textEditor = new TextEditor(); // 当前 text 为 &quot;|&quot; 。（'|' 字符表示光标）&#10;textEditor.addText(&quot;leetcode&quot;); // 当前文本为 &quot;leetcode|&quot; 。&#10;textEditor.deleteText(4); // 返回 4&#10;                          // 当前文本为 &quot;leet|&quot; 。&#10;                          // 删除了 4 个字符。&#10;textEditor.addText(&quot;practice&quot;); // 当前文本为 &quot;leetpractice|&quot; 。&#10;textEditor.cursorRight(3); // 返回 &quot;etpractice&quot;&#10;                           // 当前文本为 &quot;leetpractice|&quot;. &#10;                           // 光标无法移动到文本以外，所以无法移动。&#10;                           // &quot;etpractice&quot; 是光标左边的 10 个字符。&#10;textEditor.cursorLeft(8); // 返回 &quot;leet&quot;&#10;                          // 当前文本为 &quot;leet|practice&quot; 。&#10;                          // &quot;leet&quot; 是光标左边的 min(10, 4) = 4 个字符。&#10;textEditor.deleteText(10); // 返回 4&#10;                           // 当前文本为 &quot;|practice&quot; 。&#10;                           // 只有 4 个字符被删除了。&#10;textEditor.cursorLeft(2); // 返回 &quot;&quot;&#10;                          // 当前文本为 &quot;|practice&quot; 。&#10;                          // 光标无法移动到文本以外，所以无法移动。&#10;                          // &quot;&quot; 是光标左边的 min(10, 0) = 0 个字符。&#10;textEditor.cursorRight(6); // 返回 &quot;practi&quot;&#10;                           // 当前文本为 &quot;practi|ce&quot; 。&#10;                           // &quot;practi&quot; 是光标左边的 min(10, 6) = 6 个字符。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= text.length, k &lt;= 40</code></li>&#10;	<li><code>text</code> 只含有小写英文字母。</li>&#10;	<li>调用 <code>addText</code> ，<code>deleteText</code> ，<code>cursorLeft</code> 和 <code>cursorRight</code> 的 <strong>总</strong> 次数不超过 <code>2 * 10<sup>4</sup></code> 次。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>进阶：</strong>你能设计并实现一个每次调用时间复杂度为 <code>O(k)</code> 的解决方案吗？</p></div>
+</details>
+<details class="details custom-block"><summary>方法一：左右栈 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>文本编辑器要在光标处插入、删除，并左右移动，总操作量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>&#xD7;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>，单次文本长 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>40</mn>
+</math></span>。若用字符串每次拼接，移动光标会反复复制。光标把文本分成左右两段，栈（或数组）在两端摊还 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 增删。</p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">left</mtext>
+</math></span> 存光标左侧， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">right</mtext>
+</math></span> 存右侧（栈顶靠近光标）。插入、删除只动 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">left</mtext>
+</math></span>；左右移动则在两栈之间倒 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个字符。返回左侧末尾至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 个字符。</p>
+</blockquote>
+<p>我们可以使用两个栈 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">left</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">right</mtext>
+</math></span>，其中栈 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">left</mtext>
+</math></span> 存储光标左边的字符，另一个栈 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">right</mtext>
+</math></span> 存储光标右边的字符。</p>
+<ul>
+<li>当调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>addText</mtext>
+</math></span> 方法时，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>text</mtext>
+</math></span> 中的字符依次入栈 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>left</mtext>
+</math></span>。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mtext>text</mtext>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li>当调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>deleteText</mtext>
+</math></span> 方法时，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>left</mtext>
+</math></span> 中的字符出栈最多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 次。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li>当调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>cursorLeft</mtext>
+</math></span> 方法时，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>left</mtext>
+</math></span> 中的字符出栈最多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 次，然后将出栈的字符依次入栈 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>right</mtext>
+</math></span>，最后返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>left</mtext>
+</math></span> 栈最多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 个字符。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li>当调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>cursorRight</mtext>
+</math></span> 方法时，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>right</mtext>
+</math></span> 中的字符出栈最多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 次，然后将出栈的字符依次入栈 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>left</mtext>
+</math></span>，最后返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>left</mtext>
+</math></span> 栈最多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 个字符。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+</ul>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type TextEditor struct {</span></span>
+<span class="line"><span>	left, right []byte</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() TextEditor {</span></span>
+<span class="line"><span>	return TextEditor{}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *TextEditor) AddText(text string) {</span></span>
+<span class="line"><span>	this.left = append(this.left, text...)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *TextEditor) DeleteText(k int) int {</span></span>
+<span class="line"><span>	k = min(k, len(this.left))</span></span>
+<span class="line"><span>	if k &#x3C; len(this.left) {</span></span>
+<span class="line"><span>		this.left = this.left[:len(this.left)-k]</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		this.left = []byte{}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return k</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *TextEditor) CursorLeft(k int) string {</span></span>
+<span class="line"><span>	k = min(k, len(this.left))</span></span>
+<span class="line"><span>	for ; k > 0; k-- {</span></span>
+<span class="line"><span>		this.right = append(this.right, this.left[len(this.left)-1])</span></span>
+<span class="line"><span>		this.left = this.left[:len(this.left)-1]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return string(this.left[max(len(this.left)-10, 0):])</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *TextEditor) CursorRight(k int) string {</span></span>
+<span class="line"><span>	k = min(k, len(this.right))</span></span>
+<span class="line"><span>	for ; k > 0; k-- {</span></span>
+<span class="line"><span>		this.left = append(this.left, this.right[len(this.right)-1])</span></span>
+<span class="line"><span>		this.right = this.right[:len(this.right)-1]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return string(this.left[max(len(this.left)-10, 0):])</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your TextEditor object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor();</span></span>
+<span class="line"><span> * obj.AddText(text);</span></span>
+<span class="line"><span> * param_2 := obj.DeleteText(k);</span></span>
+<span class="line"><span> * param_3 := obj.CursorLeft(k);</span></span>
+<span class="line"><span> * param_4 := obj.CursorRight(k);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-a-text-editor" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2296.Design%20a%20Text%20Editor/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2336" tabindex="-1">2336. 无限集中的最小数字 <a class="header-anchor" href="#q-2336" aria-label="Permalink to &quot;2336. 无限集中的最小数字 {#q-2336}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、哈希表、有序集合、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>现有一个包含所有正整数的集合 <code>[1, 2, 3, 4, 5, ...]</code> 。</p>&#10;&#10;<p>实现 <code>SmallestInfiniteSet</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>SmallestInfiniteSet()</code> 初始化 <strong>SmallestInfiniteSet</strong> 对象以包含 <strong>所有</strong> 正整数。</li>&#10;	<li><code>int popSmallest()</code> <strong>移除</strong> 并返回该无限集中的最小整数。</li>&#10;	<li><code>void addBack(int num)</code> 如果正整数 <code>num</code> <strong>不</strong> 存在于无限集中，则将一个 <code>num</code> <strong>添加</strong> 到该无限集中。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<pre>&#10;<strong>输入</strong>&#10;[&quot;SmallestInfiniteSet&quot;, &quot;addBack&quot;, &quot;popSmallest&quot;, &quot;popSmallest&quot;, &quot;popSmallest&quot;, &quot;addBack&quot;, &quot;popSmallest&quot;, &quot;popSmallest&quot;, &quot;popSmallest&quot;]&#10;[[], [2], [], [], [], [1], [], [], []]&#10;<strong>输出</strong>&#10;[null, null, 1, 2, 3, null, 1, 4, 5]&#10;&#10;<strong>解释</strong>&#10;SmallestInfiniteSet smallestInfiniteSet = new SmallestInfiniteSet();&#10;smallestInfiniteSet.addBack(2);    // 2 已经在集合中，所以不做任何变更。&#10;smallestInfiniteSet.popSmallest(); // 返回 1 ，因为 1 是最小的整数，并将其从集合中移除。&#10;smallestInfiniteSet.popSmallest(); // 返回 2 ，并将其从集合中移除。&#10;smallestInfiniteSet.popSmallest(); // 返回 3 ，并将其从集合中移除。&#10;smallestInfiniteSet.addBack(1);    // 将 1 添加到该集合中。&#10;smallestInfiniteSet.popSmallest(); // 返回 1 ，因为 1 在上一步中被添加到集合中，&#10;                                   // 且 1 是最小的整数，并将其从集合中移除。&#10;smallestInfiniteSet.popSmallest(); // 返回 4 ，并将其从集合中移除。&#10;smallestInfiniteSet.popSmallest(); // 返回 5 ，并将其从集合中移除。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= num &lt;= 1000</code></li>&#10;	<li>最多调用 <code>popSmallest</code> 和 <code>addBack</code> 方法 <strong>共计</strong> <code>1000</code> 次</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：有序集合 + 模拟 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>集合初值为全体正整数，但操作次数与数值均不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1000</mn>
+</math></span>，实际只会触及 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1000</mn>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+<p>用有序集合存放当前仍在的数。弹出即删最小元，加回即插入；有序性保证每次 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 取得最小值。</p>
+</blockquote>
+<p>我们注意到，题目中集合的元素范围是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1000</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，并且我们需要支持的操作有：</p>
+<ul>
+<li><code v-pre>popSmallest</code>：弹出集合中的最小元素</li>
+<li><code v-pre>addBack</code>：向集合中添加元素</li>
+</ul>
+<p>因此，我们可以使用有序集合来模拟，不妨记有序集合为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，集合中的元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <mo>&#x22EF;</mo>
+  <mo>,</mo>
+  <msub>
+    <mi>s</mi>
+    <mi>n</mi>
+  </msub>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为有序集合中的元素个数。本题中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>1000</mn>
+</math></span>。</p>
+<p>我们在初始化时，将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>1000</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 中的所有元素加入有序集合中。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>在 <code v-pre>popSmallest</code> 操作中，我们只需要弹出有序集合中的第一个元素即可。单次操作时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>在 <code v-pre>addBack</code> 操作中，我们只需要将元素加入有序集合中即可。单次操作时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type SmallestInfiniteSet struct {</span></span>
+<span class="line"><span>	s *treemap.Map</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() SmallestInfiniteSet {</span></span>
+<span class="line"><span>	s := treemap.NewWithIntComparator()</span></span>
+<span class="line"><span>	for i := 1; i &#x3C;= 1000; i++ {</span></span>
+<span class="line"><span>		s.Put(i, nil)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return SmallestInfiniteSet{s}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *SmallestInfiniteSet) PopSmallest() int {</span></span>
+<span class="line"><span>	x, _ := this.s.Min()</span></span>
+<span class="line"><span>	this.s.Remove(x.(int))</span></span>
+<span class="line"><span>	return x.(int)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *SmallestInfiniteSet) AddBack(num int) {</span></span>
+<span class="line"><span>	this.s.Put(num, nil)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your SmallestInfiniteSet object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor();</span></span>
+<span class="line"><span> * param_1 := obj.PopSmallest();</span></span>
+<span class="line"><span> * obj.AddBack(num);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/smallest-number-in-infinite-set" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2336.Smallest%20Number%20in%20Infinite%20Set/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2349" tabindex="-1">2349. 设计数字容器系统 <a class="header-anchor" href="#q-2349" aria-label="Permalink to &quot;2349. 设计数字容器系统 {#q-2349}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、哈希表、有序集合、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>设计一个数字容器系统，可以实现以下功能：</p>&#10;&#10;<ul>&#10;	<li>在系统中给定下标处 <strong>插入</strong> 或者 <strong>替换</strong> 一个数字。</li>&#10;	<li><strong>返回</strong> 系统中给定数字的最小下标。</li>&#10;</ul>&#10;&#10;<p>请你实现一个 <code>NumberContainers</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>NumberContainers()</code> 初始化数字容器系统。</li>&#10;	<li><code>void change(int index, int number)</code> 在下标 <code>index</code> 处填入 <code>number</code> 。如果该下标 <code>index</code> 处已经有数字了，那么用 <code>number</code> 替换该数字。</li>&#10;	<li><code>int find(int number)</code> 返回给定数字 <code>number</code> 在系统中的最小下标。如果系统中没有 <code>number</code> ，那么返回 <code>-1</code> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;NumberContainers&quot;, &quot;find&quot;, &quot;change&quot;, &quot;change&quot;, &quot;change&quot;, &quot;change&quot;, &quot;find&quot;, &quot;change&quot;, &quot;find&quot;]&#10;[[], [10], [2, 10], [1, 10], [3, 10], [5, 10], [10], [1, 20], [10]]&#10;<strong>输出：</strong>&#10;[null, -1, null, null, null, null, 1, null, 2]&#10;&#10;<strong>解释：</strong>&#10;NumberContainers nc = new NumberContainers();&#10;nc.find(10); // 没有数字 10 ，所以返回 -1 。&#10;nc.change(2, 10); // 容器中下标为 2 处填入数字 10 。&#10;nc.change(1, 10); // 容器中下标为 1 处填入数字 10 。&#10;nc.change(3, 10); // 容器中下标为 3 处填入数字 10 。&#10;nc.change(5, 10); // 容器中下标为 5 处填入数字 10 。&#10;nc.find(10); // 数字 10 所在的下标为 1 ，2 ，3 和 5 。因为最小下标为 1 ，所以返回 1 。&#10;nc.change(1, 20); // 容器中下标为 1 处填入数字 20 。注意，下标 1 处之前为 10 ，现在被替换为 20 。&#10;nc.find(10); // 数字 10 所在下标为 2 ，3 和 5 。最小下标为 2 ，所以返回 2 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= index, number &lt;= 10<sup>9</sup></code></li>&#10;	<li>调用 <code>change</code> 和 <code>find</code> 的 <strong>总次数</strong> 不超过 <code>10<sup>5</sup></code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 + 有序集合 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>需要改下标上的数，并查询某数出现的最小下标。操作达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，线性扫描不可行。</p>
+<p>哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 记每个下标的当前值，有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>b</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 记该值的全部下标。修改时先从旧集合删除再插入新集合； <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mi>d</mi>
+</math></span> 取有序集合首元。</p>
+</blockquote>
+<p>我们用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 记录下标和数字的映射关系，用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span> 记录每个数字对应的下标集合，这里我们可以使用有序集合来存储下标，这样我们就可以方便地找到最小下标。</p>
+<p>调用 <code v-pre>change</code> 方法时，我们先判断下标是否已经存在，如果存在，我们就将原来的数字从对应的下标集合中删除，然后将新的数字添加到对应的下标集合中。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>调用 <code v-pre>find</code> 方法时，我们直接返回对应数字的下标集合的第一个元素即可。时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数字的个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type NumberContainers struct {</span></span>
+<span class="line"><span>	d map[int]int</span></span>
+<span class="line"><span>	g map[int]*redblacktree.Tree</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor() NumberContainers {</span></span>
+<span class="line"><span>	return NumberContainers{map[int]int{}, map[int]*redblacktree.Tree{}}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *NumberContainers) Change(index int, number int) {</span></span>
+<span class="line"><span>	if oldNumber, ok := this.d[index]; ok {</span></span>
+<span class="line"><span>		this.g[oldNumber].Remove(index)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.d[index] = number</span></span>
+<span class="line"><span>	if _, ok := this.g[number]; !ok {</span></span>
+<span class="line"><span>		this.g[number] = redblacktree.NewWithIntComparator()</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.g[number].Put(index, nil)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *NumberContainers) Find(number int) int {</span></span>
+<span class="line"><span>	if ids, ok := this.g[number]; ok &#x26;&#x26; ids.Size() > 0 {</span></span>
+<span class="line"><span>		return ids.Left().Key.(int)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return -1</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your NumberContainers object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor();</span></span>
+<span class="line"><span> * obj.Change(index,number);</span></span>
+<span class="line"><span> * param_2 := obj.Find(number);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-a-number-container-system" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2349.Design%20a%20Number%20Container%20System/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2353" tabindex="-1">2353. 设计食物评分系统 <a class="header-anchor" href="#q-2353" aria-label="Permalink to &quot;2353. 设计食物评分系统 {#q-2353}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数组、哈希表、字符串、有序集合、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>设计一个支持下述操作的食物评分系统：</p>&#10;&#10;<ul>&#10;	<li><strong>修改</strong> 系统中列出的某种食物的评分。</li>&#10;	<li>返回系统中某一类烹饪方式下评分最高的食物。</li>&#10;</ul>&#10;&#10;<p>实现 <code>FoodRatings</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>FoodRatings(String[] foods, String[] cuisines, int[] ratings)</code> 初始化系统。食物由 <code>foods</code>、<code>cuisines</code> 和 <code>ratings</code> 描述，长度均为 <code>n</code> 。&#10;&#10;    <ul>&#10;    	<li><code>foods[i]</code> 是第 <code>i</code> 种食物的名字。</li>&#10;    	<li><code>cuisines[i]</code> 是第 <code>i</code> 种食物的烹饪方式。</li>&#10;    	<li><code>ratings[i]</code> 是第 <code>i</code> 种食物的最初评分。</li>&#10;    </ul>&#10;    </li>&#10;    <li><code>void changeRating(String food, int newRating)</code> 修改名字为 <code>food</code> 的食物的评分。</li>&#10;    <li><code>String highestRated(String cuisine)</code> 返回指定烹饪方式 <code>cuisine</code> 下评分最高的食物的名字。如果存在并列，返回 <strong>字典序较小</strong> 的名字。</li>&#10;&#10;</ul>&#10;&#10;<p>注意，字符串 <code>x</code> 的字典序比字符串 <code>y</code> 更小的前提是：<code>x</code> 在字典中出现的位置在 <code>y</code> 之前，也就是说，要么 <code>x</code> 是 <code>y</code> 的前缀，或者在满足 <code>x[i] != y[i]</code> 的第一个位置 <code>i</code> 处，<code>x[i]</code> 在字母表中出现的位置在 <code>y[i]</code> 之前。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<pre><strong>输入</strong>&#10;[&quot;FoodRatings&quot;, &quot;highestRated&quot;, &quot;highestRated&quot;, &quot;changeRating&quot;, &quot;highestRated&quot;, &quot;changeRating&quot;, &quot;highestRated&quot;]&#10;[[[&quot;kimchi&quot;, &quot;miso&quot;, &quot;sushi&quot;, &quot;moussaka&quot;, &quot;ramen&quot;, &quot;bulgogi&quot;], [&quot;korean&quot;, &quot;japanese&quot;, &quot;japanese&quot;, &quot;greek&quot;, &quot;japanese&quot;, &quot;korean&quot;], [9, 12, 8, 15, 14, 7]], [&quot;korean&quot;], [&quot;japanese&quot;], [&quot;sushi&quot;, 16], [&quot;japanese&quot;], [&quot;ramen&quot;, 16], [&quot;japanese&quot;]]&#10;<strong>输出</strong>&#10;[null, &quot;kimchi&quot;, &quot;ramen&quot;, null, &quot;sushi&quot;, null, &quot;ramen&quot;]&#10;&#10;<strong>解释</strong>&#10;FoodRatings foodRatings = new FoodRatings([&quot;kimchi&quot;, &quot;miso&quot;, &quot;sushi&quot;, &quot;moussaka&quot;, &quot;ramen&quot;, &quot;bulgogi&quot;], [&quot;korean&quot;, &quot;japanese&quot;, &quot;japanese&quot;, &quot;greek&quot;, &quot;japanese&quot;, &quot;korean&quot;], [9, 12, 8, 15, 14, 7]);&#10;foodRatings.highestRated(&quot;korean&quot;); // 返回 &quot;kimchi&quot;&#10;                                    // &quot;kimchi&quot; 是分数最高的韩式料理，评分为 9 。&#10;foodRatings.highestRated(&quot;japanese&quot;); // 返回 &quot;ramen&quot;&#10;                                      // &quot;ramen&quot; 是分数最高的日式料理，评分为 14 。&#10;foodRatings.changeRating(&quot;sushi&quot;, 16); // &quot;sushi&quot; 现在评分变更为 16 。&#10;foodRatings.highestRated(&quot;japanese&quot;); // 返回 &quot;sushi&quot;&#10;                                      // &quot;sushi&quot; 是分数最高的日式料理，评分为 16 。&#10;foodRatings.changeRating(&quot;ramen&quot;, 16); // &quot;ramen&quot; 现在评分变更为 16 。&#10;foodRatings.highestRated(&quot;japanese&quot;); // 返回 &quot;ramen&quot;&#10;                                      // &quot;sushi&quot; 和 &quot;ramen&quot; 的评分都是 16 。&#10;                                      // 但是，&quot;ramen&quot; 的字典序比 &quot;sushi&quot; 更小。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 2 * 10<sup>4</sup></code></li>&#10;	<li><code>n == foods.length == cuisines.length == ratings.length</code></li>&#10;	<li><code>1 &lt;= foods[i].length, cuisines[i].length &lt;= 10</code></li>&#10;	<li><code>foods[i]</code>、<code>cuisines[i]</code> 由小写英文字母组成</li>&#10;	<li><code>1 &lt;= ratings[i] &lt;= 10<sup>8</sup></code></li>&#10;	<li><code>foods</code> 中的所有字符串 <strong>互不相同</strong></li>&#10;	<li>在对 <code>changeRating</code> 的所有调用中，<code>food</code> 是系统中食物的名字。</li>&#10;	<li>在对 <code>highestRated</code> 的所有调用中，<code>cuisine</code> 是系统中 <strong>至少一种</strong> 食物的烹饪方式。</li>&#10;	<li>最多调用 <code>changeRating</code> 和 <code>highestRated</code> <strong>总计</strong> <code>2 * 10<sup>4</sup></code> 次</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 + 有序集合 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>要按菜系查询评分最高、字典序最小的食物，并支持改分。调用达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>&#xD7;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>，每次线性扫描过慢。</p>
+<p>每个菜系用有序集合存 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mo>&#x2212;</mo>
+  <mi>r</mi>
+  <mi>a</mi>
+  <mi>t</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mi>g</mi>
+  <mo>,</mo>
+  <mi>f</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>d</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，另用哈希表记下食物的当前评分与菜系。改分时删除旧二元组、插入新二元组；查询取集合首元的食物名。</p>
+</blockquote>
+<p>我们可以使用哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">d</mtext>
+</math></span> 来存储每种烹饪方式下的食物，其中键是烹饪方式，值是一个有序集合，有序集合的每个元素是一个二元组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">rating</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">food</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>，按照评分从高到低排序，如果评分相同，则按照食物名字的字典序从小到大排序。</p>
+<p>我们还可以使用哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">g</mtext>
+</math></span> 来存储每种食物的评分和烹饪方式。即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">g</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">food</mtext>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">rating</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">cuisine</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>在构造函数中，我们遍历 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">foods</mtext>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cuisines</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ratings</mtext>
+</math></span>，将每种食物的评分和烹饪方式存储到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">d</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">g</mtext>
+</math></span> 中。</p>
+<p>在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">changeRating</mtext>
+</math></span> 函数中，我们首先获取食物 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">food</mtext>
+</math></span> 的原评分 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">oldRating</mtext>
+</math></span> 和烹饪方式 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cuisine</mtext>
+</math></span>，然后更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">g</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">food</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 的评分为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">newRating</mtext>
+</math></span>，并从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">d</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">cuisine</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 中删除 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">oldRating</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">food</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>，并将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">newRating</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">food</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 添加到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">d</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">cuisine</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 中。</p>
+<p>在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">highestRated</mtext>
+</math></span> 函数中，我们直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">d</mtext>
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">cuisine</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 的第一个元素的食物名字即可。</p>
+<p>时间复杂度方面，构造函数的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是食物的数量。其余操作的时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。空间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>import (</span></span>
+<span class="line"><span>	"github.com/emirpasic/gods/v2/trees/redblacktree"</span></span>
+<span class="line"><span>)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type pair struct {</span></span>
+<span class="line"><span>	rating int</span></span>
+<span class="line"><span>	food   string</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type FoodRatings struct {</span></span>
+<span class="line"><span>	d map[string]*redblacktree.Tree[pair, struct{}]</span></span>
+<span class="line"><span>	g map[string]pair</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(foods []string, cuisines []string, ratings []int) FoodRatings {</span></span>
+<span class="line"><span>	d := make(map[string]*redblacktree.Tree[pair, struct{}])</span></span>
+<span class="line"><span>	g := make(map[string]pair)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	for i, food := range foods {</span></span>
+<span class="line"><span>		rating, cuisine := ratings[i], cuisines[i]</span></span>
+<span class="line"><span>		g[food] = pair{rating, cuisine}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>		if d[cuisine] == nil {</span></span>
+<span class="line"><span>			d[cuisine] = redblacktree.NewWith[pair, struct{}](func(a, b pair) int {</span></span>
+<span class="line"><span>				return cmp.Or(b.rating-a.rating, strings.Compare(a.food, b.food))</span></span>
+<span class="line"><span>			})</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		d[cuisine].Put(pair{rating, food}, struct{}{})</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	return FoodRatings{d, g}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FoodRatings) ChangeRating(food string, newRating int) {</span></span>
+<span class="line"><span>	p := this.g[food]</span></span>
+<span class="line"><span>	t := this.d[p.food]</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	t.Remove(pair{p.rating, food})</span></span>
+<span class="line"><span>	t.Put(pair{newRating, food}, struct{}{})</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	p.rating = newRating</span></span>
+<span class="line"><span>	this.g[food] = p</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *FoodRatings) HighestRated(cuisine string) string {</span></span>
+<span class="line"><span>	return this.d[cuisine].Left().Key.food</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your FoodRatings object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(foods, cuisines, ratings);</span></span>
+<span class="line"><span> * obj.ChangeRating(food,newRating);</span></span>
+<span class="line"><span> * param_2 := obj.HighestRated(cuisine);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-a-food-rating-system" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2353.Design%20a%20Food%20Rating%20System/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2408" tabindex="-1">2408. 设计 SQL <a class="header-anchor" href="#q-2408" aria-label="Permalink to &quot;2408. 设计 SQL {#q-2408}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数组、哈希表、字符串</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定两个字符串数组 <code>names</code> 和 <code>columns</code>，大小都为 <code>n</code>。其中 <code>names[i]</code> 是第 <code>i</code> 个表的名称，<code>columns[i]</code> 是第 <code>i</code> 个表的列数。</p>&#10;&#10;<p>您需要实现一个支持以下 <strong>操作 </strong>的类：</p>&#10;&#10;<ul>&#10;	<li>在特定的表中 <strong>插入 </strong>一行。插入的每一行都有一个 id。id 是使用自动递增方法分配的，其中第一个插入行的 id 为 1，同一个表中的后续其他行的 id 为上一个插入行的 id (即使它已被删除) 加 1。</li>&#10;	<li>从指定表中 <strong>删除 </strong>一行。<strong>注意</strong>，删除一行 <strong>不会</strong> 影响下一个插入行的 id。</li>&#10;	<li>从任何表中 <strong>查询 </strong>一个特定的单元格并返回其值。</li>&#10;	<li>从任何表以 csv 格式 <strong>导出</strong> 所有行。</li>&#10;</ul>&#10;&#10;<p>实现 <code>SQL</code> 类:</p>&#10;&#10;<ul>&#10;	<li><code>SQL(String[] names, int[] columns)</code>&#10;&#10;    <ul>&#10;    	<li>创建 <code>n</code> 个表。</li>&#10;    </ul>&#10;    </li>&#10;    <li><code>bool ins(String name, String[] row)</code>&#10;    <ul>&#10;    	<li>将 <code>row</code> 插入表 <code>name</code> 中并返回 <code>true</code>。</li>&#10;    	<li>如果 <code>row.length</code> <strong>不</strong> 匹配列的预期数量，或者 <code>name</code> <strong>不是</strong> 一个合法的表，不进行任何插入并返回 <code>false</code>。</li>&#10;    </ul>&#10;    </li>&#10;    <li><code>void rmv(String name, int rowId, int columnId)</code>&#10;    <ul>&#10;    	<li>从表 <code>name</code> 中移除行 <code>rowId</code>。</li>&#10;    	<li>如果 <code>name</code> <strong>不是</strong> 一个合法的表或者没有 id 为 <code>rowId</code> 的行，不进行删除。</li>&#10;    </ul>&#10;    </li>&#10;    <li><code>String sel(String name, int rowId, int columnId)</code>&#10;    <ul>&#10;    	<li>返回表 <code>name</code> 中位于特定的 <code>rowId</code> 和 <code>columnId</code> 的单元格的值。</li>&#10;    	<li>如果 name <strong>不是 </strong>一个合法的表，或者单元格 <code>(rowId, columnId)</code> <strong>不合法</strong>，返回 <code>&quot;&lt;null>&quot;</code>。</li>&#10;    </ul>&#10;    </li>&#10;    <li><code>String[] exp(String name)</code>&#10;    <ul>&#10;    	<li>返回表 <code>name</code> 中出现的行。</li>&#10;    	<li>如果 <code>name</code> <strong>不是</strong> 一个合法的表，返回一个空数组。每一行以字符串表示，每个单元格的值（<strong>包括</strong> 行的 id）以 <code>&quot;,&quot;</code> 分隔。</li>&#10;    </ul>&#10;    </li>&#10;&#10;</ul>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<div>&#10;<p><strong>输入：</strong></p>&#10;&#10;<pre>&#10;[&quot;SQL&quot;,&quot;ins&quot;,&quot;sel&quot;,&quot;ins&quot;,&quot;exp&quot;,&quot;rmv&quot;,&quot;sel&quot;,&quot;exp&quot;]&#10;[[[&quot;one&quot;,&quot;two&quot;,&quot;three&quot;],[2,3,1]],[&quot;two&quot;,[&quot;first&quot;,&quot;second&quot;,&quot;third&quot;]],[&quot;two&quot;,1,3],[&quot;two&quot;,[&quot;fourth&quot;,&quot;fifth&quot;,&quot;sixth&quot;]],[&quot;two&quot;],[&quot;two&quot;,1],[&quot;two&quot;,2,2],[&quot;two&quot;]]&#10;</pre>&#10;&#10;<p><strong>输出：</strong></p>&#10;&#10;<pre>&#10;[null,true,&quot;third&quot;,true,[&quot;1,first,second,third&quot;,&quot;2,fourth,fifth,sixth&quot;],null,&quot;fifth&quot;,[&quot;2,fourth,fifth,sixth&quot;]]</pre>&#10;&#10;<p><strong>解释：</strong></p>&#10;&#10;<pre>&#10;// 创建 3 张表。&#10;SQL sql = new SQL([&quot;one&quot;, &quot;two&quot;, &quot;three&quot;], [2, 3, 1]);&#10;&#10;// 将 id 为 1 的行添加到表 &quot;two&quot;。返回 True。&#10;sql.ins(&quot;two&quot;, [&quot;first&quot;, &quot;second&quot;, &quot;third&quot;]);&#10;&#10;// 从表 &quot;two&quot; 中 id 为 1 的行 &#10;// 其中第 3 列返回值 &quot;third&quot;。&#10;sql.sel(&quot;two&quot;, 1, 3);&#10;&#10;// 将另外一个 id 为 2 的行添加到表 &quot;two&quot;。返回 True。&#10;sql.ins(&quot;two&quot;, [&quot;fourth&quot;, &quot;fifth&quot;, &quot;sixth&quot;]);&#10;&#10;// 导出表 &quot;two&quot; 的行。&#10;// 目前表中有两行 id 为 1 和 2 。&#10;sql.exp(&quot;two&quot;);&#10;&#10;// 删除表 &quot;two&quot; 当中的第一行。注意第二行的 id&#10;// 依然为 2。&#10;sql.rmv(&quot;two&quot;, 1);&#10;&#10;// 从表 &quot;two&quot; 中 id 为 2 的行&#10;// 其中第 2 列返回值 &quot;fifth&quot;。&#10;sql.sel(&quot;two&quot;, 2, 2);&#10;&#10;// 导出表 &quot;two&quot; 的行。&#10;// 目前表中有一行 id 为 2。&#10;sql.exp(&quot;two&quot;);&#10;</pre>&#10;</div>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;<strong>输入：</strong>&#10;&#10;<pre>&#10;[&quot;SQL&quot;,&quot;ins&quot;,&quot;sel&quot;,&quot;ins&quot;,&quot;exp&quot;,&quot;rmv&quot;,&quot;sel&quot;,&quot;exp&quot;]&#10;[[[&quot;one&quot;,&quot;two&quot;,&quot;three&quot;],[2,3,1]],[&quot;two&quot;,[&quot;first&quot;,&quot;second&quot;,&quot;third&quot;]],[&quot;two&quot;,1,3],[&quot;two&quot;,[&quot;fourth&quot;,&quot;fifth&quot;,&quot;sixth&quot;]],[&quot;two&quot;],[&quot;two&quot;,1],[&quot;two&quot;,2,2],[&quot;two&quot;]]&#10;</pre>&#10;&#10;<strong>输出：</strong>&#10;&#10;<pre>&#10;[null,true,&quot;third&quot;,true,[&quot;1,first,second,third&quot;,&quot;2,fourth,fifth,sixth&quot;],null,&quot;fifth&quot;,[&quot;2,fourth,fifth,sixth&quot;]]&#10;</pre>&#10;&#10;<strong>解释：</strong>&#10;&#10;<pre>&#10;// 创建 3 张表&#10;SQL sQL = new SQL([&quot;one&quot;, &quot;two&quot;, &quot;three&quot;], [2, 3, 1]); &#10;&#10;// 将 id 为 1 的行添加到表 &quot;two&quot;。返回 True。&#10;sQL.ins(&quot;two&quot;, [&quot;first&quot;, &quot;second&quot;, &quot;third&quot;]); &#10;&#10;// 从表 &quot;two&quot; 中 id 为 1 的行&#10;// 其中第 3 列返回值 &quot;third&quot;。&#10;sQL.sel(&quot;two&quot;, 1, 3); &#10;&#10;// 删除表 &quot;two&quot; 的第一行。&#10;sQL.rmv(&quot;two&quot;, 1); &#10;&#10;// 返回 &quot;&lt;null>&quot; 因为 id 为 1 的单元格&#10;// 已经从表 &quot;two&quot; 中删除。&#10;sQL.sel(&quot;two&quot;, 1, 2); &#10;&#10;// 返回 False 因为列的数量不正确。&#10;sQL.ins(&quot;two&quot;, [&quot;fourth&quot;, &quot;fifth&quot;]); &#10;&#10;// 将 id 为 2 的行添加到表 &quot;two&quot;。返回 True。&#10;sQL.ins(&quot;two&quot;, [&quot;fourth&quot;, &quot;fifth&quot;, &quot;sixth&quot;]); &#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == names.length == columns.length</code></li>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>1 &lt;= names[i].length, row[i].length, name.length &lt;= 10</code></li>&#10;	<li><code>names[i]</code>, <code>row[i]</code>, <code>name</code> 由小写英文字母组成。</li>&#10;	<li><code>1 &lt;= columns[i] &lt;= 10</code></li>&#10;	<li><code>1 &lt;= row.length &lt;= 10</code></li>&#10;	<li>所有的 <code>names[i]</code> 都是 <strong>不同 </strong>的。</li>&#10;	<li>最多调用 <code>ins</code> 和 <code>rmv</code> <code>2000</code> 次。</li>&#10;	<li>最多调用 <code>sel</code> <code>10<sup>4</sup></code> 次。</li>&#10;	<li>最多调用 <code>exp</code> <code>500</code> 次。</li>&#10;</ul>&#10;&#10;<p><strong>进阶：</strong>如果表因多次删除而变得稀疏，您会选择哪种方法？为什么？考虑对内存使用和性能的影响。</p></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每张表都要保留稳定的行号和列数，删除一行之后其余行的编号保持不变。插入和删除最多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2000</mn>
+</math></span> 次，不必实现完整的关系型引擎。</p>
+<p>若只按下标 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>w</mi>
+  <mi>I</mi>
+  <mi>d</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 存放行，被删单元格仍会被读到，导出也会带上已删除的行。行号在删除之后继续递增，空出来的编号不能再次使用。</p>
+<p>因此我们用表名映射到「行号 → 单元格」的哈希表，同时记下每张表的列数和下一个行号。</p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ins</mtext>
+</math></span> 只在表存在且行宽与列数一致时写入新行。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">rmv</mtext>
+</math></span> 删掉对应行号。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">sel</mtext>
+</math></span> 在表不存在、行已删除或列号越界时返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <merror data-mjx-error="'&amp;' can not be used here" title="'&amp;' can not be used here">
+    <mtext>\\texttt{&amp;lt;null&gt;}</mtext>
+  </merror>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">exp</mtext>
+</math></span> 按行号顺序把仍然存在的行连同行号用逗号拼出来。</p>
+</blockquote>
+<p>分别记录每张表的列数，以及按行号存放的现存数据。直接模拟题目中的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ins</mtext>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">rmv</mtext>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">sel</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">exp</mtext>
+</math></span>。</p>
+<p>插入、删除和查询的平均时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。导出一张表需要扫描其中仍然存在的行。空间与插入的单元格总数成正比。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type SQL struct {</span></span>
+<span class="line"><span>	cols   map[string]int</span></span>
+<span class="line"><span>	rows   map[string]map[int][]string</span></span>
+<span class="line"><span>	nextId map[string]int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(names []string, columns []int) SQL {</span></span>
+<span class="line"><span>	cols := map[string]int{}</span></span>
+<span class="line"><span>	rows := map[string]map[int][]string{}</span></span>
+<span class="line"><span>	nextId := map[string]int{}</span></span>
+<span class="line"><span>	for i, name := range names {</span></span>
+<span class="line"><span>		cols[name] = columns[i]</span></span>
+<span class="line"><span>		rows[name] = map[int][]string{}</span></span>
+<span class="line"><span>		nextId[name] = 1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return SQL{cols, rows, nextId}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *SQL) Ins(name string, row []string) bool {</span></span>
+<span class="line"><span>	c, ok := this.cols[name]</span></span>
+<span class="line"><span>	if !ok || len(row) != c {</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	id := this.nextId[name]</span></span>
+<span class="line"><span>	this.nextId[name] = id + 1</span></span>
+<span class="line"><span>	cp := append([]string(nil), row...)</span></span>
+<span class="line"><span>	this.rows[name][id] = cp</span></span>
+<span class="line"><span>	return true</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *SQL) Rmv(name string, rowId int) {</span></span>
+<span class="line"><span>	if table, ok := this.rows[name]; ok {</span></span>
+<span class="line"><span>		delete(table, rowId)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *SQL) Sel(name string, rowId int, columnId int) string {</span></span>
+<span class="line"><span>	table, ok := this.rows[name]</span></span>
+<span class="line"><span>	if !ok {</span></span>
+<span class="line"><span>		return "&#x3C;null>"</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	row, ok := table[rowId]</span></span>
+<span class="line"><span>	if !ok || columnId &#x3C; 1 || columnId > len(row) {</span></span>
+<span class="line"><span>		return "&#x3C;null>"</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return row[columnId-1]</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *SQL) Exp(name string) []string {</span></span>
+<span class="line"><span>	table, ok := this.rows[name]</span></span>
+<span class="line"><span>	if !ok || len(table) == 0 {</span></span>
+<span class="line"><span>		return []string{}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ids := make([]int, 0, len(table))</span></span>
+<span class="line"><span>	for id := range table {</span></span>
+<span class="line"><span>		ids = append(ids, id)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	sort.Ints(ids)</span></span>
+<span class="line"><span>	ans := make([]string, 0, len(ids))</span></span>
+<span class="line"><span>	for _, id := range ids {</span></span>
+<span class="line"><span>		s := strconv.Itoa(id)</span></span>
+<span class="line"><span>		for _, cell := range table[id] {</span></span>
+<span class="line"><span>			s += "," + cell</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans = append(ans, s)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your SQL object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(names, columns);</span></span>
+<span class="line"><span> * param_1 := obj.Ins(name,row);</span></span>
+<span class="line"><span> * obj.Rmv(name,rowId);</span></span>
+<span class="line"><span> * param_3 := obj.Sel(name,rowId,columnId);</span></span>
+<span class="line"><span> * param_4 := obj.Exp(name);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-sql" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2408.Design%20SQL/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2424" tabindex="-1">2424. 最长上传前缀 <a class="header-anchor" href="#q-2424" aria-label="Permalink to &quot;2424. 最长上传前缀 {#q-2424}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：并查集、设计、树状数组、线段树、哈希表、二分查找、有序集合、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个 <code>n</code> 个视频的上传序列，每个视频编号为 <code>1</code> 到 <code>n</code> 之间的 <strong>不同</strong> 数字，你需要依次将这些视频上传到服务器。请你实现一个数据结构，在上传的过程中计算 <strong>最长上传前缀</strong> 。</p>&#10;&#10;<p>如果 <strong>闭区间</strong> <code>1</code> 到 <code>i</code> 之间的视频全部都已经被上传到服务器，那么我们称 <code>i</code> 是上传前缀。最长上传前缀指的是符合定义的 <code>i</code> 中的 <strong>最大值</strong> 。<br>&#10;<br>&#10;请你实现 <code>LUPrefix</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>LUPrefix(int n)</code> 初始化一个 <code>n</code> 个视频的流对象。</li>&#10;	<li><code>void upload(int video)</code> 上传 <code>video</code> 到服务器。</li>&#10;	<li><code>int longest()</code> 返回上述定义的 <strong>最长上传前缀</strong> 的长度。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>&#10;[&quot;LUPrefix&quot;, &quot;upload&quot;, &quot;longest&quot;, &quot;upload&quot;, &quot;longest&quot;, &quot;upload&quot;, &quot;longest&quot;]&#10;[[4], [3], [], [1], [], [2], []]&#10;<strong>输出：</strong>&#10;[null, null, 0, null, 1, null, 3]&#10;&#10;<strong>解释：</strong>&#10;LUPrefix server = new LUPrefix(4);   // 初始化 4个视频的上传流&#10;server.upload(3);                    // 上传视频 3 。&#10;server.longest();                    // 由于视频 1 还没有被上传，最长上传前缀是 0 。&#10;server.upload(1);                    // 上传视频 1 。&#10;server.longest();                    // 前缀 [1] 是最长上传前缀，所以我们返回 1 。&#10;server.upload(2);                    // 上传视频 2 。&#10;server.longest();                    // 前缀 [1,2,3] 是最长上传前缀，所以我们返回 3 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= video &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>video</code> 中所有值 <strong>互不相同</strong> 。</li>&#10;	<li><code>upload</code> 和 <code>longest</code> <strong>总调用</strong> 次数至多不超过 <code>2 * 10<sup>5</sup></code> 次。</li>&#10;	<li>至少会调用 <code>longest</code> 一次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：模拟 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>上传与查询各至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+  <mo>&#xD7;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span> 次，每次不能扫描 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mo stretchy="false">]</mo>
+</math></span>。最长前缀是从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 起连续已上传的最大 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>，新视频只有接到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 时才会推动 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>。</p>
+<p>用集合记录已上传编号，变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 为当前前缀。上传后若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 已在集合中则循环递增。每个编号使 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 前进至多一次，均摊 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们用变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 记录当前的最长上传前缀，用数组或哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 记录已经上传的视频。</p>
+<p>每次上传视频 <code v-pre>video</code> 时，将 <code v-pre>s[video]</code> 置为 <code v-pre>true</code>，然后循环判断 <code v-pre>s[r + 1]</code> 是否为 <code v-pre>true</code>，如果是，则更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为视频总数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type LUPrefix struct {</span></span>
+<span class="line"><span>	r int</span></span>
+<span class="line"><span>	s []bool</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(n int) LUPrefix {</span></span>
+<span class="line"><span>	return LUPrefix{0, make([]bool, n+1)}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *LUPrefix) Upload(video int) {</span></span>
+<span class="line"><span>	this.s[video] = true</span></span>
+<span class="line"><span>	for this.r+1 &#x3C; len(this.s) &#x26;&#x26; this.s[this.r+1] {</span></span>
+<span class="line"><span>		this.r++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *LUPrefix) Longest() int {</span></span>
+<span class="line"><span>	return this.r</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your LUPrefix object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(n);</span></span>
+<span class="line"><span> * obj.Upload(video);</span></span>
+<span class="line"><span> * param_2 := obj.Longest();</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/longest-uploaded-prefix" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2424.Longest%20Uploaded%20Prefix/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2502" tabindex="-1">2502. 设计内存分配器 <a class="header-anchor" href="#q-2502" aria-label="Permalink to &quot;2502. 设计内存分配器 {#q-2502}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、数组、哈希表、模拟</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数 <code>n</code> ，表示下标从 <strong>0</strong> 开始的内存数组的大小。所有内存单元开始都是空闲的。</p>&#10;&#10;<p>请你设计一个具备以下功能的内存分配器：</p>&#10;&#10;<ol>&#10;	<li><strong>分配 </strong>一块大小为 <code>size</code> 的连续空闲内存单元并赋 id <code>mID</code> 。</li>&#10;	<li><strong>释放</strong> 给定 id <code>mID</code> 对应的所有内存单元。</li>&#10;</ol>&#10;&#10;<p><strong>注意：</strong></p>&#10;&#10;<ul>&#10;	<li>多个块可以被分配到同一个 <code>mID</code> 。</li>&#10;	<li>你必须释放 <code>mID</code> 对应的所有内存单元，即便这些内存单元被分配在不同的块中。</li>&#10;</ul>&#10;&#10;<p>实现 <code>Allocator</code> 类：</p>&#10;&#10;<ul>&#10;	<li><code>Allocator(int n)</code> 使用一个大小为 <code>n</code> 的内存数组初始化 <code>Allocator</code> 对象。</li>&#10;	<li><code>int allocate(int size, int mID)</code> 找出大小为 <code>size</code> 个连续空闲内存单元且位于  <strong>最左侧</strong> 的块，分配并赋 id <code>mID</code> 。返回块的第一个下标。如果不存在这样的块，返回 <code>-1</code> 。</li>&#10;	<li><code>int freeMemory(int mID)</code> 释放 id <code>mID</code> 对应的所有内存单元。返回释放的内存单元数目。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<pre>&#10;<strong>输入</strong>&#10;[&quot;Allocator&quot;, &quot;allocate&quot;, &quot;allocate&quot;, &quot;allocate&quot;, &quot;freeMemory&quot;, &quot;allocate&quot;, &quot;allocate&quot;, &quot;allocate&quot;, &quot;freeMemory&quot;, &quot;allocate&quot;, &quot;freeMemory&quot;]&#10;[[10], [1, 1], [1, 2], [1, 3], [2], [3, 4], [1, 1], [1, 1], [1], [10, 2], [7]]&#10;<strong>输出</strong>&#10;[null, 0, 1, 2, 1, 3, 1, 6, 3, -1, 0]&#10;&#10;<strong>解释</strong>&#10;Allocator loc = new Allocator(10); // 初始化一个大小为 10 的内存数组，所有内存单元都是空闲的。&#10;loc.allocate(1, 1); // 最左侧的块的第一个下标是 0 。内存数组变为 [<strong>1</strong>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>]。返回 0 。&#10;loc.allocate(1, 2); // 最左侧的块的第一个下标是 1 。内存数组变为 [1,<strong>2</strong>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>]。返回 1 。&#10;loc.allocate(1, 3); // 最左侧的块的第一个下标是 2 。内存数组变为 [1,2,<strong>3</strong>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>]。返回 2 。&#10;loc.freeMemory(2); // 释放 mID 为 2 的所有内存单元。内存数组变为 [1,<u> </u>,<strong>3</strong>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>,<u> </u>] 。返回 1 ，因为只有 1 个 mID 为 2 的内存单元。&#10;loc.allocate(3, 4); // 最左侧的块的第一个下标是 3 。内存数组变为 [1,<u> </u>,3,<strong>4</strong>,<strong>4</strong>,<strong>4</strong>,<u> </u>,<u> </u>,<u> </u>,<u> </u>]。返回 3 。&#10;loc.allocate(1, 1); // 最左侧的块的第一个下标是 1 。内存数组变为 [1,<strong>1</strong>,3,4,4,4,<u> </u>,<u> </u>,<u> </u>,<u> </u>]。返回 1 。&#10;loc.allocate(1, 1); // 最左侧的块的第一个下标是 6 。内存数组变为 [1,1,3,4,4,4,<strong>1</strong>,<u> </u>,<u> </u>,<u> </u>]。返回 6 。&#10;loc.freeMemory(1); // 释放 mID 为 1 的所有内存单元。内存数组变为 [<u> </u>,<u> </u>,3,4,4,4,<u><strong> </strong></u>,<u> </u>,<u> </u>,<u> </u>] 。返回 3 ，因为有 3 个 mID 为 1 的内存单元。&#10;loc.allocate(10, 2); // 无法找出长度为 10 个连续空闲内存单元的空闲块，所有返回 -1 。&#10;loc.freeMemory(7); // 释放 mID 为 7 的所有内存单元。内存数组保持原状，因为不存在 mID 为 7 的内存单元。返回 0 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n, size, mID &lt;= 1000</code></li>&#10;	<li>最多调用 <code>allocate</code> 和 <code>free</code> 方法 <code>1000</code> 次</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：模拟 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>分配需在下标最小的连续空闲段中放入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">size</mtext>
+</math></span> 个单元，释放则回收某一 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mID</mtext>
+</math></span> 占据的全部单元。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>,</mo>
+  <mi>q</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>3</mn>
+  </msup>
+</math></span>，即便每次扫描整段内存也只需 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>为此用长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的数组标记占用：空闲记 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，分配时累计连续 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 的个数，凑满 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">size</mtext>
+</math></span> 后写入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mID</mtext>
+</math></span>；释放时扫一遍把等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mID</mtext>
+</math></span> 的位置清零并计数。</p>
+</blockquote>
+<p>题目数据范围不大，可以直接用数组模拟内存空间。</p>
+<p>初始化时，将数组中的每个元素置为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，表示空闲。</p>
+<p>当调用 <code v-pre>allocate</code> 方法时，遍历数组，找到连续的 <code v-pre>size</code> 个空闲内存单元，将其置为 <code v-pre>mID</code>，并返回第一个下标。</p>
+<p>当调用 <code v-pre>free</code> 方法时，遍历数组，将所有等于 <code v-pre>mID</code> 的内存单元置为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，表示空闲。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>q</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 分别为内存空间的大小和方法调用的次数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type Allocator struct {</span></span>
+<span class="line"><span>	m []int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(n int) Allocator {</span></span>
+<span class="line"><span>	return Allocator{m: make([]int, n)}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Allocator) Allocate(size int, mID int) int {</span></span>
+<span class="line"><span>	cnt := 0</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; len(this.m); i++ {</span></span>
+<span class="line"><span>		if this.m[i] > 0 {</span></span>
+<span class="line"><span>			cnt = 0</span></span>
+<span class="line"><span>		} else if cnt++; cnt == size {</span></span>
+<span class="line"><span>			for j := i - size + 1; j &#x3C;= i; j++ {</span></span>
+<span class="line"><span>				this.m[j] = mID</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			return i - size + 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return -1</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Allocator) FreeMemory(mID int) int {</span></span>
+<span class="line"><span>	ans := 0</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; len(this.m); i++ {</span></span>
+<span class="line"><span>		if this.m[i] == mID {</span></span>
+<span class="line"><span>			this.m[i] = 0</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your Allocator object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(n);</span></span>
+<span class="line"><span> * param_1 := obj.Allocate(size,mID);</span></span>
+<span class="line"><span> * param_2 := obj.FreeMemory(mID);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：哈希表 + 有序集合 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一对每次调用都线性扫描整段内存。若只维护已占用区间，则空闲段是相邻占用块之间的空隙。</p>
+<p>用有序集合保存占用区间并在两端各放哨兵 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，分配时按空隙长度做首次适配；再用哈希表记录每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mID</mtext>
+</math></span> 对应的若干区间，释放时按块删除。单次代价降为对占用块数量的对数。</p>
+</blockquote>
+<p>我们可以用有序集合维护所有已分配的内存单元的起始下标和结束下标，其中起始下标为键，结束下标为值；另外用哈希表维护 <code v-pre>mID</code> 和其对应的内存单元的起始下标。</p>
+<p>当调用 <code v-pre>allocate</code> 方法时，遍历有序集合，找到第一个长度大于等于 <code v-pre>size</code> 的空闲区间，将其分配给 <code v-pre>mID</code>，并更新有序集合。然后将 <code v-pre>mID</code> 和其对应的内存单元的起始下标加入哈希表。</p>
+<p>当调用 <code v-pre>free</code> 方法时，从哈希表中找到 <code v-pre>mID</code> 对应的内存单元的起始下标，然后将其从有序集合中删除，再将 <code v-pre>mID</code> 从哈希表中删除。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>q</mi>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 分别为内存空间的大小和方法调用的次数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type Allocator struct {</span></span>
+<span class="line"><span>	rbt *redblacktree.Tree</span></span>
+<span class="line"><span>	d   map[int][]int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(n int) Allocator {</span></span>
+<span class="line"><span>	rbt := redblacktree.NewWithIntComparator()</span></span>
+<span class="line"><span>	rbt.Put(-1, -1)</span></span>
+<span class="line"><span>	rbt.Put(n, n)</span></span>
+<span class="line"><span>	return Allocator{rbt, map[int][]int{}}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Allocator) Allocate(size int, mID int) int {</span></span>
+<span class="line"><span>	s := -1</span></span>
+<span class="line"><span>	it := this.rbt.Iterator()</span></span>
+<span class="line"><span>	for it.Next() {</span></span>
+<span class="line"><span>		v := it.Key().(int)</span></span>
+<span class="line"><span>		if s != -1 {</span></span>
+<span class="line"><span>			e := v - 1</span></span>
+<span class="line"><span>			if e-s+1 >= size {</span></span>
+<span class="line"><span>				this.rbt.Put(s, s+size-1)</span></span>
+<span class="line"><span>				this.d[mID] = append(this.d[mID], s)</span></span>
+<span class="line"><span>				return s</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		s = it.Value().(int) + 1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return -1</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *Allocator) FreeMemory(mID int) int {</span></span>
+<span class="line"><span>	ans := 0</span></span>
+<span class="line"><span>	for _, s := range this.d[mID] {</span></span>
+<span class="line"><span>		if e, ok := this.rbt.Get(s); ok {</span></span>
+<span class="line"><span>			this.rbt.Remove(s)</span></span>
+<span class="line"><span>			ans += e.(int) - s + 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.d[mID] = []int{}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your Allocator object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(n);</span></span>
+<span class="line"><span> * param_1 := obj.Allocate(size,mID);</span></span>
+<span class="line"><span> * param_2 := obj.FreeMemory(mID);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/design-memory-allocator" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2500-2599/2502.Design%20Memory%20Allocator/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2526" tabindex="-1">2526. 找到数据流中的连续整数 <a class="header-anchor" href="#q-2526" aria-label="Permalink to &quot;2526. 找到数据流中的连续整数 {#q-2526}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：设计、队列、哈希表、计数、数据流</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数数据流，请你实现一个数据结构，检查数据流中最后 <code>k</code> 个整数是否 <strong>等于</strong> 给定值 <code>value</code> 。</p>&#10;&#10;<p>请你实现 <strong>DataStream</strong> 类：</p>&#10;&#10;<ul>&#10;	<li><code>DataStream(int value, int k)</code> 用两个整数 <code>value</code> 和 <code>k</code> 初始化一个空的整数数据流。</li>&#10;	<li><code>boolean consec(int num)</code> 将 <code>num</code> 添加到整数数据流。如果后 <code>k</code> 个整数都等于 <code>value</code> ，返回 <code>true</code> ，否则返回 <code>false</code> 。如果少于 <code>k</code> 个整数，条件不满足，所以也返回 <code>false</code> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>&#10;[&quot;DataStream&quot;, &quot;consec&quot;, &quot;consec&quot;, &quot;consec&quot;, &quot;consec&quot;]&#10;[[4, 3], [4], [4], [4], [3]]&#10;<strong>输出：</strong>&#10;[null, false, false, true, false]&#10;&#10;<strong>解释：</strong>&#10;DataStream dataStream = new DataStream(4, 3); // value = 4, k = 3 &#10;dataStream.consec(4); // 数据流中只有 1 个整数，所以返回 False 。&#10;dataStream.consec(4); // 数据流中只有 2 个整数&#10;                      // 由于 2 小于 k ，返回 False 。&#10;dataStream.consec(4); // 数据流最后 3 个整数都等于 value， 所以返回 True 。&#10;dataStream.consec(3); // 最后 k 个整数分别是 [4,4,3] 。&#10;                      // 由于 3 不等于 value ，返回 False 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= value, num &lt;= 10<sup>9</sup></code></li>&#10;	<li><code>1 &lt;= k &lt;= 10<sup>5</sup></code></li>&#10;	<li>至多调用 <code>consec</code> 次数为 <code>10<sup>5</sup></code> 次。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：计数 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>数据流中要判断最近 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个整数是否都等于给定 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">value</mtext>
+</math></span>。保存整段历史再每次切片检查，空间随调用次数增长。</p>
+<p>只需连续相等的长度。维护计数器：当前值等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">value</mtext>
+</math></span> 则加一，否则清零，再与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 比较。单次 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们可以维护一个计数器 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span>，记录当前连续整数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">value</mtext>
+</math></span> 的个数。</p>
+<p>调用 <code v-pre>consec</code> 方法时，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">value</mtext>
+</math></span> 相等，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 自增 1，否则将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 重置为 0。然后判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 是否大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">k</mtext>
+</math></span> 即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type DataStream struct {</span></span>
+<span class="line"><span>	val, k, cnt int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(value int, k int) DataStream {</span></span>
+<span class="line"><span>	return DataStream{value, k, 0}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *DataStream) Consec(num int) bool {</span></span>
+<span class="line"><span>	if num == this.val {</span></span>
+<span class="line"><span>		this.cnt++</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		this.cnt = 0</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return this.cnt >= this.k</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/**</span></span>
+<span class="line"><span> * Your DataStream object will be instantiated and called as such:</span></span>
+<span class="line"><span> * obj := Constructor(value, k);</span></span>
+<span class="line"><span> * param_1 := obj.Consec(num);</span></span>
+<span class="line"><span> */</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/find-consecutive-integers-from-a-data-stream" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2500-2599/2526.Find%20Consecutive%20Integers%20from%20a%20Data%20Stream/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details></div>`},null,-1)])])}const u=s(p,[["render",l]]);export{d as __pageData,u as default};

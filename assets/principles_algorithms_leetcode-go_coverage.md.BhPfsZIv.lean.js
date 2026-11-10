@@ -1,0 +1,2478 @@
+import{_ as t,a as r,c as n,b as o}from"./chunks/framework.BSuaGltH.js";const h=JSON.parse('{"title":"LeetCode Go · 收录范围与使用说明","description":"题库来源版本、算法题覆盖统计、非 Go 题型及平台接口约定。","frontmatter":{"title":"LeetCode Go · 收录范围与使用说明","description":"题库来源版本、算法题覆盖统计、非 Go 题型及平台接口约定。","showdocs":{"topics":[{"id":"leetcode","title":"LeetCode","link":"/topics/leetcode/"}],"kind":"实践案例","scope":"general","audience":"general","group":"原理与设计","summary":"题库来源版本、算法题覆盖统计、非 Go 题型及平台接口约定。","status":"active","related":[{"title":"LeetCode Go · 并查集（1）","link":"/principles/algorithms/leetcode-go/union-find-01","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（2）","link":"/principles/algorithms/leetcode-go/union-find-02","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（3）","link":"/principles/algorithms/leetcode-go/union-find-03","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（4）","link":"/principles/algorithms/leetcode-go/union-find-04","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并发（1）","link":"/principles/algorithms/leetcode-go/concurrency-01","kind":"实践案例","scope":"general","audience":"general"}],"prev":{"text":"LeetCode Go 题库","link":"/principles/algorithms/leetcode-go/index"},"next":false},"layout":"ReadingPage","sidebar":false,"aside":false,"prev":{"text":"LeetCode Go 题库","link":"/principles/algorithms/leetcode-go/index"},"next":false},"headers":[],"relativePath":"principles/algorithms/leetcode-go/coverage.md","filePath":"principles/algorithms/leetcode-go/coverage.md"}'),a={name:"principles/algorithms/leetcode-go/coverage.md"};function d(c,e,l,b,f,s){return r(),n("div",null,[...e[0]||(e[0]=[o("div",{innerHTML:`<h1 id="leetcode-go-·-收录范围与使用说明" tabindex="-1">LeetCode Go · 收录范围与使用说明 <a class="header-anchor" href="#leetcode-go-·-收录范围与使用说明" aria-label="Permalink to &quot;LeetCode Go · 收录范围与使用说明&quot;">&ZeroWidthSpace;</a></h1>
+<p><a href="/principles/algorithms/leetcode-go/index">返回题库</a></p>
+<h2 id="收录范围" tabindex="-1">收录范围 <a class="header-anchor" href="#收录范围" aria-label="Permalink to &quot;收录范围&quot;">&ZeroWidthSpace;</a></h2>
+<p>本次核对来源主题库 solution 目录共 <strong>4096 题</strong>，现已为其中 <strong>3687 题</strong>收录 Go 答案，其中 <strong>181 题</strong>由 MIT 开源题解补充，另有 <strong>88 题</strong>由本站补写 Go 并提供独立测试。这是已核对题源的固定版本快照，不代表 LeetCode 平台实时全量；剑指 Offer、LCP、面试金典等独立题集不在本次主题库范围内。此快照中的算法题已全部配有 Go 实现；其余 <strong>409 题</strong>均属于数据库、Shell、JavaScript、Pandas 题型，下方逐题列出。</p>
+<p>每题只在一个主分类存放，筛选保留全部原始标签。题目、示例和约束可折叠，各种 Go 解法独立折叠。原题为会员题时仍以 LeetCode 的访问规则为准。</p>
+<h2 id="go-代码使用" tabindex="-1">Go 代码使用 <a class="header-anchor" href="#go-代码使用" aria-label="Permalink to &quot;Go 代码使用&quot;">&ZeroWidthSpace;</a></h2>
+<p>代码按 LeetCode 提交片段保留。平台提供的 ListNode、TreeNode、Node、交互接口等定义，以及部分 import，不一定写在代码片段中；本地运行需按该题补齐。部分解法使用第三方有序集合或较新的 Go 语法，使用时核对平台 Go 环境。导入实现保留题源版本，本站补写题目附有本地测试；未逐题进行 LeetCode 在线评测。并发、交互及需要大整数的题目，应按各题说明对接平台接口。</p>
+<p>图片保留来源地址，需要网络连接。</p>
+<h2 id="来源与许可" tabindex="-1">来源与许可 <a class="header-anchor" href="#来源与许可" aria-label="Permalink to &quot;来源与许可&quot;">&ZeroWidthSpace;</a></h2>
+<p>题目版权归 LeetCode；题解来自 <a href="https://github.com/doocs/leetcode" target="_blank" rel="noopener noreferrer">Doocs/leetcode</a>，按 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> 共享。补充 Go 代码来自<a href="https://github.com/EndlessCheng/codeforces-go/tree/e0fea933e2d713fd302622d2bb82a60f959a198e" target="_blank" rel="noopener noreferrer">灵茶山艾府</a>、<a href="https://github.com/halfrost/LeetCode-Go/tree/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e" target="_blank" rel="noopener noreferrer">halfrost</a>，保留 MIT 许可及逐题署名。本站提取 Go、调整分类及折叠排版；标注“本站整理”的 Go 解法依据题意与参考思路补写，按 CC BY-SA 4.0 共享。收录日期：2026-10-31；主题源版本：<a href="https://github.com/doocs/leetcode/tree/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011" target="_blank" rel="noopener noreferrer">91ef8c241a5e</a>。</p>
+<h2 id="未收录的来源题目" tabindex="-1">未收录的来源题目 <a class="header-anchor" href="#未收录的来源题目" aria-label="Permalink to &quot;未收录的来源题目&quot;">&ZeroWidthSpace;</a></h2>
+<table tabindex="0">
+<thead>
+<tr>
+<th>题目</th>
+<th>标签</th>
+<th>原因</th>
+<th>题解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode.cn/problems/combine-two-tables" target="_blank" rel="noopener noreferrer">175. 组合两个表</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0175.Combine%20Two%20Tables/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/second-highest-salary" target="_blank" rel="noopener noreferrer">176. 第二高的薪水</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0176.Second%20Highest%20Salary/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/nth-highest-salary" target="_blank" rel="noopener noreferrer">177. 第N高的薪水</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0177.Nth%20Highest%20Salary/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/rank-scores" target="_blank" rel="noopener noreferrer">178. 分数排名</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0178.Rank%20Scores/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/consecutive-numbers" target="_blank" rel="noopener noreferrer">180. 连续出现的数字</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0180.Consecutive%20Numbers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/employees-earning-more-than-their-managers" target="_blank" rel="noopener noreferrer">181. 超过经理收入的员工</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0181.Employees%20Earning%20More%20Than%20Their%20Managers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/duplicate-emails" target="_blank" rel="noopener noreferrer">182. 查找重复的电子邮箱</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0182.Duplicate%20Emails/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/customers-who-never-order" target="_blank" rel="noopener noreferrer">183. 从不订购的客户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0183.Customers%20Who%20Never%20Order/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/department-highest-salary" target="_blank" rel="noopener noreferrer">184. 部门工资最高的员工</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0184.Department%20Highest%20Salary/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/department-top-three-salaries" target="_blank" rel="noopener noreferrer">185. 部门工资前三高的所有员工</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0185.Department%20Top%20Three%20Salaries/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/word-frequency" target="_blank" rel="noopener noreferrer">192. 统计词频</a></td>
+<td>Shell</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0192.Word%20Frequency/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/valid-phone-numbers" target="_blank" rel="noopener noreferrer">193. 有效电话号码</a></td>
+<td>Shell</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0193.Valid%20Phone%20Numbers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/transpose-file" target="_blank" rel="noopener noreferrer">194. 转置文件</a></td>
+<td>Shell</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0194.Transpose%20File/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/tenth-line" target="_blank" rel="noopener noreferrer">195. 第十行</a></td>
+<td>Shell</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0195.Tenth%20Line/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/delete-duplicate-emails" target="_blank" rel="noopener noreferrer">196. 删除重复的电子邮箱</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0196.Delete%20Duplicate%20Emails/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/rising-temperature" target="_blank" rel="noopener noreferrer">197. 上升的温度</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0197.Rising%20Temperature/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/trips-and-users" target="_blank" rel="noopener noreferrer">262. 行程和用户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0200-0299/0262.Trips%20and%20Users/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/game-play-analysis-i" target="_blank" rel="noopener noreferrer">511. 游戏玩法分析 I</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0511.Game%20Play%20Analysis%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/game-play-analysis-ii" target="_blank" rel="noopener noreferrer">512. 游戏玩法分析 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0512.Game%20Play%20Analysis%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/game-play-analysis-iii" target="_blank" rel="noopener noreferrer">534. 游戏玩法分析 III 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0534.Game%20Play%20Analysis%20III/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/game-play-analysis-iv" target="_blank" rel="noopener noreferrer">550. 游戏玩法分析 IV</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0550.Game%20Play%20Analysis%20IV/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/median-employee-salary" target="_blank" rel="noopener noreferrer">569. 员工薪水中位数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0569.Median%20Employee%20Salary/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/managers-with-at-least-5-direct-reports" target="_blank" rel="noopener noreferrer">570. 至少有5名直接下属的经理</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0570.Managers%20with%20at%20Least%205%20Direct%20Reports/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-median-given-frequency-of-numbers" target="_blank" rel="noopener noreferrer">571. 给定数字的频率查询中位数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0571.Find%20Median%20Given%20Frequency%20of%20Numbers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/winning-candidate" target="_blank" rel="noopener noreferrer">574. 当选者 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0574.Winning%20Candidate/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/employee-bonus" target="_blank" rel="noopener noreferrer">577. 员工奖金</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0577.Employee%20Bonus/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/get-highest-answer-rate-question" target="_blank" rel="noopener noreferrer">578. 查询回答率最高的问题 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0578.Get%20Highest%20Answer%20Rate%20Question/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-cumulative-salary-of-an-employee" target="_blank" rel="noopener noreferrer">579. 查询员工的累计薪水 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0579.Find%20Cumulative%20Salary%20of%20an%20Employee/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/count-student-number-in-departments" target="_blank" rel="noopener noreferrer">580. 统计各专业学生人数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0580.Count%20Student%20Number%20in%20Departments/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-customer-referee" target="_blank" rel="noopener noreferrer">584. 寻找用户推荐人</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0584.Find%20Customer%20Referee/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/investments-in-2016" target="_blank" rel="noopener noreferrer">585. 2016年的投资</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0585.Investments%20in%202016/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/customer-placing-the-largest-number-of-orders" target="_blank" rel="noopener noreferrer">586. 订单最多的客户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0586.Customer%20Placing%20the%20Largest%20Number%20of%20Orders/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/big-countries" target="_blank" rel="noopener noreferrer">595. 大的国家</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0595.Big%20Countries/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/classes-with-at-least-5-students" target="_blank" rel="noopener noreferrer">596. 超过 5 名学生的课</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0596.Classes%20With%20at%20Least%205%20Students/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/friend-requests-i-overall-acceptance-rate" target="_blank" rel="noopener noreferrer">597. 好友申请 I：总体通过率 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0597.Friend%20Requests%20I%20Overall%20Acceptance%20Rate/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/human-traffic-of-stadium" target="_blank" rel="noopener noreferrer">601. 体育馆的人流量</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0601.Human%20Traffic%20of%20Stadium/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/friend-requests-ii-who-has-the-most-friends" target="_blank" rel="noopener noreferrer">602. 好友申请 II ：谁有最多的好友</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0602.Friend%20Requests%20II%20Who%20Has%20the%20Most%20Friends/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/consecutive-available-seats" target="_blank" rel="noopener noreferrer">603. 连续空余座位 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0603.Consecutive%20Available%20Seats/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sales-person" target="_blank" rel="noopener noreferrer">607. 销售员</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0607.Sales%20Person/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/tree-node" target="_blank" rel="noopener noreferrer">608. 树节点</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0608.Tree%20Node/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/triangle-judgement" target="_blank" rel="noopener noreferrer">610. 判断三角形</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0610.Triangle%20Judgement/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/shortest-distance-in-a-plane" target="_blank" rel="noopener noreferrer">612. 平面上的最近距离 🔒</a></td>
+<td>数据库、平面最近点对</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0612.Shortest%20Distance%20in%20a%20Plane/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/shortest-distance-in-a-line" target="_blank" rel="noopener noreferrer">613. 直线上的最近距离 🔒</a></td>
+<td>数据库、平面最近点对</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0613.Shortest%20Distance%20in%20a%20Line/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/second-degree-follower" target="_blank" rel="noopener noreferrer">614. 二级关注者 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0614.Second%20Degree%20Follower/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/average-salary-departments-vs-company" target="_blank" rel="noopener noreferrer">615. 平均工资：部门与公司比较 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0615.Average%20Salary%20Departments%20VS%20Company/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/students-report-by-geography" target="_blank" rel="noopener noreferrer">618. 学生地理信息报告 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0618.Students%20Report%20By%20Geography/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/biggest-single-number" target="_blank" rel="noopener noreferrer">619. 只出现一次的最大数字</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0619.Biggest%20Single%20Number/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/not-boring-movies" target="_blank" rel="noopener noreferrer">620. 有趣的电影</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0620.Not%20Boring%20Movies/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/exchange-seats" target="_blank" rel="noopener noreferrer">626. 换座位</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0626.Exchange%20Seats/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/swap-sex-of-employees" target="_blank" rel="noopener noreferrer">627. 变更性别</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0627.Swap%20Sex%20of%20Employees/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/customers-who-bought-all-products" target="_blank" rel="noopener noreferrer">1045. 买下所有产品的客户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1045.Customers%20Who%20Bought%20All%20Products/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/actors-and-directors-who-cooperated-at-least-three-times" target="_blank" rel="noopener noreferrer">1050. 合作过至少三次的演员和导演</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1050.Actors%20and%20Directors%20Who%20Cooperated%20At%20Least%20Three%20Times/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/product-sales-analysis-i" target="_blank" rel="noopener noreferrer">1068. 产品销售分析 I</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1068.Product%20Sales%20Analysis%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/product-sales-analysis-ii" target="_blank" rel="noopener noreferrer">1069. 产品销售分析 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1069.Product%20Sales%20Analysis%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/product-sales-analysis-iii" target="_blank" rel="noopener noreferrer">1070. 产品销售分析 III</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1070.Product%20Sales%20Analysis%20III/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/project-employees-i" target="_blank" rel="noopener noreferrer">1075. 项目员工 I</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1075.Project%20Employees%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/project-employees-ii" target="_blank" rel="noopener noreferrer">1076. 项目员工II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1076.Project%20Employees%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/project-employees-iii" target="_blank" rel="noopener noreferrer">1077. 项目员工 III 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1077.Project%20Employees%20III/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sales-analysis-i" target="_blank" rel="noopener noreferrer">1082. 销售分析 I 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1082.Sales%20Analysis%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sales-analysis-ii" target="_blank" rel="noopener noreferrer">1083. 销售分析 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1083.Sales%20Analysis%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sales-analysis-iii" target="_blank" rel="noopener noreferrer">1084. 销售分析 III</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1084.Sales%20Analysis%20III/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/game-play-analysis-v" target="_blank" rel="noopener noreferrer">1097. 游戏玩法分析 V 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1097.Game%20Play%20Analysis%20V/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/unpopular-books" target="_blank" rel="noopener noreferrer">1098. 小众书籍 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1098.Unpopular%20Books/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/new-users-daily-count" target="_blank" rel="noopener noreferrer">1107. 每日新用户统计 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1107.New%20Users%20Daily%20Count/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/highest-grade-for-each-student" target="_blank" rel="noopener noreferrer">1112. 每位学生的最高成绩 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1112.Highest%20Grade%20For%20Each%20Student/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/reported-posts" target="_blank" rel="noopener noreferrer">1113. 报告的记录 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1113.Reported%20Posts/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/active-businesses" target="_blank" rel="noopener noreferrer">1126. 查询活跃业务 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1126.Active%20Businesses/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/user-purchase-platform" target="_blank" rel="noopener noreferrer">1127. 用户购买平台 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1127.User%20Purchase%20Platform/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/reported-posts-ii" target="_blank" rel="noopener noreferrer">1132. 报告的记录 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1132.Reported%20Posts%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/user-activity-for-the-past-30-days-i" target="_blank" rel="noopener noreferrer">1141. 查询近30天活跃用户数</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1141.User%20Activity%20for%20the%20Past%2030%20Days%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/user-activity-for-the-past-30-days-ii" target="_blank" rel="noopener noreferrer">1142. 过去30天的用户活动 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1142.User%20Activity%20for%20the%20Past%2030%20Days%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/article-views-i" target="_blank" rel="noopener noreferrer">1148. 文章浏览 I</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1148.Article%20Views%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/article-views-ii" target="_blank" rel="noopener noreferrer">1149. 文章浏览 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1149.Article%20Views%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/market-analysis-i" target="_blank" rel="noopener noreferrer">1158. 市场分析 I</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1158.Market%20Analysis%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/market-analysis-ii" target="_blank" rel="noopener noreferrer">1159. 市场分析 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1159.Market%20Analysis%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/product-price-at-a-given-date" target="_blank" rel="noopener noreferrer">1164. 指定日期的产品价格</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1164.Product%20Price%20at%20a%20Given%20Date/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/immediate-food-delivery-i" target="_blank" rel="noopener noreferrer">1173. 即时食物配送 I 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1173.Immediate%20Food%20Delivery%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/immediate-food-delivery-ii" target="_blank" rel="noopener noreferrer">1174. 即时食物配送 II</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1174.Immediate%20Food%20Delivery%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/reformat-department-table" target="_blank" rel="noopener noreferrer">1179. 重新格式化部门表</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1179.Reformat%20Department%20Table/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/monthly-transactions-i" target="_blank" rel="noopener noreferrer">1193. 每月交易 I</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1193.Monthly%20Transactions%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/tournament-winners" target="_blank" rel="noopener noreferrer">1194. 锦标赛优胜者 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1194.Tournament%20Winners/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/last-person-to-fit-in-the-bus" target="_blank" rel="noopener noreferrer">1204. 最后一个能进入巴士的人</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1204.Last%20Person%20to%20Fit%20in%20the%20Bus/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/monthly-transactions-ii" target="_blank" rel="noopener noreferrer">1205. 每月交易 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1205.Monthly%20Transactions%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/queries-quality-and-percentage" target="_blank" rel="noopener noreferrer">1211. 查询结果的质量和占比</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1211.Queries%20Quality%20and%20Percentage/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/team-scores-in-football-tournament" target="_blank" rel="noopener noreferrer">1212. 查询球队积分 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1212.Team%20Scores%20in%20Football%20Tournament/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/report-contiguous-dates" target="_blank" rel="noopener noreferrer">1225. 报告系统状态的连续日期 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1225.Report%20Contiguous%20Dates/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/number-of-comments-per-post" target="_blank" rel="noopener noreferrer">1241. 每个帖子的评论数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1241.Number%20of%20Comments%20per%20Post/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/average-selling-price" target="_blank" rel="noopener noreferrer">1251. 平均售价</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1251.Average%20Selling%20Price/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/page-recommendations" target="_blank" rel="noopener noreferrer">1264. 页面推荐 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1264.Page%20Recommendations/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/all-people-report-to-the-given-manager" target="_blank" rel="noopener noreferrer">1270. 向公司 CEO 汇报工作的所有人 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1270.All%20People%20Report%20to%20the%20Given%20Manager/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/students-and-examinations" target="_blank" rel="noopener noreferrer">1280. 学生们参加各科测试的次数</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1280.Students%20and%20Examinations/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-the-start-and-end-number-of-continuous-ranges" target="_blank" rel="noopener noreferrer">1285. 找到连续区间的开始和结束数字 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1285.Find%20the%20Start%20and%20End%20Number%20of%20Continuous%20Ranges/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/weather-type-in-each-country" target="_blank" rel="noopener noreferrer">1294. 不同国家的天气类型 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1294.Weather%20Type%20in%20Each%20Country/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-the-team-size" target="_blank" rel="noopener noreferrer">1303. 求团队人数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1303.Find%20the%20Team%20Size/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/running-total-for-different-genders" target="_blank" rel="noopener noreferrer">1308. 不同性别每日分数总计 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1308.Running%20Total%20for%20Different%20Genders/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/restaurant-growth" target="_blank" rel="noopener noreferrer">1321. 餐馆营业额变化增长</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1321.Restaurant%20Growth/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/ads-performance" target="_blank" rel="noopener noreferrer">1322. 广告效果 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1322.Ads%20Performance/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/list-the-products-ordered-in-a-period" target="_blank" rel="noopener noreferrer">1327. 列出指定时间段内所有的下单产品</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1327.List%20the%20Products%20Ordered%20in%20a%20Period/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/number-of-transactions-per-visit" target="_blank" rel="noopener noreferrer">1336. 每次访问的交易次数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1336.Number%20of%20Transactions%20per%20Visit/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/movie-rating" target="_blank" rel="noopener noreferrer">1341. 电影评分</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1341.Movie%20Rating/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/students-with-invalid-departments" target="_blank" rel="noopener noreferrer">1350. 院系无效的学生 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1350.Students%20With%20Invalid%20Departments/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/activity-participants" target="_blank" rel="noopener noreferrer">1355. 活动参与者 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1355.Activity%20Participants/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/number-of-trusted-contacts-of-a-customer" target="_blank" rel="noopener noreferrer">1364. 顾客的可信联系人数量 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1364.Number%20of%20Trusted%20Contacts%20of%20a%20Customer/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/get-the-second-most-recent-activity" target="_blank" rel="noopener noreferrer">1369. 获取最近第二次的活动 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1369.Get%20the%20Second%20Most%20Recent%20Activity/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/replace-employee-id-with-the-unique-identifier" target="_blank" rel="noopener noreferrer">1378. 使用唯一标识码替换员工ID</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1378.Replace%20Employee%20ID%20With%20The%20Unique%20Identifier/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/total-sales-amount-by-year" target="_blank" rel="noopener noreferrer">1384. 按年度列出销售总额 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1384.Total%20Sales%20Amount%20by%20Year/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/capital-gainloss" target="_blank" rel="noopener noreferrer">1393. 股票的资本损益</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1393.Capital%20GainLoss/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/customers-who-bought-products-a-and-b-but-not-c" target="_blank" rel="noopener noreferrer">1398. 购买了产品 A 和产品 B 却没有购买产品 C 的顾客 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1300-1399/1398.Customers%20Who%20Bought%20Products%20A%20and%20B%20but%20Not%20C/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/top-travellers" target="_blank" rel="noopener noreferrer">1407. 排名靠前的旅行者</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1407.Top%20Travellers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-the-quiet-students-in-all-exams" target="_blank" rel="noopener noreferrer">1412. 查找成绩处于中游的学生 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1412.Find%20the%20Quiet%20Students%20in%20All%20Exams/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/npv-queries" target="_blank" rel="noopener noreferrer">1421. 净现值查询 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1421.NPV%20Queries/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/create-a-session-bar-chart" target="_blank" rel="noopener noreferrer">1435. 制作会话柱状图 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1435.Create%20a%20Session%20Bar%20Chart/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/evaluate-boolean-expression" target="_blank" rel="noopener noreferrer">1440. 计算布尔表达式的值 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1440.Evaluate%20Boolean%20Expression/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/apples-oranges" target="_blank" rel="noopener noreferrer">1445. 苹果和桔子 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1445.Apples%20%26%20Oranges/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/active-users" target="_blank" rel="noopener noreferrer">1454. 活跃用户 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1454.Active%20Users/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/rectangles-area" target="_blank" rel="noopener noreferrer">1459. 矩形面积 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1459.Rectangles%20Area/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/calculate-salaries" target="_blank" rel="noopener noreferrer">1468. 计算税后工资 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1468.Calculate%20Salaries/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sales-by-day-of-the-week" target="_blank" rel="noopener noreferrer">1479. 周内每天的销售情况 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1479.Sales%20by%20Day%20of%20the%20Week/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/group-sold-products-by-the-date" target="_blank" rel="noopener noreferrer">1484. 按日期分组销售产品</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1484.Group%20Sold%20Products%20By%20The%20Date/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/friendly-movies-streamed-last-month" target="_blank" rel="noopener noreferrer">1495. 上月播放的儿童适宜电影 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1400-1499/1495.Friendly%20Movies%20Streamed%20Last%20Month/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/countries-you-can-safely-invest-in" target="_blank" rel="noopener noreferrer">1501. 可以放心投资的国家 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1501.Countries%20You%20Can%20Safely%20Invest%20In/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/customer-order-frequency" target="_blank" rel="noopener noreferrer">1511. 消费者下单频率 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1511.Customer%20Order%20Frequency/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-users-with-valid-e-mails" target="_blank" rel="noopener noreferrer">1517. 查找拥有有效邮箱的用户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1517.Find%20Users%20With%20Valid%20E-Mails/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/patients-with-a-condition" target="_blank" rel="noopener noreferrer">1527. 患某种疾病的患者</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1527.Patients%20With%20a%20Condition/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-most-recent-three-orders" target="_blank" rel="noopener noreferrer">1532. 最近的三笔订单 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1532.The%20Most%20Recent%20Three%20Orders/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/fix-product-name-format" target="_blank" rel="noopener noreferrer">1543. 产品名称格式修复 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1543.Fix%20Product%20Name%20Format/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-most-recent-orders-for-each-product" target="_blank" rel="noopener noreferrer">1549. 每件商品的最新订单 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1549.The%20Most%20Recent%20Orders%20for%20Each%20Product/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/bank-account-summary" target="_blank" rel="noopener noreferrer">1555. 银行账户概要 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1555.Bank%20Account%20Summary/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/unique-orders-and-customers-per-month" target="_blank" rel="noopener noreferrer">1565. 按月统计订单数与顾客数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1565.Unique%20Orders%20and%20Customers%20Per%20Month/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/warehouse-manager" target="_blank" rel="noopener noreferrer">1571. 仓库经理 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1571.Warehouse%20Manager/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/customer-who-visited-but-did-not-make-any-transactions" target="_blank" rel="noopener noreferrer">1581. 进店却未进行过交易的顾客</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1581.Customer%20Who%20Visited%20but%20Did%20Not%20Make%20Any%20Transactions/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/bank-account-summary-ii" target="_blank" rel="noopener noreferrer">1587. 银行账户概要 II</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1587.Bank%20Account%20Summary%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-most-frequently-ordered-products-for-each-customer" target="_blank" rel="noopener noreferrer">1596. 每位顾客最经常订购的商品 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1500-1599/1596.The%20Most%20Frequently%20Ordered%20Products%20for%20Each%20Customer/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sellers-with-no-sales" target="_blank" rel="noopener noreferrer">1607. 没有卖出的卖家 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1607.Sellers%20With%20No%20Sales/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-the-missing-ids" target="_blank" rel="noopener noreferrer">1613. 找到遗失的ID 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1613.Find%20the%20Missing%20IDs/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/all-valid-triplets-that-can-represent-a-country" target="_blank" rel="noopener noreferrer">1623. 三人国家代表队 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1623.All%20Valid%20Triplets%20That%20Can%20Represent%20a%20Country/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/percentage-of-users-attended-a-contest" target="_blank" rel="noopener noreferrer">1633. 各赛事的用户注册率</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1633.Percentage%20of%20Users%20Attended%20a%20Contest/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/hopper-company-queries-i" target="_blank" rel="noopener noreferrer">1635. Hopper 公司查询 I 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1635.Hopper%20Company%20Queries%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/hopper-company-queries-ii" target="_blank" rel="noopener noreferrer">1645. Hopper 公司查询 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1645.Hopper%20Company%20Queries%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/hopper-company-queries-iii" target="_blank" rel="noopener noreferrer">1651. Hopper 公司查询 III 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1651.Hopper%20Company%20Queries%20III/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/average-time-of-process-per-machine" target="_blank" rel="noopener noreferrer">1661. 每台机器的进程平均运行时间</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1661.Average%20Time%20of%20Process%20per%20Machine/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/fix-names-in-a-table" target="_blank" rel="noopener noreferrer">1667. 修复表中的名字</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1667.Fix%20Names%20in%20a%20Table/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/products-worth-over-invoices" target="_blank" rel="noopener noreferrer">1677. 发票中的产品金额 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1677.Product's%20Worth%20Over%20Invoices/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/invalid-tweets" target="_blank" rel="noopener noreferrer">1683. 无效的推文</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1683.Invalid%20Tweets/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/daily-leads-and-partners" target="_blank" rel="noopener noreferrer">1693. 每天的领导和合伙人</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1693.Daily%20Leads%20and%20Partners/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/number-of-calls-between-two-persons" target="_blank" rel="noopener noreferrer">1699. 两人之间的通话次数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1699.Number%20of%20Calls%20Between%20Two%20Persons/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/biggest-window-between-visits" target="_blank" rel="noopener noreferrer">1709. 访问日期之间最大的空档期 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1709.Biggest%20Window%20Between%20Visits/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/count-apples-and-oranges" target="_blank" rel="noopener noreferrer">1715. 苹果和橘子的个数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1715.Count%20Apples%20and%20Oranges/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-followers-count" target="_blank" rel="noopener noreferrer">1729. 求关注者的数量</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1729.Find%20Followers%20Count/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-number-of-employees-which-report-to-each-employee" target="_blank" rel="noopener noreferrer">1731. 每位经理的下属员工数量</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1731.The%20Number%20of%20Employees%20Which%20Report%20to%20Each%20Employee/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-total-time-spent-by-each-employee" target="_blank" rel="noopener noreferrer">1741. 查找每个员工花费的总时间</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1741.Find%20Total%20Time%20Spent%20by%20Each%20Employee/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/leetflex-banned-accounts" target="_blank" rel="noopener noreferrer">1747. 应该被禁止的 Leetflex 账户 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1747.Leetflex%20Banned%20Accounts/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/recyclable-and-low-fat-products" target="_blank" rel="noopener noreferrer">1757. 可回收且低脂的产品</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1757.Recyclable%20and%20Low%20Fat%20Products/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-the-subtasks-that-did-not-execute" target="_blank" rel="noopener noreferrer">1767. 寻找没有被执行的任务对 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1767.Find%20the%20Subtasks%20That%20Did%20Not%20Execute/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/products-price-for-each-store" target="_blank" rel="noopener noreferrer">1777. 每家商店的产品价格 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1777.Product's%20Price%20for%20Each%20Store/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/grand-slam-titles" target="_blank" rel="noopener noreferrer">1783. 大满贯数量 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1783.Grand%20Slam%20Titles/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/primary-department-for-each-employee" target="_blank" rel="noopener noreferrer">1789. 员工的直属部门</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1789.Primary%20Department%20for%20Each%20Employee/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/rearrange-products-table" target="_blank" rel="noopener noreferrer">1795. 每个产品在不同商店的价格</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1795.Rearrange%20Products%20Table/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/ad-free-sessions" target="_blank" rel="noopener noreferrer">1809. 没有广告的剧集 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1809.Ad-Free%20Sessions/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-interview-candidates" target="_blank" rel="noopener noreferrer">1811. 寻找面试候选人 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1811.Find%20Interview%20Candidates/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-customers-with-positive-revenue-this-year" target="_blank" rel="noopener noreferrer">1821. 寻找今年具有正收入的客户 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1821.Find%20Customers%20With%20Positive%20Revenue%20this%20Year/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/maximum-transaction-each-day" target="_blank" rel="noopener noreferrer">1831. 每天的最大交易 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1831.Maximum%20Transaction%20Each%20Day/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/league-statistics" target="_blank" rel="noopener noreferrer">1841. 联赛信息统计 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1841.League%20Statistics/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/suspicious-bank-accounts" target="_blank" rel="noopener noreferrer">1843. 可疑银行账户 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1843.Suspicious%20Bank%20Accounts/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/convert-date-format" target="_blank" rel="noopener noreferrer">1853. 转换日期格式 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1853.Convert%20Date%20Format/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/orders-with-maximum-quantity-above-average" target="_blank" rel="noopener noreferrer">1867. 最大数量高于平均水平的订单 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1867.Orders%20With%20Maximum%20Quantity%20Above%20Average/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/calculate-special-bonus" target="_blank" rel="noopener noreferrer">1873. 计算特殊奖金</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1873.Calculate%20Special%20Bonus/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/group-employees-of-the-same-salary" target="_blank" rel="noopener noreferrer">1875. 将工资相同的雇员分组 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1875.Group%20Employees%20of%20the%20Same%20Salary/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-latest-login-in-2020" target="_blank" rel="noopener noreferrer">1890. 2020年最后一次登录</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1890.The%20Latest%20Login%20in%202020/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/page-recommendations-ii" target="_blank" rel="noopener noreferrer">1892. 页面推荐Ⅱ 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1800-1899/1892.Page%20Recommendations%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/count-salary-categories" target="_blank" rel="noopener noreferrer">1907. 按分类统计薪水</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1907.Count%20Salary%20Categories/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/leetcodify-friends-recommendations" target="_blank" rel="noopener noreferrer">1917. Leetcodify 好友推荐 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1917.Leetcodify%20Friends%20Recommendations/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/leetcodify-similar-friends" target="_blank" rel="noopener noreferrer">1919. 兴趣相同的朋友 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1919.Leetcodify%20Similar%20Friends/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/confirmation-rate" target="_blank" rel="noopener noreferrer">1934. 确认率</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1934.Confirmation%20Rate/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/users-that-actively-request-confirmation-messages" target="_blank" rel="noopener noreferrer">1939. 主动请求确认消息的用户 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1939.Users%20That%20Actively%20Request%20Confirmation%20Messages/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/strong-friendship" target="_blank" rel="noopener noreferrer">1949. 坚定的友谊 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1949.Strong%20Friendship/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/all-the-pairs-with-the-maximum-number-of-common-followers" target="_blank" rel="noopener noreferrer">1951. 查询具有最多共同关注者的所有两两结对组 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1951.All%20the%20Pairs%20With%20the%20Maximum%20Number%20of%20Common%20Followers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/employees-with-missing-information" target="_blank" rel="noopener noreferrer">1965. 丢失信息的雇员</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1965.Employees%20With%20Missing%20Information/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/first-and-last-call-on-the-same-day" target="_blank" rel="noopener noreferrer">1972. 同一天的第一个电话和最后一个电话 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1972.First%20and%20Last%20Call%20On%20the%20Same%20Day/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/employees-whose-manager-left-the-company" target="_blank" rel="noopener noreferrer">1978. 上级经理已离职的公司员工</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1978.Employees%20Whose%20Manager%20Left%20the%20Company/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-cutoff-score-for-each-school" target="_blank" rel="noopener noreferrer">1988. 找出每所学校的最低分数要求 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1988.Find%20Cutoff%20Score%20for%20Each%20School/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/count-the-number-of-experiments" target="_blank" rel="noopener noreferrer">1990. 统计实验的数量 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1990.Count%20the%20Number%20of%20Experiments/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-number-of-seniors-and-juniors-to-join-the-company" target="_blank" rel="noopener noreferrer">2004. 职员招聘人数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2004.The%20Number%20of%20Seniors%20and%20Juniors%20to%20Join%20the%20Company/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-number-of-seniors-and-juniors-to-join-the-company-ii" target="_blank" rel="noopener noreferrer">2010. 职员招聘人数 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2010.The%20Number%20of%20Seniors%20and%20Juniors%20to%20Join%20the%20Company%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/number-of-accounts-that-did-not-stream" target="_blank" rel="noopener noreferrer">2020. 无流量的帐户数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2020.Number%20of%20Accounts%20That%20Did%20Not%20Stream/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/low-quality-problems" target="_blank" rel="noopener noreferrer">2026. 低质量的问题 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2026.Low-Quality%20Problems/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/accepted-candidates-from-the-interviews" target="_blank" rel="noopener noreferrer">2041. 面试中被录取的候选人 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2041.Accepted%20Candidates%20From%20the%20Interviews/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-category-of-each-member-in-the-store" target="_blank" rel="noopener noreferrer">2051. 商店中每个成员的级别 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2051.The%20Category%20of%20Each%20Member%20in%20the%20Store/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/account-balance" target="_blank" rel="noopener noreferrer">2066. 账户余额 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2066.Account%20Balance/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-winner-university" target="_blank" rel="noopener noreferrer">2072. 赢得比赛的大学 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2072.The%20Winner%20University/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-number-of-rich-customers" target="_blank" rel="noopener noreferrer">2082. 富有客户的数量 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2082.The%20Number%20of%20Rich%20Customers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/drop-type-1-orders-for-customers-with-type-0-orders" target="_blank" rel="noopener noreferrer">2084. 为订单类型为 0 的客户删除类型为 1 的订单 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2084.Drop%20Type%201%20Orders%20for%20Customers%20With%20Type%200%20Orders/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-airport-with-the-most-traffic" target="_blank" rel="noopener noreferrer">2112. 最繁忙的机场 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2112.The%20Airport%20With%20the%20Most%20Traffic/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/build-the-equation" target="_blank" rel="noopener noreferrer">2118. 建立方程 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2118.Build%20the%20Equation/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-number-of-passengers-in-each-bus-i" target="_blank" rel="noopener noreferrer">2142. 每辆车的乘客人数 I 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2142.The%20Number%20of%20Passengers%20in%20Each%20Bus%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-number-of-passengers-in-each-bus-ii" target="_blank" rel="noopener noreferrer">2153. 每辆车的乘客人数 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2153.The%20Number%20of%20Passengers%20in%20Each%20Bus%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/order-two-columns-independently" target="_blank" rel="noopener noreferrer">2159. 分别排序两列 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2159.Order%20Two%20Columns%20Independently/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/longest-winning-streak" target="_blank" rel="noopener noreferrer">2173. 最多连胜的次数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2173.Longest%20Winning%20Streak/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-change-in-global-rankings" target="_blank" rel="noopener noreferrer">2175. 世界排名的变化 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2175.The%20Change%20in%20Global%20Rankings/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/finding-the-topic-of-each-post" target="_blank" rel="noopener noreferrer">2199. 找到每篇文章的主题 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2199.Finding%20the%20Topic%20of%20Each%20Post/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-number-of-users-that-are-eligible-for-discount" target="_blank" rel="noopener noreferrer">2205. 有资格享受折扣的用户数量 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2205.The%20Number%20of%20Users%20That%20Are%20Eligible%20for%20Discount/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/users-with-two-purchases-within-seven-days" target="_blank" rel="noopener noreferrer">2228. 7 天内两次购买的用户 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2228.Users%20With%20Two%20Purchases%20Within%20Seven%20Days/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-users-that-are-eligible-for-discount" target="_blank" rel="noopener noreferrer">2230. 查找可享受优惠的用户 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2230.The%20Users%20That%20Are%20Eligible%20for%20Discount/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/number-of-times-a-driver-was-a-passenger" target="_blank" rel="noopener noreferrer">2238. 司机成为乘客的次数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2238.Number%20of%20Times%20a%20Driver%20Was%20a%20Passenger/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/dynamic-pivoting-of-a-table" target="_blank" rel="noopener noreferrer">2252. 表的动态旋转 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2252.Dynamic%20Pivoting%20of%20a%20Table/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/dynamic-unpivoting-of-a-table" target="_blank" rel="noopener noreferrer">2253. 动态取消表的旋转 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2253.Dynamic%20Unpivoting%20of%20a%20Table/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/products-with-three-or-more-orders-in-two-consecutive-years" target="_blank" rel="noopener noreferrer">2292. 连续两年有 3 个及以上订单的产品 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2292.Products%20With%20Three%20or%20More%20Orders%20in%20Two%20Consecutive%20Years/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/tasks-count-in-the-weekend" target="_blank" rel="noopener noreferrer">2298. 周末任务计数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2298.Tasks%20Count%20in%20the%20Weekend/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/arrange-table-by-gender" target="_blank" rel="noopener noreferrer">2308. 按性别排列表格 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2308.Arrange%20Table%20by%20Gender/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/the-first-day-of-the-maximum-recorded-degree-in-each-city" target="_blank" rel="noopener noreferrer">2314. 每个城市最高气温的第一天 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2314.The%20First%20Day%20of%20the%20Maximum%20Recorded%20Degree%20in%20Each%20City/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/product-sales-analysis-iv" target="_blank" rel="noopener noreferrer">2324. 产品销售分析 IV 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2324.Product%20Sales%20Analysis%20IV/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/product-sales-analysis-v" target="_blank" rel="noopener noreferrer">2329. 产品销售分析Ⅴ 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2329.Product%20Sales%20Analysis%20V/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/all-the-matches-of-the-league" target="_blank" rel="noopener noreferrer">2339. 联赛的所有比赛 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2339.All%20the%20Matches%20of%20the%20League/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/compute-the-rank-as-a-percentage" target="_blank" rel="noopener noreferrer">2346. 以百分比计算排名 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2346.Compute%20the%20Rank%20as%20a%20Percentage/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/number-of-unique-subjects-taught-by-each-teacher" target="_blank" rel="noopener noreferrer">2356. 每位教师所教授的科目种类的数量</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2356.Number%20of%20Unique%20Subjects%20Taught%20by%20Each%20Teacher/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/generate-the-invoice" target="_blank" rel="noopener noreferrer">2362. 生成发票 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2362.Generate%20the%20Invoice/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/calculate-the-influence-of-each-salesperson" target="_blank" rel="noopener noreferrer">2372. 计算每个销售人员的影响力 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2372.Calculate%20the%20Influence%20of%20Each%20Salesperson/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sort-the-olympic-table" target="_blank" rel="noopener noreferrer">2377. 整理奥运表 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2377.Sort%20the%20Olympic%20Table/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/change-null-values-in-a-table-to-the-previous-value" target="_blank" rel="noopener noreferrer">2388. 将表中的空值更改为前一个值 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2388.Change%20Null%20Values%20in%20a%20Table%20to%20the%20Previous%20Value/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/employees-with-deductions" target="_blank" rel="noopener noreferrer">2394. 开除员工 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2394.Employees%20With%20Deductions/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/customers-with-strictly-increasing-purchases" target="_blank" rel="noopener noreferrer">2474. 购买量严格增加的客户 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2474.Customers%20With%20Strictly%20Increasing%20Purchases/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/form-a-chemical-bond" target="_blank" rel="noopener noreferrer">2480. 形成化学键 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2480.Form%20a%20Chemical%20Bond/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/merge-overlapping-events-in-the-same-hall" target="_blank" rel="noopener noreferrer">2494. 合并在同一个大厅重叠的活动 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2494.Merge%20Overlapping%20Events%20in%20the%20Same%20Hall/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/concatenate-the-name-and-the-profession" target="_blank" rel="noopener noreferrer">2504. 把名字和职业联系起来 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2500-2599/2504.Concatenate%20the%20Name%20and%20the%20Profession/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/check-if-object-instance-of-class" target="_blank" rel="noopener noreferrer">2618. 检查是否是类的对象实例</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2618.Check%20if%20Object%20Instance%20of%20Class/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/array-prototype-last" target="_blank" rel="noopener noreferrer">2619. 数组原型对象的最后一个元素</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2619.Array%20Prototype%20Last/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/counter" target="_blank" rel="noopener noreferrer">2620. 计数器</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2620.Counter/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sleep" target="_blank" rel="noopener noreferrer">2621. 睡眠函数</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2621.Sleep/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/cache-with-time-limit" target="_blank" rel="noopener noreferrer">2622. 有时间限制的缓存</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2622.Cache%20With%20Time%20Limit/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/memoize" target="_blank" rel="noopener noreferrer">2623. 记忆函数</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2623.Memoize/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/snail-traversal" target="_blank" rel="noopener noreferrer">2624. 蜗牛排序</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2624.Snail%20Traversal/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/flatten-deeply-nested-array" target="_blank" rel="noopener noreferrer">2625. 扁平化嵌套数组</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2625.Flatten%20Deeply%20Nested%20Array/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/array-reduce-transformation" target="_blank" rel="noopener noreferrer">2626. 数组归约运算</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2626.Array%20Reduce%20Transformation/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/debounce" target="_blank" rel="noopener noreferrer">2627. 函数防抖</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2627.Debounce/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/json-deep-equal" target="_blank" rel="noopener noreferrer">2628. 完全相等的 JSON 对象 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2628.JSON%20Deep%20Equal/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/function-composition" target="_blank" rel="noopener noreferrer">2629. 复合函数</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2629.Function%20Composition/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/memoize-ii" target="_blank" rel="noopener noreferrer">2630. 记忆函数 II</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2630.Memoize%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/group-by" target="_blank" rel="noopener noreferrer">2631. 分组</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2631.Group%20By/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/curry" target="_blank" rel="noopener noreferrer">2632. 柯里化 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2632.Curry/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/convert-object-to-json-string" target="_blank" rel="noopener noreferrer">2633. 将对象转换为 JSON 字符串 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2633.Convert%20Object%20to%20JSON%20String/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/filter-elements-from-array" target="_blank" rel="noopener noreferrer">2634. 过滤数组中的元素</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2634.Filter%20Elements%20from%20Array/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/apply-transform-over-each-element-in-array" target="_blank" rel="noopener noreferrer">2635. 转换数组中的每个元素</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2635.Apply%20Transform%20Over%20Each%20Element%20in%20Array/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/promise-pool" target="_blank" rel="noopener noreferrer">2636. Promise 对象池 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2636.Promise%20Pool/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/promise-time-limit" target="_blank" rel="noopener noreferrer">2637. 有时间限制的 Promise 对象</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2637.Promise%20Time%20Limit/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/generate-fibonacci-sequence" target="_blank" rel="noopener noreferrer">2648. 生成斐波那契数列</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2648.Generate%20Fibonacci%20Sequence/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/nested-array-generator" target="_blank" rel="noopener noreferrer">2649. 嵌套数组生成器</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2649.Nested%20Array%20Generator/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/design-cancellable-function" target="_blank" rel="noopener noreferrer">2650. 设计可取消函数</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2650.Design%20Cancellable%20Function/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/counter-ii" target="_blank" rel="noopener noreferrer">2665. 计数器 II</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2665.Counter%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/allow-one-function-call" target="_blank" rel="noopener noreferrer">2666. 只允许一次函数调用</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2666.Allow%20One%20Function%20Call/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/create-hello-world-function" target="_blank" rel="noopener noreferrer">2667. 创建 Hello World 函数</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2667.Create%20Hello%20World%20Function/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-latest-salaries" target="_blank" rel="noopener noreferrer">2668. 查询员工当前薪水 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2668.Find%20Latest%20Salaries/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/count-artist-occurrences-on-spotify-ranking-list" target="_blank" rel="noopener noreferrer">2669. 统计 Spotify 排行榜上艺术家出现次数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2669.Count%20Artist%20Occurrences%20On%20Spotify%20Ranking%20List/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/array-of-objects-to-matrix" target="_blank" rel="noopener noreferrer">2675. 将对象数组转换为矩阵 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2675.Array%20of%20Objects%20to%20Matrix/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/throttle" target="_blank" rel="noopener noreferrer">2676. 节流 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2676.Throttle/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/chunk-array" target="_blank" rel="noopener noreferrer">2677. 分块数组</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2677.Chunk%20Array/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/immediate-food-delivery-iii" target="_blank" rel="noopener noreferrer">2686. 即时食物配送 III 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2686.Immediate%20Food%20Delivery%20III/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/bikes-last-time-used" target="_blank" rel="noopener noreferrer">2687. 自行车的最后使用时间 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2687.Bikes%20Last%20Time%20Used/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-active-users" target="_blank" rel="noopener noreferrer">2688. 查找活跃用户 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2688.Find%20Active%20Users/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/infinite-method-object" target="_blank" rel="noopener noreferrer">2690. 无穷方法对象 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2690.Infinite%20Method%20Object/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/immutability-helper" target="_blank" rel="noopener noreferrer">2691. 不可变辅助工具 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2691.Immutability%20Helper/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/make-object-immutable" target="_blank" rel="noopener noreferrer">2692. 使对象不可变 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2692.Make%20Object%20Immutable/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/call-function-with-custom-context" target="_blank" rel="noopener noreferrer">2693. 使用自定义上下文调用函数</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2693.Call%20Function%20with%20Custom%20Context/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/event-emitter" target="_blank" rel="noopener noreferrer">2694. 事件发射器</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2694.Event%20Emitter/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/array-wrapper" target="_blank" rel="noopener noreferrer">2695. 包装数组</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2600-2699/2695.Array%20Wrapper/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/differences-between-two-objects" target="_blank" rel="noopener noreferrer">2700. 两个对象之间的差异 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2700.Differences%20Between%20Two%20Objects/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/consecutive-transactions-with-increasing-amounts" target="_blank" rel="noopener noreferrer">2701. 连续递增交易 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2701.Consecutive%20Transactions%20with%20Increasing%20Amounts/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/return-length-of-arguments-passed" target="_blank" rel="noopener noreferrer">2703. 返回传递的参数的长度</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2703.Return%20Length%20of%20Arguments%20Passed/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/to-be-or-not-to-be" target="_blank" rel="noopener noreferrer">2704. 相等还是不相等</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2704.To%20Be%20Or%20Not%20To%20Be/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/compact-object" target="_blank" rel="noopener noreferrer">2705. 精简对象</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2705.Compact%20Object/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/timeout-cancellation" target="_blank" rel="noopener noreferrer">2715. 执行可取消的延迟函数</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2715.Timeout%20Cancellation/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/popularity-percentage" target="_blank" rel="noopener noreferrer">2720. 受欢迎度百分比 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2720.Popularity%20Percentage/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/execute-asynchronous-functions-in-parallel" target="_blank" rel="noopener noreferrer">2721. 并行执行异步函数</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2721.Execute%20Asynchronous%20Functions%20in%20Parallel/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/join-two-arrays-by-id" target="_blank" rel="noopener noreferrer">2722. 根据 ID 合并两个数组</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2722.Join%20Two%20Arrays%20by%20ID/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/add-two-promises" target="_blank" rel="noopener noreferrer">2723. 两个 Promise 对象相加</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2723.Add%20Two%20Promises/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sort-by" target="_blank" rel="noopener noreferrer">2724. 排序方式</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2724.Sort%20By/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/interval-cancellation" target="_blank" rel="noopener noreferrer">2725. 间隔取消</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2725.Interval%20Cancellation/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/calculator-with-method-chaining" target="_blank" rel="noopener noreferrer">2726. 使用方法链的计算器</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2726.Calculator%20with%20Method%20Chaining/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/is-object-empty" target="_blank" rel="noopener noreferrer">2727. 判断对象是否为空</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2727.Is%20Object%20Empty/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/count-occurrences-in-text" target="_blank" rel="noopener noreferrer">2738. 统计文本中单词的出现次数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2738.Count%20Occurrences%20in%20Text/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/customers-with-maximum-number-of-transactions-on-consecutive-days" target="_blank" rel="noopener noreferrer">2752. 在连续天数上进行了最多交易次数的顾客 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2752.Customers%20with%20Maximum%20Number%20of%20Transactions%20on%20Consecutive%20Days/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/bind-function-to-context" target="_blank" rel="noopener noreferrer">2754. 将函数绑定到上下文 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2754.Bind%20Function%20to%20Context/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/deep-merge-of-two-objects" target="_blank" rel="noopener noreferrer">2755. 深度合并两个对象 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2755.Deep%20Merge%20of%20Two%20Objects/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/query-batching" target="_blank" rel="noopener noreferrer">2756. 批处理查询 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2756.Query%20Batching/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/generate-circular-array-values" target="_blank" rel="noopener noreferrer">2757. 生成循环数组的值 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2757.Generate%20Circular%20Array%20Values/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/next-day" target="_blank" rel="noopener noreferrer">2758. 下一天 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2758.Next%20Day/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/convert-json-string-to-object" target="_blank" rel="noopener noreferrer">2759. 将 JSON 字符串转换为对象 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2759.Convert%20JSON%20String%20to%20Object/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/array-upper-bound" target="_blank" rel="noopener noreferrer">2774. 数组的上界 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2774.Array%20Upper%20Bound/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/undefined-to-null" target="_blank" rel="noopener noreferrer">2775. 将 undefined 转为 null 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2775.Undefined%20to%20Null/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/convert-callback-based-function-to-promise-based-function" target="_blank" rel="noopener noreferrer">2776. 转换回调函数为 Promise 函数 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2776.Convert%20Callback%20Based%20Function%20to%20Promise%20Based%20Function/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/date-range-generator" target="_blank" rel="noopener noreferrer">2777. 日期范围生成器 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2777.Date%20Range%20Generator/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/flight-occupancy-and-waitlist-analysis" target="_blank" rel="noopener noreferrer">2783. 航班入座率和等待名单分析 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2783.Flight%20Occupancy%20and%20Waitlist%20Analysis/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/status-of-flight-tickets" target="_blank" rel="noopener noreferrer">2793. 航班机票状态 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2793.Status%20of%20Flight%20Tickets/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/create-object-from-two-arrays" target="_blank" rel="noopener noreferrer">2794. 从两个数组中创建对象 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2794.Create%20Object%20from%20Two%20Arrays/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/parallel-execution-of-promises-for-individual-results-retrieval" target="_blank" rel="noopener noreferrer">2795. 并行执行 Promise 以获取独有的结果 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2795.Parallel%20Execution%20of%20Promises%20for%20Individual%20Results%20Retrieval/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/repeat-string" target="_blank" rel="noopener noreferrer">2796. 重复字符串 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2796.Repeat%20String/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/partial-function-with-placeholders" target="_blank" rel="noopener noreferrer">2797. 带有占位符的部分函数 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2700-2799/2797.Partial%20Function%20with%20Placeholders/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/factorial-generator" target="_blank" rel="noopener noreferrer">2803. 阶乘生成器 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2803.Factorial%20Generator/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/array-prototype-foreach" target="_blank" rel="noopener noreferrer">2804. 数组原型的 forEach 方法 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2804.Array%20Prototype%20ForEach/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/custom-interval" target="_blank" rel="noopener noreferrer">2805. 自定义间隔 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2805.Custom%20Interval/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/election-results" target="_blank" rel="noopener noreferrer">2820. 选举结果 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2820.Election%20Results/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/delay-the-resolution-of-each-promise" target="_blank" rel="noopener noreferrer">2821. 延迟每个 Promise 对象的解析 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2821.Delay%20the%20Resolution%20of%20Each%20Promise/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/inversion-of-object" target="_blank" rel="noopener noreferrer">2822. 对象反转 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2822.Inversion%20of%20Object/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/deep-object-filter" target="_blank" rel="noopener noreferrer">2823. 深度对象筛选 🔒</a></td>
+<td>JavaScript</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2823.Deep%20Object%20Filter/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/total-traveled-distance" target="_blank" rel="noopener noreferrer">2837. 总旅行距离 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2837.Total%20Traveled%20Distance/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/highest-salaries-difference" target="_blank" rel="noopener noreferrer">2853. 最高薪水差异 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2853.Highest%20Salaries%20Difference/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/rolling-average-steps" target="_blank" rel="noopener noreferrer">2854. 滚动平均步数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2854.Rolling%20Average%20Steps/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/create-a-dataframe-from-list" target="_blank" rel="noopener noreferrer">2877. 从表中创建 DataFrame</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2877.Create%20a%20DataFrame%20from%20List/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/get-the-size-of-a-dataframe" target="_blank" rel="noopener noreferrer">2878. 获取 DataFrame 的大小</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2878.Get%20the%20Size%20of%20a%20DataFrame/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/display-the-first-three-rows" target="_blank" rel="noopener noreferrer">2879. 显示前三行</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2879.Display%20the%20First%20Three%20Rows/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/select-data" target="_blank" rel="noopener noreferrer">2880. 数据选取</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2880.Select%20Data/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/create-a-new-column" target="_blank" rel="noopener noreferrer">2881. 创建新列</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2881.Create%20a%20New%20Column/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/drop-duplicate-rows" target="_blank" rel="noopener noreferrer">2882. 删去重复的行</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2882.Drop%20Duplicate%20Rows/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/drop-missing-data" target="_blank" rel="noopener noreferrer">2883. 删去丢失的数据</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2883.Drop%20Missing%20Data/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/modify-columns" target="_blank" rel="noopener noreferrer">2884. 修改列</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2884.Modify%20Columns/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/rename-columns" target="_blank" rel="noopener noreferrer">2885. 重命名列</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2885.Rename%20Columns/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/change-data-type" target="_blank" rel="noopener noreferrer">2886. 改变数据类型</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2886.Change%20Data%20Type/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/fill-missing-data" target="_blank" rel="noopener noreferrer">2887. 填充缺失值</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2887.Fill%20Missing%20Data/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/reshape-data-concatenate" target="_blank" rel="noopener noreferrer">2888. 重塑数据：连结</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2888.Reshape%20Data%20Concatenate/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/reshape-data-pivot" target="_blank" rel="noopener noreferrer">2889. 数据重塑：透视</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2889.Reshape%20Data%20Pivot/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/reshape-data-melt" target="_blank" rel="noopener noreferrer">2890. 重塑数据：融合</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2890.Reshape%20Data%20Melt/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/method-chaining" target="_blank" rel="noopener noreferrer">2891. 方法链</a></td>
+<td>Pandas</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2891.Method%20Chaining/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/calculate-orders-within-each-interval" target="_blank" rel="noopener noreferrer">2893. 计算每个区间内的订单 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2800-2899/2893.Calculate%20Orders%20Within%20Each%20Interval/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/market-analysis-iii" target="_blank" rel="noopener noreferrer">2922. 市场分析 III 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2922.Market%20Analysis%20III/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/symmetric-coordinates" target="_blank" rel="noopener noreferrer">2978. 对称坐标 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2978.Symmetric%20Coordinates/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-peak-calling-hours-for-each-city" target="_blank" rel="noopener noreferrer">2984. 找到每座城市的高峰通话小时 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2984.Find%20Peak%20Calling%20Hours%20for%20Each%20City/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/calculate-compressed-mean" target="_blank" rel="noopener noreferrer">2985. 计算订单平均商品数量 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2985.Calculate%20Compressed%20Mean/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-third-transaction" target="_blank" rel="noopener noreferrer">2986. 找到第三笔交易 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2986.Find%20Third%20Transaction/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-expensive-cities" target="_blank" rel="noopener noreferrer">2987. 寻找房价最贵的城市 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2987.Find%20Expensive%20Cities/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/manager-of-the-largest-department" target="_blank" rel="noopener noreferrer">2988. 最大部门的经理 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2988.Manager%20of%20the%20Largest%20Department/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/class-performance" target="_blank" rel="noopener noreferrer">2989. 班级表现 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2989.Class%20Performance/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/loan-types" target="_blank" rel="noopener noreferrer">2990. 贷款类型 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2990.Loan%20Types/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/top-three-wineries" target="_blank" rel="noopener noreferrer">2991. 最好的三家酒庄 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2991.Top%20Three%20Wineries/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/friday-purchases-i" target="_blank" rel="noopener noreferrer">2993. 发生在周五的交易 I 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2993.Friday%20Purchases%20I/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/friday-purchases-ii" target="_blank" rel="noopener noreferrer">2994. 发生在周五的交易 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2994.Friday%20Purchases%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/viewers-turned-streamers" target="_blank" rel="noopener noreferrer">2995. 观众变主播 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2900-2999/2995.Viewers%20Turned%20Streamers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/pizza-toppings-cost-analysis" target="_blank" rel="noopener noreferrer">3050. 披萨配料成本分析 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3050.Pizza%20Toppings%20Cost%20Analysis/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-candidates-for-data-scientist-position" target="_blank" rel="noopener noreferrer">3051. 寻找数据科学家职位的候选人 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3051.Find%20Candidates%20for%20Data%20Scientist%20Position/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/maximize-items" target="_blank" rel="noopener noreferrer">3052. 最大化商品 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3052.Maximize%20Items/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/classifying-triangles-by-lengths" target="_blank" rel="noopener noreferrer">3053. 根据长度分类三角形 🔒</a></td>
+<td>数据库、多边形</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3053.Classifying%20Triangles%20by%20Lengths/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/binary-tree-nodes" target="_blank" rel="noopener noreferrer">3054. 二叉树节点 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3054.Binary%20Tree%20Nodes/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/top-percentile-fraud" target="_blank" rel="noopener noreferrer">3055. 最高欺诈百分位数 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3055.Top%20Percentile%20Fraud/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/snaps-analysis" target="_blank" rel="noopener noreferrer">3056. 快照分析 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3056.Snaps%20Analysis/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/employees-project-allocation" target="_blank" rel="noopener noreferrer">3057. 员工项目分配 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3057.Employees%20Project%20Allocation/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/friends-with-no-mutual-friends" target="_blank" rel="noopener noreferrer">3058. 没有共同朋友的朋友 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3058.Friends%20With%20No%20Mutual%20Friends/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-all-unique-email-domains" target="_blank" rel="noopener noreferrer">3059. 找到所有不同的邮件域名 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3059.Find%20All%20Unique%20Email%20Domains/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/user-activities-within-time-bounds" target="_blank" rel="noopener noreferrer">3060. 时间范围内的用户活动 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3060.User%20Activities%20within%20Time%20Bounds/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/calculate-trapping-rain-water" target="_blank" rel="noopener noreferrer">3061. 计算滞留雨水 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3061.Calculate%20Trapping%20Rain%20Water/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-trending-hashtags" target="_blank" rel="noopener noreferrer">3087. 查找热门话题标签 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3087.Find%20Trending%20Hashtags/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-bursty-behavior" target="_blank" rel="noopener noreferrer">3089. 查找突发行为 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3000-3099/3089.Find%20Bursty%20Behavior/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-trending-hashtags-ii" target="_blank" rel="noopener noreferrer">3103. 查找热门话题标签 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3103.Find%20Trending%20Hashtags%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/friday-purchase-iii" target="_blank" rel="noopener noreferrer">3118. 发生在周五的交易 III 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3118.Friday%20Purchase%20III/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-longest-calls" target="_blank" rel="noopener noreferrer">3124. 查找最长的电话 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3124.Find%20Longest%20Calls/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/server-utilization-time" target="_blank" rel="noopener noreferrer">3126. 服务器利用时间 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3126.Server%20Utilization%20Time/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/consecutive-available-seats-ii" target="_blank" rel="noopener noreferrer">3140. 连续空余座位 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3140.Consecutive%20Available%20Seats%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/invalid-tweets-ii" target="_blank" rel="noopener noreferrer">3150. 无效的推文 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3150.Invalid%20Tweets%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/employee-task-duration-and-concurrent-tasks" target="_blank" rel="noopener noreferrer">3156. 员工任务持续时间和并发任务 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3156.Employee%20Task%20Duration%20and%20Concurrent%20Tasks/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/calculate-parking-fees-and-duration" target="_blank" rel="noopener noreferrer">3166. 计算停车费与时长 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3166.Calculate%20Parking%20Fees%20and%20Duration/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/second-day-verification" target="_blank" rel="noopener noreferrer">3172. 第二天验证 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3172.Second%20Day%20Verification/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-top-scoring-students" target="_blank" rel="noopener noreferrer">3182. 查找得分最高的学生 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3182.Find%20Top%20Scoring%20Students/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-top-scoring-students-ii" target="_blank" rel="noopener noreferrer">3188. 查找得分最高的学生 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3188.Find%20Top%20Scoring%20Students%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-cities-in-each-state" target="_blank" rel="noopener noreferrer">3198. 查找每个州的城市 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3100-3199/3198.Find%20Cities%20in%20Each%20State/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/bitwise-user-permissions-analysis" target="_blank" rel="noopener noreferrer">3204. 按位用户权限分析 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3204.Bitwise%20User%20Permissions%20Analysis/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/year-on-year-growth-rate" target="_blank" rel="noopener noreferrer">3214. 同比增长率 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3214.Year%20on%20Year%20Growth%20Rate/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/odd-and-even-transactions" target="_blank" rel="noopener noreferrer">3220. 奇数和偶数交易</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3220.Odd%20and%20Even%20Transactions/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/customer-purchasing-behavior-analysis" target="_blank" rel="noopener noreferrer">3230. 客户购买行为分析 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3230.Customer%20Purchasing%20Behavior%20Analysis/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/ceo-subordinate-hierarchy" target="_blank" rel="noopener noreferrer">3236. 首席执行官下属层级 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3236.CEO%20Subordinate%20Hierarchy/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/premier-league-table-ranking" target="_blank" rel="noopener noreferrer">3246. 英超积分榜排名 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3246.Premier%20League%20Table%20Ranking/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/premier-league-table-ranking-ii" target="_blank" rel="noopener noreferrer">3252. 英超积分榜排名 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3252.Premier%20League%20Table%20Ranking%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-overlapping-shifts" target="_blank" rel="noopener noreferrer">3262. 查找重叠的班次 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3262.Find%20Overlapping%20Shifts/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-overlapping-shifts-ii" target="_blank" rel="noopener noreferrer">3268. 查找重叠的班次 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3268.Find%20Overlapping%20Shifts%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-candidates-for-data-scientist-position-ii" target="_blank" rel="noopener noreferrer">3278. 寻找数据科学家职位的候选人 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3278.Find%20Candidates%20for%20Data%20Scientist%20Position%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/calculate-product-final-price" target="_blank" rel="noopener noreferrer">3293. 计算产品最终价格 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3200-3299/3293.Calculate%20Product%20Final%20Price/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-top-performing-driver" target="_blank" rel="noopener noreferrer">3308. 寻找表现最佳的司机 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3300-3399/3308.Find%20Top%20Performing%20Driver/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/premier-league-table-ranking-iii" target="_blank" rel="noopener noreferrer">3322. 英超积分榜排名 III 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3300-3399/3322.Premier%20League%20Table%20Ranking%20III/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-cities-in-each-state-ii" target="_blank" rel="noopener noreferrer">3328. 查找每个州的城市 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3300-3399/3328.Find%20Cities%20in%20Each%20State%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/second-highest-salary-ii" target="_blank" rel="noopener noreferrer">3338. 第二高的薪水 II 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3300-3399/3338.Second%20Highest%20Salary%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/books-with-null-ratings" target="_blank" rel="noopener noreferrer">3358. 评分为 NULL 的图书 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3300-3399/3358.Books%20with%20NULL%20Ratings/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/first-letter-capitalization" target="_blank" rel="noopener noreferrer">3368. 首字母大写 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3300-3399/3368.First%20Letter%20Capitalization/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/first-letter-capitalization-ii" target="_blank" rel="noopener noreferrer">3374. 首字母大写 II</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3300-3399/3374.First%20Letter%20Capitalization%20II/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/team-dominance-by-pass-success" target="_blank" rel="noopener noreferrer">3384. 球队传球成功的优势得分 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3300-3399/3384.Team%20Dominance%20by%20Pass%20Success/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/longest-team-pass-streak" target="_blank" rel="noopener noreferrer">3390. 最长团队传球连击 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3300-3399/3390.Longest%20Team%20Pass%20Streak/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-circular-gift-exchange-chains" target="_blank" rel="noopener noreferrer">3401. 寻找环形礼物交换链 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3400-3499/3401.Find%20Circular%20Gift%20Exchange%20Chains/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-products-with-three-consecutive-digits" target="_blank" rel="noopener noreferrer">3415. 查找具有三个连续数字的产品 🔒</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3400-3499/3415.Find%20Products%20with%20Three%20Consecutive%20Digits/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-students-who-improved" target="_blank" rel="noopener noreferrer">3421. 查找进步的学生</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3400-3499/3421.Find%20Students%20Who%20Improved/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-valid-emails" target="_blank" rel="noopener noreferrer">3436. 查找合法邮箱</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3400-3499/3436.Find%20Valid%20Emails/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-invalid-ip-addresses" target="_blank" rel="noopener noreferrer">3451. 查找无效的 IP 地址</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3400-3499/3451.Find%20Invalid%20IP%20Addresses/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-products-with-valid-serial-numbers" target="_blank" rel="noopener noreferrer">3465. 查找具有有效序列号的产品</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3400-3499/3465.Find%20Products%20with%20Valid%20Serial%20Numbers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/dna-pattern-recognition" target="_blank" rel="noopener noreferrer">3475. DNA 模式识别</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3400-3499/3475.DNA%20Pattern%20Recognition/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/analyze-organization-hierarchy" target="_blank" rel="noopener noreferrer">3482. 分析组织层级</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3400-3499/3482.Analyze%20Organization%20Hierarchy/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/analyze-subscription-conversion" target="_blank" rel="noopener noreferrer">3497. 分析订阅转化</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3400-3499/3497.Analyze%20Subscription%20Conversion/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-product-recommendation-pairs" target="_blank" rel="noopener noreferrer">3521. 查找推荐产品对</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3500-3599/3521.Find%20Product%20Recommendation%20Pairs/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-category-recommendation-pairs" target="_blank" rel="noopener noreferrer">3554. 查找类别推荐对</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3500-3599/3554.Find%20Category%20Recommendation%20Pairs/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/seasonal-sales-analysis" target="_blank" rel="noopener noreferrer">3564. 季节性销售分析</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3500-3599/3564.Seasonal%20Sales%20Analysis/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-books-with-no-available-copies" target="_blank" rel="noopener noreferrer">3570. 查找无可用副本的书籍</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3500-3599/3570.Find%20Books%20with%20No%20Available%20Copies/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-consistently-improving-employees" target="_blank" rel="noopener noreferrer">3580. 寻找持续进步的员工</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3500-3599/3580.Find%20Consistently%20Improving%20Employees/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-covid-recovery-patients" target="_blank" rel="noopener noreferrer">3586. 寻找 COVID 康复患者</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3500-3599/3586.Find%20COVID%20Recovery%20Patients/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-drivers-with-improved-fuel-efficiency" target="_blank" rel="noopener noreferrer">3601. 寻找燃油效率提升的驾驶员</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3600-3699/3601.Find%20Drivers%20with%20Improved%20Fuel%20Efficiency/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-overbooked-employees" target="_blank" rel="noopener noreferrer">3611. 查找超预订员工</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3600-3699/3611.Find%20Overbooked%20Employees/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-students-with-study-spiral-pattern" target="_blank" rel="noopener noreferrer">3617. 查找具有螺旋学习模式的学生</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3600-3699/3617.Find%20Students%20with%20Study%20Spiral%20Pattern/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-stores-with-inventory-imbalance" target="_blank" rel="noopener noreferrer">3626. 查找库存不平衡的店铺</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3600-3699/3626.Find%20Stores%20with%20Inventory%20Imbalance/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-books-with-polarized-opinions" target="_blank" rel="noopener noreferrer">3642. 查找有两极分化观点的书籍</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3600-3699/3642.Find%20Books%20with%20Polarized%20Opinions/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-loyal-customers" target="_blank" rel="noopener noreferrer">3657. 寻找忠实客户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3600-3699/3657.Find%20Loyal%20Customers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-zombie-sessions" target="_blank" rel="noopener noreferrer">3673. 查找僵尸会话</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3600-3699/3673.Find%20Zombie%20Sessions/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-golden-hour-customers" target="_blank" rel="noopener noreferrer">3705. 寻找黄金时段客户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3700-3799/3705.Find%20Golden%20Hour%20Customers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-churn-risk-customers" target="_blank" rel="noopener noreferrer">3716. 寻找流失风险客户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3700-3799/3716.Find%20Churn%20Risk%20Customers/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/most-common-course-pairs" target="_blank" rel="noopener noreferrer">3764. 最常见的课程组合</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3700-3799/3764.Most%20Common%20Course%20Pairs/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-users-with-high-token-usage" target="_blank" rel="noopener noreferrer">3793. 查找高 tokens 使用量的用户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3700-3799/3793.Find%20Users%20with%20High%20Token%20Usage/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-emotionally-consistent-users" target="_blank" rel="noopener noreferrer">3808. 寻找情绪一致的用户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3800-3899/3808.Find%20Emotionally%20Consistent%20Users/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/find-users-with-persistent-behavior-patterns" target="_blank" rel="noopener noreferrer">3832. 查找具有持续行为模式的用户</a></td>
+<td>数据库</td>
+<td>非 Go 题型</td>
+<td><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/3800-3899/3832.Find%20Users%20with%20Persistent%20Behavior%20Patterns/README.md" target="_blank" rel="noopener noreferrer">来源</a></td>
+</tr>
+</tbody>
+</table>
+`},null,-1)])])}const i=t(a,[["render",d]]);export{h as __pageData,i as default};

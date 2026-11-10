@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="830" viewBox="0 0 480 830" role="img" aria-labelledby="title desc">
+<title id="title">FIBA 篮球场主要区域</title><desc id="desc">28米乘15米比例俯视图。两端限制区、罚球线、6.75米三分线与中线；底色区为限制区，圆点为篮圈中心投影。省略罚球站位线等细节。</desc>
+<rect width="480" height="830" rx="12" fill="#fff"/>
+<g font-family="Microsoft YaHei, Noto Sans SC, sans-serif" fill="#172a46" text-anchor="middle">
+<text x="240" y="36" font-size="24" font-weight="700">篮球：先分清两分与三分</text><text x="240" y="68" font-size="20">宽 15 m · 长 28 m</text>
+<g stroke="#233f64" stroke-width="2" fill="#f2f7fb">
+<rect x="90" y="90" width="300" height="560"/>
+<rect x="191" y="90" width="98" height="116" fill="#dceef5"/><rect x="191" y="534" width="98" height="116" fill="#dceef5"/>
+<path d="M90 370H390"/><circle cx="240" cy="370" r="36" fill="none"/>
+<circle cx="240" cy="206" r="36" fill="none"/><circle cx="240" cy="534" r="36" fill="none"/>
+<path d="M108 90V149.8 A135 135 0 0 0 372 149.8V90 M108 650V590.2 A135 135 0 0 1 372 590.2V650" stroke="#a44a15" stroke-width="3" fill="none"/>
+<path d="M222 114H258 M222 626H258" stroke-width="4"/>
+</g>
+<circle cx="240" cy="121.5" r="5" fill="#172a46"/><circle cx="240" cy="618.5" r="5" fill="#172a46"/>
+<text x="240" y="169" font-size="22">限制区</text><text x="240" y="576" font-size="22">限制区</text><text x="240" y="309" font-size="22">三分线外</text><text x="240" y="465" font-size="22">三分线外</text>
+<text x="240" y="690" font-size="20">棕线：三分线，弧半径 6.75 m</text><text x="240" y="722" font-size="20">踩三分线投中：2 分</text><text x="240" y="754" font-size="20">圆点：篮圈中心的地面投影</text><text x="240" y="791" font-size="18">主要区域按比例 · 线宽与篮圈符号放大</text>
+</g></svg>

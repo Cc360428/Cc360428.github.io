@@ -1,0 +1,5045 @@
+import{_ as a,a as s,c as t,b as e}from"./chunks/framework.BSuaGltH.js";const d=JSON.parse('{"title":"LeetCode Go · 滑动窗口（1）","description":"滑动窗口分类，第 3–1297 题，共 30 题，含题目、可折叠解法与 Go 实现。","frontmatter":{"title":"LeetCode Go · 滑动窗口（1）","description":"滑动窗口分类，第 3–1297 题，共 30 题，含题目、可折叠解法与 Go 实现。","showdocs":{"topics":[{"id":"leetcode","title":"LeetCode","link":"/topics/leetcode/"}],"kind":"实践案例","scope":"general","audience":"general","group":"原理与设计","summary":"滑动窗口分类，第 3–1297 题，共 30 题，含题目、可折叠解法与 Go 实现。","status":"active","related":[{"title":"LeetCode Go · 并查集（1）","link":"/principles/algorithms/leetcode-go/union-find-01","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（2）","link":"/principles/algorithms/leetcode-go/union-find-02","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（3）","link":"/principles/algorithms/leetcode-go/union-find-03","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（4）","link":"/principles/algorithms/leetcode-go/union-find-04","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并发（1）","link":"/principles/algorithms/leetcode-go/concurrency-01","kind":"实践案例","scope":"general","audience":"general"}],"prev":false,"next":{"text":"LeetCode Go · 滑动窗口（2）","link":"/principles/algorithms/leetcode-go/sliding-window-02"}},"layout":"ReadingPage","sidebar":false,"aside":false,"prev":false,"next":{"text":"LeetCode Go · 滑动窗口（2）","link":"/principles/algorithms/leetcode-go/sliding-window-02"}},"headers":[],"relativePath":"principles/algorithms/leetcode-go/sliding-window-01.md","filePath":"principles/algorithms/leetcode-go/sliding-window-01.md"}'),m={name:"principles/algorithms/leetcode-go/sliding-window-01.md"};function p(l,n,o,i,h,c){return s(),t("div",null,[...n[0]||(n[0]=[e("div",{innerHTML:`<div class="leetcode-reading"><h1 id="leetcode-go-·-滑动窗口-1" tabindex="-1">LeetCode Go · 滑动窗口（1） <a class="header-anchor" href="#leetcode-go-·-滑动窗口-1" aria-label="Permalink to &quot;LeetCode Go · 滑动窗口（1）&quot;">&ZeroWidthSpace;</a></h1>
+<p><a href="/principles/algorithms/leetcode-go/index">返回题库与筛选</a> · <a href="/principles/algorithms/leetcode-go/coverage">收录范围与使用说明</a></p>
+<details class="leetcode-attribution"><summary>来源与许可</summary><p>题目版权归 LeetCode；题解来自 <a href="https://github.com/doocs/leetcode" target="_blank" rel="noopener noreferrer">Doocs/leetcode</a>，按 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> 共享。补充 Go 代码来自<a href="https://github.com/EndlessCheng/codeforces-go/tree/e0fea933e2d713fd302622d2bb82a60f959a198e" target="_blank" rel="noopener noreferrer">灵茶山艾府</a>、<a href="https://github.com/halfrost/LeetCode-Go/tree/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e" target="_blank" rel="noopener noreferrer">halfrost</a>，保留 MIT 许可及逐题署名。本站提取 Go、调整分类及折叠排版；标注“本站整理”的 Go 解法依据题意与参考思路补写，按 CC BY-SA 4.0 共享。收录日期：2026-10-31；主题源版本：<a href="https://github.com/doocs/leetcode/tree/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011" target="_blank" rel="noopener noreferrer">91ef8c241a5e</a>。</p></details>
+<p class="leetcode-reading-hint">本卷 30 题 · 点击题目展开，先独立思考，再查看解法。</p><details class="leetcode-question" name="leetcode-questions" open>
+<summary class="leetcode-question-heading"><h2 id="q-3" tabindex="-1">3. 无重复字符的最长子串 <a class="header-anchor" href="#q-3" aria-label="Permalink to &quot;3. 无重复字符的最长子串 {#q-3}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长 <span>子串</span></strong><strong> </strong>的长度。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;&#10;<pre>&#10;<strong>输入: </strong>s = &quot;abcabcbb&quot;&#10;<strong>输出: </strong>3 &#10;<strong>解释:</strong> 因为无重复字符的最长子串是 <code>&quot;abc&quot;</code>，所以其长度为 3。注意 &quot;bca&quot; 和 &quot;cab&quot; 也是正确答案。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;&#10;<pre>&#10;<strong>输入: </strong>s = &quot;bbbbb&quot;&#10;<strong>输出: </strong>1&#10;<strong>解释: </strong>因为无重复字符的最长子串是 <code>&quot;b&quot;</code>，所以其长度为 1。&#10;</pre>&#10;&#10;<p><strong>示例 3:</strong></p>&#10;&#10;<pre>&#10;<strong>输入: </strong>s = &quot;pwwkew&quot;&#10;<strong>输出: </strong>3&#10;<strong>解释: </strong>因为无重复字符的最长子串是 <code>&quot;wke&quot;</code>，所以其长度为 3。&#10;     请注意，你的答案必须是 <strong>子串 </strong>的长度，<code>&quot;pwke&quot;</code> 是一个<em>子序列，</em>不是子串。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>0 &lt;= s.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>s</code> 由英文字母、数字、符号和空格组成</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>若枚举所有子串再判断是否含有重复字符，时间复杂度至少为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，无法通过。</p>
+<p>子串之间大量重叠：一旦区间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 已经不含重复字符，右端再纳入字符 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+</math></span> 时，只需处理 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+</math></span> 是否在窗口内再次出现，而不必重新扫描整段。若出现重复，合法解不可能再包含左侧多出来的那个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+</math></span>，应当右移 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>。用计数表维护 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>c</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 时收缩左端，直到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+</math></span> 只出现一次；此时当前窗口就是以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 结尾的最长无重复子串。</p>
+</blockquote>
+<p>我们可以用两个指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 维护一个滑动窗口，使其始终满足窗口内没有重复字符，初始时 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 都指向字符串的第一个字符。用一个哈希表或者长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>128</mn>
+</math></span> 的数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 来记录每个字符出现的次数，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>c</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示字符 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+</math></span> 出现的次数。</p>
+<p>接下来，我们依次移动右指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>，每次移动时，将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span> 的值加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，然后判断当前窗口 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 内 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span> 是否大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，如果大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，说明当前窗口内有重复字符，我们需要移动左指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>，直到窗口内没有重复字符为止。然后，我们更新答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ans</mtext>
+  <mo>=</mo>
+  <mo data-mjx-texclass="OP" movablelimits="true">max</mo>
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">ans</mtext>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo>&#x2212;</mo>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>最终，我们返回答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ans</mtext>
+</math></span> 即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">&#x3A3;</mi>
+</math></span> 表示字符集，这里 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">&#x3A3;</mi>
+</math></span> 的大小为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>128</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func lengthOfLongestSubstring(s string) (ans int) {</span></span>
+<span class="line"><span>	cnt := [128]int{}</span></span>
+<span class="line"><span>	l := 0</span></span>
+<span class="line"><span>	for r, c := range s {</span></span>
+<span class="line"><span>		cnt[c]++</span></span>
+<span class="line"><span>		for cnt[c] > 1 {</span></span>
+<span class="line"><span>			cnt[s[l]]--</span></span>
+<span class="line"><span>			l++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans = max(ans, r-l+1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0000-0099/0003.Longest%20Substring%20Without%20Repeating%20Characters/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-30" tabindex="-1">30. 串联所有单词的子串 <a class="header-anchor" href="#q-30" aria-label="Permalink to &quot;30. 串联所有单词的子串 {#q-30}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一个字符串 <code>s</code><strong> </strong>和一个字符串数组 <code>words</code><strong>。</strong> <code>words</code> 中所有字符串 <strong>长度相同</strong>。</p>&#10;&#10;<p> <code>s</code><strong> </strong>中的 <strong>串联子串</strong> 是指一个包含  <code>words</code> 中所有字符串以任意顺序排列连接起来的子串。</p>&#10;&#10;<ul>&#10;	<li>例如，如果 <code>words = [&quot;ab&quot;,&quot;cd&quot;,&quot;ef&quot;]</code>， 那么 <code>&quot;abcdef&quot;</code>， <code>&quot;abefcd&quot;</code>，<code>&quot;cdabef&quot;</code>， <code>&quot;cdefab&quot;</code>，<code>&quot;efabcd&quot;</code>， 和 <code>&quot;efcdab&quot;</code> 都是串联子串。 <code>&quot;acdbef&quot;</code> 不是串联子串，因为他不是任何 <code>words</code> 排列的连接。</li>&#10;</ul>&#10;&#10;<p>返回所有串联子串在 <code>s</code><strong> </strong>中的开始索引。你可以以 <strong>任意顺序</strong> 返回答案。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;barfoothefoobarman&quot;, words = [&quot;foo&quot;,&quot;bar&quot;]&#10;<strong>输出：</strong><code>[0,9]</code>&#10;<strong>解释：</strong>因为 words.length == 2 同时 words[i].length == 3，连接的子字符串的长度必须为 6。&#10;子串 &quot;barfoo&quot; 开始位置是 0。它是 words 中以 [&quot;bar&quot;,&quot;foo&quot;] 顺序排列的连接。&#10;子串 &quot;foobar&quot; 开始位置是 9。它是 words 中以 [&quot;foo&quot;,&quot;bar&quot;] 顺序排列的连接。&#10;输出顺序无关紧要。返回 [9,0] 也是可以的。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;wordgoodgoodgoodbestword&quot;, words = [&quot;word&quot;,&quot;good&quot;,&quot;best&quot;,&quot;word&quot;]&#10;<code><strong>输出：</strong>[]</code>&#10;<strong>解释：</strong>因为<strong> </strong>words.length == 4 并且 words[i].length == 4，所以串联子串的长度必须为 16。&#10;s 中没有子串长度为 16 并且等于 words 的任何顺序排列的连接。&#10;所以我们返回一个空数组。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;barfoofoobarthefoobarman&quot;, words = [&quot;bar&quot;,&quot;foo&quot;,&quot;the&quot;]&#10;<strong>输出：</strong>[6,9,12]&#10;<strong>解释：</strong>因为 words.length == 3 并且 words[i].length == 3，所以串联子串的长度必须为 9。&#10;子串 &quot;foobarthe&quot; 开始位置是 6。它是 words 中以 [&quot;foo&quot;,&quot;bar&quot;,&quot;the&quot;] 顺序排列的连接。&#10;子串 &quot;barthefoo&quot; 开始位置是 9。它是 words 中以 [&quot;bar&quot;,&quot;the&quot;,&quot;foo&quot;] 顺序排列的连接。&#10;子串 &quot;thefoobar&quot; 开始位置是 12。它是 words 中以 [&quot;the&quot;,&quot;foo&quot;,&quot;bar&quot;] 顺序排列的连接。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>1 &lt;= words.length &lt;= 5000</code></li>&#10;	<li><code>1 &lt;= words[i].length &lt;= 30</code></li>&#10;	<li><code>words[i]</code> 和 <code>s</code> 由小写英文字母组成</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 + 滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>串联子串的长度固定为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x22C5;</mo>
+  <mi>k</mi>
+</math></span>。若枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的每个起点再判断该窗口是否为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>w</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>d</mi>
+  <mi>s</mi>
+</math></span> 的某个排列，每个窗口还需切成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 段，时间约为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>n</mi>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>5000</mn>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2264;</mo>
+  <mn>30</mn>
+</math></span> 的范围下无法通过。</p>
+<p>单词等长，合法窗口的起点必然落在模 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的同一剩余类中，且相邻窗口只相差一个单词。因此词频可以用哈希表沿窗口差分维护，而不必每个起点重新统计。对齐方式只有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 种。</p>
+<p>为此对每个余数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2208;</mo>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 维护一个滑动窗口：右端每次纳入一个长为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的词；词不在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 中则整窗作废；某词次数过多则收缩左端；窗口恰好含 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 个词时记下左端。每个字符进出窗口常数次，总时间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们用哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 统计 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>w</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>d</mi>
+  <mi>s</mi>
+</math></span> 中每个单词出现的次数，用哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+</math></span> 统计当前滑动窗口中每个单词出现的次数。我们记字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>，字符串数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>w</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>d</mi>
+  <mi>s</mi>
+</math></span> 中单词的数量为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>，每个单词的长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。</p>
+<p>我们可以枚举滑动窗口的起点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mo>&lt;</mo>
+  <mi>i</mi>
+  <mo>&lt;</mo>
+  <mi>k</mi>
+</math></span>。对于每个起点，我们维护一个滑动窗口，左边界为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>，右边界为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>，滑动窗口中的单词个数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>，另外用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+</math></span> 统计滑动窗口中每个单词出现的次数。</p>
+<p>每一次，我们提取字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo>:</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo>:</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 不在哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 中，说明当前滑动窗口中的单词不合法，我们将左边界 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 更新为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>，同时将哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+</math></span> 清空，单词个数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 重置为 0。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo>:</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 在哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 中，说明当前滑动窗口中的单词合法，我们将单词个数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 加 1，将哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+</math></span> 中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo>:</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的次数加 1。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo>:</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span> 大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo>:</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span>，说明当前滑动窗口中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo>:</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 出现的次数过多，我们需要将左边界 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 右移，直到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo>:</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo>:</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span>。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>n</mi>
+</math></span>，说明当前滑动窗口中的单词正好合法，我们将左边界 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 加入答案数组。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>&#xD7;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 分别是字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 和字符串数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>w</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>d</mi>
+  <mi>s</mi>
+</math></span> 的长度，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 是字符串数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>w</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>d</mi>
+  <mi>s</mi>
+</math></span> 中单词的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func findSubstring(s string, words []string) (ans []int) {</span></span>
+<span class="line"><span>	cnt := make(map[string]int)</span></span>
+<span class="line"><span>	for _, w := range words {</span></span>
+<span class="line"><span>		cnt[w]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	m, n, k := len(s), len(words), len(words[0])</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; k; i++ {</span></span>
+<span class="line"><span>		l, r := i, i</span></span>
+<span class="line"><span>		cnt1 := make(map[string]int)</span></span>
+<span class="line"><span>		for r+k &#x3C;= m {</span></span>
+<span class="line"><span>			t := s[r : r+k]</span></span>
+<span class="line"><span>			r += k</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>			if _, exists := cnt[t]; !exists {</span></span>
+<span class="line"><span>				cnt1 = make(map[string]int)</span></span>
+<span class="line"><span>				l = r</span></span>
+<span class="line"><span>				continue</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			cnt1[t]++</span></span>
+<span class="line"><span>			for cnt1[t] > cnt[t] {</span></span>
+<span class="line"><span>				w := s[l : l+k]</span></span>
+<span class="line"><span>				cnt1[w]--</span></span>
+<span class="line"><span>				if cnt1[w] == 0 {</span></span>
+<span class="line"><span>					delete(cnt1, w)</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				l += k</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if r-l == n*k {</span></span>
+<span class="line"><span>				ans = append(ans, l)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/substring-with-concatenation-of-all-words" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0000-0099/0030.Substring%20with%20Concatenation%20of%20All%20Words/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-76" tabindex="-1">76. 最小覆盖子串 <a class="header-anchor" href="#q-76" aria-label="Permalink to &quot;76. 最小覆盖子串 {#q-76}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定两个字符串 <code>s</code> 和 <code>t</code>，长度分别是 <code>m</code> 和 <code>n</code>，返回 s 中的 <strong>最短窗口 <span>子串</span></strong>，使得该子串包含 <code>t</code> 中的每一个字符（<strong>包括重复字符</strong>）。如果没有这样的子串，返回空字符串<em> </em><code>&quot;&quot;</code>。</p>&#10;&#10;<p>测试用例保证答案唯一。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;ADOBECODEBANC&quot;, t = &quot;ABC&quot;&#10;<strong>输出：</strong>&quot;BANC&quot;&#10;<strong>解释：</strong>最小覆盖子串 &quot;BANC&quot; 包含来自字符串 t 的 'A'、'B' 和 'C'。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;a&quot;, t = &quot;a&quot;&#10;<strong>输出：</strong>&quot;a&quot;&#10;<strong>解释：</strong>整个字符串 s 是最小覆盖子串。&#10;</pre>&#10;&#10;<p><strong>示例 3:</strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> s = &quot;a&quot;, t = &quot;aa&quot;&#10;<strong>输出:</strong> &quot;&quot;&#10;<strong>解释:</strong> t 中两个字符 'a' 均应包含在 s 的子串中，&#10;因此没有符合条件的子字符串，返回空字符串。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>m == s.length</code></li>&#10;	<li><code>n == t.length</code></li>&#10;	<li><code>1 &lt;= m, n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>s</code> 和 <code>t</code> 由英文字母组成</li>&#10;</ul>&#10;&#10;<p> </p>&#10;<strong>进阶：</strong>你能设计一个在 <code>O(m + n)</code> 时间内解决此问题的算法吗？</div>
+</details>
+<details class="details custom-block"><summary>方法一：计数 + 双指针 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>若枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的所有子串再检查是否覆盖 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>，窗口有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>m</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span> 个， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span> 无法通过。进阶要求 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>+</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>覆盖一旦成立，左端多余字符可以移出窗口；尚未覆盖则只能继续右扩。因此维护 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 的字符配额 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+</math></span>、窗口计数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">window</mtext>
+</math></span>，并用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 记录已经凑齐的必要出现次数，判断覆盖只需常数时间。右指针扫描 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，窗口合法时尽量收缩左端并记录最短区间。</p>
+</blockquote>
+<p>我们用一个哈希表或数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+</math></span> 统计字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 中每个字符出现的次数，用另一个哈希表或数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">window</mtext>
+</math></span> 统计滑动窗口中每个字符出现的次数。另外，定义两个指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 分别指向窗口的左右边界，变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 表示窗口中已经包含了 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 中的多少个字符，变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mi</mtext>
+</math></span> 分别表示最小覆盖子串的起始位置和长度。</p>
+<p>我们从左到右遍历字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，对于当前遍历到的字符 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span>：</p>
+<ul>
+<li>我们将其加入窗口中，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">window</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mtext mathvariant="italic">window</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span>，如果此时 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2265;</mo>
+  <mtext mathvariant="italic">window</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span>，则说明 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 是一个「必要的字符」，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 加一。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 的长度，说明此时窗口中已经包含了 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 中的所有字符，我们就可以尝试更新最小覆盖子串的起始位置和长度了。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>&#x2212;</mo>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>&lt;</mo>
+  <mtext mathvariant="italic">mi</mtext>
+</math></span>，说明当前窗口表示的子串更短，我们就更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mi</mtext>
+  <mo>=</mo>
+  <mi>r</mi>
+  <mo>&#x2212;</mo>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>=</mo>
+  <mi>l</mi>
+</math></span>。</li>
+<li>然后，我们尝试移动左边界 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>，如果此时 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2265;</mo>
+  <mtext mathvariant="italic">window</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span>，则说明 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 是一个「必要的字符」，移动左边界时会把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 这个字符从窗口中移除，因此我们需要将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 减一，然后更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">window</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mtext mathvariant="italic">window</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>l</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，并将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 右移一位。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 的长度不相等，说明此时窗口中还没有包含 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 中的所有字符，我们就不需要移动左边界了，直接将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 右移一位，继续遍历即可。</li>
+</ul>
+<p>遍历结束，如果没有找到最小覆盖子串，返回空字符串，否则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>k</mi>
+  <mo>:</mo>
+  <mi>k</mi>
+  <mo>+</mo>
+  <mtext mathvariant="italic">mi</mtext>
+  <mo stretchy="false">]</mo>
+</math></span> 即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>+</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 分别是字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 的长度；而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+</math></span> 是字符集的大小，本题中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo>=</mo>
+  <mn>128</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func minWindow(s string, t string) string {</span></span>
+<span class="line"><span>	need := make([]int, 128)</span></span>
+<span class="line"><span>	window := make([]int, 128)</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; len(t); i++ {</span></span>
+<span class="line"><span>		need[t[i]]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	m, n := len(s), len(t)</span></span>
+<span class="line"><span>	k, mi, cnt := -1, m+1, 0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	for l, r := 0, 0; r &#x3C; m; r++ {</span></span>
+<span class="line"><span>		c := s[r]</span></span>
+<span class="line"><span>		if window[c]++; window[c] &#x3C;= need[c] {</span></span>
+<span class="line"><span>			cnt++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for cnt == n {</span></span>
+<span class="line"><span>			if r-l+1 &#x3C; mi {</span></span>
+<span class="line"><span>				mi = r - l + 1</span></span>
+<span class="line"><span>				k = l</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>			c = s[l]</span></span>
+<span class="line"><span>			if window[c] &#x3C;= need[c] {</span></span>
+<span class="line"><span>				cnt--</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			window[c]--</span></span>
+<span class="line"><span>			l++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if k &#x3C; 0 {</span></span>
+<span class="line"><span>		return ""</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return s[k : k+mi]</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/minimum-window-substring" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0000-0099/0076.Minimum%20Window%20Substring/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-159" tabindex="-1">159. 至多包含两个不同字符的最长子串 🔒 <a class="header-anchor" href="#q-159" aria-label="Permalink to &quot;159. 至多包含两个不同字符的最长子串 🔒 {#q-159}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre>给你一个字符串 <code>s</code> ，请你找出 <strong>至多 </strong>包含 <strong>两个不同字符</strong> 的最长<span>子串</span>，并返回该子串的长度。&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;eceba&quot;&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>满足题目要求的子串是 &quot;ece&quot; ，长度为 3 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;ccaabbb&quot;&#10;<strong>输出：</strong>5&#10;<strong>解释：</strong>满足题目要求的子串是 &quot;aabbb&quot; ，长度为 5 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>s</code> 由英文字母组成</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 + 滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>求最多含两种字符的最长子串。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，枚举左右端点是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>。种类数随右端点增加、随左端点减少，具有单调性。右指针纳入字符并计数，种类超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 就移动左指针丢掉字符，窗口合法时更新最大长度。</p>
+</blockquote>
+<p>我们维护一个哈希表 <code v-pre>cnt</code> 记录当前滑动窗口中各个字符出现的次数，如果哈希表中的键值对个数超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>，则说明当前滑动窗口中包含了超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 个不同的字符，此时需要移动左指针 <code v-pre>j</code>，直到哈希表中的键值对个数不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 为止，然后更新窗口的最大长度。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func lengthOfLongestSubstringTwoDistinct(s string) (ans int) {</span></span>
+<span class="line"><span>	cnt := map[byte]int{}</span></span>
+<span class="line"><span>	j := 0</span></span>
+<span class="line"><span>	for i := range s {</span></span>
+<span class="line"><span>		cnt[s[i]]++</span></span>
+<span class="line"><span>		for len(cnt) > 2 {</span></span>
+<span class="line"><span>			cnt[s[j]]--</span></span>
+<span class="line"><span>			if cnt[s[j]] == 0 {</span></span>
+<span class="line"><span>				delete(cnt, s[j])</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			j++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans = max(ans, i-j+1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/longest-substring-with-at-most-two-distinct-characters" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0159.Longest%20Substring%20with%20At%20Most%20Two%20Distinct%20Characters/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-187" tabindex="-1">187. 重复的DNA序列 <a class="header-anchor" href="#q-187" aria-label="Permalink to &quot;187. 重复的DNA序列 {#q-187}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：位运算、哈希表、字符串、滑动窗口、哈希函数、滚动哈希、Boyer–Moore 算法、扩展 KMP</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p><strong>DNA序列</strong> 由一系列核苷酸组成，缩写为 <code>'A'</code>, <code>'C'</code>, <code>'G'</code> 和 <code>'T'</code>.。</p>&#10;&#10;<ul>&#10;	<li>例如，<code>&quot;ACGAATTCCG&quot;</code> 是一个 <strong>DNA序列</strong> 。</li>&#10;</ul>&#10;&#10;<p>在研究 <strong>DNA</strong> 时，识别 DNA 中的重复序列非常有用。</p>&#10;&#10;<p>给定一个表示 <strong>DNA序列</strong> 的字符串 <code>s</code> ，返回所有在 DNA 分子中出现不止一次的 <strong>长度为 <code>10</code></strong> 的序列(子字符串)。你可以按 <strong>任意顺序</strong> 返回答案。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT&quot;&#10;<strong>输出：</strong>[&quot;AAAAACCCCC&quot;,&quot;CCCCCAAAAA&quot;]&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;AAAAAAAAAAAAA&quot;&#10;<strong>输出：</strong>[&quot;AAAAAAAAAA&quot;]&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>0 &lt;= s.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>s[i]</code><code>==</code><code>'A'</code>、<code>'C'</code>、<code>'G'</code> or <code>'T'</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 且出现至少两次的子串。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，枚举全部子串再两两比较不可行。滑过每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>.</mo>
+  <mo>.</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mn>9</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，哈希表计数，第二次出现时写入答案，之后不再重复加入。</p>
+</blockquote>
+<p>我们定义一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span>，用于存储所有长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 的子字符串出现的次数。</p>
+<p>遍历字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的所有长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 的子字符串，对于当前子字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>，我们更新其在哈希表中对应的计数。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 的计数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>，我们就将它加入答案。</p>
+<p>遍历结束后，返回答案数组即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mn>10</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mn>10</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func findRepeatedDnaSequences(s string) (ans []string) {</span></span>
+<span class="line"><span>	cnt := map[string]int{}</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; len(s)-10+1; i++ {</span></span>
+<span class="line"><span>		t := s[i : i+10]</span></span>
+<span class="line"><span>		cnt[t]++</span></span>
+<span class="line"><span>		if cnt[t] == 2 {</span></span>
+<span class="line"><span>			ans = append(ans, t)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：Rabin-Karp 字符串匹配算法 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一每次切片并哈希长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>10</mn>
+</math></span> 的串。字母只有四种，可把窗口编成整数，滑窗时加减进出的字符，计数变为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，总时间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>本质上是滑动窗口和哈希的结合方法，和 <a href="https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/" target="_blank" rel="noopener noreferrer">0028.找出字符串中第一个匹配项的下标</a> 类似，本题可以借助哈希函数将子序列计数的时间复杂度降低到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func findRepeatedDnaSequences(s string) []string {</span></span>
+<span class="line"><span>	hashCode := map[byte]int{'A': 0, 'C': 1, 'G': 2, 'T': 3}</span></span>
+<span class="line"><span>	ans, cnt, left, right := []string{}, map[int]int{}, 0, 0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	sha, multi := 0, int(math.Pow(4, 9))</span></span>
+<span class="line"><span>	for ; right &#x3C; len(s); right++ {</span></span>
+<span class="line"><span>		sha = sha*4 + hashCode[s[right]]</span></span>
+<span class="line"><span>		if right-left+1 &#x3C; 10 {</span></span>
+<span class="line"><span>			continue</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		cnt[sha]++</span></span>
+<span class="line"><span>		if cnt[sha] == 2 {</span></span>
+<span class="line"><span>			ans = append(ans, s[left:right+1])</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		sha, left = sha-multi*hashCode[s[left]], left+1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/repeated-dna-sequences" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0100-0199/0187.Repeated%20DNA%20Sequences/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-219" tabindex="-1">219. 存在重复元素 II <a class="header-anchor" href="#q-219" aria-label="Permalink to &quot;219. 存在重复元素 II {#q-219}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，判断数组中是否存在两个 <strong>不同的索引</strong><em> </em><code>i</code> 和<em> </em><code>j</code> ，满足 <code>nums[i] == nums[j]</code> 且 <code>abs(i - j) &lt;= k</code> 。如果存在，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,2,3,1], k<em> </em>= 3&#10;<strong>输出：</strong>true</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,0,1,1], k<em> </em>=<em> </em>1&#10;<strong>输出：</strong>true</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,2,3,1,2,3], k<em> </em>=<em> </em>2&#10;<strong>输出：</strong>false</pre>&#10;&#10;<p> </p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>&#10;	<li><code>0 &lt;= k &lt;= 10<sup>5</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>除值相等外，还要求下标差不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。排序会打乱下标，需额外记录位置。</p>
+<p>哈希表保存每个值最近一次出现的下标，扫到相同值时检查间距即可。</p>
+</blockquote>
+<p>我们用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">d</mtext>
+</math></span> 存放最近遍历到的数以及对应的下标。</p>
+<p>遍历数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span>，对于当前遍历到的元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，如果在哈希表中存在，并且下标与当前元素的下标之差不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>true</mtext>
+</math></span>，否则将当前元素加入哈希表中。</p>
+<p>遍历结束后，返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>false</mtext>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func containsNearbyDuplicate(nums []int, k int) bool {</span></span>
+<span class="line"><span>	d := map[int]int{}</span></span>
+<span class="line"><span>	for i, x := range nums {</span></span>
+<span class="line"><span>		if j, ok := d[x]; ok &#x26;&#x26; i-j &#x3C;= k {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		d[x] = i</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return false</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/contains-duplicate-ii" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0200-0299/0219.Contains%20Duplicate%20II/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-220" tabindex="-1">220. 存在重复元素 III <a class="header-anchor" href="#q-220" aria-label="Permalink to &quot;220. 存在重复元素 III {#q-220}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、桶排序、有序集合、排序、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数数组 <code>nums</code> 和两个整数 <code>indexDiff</code> 和 <code>valueDiff</code> 。</p>&#10;&#10;<p>找出满足下述条件的下标对 <code>(i, j)</code>：</p>&#10;&#10;<ul>&#10;	<li><code>i != j</code>,</li>&#10;	<li><code>abs(i - j) &lt;= indexDiff</code></li>&#10;	<li><code>abs(nums[i] - nums[j]) &lt;= valueDiff</code></li>&#10;</ul>&#10;&#10;<p>如果存在，返回 <code>true</code><em> ；</em>否则，返回<em> </em><code>false</code><em> </em>。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,2,3,1], indexDiff = 3, valueDiff = 0&#10;<strong>输出：</strong>true&#10;<strong>解释：</strong>可以找出 (i, j) = (0, 3) 。&#10;满足下述 3 个条件：&#10;i != j --> 0 != 3&#10;abs(i - j) &lt;= indexDiff --> abs(0 - 3) &lt;= 3&#10;abs(nums[i] - nums[j]) &lt;= valueDiff --> abs(1 - 1) &lt;= 0&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,5,9,1,5,9], indexDiff = 2, valueDiff = 3&#10;<strong>输出：</strong>false&#10;<strong>解释：</strong>尝试所有可能的下标对 (i, j) ，均无法满足这 3 个条件，因此返回 false 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>2 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>&#10;	<li><code>1 &lt;= indexDiff &lt;= nums.length</code></li>&#10;	<li><code>0 &lt;= valueDiff &lt;= 10<sup>9</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：滑动窗口 + 有序集合 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>除下标差不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">indexDiff</mtext>
+</math></span> 外，还要求值差不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">valueDiff</mtext>
+</math></span>。哈希只能判相等，无法在窗口内找“最接近”的数。</p>
+<p>维护长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">indexDiff</mtext>
+</math></span> 的有序集合：对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> 查找不小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">valueDiff</mtext>
+</math></span> 的最小元，若它也不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mo>+</mo>
+  <mtext mathvariant="italic">valueDiff</mtext>
+</math></span> 则成功。随后插入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span>，并删去滑出窗口的元素。</p>
+</blockquote>
+<p>我们维护一个大小为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的滑动窗口，窗口中的元素保持有序。</p>
+<p>遍历数组 <code v-pre>nums</code>，对于每个元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，我们在有序集合中查找第一个大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>t</mi>
+</math></span> 的元素，如果元素存在，并且该元素小于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>t</mi>
+</math></span>，说明找到了一对符合条件的元素，返回 <code v-pre>true</code>。否则，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 插入到有序集合中，并且如果有序集合的大小超过了 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，我们需要将最早加入有序集合的元素删除。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是数组 <code v-pre>nums</code> 的长度。对于每个元素，我们需要 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的时间来查找有序集合中的元素，一共有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 个元素，因此总时间复杂度是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func containsNearbyAlmostDuplicate(nums []int, k int, t int) bool {</span></span>
+<span class="line"><span>	n := len(nums)</span></span>
+<span class="line"><span>	left, right := 0, 0</span></span>
+<span class="line"><span>	rbt := redblacktree.NewWithIntComparator()</span></span>
+<span class="line"><span>	for right &#x3C; n {</span></span>
+<span class="line"><span>		cur := nums[right]</span></span>
+<span class="line"><span>		right++</span></span>
+<span class="line"><span>		if p, ok := rbt.Floor(cur); ok &#x26;&#x26; cur-p.Key.(int) &#x3C;= t {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if p, ok := rbt.Ceiling(cur); ok &#x26;&#x26; p.Key.(int)-cur &#x3C;= t {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		rbt.Put(cur, struct{}{})</span></span>
+<span class="line"><span>		if right-left > k {</span></span>
+<span class="line"><span>			rbt.Remove(nums[left])</span></span>
+<span class="line"><span>			left++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return false</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/contains-duplicate-iii" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0200-0299/0220.Contains%20Duplicate%20III/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-239" tabindex="-1">239. 滑动窗口最大值 <a class="header-anchor" href="#q-239" aria-label="Permalink to &quot;239. 滑动窗口最大值 {#q-239}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：队列、数组、滑动窗口、单调队列、堆（优先队列）、区间最值查询</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数数组 <code>nums</code>，有一个大小为 <code>k</code><em> </em>的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 <code>k</code> 个数字。滑动窗口每次只向右移动一位。</p>&#10;&#10;<p>返回 <em>滑动窗口中的最大值 </em>。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>nums = [1,3,-1,-3,5,3,6,7], k = 3&#10;<b>输出：</b>[3,3,5,5,6,7]&#10;<b>解释：</b>&#10;滑动窗口的位置                最大值&#10;---------------               -----&#10;[1  3  -1] -3  5  3  6  7       <strong>3</strong>&#10; 1 [3  -1  -3] 5  3  6  7       <strong>3</strong>&#10; 1  3 [-1  -3  5] 3  6  7      <strong> 5</strong>&#10; 1  3  -1 [-3  5  3] 6  7       <strong>5</strong>&#10; 1  3  -1  -3 [5  3  6] 7       <strong>6</strong>&#10; 1  3  -1  -3  5 [3  6  7]      <strong>7</strong>&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>nums = [1], k = 1&#10;<b>输出：</b>[1]&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><b>提示：</b></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>1 &lt;= k &lt;= nums.length</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：优先队列（大根堆） · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每个窗口内再扫一遍求最大，总时间为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。大根堆可在对数时间内给出当前最大，过期下标在堆顶时再弹出。</p>
+<p>先放入前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 个，随后每纳入一个新元素并清理过期堆顶，堆顶即为该窗口最大值。</p>
+</blockquote>
+<p>我们可以使用优先队列（大根堆）来维护滑动窗口中的最大值。</p>
+<p>先将前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 个元素加入优先队列，接下来从第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个元素开始，将新元素加入优先队列，同时判断堆顶元素是否滑出窗口，如果滑出窗口则将堆顶元素弹出。然后我们将堆顶元素加入结果数组。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func maxSlidingWindow(nums []int, k int) (ans []int) {</span></span>
+<span class="line"><span>	q := hp{}</span></span>
+<span class="line"><span>	for i, v := range nums[:k-1] {</span></span>
+<span class="line"><span>		heap.Push(&#x26;q, pair{v, i})</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := k - 1; i &#x3C; len(nums); i++ {</span></span>
+<span class="line"><span>		heap.Push(&#x26;q, pair{nums[i], i})</span></span>
+<span class="line"><span>		for q[0].i &#x3C;= i-k {</span></span>
+<span class="line"><span>			heap.Pop(&#x26;q)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans = append(ans, q[0].v)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type pair struct{ v, i int }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type hp []pair</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (h hp) Len() int { return len(h) }</span></span>
+<span class="line"><span>func (h hp) Less(i, j int) bool {</span></span>
+<span class="line"><span>	a, b := h[i], h[j]</span></span>
+<span class="line"><span>	return a.v > b.v || (a.v == b.v &#x26;&#x26; i &#x3C; j)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span>func (h hp) Swap(i, j int) { h[i], h[j] = h[j], h[i] }</span></span>
+<span class="line"><span>func (h *hp) Push(v any)   { *h = append(*h, v.(pair)) }</span></span>
+<span class="line"><span>func (h *hp) Pop() any     { a := *h; v := a[len(a)-1]; *h = a[:len(a)-1]; return v }</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：单调队列 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>堆中会残留过期元素，最坏仍带对数。窗口最大值只关心队头到队尾递减的候选。</p>
+<p>单调队列存下标：队头滑出则弹出，队尾不大于当前值则弹出，队头即为窗口最大，线性完成。</p>
+</blockquote>
+<p>求滑动窗口的最大值，一种常见的方法是使用单调队列。</p>
+<p>我们可以维护一个从队头到队尾单调递减的队列 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span>，队列中存储的是元素的下标。遍历数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span>，对于当前元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，我们首先判断队头元素是否滑出窗口，如果滑出窗口则将队头元素弹出。然后我们将当前元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 从队尾开始依次与队尾元素比较，如果队尾元素小于等于当前元素，则将队尾元素弹出，直到队尾元素大于当前元素或者队列为空。然后将当前元素的下标加入队列。此时队列的队头元素即为当前滑动窗口的最大值，注意，我们将队头元素加入结果数组的时机是当下标 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 时。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func maxSlidingWindow(nums []int, k int) (ans []int) {</span></span>
+<span class="line"><span>	q := []int{}</span></span>
+<span class="line"><span>	for i, x := range nums {</span></span>
+<span class="line"><span>		if len(q) > 0 &#x26;&#x26; i-q[0] >= k {</span></span>
+<span class="line"><span>			q = q[1:]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for len(q) > 0 &#x26;&#x26; nums[q[len(q)-1]] &#x3C;= x {</span></span>
+<span class="line"><span>			q = q[:len(q)-1]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		q = append(q, i)</span></span>
+<span class="line"><span>		if i >= k-1 {</span></span>
+<span class="line"><span>			ans = append(ans, nums[q[0]])</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/sliding-window-maximum" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0200-0299/0239.Sliding%20Window%20Maximum/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-340" tabindex="-1">340. 至多包含 K 个不同字符的最长子串 🔒 <a class="header-anchor" href="#q-340" aria-label="Permalink to &quot;340. 至多包含 K 个不同字符的最长子串 🔒 {#q-340}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个字符串 <code>s</code> 和一个整数 <code>k</code> ，请你找出 <strong>至多 </strong>包含<em> <code>k</code></em> 个 <strong>不同</strong> 字符的最长<span>子串</span>，并返回该子串的长度。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;eceba&quot;, k = 2&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>满足题目要求的子串是 &quot;ece&quot; ，长度为 3 。</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;aa&quot;, k = 1&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>满足题目要求的子串是 &quot;aa&quot; ，长度为 2 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>&#10;	<li><code>0 &lt;= k &lt;= 50</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：滑动窗口 + 哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 种不同字符的最长子串。枚举左右端点再数种类为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>。种类数随右端点增加、随左端点右移减少，可用滑动窗口。</p>
+<p>右指针纳入字符；种类超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 时左端删减直至合法。窗口始终是「以当前右端为尾的最长合法段」，最终长度即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>l</mi>
+</math></span>。</p>
+</blockquote>
+<p>我们可以使用滑动窗口的思想，用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 记录窗口中每个字符的出现次数，用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">l</mtext>
+</math></span> 记录窗口的左边界。</p>
+<p>遍历字符串，每次将右边界的字符加入哈希表，如果哈希表中不同字符的个数超过了 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，则将左边界的字符从哈希表中删除，然后更新左边界 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">l</mtext>
+</math></span>。</p>
+<p>最后返回字符串的长度减去左边界的长度即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func lengthOfLongestSubstringKDistinct(s string, k int) int {</span></span>
+<span class="line"><span>	cnt := map[byte]int{}</span></span>
+<span class="line"><span>	l := 0</span></span>
+<span class="line"><span>	for _, c := range s {</span></span>
+<span class="line"><span>		cnt[byte(c)]++</span></span>
+<span class="line"><span>		if len(cnt) > k {</span></span>
+<span class="line"><span>			cnt[s[l]]--</span></span>
+<span class="line"><span>			if cnt[s[l]] == 0 {</span></span>
+<span class="line"><span>				delete(cnt, s[l])</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			l++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return len(s) - l</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0300-0399/0340.Longest%20Substring%20with%20At%20Most%20K%20Distinct%20Characters/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-395" tabindex="-1">395. 至少有 K 个重复字符的最长子串 <a class="header-anchor" href="#q-395" aria-label="Permalink to &quot;395. 至少有 K 个重复字符的最长子串 {#q-395}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、分治、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个字符串 <code>s</code> 和一个整数 <code>k</code> ，请你找出 <code>s</code> 中的最长子串， 要求该子串中的每一字符出现次数都不少于 <code>k</code> 。返回这一子串的长度。</p>&#10;&#10;<p>如果不存在这样的子字符串，则返回 0。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;aaabb&quot;, k = 3&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>最长子串为 &quot;aaa&quot; ，其中 'a' 重复了 3 次。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;ababbc&quot;, k = 2&#10;<strong>输出：</strong>5&#10;<strong>解释：</strong>最长子串为 &quot;ababb&quot; ，其中 'a' 重复了 2 次， 'b' 重复了 3 次。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>s</code> 仅由小写英文字母组成</li>&#10;	<li><code>1 &lt;= k &lt;= 10<sup>5</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：分治 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>最长子串使得其中每个出现过的字符次数都 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2265;</mo>
+  <mi>k</mi>
+</math></span>。滑动窗口的种类约束不直接对应「每个都够 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 次」。若某字符全局不足 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，则含它的串一律非法，可作分割点。</p>
+<p>统计区间内频次，找出一个不足 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的字符，按它切开递归；若没有这样的字符则整段合法。最深 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>26</mn>
+</math></span> 层。</p>
+</blockquote>
+<p>对于字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，如果存在某个字符 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+</math></span>，其出现次数小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，则任何包含 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+</math></span> 的子串都不可能满足题目要求。因此我们可以将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 按照每个不满足条件的字符 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+</math></span> 进行分割，分割得到的每个子串都是原字符串的一个「子问题」，我们可以递归地求解每个子问题，最终的答案即为所有子问题的最大值。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>C</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>C</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+</math></span> 为字符集的大小。本题中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+  <mo>&#x2264;</mo>
+  <mn>26</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func longestSubstring(s string, k int) int {</span></span>
+<span class="line"><span>	var dfs func(l, r int) int</span></span>
+<span class="line"><span>	dfs = func(l, r int) int {</span></span>
+<span class="line"><span>		cnt := [26]int{}</span></span>
+<span class="line"><span>		for i := l; i &#x3C;= r; i++ {</span></span>
+<span class="line"><span>			cnt[s[i]-'a']++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		var split byte</span></span>
+<span class="line"><span>		for i, v := range cnt {</span></span>
+<span class="line"><span>			if v > 0 &#x26;&#x26; v &#x3C; k {</span></span>
+<span class="line"><span>				split = byte(i + 'a')</span></span>
+<span class="line"><span>				break</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if split == 0 {</span></span>
+<span class="line"><span>			return r - l + 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		i := l</span></span>
+<span class="line"><span>		ans := 0</span></span>
+<span class="line"><span>		for i &#x3C;= r {</span></span>
+<span class="line"><span>			for i &#x3C;= r &#x26;&#x26; s[i] == split {</span></span>
+<span class="line"><span>				i++</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if i > r {</span></span>
+<span class="line"><span>				break</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			j := i</span></span>
+<span class="line"><span>			for j &#x3C;= r &#x26;&#x26; s[j] != split {</span></span>
+<span class="line"><span>				j++</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			t := dfs(i, j-1)</span></span>
+<span class="line"><span>			ans = max(ans, t)</span></span>
+<span class="line"><span>			i = j</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return ans</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return dfs(0, len(s)-1)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0300-0399/0395.Longest%20Substring%20with%20At%20Least%20K%20Repeating%20Characters/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-424" tabindex="-1">424. 替换后的最长重复字符 <a class="header-anchor" href="#q-424" aria-label="Permalink to &quot;424. 替换后的最长重复字符 {#q-424}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个字符串 <code>s</code> 和一个整数 <code>k</code> 。你可以选择字符串中的任一字符，并将其更改为任何其他大写英文字符。该操作最多可执行 <code>k</code> 次。</p>&#10;&#10;<p>在执行上述操作后，返回 <em>包含相同字母的最长子字符串的长度。</em></p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;ABAB&quot;, k = 2&#10;<strong>输出：</strong>4&#10;<strong>解释：</strong>用两个'A'替换为两个'B',反之亦然。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;AABABBA&quot;, k = 1&#10;<strong>输出：</strong>4&#10;<strong>解释：</strong>&#10;将中间的一个'A'替换为'B',字符串变为 &quot;AABBBBA&quot;。&#10;子串 &quot;BBBB&quot; 有最长重复字母, 答案为 4。&#10;可能存在其他的方法来得到同样的结果。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>s</code> 仅由大写英文字母组成</li>&#10;	<li><code>0 &lt;= k &lt;= s.length</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：双指针 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>窗口内最多修改 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个字符使之全相同，即「窗口长度减去众数次数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2264;</mo>
+  <mi>k</mi>
+</math></span>」。枚举左右端点是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span> 偏紧。</p>
+<p>右指针扩张并维护窗口内最大频次 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mx</mtext>
+</math></span>；当 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>&#x2212;</mo>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">mx</mtext>
+  <mo>&gt;</mo>
+  <mi>k</mi>
+</math></span> 时左端右移一格。只需最大合法窗口，答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>l</mi>
+</math></span>。</p>
+<p>左移时不必减小 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mx</mtext>
+</math></span>：窗口只关心最大长度，偏大的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mx</mtext>
+</math></span> 只会使判定更严，不会漏掉更长的合法段。</p>
+</blockquote>
+<p>我们使用一个哈希表 <code v-pre>cnt</code> 统计字符串中每个字符出现的次数，使用双指针 <code v-pre>l</code> 和 <code v-pre>r</code> 维护一个滑动窗口，使得窗口的大小减去出现次数最多的字符的次数，结果不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。</p>
+<p>我们遍历字符串，每次更新窗口的右边界 <code v-pre>r</code>，并更新窗口内的字符出现次数，同时更新出现过的字符的最大出现次数 <code v-pre>mx</code>。当窗口的大小减去 <code v-pre>mx</code> 大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 时，我们需要缩小窗口的左边界 <code v-pre>l</code>，同时更新窗口内的字符出现次数，直到窗口的大小减去 <code v-pre>mx</code> 不大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。</p>
+<p>最后，答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>l</mi>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串的长度。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串的长度，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+</math></span> 为字符集的大小，本题中字符集为大写英文字母，所以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo>=</mo>
+  <mn>26</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func characterReplacement(s string, k int) int {</span></span>
+<span class="line"><span>	cnt := [26]int{}</span></span>
+<span class="line"><span>	l, mx := 0, 0</span></span>
+<span class="line"><span>	for r, c := range s {</span></span>
+<span class="line"><span>		cnt[c-'A']++</span></span>
+<span class="line"><span>		mx = max(mx, cnt[c-'A'])</span></span>
+<span class="line"><span>		if r-l+1-mx > k {</span></span>
+<span class="line"><span>			cnt[s[l]-'A']--</span></span>
+<span class="line"><span>			l++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return len(s) - l</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/longest-repeating-character-replacement" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0400-0499/0424.Longest%20Repeating%20Character%20Replacement/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-438" tabindex="-1">438. 找到字符串中所有字母异位词 <a class="header-anchor" href="#q-438" aria-label="Permalink to &quot;438. 找到字符串中所有字母异位词 {#q-438}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定两个字符串 <code>s</code> 和 <code>p</code>，找到 <code>s</code><strong> </strong>中所有 <code>p</code><strong> </strong>的 <strong><span>异位词</span> </strong>的子串，返回这些子串的起始索引。不考虑答案输出的顺序。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;&#10;<pre>&#10;<strong>输入: </strong>s = &quot;cbaebabacd&quot;, p = &quot;abc&quot;&#10;<strong>输出: </strong>[0,6]&#10;<strong>解释:</strong>&#10;起始索引等于 0 的子串是 &quot;cba&quot;, 它是 &quot;abc&quot; 的异位词。&#10;起始索引等于 6 的子串是 &quot;bac&quot;, 它是 &quot;abc&quot; 的异位词。&#10;</pre>&#10;&#10;<p><strong> 示例 2:</strong></p>&#10;&#10;<pre>&#10;<strong>输入: </strong>s = &quot;abab&quot;, p = &quot;ab&quot;&#10;<strong>输出: </strong>[0,1,2]&#10;<strong>解释:</strong>&#10;起始索引等于 0 的子串是 &quot;ab&quot;, 它是 &quot;ab&quot; 的异位词。&#10;起始索引等于 1 的子串是 &quot;ba&quot;, 它是 &quot;ab&quot; 的异位词。&#10;起始索引等于 2 的子串是 &quot;ab&quot;, 它是 &quot;ab&quot; 的异位词。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s.length, p.length &lt;= 3 * 10<sup>4</sup></code></li>&#10;	<li><code>s</code> 和 <code>p</code> 仅包含小写字母</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>异位词是字母计数相同的等长子串。枚举每个起点再排序比较过慢。</p>
+<p>固定长度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi>p</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+</math></span> 的窗口，维护窗口计数与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 的计数，相等则记录左端。先放入前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 个字符，右端每进一步比较并弹出左端。</p>
+<p>窗口长度始终为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>，只需比较两个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>26</mn>
+</math></span> 的计数。</p>
+</blockquote>
+<p>我们不妨设字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span>，字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 的长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>。</p>
+<p>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>&lt;</mo>
+  <mi>n</mi>
+</math></span>，那么 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 中不可能存在任何一个子串同 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 为异位词，返回空列表即可。</p>
+<p>当 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mo>&#x2265;</mo>
+  <mi>n</mi>
+</math></span> 时，我们可以使用一个固定长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的滑动窗口来维护 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的子串。为了判断子串是否为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 的异位词，我们可以用一个固定长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>26</mn>
+</math></span> 的数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+</math></span> 记录 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 中每个字母的出现次数，再用另一个数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>2</mn>
+</math></span> 记录当前滑动窗口中每个字母的出现次数，如果这两个数组相同，那么当前滑动窗口的子串就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 的异位词，我们记录下起始位置。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>&#xD7;</mo>
+  <mi>C</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>C</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 是字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度；而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+</math></span> 是字符集大小，在本题中字符集为所有小写字母，所以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+  <mo>=</mo>
+  <mn>26</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func findAnagrams(s string, p string) (ans []int) {</span></span>
+<span class="line"><span>	m, n := len(s), len(p)</span></span>
+<span class="line"><span>	if m &#x3C; n {</span></span>
+<span class="line"><span>		return</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	cnt1 := [26]int{}</span></span>
+<span class="line"><span>	cnt2 := [26]int{}</span></span>
+<span class="line"><span>	for _, c := range p {</span></span>
+<span class="line"><span>		cnt1[c-'a']++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for _, c := range s[:n-1] {</span></span>
+<span class="line"><span>		cnt2[c-'a']++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := n - 1; i &#x3C; m; i++ {</span></span>
+<span class="line"><span>		cnt2[s[i]-'a']++</span></span>
+<span class="line"><span>		if cnt1 == cnt2 {</span></span>
+<span class="line"><span>			ans = append(ans, i-n+1)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		cnt2[s[i-n+1]-'a']--</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：双指针（滑动窗口优化） · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一每次比较整个计数数组。改为右端加入后，若某字母超出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 的配额则左端收缩，窗口内每字母都不超额。此时长度恰为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 即异位词。</p>
+<p>比较从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo stretchy="false">)</mo>
+</math></span> 变成检查长度，滑动过程仍是线性。</p>
+</blockquote>
+<p>我们可以对方法一进行优化，与方法一类似，我们用一个固定长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>26</mn>
+</math></span> 的数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+</math></span> 记录 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 中每个字母的出现次数，用另一个数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>2</mn>
+</math></span> 记录当前滑动窗口中每个字母的出现次数，用指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 分别指向滑动窗口的左右边界。每一次移动指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span>，将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>2</mn>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span> 的值加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，如果当前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>2</mn>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span> 的值大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span>，则将指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 不断右移，直到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>2</mn>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span> 的值不大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mn>1</mn>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span>。此时，如果滑动窗口的长度等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 的长度，我们就找到了一个异位词，将起始位置加入答案。继续移动指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span>，重复上述操作，直到指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 移动到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的末尾。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>+</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>C</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 分别是字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 的长度；而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+</math></span> 是字符集大小，在本题中字符集为所有小写字母，所以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+  <mo>=</mo>
+  <mn>26</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func findAnagrams(s string, p string) (ans []int) {</span></span>
+<span class="line"><span>	m, n := len(s), len(p)</span></span>
+<span class="line"><span>	if m &#x3C; n {</span></span>
+<span class="line"><span>		return</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	cnt1 := [26]int{}</span></span>
+<span class="line"><span>	cnt2 := [26]int{}</span></span>
+<span class="line"><span>	for _, c := range p {</span></span>
+<span class="line"><span>		cnt1[c-'a']++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	j := 0</span></span>
+<span class="line"><span>	for i, c := range s {</span></span>
+<span class="line"><span>		cnt2[c-'a']++</span></span>
+<span class="line"><span>		for cnt2[c-'a'] > cnt1[c-'a'] {</span></span>
+<span class="line"><span>			cnt2[s[j]-'a']--</span></span>
+<span class="line"><span>			j++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if i-j+1 == n {</span></span>
+<span class="line"><span>			ans = append(ans, j)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/find-all-anagrams-in-a-string" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0400-0499/0438.Find%20All%20Anagrams%20in%20a%20String/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-480" tabindex="-1">480. 滑动窗口中位数 <a class="header-anchor" href="#q-480" aria-label="Permalink to &quot;480. 滑动窗口中位数 {#q-480}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、树堆、滑动窗口、堆（优先队列）</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>中位数是有序序列最中间的那个数。如果序列的长度是偶数，则没有最中间的数；此时中位数是最中间的两个数的平均数。</p>&#10;&#10;<p>例如：</p>&#10;&#10;<ul>&#10;	<li><code>[2,3,4]</code>，中位数是 <code>3</code></li>&#10;	<li><code>[2,3]</code>，中位数是 <code>(2 + 3) / 2 = 2.5</code></li>&#10;</ul>&#10;&#10;<p>给你一个数组 <em>nums</em>，有一个长度为 <em>k</em> 的窗口从最左端滑动到最右端。窗口中有 <em>k</em> 个数，每次窗口向右移动 <em>1</em> 位。你的任务是找出每次窗口移动后得到的新窗口中元素的中位数，并输出由它们组成的数组。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例：</strong></p>&#10;&#10;<p>给出 <em>nums</em> = <code>[1,3,-1,-3,5,3,6,7]</code>，以及 <em>k</em> = 3。</p>&#10;&#10;<pre>&#10;窗口位置                      中位数&#10;---------------               -----&#10;[1  3  -1] -3  5  3  6  7       1&#10; 1 [3  -1  -3] 5  3  6  7      -1&#10; 1  3 [-1  -3  5] 3  6  7      -1&#10; 1  3  -1 [-3  5  3] 6  7       3&#10; 1  3  -1  -3 [5  3  6] 7       5&#10; 1  3  -1  -3  5 [3  6  7]      6&#10;</pre>&#10;&#10;<p> 因此，返回该滑动窗口的中位数数组 <code>[1,-1,-1,3,5,6]</code>。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>你可以假设 <code>k</code> 始终有效，即：<code>k</code> 始终小于等于输入的非空数组的元素个数。</li>&#10;	<li>与真实值误差在 <code>10 ^ -5</code> 以内的答案将被视作正确答案。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：双优先队列（大小根堆） + 延迟删除 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>滑动窗口中位数。每次排序窗口是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>k</mi>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。堆可以维护中位数，但堆不能任意删除离开窗口的元素。</p>
+<p>对顶堆：大根堆存较小一半，小根堆存较大一半，另用哈希表延迟删除。加入、弹出后只在堆顶清理过期值，再平衡两边的有效大小。</p>
+<p>延迟删除把「任意删」变成堆顶弹出；有效大小用计数维护，堆顶始终是当前中位数的候选。</p>
+</blockquote>
+<p>我们可以使用两个优先队列（大小根堆）维护当前窗口中的元素，其中一个优先队列存储当前窗口中较小的一半元素，另一个优先队列存储当前窗口中较大的一半元素。这样，当前窗口的中位数就是两个优先队列的堆顶元素的平均值或其中的一个。</p>
+<p>我们设计一个类 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">MedianFinder</mtext>
+</math></span>，用于维护当前窗口中的元素。该类包含以下方法：</p>
+<ul>
+<li><code v-pre>add_num(num)</code>：将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 加入当前窗口中。</li>
+<li><code v-pre>find_median()</code>：返回当前窗口中元素的中位数。</li>
+<li><code v-pre>remove_num(num)</code>：将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 从当前窗口中移除。</li>
+<li><code v-pre>prune(pq)</code>：如果堆顶元素在延迟删除字典 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">delayed</mtext>
+</math></span> 中，则将其从堆顶弹出，并从该元素的延迟删除次数中减一。如果该元素的延迟删除次数为零，则将其从延迟删除字典中删除。</li>
+<li><code v-pre>rebalance()</code>：如果较小的一半元素的数量比较大的一半元素的数量多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 个，则将较大的一半元素的堆顶元素加入较小的一半元素中；如果较小的一半元素的数量比较大的一半元素的数量少，则将较大的一半元素的堆顶元素加入较小的一半元素中。</li>
+</ul>
+<p>在 <code v-pre>add_num(num)</code> 方法中，我们先考虑将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 加入较小的一半元素中，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 大于较大的一半元素的堆顶元素，则将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 加入较大的一半元素中。然后我们调用 <code v-pre>rebalance()</code> 方法，使得两个优先队列的大小之差不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>在 <code v-pre>remove_num(num)</code> 方法中，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 的延迟删除次数加一。然后我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 与较小的一半元素的堆顶元素进行比较，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">num</mtext>
+</math></span> 小于等于较小的一半元素的堆顶元素，则更新较小的一半元素的大小，并且调用 <code v-pre>prune()</code> 方法，使得较小的一半元素的堆顶元素不在延迟删除字典中。否则，我们更新较大的一半元素的大小，并且调用 <code v-pre>prune()</code> 方法，使得较大的一半元素的堆顶元素不在延迟删除字典中。</p>
+<p>在 <code v-pre>find_median()</code> 方法中，如果当前窗口的大小为奇数，则返回较小的一半元素的堆顶元素；否则，返回较小的一半元素的堆顶元素与较大的一半元素的堆顶元素的平均值。</p>
+<p>在 <code v-pre>prune(pq)</code> 方法中，如果堆顶元素在延迟删除字典中，则将其从堆顶弹出，并从该元素的延迟删除次数中减一。如果该元素的延迟删除次数为零，则将其从延迟删除字典中删除。</p>
+<p>在 <code v-pre>rebalance()</code> 方法中，如果较小的一半元素的数量比较大的一半元素的数量多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 个，则将较大的一半元素的堆顶元素加入较小的一半元素中；如果较小的一半元素的数量比较大的一半元素的数量少，则将较大的一半元素的堆顶元素加入较小的一半元素中。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>type MedianFinder struct {</span></span>
+<span class="line"><span>	small                hp</span></span>
+<span class="line"><span>	large                hp</span></span>
+<span class="line"><span>	delayed              map[int]int</span></span>
+<span class="line"><span>	smallSize, largeSize int</span></span>
+<span class="line"><span>	k                    int</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func Constructor(k int) MedianFinder {</span></span>
+<span class="line"><span>	return MedianFinder{hp{}, hp{}, map[int]int{}, 0, 0, k}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MedianFinder) AddNum(num int) {</span></span>
+<span class="line"><span>	if this.small.Len() == 0 || num &#x3C;= -this.small.IntSlice[0] {</span></span>
+<span class="line"><span>		heap.Push(&#x26;this.small, -num)</span></span>
+<span class="line"><span>		this.smallSize++</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		heap.Push(&#x26;this.large, num)</span></span>
+<span class="line"><span>		this.largeSize++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.rebalance()</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MedianFinder) FindMedian() float64 {</span></span>
+<span class="line"><span>	if this.k&#x26;1 == 1 {</span></span>
+<span class="line"><span>		return float64(-this.small.IntSlice[0])</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return float64(-this.small.IntSlice[0]+this.large.IntSlice[0]) / 2</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MedianFinder) removeNum(num int) {</span></span>
+<span class="line"><span>	this.delayed[num]++</span></span>
+<span class="line"><span>	if num &#x3C;= -this.small.IntSlice[0] {</span></span>
+<span class="line"><span>		this.smallSize--</span></span>
+<span class="line"><span>		if num == -this.small.IntSlice[0] {</span></span>
+<span class="line"><span>			this.prune(&#x26;this.small)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		this.largeSize--</span></span>
+<span class="line"><span>		if num == this.large.IntSlice[0] {</span></span>
+<span class="line"><span>			this.prune(&#x26;this.large)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	this.rebalance()</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MedianFinder) prune(pq *hp) {</span></span>
+<span class="line"><span>	sign := 1</span></span>
+<span class="line"><span>	if pq == &#x26;this.small {</span></span>
+<span class="line"><span>		sign = -1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for pq.Len() > 0 &#x26;&#x26; this.delayed[sign*pq.IntSlice[0]] > 0 {</span></span>
+<span class="line"><span>		this.delayed[sign*pq.IntSlice[0]]--</span></span>
+<span class="line"><span>		if this.delayed[sign*pq.IntSlice[0]] == 0 {</span></span>
+<span class="line"><span>			delete(this.delayed, sign*pq.IntSlice[0])</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		heap.Pop(pq)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (this *MedianFinder) rebalance() {</span></span>
+<span class="line"><span>	if this.smallSize > this.largeSize+1 {</span></span>
+<span class="line"><span>		heap.Push(&#x26;this.large, -heap.Pop(&#x26;this.small).(int))</span></span>
+<span class="line"><span>		this.smallSize--</span></span>
+<span class="line"><span>		this.largeSize++</span></span>
+<span class="line"><span>		this.prune(&#x26;this.small)</span></span>
+<span class="line"><span>	} else if this.smallSize &#x3C; this.largeSize {</span></span>
+<span class="line"><span>		heap.Push(&#x26;this.small, -heap.Pop(&#x26;this.large).(int))</span></span>
+<span class="line"><span>		this.smallSize++</span></span>
+<span class="line"><span>		this.largeSize--</span></span>
+<span class="line"><span>		this.prune(&#x26;this.large)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func medianSlidingWindow(nums []int, k int) []float64 {</span></span>
+<span class="line"><span>	finder := Constructor(k)</span></span>
+<span class="line"><span>	for _, num := range nums[:k] {</span></span>
+<span class="line"><span>		finder.AddNum(num)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := []float64{finder.FindMedian()}</span></span>
+<span class="line"><span>	for i := k; i &#x3C; len(nums); i++ {</span></span>
+<span class="line"><span>		finder.AddNum(nums[i])</span></span>
+<span class="line"><span>		finder.removeNum(nums[i-k])</span></span>
+<span class="line"><span>		ans = append(ans, finder.FindMedian())</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type hp struct{ sort.IntSlice }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (h hp) Less(i, j int) bool { return h.IntSlice[i] &#x3C; h.IntSlice[j] }</span></span>
+<span class="line"><span>func (h *hp) Push(v any)        { h.IntSlice = append(h.IntSlice, v.(int)) }</span></span>
+<span class="line"><span>func (h *hp) Pop() any {</span></span>
+<span class="line"><span>	a := h.IntSlice</span></span>
+<span class="line"><span>	v := a[len(a)-1]</span></span>
+<span class="line"><span>	h.IntSlice = a[:len(a)-1]</span></span>
+<span class="line"><span>	return v</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：有序集合 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一的延迟删除实现较长。有序集合支持 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 插入删除。左边集合存较小一半，右边存较大一半，每次先入右再把最小移到左并平衡。窗口满后读两端，再删滑出的值。</p>
+<p>代码更短，代价是需要有序表结构。</p>
+</blockquote>
+<p>我们可以用两个有序集合来维护当前窗口中的元素，其中有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 存储当前窗口中较小的一半元素，有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 存储当前窗口中较大的一半元素。</p>
+<p>遍历数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span>，对于每个元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，我们将其加入有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>，然后将有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 的最小值加入有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>。如果有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 的大小比有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 的大小大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，我们将有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 的最大值加入有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>。</p>
+<p>如果当前窗口元素总数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，大小为奇数，则有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 的最大值就是中位数；如果当前窗口的大小为偶数，则有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 的最大值和有序集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span> 的最小值的平均值就是中位数。然后，我们将窗口的最左边元素移除，继续遍历数组。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func medianSlidingWindow(nums []int, k int) (ans []float64) {</span></span>
+<span class="line"><span>	l := redblacktree.New[int, int]()</span></span>
+<span class="line"><span>	r := redblacktree.New[int, int]()</span></span>
+<span class="line"><span>	merge := func(st *redblacktree.Tree[int, int], x, v int) {</span></span>
+<span class="line"><span>		c, _ := st.Get(x)</span></span>
+<span class="line"><span>		if c+v == 0 {</span></span>
+<span class="line"><span>			st.Remove(x)</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			st.Put(x, c+v)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	lSize, rSize := 0, 0</span></span>
+<span class="line"><span>	for i, x := range nums {</span></span>
+<span class="line"><span>		merge(r, x, 1)</span></span>
+<span class="line"><span>		x = r.Left().Key</span></span>
+<span class="line"><span>		merge(r, x, -1)</span></span>
+<span class="line"><span>		merge(l, x, 1)</span></span>
+<span class="line"><span>		lSize++</span></span>
+<span class="line"><span>		for lSize-rSize > 1 {</span></span>
+<span class="line"><span>			x = l.Right().Key</span></span>
+<span class="line"><span>			merge(l, x, -1)</span></span>
+<span class="line"><span>			merge(r, x, 1)</span></span>
+<span class="line"><span>			lSize--</span></span>
+<span class="line"><span>			rSize++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if j := i - k + 1; j >= 0 {</span></span>
+<span class="line"><span>			if k%2 == 1 {</span></span>
+<span class="line"><span>				ans = append(ans, float64(l.Right().Key))</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				ans = append(ans, float64(l.Right().Key+r.Left().Key)/2)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if x = nums[j]; x &#x3C;= l.Right().Key {</span></span>
+<span class="line"><span>				merge(l, x, -1)</span></span>
+<span class="line"><span>				lSize--</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				merge(r, x, -1)</span></span>
+<span class="line"><span>				rSize--</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/sliding-window-median" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0400-0499/0480.Sliding%20Window%20Median/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-567" tabindex="-1">567. 字符串的排列 <a class="header-anchor" href="#q-567" aria-label="Permalink to &quot;567. 字符串的排列 {#q-567}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、双指针、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你两个字符串 <code>s1</code> 和 <code>s2</code> ，写一个函数来判断 <code>s2</code> 是否包含 <code>s1</code><strong> </strong>的 <span>排列</span>。如果是，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>&#10;&#10;<p>换句话说，<code>s1</code> 的排列之一是 <code>s2</code> 的 <strong>子串</strong> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s1 = &quot;ab&quot; s2 = &quot;eidbaooo&quot;&#10;<strong>输出：</strong>true&#10;<strong>解释：</strong>s2 包含 s1 的排列之一 (&quot;ba&quot;).&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s1= &quot;ab&quot; s2 = &quot;eidboaoo&quot;&#10;<strong>输出：</strong>false&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s1.length, s2.length &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>s1</code> 和 <code>s2</code> 仅包含小写字母</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mn>2</mn>
+</math></span> 是否包含 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mn>1</mn>
+</math></span> 的某个排列，即是否存在长度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi>s</mi>
+  <mn>1</mn>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+</math></span> 的窗口与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mn>1</mn>
+</math></span> 字母计数相同。枚举窗口再排序比较偏慢。</p>
+<p>滑动窗口维护与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mn>1</mn>
+</math></span> 的差额计数，并用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+</math></span> 记录尚有多少字符未对齐。右端纳入、左端滑出，当 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span> 即找到排列。窗口长度固定，一次扫描完成。</p>
+</blockquote>
+<p>我们用一个数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 记录当前需要匹配的字符及其个数，用一个变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+</math></span> 记录当前还需要匹配的字符种类数，初始时 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 为字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s1</mtext>
+</math></span> 中各字符出现次数，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s1</mtext>
+</math></span> 中不同字符的个数。</p>
+<p>然后我们遍历字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s2</mtext>
+</math></span>，对于每个字符，我们将其在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 中的对应值减一，如果减一后的值等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，说明当前字符在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s1</mtext>
+</math></span> 中出现次数已经满足要求，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+</math></span> 减一。如果当前下标 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 大于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s1</mtext>
+</math></span> 的长度，我们需要将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s2</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">s1</mtext>
+  <mo stretchy="false">]</mo>
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 中对应值加一，如果加一后的值等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，说明当前字符在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s1</mtext>
+</math></span> 中出现次数不再满足要求，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+</math></span> 加一。在遍历过程中，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">need</mtext>
+</math></span> 的值等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，说明所有字符的出现次数都满足要求，我们就找到了一个满足要求的子串，返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>true</mtext>
+</math></span>。</p>
+<p>否则，如果遍历结束后没有找到满足要求的子串，我们返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>false</mtext>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo>+</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 分别是字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s1</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s2</mtext>
+</math></span> 的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">&#x3A3;</mi>
+</math></span> 是字符集，这道题中字符集为小写字母，所以空间复杂度是常数级别的。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func checkInclusion(s1 string, s2 string) bool {</span></span>
+<span class="line"><span>	need := 0</span></span>
+<span class="line"><span>	cnt := [26]int{}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	for _, c := range s1 {</span></span>
+<span class="line"><span>		if cnt[c-'a']++; cnt[c-'a'] == 1 {</span></span>
+<span class="line"><span>			need++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	m, n := len(s1), len(s2)</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		c := s2[i] - 'a'</span></span>
+<span class="line"><span>		if cnt[c]--; cnt[c] == 0 {</span></span>
+<span class="line"><span>			need--</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if i >= m {</span></span>
+<span class="line"><span>			c = s2[i-m] - 'a'</span></span>
+<span class="line"><span>			if cnt[c]++; cnt[c] == 1 {</span></span>
+<span class="line"><span>				need++</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if need == 0 {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return false</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/permutation-in-string" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0567.Permutation%20in%20String/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-594" tabindex="-1">594. 最长和谐子序列 <a class="header-anchor" href="#q-594" aria-label="Permalink to &quot;594. 最长和谐子序列 {#q-594}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、计数、排序、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>和谐数组是指一个数组里元素的最大值和最小值之间的差别 <strong>正好是 <code>1</code></strong> 。</p>&#10;&#10;<p>给你一个整数数组 <code>nums</code> ，请你在所有可能的 <span>子序列</span> 中找到最长的和谐子序列的长度。</p>&#10;&#10;<p>数组的 <strong>子序列</strong> 是一个由数组派生出来的序列，它可以通过删除一些元素或不删除元素、且不改变其余元素的顺序而得到。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<div>&#10;<p><strong>输入：</strong><span>nums = [1,3,2,2,5,2,3,7]</span></p>&#10;&#10;<p><span><b>输出：</b>5</span></p>&#10;&#10;<p><strong>解释：</strong></p>&#10;&#10;<p>最长和谐子序列是 <code>[3,2,2,2,3]</code>。</p>&#10;</div>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<div>&#10;<p><span><b>输入：</b>nums = [1,2,3,4]</span></p>&#10;&#10;<p><span><b>输出：</b>2</span></p>&#10;&#10;<p><strong>解释：</strong></p>&#10;&#10;<p>最长和谐子序列是 <code>[1,2]</code>，<code>[2,3]</code> 和 <code>[3,4]</code>，长度都为 2。</p>&#10;</div>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<div>&#10;<p><strong>输入：</strong><span>nums = [1,1,1,1]</span></p>&#10;&#10;<p><span><b>输出：</b>0</span></p>&#10;&#10;<p><strong>解释：</strong></p>&#10;&#10;<p>不存在和谐子序列。</p>&#10;</div>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 2 * 10<sup>4</sup></code></li>&#10;	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>和谐子序列的最大值与最小值之差恰为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。子序列可打乱顺序，因此只关心取值。枚举所有子序列不现实。</p>
+<p>计数每个值的出现次数。对每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 也出现，则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 就是以这两值为元素的最长和谐子序列。取这些长度的最大。</p>
+</blockquote>
+<p>我们可以用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 记录数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 中每个元素出现的次数，然后遍历哈希表中的每个键值对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>c</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，如果哈希表中存在键 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span>，那么 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 中元素 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 出现的次数之和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mo>+</mo>
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 就是一个和谐子序列，我们只需要在所有和谐子序列中找到最大的长度即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nums</mtext>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func findLHS(nums []int) (ans int) {</span></span>
+<span class="line"><span>	cnt := map[int]int{}</span></span>
+<span class="line"><span>	for _, x := range nums {</span></span>
+<span class="line"><span>		cnt[x]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for x, c := range cnt {</span></span>
+<span class="line"><span>		if c1, ok := cnt[x+1]; ok {</span></span>
+<span class="line"><span>			ans = max(ans, c+c1)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/longest-harmonious-subsequence" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0500-0599/0594.Longest%20Harmonious%20Subsequence/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-643" tabindex="-1">643. 子数组最大平均数 I <a class="header-anchor" href="#q-643" aria-label="Permalink to &quot;643. 子数组最大平均数 I {#q-643}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个由 <code>n</code> 个元素组成的整数数组 <code>nums</code> 和一个整数 <code>k</code> 。</p>&#10;&#10;<p>请你找出平均数最大且 <strong>长度为 <code>k</code></strong> 的连续子数组，并输出该最大平均数。</p>&#10;&#10;<p>任何误差小于 <code>10<sup>-5</sup></code> 的答案都将被视为正确答案。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,12,-5,-6,50,3], k = 4&#10;<strong>输出：</strong>12.75&#10;<strong>解释：</strong>最大平均数 (12-5-6+50)/4 = 51/4 = 12.75&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [5], k = 1&#10;<strong>输出：</strong>5.00000&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == nums.length</code></li>&#10;	<li><code>1 &lt;= k &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>定长 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 子数组的最大平均值等价于最大和。每次重算窗口是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>。</p>
+<p>维护长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的滑动和，右端加入、左端减去，记录最大和再除以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。</p>
+</blockquote>
+<p>我们维护一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的滑动窗口，每次计算窗口内的和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，取最大的和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 作为答案。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func findMaxAverage(nums []int, k int) float64 {</span></span>
+<span class="line"><span>	s := 0</span></span>
+<span class="line"><span>	for _, x := range nums[:k] {</span></span>
+<span class="line"><span>		s += x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := s</span></span>
+<span class="line"><span>	for i := k; i &#x3C; len(nums); i++ {</span></span>
+<span class="line"><span>		s += nums[i] - nums[i-k]</span></span>
+<span class="line"><span>		ans = max(ans, s)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return float64(ans) / float64(k)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/maximum-average-subarray-i" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0600-0699/0643.Maximum%20Average%20Subarray%20I/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-904" tabindex="-1">904. 水果成篮 <a class="header-anchor" href="#q-904" aria-label="Permalink to &quot;904. 水果成篮 {#q-904}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>你正在探访一家农场，农场从左到右种植了一排果树。这些树用一个整数数组 <code>fruits</code> 表示，其中 <code>fruits[i]</code> 是第 <code>i</code> 棵树上的水果 <strong>种类</strong> 。</p>&#10;&#10;<p>你想要尽可能多地收集水果。然而，农场的主人设定了一些严格的规矩，你必须按照要求采摘水果：</p>&#10;&#10;<ul>&#10;	<li>你只有 <strong>两个</strong> 篮子，并且每个篮子只能装 <strong>单一类型</strong> 的水果。每个篮子能够装的水果总量没有限制。</li>&#10;	<li>你可以选择任意一棵树开始采摘，你必须从 <strong>每棵</strong> 树（包括开始采摘的树）上 <strong>恰好摘一个水果</strong> 。采摘的水果应当符合篮子中的水果类型。每采摘一次，你将会向右移动到下一棵树，并继续采摘。</li>&#10;	<li>一旦你走到某棵树前，但水果不符合篮子的水果类型，那么就必须停止采摘。</li>&#10;</ul>&#10;&#10;<p>给你一个整数数组 <code>fruits</code> ，返回你可以收集的水果的 <strong>最大</strong> 数目。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>fruits = [<em><strong>1,2,1</strong></em>]&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>可以采摘全部 3 棵树。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>fruits = [0,<em><strong>1,2,2</strong></em>]&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>可以采摘 [1,2,2] 这三棵树。&#10;如果从第一棵树开始采摘，则只能采摘 [0,1] 这两棵树。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>fruits = [1,<em><strong>2,3,2,2</strong></em>]&#10;<strong>输出：</strong>4&#10;<strong>解释：</strong>可以采摘 [2,3,2,2] 这四棵树。&#10;如果从第一棵树开始采摘，则只能采摘 [1,2] 这两棵树。&#10;</pre>&#10;&#10;<p><strong>示例 4：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>fruits = [3,3,3,<em><strong>1,2,1,1,2</strong></em>,3,3,4]&#10;<strong>输出：</strong>5&#10;<strong>解释：</strong>可以采摘 [1,2,1,1,2] 这五棵树。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= fruits.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>0 &lt;= fruits[i] &lt; fruits.length</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 + 滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>所求为至多含两种水果的最长子数组。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，枚举左右端点再统计种类不可行。右端每纳入一种水果，种类超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 时必须右移左端。</p>
+<p>用计数表维护窗口内各水果个数，种类由哈希表大小给出；每当种类大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 就弹出左端，并记录窗口长度的最大值。</p>
+</blockquote>
+<p>我们用哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 维护当前窗口内的水果种类以及对应的数量，用双指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 维护窗口的左右边界。</p>
+<p>遍历数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">fruits</mtext>
+</math></span>，将当前水果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 加入窗口，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mo>+</mo>
+</math></span>，然后判断当前窗口内的水果种类是否超过了 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 种，如果超过了 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 种，就需要将窗口的左边界 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 右移，直到窗口内的水果种类不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 种为止。然后更新答案，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ans</mtext>
+  <mo>=</mo>
+  <mo data-mjx-texclass="OP" movablelimits="true">max</mo>
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">ans</mtext>
+  <mo>,</mo>
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mi>j</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+<p>遍历结束后，即可得到最终的答案。</p>
+<div class="language- vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>1 2 3 2 2 1 4</span></span>
+<span class="line"><span>^   ^</span></span>
+<span class="line"><span>j   i</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1 2 3 2 2 1 4</span></span>
+<span class="line"><span>  ^ ^</span></span>
+<span class="line"><span>  j i</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1 2 3 2 2 1 4</span></span>
+<span class="line"><span>  ^     ^</span></span>
+<span class="line"><span>  j     i</span></span></code></pre>
+</div><p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">fruits</mtext>
+</math></span> 的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，因为哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">cnt</mtext>
+</math></span> 中的键值对数量最多为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func totalFruit(fruits []int) int {</span></span>
+<span class="line"><span>	cnt := map[int]int{}</span></span>
+<span class="line"><span>	ans, j := 0, 0</span></span>
+<span class="line"><span>	for i, x := range fruits {</span></span>
+<span class="line"><span>		cnt[x]++</span></span>
+<span class="line"><span>		for ; len(cnt) > 2; j++ {</span></span>
+<span class="line"><span>			y := fruits[j]</span></span>
+<span class="line"><span>			cnt[y]--</span></span>
+<span class="line"><span>			if cnt[y] == 0 {</span></span>
+<span class="line"><span>				delete(cnt, y)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans = max(ans, i-j+1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：单调变长滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一在种类超限时缩小窗口并反复更新答案，但题目只要最大长度，历史更短的窗口不必保留。窗口只增不减：种类超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 时左端同步前进一步，遍历结束时 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>j</mi>
+</math></span> 即为最大可行窗口。</p>
+</blockquote>
+<p>在方法一中，我们发现，窗口大小会时而变大，时而变小，这就需要我们每一次更新答案。</p>
+<p>但本题实际上求的是水果的最大数目，也就是“最大”的窗口，我们没有必要缩小窗口，只需要让窗口单调增大。于是代码就少了每次更新答案的操作，只需要在遍历结束后将此时的窗口大小作为答案返回即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">fruits</mtext>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func totalFruit(fruits []int) int {</span></span>
+<span class="line"><span>	cnt := map[int]int{}</span></span>
+<span class="line"><span>	j := 0</span></span>
+<span class="line"><span>	for _, x := range fruits {</span></span>
+<span class="line"><span>		cnt[x]++</span></span>
+<span class="line"><span>		if len(cnt) > 2 {</span></span>
+<span class="line"><span>			y := fruits[j]</span></span>
+<span class="line"><span>			cnt[y]--</span></span>
+<span class="line"><span>			if cnt[y] == 0 {</span></span>
+<span class="line"><span>				delete(cnt, y)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			j++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return len(fruits) - j</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/fruit-into-baskets" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0900-0999/0904.Fruit%20Into%20Baskets/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-930" tabindex="-1">930. 和相同的二元子数组 <a class="header-anchor" href="#q-930" aria-label="Permalink to &quot;930. 和相同的二元子数组 {#q-930}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、前缀和、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个二元数组 <code>nums</code> ，和一个整数 <code>goal</code> ，请你统计并返回有多少个和为 <code>goal</code> 的<strong> 非空</strong> 子数组。</p>&#10;&#10;<p><strong>子数组</strong> 是数组的一段连续部分。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,0,1,0,1], goal = 2&#10;<strong>输出：</strong>4&#10;<strong>解释：</strong>&#10;有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [0,0,0,0,0], goal = 0&#10;<strong>输出：</strong>15&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>&#10;	<li><code>nums[i]</code> 不是 <code>0</code> 就是 <code>1</code></li>&#10;	<li><code>0 &lt;= goal &lt;= nums.length</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：数组或哈希表 + 前缀和 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>求元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>1</mn>
+</math></span> 的数组中和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">goal</mtext>
+</math></span> 的子数组个数。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 较大，不能枚举区间。前缀和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 出现时，左端满足 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">goal</mtext>
+</math></span> 的前缀个数即为以当前为右端的答案。用计数表维护前缀出现次数，初始 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>。</p>
+</blockquote>
+<p>我们可以用数组或哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 记录每个前缀和出现的次数，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示前缀和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的子数组个数。初始时 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>。</p>
+<p>接下来我们遍历数组 <code v-pre>nums</code>，用变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 维护当前的前缀和，对于每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，我们可以计算出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&#x2212;</mo>
+  <mi>g</mi>
+  <mi>o</mi>
+  <mi>a</mi>
+  <mi>l</mi>
+</math></span> 出现的次数，即为以当前位置结尾的满足条件的子数组个数，累加到答案中。然后我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的计数值加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>最终的答案即为满足条件的子数组个数。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <code v-pre>nums</code> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func numSubarraysWithSum(nums []int, goal int) (ans int) {</span></span>
+<span class="line"><span>	cnt := map[int]int{0: 1}</span></span>
+<span class="line"><span>	s := 0</span></span>
+<span class="line"><span>	for _, v := range nums {</span></span>
+<span class="line"><span>		s += v</span></span>
+<span class="line"><span>		ans += cnt[s-goal]</span></span>
+<span class="line"><span>		cnt[s]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：双指针 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一需要线性额外空间。数组非负，窗口和随右端单调，可用两条左指针分别维护和大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">goal</mtext>
+</math></span> 与和至少为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">goal</mtext>
+</math></span> 的边界，两者之差即和恰为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">goal</mtext>
+</math></span> 的子数组个数，额外空间为常数。</p>
+</blockquote>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func numSubarraysWithSum(nums []int, goal int) int {</span></span>
+<span class="line"><span>	i1, i2, s1, s2, j, ans, n := 0, 0, 0, 0, 0, 0, len(nums)</span></span>
+<span class="line"><span>	for j &#x3C; n {</span></span>
+<span class="line"><span>		s1 += nums[j]</span></span>
+<span class="line"><span>		s2 += nums[j]</span></span>
+<span class="line"><span>		for i1 &#x3C;= j &#x26;&#x26; s1 > goal {</span></span>
+<span class="line"><span>			s1 -= nums[i1]</span></span>
+<span class="line"><span>			i1++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for i2 &#x3C;= j &#x26;&#x26; s2 >= goal {</span></span>
+<span class="line"><span>			s2 -= nums[i2]</span></span>
+<span class="line"><span>			i2++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans += i2 - i1</span></span>
+<span class="line"><span>		j++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/binary-subarrays-with-sum" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0900-0999/0930.Binary%20Subarrays%20With%20Sum/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-992" tabindex="-1">992. K 个不同整数的子数组 <a class="header-anchor" href="#q-992" aria-label="Permalink to &quot;992. K 个不同整数的子数组 {#q-992}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、计数、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一个正整数数组 <code>nums</code>和一个整数 <code>k</code>，返回 <code>nums</code> 中 「<strong>好子数组」</strong><em> </em>的数目。</p>&#10;&#10;<p>如果 <code>nums</code> 的某个子数组中不同整数的个数恰好为 <code>k</code>，则称 <code>nums</code> 的这个连续、不一定不同的子数组为 <strong>「</strong><strong>好子数组 」</strong>。</p>&#10;&#10;<ul>&#10;	<li>例如，<code>[1,2,3,1,2]</code> 中有 <code>3</code> 个不同的整数：<code>1</code>，<code>2</code>，以及 <code>3</code>。</li>&#10;</ul>&#10;&#10;<p><strong>子数组</strong> 是数组的 <strong>连续</strong> 部分。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,2,1,2,3], k = 2&#10;<strong>输出：</strong>7&#10;<strong>解释：</strong>恰好由 2 个不同整数组成的子数组：[1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2].&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,2,1,3,4], k = 3&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>恰好由 3 个不同整数组成的子数组：[1,2,1,3], [2,1,3], [1,3,4].&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 2 * 10<sup>4</sup></code></li>&#10;	<li><code>1 &lt;= nums[i], k &lt;= nums.length</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：双指针 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>恰含 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 种整数的子数组个数。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>2</mn>
+  <mo>&#xD7;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>，不能枚举。种类数随窗口单调，于是“至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 种”可用滑动窗口。恰为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 种等于“至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 种的最左端”减去“至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 种的最左端”，对每个右端点求和。</p>
+</blockquote>
+<p>我们遍历数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span>，对于每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，我们需要找到最小的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>，使得 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>j</mi>
+    <mn>1</mn>
+  </msub>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>j</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mo>&#x2026;</mo>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 中不同的整数个数小于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，以及最小的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>，使得 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>j</mi>
+    <mn>2</mn>
+  </msub>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <msub>
+    <mi>j</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mo>&#x2026;</mo>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 中不同的整数个数小于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。那么 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>&#x2212;</mo>
+  <msub>
+    <mi>j</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 就是以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 结尾的满足条件的子数组的个数。</p>
+<p>在实现上，我们定义一个函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，表示 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 中每个位置 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 对应的最小的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span>，使得 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mo>&#x2026;</mo>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 中不同的整数个数小于等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。该函数可以通过双指针实现，具体实现见代码。</p>
+<p>然后我们调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，计算出每个位置对应的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mn>1</mn>
+  </msub>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>j</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>，然后计算出以每个位置 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 结尾的满足条件的子数组的个数，最后求和即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func subarraysWithKDistinct(nums []int, k int) (ans int) {</span></span>
+<span class="line"><span>	f := func(k int) []int {</span></span>
+<span class="line"><span>		n := len(nums)</span></span>
+<span class="line"><span>		pos := make([]int, n)</span></span>
+<span class="line"><span>		cnt := make([]int, n+1)</span></span>
+<span class="line"><span>		s, j := 0, 0</span></span>
+<span class="line"><span>		for i, x := range nums {</span></span>
+<span class="line"><span>			cnt[x]++</span></span>
+<span class="line"><span>			if cnt[x] == 1 {</span></span>
+<span class="line"><span>				s++</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			for ; s > k; j++ {</span></span>
+<span class="line"><span>				cnt[nums[j]]--</span></span>
+<span class="line"><span>				if cnt[nums[j]] == 0 {</span></span>
+<span class="line"><span>					s--</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			pos[i] = j</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return pos</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	left, right := f(k), f(k-1)</span></span>
+<span class="line"><span>	for i := range left {</span></span>
+<span class="line"><span>		ans += right[i] - left[i]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/subarrays-with-k-different-integers" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0900-0999/0992.Subarrays%20with%20K%20Different%20Integers/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-995" tabindex="-1">995. K 连续位的最小翻转次数 <a class="header-anchor" href="#q-995" aria-label="Permalink to &quot;995. K 连续位的最小翻转次数 {#q-995}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：位运算、队列、数组、前缀和、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一个二进制数组 <code>nums</code> 和一个整数 <code>k</code> 。</p>&#10;&#10;<p><strong>k位翻转</strong> 就是从 <code>nums</code> 中选择一个长度为 <code>k</code> 的 <strong>子数组</strong> ，同时把子数组中的每一个 <code>0</code> 都改成 <code>1</code> ，把子数组中的每一个 <code>1</code> 都改成 <code>0</code> 。</p>&#10;&#10;<p>返回数组中不存在 <code>0</code> 所需的最小 <strong>k位翻转</strong> 次数。如果不可能，则返回 <code>-1</code> 。</p>&#10;&#10;<p><strong>子数组</strong> 是数组的 <strong>连续</strong> 部分。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [0,1,0], K = 1&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>先翻转 A[0]，然后翻转 A[2]。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,1,0], K = 2&#10;<strong>输出：</strong>-1&#10;<strong>解释：</strong>无论我们怎样翻转大小为 2 的子数组，我们都不能使数组变为 [1,1,1]。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [0,0,0,1,0,1,1,0], K = 3&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>&#10;翻转 A[0],A[1],A[2]: A变成 [1,1,1,1,0,1,1,0]&#10;翻转 A[4],A[5],A[6]: A变成 [1,1,1,1,1,0,0,0]&#10;翻转 A[5],A[6],A[7]: A变成 [1,1,1,1,1,1,1,1]&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= k &lt;= nums.length</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：差分数组 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每次翻转长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的连续段，使全数组变为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，次数最少。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，不能模拟每次翻转。从左到右贪心：当前位在此前翻转次数后仍为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，则必须在此开一段。差分数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 标记 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的翻转。</p>
+</blockquote>
+<p>我们注意到，对于若干个连续的元素进行反转，其结果与对这些元素进行反转的次序无关。因此我们可以贪心地考虑每个位置需要进行反转的次数。</p>
+<p>我们不妨从左到右处理数组。</p>
+<p>假设当前我们需要处理位置 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，而位置 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 左侧的元素已经被处理完毕，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 位置的元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，那么我们必须进行反转操作，我们需要将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mo>.</mo>
+  <mo>.</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 区间内的元素进行反转。这里我们用一个差分数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 来维护每个位置的反转次数，那么判断当前位置 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 是否需要反转，只需要看 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>=</mo>
+  <munderover>
+    <mo data-mjx-texclass="OP">&#x2211;</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>j</mi>
+      <mo>=</mo>
+      <mn>0</mn>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+    </mrow>
+  </munderover>
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 以及 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的奇偶性，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 奇偶性相同，那么位置 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的元素仍然为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，需要进行反转。此时我们判断一下 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+</math></span> 是否超出了数组的长度，如果超出了数组的长度，那么就无法完成目标，返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。否则我们令 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 增加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，同时令 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 减少 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，然后将答案增加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，并且 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 增加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>这样当我们处理完数组中的所有元素时，返回答案即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。这里 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func minKBitFlips(nums []int, k int) (ans int) {</span></span>
+<span class="line"><span>	n := len(nums)</span></span>
+<span class="line"><span>	d := make([]int, n+1)</span></span>
+<span class="line"><span>	s := 0</span></span>
+<span class="line"><span>	for i, x := range nums {</span></span>
+<span class="line"><span>		s += d[i]</span></span>
+<span class="line"><span>		if s%2 == x {</span></span>
+<span class="line"><span>			if i+k > n {</span></span>
+<span class="line"><span>				return -1</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			d[i]++</span></span>
+<span class="line"><span>			d[i+k]--</span></span>
+<span class="line"><span>			s++</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>差分数组需要线性额外空间。用变量记录当前奇偶，并把翻转起点标成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，窗口滑出时异或回去，即可在原数组上 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 空间完成同样贪心。</p>
+</blockquote>
+<p>我们可以用一个变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">flipped</mtext>
+</math></span> 来表示当前位置是否翻转，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">flipped</mtext>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，表示当前位置已经翻转，否则表示当前位置未翻转。对于翻转过的位置，我们可以将其值设置为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，这样我们就可以区分出哪些位置已经翻转过了。</p>
+<p>接下来我们从左到右遍历数组，对于每个位置 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2265;</mo>
+  <mi>k</mi>
+</math></span> 且 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mi>k</mi>
+</math></span> 位置的元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，那么当前位置的翻转状态应该与前一个位置的翻转状态相反。即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">flipped</mtext>
+  <mo>=</mo>
+  <mtext mathvariant="italic">flipped</mtext>
+  <mo>&#x2295;</mo>
+  <mn>1</mn>
+</math></span>。如果当前位置的元素与当前位置的翻转状态相同，那么我们需要翻转当前位置，此时我们判断一下 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+</math></span> 是否超出了数组的长度，如果超出了数组的长度，那么就无法完成目标，返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。否则我们将当前位置的翻转状态取反，同时将答案增加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，并且将当前位置的元素设置为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。</p>
+<p>这样当我们处理完数组中的所有元素时，返回答案即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func minKBitFlips(nums []int, k int) (ans int) {</span></span>
+<span class="line"><span>	flipped := 0</span></span>
+<span class="line"><span>	for i, x := range nums {</span></span>
+<span class="line"><span>		if i >= k &#x26;&#x26; nums[i-k] == -1 {</span></span>
+<span class="line"><span>			flipped ^= 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if flipped == x {</span></span>
+<span class="line"><span>			if i+k > len(nums) {</span></span>
+<span class="line"><span>				return -1</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			flipped ^= 1</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>			nums[i] = -1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/minimum-number-of-k-consecutive-bit-flips" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/0900-0999/0995.Minimum%20Number%20of%20K%20Consecutive%20Bit%20Flips/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1016" tabindex="-1">1016. 子串能表示从 1 到 N 数字的二进制串 <a class="header-anchor" href="#q-1016" aria-label="Permalink to &quot;1016. 子串能表示从 1 到 N 数字的二进制串 {#q-1016}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：位运算、哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一个二进制字符串 <code>s</code> 和一个正整数 <code>n</code>，如果对于 <code>[1, n]</code> 范围内的每个整数，<em>其二进制表示都是 <code>s</code> 的 <strong>子字符串</strong> ，就返回 <code>true</code>，否则返回 <code>false</code> </em>。</p>&#10;&#10;<p><strong>子字符串</strong> 是字符串中连续的字符序列。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;0110&quot;, n = 3&#10;<strong>输出：</strong>true&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;0110&quot;, n = 4&#10;<strong>输出：</strong>false&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s.length &lt;= 1000</code></li>&#10;	<li><code>s[i]</code> 不是 <code>'0'</code> 就是 <code>'1'</code></li>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>9</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：脑筋急转弯 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>9</mn>
+  </msup>
+</math></span>，逐个检查 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的二进制是否为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的子串不可行。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 长度至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1000</mn>
+</math></span>，它能提供的互异子串远少于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>9</mn>
+  </msup>
+</math></span>，故 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&gt;</mo>
+  <mn>1000</mn>
+</math></span> 时可直接判否。</p>
+<p>若整数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的二进制出现在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 中，则 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mi>x</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+</math></span> 相当于去掉最低位，也一定作为子串出现。因此只需验证较大的一半，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mi>n</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+<p>在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>1000</mn>
+</math></span> 的前提下对这些值调用子串查找即可。</p>
+</blockquote>
+<p>我们注意到，字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1000</mn>
+</math></span>，所以字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 能表示不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1000</mn>
+</math></span> 个 二进制整数，因此，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&gt;</mo>
+  <mn>1000</mn>
+</math></span>，那么 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 肯定不能表示 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo>.</mo>
+  <mo>.</mo>
+  <mi>n</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 范围内的所有整数的二进制表示。</p>
+<p>另外，对于一个整数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的二进制表示是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的子串，那么 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mi>x</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+</math></span> 的二进制表示也是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的子串。因此，我们只需要判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mi>n</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo>.</mo>
+  <mo>.</mo>
+  <mi>n</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 范围内的整数的二进制表示是否是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的子串即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>m</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 是字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为题目给定的正整数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func queryString(s string, n int) bool {</span></span>
+<span class="line"><span>	if n > 1000 {</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := n; i > n/2; i-- {</span></span>
+<span class="line"><span>		if !strings.Contains(s, strconv.FormatInt(int64(i), 2)) {</span></span>
+<span class="line"><span>			return false</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return true</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/binary-string-with-substrings-representing-1-to-n" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1016.Binary%20String%20With%20Substrings%20Representing%201%20To%20N/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1040" tabindex="-1">1040. 移动石子直到连续 II <a class="header-anchor" href="#q-1040" aria-label="Permalink to &quot;1040. 移动石子直到连续 II {#q-1040}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、数学、排序、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>在 X 轴上有一些不同位置的石子。给定一个整数数组 <code>stones</code> 表示石子的位置。</p>&#10;&#10;<p>如果一个石子在最小或最大的位置，称其为 <strong>端点石子</strong>。每个回合，你可以将一颗 <strong>端点石子</strong> 拿起并移动到一个未占用的位置，使得该石子不再是一颗 <strong>端点石子</strong>。</p>&#10;&#10;<ul>&#10;	<li>值得注意的是，如果石子像 <code>stones = [1,2,5]</code> 这样，你将 <strong>无法 </strong>移动位于位置 <code>5</code> 的端点石子，因为无论将它移动到任何位置（例如 <code>0</code> 或 <code>3</code>），该石子都仍然会是端点石子。</li>&#10;</ul>&#10;&#10;<p>当你无法进行任何移动时，即，这些石子的位置连续时，游戏结束。</p>&#10;&#10;<p>以长度为 2 的数组形式返回答案，其中：</p>&#10;&#10;<ul>&#10;	<li><code>answer[0]</code> 是你可以移动的最小次数</li>&#10;	<li><code>answer[1]</code> 是你可以移动的最大次数。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>[7,4,9]&#10;<strong>输出：</strong>[1,2]&#10;<strong>解释：</strong>&#10;我们可以移动一次，4 -> 8，游戏结束。&#10;或者，我们可以移动两次 9 -> 5，4 -> 6，游戏结束。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>[6,5,4,3,10]&#10;<strong>输出：</strong>[2,3]&#10;<strong>解释：</strong>&#10;我们可以移动 3 -> 8，接着是 10 -> 7，游戏结束。&#10;或者，我们可以移动 3 -> 7, 4 -> 8, 5 -> 9，游戏结束。&#10;注意，我们无法进行 10 -> 2 这样的移动来结束游戏，因为这是不合要求的移动。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>3 &lt;= stones.length &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>1 &lt;= stones[i] &lt;= 10<sup>9</sup></code></li>&#10;	<li><code>stones</code> 的值各不相同。</li>&#10;</ul>&#10;&#10;<p> </p></div>
+</details>
+<details class="details custom-block"><summary>方法一：排序 + 分类讨论 + 双指针 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每次只能移动端点石子到非端点空位， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span> 且坐标达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>9</mn>
+  </msup>
+</math></span>，不能逐步模拟。最大步数来自「尽量不填中间、每次只挪一格」；最小步数则是用尽量少的移动把石子装进某个长为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的窗口。</p>
+<p>排序后，第一次若动左端则跳过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 的空隙，最多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>&#x2212;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 步，对称地动右端；二者取大。最小步用双指针找含 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 个位置的窗口里已有石子数，缺口即需移动次数；特判「差一个且窗口几乎连满」时必须挪两次。</p>
+<p>一次排序加一次滑动窗口同时得到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">mi</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">mx</mtext>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们先对数组 <code v-pre>stones</code> 进行升序排序，接下来分别考虑最大移动次数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 和最小移动次数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+</math></span>。</p>
+<p>对于最大移动次数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span>：</p>
+<p>由于我们每一次只能选择将端点石子移动到未占用且不是端点石子的位置，如果我们选择 <code v-pre>stones[0]</code> 作为第一次移动的端点石子，那么从 <code v-pre>stones[0]</code> 到 <code v-pre>stones[1]</code> 之间的所有未占用的位置都会被跳过，我们可以选择移动到最近的且未占用的位置，接下来每一次都将最左端的石子移动到最近的且未占用的位置，那么最多可以移动的次数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>&#x2212;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>；同理，如果我们选择 <code v-pre>stones[n - 1]</code> 作为第一次移动的端点石子，那么最多可以移动的次数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>&#x2212;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。取两者的最大值即为最大移动次数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span>。</p>
+<p>对于最小移动次数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+</math></span>：</p>
+<p>我们用双指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 标识一个窗口的左右端点，若窗口内的位置数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>&gt;</mo>
+  <mi>n</mi>
+</math></span> 时，我们需要缩小窗口，即指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 向右移动。如果此时窗口中有连续的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 个石子，即满足 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+  <mo>&#x2212;</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 且 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>n</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>=</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，那么最少需要移动的次数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>；否则，我们用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 减去窗口内的石子数，可以得到最少需要移动的次数，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>j</mi>
+  <mo>&#x2212;</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。取所有情况的最小值即为最小移动次数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <code v-pre>stones</code> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func numMovesStonesII(stones []int) []int {</span></span>
+<span class="line"><span>	sort.Ints(stones)</span></span>
+<span class="line"><span>	n := len(stones)</span></span>
+<span class="line"><span>	mi := n</span></span>
+<span class="line"><span>	mx := max(stones[n-1]-stones[1]+1, stones[n-2]-stones[0]+1) - (n - 1)</span></span>
+<span class="line"><span>	i := 0</span></span>
+<span class="line"><span>	for j, x := range stones {</span></span>
+<span class="line"><span>		for x-stones[i]+1 > n {</span></span>
+<span class="line"><span>			i++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if j-i+1 == n-1 &#x26;&#x26; stones[j]-stones[i] == n-2 {</span></span>
+<span class="line"><span>			mi = min(mi, 2)</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			mi = min(mi, n-(j-i+1))</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return []int{mi, mx}</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/moving-stones-until-consecutive-ii" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1040.Moving%20Stones%20Until%20Consecutive%20II/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1052" tabindex="-1">1052. 爱生气的书店老板 <a class="header-anchor" href="#q-1052" aria-label="Permalink to &quot;1052. 爱生气的书店老板 {#q-1052}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>有一个书店老板，他的书店开了 <code>n</code> 分钟。每分钟都有一些顾客进入这家商店。给定一个长度为 <code>n</code> 的整数数组 <code>customers</code> ，其中 <code>customers[i]</code> 是在第 <code>i</code> 分钟开始时进入商店的顾客数量，所有这些顾客在第 <code>i</code> 分钟结束后离开。</p>&#10;&#10;<p>在某些分钟内，书店老板会生气。 如果书店老板在第 <code>i</code> 分钟生气，那么 <code>grumpy[i] = 1</code>，否则 <code>grumpy[i] = 0</code>。</p>&#10;&#10;<p>当书店老板生气时，那一分钟的顾客就会不满意，若老板不生气则顾客是满意的。</p>&#10;&#10;<p>书店老板知道一个秘密技巧，能抑制自己的情绪，可以让自己连续 <code>minutes</code> 分钟不生气，但却只能使用一次。</p>&#10;&#10;<p>请你返回 <em>这一天营业下来，最多有多少客户能够感到满意</em> 。<br>&#10; </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>customers = [1,0,1,2,1,1,7,5], grumpy = [0,1,0,1,0,1,0,1], minutes = 3&#10;<strong>输出：</strong>16&#10;<strong>解释：</strong>书店老板在最后 3 分钟保持冷静。&#10;感到满意的最大客户数量 = 1 + 1 + 1 + 1 + 7 + 5 = 16.&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>customers = [1], grumpy = [0], minutes = 1&#10;<strong>输出：</strong>1</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == customers.length == grumpy.length</code></li>&#10;	<li><code>1 &lt;= minutes &lt;= n &lt;= 2 * 10<sup>4</sup></code></li>&#10;	<li><code>0 &lt;= customers[i] &lt;= 1000</code></li>&#10;	<li><code>grumpy[i] == 0 or 1</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>不生气的顾客始终计入；技巧只能覆盖连续 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">minutes</mtext>
+</math></span> 分钟的生气顾客。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>2</mn>
+  <mo>&#xD7;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>，应一次扫清所有窗口。</p>
+<p>先把不生气时段的客流求和，再在生气客流上维护长为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">minutes</mtext>
+</math></span> 的滑动窗口最大值。</p>
+<p>窗口右移时加上新分钟的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>u</mi>
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>m</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x22C5;</mo>
+  <mi>g</mi>
+  <mi>r</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>p</mi>
+  <mi>y</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>、减去滑出的对应项，答案为固定客流加上该最大值。</p>
+</blockquote>
+<p>根据题目描述，我们只需要统计老板不生气时的客户数量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span>，再加上一个大小为 <code v-pre>minutes</code> 的滑动窗口中，老板生气时的客户数量的最大值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 即可。</p>
+<p>我们定义一个变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 来记录滑动窗口中老板生气时的客户数量，初始值为前 <code v-pre>minutes</code> 分钟老板生气时的客户数量。然后我们遍历数组，每次移动滑动窗口时，更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 的值，同时更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 的值。</p>
+<p>最后返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <code v-pre>customers</code> 的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func maxSatisfied(customers []int, grumpy []int, minutes int) int {</span></span>
+<span class="line"><span>	var cnt, tot int</span></span>
+<span class="line"><span>	for i, c := range customers[:minutes] {</span></span>
+<span class="line"><span>		cnt += c * grumpy[i]</span></span>
+<span class="line"><span>		tot += c * (grumpy[i] ^ 1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	mx := cnt</span></span>
+<span class="line"><span>	for i := minutes; i &#x3C; len(customers); i++ {</span></span>
+<span class="line"><span>		cnt += customers[i] * grumpy[i]</span></span>
+<span class="line"><span>		cnt -= customers[i-minutes] * grumpy[i-minutes]</span></span>
+<span class="line"><span>		mx = max(mx, cnt)</span></span>
+<span class="line"><span>		tot += customers[i] * (grumpy[i] ^ 1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return tot + mx</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/grumpy-bookstore-owner" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1000-1099/1052.Grumpy%20Bookstore%20Owner/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1100" tabindex="-1">1100. 长度为 K 的无重复字符子串 🔒 <a class="header-anchor" href="#q-1100" aria-label="Permalink to &quot;1100. 长度为 K 的无重复字符子串 🔒 {#q-1100}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个字符串 <code>s</code>，找出所有长度为 <code>k</code> 且不含重复字符的子串，请你返回全部满足要求的子串的 <strong>数目</strong>。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;havefunonleetcode&quot;, k = 5&#10;<strong>输出：</strong>6&#10;<strong>解释：</strong>&#10;这里有 6 个满足题意的子串，分别是：'havef','avefu','vefun','efuno','etcod','tcode'。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;home&quot;, k = 5&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>&#10;注意：k 可能会大于 s 的长度。在这种情况下，就无法找到任何长度为 k 的子串。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ol>&#10;	<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>s</code> 中的所有字符均为小写英文字母</li>&#10;	<li><code>1 &lt;= k &lt;= 10<sup>4</sup></code></li>&#10;</ol></div>
+</details>
+<details class="details custom-block"><summary>方法一：滑动窗口 + 哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>若枚举每个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的子串再扫描一遍判断字符是否互异，时间约为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>,</mo>
+  <mi>k</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span> 时尚可接受，但相邻子串仅相差一头一尾两个字符，重复扫描没有必要。</p>
+<p>为此维护长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的窗口，并用哈希表记录窗内各字符频次：右端字符入窗、左端字符出窗，频次降为零则删键。表中键的个数恰为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，当且仅当窗口内每个字符出现一次，据此累加答案。</p>
+</blockquote>
+<p>我们维护一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的滑动窗口，用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 统计窗口中每个字符的出现次数。</p>
+<p>首先，我们将字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个字符加入哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 中，并判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 的大小是否等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，如果等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，则说明窗口中的字符都不相同，答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 加一。</p>
+<p>接下来，我们从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 开始遍历字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，每次将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 加入哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 中，同时将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 从哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 中减一，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span> 减一后等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，则将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>&#x2212;</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 从哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 中删除。如果此时哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 的大小等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，则说明窗口中的字符都不相同，答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 加一。</p>
+<p>最后，返回答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo>,</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度；而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">&#x3A3;</mi>
+</math></span> 为字符集，本题中字符集为小写英文字母，所以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi mathvariant="normal">&#x3A3;</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo>=</mo>
+  <mn>26</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func numKLenSubstrNoRepeats(s string, k int) (ans int) {</span></span>
+<span class="line"><span>	n := len(s)</span></span>
+<span class="line"><span>	if n &#x3C; k {</span></span>
+<span class="line"><span>		return</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	cnt := map[byte]int{}</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; k; i++ {</span></span>
+<span class="line"><span>		cnt[s[i]]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if len(cnt) == k {</span></span>
+<span class="line"><span>		ans++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := k; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		cnt[s[i]]++</span></span>
+<span class="line"><span>		cnt[s[i-k]]--</span></span>
+<span class="line"><span>		if cnt[s[i-k]] == 0 {</span></span>
+<span class="line"><span>			delete(cnt, s[i-k])</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if len(cnt) == k {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/find-k-length-substrings-with-no-repeated-characters" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1100.Find%20K-Length%20Substrings%20With%20No%20Repeated%20Characters/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1151" tabindex="-1">1151. 最少交换次数来组合所有的 1 🔒 <a class="header-anchor" href="#q-1151" aria-label="Permalink to &quot;1151. 最少交换次数来组合所有的 1 🔒 {#q-1151}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给出一个二进制数组 <code>data</code>，你需要通过交换位置，将数组中 <strong>任何位置</strong> 上的 1 组合到一起，并返回所有可能中所需 <strong>最少的交换次数</strong>。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> data = [1,0,1,0,1]&#10;<strong>输出:</strong> 1&#10;<strong>解释: </strong>&#10;有三种可能的方法可以把所有的 1 组合在一起：&#10;[1,1,1,0,0]，交换 1 次；&#10;[0,1,1,1,0]，交换 2 次；&#10;[0,0,1,1,1]，交换 1 次。&#10;所以最少的交换次数为 1。&#10;</pre>&#10;&#10;<p><strong>示例  2:</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>data = [0,0,0,1,0]&#10;<strong>输出：</strong>0&#10;<strong>解释： </strong>&#10;由于数组中只有一个 1，所以不需要交换。</pre>&#10;&#10;<p><strong>示例 3:</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>data = [1,0,1,0,1,0,0,1,1,0,1]&#10;<strong>输出：3&#10;解释：&#10;</strong>交换 3 次，一种可行的只用 3 次交换的解决方案是 [0,0,0,0,0,1,1,1,1,1,1]。&#10;</pre>&#10;&#10;<p><strong>示例 4:</strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> data = [1,0,1,0,1,0,1,1,1,0,1,0,0,1,1,1,0,0,1,1,1,0,1,0,1,1,0,0,0,1,1,1,1,0,0,1]&#10;<strong>输出:</strong> 8&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= data.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>data[i]</code> == <code>0</code> or <code>1</code>.</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>全部 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 最终要落入某一长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的窗口， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 为数组中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的个数。窗口内 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 的个数即需交换进来的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的个数，等价于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 减窗口内 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的个数。滑动统计最大窗内 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 数，答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 减该最大值。</p>
+</blockquote>
+<p>我们先统计数组中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的个数，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。然后我们使用滑动窗口，窗口大小为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，窗口右边界从左向右移动，统计窗口内 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的个数，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>。每次移动窗口时，都更新 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 的值，最后窗口右边界移动到数组末尾时，窗口内 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的个数最多，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span>。最后答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func minSwaps(data []int) int {</span></span>
+<span class="line"><span>	k := 0</span></span>
+<span class="line"><span>	for _, v := range data {</span></span>
+<span class="line"><span>		k += v</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	t := 0</span></span>
+<span class="line"><span>	for _, v := range data[:k] {</span></span>
+<span class="line"><span>		t += v</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	mx := t</span></span>
+<span class="line"><span>	for i := k; i &#x3C; len(data); i++ {</span></span>
+<span class="line"><span>		t += data[i]</span></span>
+<span class="line"><span>		t -= data[i-k]</span></span>
+<span class="line"><span>		mx = max(mx, t)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return k - mx</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/minimum-swaps-to-group-all-1s-together" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1151.Minimum%20Swaps%20to%20Group%20All%201's%20Together/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1156" tabindex="-1">1156. 单字符重复子串的最大长度 <a class="header-anchor" href="#q-1156" aria-label="Permalink to &quot;1156. 单字符重复子串的最大长度 {#q-1156}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>如果字符串中的所有字符都相同，那么这个字符串是单字符重复的字符串。</p>&#10;&#10;<p>给你一个字符串 <code>text</code>，你只能交换其中两个字符一次或者什么都不做，然后得到一些单字符重复的子串。返回其中最长的子串的长度。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>text = &quot;ababa&quot;&#10;<strong>输出：</strong>3&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><strong>输入：</strong>text = &quot;aaabaaa&quot;&#10;<strong>输出：</strong>6&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre><strong>输入：</strong>text = &quot;aaabbaaa&quot;&#10;<strong>输出：</strong>4&#10;</pre>&#10;&#10;<p><strong>示例 4：</strong></p>&#10;&#10;<pre><strong>输入：</strong>text = &quot;aaaaa&quot;&#10;<strong>输出：</strong>5&#10;</pre>&#10;&#10;<p><strong>示例 5：</strong></p>&#10;&#10;<pre><strong>输入：</strong>text = &quot;abcdef&quot;&#10;<strong>输出：</strong>1&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= text.length &lt;= 20000</code></li>&#10;	<li><code>text</code> 仅由小写英文字母组成。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：双指针 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>至多交换一次，最长单字符段要么是一段连续相同字符再并入一个远处的相同字符，要么是被一个不同字符隔开的两段相同字符拼起来。双指针切出每段长度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>，再看间隔一个字符后的同字符段 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>，候选长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mtext mathvariant="italic">&#x8BE5;&#x5B57;&#x7B26;&#x5168;&#x5C40;&#x6B21;&#x6570;</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>，避免无字符可换入。</p>
+</blockquote>
+<p>我们先用哈希表或数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 统计字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mi>e</mi>
+  <mi>x</mi>
+  <mi>t</mi>
+</math></span> 中每个字符出现的次数。</p>
+<p>接下来，我们定义一个指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，初始时 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>。每一次，我们将指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 指向 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，并不断地向右移动 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span>，直到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 指向的字符与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 指向的字符不同，此时我们得到了一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mo>=</mo>
+  <mi>j</mi>
+  <mo>&#x2212;</mo>
+  <mi>i</mi>
+</math></span> 的子串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mi>e</mi>
+  <mi>x</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>.</mo>
+  <mo>.</mo>
+  <mi>j</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，其中所有字符都相同。</p>
+<p>然后我们跳过指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 指向的字符，用指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 继续向右移动，直到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 指向的字符与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 指向的字符不同，此时我们得到了一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mo>=</mo>
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mi>j</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 的子串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mi>e</mi>
+  <mi>x</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>j</mi>
+  <mo>+</mo>
+  <mn>1.</mn>
+  <mo>.</mo>
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，其中所有字符都相同。那么我们最多通过一次交换操作，可以得到的最长单字符重复子串的长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>t</mi>
+  <mi>e</mi>
+  <mi>x</mi>
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+</math></span>。接下来，我们将指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 移动到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span>，继续寻找下一个子串。我们取所有满足条件的子串的最大长度即可。</p>
+<p>时间复杂度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>C</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串的长度；而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+</math></span> 为字符集的大小，本题中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+  <mo>=</mo>
+  <mn>26</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func maxRepOpt1(text string) (ans int) {</span></span>
+<span class="line"><span>	cnt := [26]int{}</span></span>
+<span class="line"><span>	for _, c := range text {</span></span>
+<span class="line"><span>		cnt[c-'a']++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	n := len(text)</span></span>
+<span class="line"><span>	for i, j := 0, 0; i &#x3C; n; i = j {</span></span>
+<span class="line"><span>		j = i</span></span>
+<span class="line"><span>		for j &#x3C; n &#x26;&#x26; text[j] == text[i] {</span></span>
+<span class="line"><span>			j++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		l := j - i</span></span>
+<span class="line"><span>		k := j + 1</span></span>
+<span class="line"><span>		for k &#x3C; n &#x26;&#x26; text[k] == text[i] {</span></span>
+<span class="line"><span>			k++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		r := k - j - 1</span></span>
+<span class="line"><span>		ans = max(ans, min(l+r+1, cnt[text[i]-'a']))</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/swap-for-longest-repeated-character-substring" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1156.Swap%20For%20Longest%20Repeated%20Character%20Substring/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1176" tabindex="-1">1176. 健身计划评估 🔒 <a class="header-anchor" href="#q-1176" aria-label="Permalink to &quot;1176. 健身计划评估 🔒 {#q-1176}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>一个节食者在第 <code>i</code> 天消耗 <code>calories[i]</code> 卡路里。</p>&#10;&#10;<p>给定一个整数 <code>k</code>，对于 <strong>每个</strong> 连续的 <code>k</code> 天序列（对于所有的 <code>0 &lt;= i &lt;= n-k</code>，有 <code>calories[i], calories[i+1], ..., calories[i+k-1]</code>），他们想要知道 <em>T</em>，即在这 <code>k</code> 天序列期间消耗的总卡路里（<code>calories[i] + calories[i+1] + ... + calories[i+k-1]</code>）：</p>&#10;&#10;<ul>&#10;	<li>如果 <code>T &lt; lower</code>，那么这份计划相对糟糕，并失去 1 分； </li>&#10;	<li>如果 <code>T > upper</code>，那么这份计划相对优秀，并获得 1 分；</li>&#10;	<li>否则，这份计划普普通通，分值不做变动。</li>&#10;</ul>&#10;&#10;<p>请返回统计完所有 <code>calories.length</code> 天后得到的总分作为评估结果。</p>&#10;&#10;<p>注意：总分可能是负数。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>calories = [1,2,3,4,5], k = 1, lower = 3, upper = 3&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>calories[0], calories[1] &lt; lower 而 calories[3], calories[4] > upper, 总分 = 0.</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>calories = [3,2], k = 2, lower = 0, upper = 1&#10;<strong>输出：</strong>1&#10;<strong>解释：</strong>calories[0] + calories[1] > upper, 总分 = 1.&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>calories = [6,5,0,0], k = 2, lower = 1, upper = 5&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>calories[0] + calories[1] > upper, calories[2] + calories[3] &lt; lower, 总分 = 0.&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= k &lt;= calories.length &lt;= 10^5</code></li>&#10;	<li><code>0 &lt;= calories[i] &lt;= 20000</code></li>&#10;	<li><code>0 &lt;= lower &lt;= upper</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：前缀和 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>连续 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 天热量与上下界比较后加减分。前缀和使任意窗口和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，枚举起点即可。</p>
+</blockquote>
+<p>我们先预处理出长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span> 的前缀和数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 天的卡路里总和。</p>
+<p>然后遍历前缀和数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，对于每个位置 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，计算 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，即为第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 天开始的连续 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 天的卡路里总和。根据题意，对于每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo>+</mo>
+  <mi>k</mi>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2212;</mo>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，判断值与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>w</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+  <mi>p</mi>
+  <mi>p</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+</math></span> 的关系，更新答案即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <code v-pre>calories</code> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func dietPlanPerformance(calories []int, k int, lower int, upper int) (ans int) {</span></span>
+<span class="line"><span>	n := len(calories)</span></span>
+<span class="line"><span>	s := make([]int, n+1)</span></span>
+<span class="line"><span>	for i, x := range calories {</span></span>
+<span class="line"><span>		s[i+1] = s[i] + x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; n-k+1; i++ {</span></span>
+<span class="line"><span>		t := s[i+k] - s[i]</span></span>
+<span class="line"><span>		if t &#x3C; lower {</span></span>
+<span class="line"><span>			ans--</span></span>
+<span class="line"><span>		} else if t > upper {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：滑动窗口 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一额外使用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 前缀数组。定长窗口只需维护当前和：右端加入、左端减去，空间降为常数，判定规则不变。</p>
+</blockquote>
+<p>我们维护一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的滑动窗口，窗口内元素之和记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&lt;</mo>
+  <mi>l</mi>
+  <mi>o</mi>
+  <mi>w</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+</math></span>，则分数减 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>；如果 $ s \\gt upper$，则分数加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <code v-pre>calories</code> 的长度。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func dietPlanPerformance(calories []int, k int, lower int, upper int) (ans int) {</span></span>
+<span class="line"><span>	n := len(calories)</span></span>
+<span class="line"><span>	s := 0</span></span>
+<span class="line"><span>	for _, x := range calories[:k] {</span></span>
+<span class="line"><span>		s += x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if s &#x3C; lower {</span></span>
+<span class="line"><span>		ans--</span></span>
+<span class="line"><span>	} else if s > upper {</span></span>
+<span class="line"><span>		ans++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := k; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		s += calories[i] - calories[i-k]</span></span>
+<span class="line"><span>		if s &#x3C; lower {</span></span>
+<span class="line"><span>			ans--</span></span>
+<span class="line"><span>		} else if s > upper {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/diet-plan-performance" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1100-1199/1176.Diet%20Plan%20Performance/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1234" tabindex="-1">1234. 替换子串得到平衡字符串 <a class="header-anchor" href="#q-1234" aria-label="Permalink to &quot;1234. 替换子串得到平衡字符串 {#q-1234}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>有一个只含有 <code>'Q', 'W', 'E', 'R'</code> 四种字符，且长度为 <code>n</code> 的字符串。</p>&#10;&#10;<p>假如在该字符串中，这四个字符都恰好出现 <code>n/4</code> 次，那么它就是一个「平衡字符串」。</p>&#10;&#10;<p> </p>&#10;&#10;<p>给你一个这样的字符串 <code>s</code>，请通过「替换一个子串」的方式，使原字符串 <code>s</code> 变成一个「平衡字符串」。</p>&#10;&#10;<p>你可以用和「待替换子串」长度相同的 <strong>任何</strong> 其他字符串来完成替换。</p>&#10;&#10;<p>请返回待替换子串的最小可能长度。</p>&#10;&#10;<p>如果原字符串自身就是一个平衡字符串，则返回 <code>0</code>。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;QWER&quot;&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>s 已经是平衡的了。</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;QQWE&quot;&#10;<strong>输出：</strong>1&#10;<strong>解释：</strong>我们需要把一个 'Q' 替换成 'R'，这样得到的 &quot;RQWE&quot; (或 &quot;QRWE&quot;) 是平衡的。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;QQQW&quot;&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>我们可以把前面的 &quot;QQ&quot; 替换成 &quot;ER&quot;。 &#10;</pre>&#10;&#10;<p><strong>示例 4：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>s = &quot;QQQQ&quot;&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>我们可以替换后 3 个 'Q'，使 s = &quot;QWER&quot;。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s.length &lt;= 10^5</code></li>&#10;	<li><code>s.length</code> 是 <code>4</code> 的倍数</li>&#10;	<li><code>s</code> 中只含有 <code>'Q'</code>, <code>'W'</code>, <code>'E'</code>, <code>'R'</code> 四种字符</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：计数 + 双指针 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>平衡要求四种字符各占 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>4</mn>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，不能枚举被替换子串。窗外四种计数都不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>4</mn>
+</math></span> 当且仅当该窗口覆盖了全部超额字符，且窗口越长越容易满足，具有单调性。</p>
+<p>先统计全串频次；已平衡则答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>。否则右端吞入字符（窗外计数减一），当窗外均合法时收缩左端并更新最短窗口。双指针维护「窗外已平衡」的最短覆盖。</p>
+</blockquote>
+<p>我们先用一个哈希表或数组 <code v-pre>cnt</code> 统计字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 中每个字符的数量，如果所有字符的数量都不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>4</mn>
+</math></span>，那么字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 就是平衡字符串，直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>。</p>
+<p>否则，我们使用双指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 分别维护窗口的左右边界，初始时 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+  <mo>=</mo>
+  <mn>0</mn>
+</math></span>。</p>
+<p>接下来，从左到右遍历字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，每次遍历到一个字符，就将该字符的数量减 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，然后判断当前窗口是否满足条件，即窗口外的字符数量都不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>4</mn>
+</math></span>。如果满足条件，那么就更新答案，然后将窗口的左边界右移，直到不满足条件为止。</p>
+<p>最后，返回答案即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>C</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度；而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+</math></span> 是字符集的大小，本题中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>C</mi>
+  <mo>=</mo>
+  <mn>4</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func balancedString(s string) int {</span></span>
+<span class="line"><span>	cnt := [4]int{}</span></span>
+<span class="line"><span>	t := "QWER"</span></span>
+<span class="line"><span>	n := len(s)</span></span>
+<span class="line"><span>	for i := range s {</span></span>
+<span class="line"><span>		cnt[strings.IndexByte(t, s[i])]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	m := n / 4</span></span>
+<span class="line"><span>	if cnt[0] == m &#x26;&#x26; cnt[1] == m &#x26;&#x26; cnt[2] == m &#x26;&#x26; cnt[3] == m {</span></span>
+<span class="line"><span>		return 0</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := n</span></span>
+<span class="line"><span>	for i, j := 0, 0; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		cnt[strings.IndexByte(t, s[i])]--</span></span>
+<span class="line"><span>		for j &#x3C;= i &#x26;&#x26; cnt[0] &#x3C;= m &#x26;&#x26; cnt[1] &#x3C;= m &#x26;&#x26; cnt[2] &#x3C;= m &#x26;&#x26; cnt[3] &#x3C;= m {</span></span>
+<span class="line"><span>			ans = min(ans, i-j+1)</span></span>
+<span class="line"><span>			cnt[strings.IndexByte(t, s[j])]++</span></span>
+<span class="line"><span>			j++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/replace-the-substring-for-balanced-string" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1234.Replace%20the%20Substring%20for%20Balanced%20String/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1248" tabindex="-1">1248. 统计「优美子数组」 <a class="header-anchor" href="#q-1248" aria-label="Permalink to &quot;1248. 统计「优美子数组」 {#q-1248}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：数组、哈希表、数学、前缀和、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code>。如果某个连续子数组中恰好有 <code>k</code> 个奇数数字，我们就认为这个子数组是「<strong>优美子数组</strong>」。</p>&#10;&#10;<p>请返回这个数组中 <strong>「优美子数组」</strong> 的数目。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [1,1,2,1,1], k = 3&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>包含 3 个奇数的子数组是 [1,1,2,1] 和 [1,2,1,1] 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [2,4,6], k = 1&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>数列中不包含任何奇数，所以不存在优美子数组。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [2,2,2,1,2,2,1,2,2,2], k = 2&#10;<strong>输出：</strong>16&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= nums.length &lt;= 50000</code></li>&#10;	<li><code>1 &lt;= nums[i] &lt;= 10^5</code></li>&#10;	<li><code>1 &lt;= k &lt;= nums.length</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：前缀和 + 数组或哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>恰好 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个奇数的子数组， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>5</mn>
+  <mo>&#xD7;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>。奇数看成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>、偶数看成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 后，即前缀和之差为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的区间个数。</p>
+<p>扫描时维护奇数个数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>，用计数器查已出现的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>&#x2212;</mo>
+  <mi>k</mi>
+</math></span> 次，再登记当前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>。前缀和把「恰好 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个奇数」变成哈希表上的一次查询。</p>
+</blockquote>
+<p>题目求子数组中恰好有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 个奇数的子数组个数，我们可以求出每个前缀数组中奇数的个数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>，记录在数组或哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 中。对于每个前缀数组，我们只需要求出前缀数组中奇数个数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>&#x2212;</mo>
+  <mi>k</mi>
+</math></span> 的前缀数组个数，即为以当前前缀数组结尾的子数组个数。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func numberOfSubarrays(nums []int, k int) (ans int) {</span></span>
+<span class="line"><span>	n := len(nums)</span></span>
+<span class="line"><span>	cnt := make([]int, n+1)</span></span>
+<span class="line"><span>	cnt[0] = 1</span></span>
+<span class="line"><span>	t := 0</span></span>
+<span class="line"><span>	for _, v := range nums {</span></span>
+<span class="line"><span>		t += v &#x26; 1</span></span>
+<span class="line"><span>		if t >= k {</span></span>
+<span class="line"><span>			ans += cnt[t-k]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		cnt[t]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-number-of-nice-subarrays" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1248.Count%20Number%20of%20Nice%20Subarrays/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1297" tabindex="-1">1297. 子串的最大出现次数 <a class="header-anchor" href="#q-1297" aria-label="Permalink to &quot;1297. 子串的最大出现次数 {#q-1297}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：哈希表、字符串、滑动窗口</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个字符串 <code>s</code> ，请你返回满足以下条件且出现次数最大的 <strong>任意</strong> 子串的出现次数：</p>&#10;&#10;<ul>&#10;	<li>子串中不同字母的数目必须小于等于 <code>maxLetters</code> 。</li>&#10;	<li>子串的长度必须大于等于 <code>minSize</code> 且小于等于 <code>maxSize</code> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<pre><strong>输入：</strong>s = &quot;aababcaab&quot;, maxLetters = 2, minSize = 3, maxSize = 4&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>子串 &quot;aab&quot; 在原字符串中出现了 2 次。&#10;它满足所有的要求：2 个不同的字母，长度为 3 （在 minSize 和 maxSize 范围内）。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><strong>输入：</strong>s = &quot;aaaa&quot;, maxLetters = 1, minSize = 3, maxSize = 3&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>子串 &quot;aaa&quot; 在原字符串中出现了 2 次，且它们有重叠部分。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre><strong>输入：</strong>s = &quot;aabcabcab&quot;, maxLetters = 2, minSize = 2, maxSize = 3&#10;<strong>输出：</strong>3&#10;</pre>&#10;&#10;<p><strong>示例 4：</strong></p>&#10;&#10;<pre><strong>输入：</strong>s = &quot;abcde&quot;, maxLetters = 2, minSize = 3, maxSize = 3&#10;<strong>输出：</strong>0&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= s.length &lt;= 10^5</code></li>&#10;	<li><code>1 &lt;= maxLetters &lt;= 26</code></li>&#10;	<li><code>1 &lt;= minSize &lt;= maxSize &lt;= min(26, s.length)</code></li>&#10;	<li><code>s</code> 只包含小写英文字母。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 + 枚举 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>满足字母种类与长度约束的子串中，出现次数最大者。更长的合法串若出现 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 次，其长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mi>S</mi>
+  <mi>i</mi>
+  <mi>z</mi>
+  <mi>e</mi>
+</math></span> 的前缀也至少出现 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 次，故只需统计长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mi>S</mi>
+  <mi>i</mi>
+  <mi>z</mi>
+  <mi>e</mi>
+</math></span> 且字母种类不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>x</mi>
+  <mi>L</mi>
+  <mi>e</mi>
+  <mi>t</mi>
+  <mi>t</mi>
+  <mi>e</mi>
+  <mi>r</mi>
+  <mi>s</mi>
+</math></span> 的子串。</p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mi>S</mi>
+  <mi>i</mi>
+  <mi>z</mi>
+  <mi>e</mi>
+  <mo>&#x2264;</mo>
+  <mn>26</mn>
+</math></span>，枚举所有该长窗口并用集合判种类，哈希表计数取最大。</p>
+</blockquote>
+<p>根据题目描述，如果一个长串满足条件，那么这个长串的长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">minSize</mtext>
+</math></span> 的子串也一定满足条件。因此，我们只需要枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 中所有长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">minSize</mtext>
+</math></span> 的子串，然后利用哈希表记录所有子串的出现次数，找出最大的次数作为答案即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 分别为字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度以及 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">minSize</mtext>
+</math></span> 的大小。本题中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>26</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func maxFreq(s string, maxLetters int, minSize int, maxSize int) (ans int) {</span></span>
+<span class="line"><span>	cnt := map[string]int{}</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; len(s)-minSize+1; i++ {</span></span>
+<span class="line"><span>		t := s[i : i+minSize]</span></span>
+<span class="line"><span>		ss := map[rune]bool{}</span></span>
+<span class="line"><span>		for _, c := range t {</span></span>
+<span class="line"><span>			ss[c] = true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if len(ss) &#x3C;= maxLetters {</span></span>
+<span class="line"><span>			cnt[t]++</span></span>
+<span class="line"><span>			if ans &#x3C; cnt[t] {</span></span>
+<span class="line"><span>				ans = cnt[t]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：滑动窗口 + 字符串哈希 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一以字符串为键，每窗口 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mi>i</mi>
+  <mi>n</mi>
+  <mi>S</mi>
+  <mi>i</mi>
+  <mi>z</mi>
+  <mi>e</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 建串。滑动窗口维护种类数，字符串哈希使子串键变成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 整数，总时间线性。</p>
+</blockquote>
+<p>我们可以使用滑动窗口来维护当前子串中不同字母的数目，同时使用字符串哈希来高效地计算子串的哈希值，从而避免使用字符串作为哈希表的键，提升性能。</p>
+<p>具体地，我们定义一个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">Hashing</mtext>
+</math></span> 类来预处理字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的前缀哈希值和幂次值，从而可以在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 的时间内计算任意子串的哈希值。</p>
+<p>然后，我们使用滑动窗口遍历字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，维护当前窗口中不同字母的数目，并在窗口大小达到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">minSize</mtext>
+</math></span> 时，计算当前子串的哈希值并更新出现次数。然后，将窗口向右滑动一个位置，更新字母频率和不同字母数目。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为字符串 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func maxFreq(s string, maxLetters int, minSize int, maxSize int) int {</span></span>
+<span class="line"><span>	n := len(s)</span></span>
+<span class="line"><span>	hashing := NewHashing(s)</span></span>
+<span class="line"><span>	freq := make([]int, 256)</span></span>
+<span class="line"><span>	k := 0</span></span>
+<span class="line"><span>	ans := 0</span></span>
+<span class="line"><span>	cnt := make(map[uint64]int)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	for i := 1; i &#x3C;= n; i++ {</span></span>
+<span class="line"><span>		c := s[i-1]</span></span>
+<span class="line"><span>		freq[c]++</span></span>
+<span class="line"><span>		if freq[c] == 1 {</span></span>
+<span class="line"><span>			k++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>		if i >= minSize {</span></span>
+<span class="line"><span>			if k &#x3C;= maxLetters {</span></span>
+<span class="line"><span>				x := hashing.Query(i-minSize+1, i)</span></span>
+<span class="line"><span>				cnt[x]++</span></span>
+<span class="line"><span>				if cnt[x] > ans {</span></span>
+<span class="line"><span>					ans = cnt[x]</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			j := i - minSize</span></span>
+<span class="line"><span>			c2 := s[j]</span></span>
+<span class="line"><span>			freq[c2]--</span></span>
+<span class="line"><span>			if freq[c2] == 0 {</span></span>
+<span class="line"><span>				k--</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>type Hashing struct {</span></span>
+<span class="line"><span>	p, h []uint64</span></span>
+<span class="line"><span>	mod  uint64</span></span>
+<span class="line"><span>	base uint64</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func NewHashing(word string) *Hashing {</span></span>
+<span class="line"><span>	return NewHashingWithBase(word, 13331, 998244353)</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func NewHashingWithBase(word string, base uint64, mod uint64) *Hashing {</span></span>
+<span class="line"><span>	n := len(word)</span></span>
+<span class="line"><span>	p := make([]uint64, n+1)</span></span>
+<span class="line"><span>	h := make([]uint64, n+1)</span></span>
+<span class="line"><span>	p[0] = 1</span></span>
+<span class="line"><span>	for i := 1; i &#x3C;= n; i++ {</span></span>
+<span class="line"><span>		p[i] = p[i-1] * base % mod</span></span>
+<span class="line"><span>		h[i] = (h[i-1]*base + uint64(word[i-1])) % mod</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return &#x26;Hashing{p, h, mod, base}</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func (hs *Hashing) Query(l, r int) uint64 {</span></span>
+<span class="line"><span>	return (hs.h[r] + hs.mod - hs.h[l-1]*hs.p[r-l+1]%hs.mod) % hs.mod</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/maximum-number-of-occurrences-of-a-substring" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1200-1299/1297.Maximum%20Number%20of%20Occurrences%20of%20a%20Substring/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details></div>`},null,-1)])])}const w=a(m,[["render",p]]);export{d as __pageData,w as default};

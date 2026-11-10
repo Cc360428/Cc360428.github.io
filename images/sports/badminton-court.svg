@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="850" viewBox="0 0 480 850" role="img" aria-labelledby="title desc">
+<title id="title">羽毛球单双打边界与发球区</title><desc id="desc">13.4米乘6.1米场地比例图，单打宽5.18米，短发球线距网1.98米，双打后发球线距底线0.76米。图中数字1为单打独有的发球后区，2为双打独有的发球侧区。</desc>
+<rect width="480" height="850" rx="12" fill="#fff"/>
+<g font-family="Microsoft YaHei, Noto Sans SC, sans-serif" fill="#172a46" text-anchor="middle">
+<text x="240" y="36" font-size="24" font-weight="700">羽毛球：发球边界会变化</text><text x="240" y="68" font-size="20">双打宽 6.10 m · 长 13.40 m</text>
+<rect x="112" y="90" width="256.2" height="562.8" fill="#f2f7fb" stroke="#233f64" stroke-width="2"/>
+<path d="M131.32 90V652.8 M348.88 90V652.8 M112 121.92H368.2 M112 620.88H368.2 M112 288.24H368.2 M112 454.56H368.2 M240.1 90V288.24 M240.1 454.56V652.8" stroke="#233f64" stroke-width="2" fill="none"/>
+<path d="M95 371.4H385" stroke="#233f64" stroke-width="6"/>
+<text x="240" y="350" font-size="20">球网</text><text x="240" y="423" font-size="20">距短线 1.98 m</text>
+<rect x="240.1" y="620.88" width="108.78" height="31.92" fill="#fbe8cd" stroke="#9c4515" stroke-width="2"/>
+<rect x="348.88" y="454.56" width="19.32" height="166.32" fill="#e0eef5" stroke="#233f64" stroke-width="2"/>
+<text x="294" y="646" font-size="22" font-weight="700">1</text><text x="358" y="546" font-size="22" font-weight="700">2</text>
+<text x="185" y="510" font-size="20">左区</text><text x="294" y="510" font-size="20">右区</text><text x="240" y="684" font-size="20">单打内侧边线之间宽 5.18 m</text><text x="240" y="716" font-size="20">① 单打发球有效，双打发球过长</text><text x="240" y="748" font-size="20">② 双打发球有效，单打发球过宽</text><text x="240" y="780" font-size="20">双打相持：①② 都是有效区域</text><text x="240" y="822" font-size="18">场地按比例 · 发球须去对角区 · 线宽放大</text>
+</g></svg>

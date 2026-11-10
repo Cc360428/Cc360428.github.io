@@ -1,0 +1,169 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: m5-counter
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: counter
+  namespace: m5-counter
+automountServiceAccountToken: false
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: counter-config
+  namespace: m5-counter
+data:
+  MESSAGE: theory-counter
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: counter-secret
+  namespace: m5-counter
+type: Opaque
+stringData:
+  token: replace-before-use
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: counter-data
+  namespace: m5-counter
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter
+  namespace: m5-counter
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: m5-counter
+  template:
+    metadata:
+      labels:
+        app: m5-counter
+    spec:
+      serviceAccountName: counter
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 15
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+      containers:
+        - name: counter
+          image: registry.example.invalid/m5-counter:replace-with-published-tag
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: counter-config
+                  key: MESSAGE
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 500m
+              memory: 128Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+            seccompProfile:
+              type: RuntimeDefault
+          startupProbe:
+            httpGet:
+              path: /live
+              port: http
+            periodSeconds: 2
+            failureThreshold: 30
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: http
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /live
+              port: http
+            periodSeconds: 10
+          volumeMounts:
+            - name: data
+              mountPath: /data
+            - name: secret
+              mountPath: /run/secrets
+              readOnly: true
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: counter-data
+        - name: secret
+          secret:
+            secretName: counter-secret
+            defaultMode: 0444
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: counter
+  namespace: m5-counter
+spec:
+  type: ClusterIP
+  selector:
+    app: m5-counter
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: counter-observer
+  namespace: m5-counter
+rules:
+  - apiGroups: [""]
+    resources: [pods, events, services, endpoints, persistentvolumeclaims]
+    verbs: [get, list, watch]
+  - apiGroups: [""]
+    resources: [pods/log]
+    verbs: [get]
+  - apiGroups: [apps]
+    resources: [deployments, replicasets]
+    verbs: [get, list, watch]
+  - apiGroups: [discovery.k8s.io]
+    resources: [endpointslices]
+    verbs: [get, list, watch]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: counter-observer
+  namespace: m5-counter
+subjects:
+  - kind: Group
+    name: m5-counter-observers
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: counter-observer
+  apiGroup: rbac.authorization.k8s.io

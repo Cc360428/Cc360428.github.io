@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="830" viewBox="0 0 480 830" role="img" aria-labelledby="title desc">
+<title id="title">乒乓球双打发球落点</title><desc id="desc">球台按2.74米乘1.525米比例绘制。下方为发球方，双打发球先落本方右半区，再落对方右半区。上方球员面向下，其右半区在图的左侧。箭头表示发球路线，不代表相持击球限制。</desc>
+<rect width="480" height="830" rx="12" fill="#fff"/>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#9c4515" stroke-width="1.5"/></marker></defs>
+<g font-family="Microsoft YaHei, Noto Sans SC, sans-serif" fill="#172a46" text-anchor="middle">
+<text x="240" y="36" font-size="24" font-weight="700">乒乓球：双打斜线发球</text><text x="240" y="68" font-size="20">宽 1.525 m · 长 2.74 m</text>
+<rect x="85" y="90" width="305" height="548" fill="#f2f7fb" stroke="#233f64" stroke-width="3"/>
+<path d="M237.5 90V364H85V90Z M237.5 364H390V638H237.5Z" fill="#e0eef5"/>
+<path d="M237.5 90V638" stroke="#233f64" stroke-width="2"/>
+<path d="M65 364H410" stroke="#233f64" stroke-width="6"/>
+<text x="161" y="165" font-size="22">对方右区</text><text x="314" y="578" font-size="22">本方右区</text>
+<path d="M310 680L310 490L160 240" fill="none" stroke="#9c4515" stroke-width="4" stroke-dasharray="9 5" marker-end="url(#a)"/>
+<circle cx="310" cy="490" r="20" fill="#fff" stroke="#9c4515" stroke-width="3"/><text x="310" y="497" font-size="22">1</text>
+<circle cx="160" cy="240" r="20" fill="#fff" stroke="#9c4515" stroke-width="3"/><text x="160" y="247" font-size="22">2</text>
+<text x="240" y="714" font-size="20">① 先落本方右区 → ② 对方右区</text><text x="240" y="746" font-size="20">中线属于右区；单打无需斜线发球</text><text x="240" y="778" font-size="20">网高 15.25 cm · 台高 76 cm</text><text x="240" y="809" font-size="18">球台按比例 · 落点和路线为示意</text>
+</g></svg>

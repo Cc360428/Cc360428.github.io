@@ -1,0 +1,5389 @@
+import{_ as s,a,c as t,b as e}from"./chunks/framework.BSuaGltH.js";const d=JSON.parse('{"title":"LeetCode Go · 树与二叉树（6）","description":"树与二叉树分类，第 1617–2509 题，共 30 题，含题目、可折叠解法与 Go 实现。","frontmatter":{"title":"LeetCode Go · 树与二叉树（6）","description":"树与二叉树分类，第 1617–2509 题，共 30 题，含题目、可折叠解法与 Go 实现。","showdocs":{"topics":[{"id":"leetcode","title":"LeetCode","link":"/topics/leetcode/"}],"kind":"实践案例","scope":"general","audience":"general","group":"原理与设计","summary":"树与二叉树分类，第 1617–2509 题，共 30 题，含题目、可折叠解法与 Go 实现。","status":"active","related":[{"title":"LeetCode Go · 并查集（1）","link":"/principles/algorithms/leetcode-go/union-find-01","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（2）","link":"/principles/algorithms/leetcode-go/union-find-02","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（3）","link":"/principles/algorithms/leetcode-go/union-find-03","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并查集（4）","link":"/principles/algorithms/leetcode-go/union-find-04","kind":"实践案例","scope":"general","audience":"general"},{"title":"LeetCode Go · 并发（1）","link":"/principles/algorithms/leetcode-go/concurrency-01","kind":"实践案例","scope":"general","audience":"general"}],"prev":{"text":"LeetCode Go · 树与二叉树（5）","link":"/principles/algorithms/leetcode-go/tree-05"},"next":{"text":"LeetCode Go · 树与二叉树（7）","link":"/principles/algorithms/leetcode-go/tree-07"}},"layout":"ReadingPage","sidebar":false,"aside":false,"prev":{"text":"LeetCode Go · 树与二叉树（5）","link":"/principles/algorithms/leetcode-go/tree-05"},"next":{"text":"LeetCode Go · 树与二叉树（7）","link":"/principles/algorithms/leetcode-go/tree-07"}},"headers":[],"relativePath":"principles/algorithms/leetcode-go/tree-06.md","filePath":"principles/algorithms/leetcode-go/tree-06.md"}'),p={name:"principles/algorithms/leetcode-go/tree-06.md"};function l(o,n,m,i,c,r){return a(),t("div",null,[...n[0]||(n[0]=[e("div",{innerHTML:`<div class="leetcode-reading"><h1 id="leetcode-go-·-树与二叉树-6" tabindex="-1">LeetCode Go · 树与二叉树（6） <a class="header-anchor" href="#leetcode-go-·-树与二叉树-6" aria-label="Permalink to &quot;LeetCode Go · 树与二叉树（6）&quot;">&ZeroWidthSpace;</a></h1>
+<p><a href="/principles/algorithms/leetcode-go/index">返回题库与筛选</a> · <a href="/principles/algorithms/leetcode-go/coverage">收录范围与使用说明</a></p>
+<details class="leetcode-attribution"><summary>来源与许可</summary><p>题目版权归 LeetCode；题解来自 <a href="https://github.com/doocs/leetcode" target="_blank" rel="noopener noreferrer">Doocs/leetcode</a>，按 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> 共享。补充 Go 代码来自<a href="https://github.com/EndlessCheng/codeforces-go/tree/e0fea933e2d713fd302622d2bb82a60f959a198e" target="_blank" rel="noopener noreferrer">灵茶山艾府</a>、<a href="https://github.com/halfrost/LeetCode-Go/tree/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e" target="_blank" rel="noopener noreferrer">halfrost</a>，保留 MIT 许可及逐题署名。本站提取 Go、调整分类及折叠排版；标注“本站整理”的 Go 解法依据题意与参考思路补写，按 CC BY-SA 4.0 共享。收录日期：2026-10-31；主题源版本：<a href="https://github.com/doocs/leetcode/tree/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011" target="_blank" rel="noopener noreferrer">91ef8c241a5e</a>。</p></details>
+<p class="leetcode-reading-hint">本卷 30 题 · 点击题目展开，先独立思考，再查看解法。</p><details class="leetcode-question" name="leetcode-questions" open>
+<summary class="leetcode-question-heading"><h2 id="q-1617" tabindex="-1">1617. 统计子树中城市之间最大距离 <a class="header-anchor" href="#q-1617" aria-label="Permalink to &quot;1617. 统计子树中城市之间最大距离 {#q-1617}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：位运算、树、动态规划、位掩码、枚举</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你 <code>n</code> 个城市，编号为从 <code>1</code> 到 <code>n</code> 。同时给你一个大小为 <code>n-1</code> 的数组 <code>edges</code> ，其中 <code>edges[i] = [u<sub>i</sub>, v<sub>i</sub>]</code> 表示城市 <code>u<sub>i</sub></code> 和 <code>v<sub>i</sub></code><sub> </sub>之间有一条双向边。题目保证任意城市之间只有唯一的一条路径。换句话说，所有城市形成了一棵 <strong>树</strong> 。</p>&#10;&#10;<p>一棵 <strong>子树</strong> 是城市的一个子集，且子集中任意城市之间可以通过子集中的其他城市和边到达。两个子树被认为不一样的条件是至少有一个城市在其中一棵子树中存在，但在另一棵子树中不存在。</p>&#10;&#10;<p>对于 <code>d</code> 从 <code>1</code> 到 <code>n-1</code> ，请你找到城市间 <strong>最大距离</strong> 恰好为 <code>d</code> 的所有子树数目。</p>&#10;&#10;<p>请你返回一个大小为 <code>n-1</code> 的数组，其中第<em> </em><code>d</code><em> </em>个元素（<strong>下标从 1 开始</strong>）是城市间 <strong>最大距离</strong> 恰好等于 <code>d</code> 的子树数目。</p>&#10;&#10;<p><strong>请注意</strong>，两个城市间距离定义为它们之间需要经过的边的数目。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><strong><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1617.Count%20Subtrees%20With%20Max%20Distance%20Between%20Cities/images/p1.png" loading="lazy"></strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>n = 4, edges = [[1,2],[2,3],[2,4]]&#10;<b>输出：</b>[3,4,0]&#10;<strong>解释：&#10;</strong>子树 {1,2}, {2,3} 和 {2,4} 最大距离都是 1 。&#10;子树 {1,2,3}, {1,2,4}, {2,3,4} 和 {1,2,3,4} 最大距离都为 2 。&#10;不存在城市间最大距离为 3 的子树。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>n = 2, edges = [[1,2]]&#10;<b>输出：</b>[1]&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>n = 3, edges = [[1,2],[2,3]]&#10;<b>输出：</b>[2,1]&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>2 &lt;= n &lt;= 15</code></li>&#10;	<li><code>edges.length == n-1</code></li>&#10;	<li><code>edges[i].length == 2</code></li>&#10;	<li><code>1 &lt;= u<sub>i</sub>, v<sub>i</sub> &lt;= n</code></li>&#10;	<li>题目保证 <code>(u<sub>i</sub>, v<sub>i</sub>)</code> 所表示的边互不相同。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：二进制枚举 + BFS 或 DFS · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>城市数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>15</mn>
+</math></span>，子集只有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mi>n</mi>
+  </msup>
+</math></span> 个。一个子集构成子树当且仅当诱导子图连通；其最大距离即该子树直径。</p>
+<p>连通性可用一次 DFS/BFS 看是否走完整点集：把掩码中访问过的位置清掉，结束时掩码为零则连通。直径则用树上两次搜索：先任取一点找到最远点，再从该点出发得最长路径。</p>
+<p>跳过单点掩码，对每个至少两点的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mask</mtext>
+</math></span> 做上述检验，将直径 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 计入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ans</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们注意到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>15</mn>
+</math></span>，因此可以考虑使用二进制枚举的方法枚举所有的子树。而子树中节点的最大距离，其实就是子树中两个节点之间的最长路径，也即是树的直径，求解树的直径一般可以使用 DFS 或 BFS，先找到树直径的一个端点，然后再从该端点出发，找到树的另一个端点，这两个端点之间的路径长度就是树的直径。</p>
+<p>接下来，我们详细说明具体的代码实现。</p>
+<p>我们先根据数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>e</mi>
+  <mi>d</mi>
+  <mi>g</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+</math></span> 构建出邻接表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo stretchy="false">[</mo>
+  <mi>u</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>u</mi>
+</math></span> 的所有邻接节点。</p>
+<p>用一个二进制数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>k</mi>
+</math></span> 表示子树，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>k</mi>
+</math></span> 的第 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 位为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 表示节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 在子树中，否则表示节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 不在子树中。每个节点都有两种状态，即在子树中或不在子树中，有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 个节点，因此一共有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mi>n</mi>
+  </msup>
+</math></span> 种状态。</p>
+<p>接下来，我们在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mo>.</mo>
+  <msup>
+    <mn>.2</mn>
+    <mi>n</mi>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 的范围内枚举子树 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>k</mi>
+</math></span>，对于每个子树：</p>
+<p>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>k</mi>
+</math></span> 的二进制表示中只有一个二进制位为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>k</mi>
+  <mo>&#x2208;</mo>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo>,</mo>
+  <mn>4</mn>
+  <mo>,</mo>
+  <mn>8</mn>
+  <mo>,</mo>
+  <mo>&#x22EF;</mo>
+  <mo>,</mo>
+  <msup>
+    <mn>2</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+      <mo>&#x2212;</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo stretchy="false">]</mo>
+</math></span>，则跳过该 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>k</mi>
+</math></span>，因为这些 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>k</mi>
+</math></span> 表示的子树只有一个节点，不符合题意；</p>
+<p>否则，我们找到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>a</mi>
+  <mi>s</mi>
+  <mi>k</mi>
+</math></span> 的二进制表示中最高位的二进制位为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的位置，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>u</mi>
+  <mi>r</mi>
+</math></span>。然后从节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>u</mi>
+  <mi>r</mi>
+</math></span> 出发，通过深度优先搜索或者广度优先搜索，找到树直径的一个端点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>x</mi>
+  <mi>t</mi>
+</math></span>，然后我们再从节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>x</mi>
+  <mi>t</mi>
+</math></span> 出发，同样通过深度优先搜索或者广度优先搜索，过程中记录下最大距离 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span>。</p>
+<p>当走到最深的节点时，即可得知树的直径。此时我们更新答案数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span>，将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span> 的值加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。注意，这里是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，因为题目中的最大距离是从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 开始计数的。</p>
+<p>最后，枚举完所有的子树，返回答案数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mn>2</mn>
+    <mi>n</mi>
+  </msup>
+  <mo>&#xD7;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为节点个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countSubgraphsForEachDiameter(n int, edges [][]int) []int {</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	for _, e := range edges {</span></span>
+<span class="line"><span>		u, v := e[0]-1, e[1]-1</span></span>
+<span class="line"><span>		g[u] = append(g[u], v)</span></span>
+<span class="line"><span>		g[v] = append(g[v], u)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := make([]int, n-1)</span></span>
+<span class="line"><span>	var msk, nxt, mx int</span></span>
+<span class="line"><span>	var dfs func(int, int)</span></span>
+<span class="line"><span>	dfs = func(u, d int) {</span></span>
+<span class="line"><span>		msk ^= 1 &#x3C;&#x3C; u</span></span>
+<span class="line"><span>		if mx &#x3C; d {</span></span>
+<span class="line"><span>			mx, nxt = d, u</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for _, v := range g[u] {</span></span>
+<span class="line"><span>			if msk>>v&#x26;1 == 1 {</span></span>
+<span class="line"><span>				dfs(v, d+1)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for mask := 1; mask &#x3C; 1&#x3C;&#x3C;n; mask++ {</span></span>
+<span class="line"><span>		if mask&#x26;(mask-1) == 0 {</span></span>
+<span class="line"><span>			continue</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		msk, mx = mask, 0</span></span>
+<span class="line"><span>		cur := bits.Len(uint(msk)) - 1</span></span>
+<span class="line"><span>		dfs(cur, 0)</span></span>
+<span class="line"><span>		if msk == 0 {</span></span>
+<span class="line"><span>			msk, mx = mask, 0</span></span>
+<span class="line"><span>			dfs(nxt, 0)</span></span>
+<span class="line"><span>			ans[mx-1]++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一用递归 DFS 求直径。同一套「清掩码判连通 + 两次最远点」也可以改成按层 BFS，避免递归深度并明确层次即距离。</p>
+<p>算法结构不变，仅把搜索实现换成队列。</p>
+</blockquote>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countSubgraphsForEachDiameter(n int, edges [][]int) []int {</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	for _, e := range edges {</span></span>
+<span class="line"><span>		u, v := e[0]-1, e[1]-1</span></span>
+<span class="line"><span>		g[u] = append(g[u], v)</span></span>
+<span class="line"><span>		g[v] = append(g[v], u)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := make([]int, n-1)</span></span>
+<span class="line"><span>	var msk, nxt int</span></span>
+<span class="line"><span>	bfs := func(u int) int {</span></span>
+<span class="line"><span>		d := -1</span></span>
+<span class="line"><span>		q := []int{u}</span></span>
+<span class="line"><span>		msk ^= 1 &#x3C;&#x3C; u</span></span>
+<span class="line"><span>		for len(q) > 0 {</span></span>
+<span class="line"><span>			d++</span></span>
+<span class="line"><span>			for k := len(q); k > 0; k-- {</span></span>
+<span class="line"><span>				u = q[0]</span></span>
+<span class="line"><span>				q = q[1:]</span></span>
+<span class="line"><span>				nxt = u</span></span>
+<span class="line"><span>				for _, v := range g[u] {</span></span>
+<span class="line"><span>					if msk>>v&#x26;1 == 1 {</span></span>
+<span class="line"><span>						msk ^= 1 &#x3C;&#x3C; v</span></span>
+<span class="line"><span>						q = append(q, v)</span></span>
+<span class="line"><span>					}</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return d</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for mask := 1; mask &#x3C; 1&#x3C;&#x3C;n; mask++ {</span></span>
+<span class="line"><span>		if mask&#x26;(mask-1) == 0 {</span></span>
+<span class="line"><span>			continue</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		msk = mask</span></span>
+<span class="line"><span>		cur := bits.Len(uint(msk)) - 1</span></span>
+<span class="line"><span>		bfs(cur)</span></span>
+<span class="line"><span>		if msk == 0 {</span></span>
+<span class="line"><span>			msk = mask</span></span>
+<span class="line"><span>			mx := bfs(nxt)</span></span>
+<span class="line"><span>			ans[mx-1]++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-subtrees-with-max-distance-between-cities" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1617.Count%20Subtrees%20With%20Max%20Distance%20Between%20Cities/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1644" tabindex="-1">1644. 二叉树的最近公共祖先 II 🔒 <a class="header-anchor" href="#q-1644" aria-label="Permalink to &quot;1644. 二叉树的最近公共祖先 II 🔒 {#q-1644}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、二叉树、最近公共祖先</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一棵二叉树的根节点 <code>root</code>，返回给定节点 <code>p</code> 和 <code>q</code> 的最近公共祖先（LCA）节点。如果 <code>p</code> 或 <code>q</code> 之一<strong> 不存在</strong> 于该二叉树中，返回 <code>null</code>。树中的每个节点值都是互不相同的。</p>&#10;&#10;<p>根据<a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor" target="_blank" rel="noopener noreferrer">维基百科中对最近公共祖先节点的定义</a>：“两个节点 <code>p</code> 和 <code>q</code> 在二叉树 <code>T</code> 中的最近公共祖先节点是<strong> 后代节点 </strong>中既包括 <code>p</code> 又包括 <code>q</code> 的最深节点（我们允许<strong> 一个节点为自身的一个后代节点 </strong>）”。一个节点 <code>x</code> 的<strong> 后代节点 </strong>是节点 <code>x</code> 到某一叶节点间的路径中的节点 <code>y</code>。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1644.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20II/images/binarytree.png" loading="lazy">&#10;<pre>&#10;<b>输入：</b> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1&#10;<b>输出：</b> 3&#10;<b>解释：</b> 节点 5 和 1 的共同祖先节点是 3。</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1644.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20II/images/binarytree.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<b>输入：</b> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4&#10;<b>输出：</b> 5&#10;<b>解释：</b> 节点 5 和 4 的共同祖先节点是 5。根据共同祖先节点的定义，一个节点可以是自身的后代节点。</pre>&#10;&#10;<p><strong>示例 3:</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1644.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20II/images/binarytree.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 10&#10;<b>输出：</b> null&#10;<b>解释：</b> 节点 10 不存在于树中，所以返回 null。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点个数的范围是 <code>[1, 10<sup>4</sup>]</code></li>&#10;	<li><code>-10<sup>9</sup> &lt;= Node.val &lt;= 10<sup>9</sup></code></li>&#10;	<li>所有节点的值 <code>Node.val</code> <strong>互不相同</strong></li>&#10;	<li><code>p != q</code></li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>进阶：</strong> 在不检查节点是否存在的情况下，你可以遍历树找出最近公共祖先节点吗？</p></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 解法（本站整理） · Go 实现</summary>
+<p><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1644.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20II/README.md" target="_blank" rel="noopener noreferrer">Doocs 参考题解</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></p>
+<div v-pre>
+<p>基于 Doocs 后序遍历参考改写。每个子树返回两位掩码，分别表示是否出现指针 p、q；后序首次得到 3 的节点就是最低公共祖先。必须继续遍历目标节点的孩子，且只有两节点确实存在才返回答案。n 为节点数，h 为树高，时间 O(n)，递归空间 O(h)。平台 TreeNode 为 struct { Val int; Left, Right *TreeNode }；比较节点身份而不是数值。</p>
+<p>出处：<a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1644.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20II/README.md" target="_blank" rel="noopener noreferrer">Doocs 原题与题解</a>，固定提交 91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011；题意、参考及本 Go 改写采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>// 题意与参考：Doocs LeetCode，CC BY-SA 4.0。</span></span>
+<span class="line"><span>// https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1644.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20II/README.md</span></span>
+<span class="line"><span>// Go 实现与测试沿用 CC BY-SA 4.0；来源性质见配套说明。</span></span>
+<span class="line"><span>func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {</span></span>
+<span class="line"><span>	var ans *TreeNode</span></span>
+<span class="line"><span>	var dfs func(*TreeNode) uint8</span></span>
+<span class="line"><span>	dfs = func(n *TreeNode) uint8 {</span></span>
+<span class="line"><span>		if n == nil {</span></span>
+<span class="line"><span>			return 0</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		mask := dfs(n.Left) | dfs(n.Right)</span></span>
+<span class="line"><span>		if n == p {</span></span>
+<span class="line"><span>			mask |= 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if n == q {</span></span>
+<span class="line"><span>			mask |= 2</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if mask == 3 &#x26;&#x26; ans == nil {</span></span>
+<span class="line"><span>			ans = n</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return mask</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs(root)</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree-ii" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1644.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20II/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1650" tabindex="-1">1650. 二叉树的最近公共祖先 III 🔒 <a class="header-anchor" href="#q-1650" aria-label="Permalink to &quot;1650. 二叉树的最近公共祖先 III 🔒 {#q-1650}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、哈希表、双指针、二叉树、最近公共祖先</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一棵二叉树中的两个节点 <code>p</code> 和 <code>q</code>，返回它们的最近公共祖先节点（LCA）。</p>&#10;&#10;<p>每个节点都包含其父节点的引用（指针）。<code>Node</code> 的定义如下：</p>&#10;&#10;<pre>&#10;class Node {&#10;    public int val;&#10;    public Node left;&#10;    public Node right;&#10;    public Node parent;&#10;}&#10;</pre>&#10;&#10;<p>根据<a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor" target="_blank" rel="noopener noreferrer">维基百科中对最近公共祖先节点的定义</a>：“两个节点 p 和 q 在二叉树 T 中的最近公共祖先节点是后代节点中既包括 p 又包括 q 的最深节点（我们允许<strong>一个节点为自身的一个后代节点</strong>）”。一个节点 x 的后代节点是节点 x 到某一叶节点间的路径中的节点 y。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1650.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20III/images/binarytree.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1&#10;<strong>输出:</strong> 3&#10;<strong>解释:</strong> 节点 5 和 1 的最近公共祖先是 3。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1650.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20III/images/binarytree.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4&#10;<strong>输出:</strong> 5&#10;<strong>解释:</strong> 节点 5 和 4 的最近公共祖先是 5，根据定义，一个节点可以是自身的最近公共祖先。&#10;</pre>&#10;&#10;<p><strong>示例 3:</strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> root = [1,2], p = 1, q = 2&#10;<strong>输出:</strong> 1&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点个数的范围是 <code>[2, 10<sup>5</sup>]</code>。</li>&#10;	<li><code>-10<sup>9</sup> &lt;= Node.val &lt;= 10<sup>9</sup></code></li>&#10;	<li>所有的 <code>Node.val</code> 都是<strong>互不相同</strong>的。</li>&#10;	<li><code>p != q</code></li>&#10;	<li><code>p</code> 和 <code>q</code> 存在于树中。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>结点带有父指针，不必从根向下搜索。从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 走到根的链上所有点都是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 的祖先，再从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 上走，第一个落在该集合中的点即 LCA。</p>
+<p>哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mi>i</mi>
+  <mi>s</mi>
+</math></span> 记录 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 到根的路径，随后沿 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 的父链查找。空间与深度同阶。</p>
+</blockquote>
+<p>我们用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mi>i</mi>
+  <mi>s</mi>
+</math></span> 记录从节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 开始到根节点的路径上的所有节点，接下来从节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 开始往根节点方向遍历，如果遇到一个节点存在于哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+  <mi>i</mi>
+  <mi>s</mi>
+</math></span> 中，那么该节点就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 的最近公共祖先节点，直接返回即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for Node.</span></span>
+<span class="line"><span> * type Node struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *Node</span></span>
+<span class="line"><span> *     Right *Node</span></span>
+<span class="line"><span> *     Parent *Node</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func lowestCommonAncestor(p *Node, q *Node) *Node {</span></span>
+<span class="line"><span>	vis := map[*Node]bool{}</span></span>
+<span class="line"><span>	for node := p; node != nil; node = node.Parent {</span></span>
+<span class="line"><span>		vis[node] = true</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for node := q; ; node = node.Parent {</span></span>
+<span class="line"><span>		if vis[node] {</span></span>
+<span class="line"><span>			return node</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：双指针 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一额外存整条链。两指针分别从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+  <mo>,</mo>
+  <mi>q</mi>
+</math></span> 向上，走尽则跳到对方起点，相遇点就是 LCA，与链表相交同一思路，空间 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们可以用两个指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 分别指向节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span>，然后分别往根节点方向遍历，当 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 相遇时，就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 的最近公共祖先节点。否则，如果指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 遍历到了根节点，那么我们就让它指向节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span>，指针 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 同理。这样，当两个指针相遇时，就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 的最近公共祖先节点。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是二叉树的节点数。空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for Node.</span></span>
+<span class="line"><span> * type Node struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *Node</span></span>
+<span class="line"><span> *     Right *Node</span></span>
+<span class="line"><span> *     Parent *Node</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func lowestCommonAncestor(p *Node, q *Node) *Node {</span></span>
+<span class="line"><span>	a, b := p, q</span></span>
+<span class="line"><span>	for a != b {</span></span>
+<span class="line"><span>		if a.Parent != nil {</span></span>
+<span class="line"><span>			a = a.Parent</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			a = q</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if b.Parent != nil {</span></span>
+<span class="line"><span>			b = b.Parent</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			b = p</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return a</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree-iii" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1650.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20III/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1660" tabindex="-1">1660. 纠正二叉树 🔒 <a class="header-anchor" href="#q-1660" aria-label="Permalink to &quot;1660. 纠正二叉树 🔒 {#q-1660}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、广度优先搜索、哈希表、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>你有一棵二叉树，这棵二叉树有个小问题，其中<strong>有且只有一个</strong>无效节点，它的右子节点错误地指向了与其在<strong>同一层</strong>且在其<strong>右侧</strong>的一个其他节点。</p>&#10;&#10;<p>给定一棵这样的问题二叉树的根节点 <code>root</code> ，将该无效节点<strong>及其所有子节点移除</strong>（除被错误指向的节点外），然后返回新二叉树的根结点。</p>&#10;&#10;<p><b>自定义测试用例：</b></p>&#10;&#10;<p>测试用例的输入由三行组成：</p>&#10;&#10;<ul>&#10;	<li><code>TreeNode root</code></li>&#10;	<li><code>int fromNode</code> （在<strong> </strong><code>correctBinaryTree</code> 中<strong>不可见</strong>）</li>&#10;	<li><code>int toNode</code> （在<strong> </strong><code>correctBinaryTree</code> 中<strong>不可见</strong>）</li>&#10;</ul>&#10;&#10;<p>当以 <code>root</code> 为根的二叉树被解析后，值为 <code>fromNode</code> 的节点 <code>TreeNode</code> 将其右子节点指向值为 <code>toNode</code> 的节点 <code>TreeNode</code> 。然后， <code>root</code> 传入 <code>correctBinaryTree</code> 的参数中。</p>&#10;&#10;<p> </p>&#10;&#10;<p><b>示例 1:</b></p>&#10;&#10;<p><strong><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1660.Correct%20a%20Binary%20Tree/images/ex1v2.png" loading="lazy"></strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> root = [1,2,3], fromNode = 2, toNode = 3&#10;<strong>输出:</strong> [1,null,3]&#10;<strong>解释:</strong> 值为 2 的节点是无效的，所以移除之。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;&#10;<p><strong><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1660.Correct%20a%20Binary%20Tree/images/ex2v3.png" loading="lazy"></strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> root = [8,3,1,7,null,9,4,2,null,null,null,5,6], fromNode = 7, toNode = 4&#10;<strong>输出:</strong> [8,3,1,null,null,9,4,null,null,5,6]&#10;<strong>解释:</strong> 值为 7 的节点是无效的，所以移除这个节点及其子节点 2。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点个数的范围是 <code>[3, 10<sup>4</sup>]</code> 。</li>&#10;	<li><code>-10<sup>9</sup> &lt;= Node.val &lt;= 10<sup>9</sup></code></li>&#10;	<li>所有的 <code>Node.val</code> 都是<strong>互不相同</strong>的。</li>&#10;	<li><code>fromNode != toNode</code></li>&#10;	<li><code>fromNode</code> 和 <code>toNode</code> 将出现在树中的同一层。</li>&#10;	<li><code>toNode</code> 在 <code>fromNode</code> 的右侧。</li>&#10;	<li><code>fromNode.right</code> 在测试用例的树中建立后为 <code>null</code> 。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 解法（本站整理） · Go 实现</summary>
+<p><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1660.Correct%20a%20Binary%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 参考题解</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></p>
+<div v-pre>
+<p>基于 Doocs 从右到左 DFS 参考改写。合法树中，当前节点的右孩子不可能已经访问；错误链接指向同层右侧节点，因此优先处理右子树后，该目标已经在集合中。检测到这种链接就返回 nil，连同错误节点的真正后代一起移除，不递归错误边。n 为节点数，时间与集合空间 O(n)，递归栈 O(h)。平台 TreeNode 为 struct { Val int; Left, Right *TreeNode }。</p>
+<p>出处：<a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1660.Correct%20a%20Binary%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 原题与题解</a>，固定提交 91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011；题意、参考及本 Go 改写采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>// 题意与参考：Doocs LeetCode，CC BY-SA 4.0。</span></span>
+<span class="line"><span>// https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1660.Correct%20a%20Binary%20Tree/README.md</span></span>
+<span class="line"><span>// Go 实现与测试沿用 CC BY-SA 4.0；来源性质见配套说明。</span></span>
+<span class="line"><span>func correctBinaryTree(root *TreeNode) *TreeNode {</span></span>
+<span class="line"><span>	seen := map[*TreeNode]bool{}</span></span>
+<span class="line"><span>	var dfs func(*TreeNode) *TreeNode</span></span>
+<span class="line"><span>	dfs = func(n *TreeNode) *TreeNode {</span></span>
+<span class="line"><span>		if n == nil || seen[n.Right] {</span></span>
+<span class="line"><span>			return nil</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		seen[n] = true</span></span>
+<span class="line"><span>		n.Right = dfs(n.Right)</span></span>
+<span class="line"><span>		n.Left = dfs(n.Left)</span></span>
+<span class="line"><span>		return n</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return dfs(root)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/correct-a-binary-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1660.Correct%20a%20Binary%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1666" tabindex="-1">1666. 改变二叉树的根节点 🔒 <a class="header-anchor" href="#q-1666" aria-label="Permalink to &quot;1666. 改变二叉树的根节点 🔒 {#q-1666}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一棵二叉树的根节点 <code>root</code> 和一个叶节点 <code>leaf</code> ，更改二叉树，使得 <code>leaf</code> 为新的根节点。</p>&#10;&#10;<p>你可以按照下列步骤修改<strong>从</strong> <code>leaf</code> <strong>到</strong> <code>root</code> <strong>的路径中除</strong> <code>root</code> <strong>外的每个节点</strong> <code>cur</code> ：</p>&#10;&#10;<ol>&#10;	<li>如果 <code>cur</code> 有左子节点，则该子节点变为 <code>cur</code> 的右子节点。注意我们保证 <code>cur</code> 至多有一个子节点。</li>&#10;	<li><code>cur</code> 的原父节点变为 <code>cur</code> 的左子节点。</li>&#10;</ol>&#10;&#10;<p>返回修改后新树的根节点。</p>&#10;&#10;<p><b>注意：</b>确保你的答案在操作后正确地设定了 <code>Node.parent</code> （父节点）指针，否则会被判为错误答案。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1666.Change%20the%20Root%20of%20a%20Binary%20Tree/images/1727138189-YtDgTf-image.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], leaf = 7&#10;<strong>输出:</strong> [7,2,null,5,4,3,6,null,null,null,1,null,null,0,8]&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], leaf = 0&#10;<strong>输出:</strong> [0,1,null,3,8,5,null,null,null,6,2,null,null,7,4]&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点的个数在范围 <code>[2, 100]</code> 内。</li>&#10;	<li><code>-10<sup>9</sup> &lt;= Node.val &lt;= 10<sup>9</sup></code></li>&#10;	<li>所有的 <code>Node.val</code> 都是<strong>唯一</strong>的。</li>&#10;	<li><code>leaf</code> 存在于树中。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 解法（本站整理） · Go 实现</summary>
+<p><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1666.Change%20the%20Root%20of%20a%20Binary%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 参考题解</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></p>
+<div v-pre>
+<p>基于 Doocs 父链翻转参考改写。从 leaf 沿原 Parent 向上走，先保存祖父；把原左孩子挪到右侧，再令原父成为当前左孩子，同时断开父节点到当前节点的旧边。最后将新根 Parent 置空。沿路径自底向上处理时，原来通向叶子的边已被断开，当前节点至多剩下一个不在路径上的原孩子，因此移动不会覆盖另一棵子树。h 为路径长度，时间 O(h)，额外空间 O(1)。平台 Node 为 struct { Val int; Left, Right, Parent *Node }；原树原地修改。</p>
+<p>出处：<a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1666.Change%20the%20Root%20of%20a%20Binary%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 原题与题解</a>，固定提交 91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011；题意、参考及本 Go 改写采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>// 题意与参考：Doocs LeetCode，CC BY-SA 4.0。</span></span>
+<span class="line"><span>// https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1666.Change%20the%20Root%20of%20a%20Binary%20Tree/README.md</span></span>
+<span class="line"><span>// Go 实现与测试沿用 CC BY-SA 4.0；来源性质见配套说明。</span></span>
+<span class="line"><span>func flipBinaryTree(root, leaf *Node) *Node {</span></span>
+<span class="line"><span>	cur, parent := leaf, leaf.Parent</span></span>
+<span class="line"><span>	for cur != root {</span></span>
+<span class="line"><span>		grand := parent.Parent</span></span>
+<span class="line"><span>		if cur.Left != nil {</span></span>
+<span class="line"><span>			cur.Right = cur.Left</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		cur.Left = parent</span></span>
+<span class="line"><span>		parent.Parent = cur</span></span>
+<span class="line"><span>		if parent.Left == cur {</span></span>
+<span class="line"><span>			parent.Left = nil</span></span>
+<span class="line"><span>		} else if parent.Right == cur {</span></span>
+<span class="line"><span>			parent.Right = nil</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		cur, parent = parent, grand</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	leaf.Parent = nil</span></span>
+<span class="line"><span>	return leaf</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/change-the-root-of-a-binary-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1666.Change%20the%20Root%20of%20a%20Binary%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1676" tabindex="-1">1676. 二叉树的最近公共祖先 IV 🔒 <a class="header-anchor" href="#q-1676" aria-label="Permalink to &quot;1676. 二叉树的最近公共祖先 IV 🔒 {#q-1676}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、哈希表、二叉树、最近公共祖先</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一棵二叉树的根节点 <code>root</code> 和 <code>TreeNode</code> 类对象的数组（列表） <code>nodes</code>，返回<em> </em><code>nodes</code> 中所有节点的最近公共祖先（LCA）。数组（列表）中所有节点都存在于该二叉树中，且二叉树中所有节点的值都是互不相同的。</p>&#10;&#10;<p>我们扩展<a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor" target="_blank" rel="noopener noreferrer">二叉树的最近公共祖先节点在维基百科上的定义</a>：“对于任意合理的 <code>i</code> 值， <code>n</code> 个节点 <code>p<sub>1</sub></code> 、 <code>p<sub>2</sub></code>、...、 <code>p<sub>n</sub></code> 在二叉树 <code>T</code> 中的最近公共祖先节点是<strong>后代</strong>中包含所有节点 <code>p<sub>i</sub></code> 的最深节点（我们允许一个节点是其自身的后代）”。一个节点 <code>x</code> 的后代节点是节点 <code>x</code> 到某一叶节点间的路径中的节点 <code>y</code>。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1676.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20IV/images/binarytree.png" loading="lazy">&#10;<pre><strong>输入:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], nodes = [4,7]&#10;<strong>输出:</strong> 2&#10;<strong>解释:</strong> 节点 4 和 7 的最近公共祖先是 2。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1676.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20IV/images/binarytree.png" loading="lazy">&#10;<pre><strong>输入:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], nodes = [1]&#10;<strong>输出:</strong> 1&#10;<strong>解释:</strong> 单个节点的最近公共祖先是该节点本身。&#10;&#10;</pre>&#10;&#10;<p><strong>示例 3:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1676.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20IV/images/binarytree.png" loading="lazy">&#10;<pre><strong>输入:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], nodes = [7,6,2,4]&#10;<strong>输出:</strong> 5&#10;<strong>解释:</strong> 节点 7、6、2 和 4 的最近公共祖先节点是 5。&#10;</pre>&#10;&#10;<p><strong>示例 4:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1600-1699/1676.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20IV/images/binarytree.png" loading="lazy">&#10;<pre><strong>输入:</strong> root = [3,5,1,6,2,0,8,null,null,7,4], nodes = [0,1,2,3,4,5,6,7,8]&#10;<strong>输出:</strong> 3&#10;<strong>解释:</strong> 树中所有节点的最近公共祖先是根节点。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点个数的范围是 <code>[1, 10<sup>4</sup>]</code> 。</li>&#10;	<li><code>-10<sup>9</sup> &lt;= Node.val &lt;= 10<sup>9</sup></code></li>&#10;	<li>所有的 <code>Node.val</code> 都是<strong>互不相同</strong>的。</li>&#10;	<li>所有的 <code>nodes[i]</code> 都存在于该树中。</li>&#10;	<li>所有的 <code>nodes[i]</code> 都是互不相同的。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 解法（本站整理） · Go 实现</summary>
+<p><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1676.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20IV/README.md" target="_blank" rel="noopener noreferrer">Doocs 参考题解</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></p>
+<div v-pre>
+<p>基于 Doocs 集合加后序 LCA 参考改写。把所有目标节点指针放入集合，DFS 遇到目标直接返回；左右均找到目标则返回当前节点，否则返回非空一侧。题目保证所有目标均在树中，因此目标本身可覆盖其后代目标。n 为节点数，k 为目标数，h 为树高，时间 O(n+k)，额外空间 O(k+h)。平台 TreeNode 为 struct { Val int; Left, Right *TreeNode }。</p>
+<p>出处：<a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1676.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20IV/README.md" target="_blank" rel="noopener noreferrer">Doocs 原题与题解</a>，固定提交 91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011；题意、参考及本 Go 改写采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>// 题意与参考：Doocs LeetCode，CC BY-SA 4.0。</span></span>
+<span class="line"><span>// https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1676.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20IV/README.md</span></span>
+<span class="line"><span>// Go 实现与测试沿用 CC BY-SA 4.0；来源性质见配套说明。</span></span>
+<span class="line"><span>func lowestCommonAncestor(root *TreeNode, nodes []*TreeNode) *TreeNode {</span></span>
+<span class="line"><span>	wanted := map[*TreeNode]bool{}</span></span>
+<span class="line"><span>	for _, n := range nodes {</span></span>
+<span class="line"><span>		wanted[n] = true</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var dfs func(*TreeNode) *TreeNode</span></span>
+<span class="line"><span>	dfs = func(n *TreeNode) *TreeNode {</span></span>
+<span class="line"><span>		if n == nil || wanted[n] {</span></span>
+<span class="line"><span>			return n</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		a, b := dfs(n.Left), dfs(n.Right)</span></span>
+<span class="line"><span>		if a != nil &#x26;&#x26; b != nil {</span></span>
+<span class="line"><span>			return n</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if a != nil {</span></span>
+<span class="line"><span>			return a</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return b</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return dfs(root)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree-iv" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1600-1699/1676.Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20IV/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1740" tabindex="-1">1740. 找到二叉树中的距离 🔒 <a class="header-anchor" href="#q-1740" aria-label="Permalink to &quot;1740. 找到二叉树中的距离 🔒 {#q-1740}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、广度优先搜索、哈希表、二叉树、最近公共祖先</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一棵二叉树的根节点 <code>root</code> 以及两个整数 <code>p</code> 和 <code>q</code> ，返回该二叉树中值为 <code>p</code> 的结点与值为 <code>q</code> 的结点间的 <strong>距离 </strong>。</p>&#10;&#10;<p>两个结点间的<strong> 距离 </strong>就是从一个结点到另一个结点的路径上边的数目。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1700-1799/1740.Find%20Distance%20in%20a%20Binary%20Tree/images/binarytree.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 0&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>在 5 和 0 之间有 3 条边：5-3-1-0</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1700-1799/1740.Find%20Distance%20in%20a%20Binary%20Tree/images/binarytree.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 7&#10;<strong>输出：</strong>2&#10;<strong>解释：</strong>在 5 和 7 之间有 2 条边：5-2-7</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1700-1799/1740.Find%20Distance%20in%20a%20Binary%20Tree/images/binarytree.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 5&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>一个结点与它本身之间的距离为 0</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中结点个数的范围在 <code>[1, 10<sup>4</sup>]</code>.</li>&#10;	<li><code>0 &lt;= Node.val &lt;= 10<sup>9</sup></code></li>&#10;	<li>树中所有结点的值都是唯一的.</li>&#10;	<li><code>p</code> 和<code>q</code> 是树中结点的值.</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>树上两点距离等于各自到最近公共祖先的深度之和。结点值唯一，可先找 LCA 再量深度。</p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">lca</mtext>
+</math></span> 递归：命中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span> 或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 或空则返回；左右都非空则为分叉点。再从该点 DFS 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>p</mi>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 的深度并相加。</p>
+</blockquote>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func findDistance(root *TreeNode, p int, q int) int {</span></span>
+<span class="line"><span>	var lca func(root *TreeNode, p int, q int) *TreeNode</span></span>
+<span class="line"><span>	lca = func(root *TreeNode, p int, q int) *TreeNode {</span></span>
+<span class="line"><span>		if root == nil || root.Val == p || root.Val == q {</span></span>
+<span class="line"><span>			return root</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		left, right := lca(root.Left, p, q), lca(root.Right, p, q)</span></span>
+<span class="line"><span>		if left == nil {</span></span>
+<span class="line"><span>			return right</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if right == nil {</span></span>
+<span class="line"><span>			return left</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return root</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var dfs func(root *TreeNode, v int) int</span></span>
+<span class="line"><span>	dfs = func(root *TreeNode, v int) int {</span></span>
+<span class="line"><span>		if root == nil {</span></span>
+<span class="line"><span>			return -1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if root.Val == v {</span></span>
+<span class="line"><span>			return 0</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		left, right := dfs(root.Left, v), dfs(root.Right, v)</span></span>
+<span class="line"><span>		if left == -1 &#x26;&#x26; right == -1 {</span></span>
+<span class="line"><span>			return -1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return 1 + max(left, right)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	g := lca(root, p, q)</span></span>
+<span class="line"><span>	return dfs(g, p) + dfs(g, q)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/find-distance-in-a-binary-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1740.Find%20Distance%20in%20a%20Binary%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1766" tabindex="-1">1766. 互质树 <a class="header-anchor" href="#q-1766" aria-label="Permalink to &quot;1766. 互质树 {#q-1766}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、数组、数学、数论</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个 <code>n</code> 个节点的树（也就是一个无环连通无向图），节点编号从 <code>0</code> 到 <code>n - 1</code> ，且恰好有 <code>n - 1</code> 条边，每个节点有一个值。树的 <strong>根节点</strong> 为 0 号点。</p>&#10;&#10;<p>给你一个整数数组 <code>nums</code> 和一个二维数组 <code>edges</code> 来表示这棵树。<code>nums[i]</code> 表示第 <code>i</code> 个点的值，<code>edges[j] = [u<sub>j</sub>, v<sub>j</sub>]</code> 表示节点 <code>u<sub>j</sub></code> 和节点 <code>v<sub>j</sub></code> 在树中有一条边。</p>&#10;&#10;<p>当 <code>gcd(x, y) == 1</code> ，我们称两个数 <code>x</code> 和 <code>y</code> 是 <strong>互质的</strong> ，其中 <code>gcd(x, y)</code> 是 <code>x</code> 和 <code>y</code> 的 <strong>最大公约数</strong> 。</p>&#10;&#10;<p>从节点 <code>i</code> 到 <strong>根</strong> 最短路径上的点都是节点 <code>i</code> 的祖先节点。一个节点 <strong>不是</strong> 它自己的祖先节点。</p>&#10;&#10;<p>请你返回一个大小为 <code>n</code> 的数组 <code>ans</code> ，其中<em> </em><code>ans[i]</code>是离节点 <code>i</code> 最近的祖先节点且满足<em> </em><code>nums[i]</code> 和<em> </em><code>nums[ans[i]]</code> 是 <strong>互质的</strong> ，如果不存在这样的祖先节点，<code>ans[i]</code> 为 <code>-1</code> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><strong><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1700-1799/1766.Tree%20of%20Coprimes/images/untitled-diagram.png" loading="lazy"></strong></p>&#10;&#10;<pre>&#10;<b>输入：</b>nums = [2,3,3,2], edges = [[0,1],[1,2],[1,3]]&#10;<b>输出：</b>[-1,0,0,1]&#10;<b>解释：</b>上图中，每个节点的值在括号中表示。&#10;- 节点 0 没有互质祖先。&#10;- 节点 1 只有一个祖先节点 0 。它们的值是互质的（gcd(2,3) == 1）。&#10;- 节点 2 有两个祖先节点，分别是节点 1 和节点 0 。节点 1 的值与它的值不是互质的（gcd(3,3) == 3）但节点 0 的值是互质的(gcd(2,3) == 1)，所以节点 0 是最近的符合要求的祖先节点。&#10;- 节点 3 有两个祖先节点，分别是节点 1 和节点 0 。它与节点 1 互质（gcd(3,2) == 1），所以节点 1 是离它最近的符合要求的祖先节点。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1700-1799/1766.Tree%20of%20Coprimes/images/untitled-diagram1.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>nums = [5,6,10,2,3,6,15], edges = [[0,1],[0,2],[1,3],[1,4],[2,5],[2,6]]&#10;<b>输出：</b>[-1,0,-1,0,0,0,-1]&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>nums.length == n</code></li>&#10;	<li><code>1 &lt;= nums[i] &lt;= 50</code></li>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>edges.length == n - 1</code></li>&#10;	<li><code>edges[j].length == 2</code></li>&#10;	<li><code>0 &lt;= u<sub>j</sub>, v<sub>j</sub> &lt; n</code></li>&#10;	<li><code>u<sub>j</sub> != v<sub>j</sub></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：预处理 + 枚举 + 栈 + 回溯 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>对每个结点找最近的、路径上值与之互质的祖先。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span> 但值域只有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>50</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，可为每个值维护出现栈。</p>
+<p>预处理 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.</mn>
+  <mn>.50</mn>
+</math></span> 的互质对。DFS 时对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的每个互质值看栈顶，取深度最大者即为答案。</p>
+<p>进入子树前把当前 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mtext mathvariant="italic">depth</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 压入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的栈，回溯弹出，保证栈顶总是最近祖先。</p>
+</blockquote>
+<p>由于题目中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的取值范围为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>50</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，因此我们可以预处理出每个数的所有互质数，记录在数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+</math></span> 中，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的所有互质数。</p>
+<p>接下来我们可以使用回溯的方法，从根节点开始遍历整棵树，对于每个节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，我们可以通过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+</math></span> 数组得到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的所有互质数。然后我们枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的所有互质数，找到已经出现过的且深度最大的祖先节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>，即为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的最近的互质祖先节点。这里我们可以用一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>51</mn>
+</math></span> 的栈数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>k</mi>
+  <mi>s</mi>
+</math></span> 来获取每个出现过的值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> 的节点以及其深度。每个栈 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>k</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>v</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的栈顶元素就是最近的深度最大的祖先节点。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>M</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>M</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为节点个数，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>M</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的最大值，本题中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>M</mi>
+  <mo>=</mo>
+  <mn>50</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func getCoprimes(nums []int, edges [][]int) []int {</span></span>
+<span class="line"><span>	n := len(nums)</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	f := [51][]int{}</span></span>
+<span class="line"><span>	type pair struct{ first, second int }</span></span>
+<span class="line"><span>	stks := [51][]pair{}</span></span>
+<span class="line"><span>	for _, e := range edges {</span></span>
+<span class="line"><span>		u, v := e[0], e[1]</span></span>
+<span class="line"><span>		g[u] = append(g[u], v)</span></span>
+<span class="line"><span>		g[v] = append(g[v], u)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := 1; i &#x3C; 51; i++ {</span></span>
+<span class="line"><span>		for j := 1; j &#x3C; 51; j++ {</span></span>
+<span class="line"><span>			if gcd(i, j) == 1 {</span></span>
+<span class="line"><span>				f[i] = append(f[i], j)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := make([]int, n)</span></span>
+<span class="line"><span>	var dfs func(i, fa, depth int)</span></span>
+<span class="line"><span>	dfs = func(i, fa, depth int) {</span></span>
+<span class="line"><span>		t, k := -1, -1</span></span>
+<span class="line"><span>		for _, v := range f[nums[i]] {</span></span>
+<span class="line"><span>			stk := stks[v]</span></span>
+<span class="line"><span>			if len(stk) > 0 &#x26;&#x26; stk[len(stk)-1].second > k {</span></span>
+<span class="line"><span>				t, k = stk[len(stk)-1].first, stk[len(stk)-1].second</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans[i] = t</span></span>
+<span class="line"><span>		for _, j := range g[i] {</span></span>
+<span class="line"><span>			if j != fa {</span></span>
+<span class="line"><span>				stks[nums[i]] = append(stks[nums[i]], pair{i, depth})</span></span>
+<span class="line"><span>				dfs(j, i, depth+1)</span></span>
+<span class="line"><span>				stks[nums[i]] = stks[nums[i]][:len(stks[nums[i]])-1]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs(0, -1, 0)</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func gcd(a, b int) int {</span></span>
+<span class="line"><span>	if b == 0 {</span></span>
+<span class="line"><span>		return a</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return gcd(b, a%b)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：预处理 + 枚举 + 显式栈 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>对每个结点找最近的、路径上值与之互质的祖先。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，值域只有 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>50</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，可为每个值维护祖先栈。从根递归进入孩子，链上的调用深度就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>，会超出递归栈。</p>
+<p>预处理 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1.</mn>
+  <mn>.50</mn>
+</math></span> 的互质对。访问节点时对 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的每个互质值看栈顶，取深度最大者即为答案。</p>
+<p>显式栈保存 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#x8282;</mi>
+  <mi mathvariant="normal">&#x70B9;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x7236;</mi>
+  <mi mathvariant="normal">&#x8282;</mi>
+  <mi mathvariant="normal">&#x70B9;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x6DF1;</mi>
+  <mi mathvariant="normal">&#x5EA6;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x4E0B;</mi>
+  <mi mathvariant="normal">&#x4E00;</mi>
+  <mi mathvariant="normal">&#x4E2A;</mi>
+  <mi mathvariant="normal">&#x5B69;</mi>
+  <mi mathvariant="normal">&#x5B50;</mi>
+  <mi mathvariant="normal">&#x4E0B;</mi>
+  <mi mathvariant="normal">&#x6807;</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。走向孩子前把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mtext mathvariant="italic">depth</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 压入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的栈，该孩子处理完再弹出，栈顶始终是最近祖先。</p>
+</blockquote>
+<p>由于题目中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的取值范围为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>50</mn>
+  <mo stretchy="false">]</mo>
+</math></span>，因此我们可以预处理出每个数的所有互质数，记录在数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+</math></span> 中，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的所有互质数。</p>
+<p>接下来用显式栈从根做先序遍历。对于每个节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的所有互质数，在对应栈的栈顶中取深度最大的祖先 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span>，即为最近的互质祖先。栈数组 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>k</mi>
+  <mi>s</mi>
+</math></span> 长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>51</mn>
+</math></span>， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>k</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>v</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 记录当前根路径上值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>v</mi>
+</math></span> 的节点及其深度。走向孩子前把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mtext mathvariant="italic">depth</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 压入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>k</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">]</mo>
+</math></span>，该孩子处理完后再弹出。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>M</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>M</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>+</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为节点个数，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>M</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 的最大值，本题中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>M</mi>
+  <mo>=</mo>
+  <mn>50</mn>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func getCoprimes(nums []int, edges [][]int) []int {</span></span>
+<span class="line"><span>	n := len(nums)</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	f := [51][]int{}</span></span>
+<span class="line"><span>	type pair struct{ first, second int }</span></span>
+<span class="line"><span>	stks := [51][]pair{}</span></span>
+<span class="line"><span>	for _, e := range edges {</span></span>
+<span class="line"><span>		u, v := e[0], e[1]</span></span>
+<span class="line"><span>		g[u] = append(g[u], v)</span></span>
+<span class="line"><span>		g[v] = append(g[v], u)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := 1; i &#x3C; 51; i++ {</span></span>
+<span class="line"><span>		for j := 1; j &#x3C; 51; j++ {</span></span>
+<span class="line"><span>			if gcd(i, j) == 1 {</span></span>
+<span class="line"><span>				f[i] = append(f[i], j)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := make([]int, n)</span></span>
+<span class="line"><span>	type frame struct{ i, fa, depth, k int }</span></span>
+<span class="line"><span>	stk := []frame{{0, -1, 0, 0}}</span></span>
+<span class="line"><span>	for len(stk) > 0 {</span></span>
+<span class="line"><span>		cur := &#x26;stk[len(stk)-1]</span></span>
+<span class="line"><span>		i, fa, depth, k := cur.i, cur.fa, cur.depth, cur.k</span></span>
+<span class="line"><span>		if k == 0 {</span></span>
+<span class="line"><span>			t, mx := -1, -1</span></span>
+<span class="line"><span>			for _, v := range f[nums[i]] {</span></span>
+<span class="line"><span>				s := stks[v]</span></span>
+<span class="line"><span>				if len(s) > 0 &#x26;&#x26; s[len(s)-1].second > mx {</span></span>
+<span class="line"><span>					t, mx = s[len(s)-1].first, s[len(s)-1].second</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			ans[i] = t</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			jprev := g[i][k-1]</span></span>
+<span class="line"><span>			if jprev != fa {</span></span>
+<span class="line"><span>				stks[nums[i]] = stks[nums[i]][:len(stks[nums[i]])-1]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for k &#x3C; len(g[i]) &#x26;&#x26; g[i][k] == fa {</span></span>
+<span class="line"><span>			k++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if k == len(g[i]) {</span></span>
+<span class="line"><span>			stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>			continue</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		j := g[i][k]</span></span>
+<span class="line"><span>		cur.k = k + 1</span></span>
+<span class="line"><span>		stks[nums[i]] = append(stks[nums[i]], pair{i, depth})</span></span>
+<span class="line"><span>		stk = append(stk, frame{j, i, depth + 1, 0})</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func gcd(a, b int) int {</span></span>
+<span class="line"><span>	if b == 0 {</span></span>
+<span class="line"><span>		return a</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return gcd(b, a%b)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/tree-of-coprimes" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1700-1799/1766.Tree%20of%20Coprimes/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1902" tabindex="-1">1902. 给定二叉搜索树的插入顺序求深度 🔒 <a class="header-anchor" href="#q-1902" aria-label="Permalink to &quot;1902. 给定二叉搜索树的插入顺序求深度 🔒 {#q-1902}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、二叉搜索树、数组、二叉树、有序集合</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一个<strong>从 0 开始索引</strong>的整数类型数组 <code>order</code> ，其长度为 <code>n</code>，是从 <code>1</code> 到 <code>n</code> 的所有整数的一个排列，表示插入到一棵二叉搜索树的顺序。</p>&#10;&#10;<p>二叉搜索树的定义如下：</p>&#10;&#10;<ul>&#10;	<li>一个节点的左子树只包含键值<strong>小于</strong>该节点键值的节点。</li>&#10;	<li>一个节点的右子树只包含键值<strong>大于</strong>该节点键值的节点。</li>&#10;	<li>左子树和右子树须均为二叉搜索树。</li>&#10;</ul>&#10;&#10;<p>该二叉搜索树的构造方式如下：</p>&#10;&#10;<ul>&#10;	<li><code>order[0]</code> 将成为该二叉搜索树的根。</li>&#10;	<li>所有后续的元素均在维持二叉搜索树性质的前提下作为<strong>任何</strong>已存在节点的<strong>子节点</strong>插入。</li>&#10;</ul>&#10;&#10;<p>返回该二叉搜索树的<strong>深度</strong>。</p>&#10;&#10;<p>一棵二叉树的<strong>深度</strong>是从根节点到最远叶节点的<strong>最长路径</strong>所经<strong>节点</strong>的个数。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1902.Depth%20of%20BST%20Given%20Insertion%20Order/images/1.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> order = [2,1,4,3]&#10;<strong>输出:</strong> 3&#10;<strong>解释: </strong>该二叉搜索树的深度为 3，路径为 2->4->3。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1902.Depth%20of%20BST%20Given%20Insertion%20Order/images/2.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> order = [2,1,3,4]&#10;<strong>输出:</strong> 3&#10;<strong>解释: </strong>该二叉搜索树的深度为 3，路径为 2->3->4。&#10;</pre>&#10;&#10;<p><strong>示例 3:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1902.Depth%20of%20BST%20Given%20Insertion%20Order/images/3.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> order = [1,2,3,4]&#10;<strong>输出:</strong> 4&#10;<strong>解释: </strong>该二叉搜索树的深度为 4，路径为 1->2->3->4。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == order.length</code></li>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>order</code> 是从 <code>1</code> 到 <code>n</code> 的整数的一个排列。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 解法（本站整理） · Go 实现</summary>
+<p><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1902.Depth%20of%20BST%20Given%20Insertion%20Order/README.md" target="_blank" rel="noopener noreferrer">Doocs 参考题解</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></p>
+<div v-pre>
+<p>基于 Doocs 前驱/后继深度参考改写。插入 v 时，父节点是已插入值中前驱与后继里较深的一个，所以 depth[v] = 1 + max(depth[pred], depth[succ])。Go 标准库没有 SortedDict，利用输入是 1..n 的排列，用树状数组记录已插入标记，并以二进制提升查询第 k 个已插入值。不存在的邻居深度取零。n 为序列长度，时间 O(n log n)，空间 O(n)。入口 maxDepthBST，输入不修改。</p>
+<p>出处：<a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1902.Depth%20of%20BST%20Given%20Insertion%20Order/README.md" target="_blank" rel="noopener noreferrer">Doocs 原题与题解</a>，固定提交 91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011；题意、参考及本 Go 改写采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>// 题意与参考：Doocs LeetCode，CC BY-SA 4.0。</span></span>
+<span class="line"><span>// https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1902.Depth%20of%20BST%20Given%20Insertion%20Order/README.md</span></span>
+<span class="line"><span>// Go 实现与测试沿用 CC BY-SA 4.0；来源性质见配套说明。</span></span>
+<span class="line"><span>func maxDepthBST(order []int) int {</span></span>
+<span class="line"><span>	n := len(order)</span></span>
+<span class="line"><span>	bit := make([]int, n+1)</span></span>
+<span class="line"><span>	depth := make([]int, n+1)</span></span>
+<span class="line"><span>	prefix := func(i int) int {</span></span>
+<span class="line"><span>		s := 0</span></span>
+<span class="line"><span>		for i > 0 {</span></span>
+<span class="line"><span>			s += bit[i]</span></span>
+<span class="line"><span>			i -= i &#x26; -i</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return s</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	kth := func(k int) int {</span></span>
+<span class="line"><span>		idx := 0</span></span>
+<span class="line"><span>		step := 1</span></span>
+<span class="line"><span>		for step &#x3C;= n {</span></span>
+<span class="line"><span>			step &#x3C;&#x3C;= 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for step >>= 1; step > 0; step >>= 1 {</span></span>
+<span class="line"><span>			next := idx + step</span></span>
+<span class="line"><span>			if next &#x3C;= n &#x26;&#x26; bit[next] &#x3C; k {</span></span>
+<span class="line"><span>				idx = next</span></span>
+<span class="line"><span>				k -= bit[next]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return idx + 1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := 0</span></span>
+<span class="line"><span>	for count, v := range order {</span></span>
+<span class="line"><span>		rank := prefix(v - 1)</span></span>
+<span class="line"><span>		d := 0</span></span>
+<span class="line"><span>		if rank > 0 {</span></span>
+<span class="line"><span>			d = depth[kth(rank)]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if rank &#x3C; count {</span></span>
+<span class="line"><span>			if x := depth[kth(rank+1)]; x > d {</span></span>
+<span class="line"><span>				d = x</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		depth[v] = d + 1</span></span>
+<span class="line"><span>		if d+1 > ans {</span></span>
+<span class="line"><span>			ans = d + 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for i := v; i &#x3C;= n; i += i &#x26; -i {</span></span>
+<span class="line"><span>			bit[i]++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/depth-of-bst-given-insertion-order" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1902.Depth%20of%20BST%20Given%20Insertion%20Order/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1932" tabindex="-1">1932. 合并多棵二叉搜索树 <a class="header-anchor" href="#q-1932" aria-label="Permalink to &quot;1932. 合并多棵二叉搜索树 {#q-1932}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、二叉搜索树、数组、哈希表、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你 <code>n</code> 个 <strong>二叉搜索树的根节点</strong> ，存储在数组 <code>trees</code> 中（<strong>下标从 0 开始</strong>），对应 <code>n</code> 棵不同的二叉搜索树。<code>trees</code> 中的每棵二叉搜索树 <strong>最多有 3 个节点</strong> ，且不存在值相同的两个根节点。在一步操作中，将会完成下述步骤：</p>&#10;&#10;<ul>&#10;	<li>选择两个 <strong>不同的</strong> 下标 <code>i</code> 和 <code>j</code> ，要求满足在 <code>trees[i]</code> 中的某个 <strong>叶节点</strong> 的值等于 <code>trees[j]</code> 的 <strong>根节点的值</strong> 。</li>&#10;	<li>用 <code>trees[j]</code> 替换 <code>trees[i]</code> 中的那个叶节点。</li>&#10;	<li>从 <code>trees</code> 中移除 <code>trees[j]</code> 。</li>&#10;</ul>&#10;&#10;<p>如果在执行 <code>n - 1</code> 次操作后，能形成一棵有效的二叉搜索树，则返回结果二叉树的 <strong>根节点</strong> ；如果无法构造一棵有效的二叉搜索树<em>，</em>返回<em> </em><code>null</code> 。</p>&#10;&#10;<p>二叉搜索树是一种二叉树，且树中每个节点均满足下述属性：</p>&#10;&#10;<ul>&#10;	<li>任意节点的左子树中的值都 <strong>严格小于</strong> 此节点的值。</li>&#10;	<li>任意节点的右子树中的值都 <strong>严格大于</strong> 此节点的值。</li>&#10;</ul>&#10;&#10;<p>叶节点是不含子节点的节点。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1932.Merge%20BSTs%20to%20Create%20Single%20BST/images/d1.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>trees = [[2,1],[3,2,5],[5,4]]&#10;<strong>输出：</strong>[3,2,5,1,null,4]&#10;<strong>解释：</strong>&#10;第一步操作中，选出 i=1 和 j=0 ，并将 trees[0] 合并到 trees[1] 中。&#10;删除 trees[0] ，trees = [[3,2,5,1],[5,4]] 。&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1932.Merge%20BSTs%20to%20Create%20Single%20BST/images/diagram.png" loading="lazy">&#10;在第二步操作中，选出 i=0 和 j=1 ，将 trees[1] 合并到 trees[0] 中。&#10;删除 trees[1] ，trees = [[3,2,5,1,null,4]] 。&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1932.Merge%20BSTs%20to%20Create%20Single%20BST/images/diagram-2.png" loading="lazy">&#10;结果树如上图所示，为一棵有效的二叉搜索树，所以返回该树的根节点。</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1932.Merge%20BSTs%20to%20Create%20Single%20BST/images/d2.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>trees = [[5,3,8],[3,2,6]]&#10;<strong>输出：</strong>[]&#10;<strong>解释：</strong>&#10;选出 i=0 和 j=1 ，然后将 trees[1] 合并到 trees[0] 中。&#10;删除 trees[1] ，trees = [[5,3,8,2,6]] 。&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1932.Merge%20BSTs%20to%20Create%20Single%20BST/images/diagram-3.png" loading="lazy">&#10;结果树如上图所示。仅能执行一次有效的操作，但结果树不是一棵有效的二叉搜索树，所以返回 null 。&#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1932.Merge%20BSTs%20to%20Create%20Single%20BST/images/d3.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>trees = [[5,4],[3]]&#10;<strong>输出：</strong>[]&#10;<strong>解释：</strong>无法执行任何操作。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == trees.length</code></li>&#10;	<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>&#10;	<li>每棵树中节点数目在范围 <code>[1, 3]</code> 内。</li>&#10;	<li>输入数据的每个节点可能有子节点但不存在子节点的子节点</li>&#10;	<li><code>trees</code> 中不存在两棵树根节点值相同的情况。</li>&#10;	<li>输入中的所有树都是 <strong>有效的二叉树搜索树</strong> 。</li>&#10;	<li><code>1 &lt;= TreeNode.val &lt;= 5 * 10<sup>4</sup></code>.</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 实现（灵茶山艾府） · Go 实现</summary>
+<p><a href="https://github.com/EndlessCheng/codeforces-go/blob/e0fea933e2d713fd302622d2bb82a60f959a198e/leetcode/weekly/249/d/d.go" target="_blank" rel="noopener noreferrer">灵茶山艾府 · 源码</a> · <a href="https://opensource.org/license/mit" target="_blank" rel="noopener noreferrer">MIT 许可</a></p>
+<div v-pre>
+<blockquote>
+<p>本站根据 Go 源码整理，非作者原文。</p>
+</blockquote>
+<p><strong>思路</strong>：利用输入小树最多只有根和直接孩子的条件，以节点值建立根节点索引，并标记所有叶子值；重复叶子值直接拒绝。最终根必须是唯一一个未作为叶子出现的根。从它递归构建：若孩子值对应另一棵树的根，就接入该树，同时传递严格的大小边界检查搜索树顺序。最后要求实际接入的树数等于输入树数。</p>
+<p><strong>复杂度</strong>：设小树数为 t，值域数组长度为 U（源码为 50001）。数组初始化和遍历总时间为 O(U+t)，辅助空间为 O(U+t)，其中递归栈最坏为 O(t)。实现会原地修改节点的孩子指针。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>import . "github.com/EndlessCheng/codeforces-go/leetcode/testutil"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// github.com/EndlessCheng/codeforces-go</span></span>
+<span class="line"><span>const mx int = 5e4 + 1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func canMerge(trees []*TreeNode) *TreeNode {</span></span>
+<span class="line"><span>	isSub := [mx]bool{}      // 对于根节点，需要知道其是否为另一棵二叉搜索树的子节点</span></span>
+<span class="line"><span>	roots := [mx]*TreeNode{} // 对于子节点，我们需要知道其数值所对应的二叉搜索树的根节点是哪个</span></span>
+<span class="line"><span>	for _, rt := range trees {</span></span>
+<span class="line"><span>		if rt.Left != nil {</span></span>
+<span class="line"><span>			if isSub[rt.Left.Val] { // 由于二叉搜索树上不能有两个值相同的节点，所以 trees 中也不能有两个值相同的叶节点</span></span>
+<span class="line"><span>				return nil</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			isSub[rt.Left.Val] = true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if rt.Right != nil {</span></span>
+<span class="line"><span>			if isSub[rt.Right.Val] {</span></span>
+<span class="line"><span>				return nil</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			isSub[rt.Right.Val] = true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		roots[rt.Val] = rt</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	var root *TreeNode</span></span>
+<span class="line"><span>	for _, rt := range trees {</span></span>
+<span class="line"><span>		if !isSub[rt.Val] { // 根节点不应是另一棵二叉搜索树的子节点，否则二叉搜索树上会出现两个值相同的节点</span></span>
+<span class="line"><span>			if root != nil { // 根节点应只有一个，否则会构成森林</span></span>
+<span class="line"><span>				return nil</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			root = rt</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if root == nil { // 未找到根节点</span></span>
+<span class="line"><span>		return nil</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	cnt := 0</span></span>
+<span class="line"><span>	// 一边构建，一边判断是否合法</span></span>
+<span class="line"><span>	var build func(*TreeNode, int, int) *TreeNode</span></span>
+<span class="line"><span>	build = func(node *TreeNode, l, r int) *TreeNode {</span></span>
+<span class="line"><span>		cnt++</span></span>
+<span class="line"><span>		if node.Left != nil {</span></span>
+<span class="line"><span>			if node.Left.Val &#x3C;= l {</span></span>
+<span class="line"><span>				return nil</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if lo := roots[node.Left.Val]; lo != nil {</span></span>
+<span class="line"><span>				node.Left = build(lo, l, node.Val)</span></span>
+<span class="line"><span>				if node.Left == nil {</span></span>
+<span class="line"><span>					return nil</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if node.Right != nil {</span></span>
+<span class="line"><span>			if node.Right.Val >= r {</span></span>
+<span class="line"><span>				return nil</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if ro := roots[node.Right.Val]; ro != nil {</span></span>
+<span class="line"><span>				node.Right = build(ro, node.Val, r)</span></span>
+<span class="line"><span>				if node.Right == nil {</span></span>
+<span class="line"><span>					return nil</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return node</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	root = build(root, 0, mx)</span></span>
+<span class="line"><span>	if cnt == len(trees) { // 所有 trees[i] 均参与构建二叉搜索树</span></span>
+<span class="line"><span>		return root</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return nil</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/merge-bsts-to-create-single-bst" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1932.Merge%20BSTs%20to%20Create%20Single%20BST/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-1973" tabindex="-1">1973. 值等于子节点值之和的节点数量 🔒 <a class="header-anchor" href="#q-1973" aria-label="Permalink to &quot;1973. 值等于子节点值之和的节点数量 🔒 {#q-1973}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一颗二叉树的根节点 <code>root</code> ，返回满足条件：节点的值等于该节点所有子节点的值之和 <em>的节点的数量。</em></p>&#10;&#10;<p>一个节点 <code>x</code> 的 <strong>子节点</strong> 是指从节点 <code>x</code> 出发，到所有叶子节点路径上的节点。没有子节点的节点的子节点和视为 <code>0</code> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1973.Count%20Nodes%20Equal%20to%20Sum%20of%20Descendants/images/screenshot-2021-08-17-at-17-16-50-diagram-drawio-diagrams-net.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> root = [10,3,4,2,1]&#10;<strong>输出:</strong> 2&#10;<strong>解释:</strong>&#10;对于值为10的节点: 其子节点之和为： 3+4+2+1 = 10。&#10;对于值为3的节点：其子节点之和为： 2+1 = 3。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1973.Count%20Nodes%20Equal%20to%20Sum%20of%20Descendants/images/screenshot-2021-08-17-at-17-25-21-diagram-drawio-diagrams-net.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> root = [2,3,null,2,null]&#10;<strong>输出:</strong> 0&#10;<strong>解释:</strong>&#10;没有节点满足其值等于子节点之和。&#10;</pre>&#10;&#10;<p><strong>示例 3:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/1900-1999/1973.Count%20Nodes%20Equal%20to%20Sum%20of%20Descendants/images/screenshot-2021-08-17-at-17-23-53-diagram-drawio-diagrams-net.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> root = [0]&#10;<strong>输出:</strong> 1&#10;<strong>解释:</strong>&#10;对于值为0的节点：因为它没有子节点，所以自己点之和为0。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点的数量范围： <code>[1, 10<sup>5</sup>]</code></li>&#10;	<li><code>0 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：递归 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每个结点要与其全部子孙之和比较。若对每个结点再遍历子树，总时间为平方级。</p>
+<p>一次后序 DFS 返回子树和：左右之和等于结点值则计数加一，并向上返回「自身加左右」。整树一遍即可。</p>
+</blockquote>
+<p>我们设计一个函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，该函数返回以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 为根节点的子树的所有节点值之和。函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的执行过程如下：</p>
+<ul>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 为空，返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>；</li>
+<li>否则，我们递归地计算 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的左子树和右子树的节点值之和，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>；如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo>=</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo>.</mo>
+  <mi>v</mi>
+  <mi>a</mi>
+  <mi>l</mi>
+</math></span>，说明以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 为根节点的子树满足条件，我们将答案加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>；最后，返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo>.</mo>
+  <mi>v</mi>
+  <mi>a</mi>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+</math></span>。</li>
+</ul>
+<p>然后我们调用函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，返回答案即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func equalToDescendants(root *TreeNode) (ans int) {</span></span>
+<span class="line"><span>	var dfs func(*TreeNode) int</span></span>
+<span class="line"><span>	dfs = func(root *TreeNode) int {</span></span>
+<span class="line"><span>		if root == nil {</span></span>
+<span class="line"><span>			return 0</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		l, r := dfs(root.Left), dfs(root.Right)</span></span>
+<span class="line"><span>		if l+r == root.Val {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return root.Val + l + r</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs(root)</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：显式栈 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每个结点要和它全部子孙的值之和比较。若对每个结点再单独遍历子树，总时间是平方级。后序遍历在离开结点时已经知道左右子树的和，一次遍历就能判断并向上汇总。</p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 可以到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>。后序先走进左孩子，一条左链会让递归在子树和算完之前溢出。结点值最大 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，整棵子树的和可以到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mrow data-mjx-texclass="ORD">
+      <mn>10</mn>
+    </mrow>
+  </msup>
+</math></span>，32 位整数装不下。</p>
+<p>子孙和只在左右子树都处理完之后才知道。显式栈用状态把“先展开孩子”和“孩子都已返回”分开，弹出完成标记时读取左右子树和。和数用 64 位整数保存，左右之和等于结点值就计数，再把自身加进去交给父结点。</p>
+<p>每个结点入栈一次。空孩子的和视为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>。</p>
+</blockquote>
+<p>我们用显式栈做后序遍历。栈中每个元素是结点和状态：状态 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 先压入完成标记，再压入右孩子和左孩子；状态 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 表示左右子树都已求出子树和。弹出完成标记后，取出左子树和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span> 与右子树和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>。若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo>=</mo>
+  <mtext mathvariant="italic">val</mtext>
+</math></span>，答案加一。该结点的子树和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">val</mtext>
+  <mo>+</mo>
+  <mi>l</mi>
+  <mo>+</mo>
+  <mi>r</mi>
+</math></span>，存下来给父结点使用。空孩子的和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>。子树和用 64 位整数， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 个不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span> 的结点相加不会溢出。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func equalToDescendants(root *TreeNode) (ans int) {</span></span>
+<span class="line"><span>	sub := map[*TreeNode]int{}</span></span>
+<span class="line"><span>	type frame struct {</span></span>
+<span class="line"><span>		node  *TreeNode</span></span>
+<span class="line"><span>		state int</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	stk := []frame{}</span></span>
+<span class="line"><span>	if root != nil {</span></span>
+<span class="line"><span>		stk = append(stk, frame{root, 0})</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for len(stk) > 0 {</span></span>
+<span class="line"><span>		cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>		stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>		node := cur.node</span></span>
+<span class="line"><span>		if cur.state == 0 {</span></span>
+<span class="line"><span>			stk = append(stk, frame{node, 1})</span></span>
+<span class="line"><span>			if node.Right != nil {</span></span>
+<span class="line"><span>				stk = append(stk, frame{node.Right, 0})</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if node.Left != nil {</span></span>
+<span class="line"><span>				stk = append(stk, frame{node.Left, 0})</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			continue</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		l, r := 0, 0</span></span>
+<span class="line"><span>		if node.Left != nil {</span></span>
+<span class="line"><span>			l = sub[node.Left]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if node.Right != nil {</span></span>
+<span class="line"><span>			r = sub[node.Right]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if l+r == node.Val {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		sub[node] = node.Val + l + r</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-nodes-equal-to-sum-of-descendants" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/1900-1999/1973.Count%20Nodes%20Equal%20to%20Sum%20of%20Descendants/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2005" tabindex="-1">2005. 斐波那契树的移除子树游戏 🔒 <a class="header-anchor" href="#q-2005" aria-label="Permalink to &quot;2005. 斐波那契树的移除子树游戏 🔒 {#q-2005}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、数学、动态规划、二叉树、博弈</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p><strong>斐波那契</strong>树是一种按这种规则函数 <code>order(n)</code> 创建的二叉树：</p>&#10;&#10;<ul>&#10;	<li><code>order(0)</code> 是空树。</li>&#10;	<li><code>order(1)</code> 是一棵<strong>只有一个节点</strong>的二叉树。</li>&#10;	<li><code>order(n)</code> 是一棵根节点的左子树为 <code>order(n - 2)</code> 、右子树为 <code>order(n - 1)</code> 的二叉树。</li>&#10;</ul>&#10;&#10;<p>Alice 和 Bob 在玩一种关于<strong>斐波那契</strong>树的游戏，由 Alice 先手。在每个回合中，每个玩家选择一个节点，然后移除该节点<strong>及</strong>其子树。只能删除根节点 <code>root</code> 的玩家输掉这场游戏。</p>&#10;&#10;<p>给定一个整数 <code>n</code>，假定两名玩家都按最优策略进行游戏，若 Alice 赢得这场游戏，返回 <code>true</code> 。若 Bob 赢得这场游戏，返回 <code>false</code> 。</p>&#10;&#10;<p>一棵二叉树的子树 <code>tree</code> 是由 <code>tree</code> 中某个节点及其所有后代节点组成的树。树 <code>tree</code> 也可当作自身的子树。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong><br>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2005.Subtree%20Removal%20Game%20with%20Fibonacci%20Tree/images/image-20210914173520-3.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> n = 3&#10;<strong>输出:</strong> true&#10;<strong>解释:</strong>&#10;Alice 移除右子树中的节点 1。&#10;Bob 要么移除左子树中的 1，要么移除右子树中的 2。&#10;Alice 可以移除 Bob 未移除的任意节点。&#10;Bob 只能删除根节点 3，所以 Bob 输了。&#10;返回 true，因为 Alice 赢了。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong><br>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2005.Subtree%20Removal%20Game%20with%20Fibonacci%20Tree/images/image-20210914173634-4.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> n = 1&#10;<strong>输出:</strong> false&#10;<strong>解释:</strong>&#10;Alice 只能移除根节点 1, 所以 Alice 输了。&#10;返回 false，因为 Alice 输了。&#10;</pre>&#10;&#10;<p><strong>示例 3:</strong><br>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2005.Subtree%20Removal%20Game%20with%20Fibonacci%20Tree/images/image-20210914173425-1.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> n = 2&#10;<strong>输出:</strong> true&#10;<strong>解释:</strong>&#10;Alice 删除节点 1.&#10;Bob 只能删除根节点 2，所以 Bob 输了。&#10;返回 true，因为 Alice 赢了。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 100</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 解法（本站整理） · Go 实现</summary>
+<p><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2005.Subtree%20Removal%20Game%20with%20Fibonacci%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 参考题解</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></p>
+<div v-pre>
+<p>根据题意整理：源文没有非空代码。把必败的“删除整棵树根”视为不能走的操作，问题成为根的两棵子树上的普通删除博弈。令 g(n) 为允许删根的 n 阶斐波那契树的 Sprague-Grundy 值；空树 g(0)=0，单点 g(1)=1。根下是两个独立游戏，异或值为 g(n-2) XOR g(n-1)；增加一个可删除的根把所有后继的值平移一并增加终局 0，故 g(n)=1+(g(n-2) XOR g(n-1))。原题先手获胜当且仅当两个孩子的异或非零，即 g(n)≠1。n≤100，时间 O(n)，空间 O(1)，数值在此范围适合 Go int。入口 findGameWinner；小树测试直接枚举合法删子树操作，无需实际构造巨大树。</p>
+<p>出处：<a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2005.Subtree%20Removal%20Game%20with%20Fibonacci%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 原题与题解</a>，固定提交 91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011；题意、参考及本 Go 改写采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>// 题意与参考：Doocs LeetCode，CC BY-SA 4.0。</span></span>
+<span class="line"><span>// https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2005.Subtree%20Removal%20Game%20with%20Fibonacci%20Tree/README.md</span></span>
+<span class="line"><span>// Go 实现与测试沿用 CC BY-SA 4.0；来源性质见配套说明。</span></span>
+<span class="line"><span>func findGameWinner(n int) bool {</span></span>
+<span class="line"><span>	a, b := 0, 1</span></span>
+<span class="line"><span>	for i := 2; i &#x3C;= n; i++ {</span></span>
+<span class="line"><span>		a, b = b, 1+(a^b)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return b != 1</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/subtree-removal-game-with-fibonacci-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2005.Subtree%20Removal%20Game%20with%20Fibonacci%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2049" tabindex="-1">2049. 统计最高分的节点数目 <a class="header-anchor" href="#q-2049" aria-label="Permalink to &quot;2049. 统计最高分的节点数目 {#q-2049}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、数组、二叉树、树形 DP</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一棵根节点为 <code>0</code> 的 <strong>二叉树</strong> ，它总共有 <code>n</code> 个节点，节点编号为 <code>0</code> 到 <code>n - 1</code> 。同时给你一个下标从 <strong>0</strong> 开始的整数数组 <code>parents</code> 表示这棵树，其中 <code>parents[i]</code> 是节点 <code>i</code> 的父节点。由于节点 <code>0</code> 是根，所以 <code>parents[0] == -1</code> 。</p>&#10;&#10;<p>一个子树的 <strong>大小</strong> 为这个子树内节点的数目。每个节点都有一个与之关联的 <strong>分数</strong> 。求出某个节点分数的方法是，将这个节点和与它相连的边全部 <strong>删除</strong> ，剩余部分是若干个 <strong>非空</strong> 子树，这个节点的 <strong>分数</strong> 为所有这些子树 <strong>大小的乘积</strong> 。</p>&#10;&#10;<p>请你返回有 <strong>最高得分</strong> 节点的 <strong>数目</strong> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;&#10;<p><img alt="example-1" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2049.Count%20Nodes%20With%20the%20Highest%20Score/images/example-1.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>parents = [-1,2,0,2,0]&#10;<b>输出：</b>3&#10;<strong>解释：</strong>&#10;- 节点 0 的分数为：3 * 1 = 3&#10;- 节点 1 的分数为：4 = 4&#10;- 节点 2 的分数为：1 * 1 * 2 = 2&#10;- 节点 3 的分数为：4 = 4&#10;- 节点 4 的分数为：4 = 4&#10;最高得分为 4 ，有三个节点得分为 4 （分别是节点 1，3 和 4 ）。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="example-2" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2049.Count%20Nodes%20With%20the%20Highest%20Score/images/example-2.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>parents = [-1,2,0]&#10;<b>输出：</b>2&#10;<strong>解释：</strong>&#10;- 节点 0 的分数为：2 = 2&#10;- 节点 1 的分数为：2 = 2&#10;- 节点 2 的分数为：1 * 1 = 1&#10;最高分数为 2 ，有两个节点分数为 2 （分别为节点 0 和 1 ）。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == parents.length</code></li>&#10;	<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>parents[0] == -1</code></li>&#10;	<li>对于 <code>i != 0</code> ，有 <code>0 &lt;= parents[i] &lt;= n - 1</code></li>&#10;	<li><code>parents</code> 表示一棵二叉树。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：DFS · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>去掉结点后，分数为各连通块大小之积。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，需一次遍历得到所有分数。子树大小在 DFS 回溯时可知，补集大小为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span>。</p>
+<p>建出孩子邻接表，从根 DFS：把各孩子子树大小相乘，若还有上方块再乘 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span>。同步维护最高分及其出现次数。</p>
+</blockquote>
+<p>我们先根据给定的父节点数组 <code v-pre>parents</code> 构建图 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的所有子节点。定义变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 表示最高得分的节点数目，变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 表示最高得分。</p>
+<p>然后，我们设计一个函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mi>f</mi>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，它的作用是计算节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的分数，并返回以节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 为根的子树的节点数目。</p>
+<p>函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mi>f</mi>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的计算过程如下：</p>
+<p>我们首先初始化变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>，表示以节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 为根的子树的节点数目；变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>，表示以节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 初始分数。</p>
+<p>接下来，我们遍历节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的所有子节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span>，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 不是节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的父节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mi>a</mi>
+</math></span>，那么我们递归调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>j</mi>
+  <mo>,</mo>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，并将返回值累乘到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+</math></span> 中，同时将返回值累加到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 中。</p>
+<p>遍历完子节点后，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>，那么我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 累乘到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+</math></span> 中。</p>
+<p>然后，我们判断 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 是否小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+</math></span>，如果小于，那么我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 更新为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+</math></span>，并将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 更新为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>；如果等于，那么我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 更新为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span>。</p>
+<p>最后，我们返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span>。</p>
+<p>最终，我们调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，并返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是节点数目。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countHighestScoreNodes(parents []int) (ans int) {</span></span>
+<span class="line"><span>	n := len(parents)</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	for i := 1; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		g[parents[i]] = append(g[parents[i]], i)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	mx := 0</span></span>
+<span class="line"><span>	var dfs func(i, fa int) int</span></span>
+<span class="line"><span>	dfs = func(i, fa int) int {</span></span>
+<span class="line"><span>		cnt, score := 1, 1</span></span>
+<span class="line"><span>		for _, j := range g[i] {</span></span>
+<span class="line"><span>			if j != fa {</span></span>
+<span class="line"><span>				t := dfs(j, i)</span></span>
+<span class="line"><span>				cnt += t</span></span>
+<span class="line"><span>				score *= t</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if n-cnt > 0 {</span></span>
+<span class="line"><span>			score *= n - cnt</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if mx &#x3C; score {</span></span>
+<span class="line"><span>			mx = score</span></span>
+<span class="line"><span>			ans = 1</span></span>
+<span class="line"><span>		} else if mx == score {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return cnt</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs(0, -1)</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：显式栈 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>去掉结点后，分数是各连通块大小的乘积。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 可以到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>。一条链上第一次递归总是走向唯一的孩子，深度就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>，会超出默认递归上限。</p>
+<p>分数要等每个孩子的子树大小都确定后才能相乘，结点上方剩余部分的大小是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 减去这棵子树的大小。</p>
+<p>因此用显式栈做后序。进入结点时先压入离开标记，再压入孩子。离开时把各孩子的子树大小相乘，若还有上方的块再乘 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span>，并维护最高分及其出现次数。</p>
+</blockquote>
+<p>我们先根据给定的父节点数组 <code v-pre>parents</code> 构建图 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的所有子节点。定义变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 表示最高得分的节点数目，变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 表示最高得分。</p>
+<p>用显式栈从根结点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 做后序遍历。进入一个结点时，先压入该结点的离开标记，再压入它的孩子，这样孩子会先处理完。离开时，各孩子的子树大小已经写好。初始化 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mo>=</mo>
+  <mn>1</mn>
+</math></span>。把每个孩子的子树大小累乘到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+</math></span>，并累加到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span>。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math></span>，再把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 累乘到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+</math></span>。若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+</math></span> 大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span>，则把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 更新为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>c</mi>
+  <mi>o</mi>
+  <mi>r</mi>
+  <mi>e</mi>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 更新为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>；若相等，则把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>s</mi>
+</math></span> 加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。最后把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>c</mi>
+  <mi>n</mi>
+  <mi>t</mi>
+</math></span> 记为当前结点的子树大小。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是节点数目。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func countHighestScoreNodes(parents []int) (ans int) {</span></span>
+<span class="line"><span>	n := len(parents)</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	for i := 1; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		g[parents[i]] = append(g[parents[i]], i)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	mx := 0</span></span>
+<span class="line"><span>	sz := make([]int, n)</span></span>
+<span class="line"><span>	stk := [][3]int{{0, -1, 0}}</span></span>
+<span class="line"><span>	for len(stk) > 0 {</span></span>
+<span class="line"><span>		cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>		stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>		i, fa, state := cur[0], cur[1], cur[2]</span></span>
+<span class="line"><span>		if state == 0 {</span></span>
+<span class="line"><span>			stk = append(stk, [3]int{i, fa, 1})</span></span>
+<span class="line"><span>			for _, j := range g[i] {</span></span>
+<span class="line"><span>				if j != fa {</span></span>
+<span class="line"><span>					stk = append(stk, [3]int{j, i, 0})</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			cnt, score := 1, 1</span></span>
+<span class="line"><span>			for _, j := range g[i] {</span></span>
+<span class="line"><span>				if j != fa {</span></span>
+<span class="line"><span>					t := sz[j]</span></span>
+<span class="line"><span>					cnt += t</span></span>
+<span class="line"><span>					score *= t</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if n-cnt > 0 {</span></span>
+<span class="line"><span>				score *= n - cnt</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if mx &#x3C; score {</span></span>
+<span class="line"><span>				mx = score</span></span>
+<span class="line"><span>				ans = 1</span></span>
+<span class="line"><span>			} else if mx == score {</span></span>
+<span class="line"><span>				ans++</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			sz[i] = cnt</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-nodes-with-the-highest-score" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2049.Count%20Nodes%20With%20the%20Highest%20Score/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2096" tabindex="-1">2096. 从二叉树一个节点到另一个节点每一步的方向 <a class="header-anchor" href="#q-2096" aria-label="Permalink to &quot;2096. 从二叉树一个节点到另一个节点每一步的方向 {#q-2096}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>4 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、字符串、二叉树、最近公共祖先</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一棵 <strong>二叉树</strong> 的根节点 <code>root</code> ，这棵二叉树总共有 <code>n</code> 个节点。每个节点的值为 <code>1</code> 到 <code>n</code> 中的一个整数，且互不相同。给你一个整数 <code>startValue</code> ，表示起点节点 <code>s</code> 的值，和另一个不同的整数 <code>destValue</code> ，表示终点节点 <code>t</code> 的值。</p>&#10;&#10;<p>请找到从节点 <code>s</code> 到节点 <code>t</code> 的 <strong>最短路径</strong> ，并以字符串的形式返回每一步的方向。每一步用 <strong>大写</strong> 字母 <code>'L'</code> ，<code>'R'</code> 和 <code>'U'</code> 分别表示一种方向：</p>&#10;&#10;<ul>&#10;	<li><code>'L'</code> 表示从一个节点前往它的 <strong>左孩子</strong> 节点。</li>&#10;	<li><code>'R'</code> 表示从一个节点前往它的 <strong>右孩子</strong> 节点。</li>&#10;	<li><code>'U'</code> 表示从一个节点前往它的 <strong>父</strong> 节点。</li>&#10;</ul>&#10;&#10;<p>请你返回从 <code>s</code> 到 <code>t</code> <strong>最短路径</strong> 每一步的方向。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2096.Step-By-Step%20Directions%20From%20a%20Binary%20Tree%20Node%20to%20Another/images/eg1.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>root = [5,1,2,3,null,6,4], startValue = 3, destValue = 6&#10;<b>输出：</b>&quot;UURL&quot;&#10;<b>解释：</b>最短路径为：3 → 1 → 5 → 2 → 6 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2000-2099/2096.Step-By-Step%20Directions%20From%20a%20Binary%20Tree%20Node%20to%20Another/images/eg2.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>root = [2,1], startValue = 2, destValue = 1&#10;<b>输出：</b>&quot;L&quot;&#10;<b>解释：</b>最短路径为：2 → 1 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点数目为 <code>n</code> 。</li>&#10;	<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= Node.val &lt;= n</code></li>&#10;	<li>树中所有节点的值 <strong>互不相同</strong> 。</li>&#10;	<li><code>1 &lt;= startValue, destValue &lt;= n</code></li>&#10;	<li><code>startValue != destValue</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：最近公共祖先 + DFS · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>从起点到终点的路径必经过 LCA。向上一律走 <code v-pre>U</code>，再沿 LCA 到终点的左右孩子走 <code v-pre>L</code>/<code v-pre>R</code>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，三次遍历可接受。</p>
+<p>先求 LCA，再两次 DFS 记录从 LCA 到两端的方向串，把去程改成等长的 <code v-pre>U</code> 后拼接。</p>
+</blockquote>
+<p>我们可以先找到节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">startValue</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">destValue</mtext>
+</math></span> 的最近公共祖先，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">node</mtext>
+</math></span>，然后分别从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">node</mtext>
+</math></span> 出发，找到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">startValue</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">destValue</mtext>
+</math></span> 的路径。那么从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">startValue</mtext>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">node</mtext>
+</math></span> 的路径就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">U</mtext>
+</math></span> 的个数，从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">node</mtext>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">destValue</mtext>
+</math></span> 的路径就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">path</mtext>
+</math></span> 的路径，最后将这两个路径拼接起来即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func getDirections(root *TreeNode, startValue int, destValue int) string {</span></span>
+<span class="line"><span>	var lca func(node *TreeNode, p, q int) *TreeNode</span></span>
+<span class="line"><span>	lca = func(node *TreeNode, p, q int) *TreeNode {</span></span>
+<span class="line"><span>		if node == nil || node.Val == p || node.Val == q {</span></span>
+<span class="line"><span>			return node</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		left := lca(node.Left, p, q)</span></span>
+<span class="line"><span>		right := lca(node.Right, p, q)</span></span>
+<span class="line"><span>		if left != nil &#x26;&#x26; right != nil {</span></span>
+<span class="line"><span>			return node</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if left != nil {</span></span>
+<span class="line"><span>			return left</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return right</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var dfs func(node *TreeNode, x int, path *[]byte) bool</span></span>
+<span class="line"><span>	dfs = func(node *TreeNode, x int, path *[]byte) bool {</span></span>
+<span class="line"><span>		if node == nil {</span></span>
+<span class="line"><span>			return false</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if node.Val == x {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		*path = append(*path, 'L')</span></span>
+<span class="line"><span>		if dfs(node.Left, x, path) {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		(*path)[len(*path)-1] = 'R'</span></span>
+<span class="line"><span>		if dfs(node.Right, x, path) {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		*path = (*path)[:len(*path)-1]</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	node := lca(root, startValue, destValue)</span></span>
+<span class="line"><span>	pathToStart := []byte{}</span></span>
+<span class="line"><span>	pathToDest := []byte{}</span></span>
+<span class="line"><span>	dfs(node, startValue, &#x26;pathToStart)</span></span>
+<span class="line"><span>	dfs(node, destValue, &#x26;pathToDest)</span></span>
+<span class="line"><span>	return string(bytes.Repeat([]byte{'U'}, len(pathToStart))) + string(pathToDest)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：最近公共祖先 + DFS（优化） · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一先找 LCA 再走两遍。从根到两端的路径共享一段前缀，去掉该前缀后剩余即「回到 LCA 再下去」。少一次 LCA 专用搜索。</p>
+<p>两次 DFS 得到方向串，对齐公共前缀长度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>t</mi>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo>&#x2212;</mo>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 个 <code v-pre>U</code> 加终点后缀。</p>
+</blockquote>
+<p>我们可以从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">root</mtext>
+</math></span> 出发，找到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">startValue</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">destValue</mtext>
+</math></span> 的路径，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToStart</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToDest</mtext>
+</math></span>，然后去除 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToStart</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToDest</mtext>
+</math></span> 的最长公共前缀，此时 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToStart</mtext>
+</math></span> 的路径长度就是答案中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">U</mtext>
+</math></span> 的个数，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToDest</mtext>
+</math></span> 的路径就是答案中的路径，我们只需要将这两个路径拼接起来即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func getDirections(root *TreeNode, startValue int, destValue int) string {</span></span>
+<span class="line"><span>	var dfs func(node *TreeNode, x int, path *[]byte) bool</span></span>
+<span class="line"><span>	dfs = func(node *TreeNode, x int, path *[]byte) bool {</span></span>
+<span class="line"><span>		if node == nil {</span></span>
+<span class="line"><span>			return false</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if node.Val == x {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		*path = append(*path, 'L')</span></span>
+<span class="line"><span>		if dfs(node.Left, x, path) {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		(*path)[len(*path)-1] = 'R'</span></span>
+<span class="line"><span>		if dfs(node.Right, x, path) {</span></span>
+<span class="line"><span>			return true</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		*path = (*path)[:len(*path)-1]</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	pathToStart := []byte{}</span></span>
+<span class="line"><span>	pathToDest := []byte{}</span></span>
+<span class="line"><span>	dfs(root, startValue, &#x26;pathToStart)</span></span>
+<span class="line"><span>	dfs(root, destValue, &#x26;pathToDest)</span></span>
+<span class="line"><span>	i := 0</span></span>
+<span class="line"><span>	for i &#x3C; len(pathToStart) &#x26;&#x26; i &#x3C; len(pathToDest) &#x26;&#x26; pathToStart[i] == pathToDest[i] {</span></span>
+<span class="line"><span>		i++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return string(bytes.Repeat([]byte{'U'}, len(pathToStart)-i)) + string(pathToDest[i:])</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法三：显式栈求最近公共祖先 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>从起点到终点的最短路径一定经过二者的最近公共祖先。祖先之上的每一步都是 <code v-pre>U</code>，从祖先到终点再按左右孩子记 <code v-pre>L</code> 或 <code v-pre>R</code>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 可以到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，三次线性遍历都在时限内。</p>
+<p>求祖先和记录方向都先走进左孩子。一条左链的长度可以到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>，递归会在方向串写完之前溢出。</p>
+<p>最近公共祖先要等左右子树都返回后才能决定：两边都找到目标时当前结点就是祖先，否则把非空的一侧传上去。显式栈用状态把“先展开左右孩子”和“孩子都已返回”分开，弹出完成标记时再做这个选择。方向搜索同样先压入回退标记，再压左孩子；左子树失败后把路径末尾改成 <code v-pre>R</code> 并搜索右孩子，找到目标就停。</p>
+<p>起点到祖先的方向串长度就是 <code v-pre>U</code> 的个数，拼上祖先到终点的方向串。</p>
+</blockquote>
+<p>我们用显式栈找到节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">startValue</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">destValue</mtext>
+</math></span> 的最近公共祖先，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">node</mtext>
+</math></span>。栈里的状态 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 展开左右孩子，状态 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 在两侧都返回后决定祖先：两侧都非空则当前结点是祖先，否则取非空的一侧。然后再用同一个栈从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">node</mtext>
+</math></span> 出发，先向左记录 <code v-pre>L</code>，左子树没有目标时把末尾改成 <code v-pre>R</code> 继续向右，找到目标即停止。从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">startValue</mtext>
+</math></span> 回到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">node</mtext>
+</math></span> 的步数就是 <code v-pre>U</code> 的个数，接上从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">node</mtext>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">destValue</mtext>
+</math></span> 的方向串。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func getDirections(root *TreeNode, startValue int, destValue int) string {</span></span>
+<span class="line"><span>	lca := func(root *TreeNode, p, q int) *TreeNode {</span></span>
+<span class="line"><span>		ret := map[*TreeNode]*TreeNode{}</span></span>
+<span class="line"><span>		stk := [][2]interface{}{{root, 0}}</span></span>
+<span class="line"><span>		for len(stk) > 0 {</span></span>
+<span class="line"><span>			cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>			stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>			node, _ := cur[0].(*TreeNode)</span></span>
+<span class="line"><span>			state := cur[1].(int)</span></span>
+<span class="line"><span>			if state == 0 {</span></span>
+<span class="line"><span>				if node == nil {</span></span>
+<span class="line"><span>					continue</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				if node.Val == p || node.Val == q {</span></span>
+<span class="line"><span>					ret[node] = node</span></span>
+<span class="line"><span>					continue</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				stk = append(stk, [2]interface{}{node, 1}, [2]interface{}{node.Right, 0}, [2]interface{}{node.Left, 0})</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				var left, right *TreeNode</span></span>
+<span class="line"><span>				if node.Left != nil {</span></span>
+<span class="line"><span>					left = ret[node.Left]</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				if node.Right != nil {</span></span>
+<span class="line"><span>					right = ret[node.Right]</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				if left != nil &#x26;&#x26; right != nil {</span></span>
+<span class="line"><span>					ret[node] = node</span></span>
+<span class="line"><span>				} else if left != nil {</span></span>
+<span class="line"><span>					ret[node] = left</span></span>
+<span class="line"><span>				} else {</span></span>
+<span class="line"><span>					ret[node] = right</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return ret[root]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs := func(start *TreeNode, x int, path *[]byte) bool {</span></span>
+<span class="line"><span>		stk := [][2]interface{}{{start, 0}}</span></span>
+<span class="line"><span>		for len(stk) > 0 {</span></span>
+<span class="line"><span>			cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>			stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>			node, _ := cur[0].(*TreeNode)</span></span>
+<span class="line"><span>			state := cur[1].(int)</span></span>
+<span class="line"><span>			if state == 0 {</span></span>
+<span class="line"><span>				if node == nil {</span></span>
+<span class="line"><span>					continue</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				if node.Val == x {</span></span>
+<span class="line"><span>					return true</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				*path = append(*path, 'L')</span></span>
+<span class="line"><span>				stk = append(stk, [2]interface{}{node, 1}, [2]interface{}{node.Left, 0})</span></span>
+<span class="line"><span>			} else if state == 1 {</span></span>
+<span class="line"><span>				(*path)[len(*path)-1] = 'R'</span></span>
+<span class="line"><span>				stk = append(stk, [2]interface{}{node, 2}, [2]interface{}{node.Right, 0})</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				*path = (*path)[:len(*path)-1]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	node := lca(root, startValue, destValue)</span></span>
+<span class="line"><span>	pathToStart := []byte{}</span></span>
+<span class="line"><span>	pathToDest := []byte{}</span></span>
+<span class="line"><span>	dfs(node, startValue, &#x26;pathToStart)</span></span>
+<span class="line"><span>	dfs(node, destValue, &#x26;pathToDest)</span></span>
+<span class="line"><span>	return string(bytes.Repeat([]byte{'U'}, len(pathToStart))) + string(pathToDest)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法四：显式栈对齐根路径 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>方法一仍然单独求一次最近公共祖先，再从祖先出发走两遍。从根到两端的路径共享一段前缀，去掉这段前缀就等于先回到祖先再向下，那一次专门的祖先搜索可以省掉。</p>
+<p>两次方向搜索仍可能沿着一条长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 的链往下走，所以同样放进显式栈：先压回退标记，再压左孩子，左子树失败后把末尾改成 <code v-pre>R</code>。</p>
+<p>对齐公共前缀长度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 之后，答案是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mtext mathvariant="italic">start</mtext>
+  <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+  <mo>&#x2212;</mo>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 个 <code v-pre>U</code> 加上终点路径的后缀。</p>
+</blockquote>
+<p>我们用显式栈从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">root</mtext>
+</math></span> 出发，分别找到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">startValue</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">destValue</mtext>
+</math></span> 的方向串，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToStart</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToDest</mtext>
+</math></span>。栈在向左失败后把路径末尾改成 <code v-pre>R</code> 再向右，因此方向串与原先的深度优先搜索一致。去掉二者的最长公共前缀后， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToStart</mtext>
+</math></span> 剩下的长度就是答案中 <code v-pre>U</code> 的个数， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">pathToDest</mtext>
+</math></span> 剩下的部分就是向下的方向，把两段拼接起来即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func getDirections(root *TreeNode, startValue int, destValue int) string {</span></span>
+<span class="line"><span>	dfs := func(start *TreeNode, x int, path *[]byte) bool {</span></span>
+<span class="line"><span>		stk := [][2]interface{}{{start, 0}}</span></span>
+<span class="line"><span>		for len(stk) > 0 {</span></span>
+<span class="line"><span>			cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>			stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>			node, _ := cur[0].(*TreeNode)</span></span>
+<span class="line"><span>			state := cur[1].(int)</span></span>
+<span class="line"><span>			if state == 0 {</span></span>
+<span class="line"><span>				if node == nil {</span></span>
+<span class="line"><span>					continue</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				if node.Val == x {</span></span>
+<span class="line"><span>					return true</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				*path = append(*path, 'L')</span></span>
+<span class="line"><span>				stk = append(stk, [2]interface{}{node, 1}, [2]interface{}{node.Left, 0})</span></span>
+<span class="line"><span>			} else if state == 1 {</span></span>
+<span class="line"><span>				(*path)[len(*path)-1] = 'R'</span></span>
+<span class="line"><span>				stk = append(stk, [2]interface{}{node, 2}, [2]interface{}{node.Right, 0})</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				*path = (*path)[:len(*path)-1]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return false</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	pathToStart := []byte{}</span></span>
+<span class="line"><span>	pathToDest := []byte{}</span></span>
+<span class="line"><span>	dfs(root, startValue, &#x26;pathToStart)</span></span>
+<span class="line"><span>	dfs(root, destValue, &#x26;pathToDest)</span></span>
+<span class="line"><span>	i := 0</span></span>
+<span class="line"><span>	for i &#x3C; len(pathToStart) &#x26;&#x26; i &#x3C; len(pathToDest) &#x26;&#x26; pathToStart[i] == pathToDest[i] {</span></span>
+<span class="line"><span>		i++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return string(bytes.Repeat([]byte{'U'}, len(pathToStart)-i)) + string(pathToDest[i:])</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/step-by-step-directions-from-a-binary-tree-node-to-another" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2000-2099/2096.Step-By-Step%20Directions%20From%20a%20Binary%20Tree%20Node%20to%20Another/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2196" tabindex="-1">2196. 根据描述创建二叉树 <a class="header-anchor" href="#q-2196" aria-label="Permalink to &quot;2196. 根据描述创建二叉树 {#q-2196}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、数组、哈希表、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个二维整数数组 <code>descriptions</code> ，其中 <code>descriptions[i] = [parent<sub>i</sub>, child<sub>i</sub>, isLeft<sub>i</sub>]</code> 表示 <code>parent<sub>i</sub></code> 是 <code>child<sub>i</sub></code> 在 <strong>二叉树</strong> 中的 <strong>父节点</strong>，二叉树中各节点的值 <strong>互不相同</strong> 。此外：</p>&#10;&#10;<ul>&#10;	<li>如果 <code>isLeft<sub>i</sub> == 1</code> ，那么 <code>child<sub>i</sub></code> 就是 <code>parent<sub>i</sub></code> 的左子节点。</li>&#10;	<li>如果 <code>isLeft<sub>i</sub> == 0</code> ，那么 <code>child<sub>i</sub></code> 就是 <code>parent<sub>i</sub></code> 的右子节点。</li>&#10;</ul>&#10;&#10;<p>请你根据 <code>descriptions</code> 的描述来构造二叉树并返回其 <strong>根节点</strong> 。</p>&#10;&#10;<p>测试用例会保证可以构造出 <strong>有效</strong> 的二叉树。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2100-2199/2196.Create%20Binary%20Tree%20From%20Descriptions/images/example1drawio.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>descriptions = [[20,15,1],[20,17,0],[50,20,1],[50,80,0],[80,19,1]]&#10;<strong>输出：</strong>[50,20,80,15,17,19]&#10;<strong>解释：</strong>根节点是值为 50 的节点，因为它没有父节点。&#10;结果二叉树如上图所示。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2100-2199/2196.Create%20Binary%20Tree%20From%20Descriptions/images/example2drawio.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>descriptions = [[1,2,1],[2,3,0],[3,4,1]]&#10;<strong>输出：</strong>[1,2,null,null,3,4]&#10;<strong>解释：</strong>根节点是值为 1 的节点，因为它没有父节点。 &#10;结果二叉树如上图所示。 </pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= descriptions.length &lt;= 10<sup>4</sup></code></li>&#10;	<li><code>descriptions[i].length == 3</code></li>&#10;	<li><code>1 &lt;= parent<sub>i</sub>, child<sub>i</sub> &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>0 &lt;= isLeft<sub>i</sub> &lt;= 1</code></li>&#10;	<li><code>descriptions</code> 所描述的二叉树是一棵有效二叉树</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：哈希表 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>描述给出每条父—子边及左右，需还原二叉树。结点值唯一，父结点可能尚未出现，需按需创建。根是唯一没有作为孩子出现的结点。</p>
+<p>哈希表按值存结点，集合记录所有孩子。扫一遍描述连边，再用结点键集减去孩子集得到根。</p>
+<p>时间和空间均为描述条数的线性。</p>
+</blockquote>
+<p>我们可以用一个哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nodes</mtext>
+</math></span> 来存储所有节点，其中键为节点的值，值为节点本身，用一个集合 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">children</mtext>
+</math></span> 来存储所有的子节点。</p>
+<p>遍历 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">descriptions</mtext>
+</math></span>，对于每个描述 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mtext mathvariant="italic">parent</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">child</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">isLeft</mtext>
+  <mo stretchy="false">]</mo>
+</math></span>，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">parent</mtext>
+</math></span> 不在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nodes</mtext>
+</math></span> 中，我们就将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">parent</mtext>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nodes</mtext>
+</math></span>，并初始化一个值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">parent</mtext>
+</math></span> 的节点。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">child</mtext>
+</math></span> 不在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nodes</mtext>
+</math></span> 中，我们就将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">child</mtext>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nodes</mtext>
+</math></span>，并初始化一个值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">child</mtext>
+</math></span> 的节点。然后我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">child</mtext>
+</math></span> 加入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">children</mtext>
+</math></span>。</p>
+<p>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">isLeft</mtext>
+</math></span> 为真，我们就将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">child</mtext>
+</math></span> 作为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">parent</mtext>
+</math></span> 的左子节点，否则我们就将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">child</mtext>
+</math></span> 作为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">parent</mtext>
+</math></span> 的右子节点。</p>
+<p>最后，我们遍历 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">nodes</mtext>
+</math></span>，如果某个节点的值不在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">children</mtext>
+</math></span> 中，那么这个节点就是根节点，我们返回这个节点。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">descriptions</mtext>
+</math></span> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func createBinaryTree(descriptions [][]int) *TreeNode {</span></span>
+<span class="line"><span>	nodes := map[int]*TreeNode{}</span></span>
+<span class="line"><span>	children := map[int]bool{}</span></span>
+<span class="line"><span>	for _, d := range descriptions {</span></span>
+<span class="line"><span>		parent, child, isLeft := d[0], d[1], d[2]</span></span>
+<span class="line"><span>		if _, ok := nodes[parent]; !ok {</span></span>
+<span class="line"><span>			nodes[parent] = &#x26;TreeNode{Val: parent}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if _, ok := nodes[child]; !ok {</span></span>
+<span class="line"><span>			nodes[child] = &#x26;TreeNode{Val: child}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if isLeft == 1 {</span></span>
+<span class="line"><span>			nodes[parent].Left = nodes[child]</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			nodes[parent].Right = nodes[child]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		children[child] = true</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for k, v := range nodes {</span></span>
+<span class="line"><span>		if _, ok := children[k]; !ok {</span></span>
+<span class="line"><span>			return v</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return nil</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/create-binary-tree-from-descriptions" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2100-2199/2196.Create%20Binary%20Tree%20From%20Descriptions/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2236" tabindex="-1">2236. 判断根结点是否等于子结点之和 <a class="header-anchor" href="#q-2236" aria-label="Permalink to &quot;2236. 判断根结点是否等于子结点之和 {#q-2236}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个 <strong>二叉树 </strong>的根结点 <code>root</code>，该二叉树由恰好 <code>3</code> 个结点组成：根结点、左子结点和右子结点。</p>&#10;&#10;<p>如果根结点值等于两个子结点值之和，返回 <code>true</code> ，否则返回<em> </em><code>false</code> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2236.Root%20Equals%20Sum%20of%20Children/images/graph3drawio.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>root = [10,4,6]&#10;<strong>输出：</strong>true&#10;<strong>解释：</strong>根结点、左子结点和右子结点的值分别是 10 、4 和 6 。&#10;由于 10 等于 4 + 6 ，因此返回 true 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2236.Root%20Equals%20Sum%20of%20Children/images/graph3drawio-1.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>root = [5,3,1]&#10;<strong>输出：</strong>false&#10;<strong>解释：</strong>根结点、左子结点和右子结点的值分别是 5 、3 和 1 。&#10;由于 5 不等于 3 + 1 ，因此返回 false 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树只包含根结点、左子结点和右子结点</li>&#10;	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：直接判断 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>树恰好三个节点。只需比较根值是否等于左右孩子之和，常数时间即可，不必遍历或递归。</p>
+</blockquote>
+<p>我们直接判断根节点的值是否等于左右子节点的值之和即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func checkTree(root *TreeNode) bool {</span></span>
+<span class="line"><span>	return root.Val == root.Left.Val+root.Right.Val</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/root-equals-sum-of-children" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2236.Root%20Equals%20Sum%20of%20Children/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2265" tabindex="-1">2265. 统计值等于子树平均值的节点数 <a class="header-anchor" href="#q-2265" aria-label="Permalink to &quot;2265. 统计值等于子树平均值的节点数 {#q-2265}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一棵二叉树的根节点 <code>root</code> ，找出并返回满足要求的节点数，要求节点的值等于其 <strong>子树</strong> 中值的 <strong>平均值</strong> 。</p>&#10;&#10;<p><strong>注意：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n</code> 个元素的平均值可以由 <code>n</code> 个元素 <strong>求和</strong> 然后再除以 <code>n</code> ，并 <strong>向下舍入</strong> 到最近的整数。</li>&#10;	<li><code>root</code> 的 <strong>子树</strong> 由 <code>root</code> 和它的所有后代组成。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2265.Count%20Nodes%20Equal%20to%20Average%20of%20Subtree/images/image-20220315203925-1.png" loading="lazy">&#10;<pre><strong>输入：</strong>root = [4,8,5,0,1,null,6]&#10;<strong>输出：</strong>5&#10;<strong>解释：</strong>&#10;对值为 4 的节点：子树的平均值 (4 + 8 + 5 + 0 + 1 + 6) / 6 = 24 / 6 = 4 。&#10;对值为 5 的节点：子树的平均值 (5 + 6) / 2 = 11 / 2 = 5 。&#10;对值为 0 的节点：子树的平均值 0 / 1 = 0 。&#10;对值为 1 的节点：子树的平均值 1 / 1 = 1 。&#10;对值为 6 的节点：子树的平均值 6 / 1 = 6 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2265.Count%20Nodes%20Equal%20to%20Average%20of%20Subtree/images/image-20220326133920-1.png" loading="lazy">&#10;<pre><strong>输入：</strong>root = [1]&#10;<strong>输出：</strong>1&#10;<strong>解释：</strong>对值为 1 的节点：子树的平均值 1 / 1 = 1。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点数目在范围 <code>[1, 1000]</code> 内</li>&#10;	<li><code>0 &lt;= Node.val &lt;= 1000</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：DFS · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>统计子树平均值（向下取整）等于自身值的节点。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>3</mn>
+  </msup>
+</math></span>，对每个节点再扫一遍子树会重复。一次后序遍历即可带回子树和与节点数。</p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">dfs</mtext>
+</math></span> 返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>s</mi>
+  <mo>,</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，当前节点的平均为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mi>s</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>n</mi>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+</math></span>，与 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">root.val</mtext>
+</math></span> 比较后累加答案。空树返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们设计一个函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">dfs</mtext>
+</math></span>，它的作用是计算以当前节点为根的子树的和以及节点个数。</p>
+<p>函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">dfs</mtext>
+</math></span> 的执行过程如下：</p>
+<ul>
+<li>如果当前节点为空，返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li>否则，我们递归计算左右子树的和以及节点个数，分别记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">ls</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">ln</mtext>
+  <mo stretchy="false">)</mo>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mtext mathvariant="italic">rs</mtext>
+  <mo>,</mo>
+  <mtext mathvariant="italic">rn</mtext>
+  <mo stretchy="false">)</mo>
+</math></span>。那么，以当前节点为根的子树的和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s</mtext>
+</math></span> 和节点个数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">n</mtext>
+</math></span> 分别为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ls</mtext>
+  <mo>+</mo>
+  <mtext mathvariant="italic">rs</mtext>
+  <mo>+</mo>
+  <mtext mathvariant="italic">root.val</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ln</mtext>
+  <mo>+</mo>
+  <mtext mathvariant="italic">rn</mtext>
+  <mo>+</mo>
+  <mn>1</mn>
+</math></span>。如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s</mtext>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mtext mathvariant="italic">n</mtext>
+  <mo>=</mo>
+  <mtext mathvariant="italic">root.val</mtext>
+</math></span>，则说明当前节点满足题目要求，我们将答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ans</mtext>
+</math></span> 自增 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>。</li>
+<li>最后，函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">dfs</mtext>
+</math></span> 返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">s</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">n</mtext>
+</math></span>。</li>
+</ul>
+<p>我们初始化答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ans</mtext>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，然后调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">dfs</mtext>
+</math></span> 函数，最后返回答案 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">ans</mtext>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 表示二叉树的节点个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func averageOfSubtree(root *TreeNode) (ans int) {</span></span>
+<span class="line"><span>	var dfs func(root *TreeNode) (int, int)</span></span>
+<span class="line"><span>	dfs = func(root *TreeNode) (int, int) {</span></span>
+<span class="line"><span>		if root == nil {</span></span>
+<span class="line"><span>			return 0, 0</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ls, ln := dfs(root.Left)</span></span>
+<span class="line"><span>		rs, rn := dfs(root.Right)</span></span>
+<span class="line"><span>		s, n := ls+rs+root.Val, ln+rn+1</span></span>
+<span class="line"><span>		if s/n == root.Val {</span></span>
+<span class="line"><span>			ans++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return s, n</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs(root)</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/count-nodes-equal-to-average-of-subtree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2265.Count%20Nodes%20Equal%20to%20Average%20of%20Subtree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2277" tabindex="-1">2277. 树中最接近路径的节点 🔒 <a class="header-anchor" href="#q-2277" aria-label="Permalink to &quot;2277. 树中最接近路径的节点 🔒 {#q-2277}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、广度优先搜索、数组</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一个正整数 <code>n</code>，表示树中的节点数，编号从 <code>0</code> 到 <code>n - 1</code> (<strong>含边界</strong>)。还给定一个长度为 <code>n - 1</code> 的二维整数数组 <code>edges</code>，其中 <code>edges[i] = [node1<sub>i</sub>, node2<sub>i</sub>]</code> 表示有一条 <strong>双向 </strong>边连接树中的 <code>node1<sub>i</sub></code> 和 <code>node2<sub>i</sub></code>。</p>&#10;&#10;<p>给定一个长度为 <code>m</code> ，<strong>下标从 0 开始</strong> 的整数数组 <code>query</code>，其中 <code>query[i] = [start<sub>i</sub>, end<sub>i</sub>, node<sub>i</sub>]</code> 意味着对于第 <code>i</code> 个查询，您的任务是从 <code>start<sub>i</sub></code> 到 <code>end<sub>i</sub></code> 的路径上找到 <strong>最接近</strong> <code>node<sub>i</sub></code><sub> </sub>的节点。</p>&#10;&#10;<p>返回<em>长度为 <code>m</code> 的整数数组 </em><code>answer</code><em>，其中 </em><code>answer[i]</code> <em>是第 <code>i</code> 个查询的答案。</em></p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2277.Closest%20Node%20to%20Path%20in%20Tree/images/image-20220514132158-1.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> n = 7, edges = [[0,1],[0,2],[0,3],[1,4],[2,5],[2,6]], query = [[5,3,4],[5,3,6]]&#10;<strong>输出:</strong> [0,2]&#10;<strong>解释:</strong>&#10;节点 5 到节点 3 的路径由节点 5、2、0、3 组成。&#10;节点 4 到节点 0 的距离为 2。&#10;节点 0 是距离节点 4 最近的路径上的节点，因此第一个查询的答案是 0。&#10;节点 6 到节点 2 的距离为 1。&#10;节点 2 是距离节点 6 最近的路径上的节点，因此第二个查询的答案是 2。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2277.Closest%20Node%20to%20Path%20in%20Tree/images/image-20220514132318-2.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> n = 3, edges = [[0,1],[1,2]], query = [[0,1,2]]&#10;<strong>输出:</strong> [1]&#10;<strong>解释:</strong>&#10;从节点 0 到节点 1 的路径由节点 0,1 组成。&#10;节点 2 到节点 1 的距离为 1。&#10;节点 1 是距离节点 2 最近的路径上的节点，因此第一个查询的答案是 1。&#10;</pre>&#10;&#10;<p><strong>示例 3:</strong></p>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2200-2299/2277.Closest%20Node%20to%20Path%20in%20Tree/images/image-20220514132333-3.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> n = 3, edges = [[0,1],[1,2]], query = [[0,0,0]]&#10;<strong>输出:</strong> [0]&#10;<strong>解释:</strong>&#10;节点 0 到节点 0 的路径由节点 0 组成。&#10;因为 0 是路径上唯一的节点，所以第一个查询的答案是0。</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 1000</code></li>&#10;	<li><code>edges.length == n - 1</code></li>&#10;	<li><code>edges[i].length == 2</code></li>&#10;	<li><code>0 &lt;= node1<sub>i</sub>, node2<sub>i</sub> &lt;= n - 1</code></li>&#10;	<li><code>node1<sub>i</sub> != node2<sub>i</sub></code></li>&#10;	<li><code>1 &lt;= query.length &lt;= 1000</code></li>&#10;	<li><code>query[i].length == 3</code></li>&#10;	<li><code>0 &lt;= start<sub>i</sub>, end<sub>i</sub>, node<sub>i</sub> &lt;= n - 1</code></li>&#10;	<li>&#10;	<p>这个图是一个树。</p>&#10;	</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：Go 解法（本站整理） · Go 实现</summary>
+<p><a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2277.Closest%20Node%20to%20Path%20in%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 参考题解</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></p>
+<div v-pre>
+<p>根据题意整理：源文没有非空实现。树上点 node 到路径 start-end 的投影是三个两两 LCA 中深度最大的节点。先迭代遍历建立深度和倍增祖先表，每个询问计算 LCA(start,end)、LCA(start,node)、LCA(end,node)，取最深者。n 为节点数，q 为询问数，时间 O((n+q) log n)，空间 O(n log n)。入口 closestNode，节点编号为 0..n-1；n=1 也适用。</p>
+<p>出处：<a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2277.Closest%20Node%20to%20Path%20in%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 原题与题解</a>，固定提交 91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011；题意、参考及本 Go 改写采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>// 题意与参考：Doocs LeetCode，CC BY-SA 4.0。</span></span>
+<span class="line"><span>// https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2277.Closest%20Node%20to%20Path%20in%20Tree/README.md</span></span>
+<span class="line"><span>// Go 实现与测试沿用 CC BY-SA 4.0；来源性质见配套说明。</span></span>
+<span class="line"><span>import "math/bits"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>func closestNode(n int, edges, query [][]int) []int {</span></span>
+<span class="line"><span>	graph := make([][]int, n)</span></span>
+<span class="line"><span>	for _, e := range edges {</span></span>
+<span class="line"><span>		graph[e[0]] = append(graph[e[0]], e[1])</span></span>
+<span class="line"><span>		graph[e[1]] = append(graph[e[1]], e[0])</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	log := bits.Len(uint(n))</span></span>
+<span class="line"><span>	up := make([][]int, log)</span></span>
+<span class="line"><span>	for i := range up {</span></span>
+<span class="line"><span>		up[i] = make([]int, n)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	depth := make([]int, n)</span></span>
+<span class="line"><span>	queue := []int{0}</span></span>
+<span class="line"><span>	for head := 0; head &#x3C; len(queue); head++ {</span></span>
+<span class="line"><span>		u := queue[head]</span></span>
+<span class="line"><span>		for _, v := range graph[u] {</span></span>
+<span class="line"><span>			if v == up[0][u] {</span></span>
+<span class="line"><span>				continue</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			depth[v] = depth[u] + 1</span></span>
+<span class="line"><span>			up[0][v] = u</span></span>
+<span class="line"><span>			for j := 1; j &#x3C; log; j++ {</span></span>
+<span class="line"><span>				up[j][v] = up[j-1][up[j-1][v]]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			queue = append(queue, v)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	lca := func(a, b int) int {</span></span>
+<span class="line"><span>		if depth[a] &#x3C; depth[b] {</span></span>
+<span class="line"><span>			a, b = b, a</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		diff := depth[a] - depth[b]</span></span>
+<span class="line"><span>		for j := 0; j &#x3C; log; j++ {</span></span>
+<span class="line"><span>			if diff&#x26;(1&#x3C;&#x3C;j) != 0 {</span></span>
+<span class="line"><span>				a = up[j][a]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if a == b {</span></span>
+<span class="line"><span>			return a</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for j := log - 1; j >= 0; j-- {</span></span>
+<span class="line"><span>			if up[j][a] != up[j][b] {</span></span>
+<span class="line"><span>				a, b = up[j][a], up[j][b]</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return up[0][a]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := make([]int, len(query))</span></span>
+<span class="line"><span>	for i, q := range query {</span></span>
+<span class="line"><span>		a, b, c := lca(q[0], q[1]), lca(q[0], q[2]), lca(q[1], q[2])</span></span>
+<span class="line"><span>		if depth[b] > depth[a] {</span></span>
+<span class="line"><span>			a = b</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if depth[c] > depth[a] {</span></span>
+<span class="line"><span>			a = c</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans[i] = a</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/closest-node-to-path-in-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2200-2299/2277.Closest%20Node%20to%20Path%20in%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2313" tabindex="-1">2313. 二叉树中得到结果所需的最少翻转次数 🔒 <a class="header-anchor" href="#q-2313" aria-label="Permalink to &quot;2313. 二叉树中得到结果所需的最少翻转次数 🔒 {#q-2313}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、动态规划、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定<strong>二叉树</strong>的根 <code>root</code>，具有以下属性:</p>&#10;&#10;<ul>&#10;	<li><strong>叶节点 </strong>的值为 <code>0</code> 或 <code>1</code>，分别表示 <code>false</code> 和 <code>true</code>。</li>&#10;	<li><strong>非叶节点</strong>的值为 <code>2</code>、<code>3</code>、<code>4</code>、<code>5</code>，分别表示布尔运算 <code>OR</code>, <code>AND</code>, <code>XOR</code>, <code>NOT</code>。</li>&#10;</ul>&#10;&#10;<p>您还将得到一个布尔型 <code>result</code>，这是 <code>root</code> 节点的期望 <strong>评价</strong><strong> </strong>结果。</p>&#10;&#10;<p>对节点的评价计算如下:</p>&#10;&#10;<ul>&#10;	<li>如果节点是叶节点，则评价是节点的 <strong>值</strong>，即 <code>true</code> 或 <code>false</code>.</li>&#10;	<li>否则, 将其值的布尔运算应用于子节点的 <strong>评价</strong>，该节点的 <strong>评价 </strong>即为布尔运算后的结果。</li>&#10;</ul>&#10;&#10;<p>在一个操作中，您可以 <strong>翻转 </strong>一个叶节点，这将导致一个 <code>false</code> 节点变为 <code>true</code> 节点，一个 <code>true</code> 节点变为 <code>false</code> 节点。</p>&#10;&#10;<p>返回<em>需要执行的最小操作数，以使 </em><code>root</code><em> 的</em><em>评价得到 </em><code>result</code>。可以证明，总有办法达到 <code>result</code>。</p>&#10;&#10;<p><strong>叶节点 </strong>是没有子节点的节点。</p>&#10;&#10;<p>注意: <code>NOT</code> 节点只有左孩子或只有右孩子，但其他非叶节点同时拥有左孩子和右孩子。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2300-2399/2313.Minimum%20Flips%20in%20Binary%20Tree%20to%20Get%20Result/images/operationstree.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> root = [3,5,4,2,null,1,1,1,0], result = true&#10;<strong>输出:</strong> 2&#10;<strong>解释:</strong>&#10;可以证明，至少需要翻转 2 个节点才能使树的 root 评价为 true。上面的图显示了实现这一目标的一种方法。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;&#10;<pre>&#10;<strong>输入:</strong> root = [0], result = false&#10;<strong>输出:</strong> 0&#10;<strong>解释:</strong>&#10;树的 root 的评价已经为 false，所以 0 个节点必须翻转。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li>树中的节点数在 <code>[1, 10<sup>5</sup>]</code> 范围内。</li>&#10;	<li><code>0 &lt;= Node.val &lt;= 5</code></li>&#10;	<li><code>OR</code>, <code>AND</code>, <code>XOR</code> 节点有 <code>2</code> 个子节点。</li>&#10;	<li><code>NOT</code> 只有一个 <code>1</code> 子节点。</li>&#10;	<li>叶节点的值为 <code>0</code> 或 <code>1</code>.</li>&#10;	<li>非叶节点的值为<code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>.</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：树形 DP + 分情况讨论 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每个叶子可翻 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>1</mn>
+</math></span>，内部结点是逻辑运算。对每个叶子尝试翻转再求值，状态数为指数级，树至多上千结点时不可行。</p>
+<p>一棵子树对答案的贡献只体现为把它算成假或真的最少翻转。自底向上返回二元组：代价做成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mi>a</mi>
+  <mi>l</mi>
+  <mi>s</mi>
+  <mi>e</mi>
+</math></span> 与做成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mi>r</mi>
+  <mi>u</mi>
+  <mi>e</mi>
+</math></span>。按结点类型（叶、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mi>R</mi>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mi>N</mi>
+  <mi>D</mi>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>X</mi>
+  <mi>O</mi>
+  <mi>R</mi>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>N</mi>
+  <mi>O</mi>
+  <mi>T</mi>
+</math></span>）组合左右儿子的四种或两种情形，根上取目标真值对应的那一维。</p>
+</blockquote>
+<p>我们定义一个函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，它的返回值是一个长度为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span> 的数组，其中第一个表示将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 节点的值变成 <code v-pre>false</code> 所需要的最少翻转次数，第二个表示将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 节点的值变成 <code v-pre>true</code> 所需要的最少翻转次数。那么答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mi>u</mi>
+  <mi>l</mi>
+  <mi>t</mi>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+<p>函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的实现如下：</p>
+<p>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 为空，那么返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mo>+</mo>
+  <mi mathvariant="normal">&#x221E;</mi>
+  <mo>,</mo>
+  <mo>+</mo>
+  <mi mathvariant="normal">&#x221E;</mi>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+<p>否则，我们记 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span>，左子树的返回值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+</math></span>，右子树的返回值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+</math></span>，然后分情况讨论：</p>
+<ul>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>&#x2208;</mo>
+  <mo fence="false" stretchy="false">{</mo>
+  <mn>0</mn>
+  <mo>,</mo>
+  <mn>1</mn>
+  <mo fence="false" stretchy="false">}</mo>
+</math></span>，那么返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo>,</mo>
+  <mi>x</mi>
+  <mo>&#x2295;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span>。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+</math></span>，即布尔运算符是 <code v-pre>OR</code>，为了使 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的值为 <code v-pre>false</code>，我们需要将左右子树的值都变成 <code v-pre>false</code>，因此返回值的第一个元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+</math></span>；为了使 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的值为 <code v-pre>true</code>，我们需要将左右子树的值中至少有一个变成 <code v-pre>true</code>，因此返回值的第二个元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>3</mn>
+</math></span>，即布尔运算符是 <code v-pre>AND</code>，为了使 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的值为 <code v-pre>false</code>，我们需要将左右子树的值中至少有一个变成 <code v-pre>false</code>，因此返回值的第一个元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+</math></span>；为了使 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的值为 <code v-pre>true</code>，我们需要将左右子树的值都变成 <code v-pre>true</code>，因此返回值的第二个元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span>。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>4</mn>
+</math></span>，即布尔运算符是 <code v-pre>XOR</code>，为了使 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的值为 <code v-pre>false</code>，我们需要将左右子树的值同为 <code v-pre>false</code> 或同为 <code v-pre>true</code>，因此返回值的第一个元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+</math></span>；为了使 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的值为 <code v-pre>true</code>，我们需要将左右子树的值不同，因此返回值的第二个元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>+</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>5</mn>
+</math></span>，即布尔运算符是 <code v-pre>NOT</code>，为了使 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的值为 <code v-pre>false</code>，我们需要将左右子树的值中至少有一个变成 <code v-pre>true</code>，因此返回值的第一个元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+</math></span>；为了使 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+</math></span> 的值为 <code v-pre>true</code>，我们需要将左右子树的值中至少有一个变成 <code v-pre>false</code>，因此返回值的第二个元素为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>l</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo stretchy="false">)</mo>
+</math></span>。</li>
+</ul>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func minimumFlips(root *TreeNode, result bool) int {</span></span>
+<span class="line"><span>	var dfs func(*TreeNode) (int, int)</span></span>
+<span class="line"><span>	dfs = func(root *TreeNode) (int, int) {</span></span>
+<span class="line"><span>		if root == nil {</span></span>
+<span class="line"><span>			return 1 &#x3C;&#x3C; 30, 1 &#x3C;&#x3C; 30</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		x := root.Val</span></span>
+<span class="line"><span>		if x &#x3C; 2 {</span></span>
+<span class="line"><span>			return x, x ^ 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		l0, l1 := dfs(root.Left)</span></span>
+<span class="line"><span>		r0, r1 := dfs(root.Right)</span></span>
+<span class="line"><span>		var a, b int</span></span>
+<span class="line"><span>		if x == 2 {</span></span>
+<span class="line"><span>			a = l0 + r0</span></span>
+<span class="line"><span>			b = min(l0+r1, min(l1+r0, l1+r1))</span></span>
+<span class="line"><span>		} else if x == 3 {</span></span>
+<span class="line"><span>			a = min(l0+r0, min(l0+r1, l1+r0))</span></span>
+<span class="line"><span>			b = l1 + r1</span></span>
+<span class="line"><span>		} else if x == 4 {</span></span>
+<span class="line"><span>			a = min(l0+r0, l1+r1)</span></span>
+<span class="line"><span>			b = min(l0+r1, l1+r0)</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			a = min(l1, r1)</span></span>
+<span class="line"><span>			b = min(l0, r0)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return a, b</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	a, b := dfs(root)</span></span>
+<span class="line"><span>	if result {</span></span>
+<span class="line"><span>		return b</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return a</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/minimum-flips-in-binary-tree-to-get-result" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2313.Minimum%20Flips%20in%20Binary%20Tree%20to%20Get%20Result/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2322" tabindex="-1">2322. 从树中删除边的最小分数 <a class="header-anchor" href="#q-2322" aria-label="Permalink to &quot;2322. 从树中删除边的最小分数 {#q-2322}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：位运算、树、深度优先搜索、数组</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>存在一棵无向连通树，树中有编号从 <code>0</code> 到 <code>n - 1</code> 的 <code>n</code> 个节点， 以及 <code>n - 1</code> 条边。</p>&#10;&#10;<p>给你一个下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> ，长度为 <code>n</code> ，其中 <code>nums[i]</code> 表示第 <code>i</code> 个节点的值。另给你一个二维整数数组 <code>edges</code> ，长度为 <code>n - 1</code> ，其中 <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> 表示树中存在一条位于节点 <code>a<sub>i</sub></code> 和 <code>b<sub>i</sub></code> 之间的边。</p>&#10;&#10;<p>删除树中两条 <strong>不同</strong> 的边以形成三个连通组件。对于一种删除边方案，定义如下步骤以计算其分数：</p>&#10;&#10;<ol>&#10;	<li>分别获取三个组件 <strong>每个</strong> 组件中所有节点值的异或值。</li>&#10;	<li><strong>最大</strong> 异或值和 <strong>最小</strong> 异或值的 <strong>差值</strong> 就是这一种删除边方案的分数。</li>&#10;</ol>&#10;&#10;<ul>&#10;	<li>例如，三个组件的节点值分别是：<code>[4,5,7]</code>、<code>[1,9]</code> 和 <code>[3,3,3]</code> 。三个异或值分别是 <code>4 ^ 5 ^ 7 = <em><strong>6</strong></em></code>、<code>1 ^ 9 = <em><strong>8</strong></em></code> 和 <code>3 ^ 3 ^ 3 = <em><strong>3</strong></em></code> 。最大异或值是 <code>8</code> ，最小异或值是 <code>3</code> ，分数是 <code>8 - 3 = 5</code> 。</li>&#10;</ul>&#10;&#10;<p>返回在给定树上执行任意删除边方案可能的 <strong>最小</strong> 分数。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2300-2399/2322.Minimum%20Score%20After%20Removals%20on%20a%20Tree/images/ex1drawio.png" loading="lazy">&#10;<pre><strong>输入：</strong>nums = [1,5,5,4,11], edges = [[0,1],[1,2],[1,3],[3,4]]&#10;<strong>输出：</strong>9&#10;<strong>解释：</strong>上图展示了一种删除边方案。&#10;- 第 1 个组件的节点是 [1,3,4] ，值是 [5,4,11] 。异或值是 5 ^ 4 ^ 11 = 10 。&#10;- 第 2 个组件的节点是 [0] ，值是 [1] 。异或值是 1 = 1 。&#10;- 第 3 个组件的节点是 [2] ，值是 [5] 。异或值是 5 = 5 。&#10;分数是最大异或值和最小异或值的差值，10 - 1 = 9 。&#10;可以证明不存在分数比 9 小的删除边方案。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2300-2399/2322.Minimum%20Score%20After%20Removals%20on%20a%20Tree/images/ex2drawio.png" loading="lazy">&#10;<pre><strong>输入：</strong>nums = [5,5,2,4,4,2], edges = [[0,1],[1,2],[5,2],[4,3],[1,3]]&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>上图展示了一种删除边方案。&#10;- 第 1 个组件的节点是 [3,4] ，值是 [4,4] 。异或值是 4 ^ 4 = 0 。&#10;- 第 2 个组件的节点是 [1,0] ，值是 [5,5] 。异或值是 5 ^ 5 = 0 。&#10;- 第 3 个组件的节点是 [2,5] ，值是 [2,2] 。异或值是 2 ^ 2 = 0 。&#10;分数是最大异或值和最小异或值的差值，0 - 0 = 0 。&#10;无法获得比 0 更小的分数 0 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == nums.length</code></li>&#10;	<li><code>3 &lt;= n &lt;= 1000</code></li>&#10;	<li><code>1 &lt;= nums[i] &lt;= 10<sup>8</sup></code></li>&#10;	<li><code>edges.length == n - 1</code></li>&#10;	<li><code>edges[i].length == 2</code></li>&#10;	<li><code>0 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt; n</code></li>&#10;	<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>&#10;	<li><code>edges</code> 表示一棵有效的树</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：DFS + 子树异或和 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>删两条边得到三块，分数为三块异或和的极差。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>1000</mn>
+</math></span>，枚举边对再各算一遍异或过于笨重。整树异或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 固定，一块的异或等于其子树异或。</p>
+<p>先指定一条被删边，得到含根块异或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>。再在该块内 DFS，每个子树异或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 对应第二条删除。三块即为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&#x2295;</mo>
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>&#x2295;</mo>
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>。枚举根与邻边覆盖所有无序边对。</p>
+</blockquote>
+<p>我们记树的异或和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>=</mo>
+  <mtext>nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2295;</mo>
+  <mtext>nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2295;</mo>
+  <mo>&#x2026;</mo>
+  <mo>&#x2295;</mo>
+  <mtext>nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+<p>接下来，枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>0.</mn>
+  <mo>.</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的每个点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 作为树的根节点，将根节点与某个子节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 相连的边作为第一条被删除的边。这样我们就获得了两个连通块，我们记包含根节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的连通块的异或和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>，然后我们对包含根节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的连通块进行 DFS，计算出每个子树的异或和，记每次 DFS 计算出的子树异或和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>。那么三个连通块的异或和分别为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&#x2295;</mo>
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>, <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>&#x2295;</mo>
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>。我们需要计算这三个异或和的最大值和最小值，记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mx</mtext>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mn</mtext>
+</math></span>，那么对于枚举的每一种情况，得到的分数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">mx</mtext>
+  <mo>&#x2212;</mo>
+  <mtext mathvariant="italic">mn</mtext>
+</math></span>。求所有情况的最小值作为答案。</p>
+<p>计算每个子树的异或和可以通过 DFS 实现。定义一个函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>dfs</mtext>
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo>,</mo>
+  <mi>f</mi>
+  <mi>a</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，表示从节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 开始 DFS，而 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>f</mi>
+  <mi>a</mi>
+</math></span> 是节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的父节点。函数返回值为以节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 为根的子树的异或和。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func minimumScore(nums []int, edges [][]int) int {</span></span>
+<span class="line"><span>	n := len(nums)</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	for _, e := range edges {</span></span>
+<span class="line"><span>		a, b := e[0], e[1]</span></span>
+<span class="line"><span>		g[a] = append(g[a], b)</span></span>
+<span class="line"><span>		g[b] = append(g[b], a)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	s, s1 := 0, 0</span></span>
+<span class="line"><span>	ans := math.MaxInt32</span></span>
+<span class="line"><span>	for _, x := range nums {</span></span>
+<span class="line"><span>		s ^= x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var dfs func(i, fa int) int</span></span>
+<span class="line"><span>	dfs = func(i, fa int) int {</span></span>
+<span class="line"><span>		res := nums[i]</span></span>
+<span class="line"><span>		for _, j := range g[i] {</span></span>
+<span class="line"><span>			if j != fa {</span></span>
+<span class="line"><span>				res ^= dfs(j, i)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return res</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var dfs2 func(i, fa int) int</span></span>
+<span class="line"><span>	dfs2 = func(i, fa int) int {</span></span>
+<span class="line"><span>		res := nums[i]</span></span>
+<span class="line"><span>		for _, j := range g[i] {</span></span>
+<span class="line"><span>			if j != fa {</span></span>
+<span class="line"><span>				s2 := dfs2(j, i)</span></span>
+<span class="line"><span>				res ^= s2</span></span>
+<span class="line"><span>				mx := max(s^s1, s2, s1^s2)</span></span>
+<span class="line"><span>				mn := min(s^s1, s2, s1^s2)</span></span>
+<span class="line"><span>				ans = min(ans, mx-mn)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return res</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		for _, j := range g[i] {</span></span>
+<span class="line"><span>			s1 = dfs(i, j)</span></span>
+<span class="line"><span>			dfs2(i, j)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：显式栈 + 子树异或和 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>删去两条边会得到三个连通块，分数是这三块异或和的极差。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>1000</mn>
+</math></span>，若对每对边都重新遍历整棵树，常数会偏大。整树异或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 是定值，删去一条边后，一侧连通块的异或等于按该边定向后的子树异或。先枚举第一条被删边，求出含当前根的那一块异或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>，再把该块里每个子树异或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 当作第二条删除，三块就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&#x2295;</mo>
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>&#x2295;</mo>
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>。沿一条链递归计算这些子树异或时，调用深度等于节点数，在 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>=</mo>
+  <mn>1000</mn>
+</math></span> 时会超出 Python 的递归上限。因此栈中保存 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#x8282;</mi>
+  <mi mathvariant="normal">&#x70B9;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x7236;</mi>
+  <mi mathvariant="normal">&#x8282;</mi>
+  <mi mathvariant="normal">&#x70B9;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x72B6;</mi>
+  <mi mathvariant="normal">&#x6001;</mi>
+  <mo stretchy="false">)</mo>
+</math></span>：状态 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 先压入退出标记再压入子节点，状态 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 在子树异或就绪后写回当前节点。第一次栈求出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>，第二次栈对每个子树 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 更新极差。</p>
+</blockquote>
+<p>我们记树的异或和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>=</mo>
+  <mtext>nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mn>0</mn>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2295;</mo>
+  <mtext>nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+  <mo>&#x2295;</mo>
+  <mo>&#x2026;</mo>
+  <mo>&#x2295;</mo>
+  <mtext>nums</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+<p>接下来，枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">[</mo>
+  <mn>0.</mn>
+  <mo>.</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 的每个点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>，并把 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与某个邻接点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 之间的边当作第一条被删除的边。这样得到两个连通块。记包含 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 的连通块的异或和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>，再在这块里面求出每个子树的异或和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>。三个连通块的异或和分别是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mo>&#x2295;</mo>
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>&#x2295;</mo>
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span>。它们的最大值与最小值之差就是当前删边方案的分数，答案取所有方案的最小值。枚举每个点及其每条邻边，可以覆盖所有无序边对。</p>
+<p>子树异或用显式栈按后序计算。栈中元素是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#x8282;</mi>
+  <mi mathvariant="normal">&#x70B9;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x7236;</mi>
+  <mi mathvariant="normal">&#x8282;</mi>
+  <mi mathvariant="normal">&#x70B9;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x72B6;</mi>
+  <mi mathvariant="normal">&#x6001;</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。状态为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 时先压入退出标记，再压入除父节点以外的邻接点；状态为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 时把各子树异或与自身值异或，得到以当前节点为根的子树异或。第一次栈只取包含 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>、且不经过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>j</mi>
+</math></span> 的那一块异或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>1</mn>
+  </msub>
+</math></span>。第二次栈在算出每个子树异或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>s</mi>
+    <mn>2</mn>
+  </msub>
+</math></span> 后，用上面的三个值更新答案。子节点的处理顺序不影响极差。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <msup>
+    <mi>n</mi>
+    <mn>2</mn>
+  </msup>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func minimumScore(nums []int, edges [][]int) int {</span></span>
+<span class="line"><span>	n := len(nums)</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	for _, e := range edges {</span></span>
+<span class="line"><span>		a, b := e[0], e[1]</span></span>
+<span class="line"><span>		g[a] = append(g[a], b)</span></span>
+<span class="line"><span>		g[b] = append(g[b], a)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	s := 0</span></span>
+<span class="line"><span>	for _, x := range nums {</span></span>
+<span class="line"><span>		s ^= x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	componentXor := func(root, ban int) int {</span></span>
+<span class="line"><span>		sub := make([]int, n)</span></span>
+<span class="line"><span>		stk := [][3]int{{root, ban, 0}}</span></span>
+<span class="line"><span>		for len(stk) > 0 {</span></span>
+<span class="line"><span>			cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>			stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>			i, fa, state := cur[0], cur[1], cur[2]</span></span>
+<span class="line"><span>			if state == 0 {</span></span>
+<span class="line"><span>				stk = append(stk, [3]int{i, fa, 1})</span></span>
+<span class="line"><span>				for _, j := range g[i] {</span></span>
+<span class="line"><span>					if j != fa {</span></span>
+<span class="line"><span>						stk = append(stk, [3]int{j, i, 0})</span></span>
+<span class="line"><span>					}</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				res := nums[i]</span></span>
+<span class="line"><span>				for _, j := range g[i] {</span></span>
+<span class="line"><span>					if j != fa {</span></span>
+<span class="line"><span>						res ^= sub[j]</span></span>
+<span class="line"><span>					}</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				sub[i] = res</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return sub[root]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	collect := func(root, ban, s1 int) int {</span></span>
+<span class="line"><span>		ans := math.MaxInt32</span></span>
+<span class="line"><span>		sub := make([]int, n)</span></span>
+<span class="line"><span>		stk := [][3]int{{root, ban, 0}}</span></span>
+<span class="line"><span>		for len(stk) > 0 {</span></span>
+<span class="line"><span>			cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>			stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>			i, fa, state := cur[0], cur[1], cur[2]</span></span>
+<span class="line"><span>			if state == 0 {</span></span>
+<span class="line"><span>				stk = append(stk, [3]int{i, fa, 1})</span></span>
+<span class="line"><span>				for _, j := range g[i] {</span></span>
+<span class="line"><span>					if j != fa {</span></span>
+<span class="line"><span>						stk = append(stk, [3]int{j, i, 0})</span></span>
+<span class="line"><span>					}</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				res := nums[i]</span></span>
+<span class="line"><span>				for _, j := range g[i] {</span></span>
+<span class="line"><span>					if j != fa {</span></span>
+<span class="line"><span>						s2 := sub[j]</span></span>
+<span class="line"><span>						res ^= s2</span></span>
+<span class="line"><span>						mx := max(s^s1, s2, s1^s2)</span></span>
+<span class="line"><span>						mn := min(s^s1, s2, s1^s2)</span></span>
+<span class="line"><span>						ans = min(ans, mx-mn)</span></span>
+<span class="line"><span>					}</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				sub[i] = res</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return ans</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := math.MaxInt32</span></span>
+<span class="line"><span>	for i := 0; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		for _, j := range g[i] {</span></span>
+<span class="line"><span>			s1 := componentXor(i, j)</span></span>
+<span class="line"><span>			ans = min(ans, collect(i, j, s1))</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/minimum-score-after-removals-on-a-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2322.Minimum%20Score%20After%20Removals%20on%20a%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2331" tabindex="-1">2331. 计算布尔二叉树的值 <a class="header-anchor" href="#q-2331" aria-label="Permalink to &quot;2331. 计算布尔二叉树的值 {#q-2331}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="简单">简单</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一棵 <strong>完整二叉树</strong> 的根，这棵树有以下特征：</p>&#10;&#10;<ul>&#10;	<li><strong>叶子节点</strong> 要么值为 <code>0</code> 要么值为 <code>1</code> ，其中 <code>0</code> 表示 <code>False</code> ，<code>1</code> 表示 <code>True</code> 。</li>&#10;	<li><strong>非叶子节点 </strong>要么值为 <code>2</code> 要么值为 <code>3</code> ，其中 <code>2</code> 表示逻辑或 <code>OR</code> ，<code>3</code> 表示逻辑与 <code>AND</code> 。</li>&#10;</ul>&#10;&#10;<p><strong>计算</strong> 一个节点的值方式如下：</p>&#10;&#10;<ul>&#10;	<li>如果节点是个叶子节点，那么节点的 <strong>值</strong> 为它本身，即 <code>True</code> 或者 <code>False</code> 。</li>&#10;	<li>否则，<strong>计算</strong> 两个孩子的节点值，然后将该节点的运算符对两个孩子值进行 <strong>运算</strong> 。</li>&#10;</ul>&#10;&#10;<p>返回根节点<em> </em><code>root</code> 的布尔运算值。</p>&#10;&#10;<p><strong>完整二叉树</strong> 是每个节点有 <code>0</code> 个或者 <code>2</code> 个孩子的二叉树。</p>&#10;&#10;<p><strong>叶子节点</strong> 是没有孩子的节点。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2300-2399/2331.Evaluate%20Boolean%20Binary%20Tree/images/example1drawio1.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>root = [2,1,3,null,null,0,1]&#10;<b>输出：</b>true&#10;<b>解释：</b>上图展示了计算过程。&#10;AND 与运算节点的值为 False AND True = False 。&#10;OR 运算节点的值为 True OR False = True 。&#10;根节点的值为 True ，所以我们返回 true 。</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><b>输入：</b>root = [0]&#10;<b>输出：</b>false&#10;<b>解释：</b>根节点是叶子节点，且值为 false，所以我们返回 false 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点数目在 <code>[1, 1000]</code> 之间。</li>&#10;	<li><code>0 &lt;= Node.val &lt;= 3</code></li>&#10;	<li>每个节点的孩子数为 <code>0</code> 或 <code>2</code> 。</li>&#10;	<li>叶子节点的值为 <code>0</code> 或 <code>1</code> 。</li>&#10;	<li>非叶子节点的值为 <code>2</code> 或 <code>3</code> 。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：递归 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>叶子为真假，内部结点是或与与。树至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1000</mn>
+</math></span> 个结点，按定义求值即可。</p>
+<p>左子为空则返回叶子布尔值；否则对左右子树递归后按结点值选择 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>o</mi>
+  <mi>r</mi>
+</math></span> 或 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mi>n</mi>
+  <mi>d</mi>
+</math></span>。每个结点访问一次。</p>
+</blockquote>
+<p>我们可以使用递归的方式来求解本题。</p>
+<p>对于当前节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">root</mtext>
+</math></span>：</p>
+<ul>
+<li>如果其左孩子为空，说明当前节点是叶子节点。如果当前节点的值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">true</mtext>
+</math></span>，否则返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">false</mtext>
+</math></span>；</li>
+<li>如果当前节点的值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn>
+</math></span>，则返回其左孩子和右孩子的递归结果的逻辑或，否则返回其左孩子和右孩子的递归结果的逻辑与。</li>
+</ul>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为二叉树的节点个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func evaluateTree(root *TreeNode) bool {</span></span>
+<span class="line"><span>	if root.Left == nil {</span></span>
+<span class="line"><span>		return root.Val == 1</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	if root.Val == 2 {</span></span>
+<span class="line"><span>		return evaluateTree(root.Left) || evaluateTree(root.Right)</span></span>
+<span class="line"><span>	} else {</span></span>
+<span class="line"><span>		return evaluateTree(root.Left) &#x26;&#x26; evaluateTree(root.Right)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/evaluate-boolean-binary-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2331.Evaluate%20Boolean%20Binary%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2378" tabindex="-1">2378. 选择边来最大化树的得分 🔒 <a class="header-anchor" href="#q-2378" aria-label="Permalink to &quot;2378. 选择边来最大化树的得分 🔒 {#q-2378}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、动态规划</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给定一个 <strong>加权 </strong>树，由 <code>n</code> 个节点组成，从 <code>0</code> 到 <code>n - 1</code>。</p>&#10;&#10;<p>该树以节点 0 为 <strong>根</strong>，用大小为 <code>n</code> 的二维数组 <code>edges</code> 表示，其中 <code>edges[i] = [par<sub>i</sub>, weight<sub>i</sub>]</code> 表示节点 <code>par<sub>i</sub></code> 是节点 <code>i</code> 的 <strong>父 </strong>节点，它们之间的边的权重等于 <code>weight<sub>i</sub></code>。因为根结点 <strong>没有 </strong>父结点，所以有 <code>edges[0] = [-1, -1]</code>。</p>&#10;&#10;<p>从树中选择一些边，使所选的两条边都不 <strong>相邻</strong>，所选边的权值之 <strong>和</strong> 最大。</p>&#10;&#10;<p> </p>&#10;&#10;<p>返回<em>所选边的 <strong>最大 </strong>和。</em></p>&#10;&#10;<p><strong>注意</strong>:</p>&#10;&#10;<ul>&#10;	<li>你可以 <strong>不选择 </strong>树中的任何边，在这种情况下权值和将为 <code>0</code>。</li>&#10;	<li>如果树中的两条边 <code>Edge<sub>1</sub></code> 和 <code>Edge<sub>2</sub></code> 有一个 <strong>公共 </strong>节点，它们就是 <strong>相邻 </strong>的。&#10;	<ul>&#10;		<li>换句话说，如果 <code>Edge<sub>1</sub></code>连接节点 <code>a</code> 和 <code>b</code>, <code>Edge<sub>2</sub></code> 连接节点 <code>b</code> 和 <code>c</code>，它们是相邻的。</li>&#10;	</ul>&#10;	</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2300-2399/2378.Choose%20Edges%20to%20Maximize%20Score%20in%20a%20Tree/images/treedrawio.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> edges = [[-1,-1],[0,5],[0,10],[2,6],[2,4]]&#10;<strong>输出:</strong> 11&#10;<strong>解释:</strong> 上面的图表显示了我们必须选择红色的边。&#10;总分是 5 + 6 = 11.&#10;可以看出，没有更好的分数可以获得。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2300-2399/2378.Choose%20Edges%20to%20Maximize%20Score%20in%20a%20Tree/images/treee1293712983719827.png" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> edges = [[-1,-1],[0,5],[0,-6],[0,7]]&#10;<strong>输出:</strong> 7&#10;<strong>解释:</strong> 我们选择权值为 7 的边。&#10;注意，我们不能选择一条以上的边，因为所有的边都是彼此相邻的。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li><code>n == edges.length</code></li>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>edges[i].length == 2</code></li>&#10;	<li><code>par<sub>0</sub> == weight<sub>0</sub> == -1</code></li>&#10;	<li><code>i >= 1</code> 时 <code>0 &lt;= par<sub>i</sub> &lt;= n - 1</code> 。</li>&#10;	<li><code>par<sub>i</sub> != i</code></li>&#10;	<li><code>i >= 1</code> 时 <code>-10<sup>6</sup> &lt;= weight<sub>i</sub> &lt;= 10<sup>6</sup></code> 。</li>&#10;	<li><code>edges</code> 表示有效的树。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：树形 DP · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>在树中选一组不相邻的边使权和最大。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 与树同阶时，选或不选一条边只影响其两端。</p>
+<p><span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 返回二元组：连向父边被选时的最大权和，以及不被选时的最大权和。前者只能累加儿子「不选父边」的值；后者可在至多一个儿子上改选「选父边」并加上该边权。</p>
+</blockquote>
+<p>我们设计一个函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>i</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，表示以节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 为根的子树中，选择一些边，使得所选的两条边都不相邻，所选边的权值之和最大。该函数返回了两个值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，第一个值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 表示当前节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与其父节点之间的边被选中时，所选边的权值之和；第二个值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 表示当前节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与其父节点之间的边不被选中时，所选边的权值之和。</p>
+<p>我们可以发现，对于当前节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>：</p>
+<ul>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与父节点的边被选择，则它与子节点的所有边都不能被选择，那么当前节点的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 值就是其所有子节点的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 值之和；</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与父节点的边没被选择，那么可以选择它与子节点的最多一条边，那么当前节点的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 值就是其选中的子节点的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 值与未选中的子节点的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 值之和，再加上 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与选中的子节点之间的边的权值。</li>
+</ul>
+<p>我们调用 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mn>0</mn>
+  <mo stretchy="false">)</mo>
+</math></span> 函数，返回的第二个值即为答案，即当前根节点不与父节点之间的边被选中时，所选边的权值之和。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func maxScore(edges [][]int) int64 {</span></span>
+<span class="line"><span>	n := len(edges)</span></span>
+<span class="line"><span>	g := make([][][2]int, n)</span></span>
+<span class="line"><span>	for i := 1; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		p, w := edges[i][0], edges[i][1]</span></span>
+<span class="line"><span>		g[p] = append(g[p], [2]int{i, w})</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var dfs func(int) [2]int</span></span>
+<span class="line"><span>	dfs = func(i int) [2]int {</span></span>
+<span class="line"><span>		var a, b, t int</span></span>
+<span class="line"><span>		for _, e := range g[i] {</span></span>
+<span class="line"><span>			j, w := e[0], e[1]</span></span>
+<span class="line"><span>			s := dfs(j)</span></span>
+<span class="line"><span>			a += s[1]</span></span>
+<span class="line"><span>			b += s[1]</span></span>
+<span class="line"><span>			t = max(t, s[0]-s[1]+w)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		b += t</span></span>
+<span class="line"><span>		return [2]int{a, b}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return int64(dfs(0)[1])</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：树形 DP + 显式栈 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>在树中选一组不相邻的边，使权和最大。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，从根递归决定每条边选或不选，链上的调用深度就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>，会超出递归栈。</p>
+<p>每个节点只要两个量：连向父节点的边被选中时的最大权和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span>，以及这条边不选时的最大权和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span>。父边被选中时，通向孩子的边都不能选， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 是各孩子 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 的和；父边不选时，最多再选一条通向孩子的边，增益是该孩子的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 减去 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 再加上边权，取增益最大的一条。</p>
+<p>显式栈按 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#x8282;</mi>
+  <mi mathvariant="normal">&#x70B9;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x72B6;</mi>
+  <mi mathvariant="normal">&#x6001;</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 做后序。进入时先压出栈标记再压孩子，离开时写下 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span>。根没有父边，答案是根的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span>。</p>
+</blockquote>
+<p>对每个节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 计算两个值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 表示节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与其父节点之间的边被选中时，子树里所选边的权值之和； <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 表示这条边不被选中时的权值之和。用显式栈从根做后序，离开节点时再写这两个值。</p>
+<p>对于当前节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span>：</p>
+<ul>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与父节点的边被选择，则它与子节点的所有边都不能被选择，那么 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 就是其所有子节点的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 值之和；</li>
+<li>如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 与父节点的边没被选择，那么可以选择它与子节点的最多一条边，那么 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 就是选中的那个子节点的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 与其余子节点的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 之和，再加上对应边的权值。增益为负时这条边不选。</li>
+</ul>
+<p>根没有父边，答案是根的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func maxScore(edges [][]int) int64 {</span></span>
+<span class="line"><span>	n := len(edges)</span></span>
+<span class="line"><span>	g := make([][][2]int, n)</span></span>
+<span class="line"><span>	for i := 1; i &#x3C; n; i++ {</span></span>
+<span class="line"><span>		p, w := edges[i][0], edges[i][1]</span></span>
+<span class="line"><span>		g[p] = append(g[p], [2]int{i, w})</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	down := make([][2]int, n)</span></span>
+<span class="line"><span>	stk := [][2]int{{0, 0}}</span></span>
+<span class="line"><span>	for len(stk) > 0 {</span></span>
+<span class="line"><span>		cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>		stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>		i, state := cur[0], cur[1]</span></span>
+<span class="line"><span>		if state == 0 {</span></span>
+<span class="line"><span>			stk = append(stk, [2]int{i, 1})</span></span>
+<span class="line"><span>			for _, e := range g[i] {</span></span>
+<span class="line"><span>				stk = append(stk, [2]int{e[0], 0})</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		} else {</span></span>
+<span class="line"><span>			var a, b, t int</span></span>
+<span class="line"><span>			for _, e := range g[i] {</span></span>
+<span class="line"><span>				j, w := e[0], e[1]</span></span>
+<span class="line"><span>				x, y := down[j][0], down[j][1]</span></span>
+<span class="line"><span>				a += y</span></span>
+<span class="line"><span>				b += y</span></span>
+<span class="line"><span>				t = max(t, x-y+w)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			b += t</span></span>
+<span class="line"><span>			down[i] = [2]int{a, b}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return int64(down[0][1])</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/choose-edges-to-maximize-score-in-a-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2378.Choose%20Edges%20to%20Maximize%20Score%20in%20a%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2385" tabindex="-1">2385. 感染二叉树需要的总时间 <a class="header-anchor" href="#q-2385" aria-label="Permalink to &quot;2385. 感染二叉树需要的总时间 {#q-2385}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、广度优先搜索、哈希表、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一棵二叉树的根节点 <code>root</code> ，二叉树中节点的值 <strong>互不相同</strong> 。另给你一个整数 <code>start</code> 。在第 <code>0</code> 分钟，<strong>感染</strong> 将会从值为 <code>start</code> 的节点开始爆发。</p>&#10;&#10;<p>每分钟，如果节点满足以下全部条件，就会被感染：</p>&#10;&#10;<ul>&#10;	<li>节点此前还没有感染。</li>&#10;	<li>节点与一个已感染节点相邻。</li>&#10;</ul>&#10;&#10;<p>返回感染整棵树需要的分钟数<em>。</em></p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2300-2399/2385.Amount%20of%20Time%20for%20Binary%20Tree%20to%20Be%20Infected/images/image-20220625231744-1.png" loading="lazy">&#10;<pre><strong>输入：</strong>root = [1,5,3,null,4,10,6,9,2], start = 3&#10;<strong>输出：</strong>4&#10;<strong>解释：</strong>节点按以下过程被感染：&#10;- 第 0 分钟：节点 3&#10;- 第 1 分钟：节点 1、10、6&#10;- 第 2 分钟：节点5&#10;- 第 3 分钟：节点 4&#10;- 第 4 分钟：节点 9 和 2&#10;感染整棵树需要 4 分钟，所以返回 4 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2300-2399/2385.Amount%20of%20Time%20for%20Binary%20Tree%20to%20Be%20Infected/images/image-20220625231812-2.png" loading="lazy">&#10;<pre><strong>输入：</strong>root = [1], start = 1&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>第 0 分钟，树中唯一一个节点处于感染状态，返回 0 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点的数目在范围 <code>[1, 10<sup>5</sup>]</code> 内</li>&#10;	<li><code>1 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>&#10;	<li>每个节点的值 <strong>互不相同</strong></li>&#10;	<li>树中必定存在值为 <code>start</code> 的节点</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：两次 DFS · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>感染沿树边向父子扩散，时间为从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>t</mi>
+</math></span> 出发的最远距离。树至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span> 结点，需要显式父边。</p>
+<p>第一次 DFS 建成无向邻接表，第二次从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>t</mi>
+</math></span> 再 DFS 取最深深度。两次均为线性。</p>
+</blockquote>
+<p>我们先通过一次 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">DFS</mtext>
+</math></span> 建图，得到一个邻接表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+  <mo stretchy="false">[</mo>
+  <mi>n</mi>
+  <mi>o</mi>
+  <mi>d</mi>
+  <mi>e</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示与节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>o</mi>
+  <mi>d</mi>
+  <mi>e</mi>
+</math></span> 相连的所有节点。</p>
+<p>然后，我们以 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>t</mi>
+</math></span> 作为起点，通过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">DFS</mtext>
+</math></span> 搜索整棵树，找到最远距离，即为答案。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为二叉树的节点个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func amountOfTime(root *TreeNode, start int) int {</span></span>
+<span class="line"><span>	g := map[int][]int{}</span></span>
+<span class="line"><span>	var dfs func(*TreeNode, *TreeNode)</span></span>
+<span class="line"><span>	dfs = func(node, fa *TreeNode) {</span></span>
+<span class="line"><span>		if node == nil {</span></span>
+<span class="line"><span>			return</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if fa != nil {</span></span>
+<span class="line"><span>			g[node.Val] = append(g[node.Val], fa.Val)</span></span>
+<span class="line"><span>			g[fa.Val] = append(g[fa.Val], node.Val)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		dfs(node.Left, node)</span></span>
+<span class="line"><span>		dfs(node.Right, node)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var dfs2 func(int, int) int</span></span>
+<span class="line"><span>	dfs2 = func(node, fa int) (ans int) {</span></span>
+<span class="line"><span>		for _, nxt := range g[node] {</span></span>
+<span class="line"><span>			if nxt != fa {</span></span>
+<span class="line"><span>				ans = max(ans, 1+dfs2(nxt, node))</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs(root, nil)</span></span>
+<span class="line"><span>	return dfs2(start, -1)</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：显式栈 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>感染沿父子边扩散，整棵树被感染的时间等于从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>t</mi>
+</math></span> 出发的最远距离。先沿树记下这些边，再从起点求深度，在较短的树上是对的。</p>
+<p>结点个数可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>。左链使两次遍历都按结点个数递归，调用栈会溢出。</p>
+<p>两次遍历都只依赖当前结点和父结点，而一个结点的深度等于其余邻接点深度的最大值再加一。这些量可以放在显式栈旁边，不必占用返回帧。</p>
+<p>第一趟栈把每条父子边写入无向邻接表，结点值互不相同，直接作为键。第二趟栈进入结点后压入邻接点，退出时用邻接点的深度更新当前深度。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>t</mi>
+</math></span> 上记下的深度就是答案。</p>
+</blockquote>
+<p>我们用显式栈先序遍历二叉树。遇到一条父子边，就把两端的结点值互相加入邻接表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi>
+</math></span>。结点值互不相同，可以直接作为图的键。</p>
+<p>再从 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>t</mi>
+</math></span> 做一次显式栈上的后序遍历。进入结点时压入退出标记以及除父结点以外的邻接点；退出时，当前深度取这些邻接点深度的最大值再加一。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+  <mi>t</mi>
+  <mi>a</mi>
+  <mi>r</mi>
+  <mi>t</mi>
+</math></span> 的深度即为答案。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为二叉树的节点个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func amountOfTime(root *TreeNode, start int) int {</span></span>
+<span class="line"><span>	g := map[int][]int{}</span></span>
+<span class="line"><span>	type frame struct {</span></span>
+<span class="line"><span>		node, fa *TreeNode</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	stk := []frame{{root, nil}}</span></span>
+<span class="line"><span>	for len(stk) > 0 {</span></span>
+<span class="line"><span>		cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>		stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>		node, fa := cur.node, cur.fa</span></span>
+<span class="line"><span>		if node == nil {</span></span>
+<span class="line"><span>			continue</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if fa != nil {</span></span>
+<span class="line"><span>			g[node.Val] = append(g[node.Val], fa.Val)</span></span>
+<span class="line"><span>			g[fa.Val] = append(g[fa.Val], node.Val)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		stk = append(stk, frame{node.Right, node}, frame{node.Left, node})</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dist := map[int]int{}</span></span>
+<span class="line"><span>	type step struct {</span></span>
+<span class="line"><span>		node, fa, state int</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	walk := []step{{start, -1, 0}}</span></span>
+<span class="line"><span>	for len(walk) > 0 {</span></span>
+<span class="line"><span>		cur := walk[len(walk)-1]</span></span>
+<span class="line"><span>		walk = walk[:len(walk)-1]</span></span>
+<span class="line"><span>		node, fa, state := cur.node, cur.fa, cur.state</span></span>
+<span class="line"><span>		nxts := g[node]</span></span>
+<span class="line"><span>		if state == 0 {</span></span>
+<span class="line"><span>			walk = append(walk, step{node, fa, 1})</span></span>
+<span class="line"><span>			for i := len(nxts) - 1; i >= 0; i-- {</span></span>
+<span class="line"><span>				if nxt := nxts[i]; nxt != fa {</span></span>
+<span class="line"><span>					walk = append(walk, step{nxt, node, 0})</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			continue</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		best := 0</span></span>
+<span class="line"><span>		for _, nxt := range nxts {</span></span>
+<span class="line"><span>			if nxt != fa {</span></span>
+<span class="line"><span>				best = max(best, 1+dist[nxt])</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		dist[node] = best</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return dist[start]</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/amount-of-time-for-binary-tree-to-be-infected" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2300-2399/2385.Amount%20of%20Time%20for%20Binary%20Tree%20to%20Be%20Infected/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2415" tabindex="-1">2415. 反转二叉树的奇数层 <a class="header-anchor" href="#q-2415" aria-label="Permalink to &quot;2415. 反转二叉树的奇数层 {#q-2415}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、广度优先搜索、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一棵 <strong>完美</strong> 二叉树的根节点 <code>root</code> ，请你反转这棵树中每个 <strong>奇数</strong> 层的节点值。</p>&#10;&#10;<ul>&#10;	<li>例如，假设第 3 层的节点值是 <code>[2,1,3,4,7,11,29,18]</code> ，那么反转后它应该变成 <code>[18,29,11,7,4,3,1,2]</code> 。</li>&#10;</ul>&#10;&#10;<p>反转后，返回树的根节点。</p>&#10;&#10;<p><strong>完美</strong> 二叉树需满足：二叉树的所有父节点都有两个子节点，且所有叶子节点都在同一层。</p>&#10;&#10;<p>节点的 <strong>层数</strong> 等于该节点到根节点之间的边数。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2415.Reverse%20Odd%20Levels%20of%20Binary%20Tree/images/first_case1.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>root = [2,3,5,8,13,21,34]&#10;<strong>输出：</strong>[2,5,3,8,13,21,34]&#10;<strong>解释：</strong>&#10;这棵树只有一个奇数层。&#10;在第 1 层的节点分别是 3、5 ，反转后为 5、3 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2415.Reverse%20Odd%20Levels%20of%20Binary%20Tree/images/second_case3.png" loading="lazy">&#10;<pre>&#10;<strong>输入：</strong>root = [7,13,11]&#10;<strong>输出：</strong>[7,11,13]&#10;<strong>解释：</strong> &#10;在第 1 层的节点分别是 13、11 ，反转后为 11、13 。 &#10;</pre>&#10;&#10;<p><strong>示例 3：</strong></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>root = [0,1,2,0,0,0,0,1,1,1,1,2,2,2,2]&#10;<strong>输出：</strong>[0,2,1,0,0,0,0,2,2,2,2,1,1,1,1]&#10;<strong>解释：</strong>奇数层由非零值组成。&#10;在第 1 层的节点分别是 1、2 ，反转后为 2、1 。&#10;在第 3 层的节点分别是 1、1、1、1、2、2、2、2 ，反转后为 2、2、2、2、1、1、1、1 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中的节点数目在范围 <code>[1, 2<sup>14</sup>]</code> 内</li>&#10;	<li><code>0 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>root</code> 是一棵 <strong>完美</strong> 二叉树</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：BFS · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>完美二叉树层内节点连续，反转奇数层只需交换该层从两端向中间的节点值。层序遍历自然按层给出节点序列，不必改指针。</p>
+<p>用队列 BFS：层号为奇数时在队列两端交换 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">val</mtext>
+</math></span>，再把下一层子女入队。时间与节点数线性。</p>
+</blockquote>
+<p>我们可以使用广度优先搜索的方法，用一个队列 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+</math></span> 来存储每一层的节点，用一个变量 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 记录当前层数。若 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>i</mi>
+</math></span> 为奇数，则将当前层的节点值反转。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 是二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func reverseOddLevels(root *TreeNode) *TreeNode {</span></span>
+<span class="line"><span>	q := []*TreeNode{root}</span></span>
+<span class="line"><span>	for i := 0; len(q) > 0; i++ {</span></span>
+<span class="line"><span>		t := []*TreeNode{}</span></span>
+<span class="line"><span>		for k := len(q); k > 0; k-- {</span></span>
+<span class="line"><span>			node := q[0]</span></span>
+<span class="line"><span>			q = q[1:]</span></span>
+<span class="line"><span>			if i%2 == 1 {</span></span>
+<span class="line"><span>				t = append(t, node)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if node.Left != nil {</span></span>
+<span class="line"><span>				q = append(q, node.Left)</span></span>
+<span class="line"><span>				q = append(q, node.Right)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for l, r := 0, len(t)-1; l &#x3C; r; l, r = l+1, r-1 {</span></span>
+<span class="line"><span>			t[l].Val, t[r].Val = t[r].Val, t[l].Val</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return root</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/reverse-odd-levels-of-binary-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2415.Reverse%20Odd%20Levels%20of%20Binary%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2440" tabindex="-1">2440. 创建价值相同的连通块 <a class="header-anchor" href="#q-2440" aria-label="Permalink to &quot;2440. 创建价值相同的连通块 {#q-2440}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>2 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、数组、数学、枚举</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>有一棵 <code>n</code> 个节点的无向树，节点编号为 <code>0</code> 到 <code>n - 1</code> 。</p>&#10;&#10;<p>给你一个长度为 <code>n</code> 下标从 <strong>0</strong> 开始的整数数组 <code>nums</code> ，其中 <code>nums[i]</code> 表示第 <code>i</code> 个节点的值。同时给你一个长度为 <code>n - 1</code> 的二维整数数组 <code>edges</code> ，其中 <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> 表示节点 <code>a<sub>i</sub></code> 与 <code>b<sub>i</sub></code> 之间有一条边。</p>&#10;&#10;<p>你可以 <strong>删除</strong> 一些边，将这棵树分成几个连通块。一个连通块的 <strong>价值</strong> 定义为这个连通块中 <strong>所有</strong> 节点 <code>i</code> 对应的 <code>nums[i]</code> 之和。</p>&#10;&#10;<p>你需要删除一些边，删除后得到的各个连通块的价值都相等。请返回你可以删除的边数 <strong>最多</strong> 为多少。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2440.Create%20Components%20With%20Same%20Value/images/diagramdrawio.png" loading="lazy"></p>&#10;&#10;<pre><b>输入：</b>nums = [6,2,2,2,6], edges = [[0,1],[1,2],[1,3],[3,4]] &#10;<b>输出：</b>2 &#10;<b>解释：</b>上图展示了我们可以删除边 [0,1] 和 [3,4] 。得到的连通块为 [0] ，[1,2,3] 和 [4] 。每个连通块的价值都为 6 。可以证明没有别的更好的删除方案存在了，所以答案为 2 。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<pre><b>输入：</b>nums = [2], edges = []&#10;<b>输出：</b>0&#10;<b>解释：</b>没有任何边可以删除。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 2 * 10<sup>4</sup></code></li>&#10;	<li><code>nums.length == n</code></li>&#10;	<li><code>1 &lt;= nums[i] &lt;= 50</code></li>&#10;	<li><code>edges.length == n - 1</code></li>&#10;	<li><code>edges[i].length == 2</code></li>&#10;	<li><code>0 &lt;= edges[i][0], edges[i][1] &lt;= n - 1</code></li>&#10;	<li><code>edges</code> 表示一棵合法的树。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：枚举连通块的个数 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>删边后各连通块权和必须相等，故块数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 必须整除总和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，且单块目标 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>s</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>k</mi>
+</math></span> 不小于最大点权。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>2</mn>
+  <mo>&#xD7;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>，从大到小枚举合法 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>。</p>
+<p>树上 DFS 累加子树和：等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 则视为切下并向上返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>；超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 则失败。根返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 即划分成功，答案为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。</p>
+</blockquote>
+<p>假设连通块的个数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，那么要删除的边数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，每个连通块的价值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 所有节点的值之和。</p>
+<p>我们从大到小枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，如果存在一个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，使得 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span> 是整数，并且得到的每个连通块的价值都相等，那么直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的初始值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>,</mo>
+  <mfrac>
+    <mi>s</mi>
+    <mrow>
+      <mi>m</mi>
+      <mi>x</mi>
+    </mrow>
+  </mfrac>
+  <mo stretchy="false">)</mo>
+</math></span>，记 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 中的最大值。</p>
+<p>关键点在于判断对于给定的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span>，是否能划分出若干子树，使得每棵子树的价值都为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span>。</p>
+<p>这里我们通过 <code v-pre>dfs</code> 函数来判断，从上到下递归遍历求出各个子树的价值，如果子树价值和恰好为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span>，说明此时划分成功，我们将价值置为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 返回给上一层，表示此子树可以与父节点断开。如果子树价值之和大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span>，说明此时划分失败，我们返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，表示无法划分。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <msqrt>
+    <mi>s</mi>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 分别为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 的长度和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 所有节点的值之和。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func componentValue(nums []int, edges [][]int) int {</span></span>
+<span class="line"><span>	s, mx := 0, slices.Max(nums)</span></span>
+<span class="line"><span>	for _, x := range nums {</span></span>
+<span class="line"><span>		s += x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	n := len(nums)</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	for _, e := range edges {</span></span>
+<span class="line"><span>		a, b := e[0], e[1]</span></span>
+<span class="line"><span>		g[a] = append(g[a], b)</span></span>
+<span class="line"><span>		g[b] = append(g[b], a)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	t := 0</span></span>
+<span class="line"><span>	var dfs func(int, int) int</span></span>
+<span class="line"><span>	dfs = func(i, fa int) int {</span></span>
+<span class="line"><span>		x := nums[i]</span></span>
+<span class="line"><span>		for _, j := range g[i] {</span></span>
+<span class="line"><span>			if j != fa {</span></span>
+<span class="line"><span>				y := dfs(j, i)</span></span>
+<span class="line"><span>				if y == -1 {</span></span>
+<span class="line"><span>					return -1</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				x += y</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if x > t {</span></span>
+<span class="line"><span>			return -1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if x &#x3C; t {</span></span>
+<span class="line"><span>			return x</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return 0</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for k := min(n, s/mx); k > 1; k-- {</span></span>
+<span class="line"><span>		if s%k == 0 {</span></span>
+<span class="line"><span>			t = s / k</span></span>
+<span class="line"><span>			if dfs(0, -1) == 0 {</span></span>
+<span class="line"><span>				return k - 1</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return 0</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<details class="details custom-block"><summary>方法二：枚举 + 显式栈 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>删边之后每个连通块的价值和必须相同，因此块数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 必须整除总和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span>，目标值 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo>=</mo>
+  <mi>s</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mi>k</mi>
+</math></span> 也不能小于最大点权。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <mn>2</mn>
+  <mo>&#xD7;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>，从大到小枚举满足这两个条件的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 是可行的；若对每个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 都从根递归累加子树，链上的调用深度就是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>，会超出递归栈。</p>
+<p>某个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 能否划分，只取决于后序离开节点时子树还剩下多少价值。子节点都处理完以后，当前点权加上尚未切开的子树和：恰好等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 就记成 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，表示这条边可以删掉；小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 就把剩余和交给父节点；大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 则这个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 失败。</p>
+<p>显式栈按 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi mathvariant="normal">&#x8282;</mi>
+  <mi mathvariant="normal">&#x70B9;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x7236;</mi>
+  <mi mathvariant="normal">&#x8282;</mi>
+  <mi mathvariant="normal">&#x70B9;</mi>
+  <mo>,</mo>
+  <mi mathvariant="normal">&#x72B6;</mi>
+  <mi mathvariant="normal">&#x6001;</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 模拟这次后序。进入节点时先压出栈标记、再压子节点，离开时按上面的规则写入剩余和。根的剩余和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 说明整棵树被切成若干价值和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+</math></span> 的块，此时删除的边数是 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。</p>
+</blockquote>
+<p>假设连通块的个数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，那么要删除的边数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，每个连通块的价值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 所有节点的值之和。</p>
+<p>我们从大到小枚举 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，如果存在一个 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span>，使得 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span> 是整数，并且得到的每个连通块的价值都相等，那么直接返回 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>k</mi>
+</math></span> 的初始值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo data-mjx-texclass="OP" movablelimits="true">min</mo>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>,</mo>
+  <mfrac>
+    <mi>s</mi>
+    <mrow>
+      <mi>m</mi>
+      <mi>x</mi>
+    </mrow>
+  </mfrac>
+  <mo stretchy="false">)</mo>
+</math></span>，记 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+  <mi>x</mi>
+</math></span> 为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 中的最大值。</p>
+<p>关键点在于判断对于给定的 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span>，是否能划分出若干子树，使得每棵子树的价值都为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span>。</p>
+<p>这里用显式栈做后序遍历来判断。离开一个节点时，把它的点权与尚未切开的子树和相加：和恰好为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span> 时记为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span>，表示该子树可以与父节点断开；和小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span> 时把剩余和留给父节点；和大于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>s</mi>
+    <mi>k</mi>
+  </mfrac>
+</math></span> 时划分失败。根的剩余和为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0</mn>
+</math></span> 即划分成功。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <msqrt>
+    <mi>s</mi>
+  </msqrt>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>s</mi>
+</math></span> 分别为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 的长度和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mi>u</mi>
+  <mi>m</mi>
+  <mi>s</mi>
+</math></span> 所有节点的值之和。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func componentValue(nums []int, edges [][]int) int {</span></span>
+<span class="line"><span>	s, mx := 0, slices.Max(nums)</span></span>
+<span class="line"><span>	for _, x := range nums {</span></span>
+<span class="line"><span>		s += x</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	n := len(nums)</span></span>
+<span class="line"><span>	g := make([][]int, n)</span></span>
+<span class="line"><span>	for _, e := range edges {</span></span>
+<span class="line"><span>		a, b := e[0], e[1]</span></span>
+<span class="line"><span>		g[a] = append(g[a], b)</span></span>
+<span class="line"><span>		g[b] = append(g[b], a)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	check := func(t int) bool {</span></span>
+<span class="line"><span>		sz := make([]int, n)</span></span>
+<span class="line"><span>		stk := [][3]int{{0, -1, 0}}</span></span>
+<span class="line"><span>		for len(stk) > 0 {</span></span>
+<span class="line"><span>			cur := stk[len(stk)-1]</span></span>
+<span class="line"><span>			stk = stk[:len(stk)-1]</span></span>
+<span class="line"><span>			i, fa, state := cur[0], cur[1], cur[2]</span></span>
+<span class="line"><span>			if state == 0 {</span></span>
+<span class="line"><span>				stk = append(stk, [3]int{i, fa, 1})</span></span>
+<span class="line"><span>				for _, j := range g[i] {</span></span>
+<span class="line"><span>					if j != fa {</span></span>
+<span class="line"><span>						stk = append(stk, [3]int{j, i, 0})</span></span>
+<span class="line"><span>					}</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				x := nums[i]</span></span>
+<span class="line"><span>				for _, j := range g[i] {</span></span>
+<span class="line"><span>					if j != fa {</span></span>
+<span class="line"><span>						x += sz[j]</span></span>
+<span class="line"><span>					}</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				if x > t {</span></span>
+<span class="line"><span>					return false</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>				if x == t {</span></span>
+<span class="line"><span>					sz[i] = 0</span></span>
+<span class="line"><span>				} else {</span></span>
+<span class="line"><span>					sz[i] = x</span></span>
+<span class="line"><span>				}</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return sz[0] == 0</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for k := min(n, s/mx); k > 1; k-- {</span></span>
+<span class="line"><span>		if s%k == 0 &#x26;&#x26; check(s/k) {</span></span>
+<span class="line"><span>			return k - 1</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return 0</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/create-components-with-same-value" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2440.Create%20Components%20With%20Same%20Value/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2445" tabindex="-1">2445. 值为 1 的节点数 🔒 <a class="header-anchor" href="#q-2445" aria-label="Permalink to &quot;2445. 值为 1 的节点数 🔒 {#q-2445}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、广度优先搜索、数组、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>有一个 <strong>无向 </strong>树，有 <code>n</code> 个节点，节点标记为从 <code>1</code> 到 <code>n</code> ，还有 <code>n - 1</code> 条边。给定整数 <code>n</code>。标记为 <code>v</code> 的节点的父节点是标记为 <code>floor (v / 2)</code> 的节点。树的根节点是标记为 <code>1</code> 的节点。</p>&#10;&#10;<ul>&#10;	<li>例如，如果 <code>n = 7</code>，那么标记为 <code>3</code> 的节点将标记 <code>floor(3 / 2) = 1</code> 的节点作为其父节点，标记为 <code>7</code> 的节点将标记 <code>floor(7 / 2) = 3</code> 的节点作为其父节点。</li>&#10;</ul>&#10;&#10;<p>你还得到一个整数数组 <code>queries</code>。最初，每个节点的值都是 <code>0</code>。对于每个查询 <code>queries[i]</code>，您应该翻转节点标记为 <code>queries[i]</code> 的子树中的所有值。</p>&#10;&#10;<p>在 <strong>处理完所有查询后</strong>，返回<em>值为 <code>1</code> 的节点总数。</em></p>&#10;&#10;<p><b>注意</b>:</p>&#10;&#10;<ul>&#10;	<li>翻转节点的值意味着值为 <code>0</code> 的节点变为 <code>1</code>，反之亦然。</li>&#10;	<li><code>floor(x)</code> 相当于将 <code>x</code> 舍入到最接近的整数。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2445.Number%20of%20Nodes%20With%20Value%20One/images/ex1.jpg" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> n = 5 , queries = [1,2,5]&#10;<strong>输出:</strong> 3&#10;<strong>解释:</strong> 上图显示了执行查询后的树结构及其状态。蓝色节点表示值 0，红色节点表示值 1。&#10;在处理查询之后，有三个红色节点 (值为 1 的节点): 1、3、5。&#10;</pre>&#10;&#10;<p><strong>示例 2:</strong></p>&#10;<img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2445.Number%20of%20Nodes%20With%20Value%20One/images/ex2.jpg" loading="lazy">&#10;<pre>&#10;<strong>输入:</strong> n = 3, queries = [2,3,3]&#10;<strong>输出:</strong> 1&#10;<strong>解释:</strong> 上图显示了执行查询后的树结构及其状态。蓝色节点表示值 0，红色节点表示值 1。&#10;在处理查询之后，有一个红色节点 (值为 1 的节点): 2。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示:</strong></p>&#10;&#10;<ul>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= queries.length &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= queries[i] &lt;= n</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：模拟 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>完全二叉树中一次查询翻转某点及其整棵子树。同一节点查询偶数次抵消，故先按查询次数奇偶过滤。</p>
+<p>对奇数次查询的根做一次 DFS 翻转子树。节点至多 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span>，每位查询根只处理一次，再统计值为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span> 的个数。</p>
+</blockquote>
+<p>根据题意，我们可以模拟每次查询的过程，即将查询节点及其子树的节点值反转。最后统计节点值为 1 的节点个数即可。</p>
+<p>这里有一个优化点，每个节点及其对应的子树，如果经过了偶数次查询，那么节点值不会发生变化，因此我们可以记录每个节点的查询次数，对于奇数次查询的节点及其子树，才进行反转。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为节点个数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func numberOfNodes(n int, queries []int) int {</span></span>
+<span class="line"><span>	tree := make([]int, n+1)</span></span>
+<span class="line"><span>	cnt := make([]int, n+1)</span></span>
+<span class="line"><span>	for _, v := range queries {</span></span>
+<span class="line"><span>		cnt[v]++</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	var dfs func(int)</span></span>
+<span class="line"><span>	dfs = func(i int) {</span></span>
+<span class="line"><span>		if i > n {</span></span>
+<span class="line"><span>			return</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		tree[i] ^= 1</span></span>
+<span class="line"><span>		dfs(i &#x3C;&#x3C; 1)</span></span>
+<span class="line"><span>		dfs(i&#x3C;&#x3C;1 | 1)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	for i, v := range cnt {</span></span>
+<span class="line"><span>		if v%2 == 1 {</span></span>
+<span class="line"><span>			dfs(i)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	ans := 0</span></span>
+<span class="line"><span>	for _, v := range tree {</span></span>
+<span class="line"><span>		ans += v</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/number-of-nodes-with-value-one" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2445.Number%20of%20Nodes%20With%20Value%20One/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2458" tabindex="-1">2458. 移除子树后的二叉树高度 <a class="header-anchor" href="#q-2458" aria-label="Permalink to &quot;2458. 移除子树后的二叉树高度 {#q-2458}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、广度优先搜索、数组、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一棵 <strong>二叉树</strong> 的根节点 <code>root</code> ，树中有 <code>n</code> 个节点。每个节点都可以被分配一个从 <code>1</code> 到 <code>n</code> 且互不相同的值。另给你一个长度为 <code>m</code> 的数组 <code>queries</code> 。</p>&#10;&#10;<p>你必须在树上执行 <code>m</code> 个 <strong>独立</strong> 的查询，其中第 <code>i</code> 个查询你需要执行以下操作：</p>&#10;&#10;<ul>&#10;	<li>从树中 <strong>移除</strong> 以 <code>queries[i]</code> 的值作为根节点的子树。题目所用测试用例保证 <code>queries[i]</code> <strong>不</strong> 等于根节点的值。</li>&#10;</ul>&#10;&#10;<p>返回一个长度为 <code>m</code> 的数组<em> </em><code>answer</code><em> </em>，其中<em> </em><code>answer[i]</code><em> </em>是执行第 <code>i</code> 个查询后树的高度。</p>&#10;&#10;<p><strong>注意：</strong></p>&#10;&#10;<ul>&#10;	<li>查询之间是独立的，所以在每个查询执行后，树会回到其 <strong>初始</strong> 状态。</li>&#10;	<li>树的高度是从根到树中某个节点的 <strong>最长简单路径中的边数</strong> 。</li>&#10;</ul>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2458.Height%20of%20Binary%20Tree%20After%20Subtree%20Removal%20Queries/images/binaryytreeedrawio-1.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>root = [1,3,4,2,null,6,5,null,null,null,null,null,7], queries = [4]&#10;<strong>输出：</strong>[2]&#10;<strong>解释：</strong>上图展示了从树中移除以 4 为根节点的子树。&#10;树的高度是 2（路径为 1 -> 3 -> 2）。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2458.Height%20of%20Binary%20Tree%20After%20Subtree%20Removal%20Queries/images/binaryytreeedrawio-2.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>root = [5,8,9,2,1,3,7,4,6], queries = [3,2,4,8]&#10;<strong>输出：</strong>[3,2,3,2]&#10;<strong>解释：</strong>执行下述查询：&#10;- 移除以 3 为根节点的子树。树的高度变为 3（路径为 5 -> 8 -> 2 -> 4）。&#10;- 移除以 2 为根节点的子树。树的高度变为 2（路径为 5 -> 8 -> 1）。&#10;- 移除以 4 为根节点的子树。树的高度变为 3（路径为 5 -> 8 -> 2 -> 6）。&#10;- 移除以 8 为根节点的子树。树的高度变为 2（路径为 5 -> 9 -> 3）。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点的数目是 <code>n</code></li>&#10;	<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= Node.val &lt;= n</code></li>&#10;	<li>树中的所有值 <strong>互不相同</strong></li>&#10;	<li><code>m == queries.length</code></li>&#10;	<li><code>1 &lt;= m &lt;= min(n, 10<sup>4</sup>)</code></li>&#10;	<li><code>1 &lt;= queries[i] &lt;= n</code></li>&#10;	<li><code>queries[i] != root.val</code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：两次 DFS · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每次删除一个非根子树后问树高， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>、 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>q</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>4</mn>
+  </msup>
+</math></span>，不能每次重算。删去 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 后的高度，是根到其他叶子的最长链，等于「经过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的兄弟侧」与「祖先上其他分叉」的较大者。</p>
+<p>第一次 DFS 记下每棵子树高度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span>。第二次带着「删除当前点后的高度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">rest</mtext>
+</math></span>」下行：进入左子时， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">rest</mtext>
+</math></span> 与「当前深度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>+</mo>
+</math></span> 右子高度」取大；右子对称。结果写入 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext mathvariant="italic">res</mtext>
+  <mo stretchy="false">[</mo>
+  <mi>v</mi>
+  <mi>a</mi>
+  <mi>l</mi>
+  <mo stretchy="false">]</mo>
+</math></span>。</p>
+</blockquote>
+<p>我们先通过一次 DFS 遍历的深度，存放在哈希表 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+</math></span> 中，其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>x</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 表示节点 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的深度。</p>
+<p>然后我们设计一个函数 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>f</mi>
+  <mi>s</mi>
+  <mo stretchy="false">(</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo>,</mo>
+  <mi>d</mi>
+  <mi>e</mi>
+  <mi>p</mi>
+  <mi>t</mi>
+  <mi>h</mi>
+  <mo>,</mo>
+  <mi>r</mi>
+  <mi>e</mi>
+  <mi>s</mi>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，其中：</p>
+<ul>
+<li><code v-pre>root</code> 表示当前节点；</li>
+<li><code v-pre>depth</code> 表示当前节点的深度；</li>
+<li><code v-pre>rest</code> 表示删除当前节点后，树的高度。</li>
+</ul>
+<p>函数的计算逻辑如下：</p>
+<p>如果节点为空，直接返回。否则，我们将 <code v-pre>depth</code> 加 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1</mn>
+</math></span>，然后将 <code v-pre>rest</code> 保存在 <code v-pre>res</code> 中。</p>
+<p>接着递归遍历左右子树。</p>
+<p>递归左子树前，我们计算从根节点到当前节点右子树最深节点的就，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>e</mi>
+  <mi>p</mi>
+  <mi>t</mi>
+  <mi>h</mi>
+  <mo>+</mo>
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo>.</mo>
+  <mi>r</mi>
+  <mi>i</mi>
+  <mi>g</mi>
+  <mi>h</mi>
+  <mi>t</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，然后将其与 <code v-pre>rest</code> 比较，取较大值作为左子树的 <code v-pre>rest</code>。</p>
+<p>递归右子树前，我们计算从根节点到当前节点左子树最深节点的就，即 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>d</mi>
+  <mi>e</mi>
+  <mi>p</mi>
+  <mi>t</mi>
+  <mi>h</mi>
+  <mo>+</mo>
+  <mi>d</mi>
+  <mo stretchy="false">[</mo>
+  <mi>r</mi>
+  <mi>o</mi>
+  <mi>o</mi>
+  <mi>t</mi>
+  <mo>.</mo>
+  <mi>l</mi>
+  <mi>e</mi>
+  <mi>f</mi>
+  <mi>t</mi>
+  <mo stretchy="false">]</mo>
+</math></span>，然后将其与 <code v-pre>rest</code> 比较，取较大值作为右子树的 <code v-pre>rest</code>。</p>
+<p>最后返回每个查询节点对应的结果值即可。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 分别是树的节点数和查询数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func treeQueries(root *TreeNode, queries []int) (ans []int) {</span></span>
+<span class="line"><span>	d := map[*TreeNode]int{}</span></span>
+<span class="line"><span>	var f func(*TreeNode) int</span></span>
+<span class="line"><span>	f = func(root *TreeNode) int {</span></span>
+<span class="line"><span>		if root == nil {</span></span>
+<span class="line"><span>			return 0</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		l, r := f(root.Left), f(root.Right)</span></span>
+<span class="line"><span>		d[root] = 1 + max(l, r)</span></span>
+<span class="line"><span>		return d[root]</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	f(root)</span></span>
+<span class="line"><span>	res := make([]int, len(d)+1)</span></span>
+<span class="line"><span>	var dfs func(*TreeNode, int, int)</span></span>
+<span class="line"><span>	dfs = func(root *TreeNode, depth, rest int) {</span></span>
+<span class="line"><span>		if root == nil {</span></span>
+<span class="line"><span>			return</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		depth++</span></span>
+<span class="line"><span>		res[root.Val] = rest</span></span>
+<span class="line"><span>		dfs(root.Left, depth, max(rest, depth+d[root.Right]))</span></span>
+<span class="line"><span>		dfs(root.Right, depth, max(rest, depth+d[root.Left]))</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs(root, -1, 0)</span></span>
+<span class="line"><span>	for _, v := range queries {</span></span>
+<span class="line"><span>		ans = append(ans, res[v])</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/height-of-binary-tree-after-subtree-removal-queries" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2458.Height%20of%20Binary%20Tree%20After%20Subtree%20Removal%20Queries/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2471" tabindex="-1">2471. 逐层排序二叉树所需的最少操作数目 <a class="header-anchor" href="#q-2471" aria-label="Permalink to &quot;2471. 逐层排序二叉树所需的最少操作数目 {#q-2471}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、广度优先搜索、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个 <strong>值互不相同</strong> 的二叉树的根节点 <code>root</code> 。</p>&#10;&#10;<p>在一步操作中，你可以选择 <strong>同一层</strong> 上任意两个节点，交换这两个节点的值。</p>&#10;&#10;<p>返回每一层按 <strong>严格递增顺序</strong> 排序所需的最少操作数目。</p>&#10;&#10;<p>节点的 <strong>层数</strong> 是该节点和根节点之间的路径的边数。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1 ：</strong></p>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2471.Minimum%20Number%20of%20Operations%20to%20Sort%20a%20Binary%20Tree%20by%20Level/images/image-20220918174006-2.png" loading="lazy">&#10;<pre><strong>输入：</strong>root = [1,4,3,7,6,8,5,null,null,null,null,9,null,10]&#10;<strong>输出：</strong>3&#10;<strong>解释：</strong>&#10;- 交换 4 和 3 。第 2 层变为 [3,4] 。&#10;- 交换 7 和 5 。第 3 层变为 [5,6,8,7] 。&#10;- 交换 8 和 7 。第 3 层变为 [5,6,7,8] 。&#10;共计用了 3 步操作，所以返回 3 。&#10;可以证明 3 是需要的最少操作数目。&#10;</pre>&#10;&#10;<p><strong>示例 2 ：</strong></p>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2471.Minimum%20Number%20of%20Operations%20to%20Sort%20a%20Binary%20Tree%20by%20Level/images/image-20220918174026-3.png" loading="lazy">&#10;<pre><strong>输入：</strong>root = [1,3,2,7,6,5,4]&#10;<strong>输出：</strong>3&#10;<strong>解释：&#10;</strong>- 交换 3 和 2 。第 2 层变为 [2,3] 。 &#10;- 交换 7 和 4 。第 3 层变为 [4,6,5,7] 。 &#10;- 交换 6 和 5 。第 3 层变为 [4,5,6,7] 。&#10;共计用了 3 步操作，所以返回 3 。 &#10;可以证明 3 是需要的最少操作数目。&#10;</pre>&#10;&#10;<p><strong>示例 3 ：</strong></p>&#10;<img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2471.Minimum%20Number%20of%20Operations%20to%20Sort%20a%20Binary%20Tree%20by%20Level/images/image-20220918174052-4.png" loading="lazy">&#10;<pre><strong>输入：</strong>root = [1,2,3,4,5,6]&#10;<strong>输出：</strong>0&#10;<strong>解释：</strong>每一层已经按递增顺序排序，所以返回 0 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点的数目在范围 <code>[1, 10<sup>5</sup>]</code> 。</li>&#10;	<li><code>1 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>&#10;	<li>树中的所有值 <strong>互不相同</strong> 。</li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：BFS + 离散化 + 元素交换 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>每层独立排序，操作是交换任意两值。最少交换次数等于置换中「不在循环里的错位」所形成的循环长度之和减循环个数，即把排列还原为恒等的交换次数。</p>
+<p>BFS 取层；层内离散化到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.</mn>
+  <mo>.</mo>
+  <mi>l</mi>
+  <mi>e</mi>
+  <mi>n</mi>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span> 后，对每个位置沿 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>t</mi>
+  <mo stretchy="false">[</mo>
+  <mi>i</mi>
+  <mo stretchy="false">]</mo>
+</math></span> 交换直到归位并计数。</p>
+</blockquote>
+<p>我们先通过 <code v-pre>BFS</code> 遍历二叉树，找到每一层的节点值，然后对每一层的节点值进行排序，如果排序后的节点值与原节点值不同，则说明需要交换元素，交换元素的次数即为该层需要的操作数。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 为二叉树的节点数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func minimumOperations(root *TreeNode) (ans int) {</span></span>
+<span class="line"><span>	f := func(t []int) int {</span></span>
+<span class="line"><span>		var alls []int</span></span>
+<span class="line"><span>		for _, v := range t {</span></span>
+<span class="line"><span>			alls = append(alls, v)</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		sort.Ints(alls)</span></span>
+<span class="line"><span>		m := make(map[int]int)</span></span>
+<span class="line"><span>		for i, v := range alls {</span></span>
+<span class="line"><span>			m[v] = i</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		for i := range t {</span></span>
+<span class="line"><span>			t[i] = m[t[i]]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		res := 0</span></span>
+<span class="line"><span>		for i := range t {</span></span>
+<span class="line"><span>			for t[i] != i {</span></span>
+<span class="line"><span>				t[i], t[t[i]] = t[t[i]], t[i]</span></span>
+<span class="line"><span>				res++</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		return res</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>	q := []*TreeNode{root}</span></span>
+<span class="line"><span>	for len(q) > 0 {</span></span>
+<span class="line"><span>		t := []int{}</span></span>
+<span class="line"><span>		for n := len(q); n > 0; n-- {</span></span>
+<span class="line"><span>			node := q[0]</span></span>
+<span class="line"><span>			q = q[1:]</span></span>
+<span class="line"><span>			t = append(t, node.Val)</span></span>
+<span class="line"><span>			if node.Left != nil {</span></span>
+<span class="line"><span>				q = append(q, node.Left)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			if node.Right != nil {</span></span>
+<span class="line"><span>				q = append(q, node.Right)</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans += f(t)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2471.Minimum%20Number%20of%20Operations%20to%20Sort%20a%20Binary%20Tree%20by%20Level/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2476" tabindex="-1">2476. 二叉搜索树最近节点查询 <a class="header-anchor" href="#q-2476" aria-label="Permalink to &quot;2476. 二叉搜索树最近节点查询 {#q-2476}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="中等">中等</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、深度优先搜索、二叉搜索树、数组、二分查找、二叉树</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个 <strong>二叉搜索树</strong> 的根节点 <code>root</code> ，和一个由正整数组成、长度为 <code>n</code> 的数组 <code>queries</code> 。</p>&#10;&#10;<p>请你找出一个长度为 <code>n</code> 的 <strong>二维</strong> 答案数组 <code>answer</code> ，其中 <code>answer[i] = [min<sub>i</sub>, max<sub>i</sub>]</code> ：</p>&#10;&#10;<ul>&#10;	<li><code>min<sub>i</sub></code> 是树中小于等于 <code>queries[i]</code> 的 <strong>最大值</strong> 。如果不存在这样的值，则使用 <code>-1</code> 代替。</li>&#10;	<li><code>max<sub>i</sub></code> 是树中大于等于 <code>queries[i]</code> 的 <strong>最小值</strong> 。如果不存在这样的值，则使用 <code>-1</code> 代替。</li>&#10;</ul>&#10;&#10;<p>返回数组 <code>answer</code> 。</p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1 ：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2476.Closest%20Nodes%20Queries%20in%20a%20Binary%20Search%20Tree/images/bstreeedrawioo.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>root = [6,2,13,1,4,9,15,null,null,null,null,null,null,14], queries = [2,5,16]&#10;<strong>输出：</strong>[[2,2],[4,6],[15,-1]]&#10;<strong>解释：</strong>按下面的描述找出并返回查询的答案：&#10;- 树中小于等于 2 的最大值是 2 ，且大于等于 2 的最小值也是 2 。所以第一个查询的答案是 [2,2] 。&#10;- 树中小于等于 5 的最大值是 4 ，且大于等于 5 的最小值是 6 。所以第二个查询的答案是 [4,6] 。&#10;- 树中小于等于 16 的最大值是 15 ，且大于等于 16 的最小值不存在。所以第三个查询的答案是 [15,-1] 。&#10;</pre>&#10;&#10;<p><strong>示例 2 ：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2400-2499/2476.Closest%20Nodes%20Queries%20in%20a%20Binary%20Search%20Tree/images/bstttreee.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<strong>输入：</strong>root = [4,null,9], queries = [3]&#10;<strong>输出：</strong>[[-1,4]]&#10;<strong>解释：</strong>树中不存在小于等于 3 的最大值，且大于等于 3 的最小值是 4 。所以查询的答案是 [-1,4] 。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li>树中节点的数目在范围 <code>[2, 10<sup>5</sup>]</code> 内</li>&#10;	<li><code>1 &lt;= Node.val &lt;= 10<sup>6</sup></code></li>&#10;	<li><code>n == queries.length</code></li>&#10;	<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>1 &lt;= queries[i] &lt;= 10<sup>6</sup></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：中序遍历 + 二分查找 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>BST 中序即为有序数组。 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+  <mo>,</mo>
+  <mi>q</mi>
+  <mo>&#x2264;</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>5</mn>
+  </msup>
+</math></span>，对每个查询在有序数组上二分：不超过 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的最大者与不小于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+</math></span> 的最小者，越界填 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>。</p>
+</blockquote>
+<p>由于题目中给出的是一棵二叉搜索树，因此我们可以通过中序遍历得到一个有序数组，然后对于每个查询，我们可以通过二分查找得到小于等于该查询值的最大值和大于等于该查询值的最小值。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>+</mo>
+  <mi>m</mi>
+  <mo>&#xD7;</mo>
+  <mi>log</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>，空间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 和 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 分别是二叉搜索树中的节点数和查询数。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>/**</span></span>
+<span class="line"><span> * Definition for a binary tree node.</span></span>
+<span class="line"><span> * type TreeNode struct {</span></span>
+<span class="line"><span> *     Val int</span></span>
+<span class="line"><span> *     Left *TreeNode</span></span>
+<span class="line"><span> *     Right *TreeNode</span></span>
+<span class="line"><span> * }</span></span>
+<span class="line"><span> */</span></span>
+<span class="line"><span>func closestNodes(root *TreeNode, queries []int) (ans [][]int) {</span></span>
+<span class="line"><span>	nums := []int{}</span></span>
+<span class="line"><span>	var dfs func(*TreeNode)</span></span>
+<span class="line"><span>	dfs = func(root *TreeNode) {</span></span>
+<span class="line"><span>		if root == nil {</span></span>
+<span class="line"><span>			return</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		dfs(root.Left)</span></span>
+<span class="line"><span>		nums = append(nums, root.Val)</span></span>
+<span class="line"><span>		dfs(root.Right)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	dfs(root)</span></span>
+<span class="line"><span>	for _, x := range queries {</span></span>
+<span class="line"><span>		i := sort.SearchInts(nums, x+1) - 1</span></span>
+<span class="line"><span>		j := sort.SearchInts(nums, x)</span></span>
+<span class="line"><span>		mi, mx := -1, -1</span></span>
+<span class="line"><span>		if i >= 0 {</span></span>
+<span class="line"><span>			mi = nums[i]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		if j &#x3C; len(nums) {</span></span>
+<span class="line"><span>			mx = nums[j]</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans = append(ans, []int{mi, mx})</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/closest-nodes-queries-in-a-binary-search-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2400-2499/2476.Closest%20Nodes%20Queries%20in%20a%20Binary%20Search%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details>
+<details class="leetcode-question" name="leetcode-questions">
+<summary class="leetcode-question-heading"><h2 id="q-2509" tabindex="-1">2509. 查询树中环的长度 <a class="header-anchor" href="#q-2509" aria-label="Permalink to &quot;2509. 查询树中环的长度 {#q-2509}&quot;">&ZeroWidthSpace;</a></h2><span class="leetcode-question-meta"><span class="leetcode-difficulty" data-level="困难">困难</span><span>1 种解法</span></span></summary>
+<div class="leetcode-question-body">
+<p class="leetcode-question-tags">标签：树、数组、二叉树、最近公共祖先</p>
+
+<details open class="leetcode-statement details custom-block"><summary>题目、示例与约束</summary>
+<div v-pre><p>给你一个整数 <code>n</code> ，表示你有一棵含有 <code>2<sup>n</sup> - 1</code> 个节点的 <strong>完全二叉树</strong> 。根节点的编号是 <code>1</code> ，树中编号在<code>[1, 2<sup>n - 1</sup> - 1]</code> 之间，编号为 <code>val</code> 的节点都有两个子节点，满足：</p>&#10;&#10;<ul>&#10;	<li>左子节点的编号为 <code>2 * val</code></li>&#10;	<li>右子节点的编号为 <code>2 * val + 1</code></li>&#10;</ul>&#10;&#10;<p>给你一个长度为 <code>m</code> 的查询数组 <code>queries</code> ，它是一个二维整数数组，其中 <code>queries[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> 。对于每个查询，求出以下问题的解：</p>&#10;&#10;<ol>&#10;	<li>在节点编号为 <code>a<sub>i</sub></code> 和 <code>b<sub>i</sub></code> 之间添加一条边。</li>&#10;	<li>求出图中环的长度。</li>&#10;	<li>删除节点编号为 <code>a<sub>i</sub></code> 和 <code>b<sub>i</sub></code> 之间新添加的边。</li>&#10;</ol>&#10;&#10;<p><strong>注意：</strong></p>&#10;&#10;<ul>&#10;	<li><strong>环</strong> 是开始和结束于同一节点的一条路径，路径中每条边都只会被访问一次。</li>&#10;	<li>环的长度是环中边的数目。</li>&#10;	<li>在树中添加额外的边后，两个点之间可能会有多条边。</li>&#10;</ul>&#10;&#10;<p>请你返回一个长度为 <code>m</code> 的数组<em> </em><code>answer</code> ，其中 <code>answer[i]</code> 是第 <code>i</code> 个查询的结果<i>。</i></p>&#10;&#10;<p> </p>&#10;&#10;<p><strong>示例 1：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2500-2599/2509.Cycle%20Length%20Queries%20in%20a%20Tree/images/bexample1.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<b>输入：</b>n = 3, queries = [[5,3],[4,7],[2,3]]&#10;<b>输出：</b>[4,5,3]&#10;<b>解释：</b>上图是一棵有 2<sup>3</sup> - 1 个节点的树。红色节点表示添加额外边后形成环的节点。&#10;- 在节点 3 和节点 5 之间添加边后，环为 [5,2,1,3] ，所以第一个查询的结果是 4 。删掉添加的边后处理下一个查询。&#10;- 在节点 4 和节点 7 之间添加边后，环为 [4,2,1,3,7] ，所以第二个查询的结果是 5 。删掉添加的边后处理下一个查询。&#10;- 在节点 2 和节点 3 之间添加边后，环为 [2,1,3] ，所以第三个查询的结果是 3 。删掉添加的边。&#10;</pre>&#10;&#10;<p><strong>示例 2：</strong></p>&#10;&#10;<p><img alt="" src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/2500-2599/2509.Cycle%20Length%20Queries%20in%20a%20Tree/images/aexample2.png" loading="lazy"></p>&#10;&#10;<pre>&#10;<b>输入：</b>n = 2, queries = [[1,2]]&#10;<b>输出：</b>[2]&#10;<b>解释：</b>上图是一棵有 2<sup>2</sup> - 1 个节点的树。红色节点表示添加额外边后形成环的节点。&#10;- 在节点 1 和节点 2 之间添加边后，环为 [2,1] ，所以第一个查询的结果是 2 。删掉添加的边。&#10;</pre>&#10;&#10;<p> </p>&#10;&#10;<p><strong>提示：</strong></p>&#10;&#10;<ul>&#10;	<li><code>2 &lt;= n &lt;= 30</code></li>&#10;	<li><code>m == queries.length</code></li>&#10;	<li><code>1 &lt;= m &lt;= 10<sup>5</sup></code></li>&#10;	<li><code>queries[i].length == 2</code></li>&#10;	<li><code>1 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt;= 2<sup>n</sup> - 1</code></li>&#10;	<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>&#10;</ul></div>
+</details>
+<details class="details custom-block"><summary>方法一：求最近公共祖先 · Go 实现</summary>
+<div v-pre>
+<blockquote>
+<p><strong>思考</strong></p>
+<p>完全二叉树中加边 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo stretchy="false">(</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo stretchy="false">)</mo>
+</math></span> 形成的环长等于 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 到 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 的路径长度加一。若对每个查询建树再求距离， <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>n</mi>
+</math></span> 可达 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>30</mn>
+</math></span>，节点数为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mi>n</mi>
+  </msup>
+  <mo>&#x2212;</mo>
+  <mn>1</mn>
+</math></span>，建树本身不可接受。</p>
+<p>父结点编号为 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo fence="false" stretchy="false">&#x230A;</mo>
+  <mi>x</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mo>/</mo>
+  </mrow>
+  <mn>2</mn>
+  <mo fence="false" stretchy="false">&#x230B;</mo>
+</math></span>，即右移一位。两结点沿父指针上移，始终先移动编号较大者，直至相遇，所走步数加一即为环长。这正是完全二叉树中求 LCA 的过程。</p>
+</blockquote>
+<p>对于每次查询，我们找出 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span>, <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 两个节点的最近公共祖先，并且记录向上走的步数，那么此次查询的答案就是步数加一。</p>
+<p>求最近公共祖先时，如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>&gt;</mo>
+  <mi>b</mi>
+</math></span>，那么我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+</math></span> 往父节点移动；如果 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>&lt;</mo>
+  <mi>b</mi>
+</math></span>，我们将 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math></span> 往其父节点移动。过程中累计步数，直至 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi>
+  <mo>=</mo>
+  <mi>b</mi>
+</math></span>。</p>
+<p>时间复杂度 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>O</mi>
+  <mo stretchy="false">(</mo>
+  <mi>n</mi>
+  <mo>&#xD7;</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math></span>。其中 <span class="leetcode-math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>m</mi>
+</math></span> 为数组 <code v-pre>queries</code> 的长度。</p>
+</div>
+<div class="language-go vp-adaptive-theme"><button title="复制代码" class="copy"></button><span class="lang">go</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>func cycleLengthQueries(n int, queries [][]int) []int {</span></span>
+<span class="line"><span>	ans := []int{}</span></span>
+<span class="line"><span>	for _, q := range queries {</span></span>
+<span class="line"><span>		a, b := q[0], q[1]</span></span>
+<span class="line"><span>		t := 1</span></span>
+<span class="line"><span>		for a != b {</span></span>
+<span class="line"><span>			if a > b {</span></span>
+<span class="line"><span>				a >>= 1</span></span>
+<span class="line"><span>			} else {</span></span>
+<span class="line"><span>				b >>= 1</span></span>
+<span class="line"><span>			}</span></span>
+<span class="line"><span>			t++</span></span>
+<span class="line"><span>		}</span></span>
+<span class="line"><span>		ans = append(ans, t)</span></span>
+<span class="line"><span>	}</span></span>
+<span class="line"><span>	return ans</span></span>
+<span class="line"><span>}</span></span></code></pre>
+</div></details>
+<div class="leetcode-question-sources"><p><a href="https://leetcode.cn/problems/cycle-length-queries-in-a-tree" target="_blank" rel="noopener noreferrer">力扣原题</a> · <a href="https://github.com/doocs/leetcode/blob/91ef8c241a5eaabf96f9ca8d45cfb1a338bcb011/solution/2500-2599/2509.Cycle%20Length%20Queries%20in%20a%20Tree/README.md" target="_blank" rel="noopener noreferrer">Doocs 题解来源</a></p></div></div>
+</details></div>`},null,-1)])])}const g=s(p,[["render",l]]);export{d as __pageData,g as default};
